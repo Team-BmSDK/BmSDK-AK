@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.17.0](https://github.com/etkramer/BmSDK-AK/compare/v0.16.0...v0.17.0) (2026-07-09)
+
+
+### Features
+
+* Add joker boss classes ([d90e0e5](https://github.com/etkramer/BmSDK-AK/commit/d90e0e54e7a9d6865a4a44e2a2a5cfef6b626315))
+* Restore missing classes caused by GC in LoadPackage() ([fca6cbc](https://github.com/etkramer/BmSDK-AK/commit/fca6cbcab405bd71bc2fdd46177f122b809a610e))
+
+
+### Bug Fixes
+
+* Fix crash in SpawnActor ([d696740](https://github.com/etkramer/BmSDK-AK/commit/d696740349417f4888488ed6c7be17c97b538d10))
+* Get TArrays working again ([f231e16](https://github.com/etkramer/BmSDK-AK/commit/f231e1641ddeb6a060a1c274fe3133bb57293e9c))
+* Update ScriptsDev project for AK ([ce3ea60](https://github.com/etkramer/BmSDK-AK/commit/ce3ea60b7c22ff24308721d5d43841420c29e033))
+
 ## [0.16.0](https://github.com/etkramer/BmSDK/compare/v0.16.0...v0.16.0) (2026-06-24)
 
 
