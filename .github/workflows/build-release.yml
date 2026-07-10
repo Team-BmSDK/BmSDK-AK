@@ -132,6 +132,7 @@ jobs:
         declare -A requiredFiles=(
           ['README.md']='README.md'
           ['LICENSE.md']='LICENSE.md'
+          ['bin/Binaries/Win64/steam_appid.txt']='Binaries/Win64/steam_appid.txt'
           ['bin/BmGame/Scripts/MinimalScript.cs']='BmGame/Scripts/MinimalScript.cs'
           ['bin/BmGame/ScriptsDev/ScriptsDev.csproj']='BmGame/ScriptsDev/ScriptsDev.csproj'
           ['bin/BmGame/ScriptsDev/ScriptsDev.slnx']='BmGame/ScriptsDev/ScriptsDev.slnx'

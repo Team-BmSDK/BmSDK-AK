@@ -26,6 +26,11 @@ mono_crash.*
 !bin/BmGame/Scripts/
 !bin/BmGame/ScriptsDev/
 !bin/BmGame/Mods/
+!bin/Binaries/
+bin/Binaries/*
+!bin/Binaries/Win64/
+bin/Binaries/Win64/*
+!bin/Binaries/Win64/steam_appid.txt
 
 # Build results
 [Dd]ebug/
