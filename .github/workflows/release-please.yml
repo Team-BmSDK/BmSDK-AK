@@ -45,8 +45,11 @@ jobs:
           skip-decompress: true
 
       - name: "Upload artifacts to release"
-        uses: softprops/action-gh-release@v3
-        with:
-          tag_name: ${{ needs.release-please.outputs.tag_name }}
-          files: '${{ steps.download-build.outputs.download-path }}/*.zip'
-          draft: false
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          TAG_NAME: ${{ needs.release-please.outputs.tag_name }}
+        run: |
+          files=("${{ steps.download-build.outputs.download-path }}"/*.zip)
+          gh release upload "${{ env.TAG_NAME }}" "${files[@]}"
+          gh release edit "${{ env.TAG_NAME }}" --draft=false
