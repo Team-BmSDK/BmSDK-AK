@@ -98,10 +98,10 @@ Follow these steps to set up your environment for building, running, and debuggi
 4. Start Visual Studio and open the solution in `%GameDir%\BmGame\ScriptsDev`.
 5. Write your code in any C# source file in `%GameDir%\BmGame\Scripts`.
 6. Run your code by pressing **F5** in Visual Studio.
-7. Follow the [docs](https://bmsdk.dev/docs/guides/first-mod) to write your first script.
+7. Follow the [docs](https://bmsdk.dev/docs/guides/first-mod/) to write your first script.
 
 ## 🛠️ Contributing
-To get started contributing to BmSDK, see the docs for instructions: [Building from source](https://bmsdk.dev/docs/contributing/building)
+To get started contributing to BmSDK, see the docs for instructions: [Building from source](https://bmsdk.dev/docs/contributing/building/)
 
 ## 📋 Legal notice
 BmSDK is published under the [MIT licence](LICENSE.md).
