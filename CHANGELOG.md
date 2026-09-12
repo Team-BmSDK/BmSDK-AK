@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.21.0](https://github.com/Team-BmSDK/BmSDK-AK/compare/v0.19.0...v0.21.0) (2026-09-12)
+
+
+### Features
+
+* Add TArray.AsSpan() for ref access ([#138](https://github.com/Team-BmSDK/BmSDK-AK/issues/138)) ([cf2dd7c](https://github.com/Team-BmSDK/BmSDK-AK/commit/cf2dd7cc9252ab0b127913b1a323e2fb17485d62))
+* Introduce and release an installer .exe for BmSDK ([#145](https://github.com/Team-BmSDK/BmSDK-AK/issues/145)) ([fa41f69](https://github.com/Team-BmSDK/BmSDK-AK/commit/fa41f69c0bbe6f3893e42f14f8749694af59b9df))
+
 ## [0.19.0](https://github.com/Team-BmSDK/BmSDK-AK/compare/v0.18.0...v0.19.0) (2026-09-09)
 
 
