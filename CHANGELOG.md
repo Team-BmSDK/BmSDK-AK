@@ -7,18 +7,6 @@
 
 * Add TArray.AsSpan() for ref access ([#138](https://github.com/Team-BmSDK/BmSDK-AK/issues/138)) ([cf2dd7c](https://github.com/Team-BmSDK/BmSDK-AK/commit/cf2dd7cc9252ab0b127913b1a323e2fb17485d62))
 * Introduce and release an installer .exe for BmSDK ([#145](https://github.com/Team-BmSDK/BmSDK-AK/issues/145)) ([fa41f69](https://github.com/Team-BmSDK/BmSDK-AK/commit/fa41f69c0bbe6f3893e42f14f8749694af59b9df))
-* Load DLC bundles on startup ([#136](https://github.com/Team-BmSDK/BmSDK-AK/issues/136)) ([35ba46b](https://github.com/Team-BmSDK/BmSDK-AK/commit/35ba46b46c7ce09e89945a0ac8de31eaf06a9c0c))
-
-
-### Bug Fixes
-
-* Load .inis from DLC bundles ([#139](https://github.com/Team-BmSDK/BmSDK-AK/issues/139)) ([2ff034e](https://github.com/Team-BmSDK/BmSDK-AK/commit/2ff034e64f36b8b4500d55ca728cb3cb38d8f409))
-* Prevent loaded DLC from being cleared by the menu ([#141](https://github.com/Team-BmSDK/BmSDK-AK/issues/141)) ([e4a110b](https://github.com/Team-BmSDK/BmSDK-AK/commit/e4a110ba507f938402b20b389e1ed6cd5fc8502d))
-
-
-### Miscellaneous Chores
-
-* Sync version with BmSDK-AC ([99654c6](https://github.com/Team-BmSDK/BmSDK-AK/commit/99654c60e5bae8954779ede3b4884439a429d6a5))
 
 ## [0.19.0](https://github.com/Team-BmSDK/BmSDK-AK/compare/v0.18.0...v0.19.0) (2026-09-09)
 
