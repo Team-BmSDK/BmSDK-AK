@@ -1,6 +1,6 @@
 namespace BmSDK.Framework;
 
-internal sealed class GameDefineSteam : GameDefine
+public sealed class GameDefineSteam : GameDefine
 {
     public override string Name => "Steam";
 

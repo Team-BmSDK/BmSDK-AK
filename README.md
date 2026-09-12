@@ -41,9 +41,9 @@ A powerful, easy-to-use scripting platform for Batman: Arkham Knight that lets y
 
 <br />
 
-The scripthook gives you access to a full SDK for working with the game, world and engine. The SDK exposes Unreal Engine 3's own UnrealScript API to C# scripts. Modders get to work with the same types, properties and functions as the original developers did. There are also many useful life-cycle events *(e.g. tick and game enter)* and helpers provided. Below is an example mod that shows off some of BmSDK's capabilities:
+Scripts get the same types, properties and functions the original developers worked with, plus life-cycle events *(e.g. tick and game enter)* and helpers on top. Below is an example mod that shows off some of BmSDK's capabilities:
 <details> 
-<summary>Script to spawn in Joker near the player</summary>
+<summary>Example Script</summary>
 
 ```csharp
 using BmSDK;
@@ -80,12 +80,22 @@ public class DemoScript : Script
 Check out the [documentation](https://bmsdk.dev/docs) for more info!
 
 ## 🚀 Getting started
-If you want to play script mods, getting started is simple:
-1. Download the latest release from [releases](../../releases/latest) and open the ZIP file.
-2. Inside you'll see two folders: `Binaries` and `BmGame`. Copy both to your game folder (likely `C:\Program Files (x86)\Steam\steamapps\common\Batman Arkham Knight`). There should already be 2 folders in there with the same names.
-3. BmSDK is now installed! To play script mods, simply drop any .cs files into your `BmGame\Scripts` folder and start the game.
+If you want to use mods, here's how you get set up:
+1. Download [the latest installer](../../releases/latest/download/BmSDK-AK-Installer.exe) and run it.
+2. Pick your Arkham Knight folder. Steam installations are detected automatically, and you can browse for one yourself if yours isn't listed.
+3. Press **Install**, then start the game. Script mods go in your `BmGame\Scripts` folder as .cs files.
 
-Keep in mind that script mods can potentially harm your computer. Make sure you only download and install scripts from trusted sources.
+The installer isn't code-signed, so Windows SmartScreen may warn you the first time you run it. Choose "More info" → "Run anyway" to continue.
+
+<details>
+<summary>Installing manually instead</summary>
+
+1. Download the `BmSDK-AK-*.zip` from the latest [release](../../releases/latest) and open it.
+2. Inside you'll see two folders: `Binaries` and `BmGame`. Copy both to your game folder (likely `C:\Program Files (x86)\Steam\steamapps\common\Batman Arkham Knight`). There should already be 2 folders in there with the same names.
+3. BmSDK is now installed! Script mods go in your `BmGame\Scripts` folder as .cs files.
+</details>
+
+Keep in mind that script mods can potentially harm your computer. Make sure you only download and install mods from trusted sources.
 
 ### ⚠️ Notice for Epic or GOG users:
 Only Steam copies of Arkham Knight are supported currently. EGS/GOG support is being considered, but BmSDK unfortunately does not work on these platforms for the time being.

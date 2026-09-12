@@ -1,6 +1,6 @@
 namespace BmSDK.Framework;
 
-internal abstract class GameDefine
+public abstract class GameDefine
 {
     public static GameDefine Current { get; } = new GameDefineSteam();
 
