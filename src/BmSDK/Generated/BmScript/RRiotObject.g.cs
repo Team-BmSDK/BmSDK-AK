@@ -85,7 +85,8 @@ public partial class RRiotObject : BmSDK.BmGame.RRiotObjectBase, BmSDK.IGameObje
     public unsafe virtual void HammerBeatingFx()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HammerBeatingFx, "BmScript.RRiotObject.HammerBeatingFx");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -97,7 +98,8 @@ public partial class RRiotObject : BmSDK.BmGame.RRiotObjectBase, BmSDK.IGameObje
     public unsafe virtual void StopWelding()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopWelding, "BmScript.RRiotObject.StopWelding");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -109,7 +111,8 @@ public partial class RRiotObject : BmSDK.BmGame.RRiotObjectBase, BmSDK.IGameObje
     public unsafe virtual void StartWelding()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartWelding, "BmScript.RRiotObject.StartWelding");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -121,7 +124,8 @@ public partial class RRiotObject : BmSDK.BmGame.RRiotObjectBase, BmSDK.IGameObje
     public unsafe virtual void StopGrinding()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopGrinding, "BmScript.RRiotObject.StopGrinding");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -133,7 +137,8 @@ public partial class RRiotObject : BmSDK.BmGame.RRiotObjectBase, BmSDK.IGameObje
     public unsafe virtual void StartGrinding()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartGrinding, "BmScript.RRiotObject.StartGrinding");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -145,7 +150,8 @@ public partial class RRiotObject : BmSDK.BmGame.RRiotObjectBase, BmSDK.IGameObje
     public unsafe virtual void StopSprayCan()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopSprayCan, "BmScript.RRiotObject.StopSprayCan");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -157,7 +163,8 @@ public partial class RRiotObject : BmSDK.BmGame.RRiotObjectBase, BmSDK.IGameObje
     public unsafe virtual void StartSprayCan()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartSprayCan, "BmScript.RRiotObject.StartSprayCan");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -169,7 +176,8 @@ public partial class RRiotObject : BmSDK.BmGame.RRiotObjectBase, BmSDK.IGameObje
     public unsafe virtual void IgniteFlare(bool bForMilitia)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IgniteFlare, "BmScript.RRiotObject.IgniteFlare");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForMilitia, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -182,7 +190,8 @@ public partial class RRiotObject : BmSDK.BmGame.RRiotObjectBase, BmSDK.IGameObje
     public unsafe virtual void ExplodeMolotov()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ExplodeMolotov, "BmScript.RRiotObject.ExplodeMolotov");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -194,7 +203,8 @@ public partial class RRiotObject : BmSDK.BmGame.RRiotObjectBase, BmSDK.IGameObje
     public unsafe virtual void IgniteMolotov()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IgniteMolotov, "BmScript.RRiotObject.IgniteMolotov");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -206,7 +216,8 @@ public partial class RRiotObject : BmSDK.BmGame.RRiotObjectBase, BmSDK.IGameObje
     public unsafe override void SetPickup(BmSDK.BmGame.RAnimNotify_PickupProp PickType)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetPickup, "BmScript.RRiotObject.SetPickup");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PickType, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -219,7 +230,8 @@ public partial class RRiotObject : BmSDK.BmGame.RRiotObjectBase, BmSDK.IGameObje
     public unsafe virtual void SetFlare()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetFlare, "BmScript.RRiotObject.SetFlare");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -231,7 +243,8 @@ public partial class RRiotObject : BmSDK.BmGame.RRiotObjectBase, BmSDK.IGameObje
     public unsafe virtual void SetMolotov()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMolotov, "BmScript.RRiotObject.SetMolotov");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -243,7 +256,8 @@ public partial class RRiotObject : BmSDK.BmGame.RRiotObjectBase, BmSDK.IGameObje
     public unsafe virtual void SetStone()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetStone, "BmScript.RRiotObject.SetStone");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -255,7 +269,8 @@ public partial class RRiotObject : BmSDK.BmGame.RRiotObjectBase, BmSDK.IGameObje
     public unsafe virtual void SetBrick()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBrick, "BmScript.RRiotObject.SetBrick");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -267,7 +282,8 @@ public partial class RRiotObject : BmSDK.BmGame.RRiotObjectBase, BmSDK.IGameObje
     public unsafe virtual void SetSpraycan()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSpraycan, "BmScript.RRiotObject.SetSpraycan");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -279,7 +295,8 @@ public partial class RRiotObject : BmSDK.BmGame.RRiotObjectBase, BmSDK.IGameObje
     public unsafe virtual void SetPipe()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetPipe, "BmScript.RRiotObject.SetPipe");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -291,7 +308,8 @@ public partial class RRiotObject : BmSDK.BmGame.RRiotObjectBase, BmSDK.IGameObje
     public unsafe override bool canDestroy()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_canDestroy, "BmScript.RRiotObject.canDestroy");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
@@ -303,7 +321,8 @@ public partial class RRiotObject : BmSDK.BmGame.RRiotObjectBase, BmSDK.IGameObje
     public unsafe override void DropObject(BmSDK.BmGame.RAnimNotify_PickupProp DropNotify)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DropObject, "BmScript.RRiotObject.DropObject");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DropNotify, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -316,7 +335,8 @@ public partial class RRiotObject : BmSDK.BmGame.RRiotObjectBase, BmSDK.IGameObje
     public unsafe override void StopAllFx()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopAllFx, "BmScript.RRiotObject.StopAllFx");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

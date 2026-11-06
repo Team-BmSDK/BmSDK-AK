@@ -85,7 +85,8 @@ public partial class RSpecialMoveInstance_BatmobileInterrogationBase : BmSDK.BmG
     public unsafe virtual void GetRootPointFromBatmanAnimation(BmSDK.Engine.AnimSequence BatmanAnimation, float TimeInAnim, out System.Numerics.Vector3 RootLoc, out BmSDK.Rotator RootRot, int bUseRefPoint = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRootPointFromBatmanAnimation, "BmGame.RSpecialMoveInstance_BatmobileInterrogationBase.GetRootPointFromBatmanAnimation");
-        byte* paramsPtr = stackalloc byte[40];
+        byte* paramsPtr = stackalloc byte[56];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BatmanAnimation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TimeInAnim, paramsPtr + 8);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out RootLoc);

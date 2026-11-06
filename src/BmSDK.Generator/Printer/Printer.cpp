@@ -521,8 +521,12 @@ void Printer::PrintFunction(const FunctionInfo& func, bool isInInterface, ostrea
             "BmSDK.Framework.FunctionCache.Get(ref __fn_" << func.ManagedName << ", \""
             << func.PathName << "\");" << endl;
 
-        Printer::Indent(out) << "byte* paramsPtr = stackalloc byte[" << func.PropertiesSize << "];"
-            << endl;
+        // The engine 16-aligns its own parameter frames, and natives rely on it (an FQuat or
+        // FMatrix return is stored with movdqa). A constant-size stackalloc is only 8-aligned,
+        // so over-allocate and round the pointer up.
+        Printer::Indent(out) << "byte* paramsPtr = stackalloc byte[" << (func.PropertiesSize + 16)
+            << "];" << endl;
+        Printer::Indent(out) << "paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);" << endl;
         for (auto i = 0u; i < func.Params.size(); i++)
         {
             auto& param = func.Params[i];

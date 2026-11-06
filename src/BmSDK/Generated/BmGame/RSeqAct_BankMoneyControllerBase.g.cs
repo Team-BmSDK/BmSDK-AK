@@ -80,7 +80,8 @@ public partial class RSeqAct_BankMoneyControllerBase : BmSDK.Engine.SeqAct_Laten
     public unsafe virtual void NotifyCashPlacedInBag(int Amount)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyCashPlacedInBag, "BmGame.RSeqAct_BankMoneyControllerBase.NotifyCashPlacedInBag");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Amount, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -93,7 +94,8 @@ public partial class RSeqAct_BankMoneyControllerBase : BmSDK.Engine.SeqAct_Laten
     public unsafe virtual void NotifyCashRemovedFromBank(int Amount)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyCashRemovedFromBank, "BmGame.RSeqAct_BankMoneyControllerBase.NotifyCashRemovedFromBank");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Amount, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

@@ -85,7 +85,8 @@ public partial class MorphNodeMultiPose : BmSDK.Engine.MorphNodeBase, BmSDK.IGam
     public unsafe virtual bool UpdateMorphTarget(BmSDK.Engine.MorphTarget Target, float InWeight)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateMorphTarget, "Engine.MorphNodeMultiPose.UpdateMorphTarget");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InWeight, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
@@ -106,7 +107,8 @@ public partial class MorphNodeMultiPose : BmSDK.Engine.MorphNodeBase, BmSDK.IGam
     public unsafe virtual void RemoveMorphTarget(BmSDK.FName MorphTargetName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveMorphTarget, "Engine.MorphNodeMultiPose.RemoveMorphTarget");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MorphTargetName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -126,7 +128,8 @@ public partial class MorphNodeMultiPose : BmSDK.Engine.MorphNodeBase, BmSDK.IGam
     public unsafe virtual bool AddMorphTarget(BmSDK.FName MorphTargetName, float InWeight = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddMorphTarget, "Engine.MorphNodeMultiPose.AddMorphTarget");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MorphTargetName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InWeight, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;

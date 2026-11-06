@@ -85,7 +85,8 @@ public partial class RSeqAct_IsChallengeActive : BmSDK.Engine.SequenceAction, Bm
     public unsafe virtual bool InChallengeMode()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InChallengeMode, "BmScript.RSeqAct_IsChallengeActive.InChallengeMode");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
@@ -97,7 +98,8 @@ public partial class RSeqAct_IsChallengeActive : BmSDK.Engine.SequenceAction, Bm
     public unsafe override void Activated()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmScript.RSeqAct_IsChallengeActive.Activated");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

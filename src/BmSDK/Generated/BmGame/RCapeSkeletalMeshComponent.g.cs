@@ -85,7 +85,8 @@ public partial class RCapeSkeletalMeshComponent : BmSDK.Engine.SkeletalMeshCompo
     public unsafe virtual void InternalUpdateMaterial()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InternalUpdateMaterial, "BmGame.RCapeSkeletalMeshComponent.InternalUpdateMaterial");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -97,7 +98,8 @@ public partial class RCapeSkeletalMeshComponent : BmSDK.Engine.SkeletalMeshCompo
     public unsafe virtual void SetupMaterialConstants()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupMaterialConstants, "BmGame.RCapeSkeletalMeshComponent.SetupMaterialConstants");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -109,7 +111,8 @@ public partial class RCapeSkeletalMeshComponent : BmSDK.Engine.SkeletalMeshCompo
     public unsafe virtual void UpdateOverrideMaterial(BmSDK.Engine.MaterialInterface NewMat)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateOverrideMaterial, "BmGame.RCapeSkeletalMeshComponent.UpdateOverrideMaterial");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewMat, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -122,7 +125,8 @@ public partial class RCapeSkeletalMeshComponent : BmSDK.Engine.SkeletalMeshCompo
     public unsafe virtual void UpdateDefaultMaterial(BmSDK.Engine.MaterialInterface NewMat)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateDefaultMaterial, "BmGame.RCapeSkeletalMeshComponent.UpdateDefaultMaterial");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewMat, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -135,7 +139,8 @@ public partial class RCapeSkeletalMeshComponent : BmSDK.Engine.SkeletalMeshCompo
     public unsafe virtual BmSDK.BmGame.RCapeComponent GetCapeComponent()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCapeComponent, "BmGame.RCapeSkeletalMeshComponent.GetCapeComponent");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

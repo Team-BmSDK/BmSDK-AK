@@ -85,7 +85,8 @@ public partial class CameraShake : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual float GetLocOscillationMagnitude()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLocOscillationMagnitude, "Engine.CameraShake.GetLocOscillationMagnitude");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
@@ -97,7 +98,8 @@ public partial class CameraShake : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual float GetRotOscillationMagnitude()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRotOscillationMagnitude, "Engine.CameraShake.GetRotOscillationMagnitude");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }

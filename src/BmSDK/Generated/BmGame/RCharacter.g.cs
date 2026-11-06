@@ -85,7 +85,8 @@ public partial class RCharacter : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static BmSDK.BmGame.RBMPawnAI StaticCreatePawn(System.Numerics.Vector3 Location, BmSDK.Rotator Rotation, BmSDK.Engine.Actor UseSpawnPoint, BmSDK.Class SpawnPawnClass, BmSDK.Class SpawnCharactersType, bool SnapToGround, BmSDK.FName InitialMovementStance, BmSDK.FName InitialWeaponStance)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StaticCreatePawn, "BmGame.RCharacter.StaticCreatePawn");
-        byte* paramsPtr = stackalloc byte[76];
+        byte* paramsPtr = stackalloc byte[92];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Location, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Rotation, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UseSpawnPoint, paramsPtr + 24);
@@ -112,7 +113,8 @@ public partial class RCharacter : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static BmSDK.FString GetFriendlyName()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFriendlyName, "BmGame.RCharacter.GetFriendlyName");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
     }
@@ -124,7 +126,8 @@ public partial class RCharacter : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static BmSDK.Engine.AkEvent GetStrikeImpactCue_BodyKick()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeImpactCue_BodyKick, "BmGame.RCharacter.GetStrikeImpactCue_BodyKick");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.AkEvent>(paramsPtr + 0);
     }
@@ -136,7 +139,8 @@ public partial class RCharacter : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static BmSDK.Engine.AkEvent GetStrikeImpactCue_BodyPunchQuick()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeImpactCue_BodyPunchQuick, "BmGame.RCharacter.GetStrikeImpactCue_BodyPunchQuick");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.AkEvent>(paramsPtr + 0);
     }
@@ -148,7 +152,8 @@ public partial class RCharacter : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static BmSDK.Engine.AkEvent GetStrikeImpactCue_BodyPunch()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeImpactCue_BodyPunch, "BmGame.RCharacter.GetStrikeImpactCue_BodyPunch");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.AkEvent>(paramsPtr + 0);
     }
@@ -160,7 +165,8 @@ public partial class RCharacter : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static BmSDK.Engine.AkEvent GetStrikeImpactCue_HeadKick()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeImpactCue_HeadKick, "BmGame.RCharacter.GetStrikeImpactCue_HeadKick");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.AkEvent>(paramsPtr + 0);
     }
@@ -172,7 +178,8 @@ public partial class RCharacter : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static BmSDK.Engine.AkEvent GetStrikeImpactCue_HeadPunchQuick()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeImpactCue_HeadPunchQuick, "BmGame.RCharacter.GetStrikeImpactCue_HeadPunchQuick");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.AkEvent>(paramsPtr + 0);
     }
@@ -184,7 +191,8 @@ public partial class RCharacter : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static BmSDK.Engine.AkEvent GetStrikeImpactCue_HeadPunch()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeImpactCue_HeadPunch, "BmGame.RCharacter.GetStrikeImpactCue_HeadPunch");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.AkEvent>(paramsPtr + 0);
     }
@@ -196,7 +204,8 @@ public partial class RCharacter : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static BmSDK.Engine.AkEvent GetStrikeImpactCue_CounterBlock()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeImpactCue_CounterBlock, "BmGame.RCharacter.GetStrikeImpactCue_CounterBlock");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.AkEvent>(paramsPtr + 0);
     }
@@ -208,7 +217,8 @@ public partial class RCharacter : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static BmSDK.Engine.AkEvent GetStrikeImpactCue_FinishingBlow()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeImpactCue_FinishingBlow, "BmGame.RCharacter.GetStrikeImpactCue_FinishingBlow");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.AkEvent>(paramsPtr + 0);
     }
@@ -220,7 +230,8 @@ public partial class RCharacter : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static bool UpdateCustomPhysics(BmSDK.BmGame.RBMPawnAI Pawn, float DeltaTime)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateCustomPhysics, "BmGame.RCharacter.UpdateCustomPhysics");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Pawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -234,7 +245,8 @@ public partial class RCharacter : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static void SetupCustomPhysics(BmSDK.BmGame.RBMPawnAI Pawn)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupCustomPhysics, "BmGame.RCharacter.SetupCustomPhysics");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Pawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

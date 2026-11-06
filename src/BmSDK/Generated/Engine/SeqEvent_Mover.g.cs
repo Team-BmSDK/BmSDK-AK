@@ -85,7 +85,8 @@ public partial class SeqEvent_Mover : BmSDK.Engine.SequenceEvent, BmSDK.IGameObj
     public unsafe virtual void NotifyFinishedOpen()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyFinishedOpen, "Engine.SeqEvent_Mover.NotifyFinishedOpen");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -97,7 +98,8 @@ public partial class SeqEvent_Mover : BmSDK.Engine.SequenceEvent, BmSDK.IGameObj
     public unsafe virtual void NotifyDetached(BmSDK.Engine.Actor Other)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyDetached, "Engine.SeqEvent_Mover.NotifyDetached");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -110,7 +112,8 @@ public partial class SeqEvent_Mover : BmSDK.Engine.SequenceEvent, BmSDK.IGameObj
     public unsafe virtual void NotifyAttached(BmSDK.Engine.Actor Other)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyAttached, "Engine.SeqEvent_Mover.NotifyAttached");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -123,7 +126,8 @@ public partial class SeqEvent_Mover : BmSDK.Engine.SequenceEvent, BmSDK.IGameObj
     public unsafe virtual void NotifyEncroachingOn(BmSDK.Engine.Actor Hit)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyEncroachingOn, "Engine.SeqEvent_Mover.NotifyEncroachingOn");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Hit, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

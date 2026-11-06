@@ -85,7 +85,8 @@ public partial class DynamicPylon : BmSDK.Engine.Pylon, BmSDK.IGameObject
     public unsafe virtual void StoppedMoving()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StoppedMoving, "Engine.DynamicPylon.StoppedMoving");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -97,7 +98,8 @@ public partial class DynamicPylon : BmSDK.Engine.Pylon, BmSDK.IGameObject
     public unsafe virtual void StartedMoving()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartedMoving, "Engine.DynamicPylon.StartedMoving");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -109,7 +111,8 @@ public partial class DynamicPylon : BmSDK.Engine.Pylon, BmSDK.IGameObject
     public unsafe override void FlushDynamicEdges()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FlushDynamicEdges, "Engine.DynamicPylon.FlushDynamicEdges");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -128,7 +131,8 @@ public partial class DynamicPylon : BmSDK.Engine.Pylon, BmSDK.IGameObject
     public unsafe virtual void RebuildDynamicEdges()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RebuildDynamicEdges, "Engine.DynamicPylon.RebuildDynamicEdges");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -147,7 +151,8 @@ public partial class DynamicPylon : BmSDK.Engine.Pylon, BmSDK.IGameObject
     public unsafe override void PostBeginPlay()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "Engine.DynamicPylon.PostBeginPlay");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

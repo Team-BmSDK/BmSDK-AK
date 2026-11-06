@@ -85,7 +85,8 @@ public partial class RMagneticBlastNw : BmSDK.BmScript.RMagneticBlastBm, BmSDK.I
     public unsafe override void FinishFiring()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishFiring, "BmScript.RMagneticBlastNw.FinishFiring");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

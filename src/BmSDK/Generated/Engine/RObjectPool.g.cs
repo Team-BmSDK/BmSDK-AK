@@ -85,7 +85,8 @@ public partial class RObjectPool : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual int GetMaxDamageInstances()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMaxDamageInstances, "Engine.RObjectPool.GetMaxDamageInstances");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
@@ -97,7 +98,8 @@ public partial class RObjectPool : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual int GetDamageInstanceIndex(BmSDK.Engine.Actor ImpactActor, System.Numerics.Vector3 ImpactLocation, float Radius)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDamageInstanceIndex, "Engine.RObjectPool.GetDamageInstanceIndex");
-        byte* paramsPtr = stackalloc byte[88];
+        byte* paramsPtr = stackalloc byte[104];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ImpactActor, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ImpactLocation, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Radius, paramsPtr + 20);
@@ -112,7 +114,8 @@ public partial class RObjectPool : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void Initialise(BmSDK.Engine.GameReplicationInfo Game)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Initialise, "Engine.RObjectPool.Initialise");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Game, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -125,7 +128,8 @@ public partial class RObjectPool : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.Engine.RockDecalComponent CreateDecal()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateDecal, "Engine.RObjectPool.CreateDecal");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.RockDecalComponent>(paramsPtr + 0);
     }
@@ -137,7 +141,8 @@ public partial class RObjectPool : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.Engine.RockDecalComponent AddDecal(BmSDK.Engine.MaterialInterface DecalMaterial, System.Numerics.Vector3 DecalLocation, System.Numerics.Vector3 DecalNormal, float DecalRoll, float DecalWidth, float DecalHeight, BmSDK.Engine.Actor HitActor, BmSDK.Engine.PrimitiveComponent HitComponent, BmSDK.FName HitBone = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddDecal, "Engine.RObjectPool.AddDecal");
-        byte* paramsPtr = stackalloc byte[100];
+        byte* paramsPtr = stackalloc byte[116];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DecalMaterial, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DecalLocation, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DecalNormal, paramsPtr + 20);
@@ -158,7 +163,8 @@ public partial class RObjectPool : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual float GetSpawnedDecalDepth()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSpawnedDecalDepth, "Engine.RObjectPool.GetSpawnedDecalDepth");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -177,7 +183,8 @@ public partial class RObjectPool : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.GameObject.FMatrix GetUnscaledDecalMatrix(System.Numerics.Vector3 Location, BmSDK.Rotator Rotation, float Roll)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetUnscaledDecalMatrix, "Engine.RObjectPool.GetUnscaledDecalMatrix");
-        byte* paramsPtr = stackalloc byte[96];
+        byte* paramsPtr = stackalloc byte[112];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Location, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Rotation, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Roll, paramsPtr + 24);
@@ -199,7 +206,8 @@ public partial class RObjectPool : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.GameObject.FMatrix GetDecalMatrix(System.Numerics.Vector3 Location, BmSDK.Rotator Rotation, float Roll, float Width, float Height, float Depth)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDecalMatrix, "Engine.RObjectPool.GetDecalMatrix");
-        byte* paramsPtr = stackalloc byte[112];
+        byte* paramsPtr = stackalloc byte[128];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Location, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Rotation, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Roll, paramsPtr + 24);
@@ -224,7 +232,8 @@ public partial class RObjectPool : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual System.Numerics.Vector3 GetDecalClipValuesFromScale(float Width, float Height, float Depth)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDecalClipValuesFromScale, "Engine.RObjectPool.GetDecalClipValuesFromScale");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Width, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Height, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Depth, paramsPtr + 8);
@@ -246,7 +255,8 @@ public partial class RObjectPool : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.Engine.RockDecalComponent GetFreeDecal()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFreeDecal, "Engine.RObjectPool.GetFreeDecal");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.RockDecalComponent>(paramsPtr + 0);
     }
@@ -258,7 +268,8 @@ public partial class RObjectPool : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.Engine.RockDecalComponent EnlargeNearbyDecal(BmSDK.Engine.MaterialInterface DecalMaterial, System.Numerics.Vector3 DecalLocation, float DecalWidth, float DecalHeight, BmSDK.Engine.Actor HitActor)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnlargeNearbyDecal, "Engine.RObjectPool.EnlargeNearbyDecal");
-        byte* paramsPtr = stackalloc byte[60];
+        byte* paramsPtr = stackalloc byte[76];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DecalMaterial, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DecalLocation, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DecalWidth, paramsPtr + 20);
@@ -275,7 +286,8 @@ public partial class RObjectPool : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.Engine.Emitter SpawnEmitterOnSocket(BmSDK.Engine.ParticleSystem Tamplate, BmSDK.Engine.SkeletalMeshComponent Skeleton, BmSDK.FName SocketName, bool bAttachToMesh = default, float DrawScale = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnEmitterOnSocket, "Engine.RObjectPool.SpawnEmitterOnSocket");
-        byte* paramsPtr = stackalloc byte[72];
+        byte* paramsPtr = stackalloc byte[88];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Tamplate, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Skeleton, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SocketName, paramsPtr + 16);
@@ -292,7 +304,8 @@ public partial class RObjectPool : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.Engine.Emitter SpawnEmitterOnMesh(BmSDK.Engine.ParticleSystem Template, System.Numerics.Vector3 SpawnLocation, BmSDK.Rotator SpawnRotation, BmSDK.Engine.SkeletalMeshComponent Skeleton = default, BmSDK.FName Bone = default, bool HardAttach = default, float DrawScale = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnEmitterOnMesh, "Engine.RObjectPool.SpawnEmitterOnMesh");
-        byte* paramsPtr = stackalloc byte[72];
+        byte* paramsPtr = stackalloc byte[88];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Template, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnLocation, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnRotation, paramsPtr + 20);
@@ -311,7 +324,8 @@ public partial class RObjectPool : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.Engine.Emitter SpawnEmitterOnPawn(BmSDK.Engine.ParticleSystem Template, System.Numerics.Vector3 SpawnLocation, BmSDK.Rotator SpawnRotation, BmSDK.Engine.Pawn P = default, BmSDK.FName Bone = default, bool HardAttach = default, float DrawScale = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnEmitterOnPawn, "Engine.RObjectPool.SpawnEmitterOnPawn");
-        byte* paramsPtr = stackalloc byte[72];
+        byte* paramsPtr = stackalloc byte[88];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Template, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnLocation, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnRotation, paramsPtr + 20);
@@ -330,7 +344,8 @@ public partial class RObjectPool : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.Engine.Emitter SpawnEmitter(BmSDK.Engine.ParticleSystem Template, System.Numerics.Vector3 SpawnLocation, BmSDK.Rotator SpawnRotation, int TranslucencySortPriority = default, float DrawScale = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnEmitter, "Engine.RObjectPool.SpawnEmitter");
-        byte* paramsPtr = stackalloc byte[48];
+        byte* paramsPtr = stackalloc byte[64];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Template, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnLocation, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnRotation, paramsPtr + 20);
@@ -354,7 +369,8 @@ public partial class RObjectPool : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void StopEmittersWithTemplate(BmSDK.Engine.ParticleSystem Template)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopEmittersWithTemplate, "Engine.RObjectPool.StopEmittersWithTemplate");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Template, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

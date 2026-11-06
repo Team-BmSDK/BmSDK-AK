@@ -85,7 +85,8 @@ public partial class MAEC_LaughingGas_Outsider : BmSDK.BmGame.RAEC_Smoke_Outside
     public unsafe override void PlayEndBark()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayEndBark, "BmGame.MAEC_LaughingGas_Outsider.PlayEndBark");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

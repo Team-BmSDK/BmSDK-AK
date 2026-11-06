@@ -85,7 +85,8 @@ public partial class DownloadableContentEnumeratorSteamworks : BmSDK.Engine.Down
     public unsafe override void DeleteDLC(BmSDK.FString DLCName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DeleteDLC, "OnlineSubsystemSteamworks.DownloadableContentEnumeratorSteamworks.DeleteDLC");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DLCName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -98,7 +99,8 @@ public partial class DownloadableContentEnumeratorSteamworks : BmSDK.Engine.Down
     public unsafe virtual void AppendDLC(out BmSDK.TArray<BmSDK.Engine.OnlineSubsystem.FOnlineContent> Bundles)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AppendDLC, "OnlineSubsystemSteamworks.DownloadableContentEnumeratorSteamworks.AppendDLC");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -118,7 +120,8 @@ public partial class DownloadableContentEnumeratorSteamworks : BmSDK.Engine.Down
     public unsafe virtual void OnReadContentComplete(bool bWasSuccessful)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReadContentComplete, "OnlineSubsystemSteamworks.DownloadableContentEnumeratorSteamworks.OnReadContentComplete");
-        byte* paramsPtr = stackalloc byte[48];
+        byte* paramsPtr = stackalloc byte[64];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -131,7 +134,8 @@ public partial class DownloadableContentEnumeratorSteamworks : BmSDK.Engine.Down
     public unsafe override void ClearAllContent()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearAllContent, "OnlineSubsystemSteamworks.DownloadableContentEnumeratorSteamworks.ClearAllContent");
-        byte* paramsPtr = stackalloc byte[28];
+        byte* paramsPtr = stackalloc byte[44];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -143,7 +147,8 @@ public partial class DownloadableContentEnumeratorSteamworks : BmSDK.Engine.Down
     public unsafe override void FindDLC()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindDLC, "OnlineSubsystemSteamworks.DownloadableContentEnumeratorSteamworks.FindDLC");
-        byte* paramsPtr = stackalloc byte[44];
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

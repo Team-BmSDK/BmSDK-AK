@@ -85,7 +85,8 @@ public partial class RRepeatAnimManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.FName GetAnim(float CurrentTime)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAnim, "BmGame.RRepeatAnimManager.GetAnim");
-        byte* paramsPtr = stackalloc byte[48];
+        byte* paramsPtr = stackalloc byte[64];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CurrentTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FName>(paramsPtr + 4);
@@ -98,7 +99,8 @@ public partial class RRepeatAnimManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void AddAnim(BmSDK.FName NewAnim)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddAnim, "BmGame.RRepeatAnimManager.AddAnim");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAnim, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -111,7 +113,8 @@ public partial class RRepeatAnimManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetLockoutTimes(float NewHard, float NewSoft)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetLockoutTimes, "BmGame.RRepeatAnimManager.SetLockoutTimes");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewHard, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewSoft, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

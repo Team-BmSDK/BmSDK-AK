@@ -80,7 +80,8 @@ public partial class RAnimUtil : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static BmSDK.BmGame.RAnimUtil.FMeetingPoints GetMeetingPoints(float Begin, float End)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMeetingPoints, "BmGame.RAnimUtil.GetMeetingPoints");
-        byte* paramsPtr = stackalloc byte[104];
+        byte* paramsPtr = stackalloc byte[120];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Begin, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(End, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

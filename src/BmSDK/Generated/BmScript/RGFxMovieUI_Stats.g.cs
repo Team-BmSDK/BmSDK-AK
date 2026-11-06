@@ -85,7 +85,8 @@ public partial class RGFxMovieUI_Stats : BmSDK.BmGame.RGFxMovieUI, BmSDK.IGameOb
     public unsafe virtual BmSDK.FString FetchStat(bool bPlus, BmSDK.BmGame.RPersistentShared.EPercentData StatId)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FetchStat, "BmScript.RGFxMovieUI_Stats.FetchStat");
-        byte* paramsPtr = stackalloc byte[56];
+        byte* paramsPtr = stackalloc byte[72];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bPlus, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StatId, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -99,7 +100,8 @@ public partial class RGFxMovieUI_Stats : BmSDK.BmGame.RGFxMovieUI, BmSDK.IGameOb
     public unsafe virtual BmSDK.FString FetchStat_Label(int StatId)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FetchStat_Label, "BmScript.RGFxMovieUI_Stats.FetchStat_Label");
-        byte* paramsPtr = stackalloc byte[60];
+        byte* paramsPtr = stackalloc byte[76];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StatId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 4);
@@ -112,7 +114,8 @@ public partial class RGFxMovieUI_Stats : BmSDK.BmGame.RGFxMovieUI, BmSDK.IGameOb
     public unsafe virtual void AddPageContents_TopLevel()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddPageContents_TopLevel, "BmScript.RGFxMovieUI_Stats.AddPageContents_TopLevel");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -124,7 +127,8 @@ public partial class RGFxMovieUI_Stats : BmSDK.BmGame.RGFxMovieUI, BmSDK.IGameOb
     public unsafe virtual BmSDK.FString XI_GetGrandTotal()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_GetGrandTotal, "BmScript.RGFxMovieUI_Stats.XI_GetGrandTotal");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
     }
@@ -136,7 +140,8 @@ public partial class RGFxMovieUI_Stats : BmSDK.BmGame.RGFxMovieUI, BmSDK.IGameOb
     public unsafe virtual void XI_RequestPageContents(int Page, BmSDK.FString TargetPath)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_RequestPageContents, "BmScript.RGFxMovieUI_Stats.XI_RequestPageContents");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Page, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetPath, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -150,7 +155,8 @@ public partial class RGFxMovieUI_Stats : BmSDK.BmGame.RGFxMovieUI, BmSDK.IGameOb
     public unsafe virtual void UC_AddTotal(BmSDK.FString Label, BmSDK.FString StoryPlus, BmSDK.FString Story)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_AddTotal, "BmScript.RGFxMovieUI_Stats.UC_AddTotal");
-        byte* paramsPtr = stackalloc byte[48];
+        byte* paramsPtr = stackalloc byte[64];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Label, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StoryPlus, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Story, paramsPtr + 32);
@@ -165,7 +171,8 @@ public partial class RGFxMovieUI_Stats : BmSDK.BmGame.RGFxMovieUI, BmSDK.IGameOb
     public unsafe virtual void UC_AddEntry(BmSDK.FString Label, BmSDK.FString StoryPlus, BmSDK.FString Story)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_AddEntry, "BmScript.RGFxMovieUI_Stats.UC_AddEntry");
-        byte* paramsPtr = stackalloc byte[48];
+        byte* paramsPtr = stackalloc byte[64];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Label, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StoryPlus, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Story, paramsPtr + 32);
@@ -180,7 +187,8 @@ public partial class RGFxMovieUI_Stats : BmSDK.BmGame.RGFxMovieUI, BmSDK.IGameOb
     public unsafe virtual void UC_AddTitle(BmSDK.FString Title)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_AddTitle, "BmScript.RGFxMovieUI_Stats.UC_AddTitle");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Title, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -193,7 +201,8 @@ public partial class RGFxMovieUI_Stats : BmSDK.BmGame.RGFxMovieUI, BmSDK.IGameOb
     public unsafe virtual void UC_PageStart()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_PageStart, "BmScript.RGFxMovieUI_Stats.UC_PageStart");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -205,7 +214,8 @@ public partial class RGFxMovieUI_Stats : BmSDK.BmGame.RGFxMovieUI, BmSDK.IGameOb
     public unsafe override void SetupScreenPrompts()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupScreenPrompts, "BmScript.RGFxMovieUI_Stats.SetupScreenPrompts");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -217,7 +227,8 @@ public partial class RGFxMovieUI_Stats : BmSDK.BmGame.RGFxMovieUI, BmSDK.IGameOb
     public unsafe override void Init(BmSDK.Engine.LocalPlayer LocPlay = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmScript.RGFxMovieUI_Stats.Init");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocPlay, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

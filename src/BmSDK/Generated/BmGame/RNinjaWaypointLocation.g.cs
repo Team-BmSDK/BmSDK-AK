@@ -85,7 +85,8 @@ public partial class RNinjaWaypointLocation : BmSDK.BmGame.RDummyTarget, BmSDK.I
     public unsafe virtual void WaypointReached()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WaypointReached, "BmGame.RNinjaWaypointLocation.WaypointReached");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

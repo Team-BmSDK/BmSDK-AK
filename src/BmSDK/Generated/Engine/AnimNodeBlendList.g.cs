@@ -85,7 +85,8 @@ public partial class AnimNodeBlendList : BmSDK.Engine.AnimNodeBlendBase, BmSDK.I
     public unsafe virtual void SetActiveChild(int ChildIndex, float BlendTime)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetActiveChild, "Engine.AnimNodeBlendList.SetActiveChild");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ChildIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BlendTime, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;

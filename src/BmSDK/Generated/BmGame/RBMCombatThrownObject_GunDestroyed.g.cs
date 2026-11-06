@@ -85,7 +85,8 @@ public partial class RBMCombatThrownObject_GunDestroyed : BmSDK.BmGame.RBMCombat
     public unsafe virtual System.Numerics.Vector3 GetSomewhatRandomDirectionVectorAwayFromThug()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSomewhatRandomDirectionVectorAwayFromThug, "BmGame.RBMCombatThrownObject_GunDestroyed.GetSomewhatRandomDirectionVectorAwayFromThug");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
     }
@@ -97,7 +98,8 @@ public partial class RBMCombatThrownObject_GunDestroyed : BmSDK.BmGame.RBMCombat
     public unsafe override void Tick(float DeltaTime)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RBMCombatThrownObject_GunDestroyed.Tick");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -110,7 +112,8 @@ public partial class RBMCombatThrownObject_GunDestroyed : BmSDK.BmGame.RBMCombat
     public unsafe override void PostBeginPlay()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RBMCombatThrownObject_GunDestroyed.PostBeginPlay");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

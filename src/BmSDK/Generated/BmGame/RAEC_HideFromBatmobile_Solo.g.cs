@@ -85,7 +85,8 @@ public partial class RAEC_HideFromBatmobile_Solo : BmSDK.BmGame.RAlertEventCoord
     public unsafe virtual System.Numerics.Vector3 GetHideAnimOffset(BmSDK.BmGame.RPredHideFromBatmobilePoint NewPoint, BmSDK.Class HideType, out float MeetingPointTravelDist)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHideAnimOffset, "BmGame.RAEC_HideFromBatmobile_Solo.GetHideAnimOffset");
-        byte* paramsPtr = stackalloc byte[112];
+        byte* paramsPtr = stackalloc byte[128];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HideType, paramsPtr + 8);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out MeetingPointTravelDist);
@@ -102,7 +103,8 @@ public partial class RAEC_HideFromBatmobile_Solo : BmSDK.BmGame.RAlertEventCoord
     public unsafe virtual void SetHidePoint(BmSDK.BmGame.RPredHideFromBatmobilePoint NewPoint)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHidePoint, "BmGame.RAEC_HideFromBatmobile_Solo.SetHidePoint");
-        byte* paramsPtr = stackalloc byte[48];
+        byte* paramsPtr = stackalloc byte[64];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPoint, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

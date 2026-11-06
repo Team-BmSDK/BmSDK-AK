@@ -85,7 +85,8 @@ public partial class Input : BmSDK.Engine.Interaction, BmSDK.IGameObject
     public unsafe virtual bool IsThumbMouseButton2Pressed()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsThumbMouseButton2Pressed, "Engine.Input.IsThumbMouseButton2Pressed");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -104,7 +105,8 @@ public partial class Input : BmSDK.Engine.Interaction, BmSDK.IGameObject
     public unsafe virtual bool IsThumbMouseButtonPressed()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsThumbMouseButtonPressed, "Engine.Input.IsThumbMouseButtonPressed");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -123,7 +125,8 @@ public partial class Input : BmSDK.Engine.Interaction, BmSDK.IGameObject
     public unsafe virtual bool IsLeftShiftPressed()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsLeftShiftPressed, "Engine.Input.IsLeftShiftPressed");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -142,7 +145,8 @@ public partial class Input : BmSDK.Engine.Interaction, BmSDK.IGameObject
     public unsafe virtual bool IsLeftCtrlPressed()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsLeftCtrlPressed, "Engine.Input.IsLeftCtrlPressed");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -161,7 +165,8 @@ public partial class Input : BmSDK.Engine.Interaction, BmSDK.IGameObject
     public unsafe virtual void SetBind(BmSDK.FName BindName, BmSDK.FString Command)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBind, "Engine.Input.SetBind");
-        byte* paramsPtr = stackalloc byte[56];
+        byte* paramsPtr = stackalloc byte[72];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BindName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Command, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -175,7 +180,8 @@ public partial class Input : BmSDK.Engine.Interaction, BmSDK.IGameObject
     public unsafe virtual void ResetInput()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetInput, "Engine.Input.ResetInput");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

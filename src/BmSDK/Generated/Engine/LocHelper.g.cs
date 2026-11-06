@@ -85,7 +85,8 @@ public partial class LocHelper : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static BmSDK.Engine.LocHelper GetInstance()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetInstance, "Engine.LocHelper.GetInstance");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.LocHelper>(paramsPtr + 0);
     }
@@ -97,7 +98,8 @@ public partial class LocHelper : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.FString GetLegalCountry()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLegalCountry, "Engine.LocHelper.GetLegalCountry");
-        byte* paramsPtr = stackalloc byte[92];
+        byte* paramsPtr = stackalloc byte[108];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
     }
@@ -109,7 +111,8 @@ public partial class LocHelper : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual bool FindCountryCodeInfo(BmSDK.FString CountryCode, out BmSDK.Engine.LocHelper.FCountryCodeMap Output)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindCountryCodeInfo, "Engine.LocHelper.FindCountryCodeInfo");
-        byte* paramsPtr = stackalloc byte[96];
+        byte* paramsPtr = stackalloc byte[112];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CountryCode, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Output = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.LocHelper.FCountryCodeMap>(paramsPtr + 16);
@@ -123,7 +126,8 @@ public partial class LocHelper : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual int GetValidAge()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetValidAge, "Engine.LocHelper.GetValidAge");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -142,7 +146,8 @@ public partial class LocHelper : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual bool GetIsCountryValid()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetIsCountryValid, "Engine.LocHelper.GetIsCountryValid");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -161,7 +166,8 @@ public partial class LocHelper : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual bool GetIsAgeValid()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetIsAgeValid, "Engine.LocHelper.GetIsAgeValid");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -180,7 +186,8 @@ public partial class LocHelper : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.FString GetCountry()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCountry, "Engine.LocHelper.GetCountry");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -199,7 +206,8 @@ public partial class LocHelper : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual int GetCountryCodeLookupIndex()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCountryCodeLookupIndex, "Engine.LocHelper.GetCountryCodeLookupIndex");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

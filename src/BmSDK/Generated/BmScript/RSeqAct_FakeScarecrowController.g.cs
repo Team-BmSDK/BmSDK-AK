@@ -85,7 +85,8 @@ public partial class RSeqAct_FakeScarecrowController : BmSDK.BmGame.RSeqAct_Comb
     public unsafe static int GetObjClassVersion()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmScript.RSeqAct_FakeScarecrowController.GetObjClassVersion");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
@@ -97,7 +98,8 @@ public partial class RSeqAct_FakeScarecrowController : BmSDK.BmGame.RSeqAct_Comb
     public unsafe virtual void NotifySomeonePickedUp()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifySomeonePickedUp, "BmScript.RSeqAct_FakeScarecrowController.NotifySomeonePickedUp");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -109,7 +111,8 @@ public partial class RSeqAct_FakeScarecrowController : BmSDK.BmGame.RSeqAct_Comb
     public unsafe virtual void ThugKnockedOver()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ThugKnockedOver, "BmScript.RSeqAct_FakeScarecrowController.ThugKnockedOver");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -121,7 +124,8 @@ public partial class RSeqAct_FakeScarecrowController : BmSDK.BmGame.RSeqAct_Comb
     public unsafe virtual void ThugDied()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ThugDied, "BmScript.RSeqAct_FakeScarecrowController.ThugDied");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -133,7 +137,8 @@ public partial class RSeqAct_FakeScarecrowController : BmSDK.BmGame.RSeqAct_Comb
     public unsafe virtual void BatmanPickedMeUp(BmSDK.BmScript.RPawnBossFakeScarecrow PickedUpThug)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BatmanPickedMeUp, "BmScript.RSeqAct_FakeScarecrowController.BatmanPickedMeUp");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PickedUpThug, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -146,7 +151,8 @@ public partial class RSeqAct_FakeScarecrowController : BmSDK.BmGame.RSeqAct_Comb
     public unsafe override bool Update(float DeltaTime)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Update, "BmScript.RSeqAct_FakeScarecrowController.Update");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
@@ -159,7 +165,8 @@ public partial class RSeqAct_FakeScarecrowController : BmSDK.BmGame.RSeqAct_Comb
     public unsafe virtual void UpdateBmSpeed(float DeltaTime)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateBmSpeed, "BmScript.RSeqAct_FakeScarecrowController.UpdateBmSpeed");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -172,7 +179,8 @@ public partial class RSeqAct_FakeScarecrowController : BmSDK.BmGame.RSeqAct_Comb
     public unsafe virtual void SlowBm()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SlowBm, "BmScript.RSeqAct_FakeScarecrowController.SlowBm");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -184,7 +192,8 @@ public partial class RSeqAct_FakeScarecrowController : BmSDK.BmGame.RSeqAct_Comb
     public unsafe override void Activated()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmScript.RSeqAct_FakeScarecrowController.Activated");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

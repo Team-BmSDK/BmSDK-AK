@@ -80,7 +80,8 @@ public partial class ParticleModuleEventSendToGame : BmSDK.GameObject, BmSDK.IGa
     public unsafe virtual void DoEvent(out System.Numerics.Vector3 InCollideDirection, out System.Numerics.Vector3 InHitLocation, out System.Numerics.Vector3 InHitNormal, out BmSDK.FName InBoneName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoEvent, "Engine.ParticleModuleEventSendToGame.DoEvent");
-        byte* paramsPtr = stackalloc byte[44];
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out InCollideDirection);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InCollideDirection, paramsPtr + 0);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out InHitLocation);

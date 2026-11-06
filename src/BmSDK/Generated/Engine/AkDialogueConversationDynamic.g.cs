@@ -85,7 +85,8 @@ public partial class AkDialogueConversationDynamic : BmSDK.Engine.AkDialogueSpee
     public unsafe virtual BmSDK.TArray<BmSDK.Engine.AkDialogueVoice> GetVoiceListForBindingIndex(int OrderIndex)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVoiceListForBindingIndex, "Engine.AkDialogueConversationDynamic.GetVoiceListForBindingIndex");
-        byte* paramsPtr = stackalloc byte[40];
+        byte* paramsPtr = stackalloc byte[56];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OrderIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.Engine.AkDialogueVoice>>(paramsPtr + 4);
@@ -98,7 +99,8 @@ public partial class AkDialogueConversationDynamic : BmSDK.Engine.AkDialogueSpee
     public unsafe virtual bool IsResolved()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsResolved, "Engine.AkDialogueConversationDynamic.IsResolved");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -117,7 +119,8 @@ public partial class AkDialogueConversationDynamic : BmSDK.Engine.AkDialogueSpee
     public unsafe virtual void Unresolve()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Unresolve, "Engine.AkDialogueConversationDynamic.Unresolve");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -136,7 +139,8 @@ public partial class AkDialogueConversationDynamic : BmSDK.Engine.AkDialogueSpee
     public unsafe virtual bool AutoResolve(bool forceMultiVoiceConv = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AutoResolve, "Engine.AkDialogueConversationDynamic.AutoResolve");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(forceMultiVoiceConv, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -156,7 +160,8 @@ public partial class AkDialogueConversationDynamic : BmSDK.Engine.AkDialogueSpee
     public unsafe virtual bool ResolveFromIds(BmSDK.TArray<int> spkrVoiceIds)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResolveFromIds, "Engine.AkDialogueConversationDynamic.ResolveFromIds");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(spkrVoiceIds, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -176,7 +181,8 @@ public partial class AkDialogueConversationDynamic : BmSDK.Engine.AkDialogueSpee
     public unsafe virtual bool Resolve(BmSDK.TArray<BmSDK.Engine.AkDialogueVoice> spkrVoices)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Resolve, "Engine.AkDialogueConversationDynamic.Resolve");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(spkrVoices, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -196,7 +202,8 @@ public partial class AkDialogueConversationDynamic : BmSDK.Engine.AkDialogueSpee
     public unsafe virtual bool ResolveAll(BmSDK.TArray<BmSDK.Engine.AkDialogueVoice> spkrVoices)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResolveAll, "Engine.AkDialogueConversationDynamic.ResolveAll");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(spkrVoices, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -216,7 +223,8 @@ public partial class AkDialogueConversationDynamic : BmSDK.Engine.AkDialogueSpee
     public unsafe virtual float GetTimeSinceLastPlayed()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTimeSinceLastPlayed, "Engine.AkDialogueConversationDynamic.GetTimeSinceLastPlayed");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -235,7 +243,8 @@ public partial class AkDialogueConversationDynamic : BmSDK.Engine.AkDialogueSpee
     public unsafe virtual float GetTotalPlayCount()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTotalPlayCount, "Engine.AkDialogueConversationDynamic.GetTotalPlayCount");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -254,7 +263,8 @@ public partial class AkDialogueConversationDynamic : BmSDK.Engine.AkDialogueSpee
     public unsafe virtual float GetMaxPlayCount()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMaxPlayCount, "Engine.AkDialogueConversationDynamic.GetMaxPlayCount");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -273,7 +283,8 @@ public partial class AkDialogueConversationDynamic : BmSDK.Engine.AkDialogueSpee
     public unsafe virtual int GetDynamicVoiceCount()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDynamicVoiceCount, "Engine.AkDialogueConversationDynamic.GetDynamicVoiceCount");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -292,7 +303,8 @@ public partial class AkDialogueConversationDynamic : BmSDK.Engine.AkDialogueSpee
     public unsafe override int GetVoiceCount()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVoiceCount, "Engine.AkDialogueConversationDynamic.GetVoiceCount");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

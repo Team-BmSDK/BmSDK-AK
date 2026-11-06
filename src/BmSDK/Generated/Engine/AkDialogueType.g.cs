@@ -85,7 +85,8 @@ public partial class AkDialogueType : BmSDK.Engine.AkHash, BmSDK.IGameObject
     public unsafe virtual bool IsPersistent()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPersistent, "Engine.AkDialogueType.IsPersistent");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -104,7 +105,8 @@ public partial class AkDialogueType : BmSDK.Engine.AkHash, BmSDK.IGameObject
     public unsafe virtual bool ShowSubtitles()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowSubtitles, "Engine.AkDialogueType.ShowSubtitles");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -123,7 +125,8 @@ public partial class AkDialogueType : BmSDK.Engine.AkHash, BmSDK.IGameObject
     public unsafe virtual bool IsEmote()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsEmote, "Engine.AkDialogueType.IsEmote");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -142,7 +145,8 @@ public partial class AkDialogueType : BmSDK.Engine.AkHash, BmSDK.IGameObject
     public unsafe virtual int BasePriority()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BasePriority, "Engine.AkDialogueType.BasePriority");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

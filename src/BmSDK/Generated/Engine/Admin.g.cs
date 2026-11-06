@@ -85,7 +85,8 @@ public partial class Admin : BmSDK.Engine.PlayerController, BmSDK.IGameObject
     public unsafe virtual void ServerSwitch(BmSDK.FString URL)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ServerSwitch, "Engine.Admin.ServerSwitch");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(URL, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -98,7 +99,8 @@ public partial class Admin : BmSDK.Engine.PlayerController, BmSDK.IGameObject
     public unsafe virtual void Switch(BmSDK.FString URL)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Switch, "Engine.Admin.Switch");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(URL, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -111,7 +113,8 @@ public partial class Admin : BmSDK.Engine.PlayerController, BmSDK.IGameObject
     public unsafe virtual void ServerRestartMap()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ServerRestartMap, "Engine.Admin.ServerRestartMap");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -123,7 +126,8 @@ public partial class Admin : BmSDK.Engine.PlayerController, BmSDK.IGameObject
     public unsafe virtual void RestartMap()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RestartMap, "Engine.Admin.RestartMap");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -135,7 +139,8 @@ public partial class Admin : BmSDK.Engine.PlayerController, BmSDK.IGameObject
     public unsafe virtual void PlayerList()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayerList, "Engine.Admin.PlayerList");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -147,7 +152,8 @@ public partial class Admin : BmSDK.Engine.PlayerController, BmSDK.IGameObject
     public unsafe virtual void ServerKick(BmSDK.FString S)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ServerKick, "Engine.Admin.ServerKick");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(S, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -160,7 +166,8 @@ public partial class Admin : BmSDK.Engine.PlayerController, BmSDK.IGameObject
     public unsafe virtual void Kick(BmSDK.FString S)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Kick, "Engine.Admin.Kick");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(S, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -173,7 +180,8 @@ public partial class Admin : BmSDK.Engine.PlayerController, BmSDK.IGameObject
     public unsafe virtual void ServerKickBan(BmSDK.FString S)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ServerKickBan, "Engine.Admin.ServerKickBan");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(S, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -186,7 +194,8 @@ public partial class Admin : BmSDK.Engine.PlayerController, BmSDK.IGameObject
     public unsafe virtual void KickBan(BmSDK.FString S)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_KickBan, "Engine.Admin.KickBan");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(S, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -199,7 +208,8 @@ public partial class Admin : BmSDK.Engine.PlayerController, BmSDK.IGameObject
     public unsafe virtual void ServerAdmin(BmSDK.FString CommandLine)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ServerAdmin, "Engine.Admin.ServerAdmin");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CommandLine, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -212,7 +222,8 @@ public partial class Admin : BmSDK.Engine.PlayerController, BmSDK.IGameObject
     public unsafe virtual void _Admin(BmSDK.FString CommandLine)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn__Admin, "Engine.Admin.Admin");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CommandLine, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -225,7 +236,8 @@ public partial class Admin : BmSDK.Engine.PlayerController, BmSDK.IGameObject
     public unsafe override void PostBeginPlay()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "Engine.Admin.PostBeginPlay");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

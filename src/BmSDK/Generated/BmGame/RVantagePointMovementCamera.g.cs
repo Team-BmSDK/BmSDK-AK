@@ -85,7 +85,8 @@ public partial class RVantagePointMovementCamera : BmSDK.BmGame.RCameraActor, Bm
     public unsafe virtual void CalculateControlPoints()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculateControlPoints, "BmGame.RVantagePointMovementCamera.CalculateControlPoints");
-        byte* paramsPtr = stackalloc byte[52];
+        byte* paramsPtr = stackalloc byte[68];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -97,7 +98,8 @@ public partial class RVantagePointMovementCamera : BmSDK.BmGame.RCameraActor, Bm
     public unsafe virtual System.Numerics.Vector3 GetPosition(float Proportion)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPosition, "BmGame.RVantagePointMovementCamera.GetPosition");
-        byte* paramsPtr = stackalloc byte[52];
+        byte* paramsPtr = stackalloc byte[68];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Proportion, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 4);
@@ -110,7 +112,8 @@ public partial class RVantagePointMovementCamera : BmSDK.BmGame.RCameraActor, Bm
     public unsafe override void Tick(float DeltaTime)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RVantagePointMovementCamera.Tick");
-        byte* paramsPtr = stackalloc byte[40];
+        byte* paramsPtr = stackalloc byte[56];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -123,7 +126,8 @@ public partial class RVantagePointMovementCamera : BmSDK.BmGame.RCameraActor, Bm
     public unsafe virtual void BeginMovement()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BeginMovement, "BmGame.RVantagePointMovementCamera.BeginMovement");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -135,7 +139,8 @@ public partial class RVantagePointMovementCamera : BmSDK.BmGame.RCameraActor, Bm
     public unsafe virtual void Init(BmSDK.BmGame.RPlayerController PC, BmSDK.BmGame.RHidePoint DestHidePoint)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmGame.RVantagePointMovementCamera.Init");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DestHidePoint, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

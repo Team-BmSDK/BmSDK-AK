@@ -85,7 +85,8 @@ public partial class RCharacterRandom : BmSDK.BmGame.RCharacter, BmSDK.IGameObje
     public unsafe static BmSDK.Class GetRandomType(int randomVal)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRandomType, "BmGame.RCharacterRandom.GetRandomType");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(randomVal, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Class>(paramsPtr + 4);

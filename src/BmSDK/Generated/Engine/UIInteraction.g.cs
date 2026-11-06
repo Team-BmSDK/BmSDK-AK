@@ -85,7 +85,8 @@ public partial class UIInteraction : BmSDK.Engine.Interaction, BmSDK.IGameObject
     public unsafe override void NotifyGameSessionEnded()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyGameSessionEnded, "Engine.UIInteraction.NotifyGameSessionEnded");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -97,7 +98,8 @@ public partial class UIInteraction : BmSDK.Engine.Interaction, BmSDK.IGameObject
     public unsafe static BmSDK.Engine.OnlineSubsystem.ENATType GetNATType()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNATType, "Engine.UIInteraction.GetNATType");
-        byte* paramsPtr = stackalloc byte[29];
+        byte* paramsPtr = stackalloc byte[45];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.OnlineSubsystem.ENATType>(paramsPtr + 0);
     }
@@ -109,7 +111,8 @@ public partial class UIInteraction : BmSDK.Engine.Interaction, BmSDK.IGameObject
     public unsafe static int GetConnectedGamepadCount(BmSDK.TArray<bool> ControllerConnectionStatusOverrides = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetConnectedGamepadCount, "Engine.UIInteraction.GetConnectedGamepadCount");
-        byte* paramsPtr = stackalloc byte[28];
+        byte* paramsPtr = stackalloc byte[44];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerConnectionStatusOverrides, paramsPtr + 0);
         var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -124,7 +127,8 @@ public partial class UIInteraction : BmSDK.Engine.Interaction, BmSDK.IGameObject
     public unsafe static bool IsGamepadConnected(int ControllerId)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsGamepadConnected, "Engine.UIInteraction.IsGamepadConnected");
-        byte* paramsPtr = stackalloc byte[36];
+        byte* paramsPtr = stackalloc byte[52];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
@@ -137,7 +141,8 @@ public partial class UIInteraction : BmSDK.Engine.Interaction, BmSDK.IGameObject
     public unsafe static int GetNumGuestsLoggedIn()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNumGuestsLoggedIn, "Engine.UIInteraction.GetNumGuestsLoggedIn");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
@@ -149,7 +154,8 @@ public partial class UIInteraction : BmSDK.Engine.Interaction, BmSDK.IGameObject
     public unsafe static int GetLoggedInPlayerCount(bool bRequireOnlineLogin = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLoggedInPlayerCount, "Engine.UIInteraction.GetLoggedInPlayerCount");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bRequireOnlineLogin, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 4);
@@ -162,7 +168,8 @@ public partial class UIInteraction : BmSDK.Engine.Interaction, BmSDK.IGameObject
     public unsafe static bool IsLoggedIn(int ControllerId, bool bRequireOnlineLogin = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsLoggedIn, "Engine.UIInteraction.IsLoggedIn");
-        byte* paramsPtr = stackalloc byte[17];
+        byte* paramsPtr = stackalloc byte[33];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bRequireOnlineLogin, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -176,7 +183,8 @@ public partial class UIInteraction : BmSDK.Engine.Interaction, BmSDK.IGameObject
     public unsafe static bool HasLinkConnection()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasLinkConnection, "Engine.UIInteraction.HasLinkConnection");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
@@ -188,7 +196,8 @@ public partial class UIInteraction : BmSDK.Engine.Interaction, BmSDK.IGameObject
     public unsafe virtual BmSDK.Engine.OnlineSubsystem.ELoginStatus GetLowestLoginStatusOfControllers()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLowestLoginStatusOfControllers, "Engine.UIInteraction.GetLowestLoginStatusOfControllers");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.OnlineSubsystem.ELoginStatus>(paramsPtr + 0);
     }
@@ -200,7 +209,8 @@ public partial class UIInteraction : BmSDK.Engine.Interaction, BmSDK.IGameObject
     public unsafe static BmSDK.Engine.OnlineSubsystem.ELoginStatus GetLoginStatus(int ControllerId)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLoginStatus, "Engine.UIInteraction.GetLoginStatus");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.OnlineSubsystem.ELoginStatus>(paramsPtr + 4);
@@ -213,7 +223,8 @@ public partial class UIInteraction : BmSDK.Engine.Interaction, BmSDK.IGameObject
     public unsafe override void NotifyPlayerRemoved(int PlayerIndex, BmSDK.Engine.LocalPlayer RemovedPlayer)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyPlayerRemoved, "Engine.UIInteraction.NotifyPlayerRemoved");
-        byte* paramsPtr = stackalloc byte[44];
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RemovedPlayer, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -227,7 +238,8 @@ public partial class UIInteraction : BmSDK.Engine.Interaction, BmSDK.IGameObject
     public unsafe override void NotifyPlayerAdded(int PlayerIndex, BmSDK.Engine.LocalPlayer AddedPlayer)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyPlayerAdded, "Engine.UIInteraction.NotifyPlayerAdded");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AddedPlayer, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -241,7 +253,8 @@ public partial class UIInteraction : BmSDK.Engine.Interaction, BmSDK.IGameObject
     public unsafe static BmSDK.Engine.LocalPlayer GetLocalPlayer(int PlayerIndex)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLocalPlayer, "Engine.UIInteraction.GetLocalPlayer");
-        byte* paramsPtr = stackalloc byte[28];
+        byte* paramsPtr = stackalloc byte[44];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.LocalPlayer>(paramsPtr + 4);
@@ -254,7 +267,8 @@ public partial class UIInteraction : BmSDK.Engine.Interaction, BmSDK.IGameObject
     public unsafe static BmSDK.Engine.DataStoreClient GetDataStoreClient()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDataStoreClient, "Engine.UIInteraction.GetDataStoreClient");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -273,7 +287,8 @@ public partial class UIInteraction : BmSDK.Engine.Interaction, BmSDK.IGameObject
     public unsafe static int GetPlayerControllerId(int PlayerIndex)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPlayerControllerId, "Engine.UIInteraction.GetPlayerControllerId");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerIndex, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -293,7 +308,8 @@ public partial class UIInteraction : BmSDK.Engine.Interaction, BmSDK.IGameObject
     public unsafe static int GetPlayerIndex(int ControllerId)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPlayerIndex, "Engine.UIInteraction.GetPlayerIndex");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerId, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -313,7 +329,8 @@ public partial class UIInteraction : BmSDK.Engine.Interaction, BmSDK.IGameObject
     public unsafe static int GetPlayerCount()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPlayerCount, "Engine.UIInteraction.GetPlayerCount");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

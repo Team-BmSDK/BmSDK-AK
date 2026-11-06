@@ -85,7 +85,8 @@ public partial class JsonObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static BmSDK.Engine.JsonObject DecodeJson(BmSDK.FString Str)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DecodeJson, "Engine.JsonObject.DecodeJson");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Str, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -105,7 +106,8 @@ public partial class JsonObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static BmSDK.FString EncodeJson(BmSDK.Engine.JsonObject Root)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EncodeJson, "Engine.JsonObject.EncodeJson");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Root, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -125,7 +127,8 @@ public partial class JsonObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetBoolValue(BmSDK.FString Key, bool Value)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBoolValue, "Engine.JsonObject.SetBoolValue");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Key, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -139,7 +142,8 @@ public partial class JsonObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetFloatValue(BmSDK.FString Key, float Value)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetFloatValue, "Engine.JsonObject.SetFloatValue");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Key, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -153,7 +157,8 @@ public partial class JsonObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetIntValue(BmSDK.FString Key, int Value)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetIntValue, "Engine.JsonObject.SetIntValue");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Key, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -167,7 +172,8 @@ public partial class JsonObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetStringValue(BmSDK.FString Key, BmSDK.FString Value)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetStringValue, "Engine.JsonObject.SetStringValue");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Key, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
@@ -188,7 +194,8 @@ public partial class JsonObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetObject(BmSDK.FString Key, BmSDK.Engine.JsonObject Object)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetObject, "Engine.JsonObject.SetObject");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Key, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Object, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
@@ -209,7 +216,8 @@ public partial class JsonObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual System.Numerics.Vector4 GetVector4Value(BmSDK.FString Key)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVector4Value, "Engine.JsonObject.GetVector4Value");
-        byte* paramsPtr = stackalloc byte[48];
+        byte* paramsPtr = stackalloc byte[64];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Key, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector4>(paramsPtr + 16);
@@ -222,7 +230,8 @@ public partial class JsonObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual System.Numerics.Vector3 GetVectorValue(BmSDK.FString Key)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVectorValue, "Engine.JsonObject.GetVectorValue");
-        byte* paramsPtr = stackalloc byte[44];
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Key, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 16);
@@ -235,7 +244,8 @@ public partial class JsonObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual bool GetBoolValue(BmSDK.FString Key)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBoolValue, "Engine.JsonObject.GetBoolValue");
-        byte* paramsPtr = stackalloc byte[36];
+        byte* paramsPtr = stackalloc byte[52];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Key, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
@@ -248,7 +258,8 @@ public partial class JsonObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual float GetFloatValue(BmSDK.FString Key)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFloatValue, "Engine.JsonObject.GetFloatValue");
-        byte* paramsPtr = stackalloc byte[36];
+        byte* paramsPtr = stackalloc byte[52];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Key, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 16);
@@ -261,7 +272,8 @@ public partial class JsonObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual int GetIntValue(BmSDK.FString Key)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetIntValue, "Engine.JsonObject.GetIntValue");
-        byte* paramsPtr = stackalloc byte[36];
+        byte* paramsPtr = stackalloc byte[52];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Key, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 16);
@@ -274,7 +286,8 @@ public partial class JsonObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.FString GetStringValueWithFallback(BmSDK.FString Key, BmSDK.FString Fallback)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStringValueWithFallback, "Engine.JsonObject.GetStringValueWithFallback");
-        byte* paramsPtr = stackalloc byte[64];
+        byte* paramsPtr = stackalloc byte[80];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Key, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Fallback, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -288,7 +301,8 @@ public partial class JsonObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.FString GetStringValue(BmSDK.FString Key)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStringValue, "Engine.JsonObject.GetStringValue");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Key, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -308,7 +322,8 @@ public partial class JsonObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.Engine.JsonObject GetObject(BmSDK.FString Key)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObject, "Engine.JsonObject.GetObject");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Key, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

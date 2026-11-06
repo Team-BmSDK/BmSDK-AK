@@ -85,7 +85,8 @@ public partial class AkCurve : BmSDK.Engine.AkHash, BmSDK.IGameObject
     public unsafe virtual float Map(float Input)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Map, "Engine.AkCurve.Map");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Input, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

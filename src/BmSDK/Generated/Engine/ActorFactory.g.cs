@@ -80,7 +80,8 @@ public partial class ActorFactory : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void PostCreateActor(BmSDK.Engine.Actor NewActor, BmSDK.Engine.SeqAct_ActorFactory ActorFactoryData = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostCreateActor, "Engine.ActorFactory.PostCreateActor");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewActor, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ActorFactoryData, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

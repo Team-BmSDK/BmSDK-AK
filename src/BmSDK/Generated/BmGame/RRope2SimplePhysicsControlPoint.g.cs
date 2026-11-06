@@ -85,7 +85,8 @@ public partial class RRope2SimplePhysicsControlPoint : BmSDK.GameObject, BmSDK.I
     public unsafe virtual void Invalidate()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Invalidate, "BmGame.RRope2SimplePhysicsControlPoint.Invalidate");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -104,7 +105,8 @@ public partial class RRope2SimplePhysicsControlPoint : BmSDK.GameObject, BmSDK.I
     public unsafe virtual bool GetIsValid()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetIsValid, "BmGame.RRope2SimplePhysicsControlPoint.GetIsValid");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -123,7 +125,8 @@ public partial class RRope2SimplePhysicsControlPoint : BmSDK.GameObject, BmSDK.I
     public unsafe virtual void SetVelocity(out System.Numerics.Vector3 NewVelocity)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetVelocity, "BmGame.RRope2SimplePhysicsControlPoint.SetVelocity");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out NewVelocity);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewVelocity, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -145,7 +148,8 @@ public partial class RRope2SimplePhysicsControlPoint : BmSDK.GameObject, BmSDK.I
     public unsafe virtual System.Numerics.Vector3 GetVelocity()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVelocity, "BmGame.RRope2SimplePhysicsControlPoint.GetVelocity");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -164,7 +168,8 @@ public partial class RRope2SimplePhysicsControlPoint : BmSDK.GameObject, BmSDK.I
     public unsafe virtual void SetPosition(out System.Numerics.Vector3 NewPosition)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetPosition, "BmGame.RRope2SimplePhysicsControlPoint.SetPosition");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out NewPosition);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPosition, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -186,7 +191,8 @@ public partial class RRope2SimplePhysicsControlPoint : BmSDK.GameObject, BmSDK.I
     public unsafe virtual System.Numerics.Vector3 GetPosition()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPosition, "BmGame.RRope2SimplePhysicsControlPoint.GetPosition");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -205,7 +211,8 @@ public partial class RRope2SimplePhysicsControlPoint : BmSDK.GameObject, BmSDK.I
     public unsafe virtual void ClearForces()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearForces, "BmGame.RRope2SimplePhysicsControlPoint.ClearForces");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -224,7 +231,8 @@ public partial class RRope2SimplePhysicsControlPoint : BmSDK.GameObject, BmSDK.I
     public unsafe virtual void ApplyImpulse(out System.Numerics.Vector3 ImpulseToApply)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyImpulse, "BmGame.RRope2SimplePhysicsControlPoint.ApplyImpulse");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out ImpulseToApply);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ImpulseToApply, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -246,7 +254,8 @@ public partial class RRope2SimplePhysicsControlPoint : BmSDK.GameObject, BmSDK.I
     public unsafe virtual void ApplyForce(out System.Numerics.Vector3 ForceToApply)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyForce, "BmGame.RRope2SimplePhysicsControlPoint.ApplyForce");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out ForceToApply);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ForceToApply, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -268,7 +277,8 @@ public partial class RRope2SimplePhysicsControlPoint : BmSDK.GameObject, BmSDK.I
     public unsafe virtual void SetControlPointPhysicsType(BmSDK.BmGame.RRope2SimplePhysicsControlPoint.ControlPointPhysicsType NewPhysicsType)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetControlPointPhysicsType, "BmGame.RRope2SimplePhysicsControlPoint.SetControlPointPhysicsType");
-        byte* paramsPtr = stackalloc byte[1];
+        byte* paramsPtr = stackalloc byte[17];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPhysicsType, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -288,7 +298,8 @@ public partial class RRope2SimplePhysicsControlPoint : BmSDK.GameObject, BmSDK.I
     public unsafe virtual BmSDK.BmGame.RRope2SimplePhysicsControlPoint.ControlPointPhysicsType GetControlPointPhysicsType()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetControlPointPhysicsType, "BmGame.RRope2SimplePhysicsControlPoint.GetControlPointPhysicsType");
-        byte* paramsPtr = stackalloc byte[1];
+        byte* paramsPtr = stackalloc byte[17];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

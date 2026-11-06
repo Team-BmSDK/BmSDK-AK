@@ -85,7 +85,8 @@ public partial class Pylon : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
     public unsafe virtual bool CanReachPylon(BmSDK.Engine.Pylon DestPylon, BmSDK.Engine.Controller C)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanReachPylon, "Engine.Pylon.CanReachPylon");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DestPylon, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(C, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
@@ -106,7 +107,8 @@ public partial class Pylon : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
     public unsafe override void PreStreamOut()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "Engine.Pylon.PreStreamOut");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -118,7 +120,8 @@ public partial class Pylon : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
     public unsafe override void Destroyed()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "Engine.Pylon.Destroyed");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -130,7 +133,8 @@ public partial class Pylon : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
     public unsafe virtual void DestroyCrossLevelPawns(bool bStreamedOut)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DestroyCrossLevelPawns, "Engine.Pylon.DestroyCrossLevelPawns");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bStreamedOut, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -143,7 +147,8 @@ public partial class Pylon : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
     public unsafe virtual void RemoveCrossLevelPawn(BmSDK.Engine.Pawn PawnToRemove)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveCrossLevelPawn, "Engine.Pylon.RemoveCrossLevelPawn");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PawnToRemove, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -156,7 +161,8 @@ public partial class Pylon : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
     public unsafe virtual void AddCrossLevelPawn(BmSDK.Engine.Pawn PawnToAdd)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddCrossLevelPawn, "Engine.Pylon.AddCrossLevelPawn");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PawnToAdd, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -169,7 +175,8 @@ public partial class Pylon : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
     public unsafe override void OnToggle(BmSDK.Engine.SeqAct_Toggle Action)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggle, "Engine.Pylon.OnToggle");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -182,7 +189,8 @@ public partial class Pylon : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
     public unsafe virtual bool IsEnabled()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsEnabled, "Engine.Pylon.IsEnabled");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
@@ -194,7 +202,8 @@ public partial class Pylon : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
     public unsafe virtual void SetEnabled(bool bEnabled)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetEnabled, "Engine.Pylon.SetEnabled");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bEnabled, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -207,7 +216,8 @@ public partial class Pylon : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
     public unsafe virtual void PylonLoadedTimer()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PylonLoadedTimer, "Engine.Pylon.PylonLoadedTimer");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -219,7 +229,8 @@ public partial class Pylon : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
     public unsafe override void PostBeginPlay()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "Engine.Pylon.PostBeginPlay");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -231,7 +242,8 @@ public partial class Pylon : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
     public unsafe virtual void VerifyTopLevelConnections()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_VerifyTopLevelConnections, "Engine.Pylon.VerifyTopLevelConnections");
-        byte* paramsPtr = stackalloc byte[60];
+        byte* paramsPtr = stackalloc byte[76];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -243,7 +255,8 @@ public partial class Pylon : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
     public unsafe virtual System.Numerics.Vector3 GetTestPathExtent()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTestPathExtent, "Engine.Pylon.GetTestPathExtent");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
     }
@@ -255,7 +268,8 @@ public partial class Pylon : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
     public unsafe virtual void FlushDynamicEdges()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FlushDynamicEdges, "Engine.Pylon.FlushDynamicEdges");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -274,7 +288,8 @@ public partial class Pylon : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
     public unsafe virtual void UpdateMeshForPreExistingNavMeshObstacles()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateMeshForPreExistingNavMeshObstacles, "Engine.Pylon.UpdateMeshForPreExistingNavMeshObstacles");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -293,7 +308,8 @@ public partial class Pylon : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
     public unsafe virtual void OnPylonStatusChange()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnPylonStatusChange, "Engine.Pylon.OnPylonStatusChange");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -312,7 +328,8 @@ public partial class Pylon : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
     public unsafe virtual void OutputPathObjectEdges(BmSDK.Engine.Actor TestForActor = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OutputPathObjectEdges, "Engine.Pylon.OutputPathObjectEdges");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestForActor, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -332,7 +349,8 @@ public partial class Pylon : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
     public unsafe virtual bool HasVisibilityInfo()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasVisibilityInfo, "Engine.Pylon.HasVisibilityInfo");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -351,7 +369,8 @@ public partial class Pylon : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
     public unsafe virtual float GetTimeSinceVertSeen(int VertID)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTimeSinceVertSeen, "Engine.Pylon.GetTimeSinceVertSeen");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VertID, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -371,7 +390,8 @@ public partial class Pylon : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
     public unsafe virtual void MarkVertAsSeen(int VertID)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MarkVertAsSeen, "Engine.Pylon.MarkVertAsSeen");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VertID, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -391,7 +411,8 @@ public partial class Pylon : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
     public unsafe virtual bool CanSeeVertFromVert(int LookToVertID, int LookFromVertID)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanSeeVertFromVert, "Engine.Pylon.CanSeeVertFromVert");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LookToVertID, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LookFromVertID, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
@@ -412,7 +433,8 @@ public partial class Pylon : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
     public unsafe virtual System.Numerics.Vector3 GetVertLocation(int VertID)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVertLocation, "Engine.Pylon.GetVertLocation");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VertID, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

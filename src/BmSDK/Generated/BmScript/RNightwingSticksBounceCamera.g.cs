@@ -85,7 +85,8 @@ public partial class RNightwingSticksBounceCamera : BmSDK.BmGame.RBatarangCamera
     public unsafe override void GetTrackingPositionAndRotation(out System.Numerics.Vector3 Out_Position, out BmSDK.Rotator out_Rotation)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTrackingPositionAndRotation, "BmScript.RNightwingSticksBounceCamera.GetTrackingPositionAndRotation");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out Out_Position);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Out_Position, paramsPtr + 0);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out out_Rotation);

@@ -85,7 +85,8 @@ public partial class PostProcessChain : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.Engine.PostProcessEffect FindPostProcessEffect(BmSDK.FName EffectName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindPostProcessEffect, "Engine.PostProcessChain.FindPostProcessEffect");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EffectName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

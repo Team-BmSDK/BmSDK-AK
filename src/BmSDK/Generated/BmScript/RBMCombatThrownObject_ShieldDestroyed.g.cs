@@ -85,7 +85,8 @@ public partial class RBMCombatThrownObject_ShieldDestroyed : BmSDK.BmGame.RBMCom
     public unsafe override void DoEvent()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoEvent, "BmScript.RBMCombatThrownObject_ShieldDestroyed.DoEvent");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

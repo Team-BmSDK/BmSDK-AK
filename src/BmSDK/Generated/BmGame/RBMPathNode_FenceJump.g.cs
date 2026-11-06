@@ -85,7 +85,8 @@ public partial class RBMPathNode_FenceJump : BmSDK.BmGame.RBMPathNode_VariablePo
     public unsafe virtual void TestAndAddStandPoint(System.Numerics.Vector3 TargetPoint, System.Numerics.Vector3 FencePoint, System.Numerics.Vector3 FenceNormal, out BmSDK.TArray<System.Numerics.Vector3> StandPointList)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TestAndAddStandPoint, "BmGame.RBMPathNode_FenceJump.TestAndAddStandPoint");
-        byte* paramsPtr = stackalloc byte[84];
+        byte* paramsPtr = stackalloc byte[100];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FencePoint, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FenceNormal, paramsPtr + 24);
@@ -101,7 +102,8 @@ public partial class RBMPathNode_FenceJump : BmSDK.BmGame.RBMPathNode_VariablePo
     public unsafe virtual void GetStandPointsThatCanSeeTargetPoint(System.Numerics.Vector3 TargetPoint, out BmSDK.TArray<System.Numerics.Vector3> StandPointList)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStandPointsThatCanSeeTargetPoint, "BmGame.RBMPathNode_FenceJump.GetStandPointsThatCanSeeTargetPoint");
-        byte* paramsPtr = stackalloc byte[112];
+        byte* paramsPtr = stackalloc byte[128];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetPoint, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         StandPointList = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<System.Numerics.Vector3>>(paramsPtr + 12);
@@ -115,7 +117,8 @@ public partial class RBMPathNode_FenceJump : BmSDK.BmGame.RBMPathNode_VariablePo
     public unsafe virtual System.Numerics.Vector3 GetEyePosForFence(System.Numerics.Vector3 StandPoint, System.Numerics.Vector3 FenceTopPoint)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetEyePosForFence, "BmGame.RBMPathNode_FenceJump.GetEyePosForFence");
-        byte* paramsPtr = stackalloc byte[48];
+        byte* paramsPtr = stackalloc byte[64];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StandPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FenceTopPoint, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -129,7 +132,8 @@ public partial class RBMPathNode_FenceJump : BmSDK.BmGame.RBMPathNode_VariablePo
     public unsafe virtual void UseFenceJump(BmSDK.Engine.NavigationHandle Handle, BmSDK.BmGame.RBMPawnAI User, int EdgeType, System.Numerics.Vector3 JumpDirection, System.Numerics.Vector3 JumpLocation)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UseFenceJump, "BmGame.RBMPathNode_FenceJump.UseFenceJump");
-        byte* paramsPtr = stackalloc byte[52];
+        byte* paramsPtr = stackalloc byte[68];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Handle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(User, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EdgeType, paramsPtr + 16);
@@ -146,7 +150,8 @@ public partial class RBMPathNode_FenceJump : BmSDK.BmGame.RBMPathNode_VariablePo
     public unsafe override System.Numerics.Vector3 GetReferencePoint(BmSDK.BmGame.RBMPawnAI Jumper)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetReferencePoint, "BmGame.RBMPathNode_FenceJump.GetReferencePoint");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Jumper, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 8);

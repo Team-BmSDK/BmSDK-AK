@@ -85,7 +85,8 @@ public partial class RDownloadableContentManager : BmSDK.Engine.DownloadableCont
     public unsafe virtual void UnloadDLC()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnloadDLC, "BmGame.RDownloadableContentManager.UnloadDLC");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -97,7 +98,8 @@ public partial class RDownloadableContentManager : BmSDK.Engine.DownloadableCont
     public unsafe override void RefreshDLCEnumComplete()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RefreshDLCEnumComplete, "BmGame.RDownloadableContentManager.RefreshDLCEnumComplete");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -109,7 +111,8 @@ public partial class RDownloadableContentManager : BmSDK.Engine.DownloadableCont
     public unsafe override void RefreshDLC()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RefreshDLC, "BmGame.RDownloadableContentManager.RefreshDLC");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -121,7 +124,8 @@ public partial class RDownloadableContentManager : BmSDK.Engine.DownloadableCont
     public unsafe virtual bool IsScanInProgress()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsScanInProgress, "BmGame.RDownloadableContentManager.IsScanInProgress");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }

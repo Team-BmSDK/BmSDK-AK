@@ -85,7 +85,8 @@ public partial class RSkelControlTankTrack : BmSDK.Engine.SkelControlBase, BmSDK
     public unsafe virtual void SetSuspensionPositions(float Stride, float Front, float Rear)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSuspensionPositions, "BmGame.RSkelControlTankTrack.SetSuspensionPositions");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Stride, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Front, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Rear, paramsPtr + 8);

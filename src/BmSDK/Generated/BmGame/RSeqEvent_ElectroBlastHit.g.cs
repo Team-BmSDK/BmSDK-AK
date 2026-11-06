@@ -85,7 +85,8 @@ public partial class RSeqEvent_ElectroBlastHit : BmSDK.Engine.SequenceEvent, BmS
     public unsafe virtual void SetDropDist(float NewDropDist)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDropDist, "BmGame.RSeqEvent_ElectroBlastHit.SetDropDist");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewDropDist, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

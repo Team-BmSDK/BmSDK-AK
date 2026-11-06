@@ -80,7 +80,8 @@ public partial class StateObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void Disable(BmSDK.FName ProbeFunc)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Disable, "Core.StateObject.Disable");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProbeFunc, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -100,7 +101,8 @@ public partial class StateObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void Enable(BmSDK.FName ProbeFunc)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Enable, "Core.StateObject.Enable");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProbeFunc, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -120,7 +122,8 @@ public partial class StateObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void ContinuedState()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ContinuedState, "Core.StateObject.ContinuedState");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -132,7 +135,8 @@ public partial class StateObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void PausedState()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PausedState, "Core.StateObject.PausedState");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -144,7 +148,8 @@ public partial class StateObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void PoppedState()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PoppedState, "Core.StateObject.PoppedState");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -156,7 +161,8 @@ public partial class StateObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void PushedState()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PushedState, "Core.StateObject.PushedState");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -168,7 +174,8 @@ public partial class StateObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void EndState(BmSDK.FName NextStateName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EndState, "Core.StateObject.EndState");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NextStateName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -181,7 +188,8 @@ public partial class StateObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void BeginState(BmSDK.FName PreviousStateName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BeginState, "Core.StateObject.BeginState");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PreviousStateName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -194,7 +202,8 @@ public partial class StateObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void DumpStateStack()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DumpStateStack, "Core.StateObject.DumpStateStack");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -213,7 +222,8 @@ public partial class StateObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void PopState(bool bPopAll = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PopState, "Core.StateObject.PopState");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bPopAll, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -233,7 +243,8 @@ public partial class StateObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void PushState(BmSDK.FName NewState, BmSDK.FName NewLabel = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PushState, "Core.StateObject.PushState");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewState, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewLabel, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
@@ -254,7 +265,8 @@ public partial class StateObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.FName GetStateName()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStateName, "Core.StateObject.GetStateName");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -273,7 +285,8 @@ public partial class StateObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual bool IsChildState(BmSDK.FName TestState, BmSDK.FName TestParentState)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsChildState, "Core.StateObject.IsChildState");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestState, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestParentState, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
@@ -294,7 +307,8 @@ public partial class StateObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual bool IsInState(BmSDK.FName TestState, bool bTestStateStack = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInState, "Core.StateObject.IsInState");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestState, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bTestStateStack, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
@@ -315,7 +329,8 @@ public partial class StateObject : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void GotoState(BmSDK.FName NewState, BmSDK.FName Label = default, bool bForceEvents = default, bool bKeepStack = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GotoState, "Core.StateObject.GotoState");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewState, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Label, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForceEvents, paramsPtr + 16);

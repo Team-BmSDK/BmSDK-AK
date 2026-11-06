@@ -85,7 +85,8 @@ public partial class Route : BmSDK.Engine.Info, BmSDK.IGameObject
     public unsafe virtual int MoveOntoRoutePath(BmSDK.Engine.Pawn P, BmSDK.Engine.Route.ERouteDirection RouteDirection = default, float DistFudgeFactor = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MoveOntoRoutePath, "Engine.Route.MoveOntoRoutePath");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RouteDirection, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DistFudgeFactor, paramsPtr + 12);
@@ -107,7 +108,8 @@ public partial class Route : BmSDK.Engine.Info, BmSDK.IGameObject
     public unsafe virtual int ResolveRouteIndex(int Idx, BmSDK.Engine.Route.ERouteDirection RouteDirection, out byte out_bComplete, out byte out_bReverse)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResolveRouteIndex, "Engine.Route.ResolveRouteIndex");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Idx, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RouteDirection, paramsPtr + 4);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out out_bComplete);

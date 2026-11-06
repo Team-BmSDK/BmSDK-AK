@@ -85,7 +85,8 @@ public partial class FaceFXAsset : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void UnmountFaceFXAnimSet(BmSDK.Engine.FaceFXAnimSet AnimSet)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnmountFaceFXAnimSet, "Engine.FaceFXAsset.UnmountFaceFXAnimSet");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimSet, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -105,7 +106,8 @@ public partial class FaceFXAsset : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void MountFaceFXAnimSet(BmSDK.Engine.FaceFXAnimSet AnimSet)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MountFaceFXAnimSet, "Engine.FaceFXAsset.MountFaceFXAnimSet");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimSet, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

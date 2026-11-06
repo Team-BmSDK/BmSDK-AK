@@ -80,7 +80,8 @@ public partial class LocalMessage : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static bool PartiallyDuplicates(int Switch1, int Switch2, BmSDK.GameObject OptionalObject1, BmSDK.GameObject OptionalObject2)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PartiallyDuplicates, "Engine.LocalMessage.PartiallyDuplicates");
-        byte* paramsPtr = stackalloc byte[28];
+        byte* paramsPtr = stackalloc byte[44];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Switch1, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Switch2, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OptionalObject1, paramsPtr + 8);
@@ -96,7 +97,8 @@ public partial class LocalMessage : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static bool IsConsoleMessage(int Switch)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsConsoleMessage, "Engine.LocalMessage.IsConsoleMessage");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Switch, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
@@ -109,7 +111,8 @@ public partial class LocalMessage : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static float GetLifeTime(int Switch)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLifeTime, "Engine.LocalMessage.GetLifeTime");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Switch, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 4);
@@ -122,7 +125,8 @@ public partial class LocalMessage : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static int GetFontSize(int Switch, BmSDK.Engine.PlayerReplicationInfo RelatedPRI1, BmSDK.Engine.PlayerReplicationInfo RelatedPRI2, BmSDK.Engine.PlayerReplicationInfo LocalPlayer)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFontSize, "Engine.LocalMessage.GetFontSize");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Switch, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RelatedPRI1, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RelatedPRI2, paramsPtr + 12);
@@ -138,7 +142,8 @@ public partial class LocalMessage : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static float GetPos(int Switch, BmSDK.Engine.HUD myHUD)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPos, "Engine.LocalMessage.GetPos");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Switch, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(myHUD, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -152,7 +157,8 @@ public partial class LocalMessage : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static BmSDK.GameObject.FColor GetColor(int Switch = default, BmSDK.Engine.PlayerReplicationInfo RelatedPRI_1 = default, BmSDK.Engine.PlayerReplicationInfo RelatedPRI_2 = default, BmSDK.GameObject OptionalObject = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetColor, "Engine.LocalMessage.GetColor");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Switch, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RelatedPRI_1, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RelatedPRI_2, paramsPtr + 12);
@@ -168,7 +174,8 @@ public partial class LocalMessage : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static BmSDK.GameObject.FColor GetConsoleColor(BmSDK.Engine.PlayerReplicationInfo RelatedPRI_1)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetConsoleColor, "Engine.LocalMessage.GetConsoleColor");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RelatedPRI_1, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.GameObject.FColor>(paramsPtr + 8);
@@ -181,7 +188,8 @@ public partial class LocalMessage : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static BmSDK.FString GetString(int Switch = default, bool bPRI1HUD = default, BmSDK.Engine.PlayerReplicationInfo RelatedPRI_1 = default, BmSDK.Engine.PlayerReplicationInfo RelatedPRI_2 = default, BmSDK.GameObject OptionalObject = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetString, "Engine.LocalMessage.GetString");
-        byte* paramsPtr = stackalloc byte[48];
+        byte* paramsPtr = stackalloc byte[64];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Switch, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bPRI1HUD, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RelatedPRI_1, paramsPtr + 8);
@@ -198,7 +206,8 @@ public partial class LocalMessage : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static void ClientReceive(BmSDK.Engine.PlayerController P, int Switch = default, BmSDK.Engine.PlayerReplicationInfo RelatedPRI_1 = default, BmSDK.Engine.PlayerReplicationInfo RelatedPRI_2 = default, BmSDK.GameObject OptionalObject = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClientReceive, "Engine.LocalMessage.ClientReceive");
-        byte* paramsPtr = stackalloc byte[52];
+        byte* paramsPtr = stackalloc byte[68];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Switch, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RelatedPRI_1, paramsPtr + 12);

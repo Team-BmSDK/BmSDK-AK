@@ -85,7 +85,8 @@ public partial class RWeaponPickupSearch : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.FString GetThoughtString()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetThoughtString, "BmGame.RWeaponPickupSearch.GetThoughtString");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
     }
@@ -97,7 +98,8 @@ public partial class RWeaponPickupSearch : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void WeaponSearchFailed()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WeaponSearchFailed, "BmGame.RWeaponPickupSearch.WeaponSearchFailed");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -109,7 +111,8 @@ public partial class RWeaponPickupSearch : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void Tick(float DeltaTime)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RWeaponPickupSearch.Tick");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -122,7 +125,8 @@ public partial class RWeaponPickupSearch : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual bool IsActive()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsActive, "BmGame.RWeaponPickupSearch.IsActive");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
@@ -134,7 +138,8 @@ public partial class RWeaponPickupSearch : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void PathToWeaponNotFound(BmSDK.BmGame.RNavigationHandle Nav)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PathToWeaponNotFound, "BmGame.RWeaponPickupSearch.PathToWeaponNotFound");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Nav, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -147,7 +152,8 @@ public partial class RWeaponPickupSearch : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void PathToWeaponFound(BmSDK.BmGame.RNavigationHandle Nav)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PathToWeaponFound, "BmGame.RWeaponPickupSearch.PathToWeaponFound");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Nav, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -160,7 +166,8 @@ public partial class RWeaponPickupSearch : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void GetPathToNextWeapon()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPathToNextWeapon, "BmGame.RWeaponPickupSearch.GetPathToNextWeapon");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -172,7 +179,8 @@ public partial class RWeaponPickupSearch : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void GetNextWeapon()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNextWeapon, "BmGame.RWeaponPickupSearch.GetNextWeapon");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -184,7 +192,8 @@ public partial class RWeaponPickupSearch : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual bool IsValidPickup(BmSDK.BmGame.RBMCombatThrownObject TestPickup)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsValidPickup, "BmGame.RWeaponPickupSearch.IsValidPickup");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPickup, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
@@ -197,7 +206,8 @@ public partial class RWeaponPickupSearch : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void CancelSearch()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelSearch, "BmGame.RWeaponPickupSearch.CancelSearch");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -209,7 +219,8 @@ public partial class RWeaponPickupSearch : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void Initialise(BmSDK.BmGame.RBMPawnAI NewHostPawn, BmSDK.Class NewPickupClass, float NewMaxRadius = default, BmSDK.BmGame.RBMCombatThrownObject NewPickupToTestFirst = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Initialise, "BmGame.RWeaponPickupSearch.Initialise");
-        byte* paramsPtr = stackalloc byte[28];
+        byte* paramsPtr = stackalloc byte[44];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewHostPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPickupClass, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewMaxRadius, paramsPtr + 16);
@@ -225,7 +236,8 @@ public partial class RWeaponPickupSearch : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void WeaponPickupSearchFailure()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WeaponPickupSearchFailure, "BmGame.RWeaponPickupSearch.WeaponPickupSearchFailure");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -237,7 +249,8 @@ public partial class RWeaponPickupSearch : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void WeaponPickupSearchSuccess(BmSDK.BmGame.RBMCombatThrownObject NewWeapon)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WeaponPickupSearchSuccess, "BmGame.RWeaponPickupSearch.WeaponPickupSearchSuccess");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewWeapon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

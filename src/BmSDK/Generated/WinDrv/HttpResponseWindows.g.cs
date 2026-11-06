@@ -85,7 +85,8 @@ public partial class HttpResponseWindows : BmSDK.Engine.HttpResponseInterface, B
     public unsafe override int GetResponseCode()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetResponseCode, "WinDrv.HttpResponseWindows.GetResponseCode");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -104,7 +105,8 @@ public partial class HttpResponseWindows : BmSDK.Engine.HttpResponseInterface, B
     public unsafe override BmSDK.FString GetContentAsString()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetContentAsString, "WinDrv.HttpResponseWindows.GetContentAsString");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -123,7 +125,8 @@ public partial class HttpResponseWindows : BmSDK.Engine.HttpResponseInterface, B
     public unsafe override void GetContent(out BmSDK.TArray<byte> Content)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetContent, "WinDrv.HttpResponseWindows.GetContent");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -143,7 +146,8 @@ public partial class HttpResponseWindows : BmSDK.Engine.HttpResponseInterface, B
     public unsafe override BmSDK.FString GetURL()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetURL, "WinDrv.HttpResponseWindows.GetURL");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -162,7 +166,8 @@ public partial class HttpResponseWindows : BmSDK.Engine.HttpResponseInterface, B
     public unsafe override int GetContentLength()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetContentLength, "WinDrv.HttpResponseWindows.GetContentLength");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -181,7 +186,8 @@ public partial class HttpResponseWindows : BmSDK.Engine.HttpResponseInterface, B
     public unsafe override BmSDK.FString GetContentType()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetContentType, "WinDrv.HttpResponseWindows.GetContentType");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -200,7 +206,8 @@ public partial class HttpResponseWindows : BmSDK.Engine.HttpResponseInterface, B
     public unsafe override BmSDK.FString GetURLParameter(BmSDK.FString ParameterName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetURLParameter, "WinDrv.HttpResponseWindows.GetURLParameter");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -220,7 +227,8 @@ public partial class HttpResponseWindows : BmSDK.Engine.HttpResponseInterface, B
     public unsafe override BmSDK.TArray<BmSDK.FString> GetHeaders()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHeaders, "WinDrv.HttpResponseWindows.GetHeaders");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -239,7 +247,8 @@ public partial class HttpResponseWindows : BmSDK.Engine.HttpResponseInterface, B
     public unsafe override BmSDK.FString GetHeader(BmSDK.FString HeaderName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHeader, "WinDrv.HttpResponseWindows.GetHeader");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HeaderName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

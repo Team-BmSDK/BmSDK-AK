@@ -85,7 +85,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void InitDeepScanParams(int NumEvidenceFound, int NumPossibilities, BmSDK.FString PossibleMatchString, BmSDK.FString FoundString1, BmSDK.FString FoundString2, int FinalDisplayFrameIndex)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitDeepScanParams, "BmGame.RHudModuleScanner.InitDeepScanParams");
-        byte* paramsPtr = stackalloc byte[60];
+        byte* paramsPtr = stackalloc byte[76];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NumEvidenceFound, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NumPossibilities, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PossibleMatchString, paramsPtr + 8);
@@ -103,7 +104,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void FindDeepScanEvidence(BmSDK.FString FoundString, int NumPossibilitiesNow)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindDeepScanEvidence, "BmGame.RHudModuleScanner.FindDeepScanEvidence");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FoundString, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NumPossibilitiesNow, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -117,7 +119,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void SetDeepScanLevel(int scan_level)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDeepScanLevel, "BmGame.RHudModuleScanner.SetDeepScanLevel");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(scan_level, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -130,7 +133,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void AddTimelineFill(float prop_start, float prop_finish)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddTimelineFill, "BmGame.RHudModuleScanner.AddTimelineFill");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(prop_start, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(prop_finish, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -144,7 +148,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void SetTimelineHighlight(BmSDK.FString Anim, float prop_start, float prop_finish)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetTimelineHighlight, "BmGame.RHudModuleScanner.SetTimelineHighlight");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Anim, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(prop_start, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(prop_finish, paramsPtr + 20);
@@ -159,7 +164,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void SetTimelineCursor(float cursor_prop)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetTimelineCursor, "BmGame.RHudModuleScanner.SetTimelineCursor");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(cursor_prop, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -172,7 +178,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void HideTimeline()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideTimeline, "BmGame.RHudModuleScanner.HideTimeline");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -184,7 +191,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void ShowTimeline()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowTimeline, "BmGame.RHudModuleScanner.ShowTimeline");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -196,7 +204,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void StartScanning(bool isCaseFile, int scanMode)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartScanning, "BmGame.RHudModuleScanner.StartScanning");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(isCaseFile, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(scanMode, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -210,7 +219,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void DeselectEvidenceSection(int percentIndex)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DeselectEvidenceSection, "BmGame.RHudModuleScanner.DeselectEvidenceSection");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(percentIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -223,7 +233,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void SelectEvidenceSection(int percentIndex, int ScanState)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SelectEvidenceSection, "BmGame.RHudModuleScanner.SelectEvidenceSection");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(percentIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ScanState, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -237,7 +248,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void RemoveEvidenceSection(int percentIndex)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveEvidenceSection, "BmGame.RHudModuleScanner.RemoveEvidenceSection");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(percentIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -250,7 +262,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void AddEvidenceSection(int StartIndex, int endIndex)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddEvidenceSection, "BmGame.RHudModuleScanner.AddEvidenceSection");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(endIndex, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -264,7 +277,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void AddSimpleEvidenceSection(int percentIndex)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddSimpleEvidenceSection, "BmGame.RHudModuleScanner.AddSimpleEvidenceSection");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(percentIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -277,7 +291,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void SetCameraMode(int Mode)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCameraMode, "BmGame.RHudModuleScanner.SetCameraMode");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Mode, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -290,7 +305,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void SetCaseFileMode(int ScanState)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCaseFileMode, "BmGame.RHudModuleScanner.SetCaseFileMode");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ScanState, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -303,7 +319,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void SetMarkerPositionPercentage(float Value)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMarkerPositionPercentage, "BmGame.RHudModuleScanner.SetMarkerPositionPercentage");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -316,7 +333,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void SetScannerPercentageComplete(float Value)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetScannerPercentageComplete, "BmGame.RHudModuleScanner.SetScannerPercentageComplete");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -329,7 +347,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void SetScannerPosition(float X, float Y)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetScannerPosition, "BmGame.RHudModuleScanner.SetScannerPosition");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(X, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Y, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -343,7 +362,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void SetScanAnimProportion(BmSDK.FString anim_name, float Proportion)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetScanAnimProportion, "BmGame.RHudModuleScanner.SetScanAnimProportion");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(anim_name, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Proportion, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -357,7 +377,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void PlayScanAnim(BmSDK.FString anim_name)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayScanAnim, "BmGame.RHudModuleScanner.PlayScanAnim");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(anim_name, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -370,7 +391,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void XI_Scanner_ScanComplete()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_Scanner_ScanComplete, "BmGame.RHudModuleScanner.XI_Scanner_ScanComplete");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -382,7 +404,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void XI_Scanner_ScannerAnimComplete()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_Scanner_ScannerAnimComplete, "BmGame.RHudModuleScanner.XI_Scanner_ScannerAnimComplete");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -394,7 +417,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void AutoChooseDetectedFrame()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AutoChooseDetectedFrame, "BmGame.RHudModuleScanner.AutoChooseDetectedFrame");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -406,7 +430,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void XI_Scanner_NotifyOutroComplete()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_Scanner_NotifyOutroComplete, "BmGame.RHudModuleScanner.XI_Scanner_NotifyOutroComplete");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -418,7 +443,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe virtual void XI_Scanner_NotifyIntroComplete()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_Scanner_NotifyIntroComplete, "BmGame.RHudModuleScanner.XI_Scanner_NotifyIntroComplete");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -430,7 +456,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe override void InitialiseFlash()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitialiseFlash, "BmGame.RHudModuleScanner.InitialiseFlash");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -442,7 +469,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe override void Close()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Close, "BmGame.RHudModuleScanner.Close");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -454,7 +482,8 @@ public partial class RHudModuleScanner : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
     public unsafe override bool Init(BmSDK.BmGame.RPlayerController _RPC, BmSDK.FString _ExtensionName, BmSDK.FString _ExtensionPath)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmGame.RHudModuleScanner.Init");
-        byte* paramsPtr = stackalloc byte[44];
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_RPC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_ExtensionName, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_ExtensionPath, paramsPtr + 24);

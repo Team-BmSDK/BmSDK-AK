@@ -85,7 +85,8 @@ public partial class AnimNotify_Trails : BmSDK.Engine.AnimNotify, BmSDK.IGameObj
     public unsafe virtual int GetNumSteps(int InLastTrailIndex)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNumSteps, "Engine.AnimNotify_Trails.GetNumSteps");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InLastTrailIndex, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

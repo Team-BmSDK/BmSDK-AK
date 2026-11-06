@@ -80,7 +80,8 @@ public partial class FracturedBaseComponent : BmSDK.Engine.StaticMeshComponent, 
     public unsafe virtual int GetNumVisibleFragments()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNumVisibleFragments, "Engine.FracturedBaseComponent.GetNumVisibleFragments");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -99,7 +100,8 @@ public partial class FracturedBaseComponent : BmSDK.Engine.StaticMeshComponent, 
     public unsafe virtual int GetNumFragments()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNumFragments, "Engine.FracturedBaseComponent.GetNumFragments");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -118,7 +120,8 @@ public partial class FracturedBaseComponent : BmSDK.Engine.StaticMeshComponent, 
     public unsafe virtual bool IsFragmentVisible(int FragmentIndex)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsFragmentVisible, "Engine.FracturedBaseComponent.IsFragmentVisible");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FragmentIndex, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -138,7 +141,8 @@ public partial class FracturedBaseComponent : BmSDK.Engine.StaticMeshComponent, 
     public unsafe virtual BmSDK.TArray<byte> GetVisibleFragments()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVisibleFragments, "Engine.FracturedBaseComponent.GetVisibleFragments");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -157,7 +161,8 @@ public partial class FracturedBaseComponent : BmSDK.Engine.StaticMeshComponent, 
     public unsafe override bool SetStaticMesh(BmSDK.Engine.StaticMesh NewMesh, bool bForce = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetStaticMesh, "Engine.FracturedBaseComponent.SetStaticMesh");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewMesh, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForce, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
@@ -178,7 +183,8 @@ public partial class FracturedBaseComponent : BmSDK.Engine.StaticMeshComponent, 
     public unsafe override bool GetUseSimpleLineCollision()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetUseSimpleLineCollision, "Engine.FracturedBaseComponent.GetUseSimpleLineCollision");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -197,7 +203,8 @@ public partial class FracturedBaseComponent : BmSDK.Engine.StaticMeshComponent, 
     public unsafe override bool GetUseSimpleBoxCollision()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetUseSimpleBoxCollision, "Engine.FracturedBaseComponent.GetUseSimpleBoxCollision");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

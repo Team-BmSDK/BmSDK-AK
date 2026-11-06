@@ -85,7 +85,8 @@ public partial class RInteractionClass : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual bool ContainsActor(BmSDK.Engine.Actor TestActor)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ContainsActor, "Engine.RInteractionClass.ContainsActor");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestActor, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

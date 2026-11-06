@@ -85,7 +85,8 @@ public partial class RConstrainingComponent : BmSDK.Engine.ActorComponent, BmSDK
     public unsafe virtual void Finalise()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Finalise, "BmGame.RConstrainingComponent.Finalise");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -97,7 +98,8 @@ public partial class RConstrainingComponent : BmSDK.Engine.ActorComponent, BmSDK
     public unsafe virtual void Initialise()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Initialise, "BmGame.RConstrainingComponent.Initialise");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -109,7 +111,8 @@ public partial class RConstrainingComponent : BmSDK.Engine.ActorComponent, BmSDK
     public unsafe virtual bool UpdateRBConstraints(bool bNoPhys = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateRBConstraints, "BmGame.RConstrainingComponent.UpdateRBConstraints");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNoPhys, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -129,7 +132,8 @@ public partial class RConstrainingComponent : BmSDK.Engine.ActorComponent, BmSDK
     public unsafe virtual void ClearRBConstraints()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearRBConstraints, "BmGame.RConstrainingComponent.ClearRBConstraints");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -148,7 +152,8 @@ public partial class RConstrainingComponent : BmSDK.Engine.ActorComponent, BmSDK
     public unsafe virtual void AddRBConstraint(BmSDK.Engine.RB_ConstraintSetup ConstraintSetup)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddRBConstraint, "BmGame.RConstrainingComponent.AddRBConstraint");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ConstraintSetup, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -168,7 +173,8 @@ public partial class RConstrainingComponent : BmSDK.Engine.ActorComponent, BmSDK
     public unsafe virtual bool GetIsSyncronised()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetIsSyncronised, "BmGame.RConstrainingComponent.GetIsSyncronised");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -187,7 +193,8 @@ public partial class RConstrainingComponent : BmSDK.Engine.ActorComponent, BmSDK
     public unsafe virtual bool GetHasRBConstraints()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHasRBConstraints, "BmGame.RConstrainingComponent.GetHasRBConstraints");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

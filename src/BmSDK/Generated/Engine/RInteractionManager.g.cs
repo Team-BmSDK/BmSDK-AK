@@ -85,7 +85,8 @@ public partial class RInteractionManager : BmSDK.Component, BmSDK.IGameObject
     public unsafe virtual void UnRegisterActor(BmSDK.Engine.RInteractionComponent ActorToRemove)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnRegisterActor, "Engine.RInteractionManager.UnRegisterActor");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ActorToRemove, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -105,7 +106,8 @@ public partial class RInteractionManager : BmSDK.Component, BmSDK.IGameObject
     public unsafe virtual void RegisterNewActor(BmSDK.Engine.RInteractionComponent NewActor)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterNewActor, "Engine.RInteractionManager.RegisterNewActor");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewActor, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -125,7 +127,8 @@ public partial class RInteractionManager : BmSDK.Component, BmSDK.IGameObject
     public unsafe virtual BmSDK.Engine.RInteractionClass GetInteractionClass(BmSDK.FName ClassName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetInteractionClass, "Engine.RInteractionManager.GetInteractionClass");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClassName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

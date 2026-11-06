@@ -80,7 +80,8 @@ public partial class ParticleEmitter : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual float GetMaxLifespan(float InComponentDelay)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMaxLifespan, "Engine.ParticleEmitter.GetMaxLifespan");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InComponentDelay, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

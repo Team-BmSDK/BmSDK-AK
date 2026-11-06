@@ -116,7 +116,10 @@ internal sealed record RedirectCall(
     {
         // Copy over args to new buffer for call to original function
         var paramsSize = TargetFunc.GetParamsBytes();
-        var argsPtr = stackalloc byte[TargetFunc.PropertiesSize];
+
+        // 16-aligned like the engine's own parameter frames (natives store SSE returns with movdqa).
+        var argsPtr = stackalloc byte[TargetFunc.PropertiesSize + 16];
+        argsPtr = (byte*)(((nint)argsPtr + 15) & ~(nint)15);
         Buffer.MemoryCopy(
             stackPtr->Locals.ToPointer(),
             argsPtr,

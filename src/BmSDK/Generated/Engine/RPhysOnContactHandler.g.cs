@@ -85,7 +85,8 @@ public partial class RPhysOnContactHandler : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void OnContact(BmSDK.Engine.RB_BodyInstance BodyInst0, BmSDK.Engine.RB_BodyInstance BodyInst1)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnContact, "Engine.RPhysOnContactHandler.OnContact");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BodyInst0, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BodyInst1, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;

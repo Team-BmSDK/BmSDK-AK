@@ -85,7 +85,8 @@ public partial class Font : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void GetStringHeightAndWidth(out BmSDK.FString InString, out int Height, out int Width)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStringHeightAndWidth, "Engine.Font.GetStringHeightAndWidth");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out Height);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Height, paramsPtr + 16);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out Width);
@@ -111,7 +112,8 @@ public partial class Font : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual float StrWidth(BmSDK.FString Text)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StrWidth, "Engine.Font.StrWidth");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Text, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -131,7 +133,8 @@ public partial class Font : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual float GetMaxCharHeight()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMaxCharHeight, "Engine.Font.GetMaxCharHeight");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -150,7 +153,8 @@ public partial class Font : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual float GetAuthoredViewportHeight(float ViewportHeight)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAuthoredViewportHeight, "Engine.Font.GetAuthoredViewportHeight");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ViewportHeight, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -170,7 +174,8 @@ public partial class Font : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual float GetScalingFactor(float HeightTest)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetScalingFactor, "Engine.Font.GetScalingFactor");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HeightTest, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -190,7 +195,8 @@ public partial class Font : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual int GetResolutionPageIndex(float HeightTest)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetResolutionPageIndex, "Engine.Font.GetResolutionPageIndex");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HeightTest, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

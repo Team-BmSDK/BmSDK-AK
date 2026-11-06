@@ -85,7 +85,8 @@ public partial class AppNotificationsBase : BmSDK.Engine.PlatformInterfaceBase, 
     public unsafe virtual void DebugLogNotification(out BmSDK.Engine.AppNotificationsBase.FNotificationInfo Notification)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DebugLogNotification, "Engine.AppNotificationsBase.DebugLogNotification");
-        byte* paramsPtr = stackalloc byte[44];
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Notification = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.AppNotificationsBase.FNotificationInfo>(paramsPtr + 0);
         return;
@@ -98,7 +99,8 @@ public partial class AppNotificationsBase : BmSDK.Engine.PlatformInterfaceBase, 
     public unsafe virtual void OnReceivedRemoteNotification(out BmSDK.Engine.AppNotificationsBase.FNotificationInfo Notification, bool bWasAppActive)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReceivedRemoteNotification, "Engine.AppNotificationsBase.OnReceivedRemoteNotification");
-        byte* paramsPtr = stackalloc byte[44];
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasAppActive, paramsPtr + 40);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Notification = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.AppNotificationsBase.FNotificationInfo>(paramsPtr + 0);
@@ -112,7 +114,8 @@ public partial class AppNotificationsBase : BmSDK.Engine.PlatformInterfaceBase, 
     public unsafe virtual void OnReceivedLocalNotification(out BmSDK.Engine.AppNotificationsBase.FNotificationInfo Notification, bool bWasAppActive)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReceivedLocalNotification, "Engine.AppNotificationsBase.OnReceivedLocalNotification");
-        byte* paramsPtr = stackalloc byte[44];
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasAppActive, paramsPtr + 40);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Notification = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.AppNotificationsBase.FNotificationInfo>(paramsPtr + 0);
@@ -126,7 +129,8 @@ public partial class AppNotificationsBase : BmSDK.Engine.PlatformInterfaceBase, 
     public unsafe virtual void CancelAllScheduledLocalNotifications()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelAllScheduledLocalNotifications, "Engine.AppNotificationsBase.CancelAllScheduledLocalNotifications");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -145,7 +149,8 @@ public partial class AppNotificationsBase : BmSDK.Engine.PlatformInterfaceBase, 
     public unsafe virtual void ScheduleLocalNotification(out BmSDK.Engine.AppNotificationsBase.FNotificationInfo Notification, int StartOffsetSeconds)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ScheduleLocalNotification, "Engine.AppNotificationsBase.ScheduleLocalNotification");
-        byte* paramsPtr = stackalloc byte[44];
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartOffsetSeconds, paramsPtr + 40);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -166,7 +171,8 @@ public partial class AppNotificationsBase : BmSDK.Engine.PlatformInterfaceBase, 
     public unsafe virtual bool WasLaunchedViaNotification()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WasLaunchedViaNotification, "Engine.AppNotificationsBase.WasLaunchedViaNotification");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
@@ -178,7 +184,8 @@ public partial class AppNotificationsBase : BmSDK.Engine.PlatformInterfaceBase, 
     public unsafe virtual void Init()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "Engine.AppNotificationsBase.Init");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

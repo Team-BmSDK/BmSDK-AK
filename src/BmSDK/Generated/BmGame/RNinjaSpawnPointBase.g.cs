@@ -80,7 +80,8 @@ public partial class RNinjaSpawnPointBase : BmSDK.Engine.Actor, BmSDK.IGameObjec
     public unsafe virtual BmSDK.BmGame.RBMPawnAI SpawnNinja()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnNinja, "BmGame.RNinjaSpawnPointBase.SpawnNinja");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

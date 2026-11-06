@@ -80,7 +80,8 @@ public partial class OnlineStats : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.FName GetViewName(int ViewId)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetViewName, "Engine.OnlineStats.GetViewName");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ViewId, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -100,7 +101,8 @@ public partial class OnlineStats : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual bool GetViewId(BmSDK.FName ViewName, out int ViewId)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetViewId, "Engine.OnlineStats.GetViewId");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ViewName, paramsPtr + 0);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out ViewId);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ViewId, paramsPtr + 8);

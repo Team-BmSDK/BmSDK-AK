@@ -85,7 +85,8 @@ public partial class RFlapsAssetInstance : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void WakeUp()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WakeUp, "Engine.RFlapsAssetInstance.WakeUp");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -104,7 +105,8 @@ public partial class RFlapsAssetInstance : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void PutToSleep(bool bDeepSleep)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PutToSleep, "Engine.RFlapsAssetInstance.PutToSleep");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDeepSleep, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

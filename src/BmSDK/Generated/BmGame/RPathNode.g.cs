@@ -85,7 +85,8 @@ public partial class RPathNode : BmSDK.Engine.PathNode, BmSDK.IGameObject
     public unsafe virtual float GetTimeSinceLastSighting(int Index)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTimeSinceLastSighting, "BmGame.RPathNode.GetTimeSinceLastSighting");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Index, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -105,7 +106,8 @@ public partial class RPathNode : BmSDK.Engine.PathNode, BmSDK.IGameObject
     public unsafe virtual void UpdateLastSeenTime(int Index)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateLastSeenTime, "BmGame.RPathNode.UpdateLastSeenTime");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Index, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -125,7 +127,8 @@ public partial class RPathNode : BmSDK.Engine.PathNode, BmSDK.IGameObject
     public unsafe virtual bool IsSafe(BmSDK.Engine.Pawn TestPawn)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsSafe, "BmGame.RPathNode.IsSafe");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

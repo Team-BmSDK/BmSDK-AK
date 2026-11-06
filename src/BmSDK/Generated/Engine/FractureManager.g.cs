@@ -85,7 +85,8 @@ public partial class FractureManager : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe override void Tick(float DeltaTime)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "Engine.FractureManager.Tick");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -98,7 +99,8 @@ public partial class FractureManager : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void ReturnPartActor(BmSDK.Engine.FracturedStaticMeshPart Part)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReturnPartActor, "Engine.FractureManager.ReturnPartActor");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Part, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -111,7 +113,8 @@ public partial class FractureManager : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual BmSDK.Engine.FracturedStaticMeshPart SpawnPartActor(BmSDK.Engine.FracturedStaticMeshActor Parent, System.Numerics.Vector3 SpawnLocation, BmSDK.Rotator SpawnRotation)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnPartActor, "Engine.FractureManager.SpawnPartActor");
-        byte* paramsPtr = stackalloc byte[48];
+        byte* paramsPtr = stackalloc byte[64];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Parent, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnLocation, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnRotation, paramsPtr + 20);
@@ -126,7 +129,8 @@ public partial class FractureManager : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual BmSDK.Engine.FracturedStaticMeshPart GetFSMPart(BmSDK.Engine.FracturedStaticMeshActor Parent, System.Numerics.Vector3 SpawnLocation, BmSDK.Rotator SpawnRotation)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFSMPart, "Engine.FractureManager.GetFSMPart");
-        byte* paramsPtr = stackalloc byte[40];
+        byte* paramsPtr = stackalloc byte[56];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Parent, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnLocation, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnRotation, paramsPtr + 20);
@@ -148,7 +152,8 @@ public partial class FractureManager : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void ResetPoolVisibilityForParent(BmSDK.Engine.FracturedStaticMeshActor Parent)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetPoolVisibilityForParent, "Engine.FractureManager.ResetPoolVisibilityForParent");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Parent, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -168,7 +173,8 @@ public partial class FractureManager : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void ResetPoolVisibility()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetPoolVisibility, "Engine.FractureManager.ResetPoolVisibility");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -187,7 +193,8 @@ public partial class FractureManager : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void CreateFSMParts()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateFSMParts, "Engine.FractureManager.CreateFSMParts");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -206,7 +213,8 @@ public partial class FractureManager : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void CleanUpFSMParts()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CleanUpFSMParts, "Engine.FractureManager.CleanUpFSMParts");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -218,7 +226,8 @@ public partial class FractureManager : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe override void Destroyed()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "Engine.FractureManager.Destroyed");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -230,7 +239,8 @@ public partial class FractureManager : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe override void PreBeginPlay()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreBeginPlay, "Engine.FractureManager.PreBeginPlay");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -242,7 +252,8 @@ public partial class FractureManager : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual float GetFSMFractureCullDistanceScale()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFSMFractureCullDistanceScale, "Engine.FractureManager.GetFSMFractureCullDistanceScale");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -261,7 +272,8 @@ public partial class FractureManager : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual float GetFSMRadialSpawnChanceScale()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFSMRadialSpawnChanceScale, "Engine.FractureManager.GetFSMRadialSpawnChanceScale");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -280,7 +292,8 @@ public partial class FractureManager : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual float GetFSMDirectSpawnChanceScale()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFSMDirectSpawnChanceScale, "Engine.FractureManager.GetFSMDirectSpawnChanceScale");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -299,7 +312,8 @@ public partial class FractureManager : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual float GetNumFSMPartsScale()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNumFSMPartsScale, "Engine.FractureManager.GetNumFSMPartsScale");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -318,7 +332,8 @@ public partial class FractureManager : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void SpawnChunkDestroyEffect(BmSDK.Engine.ParticleSystem Effect, BmSDK.GameObject.FBox ChunkBox, System.Numerics.Vector3 ChunkDir, float Scale)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnChunkDestroyEffect, "Engine.FractureManager.SpawnChunkDestroyEffect");
-        byte* paramsPtr = stackalloc byte[72];
+        byte* paramsPtr = stackalloc byte[88];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Effect, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ChunkBox, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ChunkDir, paramsPtr + 36);

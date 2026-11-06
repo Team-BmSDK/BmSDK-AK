@@ -85,7 +85,8 @@ public partial class AnimNodeAimOffset : BmSDK.Engine.AnimNodeBlendBase, BmSDK.I
     public unsafe virtual void SetActiveProfileByIndex(int ProfileIndex)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetActiveProfileByIndex, "Engine.AnimNodeAimOffset.SetActiveProfileByIndex");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProfileIndex, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -105,7 +106,8 @@ public partial class AnimNodeAimOffset : BmSDK.Engine.AnimNodeBlendBase, BmSDK.I
     public unsafe virtual void SetActiveProfileByName(BmSDK.FName ProfileName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetActiveProfileByName, "Engine.AnimNodeAimOffset.SetActiveProfileByName");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProfileName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

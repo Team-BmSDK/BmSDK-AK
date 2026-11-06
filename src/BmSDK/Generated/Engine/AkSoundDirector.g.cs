@@ -80,7 +80,8 @@ public partial class AkSoundDirector : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static void RestartPredatorTriggers()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RestartPredatorTriggers, "Engine.AkSoundDirector.RestartPredatorTriggers");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -99,7 +100,8 @@ public partial class AkSoundDirector : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static void RestartAllTriggers()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RestartAllTriggers, "Engine.AkSoundDirector.RestartAllTriggers");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -118,7 +120,8 @@ public partial class AkSoundDirector : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static void ClearDeath()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearDeath, "Engine.AkSoundDirector.ClearDeath");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -137,7 +140,8 @@ public partial class AkSoundDirector : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static void RemoveDiagramsOnDeath()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveDiagramsOnDeath, "Engine.AkSoundDirector.RemoveDiagramsOnDeath");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -156,7 +160,8 @@ public partial class AkSoundDirector : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static int GetChapterFlag()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetChapterFlag, "Engine.AkSoundDirector.GetChapterFlag");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -175,7 +180,8 @@ public partial class AkSoundDirector : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static bool IsChapterFlagValid(int chapterFlag)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsChapterFlagValid, "Engine.AkSoundDirector.IsChapterFlagValid");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(chapterFlag, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -195,7 +201,8 @@ public partial class AkSoundDirector : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static float LocationAccessibility(System.Numerics.Vector3 Location)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LocationAccessibility, "Engine.AkSoundDirector.LocationAccessibility");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Location, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -215,7 +222,8 @@ public partial class AkSoundDirector : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static float LocationRainDensity(System.Numerics.Vector3 Location)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LocationRainDensity, "Engine.AkSoundDirector.LocationRainDensity");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Location, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -235,7 +243,8 @@ public partial class AkSoundDirector : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static float LocationWetness(System.Numerics.Vector3 Location, System.Numerics.Vector3 Normal = default, bool isWorldGeom = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LocationWetness, "Engine.AkSoundDirector.LocationWetness");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Location, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Normal, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(isWorldGeom, paramsPtr + 24);
@@ -257,7 +266,8 @@ public partial class AkSoundDirector : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static void Debug_ClearAllFacts()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Debug_ClearAllFacts, "Engine.AkSoundDirector.Debug_ClearAllFacts");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -276,7 +286,8 @@ public partial class AkSoundDirector : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static void SetMusicInformation(BmSDK.FString Text, float TimeOut = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMusicInformation, "Engine.AkSoundDirector.SetMusicInformation");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Text, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TimeOut, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
@@ -297,7 +308,8 @@ public partial class AkSoundDirector : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static bool CheckFact(BmSDK.FString Fact)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckFact, "Engine.AkSoundDirector.CheckFact");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Fact, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -317,7 +329,8 @@ public partial class AkSoundDirector : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static void RemoveFact(BmSDK.FString Fact, BmSDK.FString Reason = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveFact, "Engine.AkSoundDirector.RemoveFact");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Fact, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Reason, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
@@ -338,7 +351,8 @@ public partial class AkSoundDirector : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static void SetFactFalse(BmSDK.FString Fact)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetFactFalse, "Engine.AkSoundDirector.SetFactFalse");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Fact, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -358,7 +372,8 @@ public partial class AkSoundDirector : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static void SetFactTrue(BmSDK.FString Fact, float setTimeOffset = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetFactTrue, "Engine.AkSoundDirector.SetFactTrue");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Fact, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(setTimeOffset, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
@@ -379,7 +394,8 @@ public partial class AkSoundDirector : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static void SetFact(BmSDK.FString Fact, BmSDK.FString factSet = default, BmSDK.FString Reason = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetFact, "Engine.AkSoundDirector.SetFact");
-        byte* paramsPtr = stackalloc byte[48];
+        byte* paramsPtr = stackalloc byte[64];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Fact, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(factSet, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Reason, paramsPtr + 32);

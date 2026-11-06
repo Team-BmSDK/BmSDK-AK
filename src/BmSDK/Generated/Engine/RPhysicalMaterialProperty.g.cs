@@ -85,7 +85,8 @@ public partial class RPhysicalMaterialProperty : BmSDK.Engine.PhysicalMaterialPr
     public unsafe static void SpawnActualHitEffect(BmSDK.Engine.Actor.FImpactInfo Impact, BmSDK.Engine.RPhysicalMaterialProperty.FImpactEffectInfo PhysImpactInfo, BmSDK.Engine.AkEvent ImpactSound, bool bPlaySound = default, float Wetness = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnActualHitEffect, "Engine.RPhysicalMaterialProperty.SpawnActualHitEffect");
-        byte* paramsPtr = stackalloc byte[268];
+        byte* paramsPtr = stackalloc byte[284];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Impact, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PhysImpactInfo, paramsPtr + 96);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ImpactSound, paramsPtr + 140);
@@ -102,7 +103,8 @@ public partial class RPhysicalMaterialProperty : BmSDK.Engine.PhysicalMaterialPr
     public unsafe virtual void SpawnHitEffect(BmSDK.Engine.Actor.FImpactInfo Impact, BmSDK.Engine.RPhysicalMaterialProperty.EPhysMaterialImpactTypes ImpactType, BmSDK.Engine.AkEvent ImpactSound, bool bPlaySound = default, float Wetness = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnHitEffect, "Engine.RPhysicalMaterialProperty.SpawnHitEffect");
-        byte* paramsPtr = stackalloc byte[360];
+        byte* paramsPtr = stackalloc byte[376];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Impact, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ImpactType, paramsPtr + 96);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ImpactSound, paramsPtr + 100);
@@ -119,7 +121,8 @@ public partial class RPhysicalMaterialProperty : BmSDK.Engine.PhysicalMaterialPr
     public unsafe static void SpawnHitDefaultEffect(BmSDK.Engine.Actor.FImpactInfo Impact, BmSDK.Engine.RPhysicalMaterialProperty.EPhysMaterialImpactTypes ImpactType, BmSDK.Engine.AkEvent SoundImpact, bool bPlaySound = default, float Wetness = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnHitDefaultEffect, "Engine.RPhysicalMaterialProperty.SpawnHitDefaultEffect");
-        byte* paramsPtr = stackalloc byte[124];
+        byte* paramsPtr = stackalloc byte[140];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Impact, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ImpactType, paramsPtr + 96);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SoundImpact, paramsPtr + 100);
@@ -136,7 +139,8 @@ public partial class RPhysicalMaterialProperty : BmSDK.Engine.PhysicalMaterialPr
     public unsafe virtual void HitEffectParticleSystemFinished(BmSDK.Engine.ParticleSystemComponent PSC)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitEffectParticleSystemFinished, "Engine.RPhysicalMaterialProperty.HitEffectParticleSystemFinished");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PSC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

@@ -85,7 +85,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetBatmobileEnergyTutorialLevel(int tutorial_level)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBatmobileEnergyTutorialLevel, "BmGame.RHudModuleBatmobile.SetBatmobileEnergyTutorialLevel");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(tutorial_level, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -98,7 +99,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetBattleModeOpacity(float the_opacity)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBattleModeOpacity, "BmGame.RHudModuleBatmobile.SetBattleModeOpacity");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(the_opacity, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -111,7 +113,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetWeaponFeedbackPrivate(bool FeedbackActive, bool FeedbackEffective)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetWeaponFeedbackPrivate, "BmGame.RHudModuleBatmobile.SetWeaponFeedbackPrivate");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FeedbackActive, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FeedbackEffective, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -125,7 +128,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetBattleAndZoomModePrivate(bool IsBattleMode, bool IsZoomed)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBattleAndZoomModePrivate, "BmGame.RHudModuleBatmobile.SetBattleAndZoomModePrivate");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IsBattleMode, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IsZoomed, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -139,7 +143,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetSpecialWeaponValuesPrivate(int Weapon1Value, int Weapon2Value, int Weapon3Value)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSpecialWeaponValuesPrivate, "BmGame.RHudModuleBatmobile.SetSpecialWeaponValuesPrivate");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Weapon1Value, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Weapon2Value, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Weapon3Value, paramsPtr + 8);
@@ -154,7 +159,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetCannonCooldownPrivate(int CannonCooldown)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCannonCooldownPrivate, "BmGame.RHudModuleBatmobile.SetCannonCooldownPrivate");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CannonCooldown, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -167,7 +173,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetPrimaryWeaponPrivate(BmSDK.FString WeaponType)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetPrimaryWeaponPrivate, "BmGame.RHudModuleBatmobile.SetPrimaryWeaponPrivate");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WeaponType, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -180,7 +187,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void FlushPending(float DeltaT)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FlushPending, "BmGame.RHudModuleBatmobile.FlushPending");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaT, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -193,7 +201,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetWeaponFeedback(bool FeedbackActive, bool FeedbackEffective)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetWeaponFeedback, "BmGame.RHudModuleBatmobile.SetWeaponFeedback");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FeedbackActive, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FeedbackEffective, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -207,7 +216,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetBattleAndZoomModeSemiPrivate(bool IsBattleMode, bool IsZoomed)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBattleAndZoomModeSemiPrivate, "BmGame.RHudModuleBatmobile.SetBattleAndZoomModeSemiPrivate");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IsBattleMode, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IsZoomed, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -221,7 +231,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetSpecialWeaponValues(int Weapon1Value, int Weapon2Value, int Weapon3Value)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSpecialWeaponValues, "BmGame.RHudModuleBatmobile.SetSpecialWeaponValues");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Weapon1Value, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Weapon2Value, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Weapon3Value, paramsPtr + 8);
@@ -236,7 +247,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetSecondaryWeapon(BmSDK.FString WeaponType, bool Available, bool OnCoolDown)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSecondaryWeapon, "BmGame.RHudModuleBatmobile.SetSecondaryWeapon");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WeaponType, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Available, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OnCoolDown, paramsPtr + 20);
@@ -251,7 +263,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetCannonCoolDownAnimState(int CoolDownLevel)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCannonCoolDownAnimState, "BmGame.RHudModuleBatmobile.SetCannonCoolDownAnimState");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CoolDownLevel, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -264,7 +277,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetPrimaryWeapon(BmSDK.FString WeaponType)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetPrimaryWeapon, "BmGame.RHudModuleBatmobile.SetPrimaryWeapon");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WeaponType, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -277,7 +291,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void ClearPassengerInformation()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearPassengerInformation, "BmGame.RHudModuleBatmobile.ClearPassengerInformation");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -289,7 +304,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetPassengerInformation(bool has_passenger, BmSDK.FString status_title, BmSDK.FString occupant_name, BmSDK.FString occupant_icon, bool second_passenger = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetPassengerInformation, "BmGame.RHudModuleBatmobile.SetPassengerInformation");
-        byte* paramsPtr = stackalloc byte[56];
+        byte* paramsPtr = stackalloc byte[72];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(has_passenger, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(status_title, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(occupant_name, paramsPtr + 20);
@@ -306,7 +322,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetClockTimer(BmSDK.FString Text, bool bVisible, bool bWarning)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetClockTimer, "BmGame.RHudModuleBatmobile.SetClockTimer");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Text, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bVisible, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWarning, paramsPtr + 20);
@@ -321,7 +338,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SendVirusUploadToFlashPrivate(BmSDK.FString state_string, bool warning_visible)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SendVirusUploadToFlashPrivate, "BmGame.RHudModuleBatmobile.SendVirusUploadToFlashPrivate");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(state_string, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(warning_visible, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -335,7 +353,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetVirusUploadComplete(bool bSuccessful)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetVirusUploadComplete, "BmGame.RHudModuleBatmobile.SetVirusUploadComplete");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSuccessful, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -348,7 +367,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetVirusUploadActive(bool bRangeWarning)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetVirusUploadActive, "BmGame.RHudModuleBatmobile.SetVirusUploadActive");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bRangeWarning, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -361,7 +381,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetWinchMeterVisible(bool is_visible)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetWinchMeterVisible, "BmGame.RHudModuleBatmobile.SetWinchMeterVisible");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(is_visible, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -374,7 +395,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetWinchMeter(float ConeAngleDegrees, float NeedleAngleDegrees, bool IsOnTarget)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetWinchMeter, "BmGame.RHudModuleBatmobile.SetWinchMeter");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ConeAngleDegrees, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NeedleAngleDegrees, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IsOnTarget, paramsPtr + 8);
@@ -389,7 +411,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetHealthBarVisible(bool is_visible)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHealthBarVisible, "BmGame.RHudModuleBatmobile.SetHealthBarVisible");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(is_visible, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -402,7 +425,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetXpLevel(float new_proportion, bool Snap = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetXpLevel, "BmGame.RHudModuleBatmobile.SetXpLevel");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(new_proportion, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Snap, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -416,7 +440,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetHealth(float new_value, float max_value, bool Snap = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHealth, "BmGame.RHudModuleBatmobile.SetHealth");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(new_value, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(max_value, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Snap, paramsPtr + 8);
@@ -431,7 +456,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetBatmobileCombo(float seconds_for_countdown, int Combo, float ComboReductionFactor)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBatmobileCombo, "BmGame.RHudModuleBatmobile.SetBatmobileCombo");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(seconds_for_countdown, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Combo, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ComboReductionFactor, paramsPtr + 8);
@@ -446,7 +472,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetMachineGunAccuracyFramePrivate(int mgun_acc_frame)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMachineGunAccuracyFramePrivate, "BmGame.RHudModuleBatmobile.SetMachineGunAccuracyFramePrivate");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(mgun_acc_frame, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -459,7 +486,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetMachineGunAccuracy(float mgun_acc)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMachineGunAccuracy, "BmGame.RHudModuleBatmobile.SetMachineGunAccuracy");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(mgun_acc, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -472,7 +500,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetEnergySystem(int num_charges, int max_charges, float gauge_proportion, bool Snap, BmSDK.BmGame.RHudModuleBatmobile.EnergySystemStates current_state)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetEnergySystem, "BmGame.RHudModuleBatmobile.SetEnergySystem");
-        byte* paramsPtr = stackalloc byte[17];
+        byte* paramsPtr = stackalloc byte[33];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(num_charges, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(max_charges, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(gauge_proportion, paramsPtr + 8);
@@ -489,7 +518,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetNumCharges(int num_charges)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetNumCharges, "BmGame.RHudModuleBatmobile.SetNumCharges");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(num_charges, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -502,7 +532,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void XI_Batmobile_VirusOutroComplete()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_Batmobile_VirusOutroComplete, "BmGame.RHudModuleBatmobile.XI_Batmobile_VirusOutroComplete");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -514,7 +545,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void XI_Batmobile_NotifyOutroComplete()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_Batmobile_NotifyOutroComplete, "BmGame.RHudModuleBatmobile.XI_Batmobile_NotifyOutroComplete");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -526,7 +558,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void DoOutro()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoOutro, "BmGame.RHudModuleBatmobile.DoOutro");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -538,7 +571,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void DoIntro()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoIntro, "BmGame.RHudModuleBatmobile.DoIntro");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -550,7 +584,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetBattleMode(bool is_battlemode)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBattleMode, "BmGame.RHudModuleBatmobile.SetBattleMode");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(is_battlemode, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -563,7 +598,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetZoom(bool is_zoomed)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetZoom, "BmGame.RHudModuleBatmobile.SetZoom");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(is_zoomed, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -576,7 +612,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetMedalAccruing(bool accruing)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMedalAccruing, "BmGame.RHudModuleBatmobile.SetMedalAccruing");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(accruing, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -589,7 +626,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void AwardMedal()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AwardMedal, "BmGame.RHudModuleBatmobile.AwardMedal");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -601,7 +639,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetMedalIndex(int new_type)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMedalIndex, "BmGame.RHudModuleBatmobile.SetMedalIndex");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(new_type, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -614,7 +653,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetMedalProportion(float new_proportion)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMedalProportion, "BmGame.RHudModuleBatmobile.SetMedalProportion");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(new_proportion, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -627,7 +667,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetEnemyCount(int NumEnemies)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetEnemyCount, "BmGame.RHudModuleBatmobile.SetEnemyCount");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NumEnemies, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -640,7 +681,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void HideBoostGauge()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideBoostGauge, "BmGame.RHudModuleBatmobile.HideBoostGauge");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -652,7 +694,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetBoostGauge(int current_percent, int upgrade_level)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBoostGauge, "BmGame.RHudModuleBatmobile.SetBoostGauge");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(current_percent, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(upgrade_level, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -666,7 +709,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void ShowBoostUpgrade(BmSDK.FString line1, BmSDK.FString line2)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowBoostUpgrade, "BmGame.RHudModuleBatmobile.ShowBoostUpgrade");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(line1, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(line2, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -680,7 +724,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetRemoteInterfaceVisible(bool is_visible)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRemoteInterfaceVisible, "BmGame.RHudModuleBatmobile.SetRemoteInterfaceVisible");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(is_visible, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -693,7 +738,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void SetForensicTrail(BmSDK.FString ForensicsString)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetForensicTrail, "BmGame.RHudModuleBatmobile.SetForensicTrail");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ForensicsString, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -706,7 +752,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void AutoUpdateForensicTrail()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AutoUpdateForensicTrail, "BmGame.RHudModuleBatmobile.AutoUpdateForensicTrail");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -718,7 +765,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual bool SetTurnAround(int Direction)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetTurnAround, "BmGame.RHudModuleBatmobile.SetTurnAround");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Direction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
@@ -731,7 +779,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe virtual void StartupCommon()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartupCommon, "BmGame.RHudModuleBatmobile.StartupCommon");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -743,7 +792,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe override void InitialiseFlash()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitialiseFlash, "BmGame.RHudModuleBatmobile.InitialiseFlash");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -755,7 +805,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe override void Close()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Close, "BmGame.RHudModuleBatmobile.Close");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -767,7 +818,8 @@ public partial class RHudModuleBatmobile : BmSDK.BmGame.RHudModule, BmSDK.IGameO
     public unsafe override bool Init(BmSDK.BmGame.RPlayerController _RPC, BmSDK.FString _ExtensionName, BmSDK.FString _ExtensionPath)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmGame.RHudModuleBatmobile.Init");
-        byte* paramsPtr = stackalloc byte[44];
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_RPC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_ExtensionName, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_ExtensionPath, paramsPtr + 24);

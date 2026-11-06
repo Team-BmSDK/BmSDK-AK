@@ -85,7 +85,8 @@ public partial class RNavMeshPath_AvoidPathObjects : BmSDK.Engine.NavMeshPathCon
     public unsafe static bool AvoidPathObjects(BmSDK.BmGame.RNavigationHandle NewNavHandle, BmSDK.Engine.Actor AvoidObject1, BmSDK.Engine.Actor AvoidObject2 = default, BmSDK.Engine.Actor AvoidObject3 = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AvoidPathObjects, "BmGame.RNavMeshPath_AvoidPathObjects.AvoidPathObjects");
-        byte* paramsPtr = stackalloc byte[44];
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewNavHandle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AvoidObject1, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AvoidObject2, paramsPtr + 16);
@@ -101,7 +102,8 @@ public partial class RNavMeshPath_AvoidPathObjects : BmSDK.Engine.NavMeshPathCon
     public unsafe static bool AvoidPathObjectArray(BmSDK.BmGame.RNavigationHandle NewNavHandle, BmSDK.TArray<BmSDK.Engine.Actor> AvoidObjectList)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AvoidPathObjectArray, "BmGame.RNavMeshPath_AvoidPathObjects.AvoidPathObjectArray");
-        byte* paramsPtr = stackalloc byte[36];
+        byte* paramsPtr = stackalloc byte[52];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewNavHandle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AvoidObjectList, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -115,7 +117,8 @@ public partial class RNavMeshPath_AvoidPathObjects : BmSDK.Engine.NavMeshPathCon
     public unsafe static bool AvoidPathObject(BmSDK.BmGame.RNavigationHandle NewNavHandle, BmSDK.Engine.Actor AvoidObject1)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AvoidPathObject, "BmGame.RNavMeshPath_AvoidPathObjects.AvoidPathObject");
-        byte* paramsPtr = stackalloc byte[28];
+        byte* paramsPtr = stackalloc byte[44];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewNavHandle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AvoidObject1, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

@@ -85,7 +85,8 @@ public partial class RSkelControl_CantileverBeam : BmSDK.Engine.SkelControlLookA
     public unsafe virtual System.Numerics.Vector3 EntireBeamVelocity()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EntireBeamVelocity, "BmGame.RSkelControl_CantileverBeam.EntireBeamVelocity");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
     }

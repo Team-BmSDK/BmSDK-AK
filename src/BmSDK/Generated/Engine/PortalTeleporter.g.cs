@@ -80,7 +80,8 @@ public partial class PortalTeleporter : BmSDK.Engine.SceneCapturePortalActor, Bm
     public unsafe override bool StopsProjectile(BmSDK.Engine.Projectile P, BmSDK.Engine.PrimitiveComponent HitComponent = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopsProjectile, "Engine.PortalTeleporter.StopsProjectile");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitComponent, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -94,7 +95,8 @@ public partial class PortalTeleporter : BmSDK.Engine.SceneCapturePortalActor, Bm
     public unsafe virtual BmSDK.Engine.TextureRenderTarget2D CreatePortalTexture()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreatePortalTexture, "Engine.PortalTeleporter.CreatePortalTexture");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -113,7 +115,8 @@ public partial class PortalTeleporter : BmSDK.Engine.SceneCapturePortalActor, Bm
     public unsafe virtual System.Numerics.Vector3 TransformHitLocation(System.Numerics.Vector3 HitLocation)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TransformHitLocation, "Engine.PortalTeleporter.TransformHitLocation");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -133,7 +136,8 @@ public partial class PortalTeleporter : BmSDK.Engine.SceneCapturePortalActor, Bm
     public unsafe virtual System.Numerics.Vector3 TransformVectorDir(System.Numerics.Vector3 V)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TransformVectorDir, "Engine.PortalTeleporter.TransformVectorDir");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(V, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -153,7 +157,8 @@ public partial class PortalTeleporter : BmSDK.Engine.SceneCapturePortalActor, Bm
     public unsafe virtual bool TransformActor(BmSDK.Engine.Actor A)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TransformActor, "Engine.PortalTeleporter.TransformActor");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(A, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

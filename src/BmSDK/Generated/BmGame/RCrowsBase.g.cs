@@ -80,7 +80,8 @@ public partial class RCrowsBase : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void Startle(System.Numerics.Vector3 StartleLoc, bool startledByKismet = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Startle, "BmGame.RCrowsBase.Startle");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartleLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(startledByKismet, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -94,7 +95,8 @@ public partial class RCrowsBase : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void UpdateEditorComponents()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateEditorComponents, "BmGame.RCrowsBase.UpdateEditorComponents");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -113,7 +115,8 @@ public partial class RCrowsBase : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void CheckForThugsScaring()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckForThugsScaring, "BmGame.RCrowsBase.CheckForThugsScaring");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -132,7 +135,8 @@ public partial class RCrowsBase : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual bool FindClosestVisibleSkelMesh(System.Numerics.Vector3 TestLoc, float Range, out System.Numerics.Vector3 CrowLoc)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindClosestVisibleSkelMesh, "BmGame.RCrowsBase.FindClosestVisibleSkelMesh");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Range, paramsPtr + 12);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out CrowLoc);
@@ -156,7 +160,8 @@ public partial class RCrowsBase : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe static bool FindClosestCrowWithinRange(System.Numerics.Vector3 TestLoc, float Range, out System.Numerics.Vector3 CrowLoc, out BmSDK.BmGame.RCrowsBase Crow, bool IgnoreFlying, bool IgnoreIdle)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindClosestCrowWithinRange, "BmGame.RCrowsBase.FindClosestCrowWithinRange");
-        byte* paramsPtr = stackalloc byte[48];
+        byte* paramsPtr = stackalloc byte[64];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Range, paramsPtr + 12);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out CrowLoc);

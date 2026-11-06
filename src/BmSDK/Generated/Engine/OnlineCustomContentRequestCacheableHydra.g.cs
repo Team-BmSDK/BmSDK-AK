@@ -85,7 +85,8 @@ public partial class OnlineCustomContentRequestCacheableHydra : BmSDK.Engine.Onl
     public unsafe virtual void CacheSaveComplete(bool p_bSaveSuccessful, BmSDK.FString CalculatedCRC)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CacheSaveComplete, "Engine.OnlineCustomContentRequestCacheableHydra.CacheSaveComplete");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(p_bSaveSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CalculatedCRC, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
@@ -106,7 +107,8 @@ public partial class OnlineCustomContentRequestCacheableHydra : BmSDK.Engine.Onl
     public unsafe virtual void CacheSaveStarted()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CacheSaveStarted, "Engine.OnlineCustomContentRequestCacheableHydra.CacheSaveStarted");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -125,7 +127,8 @@ public partial class OnlineCustomContentRequestCacheableHydra : BmSDK.Engine.Onl
     public unsafe virtual void CacheLoadComplete(bool p_bLoadComplete, bool p_bLoadSuccessful, BmSDK.FString CalculatedCRC, BmSDK.FString StoredCRC)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CacheLoadComplete, "Engine.OnlineCustomContentRequestCacheableHydra.CacheLoadComplete");
-        byte* paramsPtr = stackalloc byte[40];
+        byte* paramsPtr = stackalloc byte[56];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(p_bLoadComplete, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(p_bLoadSuccessful, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CalculatedCRC, paramsPtr + 8);
@@ -148,7 +151,8 @@ public partial class OnlineCustomContentRequestCacheableHydra : BmSDK.Engine.Onl
     public unsafe virtual void CacheLoadStarted()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CacheLoadStarted, "Engine.OnlineCustomContentRequestCacheableHydra.CacheLoadStarted");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -167,7 +171,8 @@ public partial class OnlineCustomContentRequestCacheableHydra : BmSDK.Engine.Onl
     public unsafe override void CancelCustomContentRequest()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelCustomContentRequest, "Engine.OnlineCustomContentRequestCacheableHydra.CancelCustomContentRequest");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -186,7 +191,8 @@ public partial class OnlineCustomContentRequestCacheableHydra : BmSDK.Engine.Onl
     public unsafe override void GetCustomContentAsString(out BmSDK.FString ContentData)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCustomContentAsString, "Engine.OnlineCustomContentRequestCacheableHydra.GetCustomContentAsString");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -206,7 +212,8 @@ public partial class OnlineCustomContentRequestCacheableHydra : BmSDK.Engine.Onl
     public unsafe override void GetCustomContent(out BmSDK.TArray<byte> ContentData)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCustomContent, "Engine.OnlineCustomContentRequestCacheableHydra.GetCustomContent");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -226,7 +233,8 @@ public partial class OnlineCustomContentRequestCacheableHydra : BmSDK.Engine.Onl
     public unsafe override void StartCustomContentRequest(BmSDK.FString sContentName, BmSDK.FString sCustomId, System.IntPtr dRequestCustomContentComplete)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartCustomContentRequest, "Engine.OnlineCustomContentRequestCacheableHydra.StartCustomContentRequest");
-        byte* paramsPtr = stackalloc byte[48];
+        byte* paramsPtr = stackalloc byte[64];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sContentName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sCustomId, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dRequestCustomContentComplete, paramsPtr + 32);

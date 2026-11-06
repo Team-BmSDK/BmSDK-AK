@@ -85,7 +85,8 @@ public partial class RSpecialMoveInstance_CwPounceOnThugDLC : BmSDK.BmScript.RSp
     public unsafe override void FinishSpecialMove()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishSpecialMove, "BmScript.RSpecialMoveInstance_CwPounceOnThugDLC.FinishSpecialMove");
-        byte* paramsPtr = stackalloc byte[320];
+        byte* paramsPtr = stackalloc byte[336];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

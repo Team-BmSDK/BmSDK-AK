@@ -85,7 +85,8 @@ public partial class SeqAct_GetMatInstVectorParam : BmSDK.Engine.SequenceAction,
     public unsafe override void Activated()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "Engine.SeqAct_GetMatInstVectorParam.Activated");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -97,7 +98,8 @@ public partial class SeqAct_GetMatInstVectorParam : BmSDK.Engine.SequenceAction,
     public unsafe virtual void GetColour(out BmSDK.GameObject.FLinearColor Colour)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetColour, "Engine.SeqAct_GetMatInstVectorParam.GetColour");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out Colour);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Colour, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

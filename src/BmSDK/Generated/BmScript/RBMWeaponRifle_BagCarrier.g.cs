@@ -85,7 +85,8 @@ public partial class RBMWeaponRifle_BagCarrier : BmSDK.BmScript.RBMWeaponRiflePr
     public unsafe virtual BmSDK.BmGame.RWeaponConfig GetPowerCellWeaponConfig()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPowerCellWeaponConfig, "BmScript.RBMWeaponRifle_BagCarrier.GetPowerCellWeaponConfig");
-        byte* paramsPtr = stackalloc byte[864];
+        byte* paramsPtr = stackalloc byte[880];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RWeaponConfig>(paramsPtr + 0);
     }
@@ -97,7 +98,8 @@ public partial class RBMWeaponRifle_BagCarrier : BmSDK.BmScript.RBMWeaponRiflePr
     public unsafe virtual BmSDK.BmGame.RWeaponConfig GetHardDriveWeaponConfig()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHardDriveWeaponConfig, "BmScript.RBMWeaponRifle_BagCarrier.GetHardDriveWeaponConfig");
-        byte* paramsPtr = stackalloc byte[864];
+        byte* paramsPtr = stackalloc byte[880];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RWeaponConfig>(paramsPtr + 0);
     }
@@ -109,7 +111,8 @@ public partial class RBMWeaponRifle_BagCarrier : BmSDK.BmScript.RBMWeaponRiflePr
     public unsafe virtual BmSDK.BmGame.RWeaponConfig GetBankExtraWeaponConfig()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBankExtraWeaponConfig, "BmScript.RBMWeaponRifle_BagCarrier.GetBankExtraWeaponConfig");
-        byte* paramsPtr = stackalloc byte[3704];
+        byte* paramsPtr = stackalloc byte[3720];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RWeaponConfig>(paramsPtr + 0);
     }
@@ -121,7 +124,8 @@ public partial class RBMWeaponRifle_BagCarrier : BmSDK.BmScript.RBMWeaponRiflePr
     public unsafe override BmSDK.BmGame.RWeaponConfig CreateWeaponConfig(BmSDK.GameObject NewOwner)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateWeaponConfig, "BmScript.RBMWeaponRifle_BagCarrier.CreateWeaponConfig");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewOwner, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RWeaponConfig>(paramsPtr + 8);

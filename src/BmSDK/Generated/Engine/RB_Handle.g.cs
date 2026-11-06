@@ -85,7 +85,8 @@ public partial class RB_Handle : BmSDK.Engine.ActorComponent, BmSDK.IGameObject
     public unsafe virtual BmSDK.GameObject.FQuat GetOrientation()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetOrientation, "Engine.RB_Handle.GetOrientation");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -104,7 +105,8 @@ public partial class RB_Handle : BmSDK.Engine.ActorComponent, BmSDK.IGameObject
     public unsafe virtual void SetOrientation(out BmSDK.GameObject.FQuat NewOrientation)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetOrientation, "Engine.RB_Handle.SetOrientation");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out NewOrientation);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewOrientation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -126,7 +128,8 @@ public partial class RB_Handle : BmSDK.Engine.ActorComponent, BmSDK.IGameObject
     public unsafe virtual void UpdateSmoothLocation(out System.Numerics.Vector3 NewLocation)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateSmoothLocation, "Engine.RB_Handle.UpdateSmoothLocation");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out NewLocation);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewLocation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -148,7 +151,8 @@ public partial class RB_Handle : BmSDK.Engine.ActorComponent, BmSDK.IGameObject
     public unsafe virtual void SetSmoothLocation(System.Numerics.Vector3 NewLocation, float MoveTime)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSmoothLocation, "Engine.RB_Handle.SetSmoothLocation");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveTime, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
@@ -169,7 +173,8 @@ public partial class RB_Handle : BmSDK.Engine.ActorComponent, BmSDK.IGameObject
     public unsafe virtual void SetLocation(System.Numerics.Vector3 NewLocation)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetLocation, "Engine.RB_Handle.SetLocation");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewLocation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -189,7 +194,8 @@ public partial class RB_Handle : BmSDK.Engine.ActorComponent, BmSDK.IGameObject
     public unsafe virtual void ReleaseComponent()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReleaseComponent, "Engine.RB_Handle.ReleaseComponent");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -208,7 +214,8 @@ public partial class RB_Handle : BmSDK.Engine.ActorComponent, BmSDK.IGameObject
     public unsafe virtual void GrabComponent(BmSDK.Engine.PrimitiveComponent Component, BmSDK.FName InBoneName, System.Numerics.Vector3 GrabLocation, bool bConstrainRotation)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GrabComponent, "Engine.RB_Handle.GrabComponent");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Component, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InBoneName, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GrabLocation, paramsPtr + 16);

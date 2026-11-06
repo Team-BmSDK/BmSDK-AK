@@ -85,7 +85,8 @@ public partial class RGangVehicleInteractPointBase : BmSDK.BmGame.RDummyTarget, 
     public unsafe virtual void SetInUse(BmSDK.BmGame.RVehicleNPC NewCar)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetInUse, "BmGame.RGangVehicleInteractPointBase.SetInUse");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCar, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -98,7 +99,8 @@ public partial class RGangVehicleInteractPointBase : BmSDK.BmGame.RDummyTarget, 
     public unsafe virtual BmSDK.BmGame.RVehicleScenario GetCarScenario()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCarScenario, "BmGame.RGangVehicleInteractPointBase.GetCarScenario");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RVehicleScenario>(paramsPtr + 0);
     }

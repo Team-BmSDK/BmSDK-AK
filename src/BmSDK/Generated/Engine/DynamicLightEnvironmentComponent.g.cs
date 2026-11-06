@@ -85,7 +85,8 @@ public partial class DynamicLightEnvironmentComponent : BmSDK.Engine.LightEnviro
     public unsafe virtual BmSDK.GameObject.FBoxSphereBounds GetOwnerBounds()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetOwnerBounds, "Engine.DynamicLightEnvironmentComponent.GetOwnerBounds");
-        byte* paramsPtr = stackalloc byte[28];
+        byte* paramsPtr = stackalloc byte[44];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -104,7 +105,8 @@ public partial class DynamicLightEnvironmentComponent : BmSDK.Engine.LightEnviro
     public unsafe virtual void ResetEnvironment()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetEnvironment, "Engine.DynamicLightEnvironmentComponent.ResetEnvironment");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

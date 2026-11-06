@@ -85,7 +85,8 @@ public partial class FacebookIntegration : BmSDK.Engine.PlatformInterfaceBase, B
     public unsafe virtual void Disconnect()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Disconnect, "Engine.FacebookIntegration.Disconnect");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -104,7 +105,8 @@ public partial class FacebookIntegration : BmSDK.Engine.PlatformInterfaceBase, B
     public unsafe virtual void FacebookDialog(BmSDK.FString Action, BmSDK.TArray<BmSDK.FString> ParamKeysAndValues)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FacebookDialog, "Engine.FacebookIntegration.FacebookDialog");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParamKeysAndValues, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
@@ -125,7 +127,8 @@ public partial class FacebookIntegration : BmSDK.Engine.PlatformInterfaceBase, B
     public unsafe virtual void FacebookRequest(BmSDK.FString GraphRequest)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FacebookRequest, "Engine.FacebookIntegration.FacebookRequest");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GraphRequest, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -145,7 +148,8 @@ public partial class FacebookIntegration : BmSDK.Engine.PlatformInterfaceBase, B
     public unsafe virtual bool IsAuthorized()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAuthorized, "Engine.FacebookIntegration.IsAuthorized");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -164,7 +168,8 @@ public partial class FacebookIntegration : BmSDK.Engine.PlatformInterfaceBase, B
     public unsafe virtual bool Authorize()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Authorize, "Engine.FacebookIntegration.Authorize");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -183,7 +188,8 @@ public partial class FacebookIntegration : BmSDK.Engine.PlatformInterfaceBase, B
     public unsafe virtual bool Init()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "Engine.FacebookIntegration.Init");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

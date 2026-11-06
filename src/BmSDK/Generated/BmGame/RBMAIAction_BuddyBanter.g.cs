@@ -85,7 +85,8 @@ public partial class RBMAIAction_BuddyBanter : BmSDK.BmGame.RBMAIAction, BmSDK.I
     public unsafe override bool HandlesGlance()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandlesGlance, "BmGame.RBMAIAction_BuddyBanter.HandlesGlance");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
@@ -97,7 +98,8 @@ public partial class RBMAIAction_BuddyBanter : BmSDK.BmGame.RBMAIAction, BmSDK.I
     public unsafe override BmSDK.BmGame.RBMAIAction.ActionTickResult ActionTick(float DeltaTime)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActionTick, "BmGame.RBMAIAction_BuddyBanter.ActionTick");
-        byte* paramsPtr = stackalloc byte[5];
+        byte* paramsPtr = stackalloc byte[21];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RBMAIAction.ActionTickResult>(paramsPtr + 4);
@@ -110,7 +112,8 @@ public partial class RBMAIAction_BuddyBanter : BmSDK.BmGame.RBMAIAction, BmSDK.I
     public unsafe virtual void DoBark()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoBark, "BmGame.RBMAIAction_BuddyBanter.DoBark");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -122,7 +125,8 @@ public partial class RBMAIAction_BuddyBanter : BmSDK.BmGame.RBMAIAction, BmSDK.I
     public unsafe virtual void PlayOutAnim()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayOutAnim, "BmGame.RBMAIAction_BuddyBanter.PlayOutAnim");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -134,7 +138,8 @@ public partial class RBMAIAction_BuddyBanter : BmSDK.BmGame.RBMAIAction, BmSDK.I
     public unsafe virtual void PlayInAnim()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayInAnim, "BmGame.RBMAIAction_BuddyBanter.PlayInAnim");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -146,7 +151,8 @@ public partial class RBMAIAction_BuddyBanter : BmSDK.BmGame.RBMAIAction, BmSDK.I
     public unsafe virtual void GetAnimNames()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAnimNames, "BmGame.RBMAIAction_BuddyBanter.GetAnimNames");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -158,7 +164,8 @@ public partial class RBMAIAction_BuddyBanter : BmSDK.BmGame.RBMAIAction, BmSDK.I
     public unsafe virtual BmSDK.GameObject.FSimpleBox GetAnimBounds()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAnimBounds, "BmGame.RBMAIAction_BuddyBanter.GetAnimBounds");
-        byte* paramsPtr = stackalloc byte[168];
+        byte* paramsPtr = stackalloc byte[184];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.GameObject.FSimpleBox>(paramsPtr + 0);
     }
@@ -170,7 +177,8 @@ public partial class RBMAIAction_BuddyBanter : BmSDK.BmGame.RBMAIAction, BmSDK.I
     public unsafe virtual void ExpandBoxBounds(out BmSDK.GameObject.FSimpleBox OutBox, System.Numerics.Vector3 NewPoint)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ExpandBoxBounds, "BmGame.RBMAIAction_BuddyBanter.ExpandBoxBounds");
-        byte* paramsPtr = stackalloc byte[36];
+        byte* paramsPtr = stackalloc byte[52];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out OutBox);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OutBox, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPoint, paramsPtr + 24);
@@ -186,7 +194,8 @@ public partial class RBMAIAction_BuddyBanter : BmSDK.BmGame.RBMAIAction, BmSDK.I
     public unsafe override void OnDeactivate()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeactivate, "BmGame.RBMAIAction_BuddyBanter.OnDeactivate");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -198,7 +207,8 @@ public partial class RBMAIAction_BuddyBanter : BmSDK.BmGame.RBMAIAction, BmSDK.I
     public unsafe override void OnActivate()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMAIAction_BuddyBanter.OnActivate");
-        byte* paramsPtr = stackalloc byte[56];
+        byte* paramsPtr = stackalloc byte[72];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

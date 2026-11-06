@@ -80,7 +80,8 @@ public partial class DistributionVector : BmSDK.Component, BmSDK.IGameObject
     public unsafe virtual System.Numerics.Vector3 GetVectorValue(float F = default, int LastExtreme = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVectorValue, "Core.DistributionVector.GetVectorValue");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(F, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LastExtreme, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;

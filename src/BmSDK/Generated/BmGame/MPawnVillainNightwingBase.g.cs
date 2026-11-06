@@ -80,7 +80,8 @@ public partial class MPawnVillainNightwingBase : BmSDK.BmGame.RPawnVillainCombat
     public unsafe virtual BmSDK.Engine.AnimSet GetComboTakedownAnimset()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetComboTakedownAnimset, "BmGame.MPawnVillainNightwingBase.GetComboTakedownAnimset");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.AnimSet>(paramsPtr + 0);
     }

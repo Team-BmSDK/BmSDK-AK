@@ -85,7 +85,8 @@ public partial class RVehicleCustomisation : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetupDeadVehicleMaterials(BmSDK.Engine.SkeletalMeshComponent SkeletalMeshComponent)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupDeadVehicleMaterials, "BmGame.RVehicleCustomisation.SetupDeadVehicleMaterials");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SkeletalMeshComponent, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -98,7 +99,8 @@ public partial class RVehicleCustomisation : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetupCustomisationOptions(BmSDK.Engine.SkeletalMeshComponent SkeletalMeshComponent, int ForceMaterialIndex = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupCustomisationOptions, "BmGame.RVehicleCustomisation.SetupCustomisationOptions");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SkeletalMeshComponent, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ForceMaterialIndex, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

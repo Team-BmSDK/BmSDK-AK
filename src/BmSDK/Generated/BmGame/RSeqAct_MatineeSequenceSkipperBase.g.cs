@@ -80,7 +80,8 @@ public partial class RSeqAct_MatineeSequenceSkipperBase : BmSDK.Engine.SequenceA
     public unsafe virtual void ForwardMatineeToPosition(BmSDK.Engine.SeqAct_Interp Matinee, float NewPosition)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForwardMatineeToPosition, "BmGame.RSeqAct_MatineeSequenceSkipperBase.ForwardMatineeToPosition");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Matinee, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPosition, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;

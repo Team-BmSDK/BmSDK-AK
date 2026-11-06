@@ -85,7 +85,8 @@ public partial class RApexStaticDestructibleComponent : BmSDK.Engine.ApexStaticD
     public unsafe virtual bool GetSocketWorldLocationAndRotation(BmSDK.FName InSocketName, out System.Numerics.Vector3 OutLocation, out BmSDK.Rotator OutRotation, int Space)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSocketWorldLocationAndRotation, "BmGame.RApexStaticDestructibleComponent.GetSocketWorldLocationAndRotation");
-        byte* paramsPtr = stackalloc byte[40];
+        byte* paramsPtr = stackalloc byte[56];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InSocketName, paramsPtr + 0);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out OutLocation);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OutLocation, paramsPtr + 8);
@@ -112,7 +113,8 @@ public partial class RApexStaticDestructibleComponent : BmSDK.Engine.ApexStaticD
     public unsafe virtual void CalculateStaticCollisionBoundingBox(out BmSDK.GameObject.FMatrix OutBoundsTransform, out System.Numerics.Vector3 OutBoundsHalfExtents)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculateStaticCollisionBoundingBox, "BmGame.RApexStaticDestructibleComponent.CalculateStaticCollisionBoundingBox");
-        byte* paramsPtr = stackalloc byte[76];
+        byte* paramsPtr = stackalloc byte[92];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out OutBoundsHalfExtents);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OutBoundsHalfExtents, paramsPtr + 64);
         var oldFlags = funcManaged.FunctionFlags;
@@ -135,7 +137,8 @@ public partial class RApexStaticDestructibleComponent : BmSDK.Engine.ApexStaticD
     public unsafe virtual void LoadDamageStateFromSaveGame()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LoadDamageStateFromSaveGame, "BmGame.RApexStaticDestructibleComponent.LoadDamageStateFromSaveGame");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

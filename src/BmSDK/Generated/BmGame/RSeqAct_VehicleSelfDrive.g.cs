@@ -80,7 +80,8 @@ public partial class RSeqAct_VehicleSelfDrive : BmSDK.Engine.SequenceAction, BmS
     public unsafe virtual void OnArrived()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnArrived, "BmGame.RSeqAct_VehicleSelfDrive.OnArrived");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

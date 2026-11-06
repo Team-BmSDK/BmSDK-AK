@@ -85,7 +85,8 @@ public partial class AkParameterName : BmSDK.Engine.AkHash, BmSDK.IGameObject
     public unsafe virtual float MapParameterValue(float curValue, float rangeMin = default, float rangeMax = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MapParameterValue, "Engine.AkParameterName.MapParameterValue");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(curValue, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(rangeMin, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(rangeMax, paramsPtr + 8);
@@ -107,7 +108,8 @@ public partial class AkParameterName : BmSDK.Engine.AkHash, BmSDK.IGameObject
     public unsafe virtual float ClampParameterValue(float curValue)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClampParameterValue, "Engine.AkParameterName.ClampParameterValue");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(curValue, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

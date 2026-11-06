@@ -80,7 +80,8 @@ public partial class RSpecialMoveInstance_ControlCamerasBase : BmSDK.BmGame.RSpe
     public unsafe virtual void UpdateCamera(float LocationLerpValue, float RotationLerpValue)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateCamera, "BmScript.RSpecialMoveInstance_ControlCamerasBase.UpdateCamera");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocationLerpValue, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RotationLerpValue, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -94,7 +95,8 @@ public partial class RSpecialMoveInstance_ControlCamerasBase : BmSDK.BmGame.RSpe
     public unsafe virtual void ExitCamera()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ExitCamera, "BmScript.RSpecialMoveInstance_ControlCamerasBase.ExitCamera");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -106,7 +108,8 @@ public partial class RSpecialMoveInstance_ControlCamerasBase : BmSDK.BmGame.RSpe
     public unsafe virtual void SwitchCamera(BmSDK.BmGame.RCameraActor NewCamera)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SwitchCamera, "BmScript.RSpecialMoveInstance_ControlCamerasBase.SwitchCamera");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCamera, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -119,7 +122,8 @@ public partial class RSpecialMoveInstance_ControlCamerasBase : BmSDK.BmGame.RSpe
     public unsafe virtual void StartCamera(BmSDK.BmGame.RCameraActor BeginCamera, BmSDK.Engine.Actor TrackingActor)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartCamera, "BmScript.RSpecialMoveInstance_ControlCamerasBase.StartCamera");
-        byte* paramsPtr = stackalloc byte[33];
+        byte* paramsPtr = stackalloc byte[49];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BeginCamera, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TrackingActor, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -133,7 +137,8 @@ public partial class RSpecialMoveInstance_ControlCamerasBase : BmSDK.BmGame.RSpe
     public unsafe override void FinishSpecialMove()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishSpecialMove, "BmScript.RSpecialMoveInstance_ControlCamerasBase.FinishSpecialMove");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -145,7 +150,8 @@ public partial class RSpecialMoveInstance_ControlCamerasBase : BmSDK.BmGame.RSpe
     public unsafe override void TriggerSpecialMove(BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator MoveLocation)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerSpecialMove, "BmScript.RSpecialMoveInstance_ControlCamerasBase.TriggerSpecialMove");
-        byte* paramsPtr = stackalloc byte[132];
+        byte* paramsPtr = stackalloc byte[148];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

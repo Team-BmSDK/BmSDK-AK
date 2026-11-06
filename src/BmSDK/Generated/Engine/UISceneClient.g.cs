@@ -80,7 +80,8 @@ public partial class UISceneClient : BmSDK.Engine.UIRoot, BmSDK.IGameObject
     public unsafe virtual void InitializeSceneClient()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitializeSceneClient, "Engine.UISceneClient.InitializeSceneClient");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -92,7 +93,8 @@ public partial class UISceneClient : BmSDK.Engine.UIRoot, BmSDK.IGameObject
     public unsafe virtual BmSDK.GameObject.FMatrix GetInverseCanvasToScreen()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetInverseCanvasToScreen, "Engine.UISceneClient.GetInverseCanvasToScreen");
-        byte* paramsPtr = stackalloc byte[64];
+        byte* paramsPtr = stackalloc byte[80];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -111,7 +113,8 @@ public partial class UISceneClient : BmSDK.Engine.UIRoot, BmSDK.IGameObject
     public unsafe virtual BmSDK.GameObject.FMatrix GetCanvasToScreen()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCanvasToScreen, "Engine.UISceneClient.GetCanvasToScreen");
-        byte* paramsPtr = stackalloc byte[64];
+        byte* paramsPtr = stackalloc byte[80];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -130,7 +133,8 @@ public partial class UISceneClient : BmSDK.Engine.UIRoot, BmSDK.IGameObject
     public unsafe virtual bool IsUIActive(int Flags = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsUIActive, "Engine.UISceneClient.IsUIActive");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Flags, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

@@ -80,7 +80,8 @@ public partial class HttpBaseInterface : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void GetContent(out BmSDK.TArray<byte> Content)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetContent, "Engine.HttpBaseInterface.GetContent");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -100,7 +101,8 @@ public partial class HttpBaseInterface : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.FString GetURL()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetURL, "Engine.HttpBaseInterface.GetURL");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -119,7 +121,8 @@ public partial class HttpBaseInterface : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual int GetContentLength()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetContentLength, "Engine.HttpBaseInterface.GetContentLength");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -138,7 +141,8 @@ public partial class HttpBaseInterface : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.FString GetContentType()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetContentType, "Engine.HttpBaseInterface.GetContentType");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -157,7 +161,8 @@ public partial class HttpBaseInterface : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.FString GetURLParameter(BmSDK.FString ParameterName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetURLParameter, "Engine.HttpBaseInterface.GetURLParameter");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -177,7 +182,8 @@ public partial class HttpBaseInterface : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.TArray<BmSDK.FString> GetHeaders()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHeaders, "Engine.HttpBaseInterface.GetHeaders");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -196,7 +202,8 @@ public partial class HttpBaseInterface : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.FString GetHeader(BmSDK.FString HeaderName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHeader, "Engine.HttpBaseInterface.GetHeader");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HeaderName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

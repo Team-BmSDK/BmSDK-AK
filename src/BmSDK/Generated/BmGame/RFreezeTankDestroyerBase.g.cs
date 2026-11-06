@@ -85,7 +85,8 @@ public partial class RFreezeTankDestroyerBase : BmSDK.Engine.Actor, BmSDK.IGameO
     public unsafe virtual void DestroyTarget()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DestroyTarget, "BmGame.RFreezeTankDestroyerBase.DestroyTarget");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

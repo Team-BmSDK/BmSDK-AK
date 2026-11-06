@@ -85,7 +85,8 @@ public partial class RFlapsAsset : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void RemoveCollisionConstraint(BmSDK.Engine.RFlaps_ConstraintSetup.FRFlapsParticleReference particleRef, BmSDK.FName BoneName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveCollisionConstraint, "Engine.RFlapsAsset.RemoveCollisionConstraint");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(particleRef, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
@@ -106,7 +107,8 @@ public partial class RFlapsAsset : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.Engine.RFlaps_ConstraintSetup AddCollisionConstraint(BmSDK.Engine.RFlaps_ConstraintSetup.FRFlapsParticleReference particleRef, BmSDK.FName BoneName, BmSDK.Engine.SkeletalMesh RefSkelMesh)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddCollisionConstraint, "Engine.RFlapsAsset.AddCollisionConstraint");
-        byte* paramsPtr = stackalloc byte[40];
+        byte* paramsPtr = stackalloc byte[56];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(particleRef, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RefSkelMesh, paramsPtr + 24);
@@ -128,7 +130,8 @@ public partial class RFlapsAsset : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual int FindFlapsBodyIndexFromBodyIndex(int BodyIndex)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindFlapsBodyIndexFromBodyIndex, "Engine.RFlapsAsset.FindFlapsBodyIndexFromBodyIndex");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BodyIndex, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -148,7 +151,8 @@ public partial class RFlapsAsset : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void UpdateConstraintReferences()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateConstraintReferences, "Engine.RFlapsAsset.UpdateConstraintReferences");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -167,7 +171,8 @@ public partial class RFlapsAsset : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.Engine.RFlaps_ConstraintSetup AddConstraint(BmSDK.Engine.RFlaps_ConstraintSetup.FRFlapsParticleReference ConstrainedParticleRef, BmSDK.Engine.RFlaps_ConstraintSetup.ERFlapsConstraintType ConstraintType, BmSDK.Engine.SkeletalMesh RefSkelMesh)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddConstraint, "Engine.RFlapsAsset.AddConstraint");
-        byte* paramsPtr = stackalloc byte[36];
+        byte* paramsPtr = stackalloc byte[52];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ConstrainedParticleRef, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ConstraintType, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RefSkelMesh, paramsPtr + 20);
@@ -189,7 +194,8 @@ public partial class RFlapsAsset : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual bool RemoveBody(BmSDK.FName BoneName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveBody, "Engine.RFlapsAsset.RemoveBody");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -209,7 +215,8 @@ public partial class RFlapsAsset : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual int AddBody(BmSDK.FName BoneName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddBody, "Engine.RFlapsAsset.AddBody");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -229,7 +236,8 @@ public partial class RFlapsAsset : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual int FindBodyIndex(BmSDK.FName BoneName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindBodyIndex, "Engine.RFlapsAsset.FindBodyIndex");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -249,7 +257,8 @@ public partial class RFlapsAsset : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual int GetNumBodies()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNumBodies, "Engine.RFlapsAsset.GetNumBodies");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

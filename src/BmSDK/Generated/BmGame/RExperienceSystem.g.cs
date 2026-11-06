@@ -85,7 +85,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void HideXPBar()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideXPBar, "BmGame.RExperienceSystem.HideXPBar");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -97,7 +98,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void ShowXPBar()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowXPBar, "BmGame.RExperienceSystem.ShowXPBar");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -109,7 +111,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void SpentXP()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpentXP, "BmGame.RExperienceSystem.SpentXP");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -121,7 +124,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual bool IsXPCutsceneSuppressed()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsXPCutsceneSuppressed, "BmGame.RExperienceSystem.IsXPCutsceneSuppressed");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
@@ -133,7 +137,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void AllowXPCutscene()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowXPCutscene, "BmGame.RExperienceSystem.AllowXPCutscene");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -145,7 +150,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void SuppressXPCutscene()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SuppressXPCutscene, "BmGame.RExperienceSystem.SuppressXPCutscene");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -157,7 +163,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void SetActualXPBar(int NewValue)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetActualXPBar, "BmGame.RExperienceSystem.SetActualXPBar");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewValue, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -170,7 +177,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual float GetXpDisplayProportion()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetXpDisplayProportion, "BmGame.RExperienceSystem.GetXpDisplayProportion");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
@@ -182,7 +190,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void ClearActualXPBar()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearActualXPBar, "BmGame.RExperienceSystem.ClearActualXPBar");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -194,7 +203,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void SetFadedXPBar(int NewValue)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetFadedXPBar, "BmGame.RExperienceSystem.SetFadedXPBar");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewValue, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -207,7 +217,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void EndLevelUp()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EndLevelUp, "BmGame.RExperienceSystem.EndLevelUp");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -219,7 +230,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void LevelUp()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LevelUp, "BmGame.RExperienceSystem.LevelUp");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -231,7 +243,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void CheckXPAfterLoad()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckXPAfterLoad, "BmGame.RExperienceSystem.CheckXPAfterLoad");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -243,7 +256,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void EndUnbankedXP()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EndUnbankedXP, "BmGame.RExperienceSystem.EndUnbankedXP");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -255,7 +269,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void BankXP(bool bForSave = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BankXP, "BmGame.RExperienceSystem.BankXP");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForSave, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -268,7 +283,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void UnRegisterXPSequence(BmSDK.BmGame.RXPSequence OldSequence)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnRegisterXPSequence, "BmGame.RExperienceSystem.UnRegisterXPSequence");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OldSequence, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -281,7 +297,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void RegisterXPSequence(BmSDK.BmGame.RXPSequence NewSequence)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterXPSequence, "BmGame.RExperienceSystem.RegisterXPSequence");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewSequence, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -294,7 +311,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void FlushPendingLevelUp()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FlushPendingLevelUp, "BmGame.RExperienceSystem.FlushPendingLevelUp");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -306,7 +324,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void BankIfRoomClear()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BankIfRoomClear, "BmGame.RExperienceSystem.BankIfRoomClear");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -318,7 +337,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void ForceBankXP()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForceBankXP, "BmGame.RExperienceSystem.ForceBankXP");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -330,7 +350,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void ForceBankIfRoomClear()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForceBankIfRoomClear, "BmGame.RExperienceSystem.ForceBankIfRoomClear");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -342,7 +363,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void BankIfVehiclesClear()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BankIfVehiclesClear, "BmGame.RExperienceSystem.BankIfVehiclesClear");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -354,7 +376,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void ForceBankVehicleXPIfRoomClear()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForceBankVehicleXPIfRoomClear, "BmGame.RExperienceSystem.ForceBankVehicleXPIfRoomClear");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -366,7 +389,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void AddUnbankedXP(int XpAwarded, bool bTeeth)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddUnbankedXP, "BmGame.RExperienceSystem.AddUnbankedXP");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(XpAwarded, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bTeeth, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -380,7 +404,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void SpawnXPSequence(int XpAwarded, BmSDK.Engine.Actor XPTarget, BmSDK.BmGame.RGameInfo.EGameAction Type, float BatMultiplier = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnXPSequence, "BmGame.RExperienceSystem.SpawnXPSequence");
-        byte* paramsPtr = stackalloc byte[52];
+        byte* paramsPtr = stackalloc byte[68];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(XpAwarded, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(XPTarget, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Type, paramsPtr + 12);
@@ -396,7 +421,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void ShowXPBarForUnbanked()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowXPBarForUnbanked, "BmGame.RExperienceSystem.ShowXPBarForUnbanked");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -408,7 +434,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual int AddCombatChallengeBonus(out BmSDK.FString SummaryString, out float DelayBankTime)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddCombatChallengeBonus, "BmGame.RExperienceSystem.AddCombatChallengeBonus");
-        byte* paramsPtr = stackalloc byte[56];
+        byte* paramsPtr = stackalloc byte[72];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out DelayBankTime);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DelayBankTime, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -424,7 +451,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void AddToBonusSummaryString(out BmSDK.FString SummaryString, out int TotalScore, out float DelayTime, BmSDK.FString Desc, int Multi, int Score, bool bMultiXScore, BmSDK.FString OverrideString = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddToBonusSummaryString, "BmGame.RExperienceSystem.AddToBonusSummaryString");
-        byte* paramsPtr = stackalloc byte[84];
+        byte* paramsPtr = stackalloc byte[100];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out TotalScore);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TotalScore, paramsPtr + 16);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out DelayTime);
@@ -450,7 +478,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual int GetMaxComboGadgetVariationBonus(int Variation)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMaxComboGadgetVariationBonus, "BmGame.RExperienceSystem.GetMaxComboGadgetVariationBonus");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Variation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 4);
@@ -463,7 +492,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual int GetMaxComboVariationBonus(int Variation)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMaxComboVariationBonus, "BmGame.RExperienceSystem.GetMaxComboVariationBonus");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Variation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 4);
@@ -476,7 +506,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void AddPredatorXPBonus(BmSDK.BmGame.RGameInfo.FPredatorXPInfo XPInfo)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddPredatorXPBonus, "BmGame.RExperienceSystem.AddPredatorXPBonus");
-        byte* paramsPtr = stackalloc byte[112];
+        byte* paramsPtr = stackalloc byte[128];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(XPInfo, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -489,7 +520,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void AddCombatXPBonus(BmSDK.BmGame.RGameInfo.FCombatXPInfo XPInfo)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddCombatXPBonus, "BmGame.RExperienceSystem.AddCombatXPBonus");
-        byte* paramsPtr = stackalloc byte[148];
+        byte* paramsPtr = stackalloc byte[164];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(XPInfo, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -502,7 +534,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void AddSummaryTitle(out BmSDK.FString SummaryString, out float DelayTime, BmSDK.FString TitleText)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddSummaryTitle, "BmGame.RExperienceSystem.AddSummaryTitle");
-        byte* paramsPtr = stackalloc byte[36];
+        byte* paramsPtr = stackalloc byte[52];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out DelayTime);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DelayTime, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TitleText, paramsPtr + 20);
@@ -519,7 +552,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void AddToSummaryString(out BmSDK.FString SummaryString, out int TotalXP, out float DelayTime, BmSDK.FString Desc, int Multi, float XPPer, bool bIndent, bool bAddXP = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddToSummaryString, "BmGame.RExperienceSystem.AddToSummaryString");
-        byte* paramsPtr = stackalloc byte[76];
+        byte* paramsPtr = stackalloc byte[92];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out TotalXP);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TotalXP, paramsPtr + 16);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out DelayTime);
@@ -543,7 +577,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void RegisterCombatKO(BmSDK.BmGame.RGameInfo.EGameAction Type, BmSDK.Engine.Actor XPTarget, int XPAmount)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterCombatKO, "BmGame.RExperienceSystem.RegisterCombatKO");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Type, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(XPTarget, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(XPAmount, paramsPtr + 12);
@@ -558,7 +593,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void RegisterSpecialAction(BmSDK.BmGame.RGameInfo.EGameAction Type, BmSDK.Engine.Actor XPTarget, int XPAmount = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterSpecialAction, "BmGame.RExperienceSystem.RegisterSpecialAction");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Type, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(XPTarget, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(XPAmount, paramsPtr + 12);
@@ -573,7 +609,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void RegisterRepeatedAction(BmSDK.BmGame.RGameInfo.EGameAction Type, BmSDK.Engine.Actor XPTarget, int XPAmount = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterRepeatedAction, "BmGame.RExperienceSystem.RegisterRepeatedAction");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Type, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(XPTarget, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(XPAmount, paramsPtr + 12);
@@ -588,7 +625,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void RegisterTakedown(BmSDK.BmGame.RGameInfo.EGameAction Type, BmSDK.Engine.Actor XPTarget, int XPAmount)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterTakedown, "BmGame.RExperienceSystem.RegisterTakedown");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Type, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(XPTarget, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(XPAmount, paramsPtr + 12);
@@ -603,7 +641,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual bool ShouldAwardCombatXP()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldAwardCombatXP, "BmGame.RExperienceSystem.ShouldAwardCombatXP");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
@@ -615,7 +654,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe override void PostBeginPlay()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RExperienceSystem.PostBeginPlay");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

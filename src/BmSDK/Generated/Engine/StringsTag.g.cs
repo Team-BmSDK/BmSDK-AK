@@ -85,7 +85,8 @@ public partial class StringsTag : BmSDK.Engine.TranslatorTag, BmSDK.IGameObject
     public unsafe override BmSDK.FString Translate(BmSDK.FString InArgument)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Translate, "Engine.StringsTag.Translate");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InArgument, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

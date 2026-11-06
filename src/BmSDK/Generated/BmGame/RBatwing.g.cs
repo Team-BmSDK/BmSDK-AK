@@ -85,7 +85,8 @@ public partial class RBatwing : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe override void Tick(float DeltaTime)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RBatwing.Tick");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -98,7 +99,8 @@ public partial class RBatwing : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void DropBatmobile()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DropBatmobile, "BmGame.RBatwing.DropBatmobile");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -110,7 +112,8 @@ public partial class RBatwing : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void CheckDropBatmobile()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckDropBatmobile, "BmGame.RBatwing.CheckDropBatmobile");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -122,7 +125,8 @@ public partial class RBatwing : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void AttachBatmobile()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttachBatmobile, "BmGame.RBatwing.AttachBatmobile");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -134,7 +138,8 @@ public partial class RBatwing : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void DeactivateHovering()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DeactivateHovering, "BmGame.RBatwing.DeactivateHovering");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -146,7 +151,8 @@ public partial class RBatwing : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void ActivateHovering()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActivateHovering, "BmGame.RBatwing.ActivateHovering");
-        byte* paramsPtr = stackalloc byte[44];
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -158,7 +164,8 @@ public partial class RBatwing : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void ActivateBoosters()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActivateBoosters, "BmGame.RBatwing.ActivateBoosters");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -170,7 +177,8 @@ public partial class RBatwing : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void DeactivateExhaust()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DeactivateExhaust, "BmGame.RBatwing.DeactivateExhaust");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -182,7 +190,8 @@ public partial class RBatwing : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void ActivateExhaust()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActivateExhaust, "BmGame.RBatwing.ActivateExhaust");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -194,7 +203,8 @@ public partial class RBatwing : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void DestroyMe()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DestroyMe, "BmGame.RBatwing.DestroyMe");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -206,7 +216,8 @@ public partial class RBatwing : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void BeginBatmobileRescue(BmSDK.BmGame.RVehicleBatmobileBase Bmb)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BeginBatmobileRescue, "BmGame.RBatwing.BeginBatmobileRescue");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Bmb, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -219,7 +230,8 @@ public partial class RBatwing : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe override void PostBeginPlay()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RBatwing.PostBeginPlay");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

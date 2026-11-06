@@ -85,7 +85,8 @@ public partial class RVisualDamageComponent : BmSDK.Engine.ActorComponent, BmSDK
     public unsafe virtual void ConstraintBrokenNotify(BmSDK.Engine.SkeletalMeshComponent SkelComp, BmSDK.Engine.Actor ConOwner, BmSDK.Engine.RB_ConstraintSetup ConSetup, BmSDK.Engine.RB_ConstraintInstance ConInstance)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ConstraintBrokenNotify, "BmGame.RVisualDamageComponent.ConstraintBrokenNotify");
-        byte* paramsPtr = stackalloc byte[68];
+        byte* paramsPtr = stackalloc byte[84];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SkelComp, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ConOwner, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ConSetup, paramsPtr + 16);
@@ -101,7 +102,8 @@ public partial class RVisualDamageComponent : BmSDK.Engine.ActorComponent, BmSDK
     public unsafe virtual void SpawnImpactEffects(BmSDK.Engine.SkeletalMeshComponent OwnerMeshComp, int BodyIndex, BmSDK.Engine.Actor Other, System.Numerics.Vector3 WorldPos, float Speed)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnImpactEffects, "BmGame.RVisualDamageComponent.SpawnImpactEffects");
-        byte* paramsPtr = stackalloc byte[56];
+        byte* paramsPtr = stackalloc byte[72];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OwnerMeshComp, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BodyIndex, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 12);
@@ -118,7 +120,8 @@ public partial class RVisualDamageComponent : BmSDK.Engine.ActorComponent, BmSDK
     public unsafe virtual void Inititalise(BmSDK.Engine.SkeletalMeshComponent OwnerMeshComp)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Inititalise, "BmGame.RVisualDamageComponent.Inititalise");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OwnerMeshComp, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -131,7 +134,8 @@ public partial class RVisualDamageComponent : BmSDK.Engine.ActorComponent, BmSDK
     public unsafe virtual void Tick(float DeltaTime)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RVisualDamageComponent.Tick");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -151,7 +155,8 @@ public partial class RVisualDamageComponent : BmSDK.Engine.ActorComponent, BmSDK
     public unsafe virtual bool IsPartBrokenOff(BmSDK.Engine.SkeletalMeshComponent SkelComp, BmSDK.FName BoneName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPartBrokenOff, "BmGame.RVisualDamageComponent.IsPartBrokenOff");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SkelComp, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
@@ -172,7 +177,8 @@ public partial class RVisualDamageComponent : BmSDK.Engine.ActorComponent, BmSDK
     public unsafe virtual void HideBonesOnSmashed(BmSDK.Engine.SkeletalMeshComponent SkelComp)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideBonesOnSmashed, "BmGame.RVisualDamageComponent.HideBonesOnSmashed");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SkelComp, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -192,7 +198,8 @@ public partial class RVisualDamageComponent : BmSDK.Engine.ActorComponent, BmSDK
     public unsafe virtual void HidePart(BmSDK.Engine.SkeletalMeshComponent SkelComp, BmSDK.FName BoneName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HidePart, "BmGame.RVisualDamageComponent.HidePart");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SkelComp, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
@@ -213,7 +220,8 @@ public partial class RVisualDamageComponent : BmSDK.Engine.ActorComponent, BmSDK
     public unsafe virtual void BreakOffPart(BmSDK.Engine.SkeletalMeshComponent SkelComp, BmSDK.FName BoneName, bool KeepConstraint = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BreakOffPart, "BmGame.RVisualDamageComponent.BreakOffPart");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SkelComp, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(KeepConstraint, paramsPtr + 16);
@@ -235,7 +243,8 @@ public partial class RVisualDamageComponent : BmSDK.Engine.ActorComponent, BmSDK
     public unsafe virtual void VehicleExploded(BmSDK.Engine.SkeletalMeshComponent SkelComp)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_VehicleExploded, "BmGame.RVisualDamageComponent.VehicleExploded");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SkelComp, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -255,7 +264,8 @@ public partial class RVisualDamageComponent : BmSDK.Engine.ActorComponent, BmSDK
     public unsafe virtual void SpawnEffects(BmSDK.Engine.SkeletalMeshComponent SkelComp, BmSDK.FName BoneName, BmSDK.BmGame.RVisualDamageComponent.EVehicleDamageEffectCond Condition)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnEffects, "BmGame.RVisualDamageComponent.SpawnEffects");
-        byte* paramsPtr = stackalloc byte[17];
+        byte* paramsPtr = stackalloc byte[33];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SkelComp, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Condition, paramsPtr + 16);
@@ -277,7 +287,8 @@ public partial class RVisualDamageComponent : BmSDK.Engine.ActorComponent, BmSDK
     public unsafe virtual void ApplyVisualDamage(BmSDK.Engine.SkeletalMeshComponent SkelComp, System.Numerics.Vector3 WorldPos, float Radius, float Amount, bool bDeformAllowed, bool bSmashGlass, float PartBreakOffImpulse)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyVisualDamage, "BmGame.RVisualDamageComponent.ApplyVisualDamage");
-        byte* paramsPtr = stackalloc byte[40];
+        byte* paramsPtr = stackalloc byte[56];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SkelComp, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WorldPos, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Radius, paramsPtr + 20);

@@ -85,7 +85,8 @@ public partial class GameEngine : BmSDK.Engine._Engine, BmSDK.IGameObject
     public unsafe static BmSDK.Engine.LocHelper GetLocHelperSystem()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLocHelperSystem, "Engine.GameEngine.GetLocHelperSystem");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -104,7 +105,8 @@ public partial class GameEngine : BmSDK.Engine._Engine, BmSDK.IGameObject
     public unsafe static bool HasSecondaryScreenActive()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasSecondaryScreenActive, "Engine.GameEngine.HasSecondaryScreenActive");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -123,7 +125,8 @@ public partial class GameEngine : BmSDK.Engine._Engine, BmSDK.IGameObject
     public unsafe static BmSDK.Engine.DownloadableContentManager GetDLCManager()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDLCManager, "Engine.GameEngine.GetDLCManager");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -142,7 +145,8 @@ public partial class GameEngine : BmSDK.Engine._Engine, BmSDK.IGameObject
     public unsafe static BmSDK.Engine.DownloadableContentEnumerator GetDLCEnumerator()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDLCEnumerator, "Engine.GameEngine.GetDLCEnumerator");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -161,7 +165,8 @@ public partial class GameEngine : BmSDK.Engine._Engine, BmSDK.IGameObject
     public unsafe static BmSDK.Engine.OnlineSubsystem GetOnlineSubsystem()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetOnlineSubsystem, "Engine.GameEngine.GetOnlineSubsystem");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -180,7 +185,8 @@ public partial class GameEngine : BmSDK.Engine._Engine, BmSDK.IGameObject
     public unsafe virtual void DestroyNamedNetDriver(BmSDK.FName NetDriverName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DestroyNamedNetDriver, "Engine.GameEngine.DestroyNamedNetDriver");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NetDriverName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -200,7 +206,8 @@ public partial class GameEngine : BmSDK.Engine._Engine, BmSDK.IGameObject
     public unsafe virtual bool CreateNamedNetDriver(BmSDK.FName NetDriverName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateNamedNetDriver, "Engine.GameEngine.CreateNamedNetDriver");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NetDriverName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

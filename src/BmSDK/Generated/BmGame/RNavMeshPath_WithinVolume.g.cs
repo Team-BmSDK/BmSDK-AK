@@ -85,7 +85,8 @@ public partial class RNavMeshPath_WithinVolume : BmSDK.Engine.NavMeshPathConstra
     public unsafe override void Recycle()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Recycle, "BmGame.RNavMeshPath_WithinVolume.Recycle");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -97,7 +98,8 @@ public partial class RNavMeshPath_WithinVolume : BmSDK.Engine.NavMeshPathConstra
     public unsafe static bool StayWithinVolumeToLoc(BmSDK.Engine.NavigationHandle NavHandle, BmSDK.Engine.Volume NewWithinVol, bool bOnlyTossOutSpecsThatLeave = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StayWithinVolumeToLoc, "BmGame.RNavMeshPath_WithinVolume.StayWithinVolumeToLoc");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NavHandle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewWithinVol, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bOnlyTossOutSpecsThatLeave, paramsPtr + 16);

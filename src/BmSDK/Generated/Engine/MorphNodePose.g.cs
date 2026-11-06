@@ -85,7 +85,8 @@ public partial class MorphNodePose : BmSDK.Engine.MorphNodeBase, BmSDK.IGameObje
     public unsafe virtual void SetMorphTarget(BmSDK.FName MorphTargetName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMorphTarget, "Engine.MorphNodePose.SetMorphTarget");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MorphTargetName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

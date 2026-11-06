@@ -80,7 +80,8 @@ public partial class RSeqAct_TakeoverVideoScreenVisibleBase : BmSDK.Engine.Seque
     public unsafe static bool CheckVis(BmSDK.Engine.WorldInfo WorldInfo)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckVis, "BmGame.RSeqAct_TakeoverVideoScreenVisibleBase.CheckVis");
-        byte* paramsPtr = stackalloc byte[68];
+        byte* paramsPtr = stackalloc byte[84];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WorldInfo, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);

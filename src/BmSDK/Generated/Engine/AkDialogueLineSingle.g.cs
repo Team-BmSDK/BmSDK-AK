@@ -85,7 +85,8 @@ public partial class AkDialogueLineSingle : BmSDK.Engine.AkDialogueLine, BmSDK.I
     public unsafe virtual float GetSingleDialogueEventDuration()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSingleDialogueEventDuration, "Engine.AkDialogueLineSingle.GetSingleDialogueEventDuration");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -104,7 +105,8 @@ public partial class AkDialogueLineSingle : BmSDK.Engine.AkDialogueLine, BmSDK.I
     public unsafe virtual BmSDK.Engine.AkEvent GetSingleDialogueEvent()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSingleDialogueEvent, "Engine.AkDialogueLineSingle.GetSingleDialogueEvent");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

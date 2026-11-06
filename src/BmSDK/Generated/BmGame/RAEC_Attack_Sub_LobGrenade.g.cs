@@ -85,7 +85,8 @@ public partial class RAEC_Attack_Sub_LobGrenade : BmSDK.BmGame.RAlertEventCoordi
     public unsafe override void NotifyFinished(BmSDK.BmGame.RBMAIAction FinishedAction)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyFinished, "BmGame.RAEC_Attack_Sub_LobGrenade.NotifyFinished");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FinishedAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -98,7 +99,8 @@ public partial class RAEC_Attack_Sub_LobGrenade : BmSDK.BmGame.RAlertEventCoordi
     public unsafe virtual void InitThrow(System.Numerics.Vector3 BestThrowVel, System.Numerics.Vector3 ThrowTarget)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitThrow, "BmGame.RAEC_Attack_Sub_LobGrenade.InitThrow");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BestThrowVel, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThrowTarget, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

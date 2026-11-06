@@ -80,7 +80,8 @@ public partial class Surface : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual float GetSurfaceHeight()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSurfaceHeight, "Engine.Surface.GetSurfaceHeight");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -99,7 +100,8 @@ public partial class Surface : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual float GetSurfaceWidth()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSurfaceWidth, "Engine.Surface.GetSurfaceWidth");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

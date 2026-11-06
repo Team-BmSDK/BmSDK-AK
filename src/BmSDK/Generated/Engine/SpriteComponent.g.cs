@@ -85,7 +85,8 @@ public partial class SpriteComponent : BmSDK.Engine.PrimitiveComponent, BmSDK.IG
     public unsafe virtual void SetSpriteAndUV(BmSDK.Engine.Texture2D NewSprite, int NewU, int NewUL, int NewV, int NewVL)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSpriteAndUV, "Engine.SpriteComponent.SetSpriteAndUV");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewSprite, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewU, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewUL, paramsPtr + 12);
@@ -109,7 +110,8 @@ public partial class SpriteComponent : BmSDK.Engine.PrimitiveComponent, BmSDK.IG
     public unsafe virtual void SetUV(int NewU, int NewUL, int NewV, int NewVL)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetUV, "Engine.SpriteComponent.SetUV");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewU, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewUL, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewV, paramsPtr + 8);
@@ -132,7 +134,8 @@ public partial class SpriteComponent : BmSDK.Engine.PrimitiveComponent, BmSDK.IG
     public unsafe virtual void SetSprite(BmSDK.Engine.Texture2D NewSprite)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSprite, "Engine.SpriteComponent.SetSprite");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewSprite, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

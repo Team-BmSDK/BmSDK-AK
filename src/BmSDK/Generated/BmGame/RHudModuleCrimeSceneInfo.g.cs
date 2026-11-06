@@ -85,7 +85,8 @@ public partial class RHudModuleCrimeSceneInfo : BmSDK.BmGame.RHudModule, BmSDK.I
     public unsafe virtual void UpdateCompletionText(BmSDK.FString CompletionText)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateCompletionText, "BmGame.RHudModuleCrimeSceneInfo.UpdateCompletionText");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CompletionText, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -98,7 +99,8 @@ public partial class RHudModuleCrimeSceneInfo : BmSDK.BmGame.RHudModule, BmSDK.I
     public unsafe virtual void InitCrimeSceneInfoCaseFile(BmSDK.FString CaseFileName, BmSDK.FString CrimeSceneScreenName, BmSDK.FString CompletionText)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitCrimeSceneInfoCaseFile, "BmGame.RHudModuleCrimeSceneInfo.InitCrimeSceneInfoCaseFile");
-        byte* paramsPtr = stackalloc byte[48];
+        byte* paramsPtr = stackalloc byte[64];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CaseFileName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CrimeSceneScreenName, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CompletionText, paramsPtr + 32);
@@ -113,7 +115,8 @@ public partial class RHudModuleCrimeSceneInfo : BmSDK.BmGame.RHudModule, BmSDK.I
     public unsafe virtual void InitCrimeSceneInfo(BmSDK.FString CrimeSceneScreenName, BmSDK.FString CompletionText)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitCrimeSceneInfo, "BmGame.RHudModuleCrimeSceneInfo.InitCrimeSceneInfo");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CrimeSceneScreenName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CompletionText, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -127,7 +130,8 @@ public partial class RHudModuleCrimeSceneInfo : BmSDK.BmGame.RHudModule, BmSDK.I
     public unsafe override void InitialiseFlash()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitialiseFlash, "BmGame.RHudModuleCrimeSceneInfo.InitialiseFlash");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -139,7 +143,8 @@ public partial class RHudModuleCrimeSceneInfo : BmSDK.BmGame.RHudModule, BmSDK.I
     public unsafe override void Close()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Close, "BmGame.RHudModuleCrimeSceneInfo.Close");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -151,7 +156,8 @@ public partial class RHudModuleCrimeSceneInfo : BmSDK.BmGame.RHudModule, BmSDK.I
     public unsafe override bool Init(BmSDK.BmGame.RPlayerController _RPC, BmSDK.FString _ExtensionName, BmSDK.FString _ExtensionPath)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmGame.RHudModuleCrimeSceneInfo.Init");
-        byte* paramsPtr = stackalloc byte[44];
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_RPC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_ExtensionName, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_ExtensionPath, paramsPtr + 24);

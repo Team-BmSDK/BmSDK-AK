@@ -85,7 +85,8 @@ public partial class RAnimNode_AnimCapture : BmSDK.Engine.AnimNodeBlendBase, BmS
     public unsafe virtual void Capture(BmSDK.Engine.SkeletalMeshComponent Mesh)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Capture, "BmGame.RAnimNode_AnimCapture.Capture");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Mesh, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

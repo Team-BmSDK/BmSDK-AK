@@ -85,7 +85,8 @@ public partial class NavMeshGoal_GenericFilterContainer : BmSDK.Engine.NavMeshPa
     public unsafe override void Recycle()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Recycle, "Engine.NavMeshGoal_GenericFilterContainer.Recycle");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -97,7 +98,8 @@ public partial class NavMeshGoal_GenericFilterContainer : BmSDK.Engine.NavMeshPa
     public unsafe virtual System.Numerics.Vector3 GetGoalPoint()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGoalPoint, "Engine.NavMeshGoal_GenericFilterContainer.GetGoalPoint");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -116,7 +118,8 @@ public partial class NavMeshGoal_GenericFilterContainer : BmSDK.Engine.NavMeshPa
     public unsafe virtual BmSDK.Engine.NavMeshGoal_Filter GetFilterOfType(BmSDK.Class Filter_Class)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFilterOfType, "Engine.NavMeshGoal_GenericFilterContainer.GetFilterOfType");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filter_Class, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.NavMeshGoal_Filter>(paramsPtr + 8);
@@ -129,7 +132,8 @@ public partial class NavMeshGoal_GenericFilterContainer : BmSDK.Engine.NavMeshPa
     public unsafe static BmSDK.Engine.NavMeshGoal_GenericFilterContainer CreateAndAddFilterToNavHandleFromSeedList(BmSDK.Engine.NavigationHandle NavHandle, out BmSDK.TArray<System.Numerics.Vector3> InSearchSeeds, int InMaxPathVisits = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateAndAddFilterToNavHandleFromSeedList, "Engine.NavMeshGoal_GenericFilterContainer.CreateAndAddFilterToNavHandleFromSeedList");
-        byte* paramsPtr = stackalloc byte[44];
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NavHandle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InMaxPathVisits, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -144,7 +148,8 @@ public partial class NavMeshGoal_GenericFilterContainer : BmSDK.Engine.NavMeshPa
     public unsafe static BmSDK.Engine.NavMeshGoal_GenericFilterContainer CreateAndAddFilterToNavHandle(BmSDK.Engine.NavigationHandle NavHandle, int InMaxPathVisits = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateAndAddFilterToNavHandle, "Engine.NavMeshGoal_GenericFilterContainer.CreateAndAddFilterToNavHandle");
-        byte* paramsPtr = stackalloc byte[28];
+        byte* paramsPtr = stackalloc byte[44];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NavHandle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InMaxPathVisits, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

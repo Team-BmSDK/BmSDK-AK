@@ -80,7 +80,8 @@ public partial class HttpRequestInterface : BmSDK.Engine.HttpBaseInterface, BmSD
     public unsafe virtual BmSDK.Engine.HttpRequestInterface SetProcessRequestCompleteDelegate(System.IntPtr ProcessRequestCompleteDelegate)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetProcessRequestCompleteDelegate, "Engine.HttpRequestInterface.SetProcessRequestCompleteDelegate");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProcessRequestCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.HttpRequestInterface>(paramsPtr + 16);
@@ -102,7 +103,8 @@ public partial class HttpRequestInterface : BmSDK.Engine.HttpBaseInterface, BmSD
     public unsafe virtual void OnProcessRequestComplete(BmSDK.Engine.HttpRequestInterface OriginalRequest, BmSDK.Engine.HttpResponseInterface InHttpResponse, bool bDidSucceed)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnProcessRequestComplete, "Engine.HttpRequestInterface.OnProcessRequestComplete");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OriginalRequest, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InHttpResponse, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDidSucceed, paramsPtr + 16);
@@ -117,7 +119,8 @@ public partial class HttpRequestInterface : BmSDK.Engine.HttpBaseInterface, BmSD
     public unsafe virtual bool ProcessRequest()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProcessRequest, "Engine.HttpRequestInterface.ProcessRequest");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -136,7 +139,8 @@ public partial class HttpRequestInterface : BmSDK.Engine.HttpBaseInterface, BmSD
     public unsafe virtual BmSDK.Engine.HttpRequestInterface SetHeader(BmSDK.FString HeaderName, BmSDK.FString HeaderValue)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHeader, "Engine.HttpRequestInterface.SetHeader");
-        byte* paramsPtr = stackalloc byte[40];
+        byte* paramsPtr = stackalloc byte[56];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HeaderName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HeaderValue, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
@@ -157,7 +161,8 @@ public partial class HttpRequestInterface : BmSDK.Engine.HttpBaseInterface, BmSD
     public unsafe virtual BmSDK.Engine.HttpRequestInterface SetContentAsString(BmSDK.FString ContentString)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetContentAsString, "Engine.HttpRequestInterface.SetContentAsString");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ContentString, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -177,7 +182,8 @@ public partial class HttpRequestInterface : BmSDK.Engine.HttpBaseInterface, BmSD
     public unsafe virtual BmSDK.Engine.HttpRequestInterface SetContent(out BmSDK.TArray<byte> ContentPayload)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetContent, "Engine.HttpRequestInterface.SetContent");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -197,7 +203,8 @@ public partial class HttpRequestInterface : BmSDK.Engine.HttpBaseInterface, BmSD
     public unsafe virtual BmSDK.Engine.HttpRequestInterface SetURL(BmSDK.FString URL)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetURL, "Engine.HttpRequestInterface.SetURL");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(URL, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -217,7 +224,8 @@ public partial class HttpRequestInterface : BmSDK.Engine.HttpBaseInterface, BmSD
     public unsafe virtual BmSDK.Engine.HttpRequestInterface SetVerb(BmSDK.FString Verb)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetVerb, "Engine.HttpRequestInterface.SetVerb");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Verb, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -237,7 +245,8 @@ public partial class HttpRequestInterface : BmSDK.Engine.HttpBaseInterface, BmSD
     public unsafe virtual BmSDK.FString GetVerb()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVerb, "Engine.HttpRequestInterface.GetVerb");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

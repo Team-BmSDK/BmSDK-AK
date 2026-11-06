@@ -85,7 +85,8 @@ public partial class Path_WithinTraversalDist : BmSDK.Engine.PathConstraint, BmS
     public unsafe override void Recycle()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Recycle, "Engine.Path_WithinTraversalDist.Recycle");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -97,7 +98,8 @@ public partial class Path_WithinTraversalDist : BmSDK.Engine.PathConstraint, BmS
     public unsafe static bool DontExceedMaxDist(BmSDK.Engine.Pawn P, float InMaxTraversalDist, bool bInSoft = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DontExceedMaxDist, "Engine.Path_WithinTraversalDist.DontExceedMaxDist");
-        byte* paramsPtr = stackalloc byte[28];
+        byte* paramsPtr = stackalloc byte[44];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InMaxTraversalDist, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bInSoft, paramsPtr + 12);

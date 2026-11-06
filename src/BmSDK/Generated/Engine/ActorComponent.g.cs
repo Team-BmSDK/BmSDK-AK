@@ -80,7 +80,8 @@ public partial class ActorComponent : BmSDK.Component, BmSDK.IGameObject
     public unsafe virtual void DetachFromAny()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DetachFromAny, "Engine.ActorComponent.DetachFromAny");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -99,7 +100,8 @@ public partial class ActorComponent : BmSDK.Component, BmSDK.IGameObject
     public unsafe virtual void QueueReattach(bool bTransformOnly)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_QueueReattach, "Engine.ActorComponent.QueueReattach");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bTransformOnly, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -119,7 +121,8 @@ public partial class ActorComponent : BmSDK.Component, BmSDK.IGameObject
     public unsafe virtual void ForceUpdate(bool bTransformOnly)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForceUpdate, "Engine.ActorComponent.ForceUpdate");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bTransformOnly, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -139,7 +142,8 @@ public partial class ActorComponent : BmSDK.Component, BmSDK.IGameObject
     public unsafe virtual void SetComponentRBFixed(bool bFixed)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetComponentRBFixed, "Engine.ActorComponent.SetComponentRBFixed");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bFixed, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -159,7 +163,8 @@ public partial class ActorComponent : BmSDK.Component, BmSDK.IGameObject
     public unsafe virtual void SetTickGroup(BmSDK.GameObject.ETickingGroup NewTickGroup)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetTickGroup, "Engine.ActorComponent.SetTickGroup");
-        byte* paramsPtr = stackalloc byte[1];
+        byte* paramsPtr = stackalloc byte[17];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewTickGroup, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

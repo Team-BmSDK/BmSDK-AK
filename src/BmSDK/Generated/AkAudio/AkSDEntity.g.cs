@@ -80,7 +80,8 @@ public partial class AkSDEntity : BmSDK.AkAudio.AkSDNode, BmSDK.IGameObject
     public unsafe virtual BmSDK.FString GetVariableName()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVariableName, "AkAudio.AkSDEntity.GetVariableName");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

@@ -85,7 +85,8 @@ public partial class RBMBehaviour_JokerBossRiddler : BmSDK.BmGame.RBMBehaviour, 
     public unsafe virtual void ShotJokerDmgOnly()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShotJokerDmgOnly, "BmScript.RBMBehaviour_JokerBossRiddler.ShotJokerDmgOnly");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -97,7 +98,8 @@ public partial class RBMBehaviour_JokerBossRiddler : BmSDK.BmGame.RBMBehaviour, 
     public unsafe virtual void ShotJokerEnd()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShotJokerEnd, "BmScript.RBMBehaviour_JokerBossRiddler.ShotJokerEnd");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -109,7 +111,8 @@ public partial class RBMBehaviour_JokerBossRiddler : BmSDK.BmGame.RBMBehaviour, 
     public unsafe virtual void ShotJoker()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShotJoker, "BmScript.RBMBehaviour_JokerBossRiddler.ShotJoker");
-        byte* paramsPtr = stackalloc byte[64];
+        byte* paramsPtr = stackalloc byte[80];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -121,7 +124,8 @@ public partial class RBMBehaviour_JokerBossRiddler : BmSDK.BmGame.RBMBehaviour, 
     public unsafe virtual bool CanSeeBatman()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanSeeBatman, "BmScript.RBMBehaviour_JokerBossRiddler.CanSeeBatman");
-        byte* paramsPtr = stackalloc byte[72];
+        byte* paramsPtr = stackalloc byte[88];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
@@ -133,7 +137,8 @@ public partial class RBMBehaviour_JokerBossRiddler : BmSDK.BmGame.RBMBehaviour, 
     public unsafe override void Tick(float DeltaTime)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmScript.RBMBehaviour_JokerBossRiddler.Tick");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -146,7 +151,8 @@ public partial class RBMBehaviour_JokerBossRiddler : BmSDK.BmGame.RBMBehaviour, 
     public unsafe virtual void NotifyThugDied()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyThugDied, "BmScript.RBMBehaviour_JokerBossRiddler.NotifyThugDied");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -158,7 +164,8 @@ public partial class RBMBehaviour_JokerBossRiddler : BmSDK.BmGame.RBMBehaviour, 
     public unsafe virtual BmSDK.BmGame.RPawnVillain ShotByJokerGun()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShotByJokerGun, "BmScript.RBMBehaviour_JokerBossRiddler.ShotByJokerGun");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RPawnVillain>(paramsPtr + 0);
     }

@@ -85,7 +85,8 @@ public partial class CameraAnimInst : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetPlaySpace(BmSDK.Engine.Camera.ECameraAnimPlaySpace NewSpace, BmSDK.Rotator UserPlaySpace = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetPlaySpace, "Engine.CameraAnimInst.SetPlaySpace");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewSpace, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UserPlaySpace, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
@@ -106,7 +107,8 @@ public partial class CameraAnimInst : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void ApplyTransientScaling(float Scalar)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyTransientScaling, "Engine.CameraAnimInst.ApplyTransientScaling");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Scalar, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -126,7 +128,8 @@ public partial class CameraAnimInst : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void Stop(bool bImmediate = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Stop, "Engine.CameraAnimInst.Stop");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bImmediate, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -146,7 +149,8 @@ public partial class CameraAnimInst : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void AdvanceAnim(float DeltaTime, bool bJump)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AdvanceAnim, "Engine.CameraAnimInst.AdvanceAnim");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bJump, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
@@ -167,7 +171,8 @@ public partial class CameraAnimInst : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void Update(float NewRate, float NewScale, float NewBlendInTime, float NewBlendOutTime, float NewDuration = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Update, "Engine.CameraAnimInst.Update");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewRate, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewScale, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewBlendInTime, paramsPtr + 8);
@@ -191,7 +196,8 @@ public partial class CameraAnimInst : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void Play(BmSDK.Engine.CameraAnim Anim, BmSDK.Engine.Actor CamActor, float InRate, float InScale, float InBlendInTime, float InBlendOutTime, bool bInLoop, bool bRandomStartTime, float Duration = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Play, "Engine.CameraAnimInst.Play");
-        byte* paramsPtr = stackalloc byte[44];
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Anim, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CamActor, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InRate, paramsPtr + 16);

@@ -85,7 +85,8 @@ public partial class RLightShaftVolumeComponent : BmSDK.Engine.PrimitiveComponen
     public unsafe virtual void SetEnabled(bool NewEnabled)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetEnabled, "Engine.RLightShaftVolumeComponent.SetEnabled");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewEnabled, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -105,7 +106,8 @@ public partial class RLightShaftVolumeComponent : BmSDK.Engine.PrimitiveComponen
     public unsafe virtual bool UpdateBrightness(float NewBrightness)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateBrightness, "Engine.RLightShaftVolumeComponent.UpdateBrightness");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewBrightness, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -125,7 +127,8 @@ public partial class RLightShaftVolumeComponent : BmSDK.Engine.PrimitiveComponen
     public unsafe virtual bool SetConeAngleAndRadius(float NewConeAngle, float NewRadius)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetConeAngleAndRadius, "Engine.RLightShaftVolumeComponent.SetConeAngleAndRadius");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewConeAngle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewRadius, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;

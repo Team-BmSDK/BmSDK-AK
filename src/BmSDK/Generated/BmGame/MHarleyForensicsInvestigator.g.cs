@@ -85,7 +85,8 @@ public partial class MHarleyForensicsInvestigator : BmSDK.BmGame.RForensicsInves
     public unsafe override void SetNPCInfoCursor(BmSDK.BmGame.RPlayerController RPC, int HeartBeatType, int WeaponType)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetNPCInfoCursor, "BmGame.MHarleyForensicsInvestigator.SetNPCInfoCursor");
-        byte* paramsPtr = stackalloc byte[64];
+        byte* paramsPtr = stackalloc byte[80];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RPC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HeartBeatType, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WeaponType, paramsPtr + 12);

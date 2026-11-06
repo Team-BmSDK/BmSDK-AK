@@ -85,7 +85,8 @@ public partial class InAppMessageBase : BmSDK.Engine.PlatformInterfaceBase, BmSD
     public unsafe virtual bool ShowInAppEmailUI(BmSDK.FString InitialSubject = default, BmSDK.FString InitialMessage = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowInAppEmailUI, "Engine.InAppMessageBase.ShowInAppEmailUI");
-        byte* paramsPtr = stackalloc byte[36];
+        byte* paramsPtr = stackalloc byte[52];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InitialSubject, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InitialMessage, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
@@ -106,7 +107,8 @@ public partial class InAppMessageBase : BmSDK.Engine.PlatformInterfaceBase, BmSD
     public unsafe virtual bool ShowInAppSMSUI(BmSDK.FString InitialMessage = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowInAppSMSUI, "Engine.InAppMessageBase.ShowInAppSMSUI");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InitialMessage, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -126,7 +128,8 @@ public partial class InAppMessageBase : BmSDK.Engine.PlatformInterfaceBase, BmSD
     public unsafe virtual void Init()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "Engine.InAppMessageBase.Init");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

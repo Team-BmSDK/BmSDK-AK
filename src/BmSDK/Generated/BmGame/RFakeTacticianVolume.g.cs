@@ -85,7 +85,8 @@ public partial class RFakeTacticianVolume : BmSDK.Engine.Volume, BmSDK.IGameObje
     public unsafe virtual void DebugDrawVolume(int Red, int Green, int Blue, bool bDrawPersistent)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DebugDrawVolume, "BmGame.RFakeTacticianVolume.DebugDrawVolume");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Red, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Green, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Blue, paramsPtr + 8);

@@ -85,7 +85,8 @@ public partial class SpotLightComponent : BmSDK.Engine.PointLightComponent, BmSD
     public unsafe virtual void SetAngleAndRadius(float NewInnerConeAngle, float NewOuterConeAngle, float NewRadius)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAngleAndRadius, "Engine.SpotLightComponent.SetAngleAndRadius");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewInnerConeAngle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewOuterConeAngle, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewRadius, paramsPtr + 8);
@@ -107,7 +108,8 @@ public partial class SpotLightComponent : BmSDK.Engine.PointLightComponent, BmSD
     public unsafe virtual void SetAbsoluteRotation(bool bNewAbsoluteRotation)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAbsoluteRotation, "Engine.SpotLightComponent.SetAbsoluteRotation");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewAbsoluteRotation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -127,7 +129,8 @@ public partial class SpotLightComponent : BmSDK.Engine.PointLightComponent, BmSD
     public unsafe virtual void SetRotation(BmSDK.Rotator NewRotation)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRotation, "Engine.SpotLightComponent.SetRotation");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewRotation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

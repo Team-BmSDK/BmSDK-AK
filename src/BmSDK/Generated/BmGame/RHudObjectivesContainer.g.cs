@@ -85,7 +85,8 @@ public partial class RHudObjectivesContainer : BmSDK.GameObject, BmSDK.IGameObje
     public unsafe virtual void FlushPendingObjectiveMessage(BmSDK.FString Title)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FlushPendingObjectiveMessage, "BmGame.RHudObjectivesContainer.FlushPendingObjectiveMessage");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Title, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -98,7 +99,8 @@ public partial class RHudObjectivesContainer : BmSDK.GameObject, BmSDK.IGameObje
     public unsafe virtual void QueueObjectiveMessageCustomIcon(float Time, BmSDK.FString Title, BmSDK.FString Desc, BmSDK.FString OrgDesc, BmSDK.FString CustomIconName, bool bForceShowMap, BmSDK.FString BackPrompt, bool bNoDuplicates, bool bPulseCompassIndicator, BmSDK.FString MostWantedPipeSeparatedArray = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_QueueObjectiveMessageCustomIcon, "BmGame.RHudObjectivesContainer.QueueObjectiveMessageCustomIcon");
-        byte* paramsPtr = stackalloc byte[208];
+        byte* paramsPtr = stackalloc byte[224];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Time, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Title, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Desc, paramsPtr + 20);
@@ -122,7 +124,8 @@ public partial class RHudObjectivesContainer : BmSDK.GameObject, BmSDK.IGameObje
     public unsafe virtual void QueueObjectiveMessage(float Time, BmSDK.FString Title, BmSDK.FString Desc, BmSDK.FString OrgDesc, int ArrowType, bool bForceShowMap, BmSDK.FString BackPrompt, bool bNoDuplicates, bool bPulseCompassIndicator)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_QueueObjectiveMessage, "BmGame.RHudObjectivesContainer.QueueObjectiveMessage");
-        byte* paramsPtr = stackalloc byte[180];
+        byte* paramsPtr = stackalloc byte[196];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Time, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Title, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Desc, paramsPtr + 20);

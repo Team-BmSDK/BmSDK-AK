@@ -80,7 +80,8 @@ public partial class HttpResponseInterface : BmSDK.Engine.HttpBaseInterface, BmS
     public unsafe virtual BmSDK.FString GetContentAsString()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetContentAsString, "Engine.HttpResponseInterface.GetContentAsString");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -99,7 +100,8 @@ public partial class HttpResponseInterface : BmSDK.Engine.HttpBaseInterface, BmS
     public unsafe virtual int GetResponseCode()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetResponseCode, "Engine.HttpResponseInterface.GetResponseCode");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

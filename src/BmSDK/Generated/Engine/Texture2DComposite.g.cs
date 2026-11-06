@@ -85,7 +85,8 @@ public partial class Texture2DComposite : BmSDK.Engine.Texture, BmSDK.IGameObjec
     public unsafe virtual void ResetSourceRegions()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetSourceRegions, "Engine.Texture2DComposite.ResetSourceRegions");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -104,7 +105,8 @@ public partial class Texture2DComposite : BmSDK.Engine.Texture, BmSDK.IGameObjec
     public unsafe virtual void UpdateCompositeTexture(int NumMipsToGenerate)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateCompositeTexture, "Engine.Texture2DComposite.UpdateCompositeTexture");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NumMipsToGenerate, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -124,7 +126,8 @@ public partial class Texture2DComposite : BmSDK.Engine.Texture, BmSDK.IGameObjec
     public unsafe virtual bool SourceTexturesFullyStreamedIn()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SourceTexturesFullyStreamedIn, "Engine.Texture2DComposite.SourceTexturesFullyStreamedIn");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

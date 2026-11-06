@@ -85,7 +85,8 @@ public partial class RAEC_BatarangReaction_Confused : BmSDK.BmGame.RAlertEventCo
     public unsafe virtual void TryDoQuitIntoSearchBark(BmSDK.BmGame.RPawnVillain TalkPawn)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TryDoQuitIntoSearchBark, "BmGame.RAEC_BatarangReaction_Confused.TryDoQuitIntoSearchBark");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TalkPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -98,7 +99,8 @@ public partial class RAEC_BatarangReaction_Confused : BmSDK.BmGame.RAlertEventCo
     public unsafe virtual void HandleRicochetNoise(System.Numerics.Vector3 HitLoc, float JumpRange, out int bShouldEscalate)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandleRicochetNoise, "BmGame.RAEC_BatarangReaction_Confused.HandleRicochetNoise");
-        byte* paramsPtr = stackalloc byte[116];
+        byte* paramsPtr = stackalloc byte[132];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(JumpRange, paramsPtr + 12);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out bShouldEscalate);
@@ -115,7 +117,8 @@ public partial class RAEC_BatarangReaction_Confused : BmSDK.BmGame.RAlertEventCo
     public unsafe override void OnRemoveSoloChild(BmSDK.BmGame.RAlertEventCoordinatorSolo RemAEC)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnRemoveSoloChild, "BmGame.RAEC_BatarangReaction_Confused.OnRemoveSoloChild");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RemAEC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

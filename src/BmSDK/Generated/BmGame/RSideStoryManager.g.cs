@@ -85,7 +85,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.FString GetLocalisedRiddleFromRefName(BmSDK.FString RefName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLocalisedRiddleFromRefName, "BmGame.RSideStoryManager.GetLocalisedRiddleFromRefName");
-        byte* paramsPtr = stackalloc byte[72];
+        byte* paramsPtr = stackalloc byte[88];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RefName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 16);
@@ -98,7 +99,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual int CreateActorGroup(BmSDK.FString SideStoryIconName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateActorGroup, "BmGame.RSideStoryManager.CreateActorGroup");
-        byte* paramsPtr = stackalloc byte[64];
+        byte* paramsPtr = stackalloc byte[80];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SideStoryIconName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 16);
@@ -111,7 +113,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual int GetActorGroupIndex(BmSDK.FString SideStoryIconName, bool CreateIfDoesntExist = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetActorGroupIndex, "BmGame.RSideStoryManager.GetActorGroupIndex");
-        byte* paramsPtr = stackalloc byte[28];
+        byte* paramsPtr = stackalloc byte[44];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SideStoryIconName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CreateIfDoesntExist, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -125,7 +128,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual int GetActorIndex(int ActorGroupIndex, BmSDK.Engine.Actor TheActor)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetActorIndex, "BmGame.RSideStoryManager.GetActorIndex");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ActorGroupIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TheActor, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -139,7 +143,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void RemoveActorFromGroup(int ActorGroupIndex, BmSDK.Engine.Actor TheActor)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveActorFromGroup, "BmGame.RSideStoryManager.RemoveActorFromGroup");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ActorGroupIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TheActor, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -153,7 +158,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void DeregisterVisualDiscoveryActor(BmSDK.Engine.Actor TheActor)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DeregisterVisualDiscoveryActor, "BmGame.RSideStoryManager.DeregisterVisualDiscoveryActor");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TheActor, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -166,7 +172,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void RegisterVisualDiscoveryActor(BmSDK.Engine.Actor TheActor, BmSDK.FString SideStoryIconName, int SideStoryDiscoveryHeight, bool bIsMainActor = default, bool CanBeDiscoveredDuringCloudburst = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterVisualDiscoveryActor, "BmGame.RSideStoryManager.RegisterVisualDiscoveryActor");
-        byte* paramsPtr = stackalloc byte[60];
+        byte* paramsPtr = stackalloc byte[76];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TheActor, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SideStoryIconName, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SideStoryDiscoveryHeight, paramsPtr + 24);
@@ -183,7 +190,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual float GetCustomTrailWaypointDistance()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCustomTrailWaypointDistance, "BmGame.RSideStoryManager.GetCustomTrailWaypointDistance");
-        byte* paramsPtr = stackalloc byte[28];
+        byte* paramsPtr = stackalloc byte[44];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
@@ -195,7 +203,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual int GetMidKnightfall()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMidKnightfall, "BmGame.RSideStoryManager.GetMidKnightfall");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
@@ -207,7 +216,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.BmGame.RSideStoryManager.KnightfallState GetKnightfallState()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetKnightfallState, "BmGame.RSideStoryManager.GetKnightfallState");
-        byte* paramsPtr = stackalloc byte[52];
+        byte* paramsPtr = stackalloc byte[68];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RSideStoryManager.KnightfallState>(paramsPtr + 0);
     }
@@ -219,7 +229,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual bool SetSideStoryDiscoveryState(int SSIndex, BmSDK.FString IconName, byte DiscoveryState, bool bAddToAutoPan = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSideStoryDiscoveryState, "BmGame.RSideStoryManager.SetSideStoryDiscoveryState");
-        byte* paramsPtr = stackalloc byte[72];
+        byte* paramsPtr = stackalloc byte[88];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SSIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IconName, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DiscoveryState, paramsPtr + 20);
@@ -235,7 +246,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual bool CanSideStoryBeReaddedOnceRemoved(BmSDK.FString StoryName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanSideStoryBeReaddedOnceRemoved, "BmGame.RSideStoryManager.CanSideStoryBeReaddedOnceRemoved");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StoryName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
@@ -248,7 +260,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual byte GetDiscoveryState(BmSDK.FString IconName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDiscoveryState, "BmGame.RSideStoryManager.GetDiscoveryState");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IconName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<byte>(paramsPtr + 16);
@@ -261,7 +274,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.BmGame.RGameInfo GetRGI()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRGI, "BmGame.RSideStoryManager.GetRGI");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RGameInfo>(paramsPtr + 0);
     }
@@ -273,7 +287,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void RemoveIconFromMap(int SSIndex, BmSDK.FString IconName, bool MakeUnavailableInsteadOfActuallyRemoved = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveIconFromMap, "BmGame.RSideStoryManager.RemoveIconFromMap");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SSIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IconName, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MakeUnavailableInsteadOfActuallyRemoved, paramsPtr + 20);
@@ -288,7 +303,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void AddIconToMap(int SSIndex, BmSDK.FString IconName, bool bAddToAutoPan, bool ShowDiscoveryOnHud, BmSDK.Engine.Actor HudDiscoveryActor = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddIconToMap, "BmGame.RSideStoryManager.AddIconToMap");
-        byte* paramsPtr = stackalloc byte[52];
+        byte* paramsPtr = stackalloc byte[68];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SSIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IconName, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAddToAutoPan, paramsPtr + 20);
@@ -305,7 +321,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void MakeIconDiscoverable(int SSIndex, BmSDK.FString IconName, bool bAddToAutoPan)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MakeIconDiscoverable, "BmGame.RSideStoryManager.MakeIconDiscoverable");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SSIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IconName, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAddToAutoPan, paramsPtr + 20);
@@ -320,7 +337,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void DebugDiscoverAllIcons()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DebugDiscoverAllIcons, "BmGame.RSideStoryManager.DebugDiscoverAllIcons");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -332,7 +350,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual int GetMainActorForGroup(int GroupIndex)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMainActorForGroup, "BmGame.RSideStoryManager.GetMainActorForGroup");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GroupIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 4);
@@ -345,7 +364,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void GroupActorSpotted(int GroupIndex, BmSDK.Engine.Actor TheActor, bool ShowDiscoveryOnHud = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GroupActorSpotted, "BmGame.RSideStoryManager.GroupActorSpotted");
-        byte* paramsPtr = stackalloc byte[80];
+        byte* paramsPtr = stackalloc byte[96];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GroupIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TheActor, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ShowDiscoveryOnHud, paramsPtr + 12);
@@ -360,7 +380,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.FString GetFocusDetailForSideStory(int ss_index)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFocusDetailForSideStory, "BmGame.RSideStoryManager.GetFocusDetailForSideStory");
-        byte* paramsPtr = stackalloc byte[60];
+        byte* paramsPtr = stackalloc byte[76];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ss_index, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 4);
@@ -373,7 +394,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.FString ChooseBestSideStoryForIntel()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ChooseBestSideStoryForIntel, "BmGame.RSideStoryManager.ChooseBestSideStoryForIntel");
-        byte* paramsPtr = stackalloc byte[72];
+        byte* paramsPtr = stackalloc byte[88];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
     }
@@ -385,7 +407,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual int GetNumberOfDifferentSideStoryMissionsOnMap()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNumberOfDifferentSideStoryMissionsOnMap, "BmGame.RSideStoryManager.GetNumberOfDifferentSideStoryMissionsOnMap");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
@@ -397,7 +420,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual bool CheckWhetherIntelValid(BmSDK.FString SideStoryIntelState)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckWhetherIntelValid, "BmGame.RSideStoryManager.CheckWhetherIntelValid");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SideStoryIntelState, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
@@ -410,7 +434,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void InvalidIntelIfNoLongerValid()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InvalidIntelIfNoLongerValid, "BmGame.RSideStoryManager.InvalidIntelIfNoLongerValid");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -422,7 +447,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void ClearIntel()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearIntel, "BmGame.RSideStoryManager.ClearIntel");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -434,7 +460,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void GiveIntelPoint(int UnlessThisManyIconsAlreadyOnMap)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GiveIntelPoint, "BmGame.RSideStoryManager.GiveIntelPoint");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UnlessThisManyIconsAlreadyOnMap, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -447,7 +474,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void DisplayLowUrgencyOpenWheelMessageCheck()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisplayLowUrgencyOpenWheelMessageCheck, "BmGame.RSideStoryManager.DisplayLowUrgencyOpenWheelMessageCheck");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -459,7 +487,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetDesignerLowUrgency(bool IsLowUrgency, int GiveIntelUnlessThisManyDifferentIconsAlreadyOnMap = default, bool GivePenguinIntel = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDesignerLowUrgency, "BmGame.RSideStoryManager.SetDesignerLowUrgency");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IsLowUrgency, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GiveIntelUnlessThisManyDifferentIconsAlreadyOnMap, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GivePenguinIntel, paramsPtr + 8);
@@ -474,7 +503,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.TArray<int> MaxAndFinishedCountPerIsland(BmSDK.FString sMission, int District)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MaxAndFinishedCountPerIsland, "BmGame.RSideStoryManager.MaxAndFinishedCountPerIsland");
-        byte* paramsPtr = stackalloc byte[264];
+        byte* paramsPtr = stackalloc byte[280];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sMission, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(District, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -488,7 +518,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual bool AnyRadialMapIconsActive(int SideStoryIndex, BmSDK.BmGame.RPersistentData pData)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AnyRadialMapIconsActive, "BmGame.RSideStoryManager.AnyRadialMapIconsActive");
-        byte* paramsPtr = stackalloc byte[44];
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SideStoryIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(pData, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -502,7 +533,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual bool CanShowIntelForSideStory(BmSDK.FString SideStoryName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanShowIntelForSideStory, "BmGame.RSideStoryManager.CanShowIntelForSideStory");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SideStoryName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
@@ -515,7 +547,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.FString GetIntelMapIconThenClearIntel()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetIntelMapIconThenClearIntel, "BmGame.RSideStoryManager.GetIntelMapIconThenClearIntel");
-        byte* paramsPtr = stackalloc byte[64];
+        byte* paramsPtr = stackalloc byte[80];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
     }
@@ -527,7 +560,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual bool IsRadialMapIconStory(BmSDK.FString StoryName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsRadialMapIconStory, "BmGame.RSideStoryManager.IsRadialMapIconStory");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StoryName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
@@ -540,7 +574,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual bool SideStoryRequiresTracker(BmSDK.BmGame.RSideStoryManager.ActiveSideStoryEnum TheSideStory)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SideStoryRequiresTracker, "BmGame.RSideStoryManager.SideStoryRequiresTracker");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TheSideStory, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
@@ -553,7 +588,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.FString GetIntelSideStory(bool ChooseBestIfCurrentlyWild = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetIntelSideStory, "BmGame.RSideStoryManager.GetIntelSideStory");
-        byte* paramsPtr = stackalloc byte[28];
+        byte* paramsPtr = stackalloc byte[44];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ChooseBestIfCurrentlyWild, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 4);
@@ -566,7 +602,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetApcIntelAvailable(bool is_available)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetApcIntelAvailable, "BmGame.RSideStoryManager.SetApcIntelAvailable");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(is_available, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -579,7 +616,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void AwardPenguinIntel()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AwardPenguinIntel, "BmGame.RSideStoryManager.AwardPenguinIntel");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -591,7 +629,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void ClearPenguinIntel()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearPenguinIntel, "BmGame.RSideStoryManager.ClearPenguinIntel");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -603,7 +642,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual bool IsPenguinIntelAvailable()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPenguinIntelAvailable, "BmGame.RSideStoryManager.IsPenguinIntelAvailable");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
@@ -615,7 +655,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.BmGame.RSideStoryManager.ActiveSideStoryEnum GetCurrentActiveSideStory()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCurrentActiveSideStory, "BmGame.RSideStoryManager.GetCurrentActiveSideStory");
-        byte* paramsPtr = stackalloc byte[1];
+        byte* paramsPtr = stackalloc byte[17];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RSideStoryManager.ActiveSideStoryEnum>(paramsPtr + 0);
     }
@@ -627,7 +668,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.BmGame.RSideStoryManager.ActiveSideStoryEnum GetActiveSideStoryFromString(BmSDK.FString SideStoryName, out BmSDK.FString ShortenedName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetActiveSideStoryFromString, "BmGame.RSideStoryManager.GetActiveSideStoryFromString");
-        byte* paramsPtr = stackalloc byte[56];
+        byte* paramsPtr = stackalloc byte[72];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SideStoryName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ShortenedName = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 16);
@@ -641,7 +683,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.FString GetStringFromActiveSideStoryEnum(int the_enum)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStringFromActiveSideStoryEnum, "BmGame.RSideStoryManager.GetStringFromActiveSideStoryEnum");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(the_enum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 4);
@@ -654,7 +697,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.FString GetSideStoryNameFromEnum(int the_enum)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSideStoryNameFromEnum, "BmGame.RSideStoryManager.GetSideStoryNameFromEnum");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(the_enum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 4);
@@ -667,7 +711,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetDebugSideStoryIntel(int the_enum)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDebugSideStoryIntel, "BmGame.RSideStoryManager.SetDebugSideStoryIntel");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(the_enum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -680,7 +725,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.FString GetFocusDetailBySideStoryIconName(BmSDK.FString SideStoryIconName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFocusDetailBySideStoryIconName, "BmGame.RSideStoryManager.GetFocusDetailBySideStoryIconName");
-        byte* paramsPtr = stackalloc byte[72];
+        byte* paramsPtr = stackalloc byte[88];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SideStoryIconName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 16);
@@ -693,7 +739,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void ShowDebugSpheres()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowDebugSpheres, "BmGame.RSideStoryManager.ShowDebugSpheres");
-        byte* paramsPtr = stackalloc byte[33];
+        byte* paramsPtr = stackalloc byte[49];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -705,7 +752,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void TickDiscoveryTargets(float DeltaT)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TickDiscoveryTargets, "BmGame.RSideStoryManager.TickDiscoveryTargets");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaT, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -718,7 +766,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void AddDiscoveryTarget(BmSDK.Engine.Actor TheActor, BmSDK.FString AnimName, float ShowDuration)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddDiscoveryTarget, "BmGame.RSideStoryManager.AddDiscoveryTarget");
-        byte* paramsPtr = stackalloc byte[64];
+        byte* paramsPtr = stackalloc byte[80];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TheActor, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ShowDuration, paramsPtr + 24);
@@ -733,7 +782,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SendDummyHudTargetToFlash()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SendDummyHudTargetToFlash, "BmGame.RSideStoryManager.SendDummyHudTargetToFlash");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -745,7 +795,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void ObjectiveSystemSetsActiveSideStory(BmSDK.FString ActiveSideStoryName, BmSDK.FString SideStoryMapMarker)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ObjectiveSystemSetsActiveSideStory, "BmGame.RSideStoryManager.ObjectiveSystemSetsActiveSideStory");
-        byte* paramsPtr = stackalloc byte[60];
+        byte* paramsPtr = stackalloc byte[76];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ActiveSideStoryName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SideStoryMapMarker, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -759,7 +810,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.FString GetObjectiveTypeByIconString(BmSDK.FString IconString)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjectiveTypeByIconString, "BmGame.RSideStoryManager.GetObjectiveTypeByIconString");
-        byte* paramsPtr = stackalloc byte[44];
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IconString, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 16);
@@ -772,7 +824,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetMissionWheelHighlights(BmSDK.FString ActiveSideStoryName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMissionWheelHighlights, "BmGame.RSideStoryManager.SetMissionWheelHighlights");
-        byte* paramsPtr = stackalloc byte[56];
+        byte* paramsPtr = stackalloc byte[72];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ActiveSideStoryName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -785,7 +838,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetActiveSideStory(BmSDK.FString ActiveSideStoryName, BmSDK.FString OptionalSideStoryMapMarker = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetActiveSideStory, "BmGame.RSideStoryManager.SetActiveSideStory");
-        byte* paramsPtr = stackalloc byte[84];
+        byte* paramsPtr = stackalloc byte[100];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ActiveSideStoryName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OptionalSideStoryMapMarker, paramsPtr + 16);
         var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
@@ -801,7 +855,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetActiveSideStoryByEnumWithoutMapMarker(BmSDK.BmGame.RSideStoryManager.ActiveSideStoryEnum the_side_story)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetActiveSideStoryByEnumWithoutMapMarker, "BmGame.RSideStoryManager.SetActiveSideStoryByEnumWithoutMapMarker");
-        byte* paramsPtr = stackalloc byte[1];
+        byte* paramsPtr = stackalloc byte[17];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(the_side_story, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -814,7 +869,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void MarkActiveSideStoryComplete(BmSDK.BmGame.RSideStoryManager.ActiveSideStoryEnum the_side_story)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MarkActiveSideStoryComplete, "BmGame.RSideStoryManager.MarkActiveSideStoryComplete");
-        byte* paramsPtr = stackalloc byte[1];
+        byte* paramsPtr = stackalloc byte[17];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(the_side_story, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -827,7 +883,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void ObjectiveSystemClearsActiveSideStory(bool MainPathObjective)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ObjectiveSystemClearsActiveSideStory, "BmGame.RSideStoryManager.ObjectiveSystemClearsActiveSideStory");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MainPathObjective, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -840,7 +897,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.FString PlayRiddlerHint(BmSDK.FString RefName)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayRiddlerHint, "BmGame.RSideStoryManager.PlayRiddlerHint");
-        byte* paramsPtr = stackalloc byte[152];
+        byte* paramsPtr = stackalloc byte[168];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RefName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 16);
@@ -853,7 +911,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual bool IsLockupWaypoint(BmSDK.FString waypoint_name)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsLockupWaypoint, "BmGame.RSideStoryManager.IsLockupWaypoint");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(waypoint_name, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
@@ -866,7 +925,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void InitialiseManager()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitialiseManager, "BmGame.RSideStoryManager.InitialiseManager");
-        byte* paramsPtr = stackalloc byte[44];
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -878,7 +938,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.FString SideStoryEnumToString(BmSDK.BmGame.RSideStoryManager.ActiveSideStoryEnum SideStory)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SideStoryEnumToString, "BmGame.RSideStoryManager.SideStoryEnumToString");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SideStory, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -898,7 +959,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual bool FindLineOfSightActor()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindLineOfSightActor, "BmGame.RSideStoryManager.FindLineOfSightActor");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -917,7 +979,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual float IsSideStoryActorVisible(int group_index, int actor_index, bool is_zoomed)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsSideStoryActorVisible, "BmGame.RSideStoryManager.IsSideStoryActorVisible");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(group_index, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(actor_index, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(is_zoomed, paramsPtr + 8);
@@ -939,7 +1002,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void Tick(BmSDK.BmGame.RPlayerController RPC, float DeltaTime)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RSideStoryManager.Tick");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RPC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
@@ -960,7 +1024,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual bool IsAnyMissionDialogueLoading()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAnyMissionDialogueLoading, "BmGame.RSideStoryManager.IsAnyMissionDialogueLoading");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -979,7 +1044,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual int IsWheelDialoguePlayingOfType(byte Type)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsWheelDialoguePlayingOfType, "BmGame.RSideStoryManager.IsWheelDialoguePlayingOfType");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Type, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -999,7 +1065,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void StopOrCancelMissionDialogue(int DialogueIndex, bool bUseFade)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopOrCancelMissionDialogue, "BmGame.RSideStoryManager.StopOrCancelMissionDialogue");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DialogueIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bUseFade, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1020,7 +1087,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void CancelAllMissionDialogue()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelAllMissionDialogue, "BmGame.RSideStoryManager.CancelAllMissionDialogue");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1039,7 +1107,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void PlayMissionWheelDialogue(int DialogueIndex)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayMissionWheelDialogue, "BmGame.RSideStoryManager.PlayMissionWheelDialogue");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DialogueIndex, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1059,7 +1128,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetMissionDialogueState_(int DialogueIndex)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMissionDialogueState_, "BmGame.RSideStoryManager.SetMissionDialogueState_");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DialogueIndex, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1079,7 +1149,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetOfMissionDialogue(BmSDK.FString PackageName, byte Type, bool bUseFadeOnOldDialogue)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetOfMissionDialogue, "BmGame.RSideStoryManager.SetOfMissionDialogue");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PackageName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Type, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bUseFadeOnOldDialogue, paramsPtr + 20);
@@ -1101,7 +1172,8 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void TickMissionDialogue(BmSDK.BmGame.RPlayerController RPC)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TickMissionDialogue, "BmGame.RSideStoryManager.TickMissionDialogue");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RPC, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

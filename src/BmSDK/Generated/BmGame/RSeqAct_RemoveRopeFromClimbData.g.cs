@@ -85,7 +85,8 @@ public partial class RSeqAct_RemoveRopeFromClimbData : BmSDK.Engine.SequenceActi
     public unsafe override void Activated()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmGame.RSeqAct_RemoveRopeFromClimbData.Activated");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -97,7 +98,8 @@ public partial class RSeqAct_RemoveRopeFromClimbData : BmSDK.Engine.SequenceActi
     public unsafe virtual void RemoveRope(BmSDK.Engine.Actor RopeToRemove, System.Numerics.Vector3 RopeLoc1, System.Numerics.Vector3 RopeLoc2, int CollectionIndex)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveRope, "BmGame.RSeqAct_RemoveRopeFromClimbData.RemoveRope");
-        byte* paramsPtr = stackalloc byte[36];
+        byte* paramsPtr = stackalloc byte[52];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RopeToRemove, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RopeLoc1, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RopeLoc2, paramsPtr + 20);

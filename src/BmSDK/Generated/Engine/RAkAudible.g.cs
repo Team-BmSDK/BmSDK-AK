@@ -85,7 +85,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetSuppressLoops(BmSDK.Engine.AkPredicate suppressCheck)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSuppressLoops, "Engine.RAkAudible.SetSuppressLoops");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(suppressCheck, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -105,7 +106,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetAlwaysPlayLoops(bool alwaysPlayLoops)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAlwaysPlayLoops, "Engine.RAkAudible.SetAlwaysPlayLoops");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(alwaysPlayLoops, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -125,7 +127,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetAutoKillOnDelete(bool killOnDelete)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAutoKillOnDelete, "Engine.RAkAudible.SetAutoKillOnDelete");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(killOnDelete, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -145,7 +148,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetAutoDestroyWhenDead(bool autoDestroy)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAutoDestroyWhenDead, "Engine.RAkAudible.SetAutoDestroyWhenDead");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(autoDestroy, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -165,7 +169,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetAutoDestroyWhenHidden(bool autoDestroy)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAutoDestroyWhenHidden, "Engine.RAkAudible.SetAutoDestroyWhenHidden");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(autoDestroy, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -185,7 +190,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetNeverAutoDestroy(bool neverAutoDestroy)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetNeverAutoDestroy, "Engine.RAkAudible.SetNeverAutoDestroy");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(neverAutoDestroy, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -205,7 +211,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void DisableSecondaryOutput()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisableSecondaryOutput, "Engine.RAkAudible.DisableSecondaryOutput");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -224,7 +231,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void EnableSecondaryOutput(bool setViaAux = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnableSecondaryOutput, "Engine.RAkAudible.EnableSecondaryOutput");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(setViaAux, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -244,7 +252,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void UnlinkFromListenerEvironments()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnlinkFromListenerEvironments, "Engine.RAkAudible.UnlinkFromListenerEvironments");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -263,7 +272,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void LinkToListenerEnvironments()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LinkToListenerEnvironments, "Engine.RAkAudible.LinkToListenerEnvironments");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -282,7 +292,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void DisableObstructionOcclusion()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisableObstructionOcclusion, "Engine.RAkAudible.DisableObstructionOcclusion");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -301,7 +312,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void EnableObstructionOcclusion(bool setViaParam = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnableObstructionOcclusion, "Engine.RAkAudible.EnableObstructionOcclusion");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(setViaParam, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -321,7 +333,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual float GetSourceAudibilityRadius()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSourceAudibilityRadius, "Engine.RAkAudible.GetSourceAudibilityRadius");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -340,7 +353,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual float GetSourceLinearVelocity()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSourceLinearVelocity, "Engine.RAkAudible.GetSourceLinearVelocity");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -359,7 +373,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual float GetSourceDistanceToListener()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSourceDistanceToListener, "Engine.RAkAudible.GetSourceDistanceToListener");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -378,7 +393,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetSourceSpatialSocket(BmSDK.FName SocketName, bool autoUpdateSpatial = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSourceSpatialSocket, "Engine.RAkAudible.SetSourceSpatialSocket");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SocketName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(autoUpdateSpatial, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
@@ -399,7 +415,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetSourceSpatialBeam(System.Numerics.Vector3 beamStartPoint, System.Numerics.Vector3 beamEndPoint, BmSDK.Rotator Orientation = default, bool autoUpdateSpatial = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSourceSpatialBeam, "Engine.RAkAudible.SetSourceSpatialBeam");
-        byte* paramsPtr = stackalloc byte[40];
+        byte* paramsPtr = stackalloc byte[56];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(beamStartPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(beamEndPoint, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Orientation, paramsPtr + 24);
@@ -422,7 +439,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetSourceSpatialRay(System.Numerics.Vector3 rayOrigin, BmSDK.Rotator rayOrientation, bool autoUpdateSpatial = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSourceSpatialRay, "Engine.RAkAudible.SetSourceSpatialRay");
-        byte* paramsPtr = stackalloc byte[28];
+        byte* paramsPtr = stackalloc byte[44];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(rayOrigin, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(rayOrientation, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(autoUpdateSpatial, paramsPtr + 24);
@@ -444,7 +462,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetDialogueSourceSpatial(System.Numerics.Vector3 dlgPosition, BmSDK.Rotator dlgOrientation = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDialogueSourceSpatial, "Engine.RAkAudible.SetDialogueSourceSpatial");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dlgPosition, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dlgOrientation, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
@@ -465,7 +484,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetSourceSpatial(System.Numerics.Vector3 sndPosition, BmSDK.Rotator sndOrientation = default, bool autoUpdateSpatial = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSourceSpatial, "Engine.RAkAudible.SetSourceSpatial");
-        byte* paramsPtr = stackalloc byte[28];
+        byte* paramsPtr = stackalloc byte[44];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sndPosition, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sndOrientation, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(autoUpdateSpatial, paramsPtr + 24);
@@ -487,7 +507,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetSourceSwitch(BmSDK.Engine.AkSwitchName SwitchName, bool storeSwitch = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSourceSwitch, "Engine.RAkAudible.SetSourceSwitch");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SwitchName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(storeSwitch, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
@@ -508,7 +529,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void SetSourceParameter(BmSDK.Engine.AkParameterName ParamName, float ParamValue, bool storeParam = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSourceParameter, "Engine.RAkAudible.SetSourceParameter");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParamName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParamValue, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(storeParam, paramsPtr + 12);
@@ -530,7 +552,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual bool HasLoopingAudioEvent(BmSDK.Engine.AkEvent AudioEvent)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasLoopingAudioEvent, "Engine.RAkAudible.HasLoopingAudioEvent");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AudioEvent, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -550,7 +573,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void RemoveAllLoopingAudioEvents()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveAllLoopingAudioEvents, "Engine.RAkAudible.RemoveAllLoopingAudioEvents");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -569,7 +593,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void RemoveLoopingAudioEvent(BmSDK.Engine.AkEvent AudioEvent)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveLoopingAudioEvent, "Engine.RAkAudible.RemoveLoopingAudioEvent");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AudioEvent, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -589,7 +614,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void AddLoopingAudioEvent(BmSDK.Engine.AkEvent AudioEvent)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddLoopingAudioEvent, "Engine.RAkAudible.AddLoopingAudioEvent");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AudioEvent, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -609,7 +635,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void DropAllSounds()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DropAllSounds, "Engine.RAkAudible.DropAllSounds");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -628,7 +655,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void KillAllSounds()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_KillAllSounds, "Engine.RAkAudible.KillAllSounds");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -647,7 +675,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual void StopAudioEvent(out BmSDK.Engine.AkWwise.FAkSoundHandle SoundHandle)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopAudioEvent, "Engine.RAkAudible.StopAudioEvent");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out SoundHandle);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SoundHandle, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -669,7 +698,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual bool StartAuxEvent(BmSDK.Engine.AkEvent AudioEvent, System.Numerics.Vector3 Position, System.IntPtr SoundCallbackDelegate = default, int SoundCallbackFlags = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartAuxEvent, "Engine.RAkAudible.StartAuxEvent");
-        byte* paramsPtr = stackalloc byte[44];
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AudioEvent, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Position, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SoundCallbackDelegate, paramsPtr + 20);
@@ -692,7 +722,8 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.Engine.AkWwise.FAkSoundHandle StartAudioEvent(BmSDK.Engine.AkEvent AudioEvent, System.IntPtr SoundCallbackDelegate = default, int SoundCallbackFlags = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartAudioEvent, "Engine.RAkAudible.StartAudioEvent");
-        byte* paramsPtr = stackalloc byte[44];
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AudioEvent, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SoundCallbackDelegate, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SoundCallbackFlags, paramsPtr + 24);

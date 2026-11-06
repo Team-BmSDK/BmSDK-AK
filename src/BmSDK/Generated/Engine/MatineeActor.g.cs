@@ -85,7 +85,8 @@ public partial class MatineeActor : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void CheckPriorityRefresh()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckPriorityRefresh, "Engine.MatineeActor.CheckPriorityRefresh");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -97,7 +98,8 @@ public partial class MatineeActor : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void Update()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Update, "Engine.MatineeActor.Update");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -109,7 +111,8 @@ public partial class MatineeActor : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void AddAIGroupActor(BmSDK.Engine.InterpGroupInstAI AIGroupInst)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddAIGroupActor, "Engine.MatineeActor.AddAIGroupActor");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AIGroupInst, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

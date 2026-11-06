@@ -85,7 +85,8 @@ public partial class SceneCapturePortalComponent : BmSDK.Engine.SceneCaptureComp
     public unsafe virtual void SetCaptureParameters(BmSDK.Engine.TextureRenderTarget2D NewTextureTarget = default, float NewScaleFOV = default, BmSDK.Engine.Actor NewViewDest = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCaptureParameters, "Engine.SceneCapturePortalComponent.SetCaptureParameters");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewTextureTarget, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewScaleFOV, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewViewDest, paramsPtr + 12);

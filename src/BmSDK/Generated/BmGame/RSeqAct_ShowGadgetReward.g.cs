@@ -85,7 +85,8 @@ public partial class RSeqAct_ShowGadgetReward : BmSDK.Engine.SequenceAction, BmS
     public unsafe virtual void RewardMovieClosed()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RewardMovieClosed, "BmGame.RSeqAct_ShowGadgetReward.RewardMovieClosed");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -97,7 +98,8 @@ public partial class RSeqAct_ShowGadgetReward : BmSDK.Engine.SequenceAction, BmS
     public unsafe override void Activated()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmGame.RSeqAct_ShowGadgetReward.Activated");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

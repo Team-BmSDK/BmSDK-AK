@@ -85,7 +85,8 @@ public partial class RBMBehaviour_JokerSingingBase : BmSDK.BmGame.RBMBehaviour, 
     public unsafe virtual float GetSongTime(float songLength)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSongTime, "BmGame.RBMBehaviour_JokerSingingBase.GetSongTime");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(songLength, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

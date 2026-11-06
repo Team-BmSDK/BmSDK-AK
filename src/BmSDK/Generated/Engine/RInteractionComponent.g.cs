@@ -85,7 +85,8 @@ public partial class RInteractionComponent : BmSDK.Engine.ActorComponent, BmSDK.
     public unsafe virtual void RemoveRelevantInteraction(BmSDK.FName InteractionToRemove)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveRelevantInteraction, "Engine.RInteractionComponent.RemoveRelevantInteraction");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InteractionToRemove, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -105,7 +106,8 @@ public partial class RInteractionComponent : BmSDK.Engine.ActorComponent, BmSDK.
     public unsafe virtual void AddRelevantInteraction(BmSDK.FName NewInteraction)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddRelevantInteraction, "Engine.RInteractionComponent.AddRelevantInteraction");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewInteraction, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

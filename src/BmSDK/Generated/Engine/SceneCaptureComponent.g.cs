@@ -80,7 +80,8 @@ public partial class SceneCaptureComponent : BmSDK.Engine.ActorComponent, BmSDK.
     public unsafe virtual void SetEnabled(bool bEnable)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetEnabled, "Engine.SceneCaptureComponent.SetEnabled");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bEnable, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -100,7 +101,8 @@ public partial class SceneCaptureComponent : BmSDK.Engine.ActorComponent, BmSDK.
     public unsafe virtual void SetFrameRate(float NewFrameRate)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetFrameRate, "Engine.SceneCaptureComponent.SetFrameRate");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewFrameRate, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

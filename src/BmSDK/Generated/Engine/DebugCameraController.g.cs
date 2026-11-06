@@ -85,7 +85,8 @@ public partial class DebugCameraController : BmSDK.Engine.PlayerController, BmSD
     public unsafe override BmSDK.FString ConsoleCommand(BmSDK.FString Command, bool bWriteToLog = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ConsoleCommand, "Engine.DebugCameraController.ConsoleCommand");
-        byte* paramsPtr = stackalloc byte[36];
+        byte* paramsPtr = stackalloc byte[52];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Command, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWriteToLog, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
@@ -106,7 +107,8 @@ public partial class DebugCameraController : BmSDK.Engine.PlayerController, BmSD
     public unsafe virtual void ShowDebugSelectedInfo()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowDebugSelectedInfo, "Engine.DebugCameraController.ShowDebugSelectedInfo");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -118,7 +120,8 @@ public partial class DebugCameraController : BmSDK.Engine.PlayerController, BmSD
     public unsafe virtual bool NativeInputKey(int ControllerId, BmSDK.FName Key, BmSDK.GameObject.EInputEvent Event, float AmountDepressed = default, bool bGamepad = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NativeInputKey, "Engine.DebugCameraController.NativeInputKey");
-        byte* paramsPtr = stackalloc byte[136];
+        byte* paramsPtr = stackalloc byte[152];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Key, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Event, paramsPtr + 12);
@@ -135,7 +138,8 @@ public partial class DebugCameraController : BmSDK.Engine.PlayerController, BmSD
     public unsafe virtual void DisableDebugCamera()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisableDebugCamera, "Engine.DebugCameraController.DisableDebugCamera");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -147,7 +151,8 @@ public partial class DebugCameraController : BmSDK.Engine.PlayerController, BmSD
     public unsafe virtual void NormalSpeed()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NormalSpeed, "Engine.DebugCameraController.NormalSpeed");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -159,7 +164,8 @@ public partial class DebugCameraController : BmSDK.Engine.PlayerController, BmSD
     public unsafe virtual void MoreSpeed()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MoreSpeed, "Engine.DebugCameraController.MoreSpeed");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -171,7 +177,8 @@ public partial class DebugCameraController : BmSDK.Engine.PlayerController, BmSD
     public unsafe virtual void SetFreezeRendering()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetFreezeRendering, "Engine.DebugCameraController.SetFreezeRendering");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -183,7 +190,8 @@ public partial class DebugCameraController : BmSDK.Engine.PlayerController, BmSD
     public unsafe virtual void OnDeactivate(BmSDK.Engine.PlayerController PC)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeactivate, "Engine.DebugCameraController.OnDeactivate");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -196,7 +204,8 @@ public partial class DebugCameraController : BmSDK.Engine.PlayerController, BmSD
     public unsafe virtual void OnActivate(BmSDK.Engine.PlayerController PC)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "Engine.DebugCameraController.OnActivate");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -209,7 +218,8 @@ public partial class DebugCameraController : BmSDK.Engine.PlayerController, BmSD
     public unsafe override void PostBeginPlay()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "Engine.DebugCameraController.PostBeginPlay");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -221,7 +231,8 @@ public partial class DebugCameraController : BmSDK.Engine.PlayerController, BmSD
     public unsafe virtual void Unselect()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Unselect, "Engine.DebugCameraController.Unselect");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -240,7 +251,8 @@ public partial class DebugCameraController : BmSDK.Engine.PlayerController, BmSD
     public unsafe virtual void SecondarySelect(System.Numerics.Vector3 HitLoc, System.Numerics.Vector3 HitNormal, BmSDK.Engine.Actor.FTraceHitInfo HitInfo)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SecondarySelect, "Engine.DebugCameraController.SecondarySelect");
-        byte* paramsPtr = stackalloc byte[64];
+        byte* paramsPtr = stackalloc byte[80];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitInfo, paramsPtr + 24);
@@ -262,7 +274,8 @@ public partial class DebugCameraController : BmSDK.Engine.PlayerController, BmSD
     public unsafe virtual void PrimarySelect(System.Numerics.Vector3 HitLoc, System.Numerics.Vector3 HitNormal, BmSDK.Engine.Actor.FTraceHitInfo HitInfo)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PrimarySelect, "Engine.DebugCameraController.PrimarySelect");
-        byte* paramsPtr = stackalloc byte[64];
+        byte* paramsPtr = stackalloc byte[80];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitInfo, paramsPtr + 24);

@@ -85,7 +85,8 @@ public partial class PhysicalMaterial : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.Engine.PhysicalMaterialPropertyBase GetPhysicalMaterialProperty(BmSDK.Class DesiredClass)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPhysicalMaterialProperty, "Engine.PhysicalMaterial.GetPhysicalMaterialProperty");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DesiredClass, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -105,7 +106,8 @@ public partial class PhysicalMaterial : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual float CalculateSlideStrength(float SlideSpeed)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculateSlideStrength, "Engine.PhysicalMaterial.CalculateSlideStrength");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SlideSpeed, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -125,7 +127,8 @@ public partial class PhysicalMaterial : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual float CalculateImpactStrength(float ImpactSpeed)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculateImpactStrength, "Engine.PhysicalMaterial.CalculateImpactStrength");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ImpactSpeed, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -145,7 +148,8 @@ public partial class PhysicalMaterial : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.Engine.Actor.FPhysEffectInfo FindPhysEffectInfo(BmSDK.Engine.PhysicalMaterial.EPhysEffectType Type)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindPhysEffectInfo, "Engine.PhysicalMaterial.FindPhysEffectInfo");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Type, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

@@ -85,7 +85,8 @@ public partial class OnlineMatchmakingStats : BmSDK.GameObject, BmSDK.IGameObjec
     public unsafe virtual void StopTimer(out BmSDK.Engine.OnlineMatchmakingStats.FMMStats_Timer Timer)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopTimer, "Engine.OnlineMatchmakingStats.StopTimer");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out Timer);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Timer, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -107,7 +108,8 @@ public partial class OnlineMatchmakingStats : BmSDK.GameObject, BmSDK.IGameObjec
     public unsafe virtual void StartTimer(out BmSDK.Engine.OnlineMatchmakingStats.FMMStats_Timer Timer)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartTimer, "Engine.OnlineMatchmakingStats.StartTimer");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out Timer);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Timer, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

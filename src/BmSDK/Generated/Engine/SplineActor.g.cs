@@ -85,7 +85,8 @@ public partial class SplineActor : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe override void OnToggleHidden(BmSDK.Engine.SeqAct_ToggleHidden Action)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggleHidden, "Engine.SplineActor.OnToggleHidden");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -98,7 +99,8 @@ public partial class SplineActor : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void OnToggle(BmSDK.Engine.SeqAct_Toggle inAction)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggle, "Engine.SplineActor.OnToggle");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(inAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -111,7 +113,8 @@ public partial class SplineActor : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual float GetPathTotalLength()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPathTotalLength, "Engine.SplineActor.GetPathTotalLength");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -130,7 +133,8 @@ public partial class SplineActor : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual System.Numerics.Vector3 GetTangentAtDistanceAlongPath(float Distance)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTangentAtDistanceAlongPath, "Engine.SplineActor.GetTangentAtDistanceAlongPath");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Distance, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -150,7 +154,8 @@ public partial class SplineActor : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual System.Numerics.Vector3 GetLocationAtDistanceAlongPath(float Distance)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLocationAtDistanceAlongPath, "Engine.SplineActor.GetLocationAtDistanceAlongPath");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Distance, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -170,7 +175,8 @@ public partial class SplineActor : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual float EstimateDistanceAlongPathToClosestPoint(System.Numerics.Vector3 TestPointInWorldSpace)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EstimateDistanceAlongPathToClosestPoint, "Engine.SplineActor.EstimateDistanceAlongPathToClosestPoint");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPointInWorldSpace, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -190,7 +196,8 @@ public partial class SplineActor : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void GetAllConnectedSplineActors(out BmSDK.TArray<BmSDK.Engine.SplineActor> OutSet)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAllConnectedSplineActors, "Engine.SplineActor.GetAllConnectedSplineActors");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -210,7 +217,8 @@ public partial class SplineActor : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual bool FindSplinePathTo(BmSDK.Engine.SplineActor Goal, out BmSDK.TArray<BmSDK.Engine.SplineActor> OutRoute)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindSplinePathTo, "Engine.SplineActor.FindSplinePathTo");
-        byte* paramsPtr = stackalloc byte[28];
+        byte* paramsPtr = stackalloc byte[44];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Goal, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -231,7 +239,8 @@ public partial class SplineActor : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual BmSDK.Engine.SplineActor GetBestConnectionInDirection(System.Numerics.Vector3 DesiredDir, bool bUseLinksFrom = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBestConnectionInDirection, "Engine.SplineActor.GetBestConnectionInDirection");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DesiredDir, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bUseLinksFrom, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
@@ -252,7 +261,8 @@ public partial class SplineActor : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual BmSDK.Engine.SplineActor GetRandomConnection(bool bUseLinksFrom = default)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRandomConnection, "Engine.SplineActor.GetRandomConnection");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bUseLinksFrom, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -272,7 +282,8 @@ public partial class SplineActor : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void BreakAllConnectionsFrom()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BreakAllConnectionsFrom, "Engine.SplineActor.BreakAllConnectionsFrom");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -291,7 +302,8 @@ public partial class SplineActor : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void BreakAllConnections()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BreakAllConnections, "Engine.SplineActor.BreakAllConnections");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -310,7 +322,8 @@ public partial class SplineActor : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void BreakConnectionTo(BmSDK.Engine.SplineActor NextActor)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BreakConnectionTo, "Engine.SplineActor.BreakConnectionTo");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NextActor, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -330,7 +343,8 @@ public partial class SplineActor : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual BmSDK.Engine.SplineActor FindTargetForComponent(BmSDK.Engine.SplineComponent SplineComp)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindTargetForComponent, "Engine.SplineActor.FindTargetForComponent");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SplineComp, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -350,7 +364,8 @@ public partial class SplineActor : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual BmSDK.Engine.SplineComponent FindSplineComponentTo(BmSDK.Engine.SplineActor NextActor)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindSplineComponentTo, "Engine.SplineActor.FindSplineComponentTo");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NextActor, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -370,7 +385,8 @@ public partial class SplineActor : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual bool IsConnectedTo(BmSDK.Engine.SplineActor NextActor, bool bCheckForDisableDestination)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsConnectedTo, "Engine.SplineActor.IsConnectedTo");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NextActor, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bCheckForDisableDestination, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
@@ -391,7 +407,8 @@ public partial class SplineActor : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void AddConnectionTo(BmSDK.Engine.SplineActor NextActor)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddConnectionTo, "Engine.SplineActor.AddConnectionTo");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NextActor, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -411,7 +428,8 @@ public partial class SplineActor : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void UpdateConnectedSplineComponents(bool bFinish)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateConnectedSplineComponents, "Engine.SplineActor.UpdateConnectedSplineComponents");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bFinish, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -431,7 +449,8 @@ public partial class SplineActor : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void UpdateSplineComponents()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateSplineComponents, "Engine.SplineActor.UpdateSplineComponents");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -450,7 +469,8 @@ public partial class SplineActor : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual System.Numerics.Vector3 GetWorldSpaceTangent()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWorldSpaceTangent, "Engine.SplineActor.GetWorldSpaceTangent");
-        byte* paramsPtr = stackalloc byte[12];
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

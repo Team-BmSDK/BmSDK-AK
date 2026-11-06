@@ -85,7 +85,8 @@ public partial class AkHash : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static int StringToHash(BmSDK.FString strToHash)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StringToHash, "Engine.AkHash.StringToHash");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(strToHash, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -105,7 +106,8 @@ public partial class AkHash : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe static BmSDK.FString HashToString(int hashToLookup)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HashToString, "Engine.AkHash.HashToString");
-        byte* paramsPtr = stackalloc byte[20];
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(hashToLookup, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -125,7 +127,8 @@ public partial class AkHash : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual BmSDK.FString GetHashString()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHashString, "Engine.AkHash.GetHashString");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -144,7 +147,8 @@ public partial class AkHash : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual int GetHashValue()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHashValue, "Engine.AkHash.GetHashValue");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

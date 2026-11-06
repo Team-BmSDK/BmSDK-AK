@@ -85,7 +85,8 @@ public partial class NavMeshGoalFilter_MinPathDistance : BmSDK.Engine.NavMeshGoa
     public unsafe static bool MustBeLongerPathThan(BmSDK.Engine.NavMeshGoal_GenericFilterContainer FilterContainer, int InMinDistancePathShouldBe)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MustBeLongerPathThan, "Engine.NavMeshGoalFilter_MinPathDistance.MustBeLongerPathThan");
-        byte* paramsPtr = stackalloc byte[24];
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FilterContainer, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InMinDistancePathShouldBe, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

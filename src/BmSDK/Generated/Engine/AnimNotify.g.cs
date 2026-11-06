@@ -80,7 +80,8 @@ public partial class AnimNotify : BmSDK.GameObject, BmSDK.IGameObject
     public unsafe virtual bool FindNextNotifyOfClass(BmSDK.Engine.AnimNodeSequence AnimSeqInstigator, BmSDK.Class NotifyClass, out BmSDK.Engine.AnimSequence.FAnimNotifyEvent OutEvent)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindNextNotifyOfClass, "Engine.AnimNotify.FindNextNotifyOfClass");
-        byte* paramsPtr = stackalloc byte[48];
+        byte* paramsPtr = stackalloc byte[64];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimSeqInstigator, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NotifyClass, paramsPtr + 8);
         System.Runtime.CompilerServices.Unsafe.SkipInit(out OutEvent);

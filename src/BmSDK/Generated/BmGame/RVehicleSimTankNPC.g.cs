@@ -85,7 +85,8 @@ public partial class RVehicleSimTankNPC : BmSDK.BmGame.RVehicleSimNPC, BmSDK.IGa
     public unsafe virtual void SetPoweredDown(bool Down)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetPoweredDown, "BmGame.RVehicleSimTankNPC.SetPoweredDown");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Down, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

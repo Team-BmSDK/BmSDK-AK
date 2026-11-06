@@ -85,7 +85,8 @@ public partial class RBatSignalBase : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void UpdateBeamStartPoint()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateBeamStartPoint, "BmGame.RBatSignalBase.UpdateBeamStartPoint");
-        byte* paramsPtr = stackalloc byte[72];
+        byte* paramsPtr = stackalloc byte[88];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -97,7 +98,8 @@ public partial class RBatSignalBase : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe virtual void UpdateBeamStartPointFirstTime()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateBeamStartPointFirstTime, "BmGame.RBatSignalBase.UpdateBeamStartPointFirstTime");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -109,7 +111,8 @@ public partial class RBatSignalBase : BmSDK.Engine.Actor, BmSDK.IGameObject
     public unsafe override void PostBeginPlay()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RBatSignalBase.PostBeginPlay");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

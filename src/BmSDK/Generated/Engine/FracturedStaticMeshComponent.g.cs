@@ -85,7 +85,8 @@ public partial class FracturedStaticMeshComponent : BmSDK.Engine.FracturedBaseCo
     public unsafe virtual BmSDK.Engine.PhysicalMaterial GetFracturedMeshPhysMaterial()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFracturedMeshPhysMaterial, "Engine.FracturedStaticMeshComponent.GetFracturedMeshPhysMaterial");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -104,7 +105,8 @@ public partial class FracturedStaticMeshComponent : BmSDK.Engine.FracturedBaseCo
     public unsafe virtual void RecreatePhysState()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RecreatePhysState, "Engine.FracturedStaticMeshComponent.RecreatePhysState");
-        byte* paramsPtr = stackalloc byte[0];
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -123,7 +125,8 @@ public partial class FracturedStaticMeshComponent : BmSDK.Engine.FracturedBaseCo
     public unsafe virtual BmSDK.TArray<int> GetBoundaryHiddenFragments(BmSDK.TArray<int> AdditionalVisibleFragments)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBoundaryHiddenFragments, "Engine.FracturedStaticMeshComponent.GetBoundaryHiddenFragments");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AdditionalVisibleFragments, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -143,7 +146,8 @@ public partial class FracturedStaticMeshComponent : BmSDK.Engine.FracturedBaseCo
     public unsafe virtual BmSDK.TArray<BmSDK.Engine.FracturedStaticMeshComponent.FFragmentGroup> GetFragmentGroups(BmSDK.TArray<int> IgnoreFragments, float MinConnectionArea)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFragmentGroups, "Engine.FracturedStaticMeshComponent.GetFragmentGroups");
-        byte* paramsPtr = stackalloc byte[36];
+        byte* paramsPtr = stackalloc byte[52];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IgnoreFragments, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinConnectionArea, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
@@ -164,7 +168,8 @@ public partial class FracturedStaticMeshComponent : BmSDK.Engine.FracturedBaseCo
     public unsafe virtual int GetCoreFragmentIndex()
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCoreFragmentIndex, "Engine.FracturedStaticMeshComponent.GetCoreFragmentIndex");
-        byte* paramsPtr = stackalloc byte[4];
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -183,7 +188,8 @@ public partial class FracturedStaticMeshComponent : BmSDK.Engine.FracturedBaseCo
     public unsafe virtual System.Numerics.Vector3 GetFragmentAverageExteriorNormal(int FragmentIndex)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFragmentAverageExteriorNormal, "Engine.FracturedStaticMeshComponent.GetFragmentAverageExteriorNormal");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FragmentIndex, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -203,7 +209,8 @@ public partial class FracturedStaticMeshComponent : BmSDK.Engine.FracturedBaseCo
     public unsafe virtual BmSDK.GameObject.FBox GetFragmentBox(int FragmentIndex)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFragmentBox, "Engine.FracturedStaticMeshComponent.GetFragmentBox");
-        byte* paramsPtr = stackalloc byte[32];
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FragmentIndex, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -223,7 +230,8 @@ public partial class FracturedStaticMeshComponent : BmSDK.Engine.FracturedBaseCo
     public unsafe virtual bool IsNoPhysFragment(int FragmentIndex)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsNoPhysFragment, "Engine.FracturedStaticMeshComponent.IsNoPhysFragment");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FragmentIndex, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -243,7 +251,8 @@ public partial class FracturedStaticMeshComponent : BmSDK.Engine.FracturedBaseCo
     public unsafe virtual bool IsRootFragment(int FragmentIndex)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsRootFragment, "Engine.FracturedStaticMeshComponent.IsRootFragment");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FragmentIndex, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -263,7 +272,8 @@ public partial class FracturedStaticMeshComponent : BmSDK.Engine.FracturedBaseCo
     public unsafe virtual bool IsFragmentDestroyable(int FragmentIndex)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsFragmentDestroyable, "Engine.FracturedStaticMeshComponent.IsFragmentDestroyable");
-        byte* paramsPtr = stackalloc byte[8];
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FragmentIndex, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -283,7 +293,8 @@ public partial class FracturedStaticMeshComponent : BmSDK.Engine.FracturedBaseCo
     public unsafe virtual void SetVisibleFragments(BmSDK.TArray<byte> VisibilityFactors)
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetVisibleFragments, "Engine.FracturedStaticMeshComponent.SetVisibleFragments");
-        byte* paramsPtr = stackalloc byte[16];
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VisibilityFactors, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
