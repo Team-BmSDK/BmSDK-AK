@@ -105,6 +105,10 @@ public partial class RSpecialMovieInstance_MinigameBase : BmSDK.BmGame.RSpecialM
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLeftAndRightAngles, "BmGame.RSpecialMovieInstance_MinigameBase.GetLeftAndRightAngles");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LeftAngle);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LeftAngle, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RightAngle);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RightAngle, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RawLeftX, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RawLeftY, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RawRightX, paramsPtr + 16);

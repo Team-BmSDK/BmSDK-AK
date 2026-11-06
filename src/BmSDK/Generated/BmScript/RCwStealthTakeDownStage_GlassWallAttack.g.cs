@@ -86,6 +86,8 @@ public partial class RCwStealthTakeDownStage_GlassWallAttack : BmSDK.BmGame.RSte
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverrideChosenAnim, "BmScript.RCwStealthTakeDownStage_GlassWallAttack.OverrideChosenAnim");
         byte* paramsPtr = stackalloc byte[4];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Anim);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Anim, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Anim = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
         return;

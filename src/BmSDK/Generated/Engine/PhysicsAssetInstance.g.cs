@@ -412,6 +412,8 @@ public partial class PhysicsAssetInstance : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForceAllBodiesBelowUnfixed, "Engine.PhysicsAssetInstance.ForceAllBodiesBelowUnfixed");
         byte* paramsPtr = stackalloc byte[28];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out InBoneName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(InBoneName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InAsset, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InSkelMesh, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InbInstanceAlwaysFullAnimWeight, paramsPtr + 24);

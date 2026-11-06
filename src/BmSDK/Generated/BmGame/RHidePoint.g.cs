@@ -199,6 +199,8 @@ public partial class RHidePoint : BmSDK.Engine.Actor, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasThermalCheckFloorPos, "BmGame.RHidePoint.HasThermalCheckFloorPos");
         byte* paramsPtr = stackalloc byte[32];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FloorPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FloorPos, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         FloorPos = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
@@ -516,6 +518,10 @@ public partial class RHidePoint : BmSDK.Engine.Actor, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[116];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetHintLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThrowDir, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out mineLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(mineLoc, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MineRot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MineRot, paramsPtr + 36);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         mineLoc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 24);
         MineRot = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 36);
@@ -531,6 +537,10 @@ public partial class RHidePoint : BmSDK.Engine.Actor, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMineAttachSocketWorldLocationAndRotation, "BmGame.RHidePoint.GetMineAttachSocketWorldLocationAndRotation");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InSocketName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutLocation, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutRotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutRotation, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         OutLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
         OutRotation = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 20);

@@ -300,6 +300,10 @@ public partial class WorldInfo : BmSDK.Engine.ZoneInfo, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDemoFrameInfo, "Engine.WorldInfo.GetDemoFrameInfo");
         byte* paramsPtr = stackalloc byte[8];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CurrentFrame);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CurrentFrame, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TotalFrames);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TotalFrames, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

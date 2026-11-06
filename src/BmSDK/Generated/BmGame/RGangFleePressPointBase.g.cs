@@ -108,6 +108,8 @@ public partial class RGangFleePressPointBase : BmSDK.BmGame.RDummyTarget, BmSDK.
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPressSlot, "BmGame.RGangFleePressPointBase.GetPressSlot");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PressPoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PressPoint, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         PressPoint = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);

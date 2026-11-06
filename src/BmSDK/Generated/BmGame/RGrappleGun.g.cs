@@ -748,6 +748,8 @@ public partial class RGrappleGun : BmSDK.BmGame.RInventoryGadget, BmSDK.IGameObj
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindBestCeilingClimbPoint, "BmGame.RGrappleGun.FindBestCeilingClimbPoint");
         byte* paramsPtr = stackalloc byte[136];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CeilingClimbPoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CeilingClimbPoint, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1053,6 +1055,8 @@ public partial class RGrappleGun : BmSDK.BmGame.RInventoryGadget, BmSDK.IGameObj
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLastGrapplePoint, "BmGame.RGrappleGun.GetLastGrapplePoint");
         byte* paramsPtr = stackalloc byte[80];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out GrappleInfo);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(GrappleInfo, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1073,6 +1077,8 @@ public partial class RGrappleGun : BmSDK.BmGame.RInventoryGadget, BmSDK.IGameObj
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGrapplePoint, "BmGame.RGrappleGun.GetGrapplePoint");
         byte* paramsPtr = stackalloc byte[80];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out GrappleInfo);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(GrappleInfo, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

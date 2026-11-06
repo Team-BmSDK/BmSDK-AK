@@ -354,6 +354,8 @@ public partial class RVehicleBatmobile : BmSDK.BmGame.RVehicleBatmobileBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindExitLocation, "BmScript.RVehicleBatmobile.FindExitLocation");
         byte* paramsPtr = stackalloc byte[148];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Loc = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 132);
@@ -406,6 +408,10 @@ public partial class RVehicleBatmobile : BmSDK.BmGame.RVehicleBatmobileBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ChooseAlternateSpawnPoint, "BmScript.RVehicleBatmobile.ChooseAlternateSpawnPoint");
         byte* paramsPtr = stackalloc byte[236];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out pos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(pos, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Rot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Rot, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         pos = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         Rot = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 12);

@@ -495,6 +495,8 @@ public partial class RCombatMove_DualPlayJokerBoxerAttack : BmSDK.BmGame.RCombat
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CamAnimset, paramsPtr + 56);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(refLoc, paramsPtr + 64);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RefRot, paramsPtr + 76);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutYaw);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutYaw, paramsPtr + 88);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         OutYaw = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 88);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 92);

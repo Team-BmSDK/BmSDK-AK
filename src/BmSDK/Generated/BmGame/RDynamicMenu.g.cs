@@ -630,6 +630,8 @@ public partial class RDynamicMenu : BmSDK.Engine.Actor, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ItemCol, "BmGame.RDynamicMenu.ItemCol");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Label, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Value = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.GameObject.FColor>(paramsPtr + 16);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
@@ -646,6 +648,8 @@ public partial class RDynamicMenu : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(label1, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(label2, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(label3, paramsPtr + 32);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 48);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinValue, paramsPtr + 60);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxValue, paramsPtr + 64);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StepSize, paramsPtr + 68);
@@ -663,6 +667,8 @@ public partial class RDynamicMenu : BmSDK.Engine.Actor, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ItemFExp, "BmGame.RDynamicMenu.ItemFExp");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Label, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinValue, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxValue, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(stepMult, paramsPtr + 28);
@@ -680,6 +686,8 @@ public partial class RDynamicMenu : BmSDK.Engine.Actor, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ItemF, "BmGame.RDynamicMenu.ItemF");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Label, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinValue, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxValue, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StepSize, paramsPtr + 28);
@@ -697,6 +705,8 @@ public partial class RDynamicMenu : BmSDK.Engine.Actor, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ItemByte, "BmGame.RDynamicMenu.ItemByte");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Label, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinValue, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxValue, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -713,6 +723,8 @@ public partial class RDynamicMenu : BmSDK.Engine.Actor, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ItemI, "BmGame.RDynamicMenu.ItemI");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Label, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinValue, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxValue, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Step, paramsPtr + 28);
@@ -729,6 +741,8 @@ public partial class RDynamicMenu : BmSDK.Engine.Actor, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ItemLabelL, "BmGame.RDynamicMenu.ItemLabelL");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(List, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Value = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
@@ -744,6 +758,8 @@ public partial class RDynamicMenu : BmSDK.Engine.Actor, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ItemL, "BmGame.RDynamicMenu.ItemL");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Label, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(List, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(details, paramsPtr + 36);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -759,6 +775,8 @@ public partial class RDynamicMenu : BmSDK.Engine.Actor, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateItemL, "BmGame.RDynamicMenu.UpdateItemL");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(List, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Value = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
@@ -838,6 +856,8 @@ public partial class RDynamicMenu : BmSDK.Engine.Actor, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NumberInputFExp, "BmGame.RDynamicMenu.NumberInputFExp");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinValue, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxValue, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(stepMult, paramsPtr + 12);
@@ -854,6 +874,8 @@ public partial class RDynamicMenu : BmSDK.Engine.Actor, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NumberInputF, "BmGame.RDynamicMenu.NumberInputF");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinValue, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxValue, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StepSize, paramsPtr + 12);
@@ -870,6 +892,8 @@ public partial class RDynamicMenu : BmSDK.Engine.Actor, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NumberInputB, "BmGame.RDynamicMenu.NumberInputB");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinValue, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxValue, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -885,6 +909,8 @@ public partial class RDynamicMenu : BmSDK.Engine.Actor, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NumberInputI, "BmGame.RDynamicMenu.NumberInputI");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinValue, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxValue, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Step, paramsPtr + 12);

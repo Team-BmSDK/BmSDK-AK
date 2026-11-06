@@ -87,6 +87,10 @@ public partial class GameStatsAggregator : BmSDK.Engine.GameplayEventsHandler, B
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAggregateMappingIDs, "Engine.GameStatsAggregator.GetAggregateMappingIDs");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventID, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AggregateID);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AggregateID, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TargetAggregateID);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetAggregateID, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

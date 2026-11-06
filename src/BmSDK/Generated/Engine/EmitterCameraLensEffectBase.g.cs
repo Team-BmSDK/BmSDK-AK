@@ -81,6 +81,10 @@ public partial class EmitterCameraLensEffectBase : BmSDK.Engine.Emitter, BmSDK.I
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateLocation, "Engine.EmitterCameraLensEffectBase.UpdateLocation");
         byte* paramsPtr = stackalloc byte[28];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CamLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CamLoc, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CamRot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CamRot, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CamFOVDeg, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

@@ -170,6 +170,8 @@ public partial class RVehicleBehaviour : BmSDK.Engine.SequenceAction, BmSDK.IGam
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FollowVehicle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Location, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkIndex, paramsPtr + 20);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SpanTime);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SpanTime, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

@@ -2021,6 +2021,8 @@ public partial class RPersistentOptions : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTotalChallengesAwarded, "BmGame.RPersistentOptions.GetTotalChallengesAwarded");
         byte* paramsPtr = stackalloc byte[12];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TotalPossible);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TotalPossible, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bTraining, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2044,6 +2046,10 @@ public partial class RPersistentOptions : BmSDK.GameObject, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CharacterId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EChallengeCategory, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TotalPossible);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TotalPossible, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RivalPoints);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RivalPoints, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -2066,6 +2072,10 @@ public partial class RPersistentOptions : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTotalChallengeMedals, "BmGame.RPersistentOptions.GetTotalChallengeMedals");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CharacterId, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TotalPossible);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TotalPossible, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RivalPoints);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RivalPoints, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

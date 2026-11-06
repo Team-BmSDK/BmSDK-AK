@@ -292,6 +292,8 @@ public partial class RPhotoCameraController : BmSDK.Engine.DebugCameraController
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ModifyMoveDeltaForOcean, "BmGame.RPhotoCameraController.ModifyMoveDeltaForOcean");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InitialLocation, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Delta);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Delta, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

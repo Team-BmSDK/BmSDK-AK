@@ -461,6 +461,8 @@ public partial class GameInfo : BmSDK.Engine.Info, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandleSeamlessTravelPlayer, "Engine.GameInfo.HandleSeamlessTravelPlayer");
         byte* paramsPtr = stackalloc byte[52];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out C);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(C, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         C = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Controller>(paramsPtr + 0);
         return;
@@ -1097,9 +1099,13 @@ public partial class GameInfo : BmSDK.Engine.Info, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReduceDamage, "Engine.GameInfo.ReduceDamage");
         byte* paramsPtr = stackalloc byte[64];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Damage);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Damage, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(injured, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InstigatedBy, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 20);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Momentum);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Momentum, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageType, paramsPtr + 44);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageCauser, paramsPtr + 52);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -1994,6 +2000,16 @@ public partial class GameInfo : BmSDK.Engine.Info, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldStartInCinematicMode, "Engine.GameInfo.ShouldStartInCinematicMode");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutHidePlayer);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutHidePlayer, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutHideHud);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutHideHud, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutDisableMovement);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutDisableMovement, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutDisableTurning);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutDisableTurning, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutDisableInput);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutDisableInput, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -2056,6 +2072,10 @@ public partial class GameInfo : BmSDK.Engine.Info, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisplayDebug, "Engine.GameInfo.DisplayDebug");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HUD, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_YL);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_YL, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_YPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_YPos, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         out_YL = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
         out_YPos = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 12);

@@ -409,6 +409,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddCombatChallengeBonus, "BmGame.RExperienceSystem.AddCombatChallengeBonus");
         byte* paramsPtr = stackalloc byte[56];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DelayBankTime);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DelayBankTime, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         SummaryString = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
         DelayBankTime = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 16);
@@ -423,6 +425,10 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddToBonusSummaryString, "BmGame.RExperienceSystem.AddToBonusSummaryString");
         byte* paramsPtr = stackalloc byte[84];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TotalScore);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TotalScore, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DelayTime);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DelayTime, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Desc, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Multi, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Score, paramsPtr + 44);
@@ -495,6 +501,8 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddSummaryTitle, "BmGame.RExperienceSystem.AddSummaryTitle");
         byte* paramsPtr = stackalloc byte[36];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DelayTime);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DelayTime, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TitleText, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         SummaryString = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
@@ -510,6 +518,10 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddToSummaryString, "BmGame.RExperienceSystem.AddToSummaryString");
         byte* paramsPtr = stackalloc byte[76];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TotalXP);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TotalXP, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DelayTime);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DelayTime, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Desc, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Multi, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(XPPer, paramsPtr + 44);

@@ -1219,8 +1219,12 @@ public partial class RGameRI : BmSDK.Engine.GameReplicationInfo, BmSDK.IGameObje
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxDistance, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SafeDir);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SafeDir, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Batarang, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OnlyCheckRemoteVolumes, paramsPtr + 32);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CompletelyOutsideWorld);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CompletelyOutsideWorld, paramsPtr + 36);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1347,6 +1351,8 @@ public partial class RGameRI : BmSDK.Engine.GameReplicationInfo, BmSDK.IGameObje
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckPos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckRadius, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckHeight, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitPawn);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitPawn, paramsPtr + 20);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

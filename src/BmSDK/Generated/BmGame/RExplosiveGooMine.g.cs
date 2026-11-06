@@ -157,6 +157,8 @@ public partial class RExplosiveGooMine : BmSDK.BmGame.RThugTrap, BmSDK.IGameObje
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ComplexTrace, "BmGame.RExplosiveGooMine.ComplexTrace");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MyOwner, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(End, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Start, paramsPtr + 32);
         var oldFlags = funcManaged.FunctionFlags;

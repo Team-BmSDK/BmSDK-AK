@@ -122,6 +122,8 @@ public partial class RPawnCombat : BmSDK.BmGame.RPawnCharacter, BmSDK.IGameObjec
         BmSDK.Framework.MarshalUtil.ToUnmanaged(transitionLocation, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(transitionYaw, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimTime, paramsPtr + 32);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out animLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(animLoc, paramsPtr + 36);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         animLoc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 36);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 48);
@@ -231,6 +233,8 @@ public partial class RPawnCombat : BmSDK.BmGame.RPawnCharacter, BmSDK.IGameObjec
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WillFlightPathHit, "BmGame.RPawnCombat.WillFlightPathHit");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FlightTime, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OverrideStartPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OverrideStartPos, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GlideTime, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDrawDebug, paramsPtr + 20);
         var oldFlags = funcManaged.FunctionFlags;
@@ -272,6 +276,10 @@ public partial class RPawnCombat : BmSDK.BmGame.RPawnCharacter, BmSDK.IGameObjec
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTransitionFootStepPhaseAndTime, "BmGame.RPawnCombat.GetTransitionFootStepPhaseAndTime");
         byte* paramsPtr = stackalloc byte[12];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CurrentFootStage);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CurrentFootStage, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FootStageTime);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FootStageTime, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -293,6 +301,8 @@ public partial class RPawnCombat : BmSDK.BmGame.RPawnCharacter, BmSDK.IGameObjec
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CorrectFallingVelocity, "BmGame.RPawnCombat.CorrectFallingVelocity");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DesiredPosition);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DesiredPosition, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Max2DAccel, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
@@ -328,6 +338,8 @@ public partial class RPawnCombat : BmSDK.BmGame.RPawnCharacter, BmSDK.IGameObjec
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ModifyDamageToThrownVillain, "BmGame.RPawnCombat.ModifyDamageToThrownVillain");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Villain, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out InOut_DamageAmount);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(InOut_DamageAmount, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         InOut_DamageAmount = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
         return;
@@ -365,6 +377,8 @@ public partial class RPawnCombat : BmSDK.BmGame.RPawnCharacter, BmSDK.IGameObjec
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFailedPairedAnimMoveAnimset, "BmGame.RPawnCombat.GetFailedPairedAnimMoveAnimset");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MyAnimset);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MyAnimset, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherPawn, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         MyAnimset = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSet>(paramsPtr + 0);
@@ -429,6 +443,10 @@ public partial class RPawnCombat : BmSDK.BmGame.RPawnCharacter, BmSDK.IGameObjec
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Villain, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Limb, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out KnockBackAnimName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(KnockBackAnimName, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out KnockBackAnimset);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(KnockBackAnimset, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         KnockBackAnimName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 12);
         KnockBackAnimset = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSet>(paramsPtr + 20);
@@ -668,6 +686,10 @@ public partial class RPawnCombat : BmSDK.BmGame.RPawnCharacter, BmSDK.IGameObjec
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindClosestCombatPawnFromList, "BmGame.RPawnCombat.FindClosestCombatPawnFromList");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawnList, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ClosestDist);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ClosestDist, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ClosestPawn);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ClosestPawn, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ClosestDist = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 16);
         ClosestPawn = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 20);
@@ -884,6 +906,12 @@ public partial class RPawnCombat : BmSDK.BmGame.RPawnCharacter, BmSDK.IGameObjec
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTauntAnim, "BmGame.RPawnCombat.GetTauntAnim");
         byte* paramsPtr = stackalloc byte[28];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AnimName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AnimSet);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimSet, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bAlignRotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bAlignRotation, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LastTauntID, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         AnimName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
@@ -1076,6 +1104,8 @@ public partial class RPawnCombat : BmSDK.BmGame.RPawnCharacter, BmSDK.IGameObjec
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ModifyRagdollGetupTime, "BmGame.RPawnCombat.ModifyRagdollGetupTime");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out StunTime);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(StunTime, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         StunTime = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
         return;
@@ -1090,6 +1120,8 @@ public partial class RPawnCombat : BmSDK.BmGame.RPawnCharacter, BmSDK.IGameObjec
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ModifyDamageAmount, "BmGame.RPawnCombat.ModifyDamageAmount");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DmgAmount);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DmgAmount, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         DmgAmount = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
         return;

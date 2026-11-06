@@ -143,6 +143,8 @@ public partial class RSeqAct_AirshipBobbingBase : BmSDK.Engine.SeqAct_Latent, Bm
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateOWBob, "BmGame.RSeqAct_AirshipBobbingBase.UpdateOWBob");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BobEuler);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BobEuler, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

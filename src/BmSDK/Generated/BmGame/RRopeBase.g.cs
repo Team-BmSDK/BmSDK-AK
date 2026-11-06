@@ -256,6 +256,8 @@ public partial class RRopeBase : BmSDK.Engine.Actor, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SplitPos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MeasurementRopeEnd, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ThisSplitEnd);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ThisSplitEnd, paramsPtr + 5);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

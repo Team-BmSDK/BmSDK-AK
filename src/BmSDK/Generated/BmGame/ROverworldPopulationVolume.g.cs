@@ -648,6 +648,8 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldSpawnAnotherPawn, "BmGame.ROverworldPopulationVolume.ShouldSpawnAnotherPawn");
         byte* paramsPtr = stackalloc byte[8];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bPassivePointsNeedPartners);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bPassivePointsNeedPartners, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -740,8 +742,12 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TestSpawnPoint, "BmGame.ROverworldPopulationVolume.TestSpawnPoint");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_TestSpawnPoint, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SpawnLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnLoc, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CameraLocation, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CameraDirection, paramsPtr + 32);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out WasExpensiveTest);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(WasExpensiveTest, paramsPtr + 44);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIgnoreProximityTest, paramsPtr + 48);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WeaponName, paramsPtr + 52);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSkipInUseCheck, paramsPtr + 60);
@@ -766,6 +772,8 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindSingleSpawnPoint, "BmGame.ROverworldPopulationVolume.FindSingleSpawnPoint");
         byte* paramsPtr = stackalloc byte[32];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SpawnLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bPassiveOnly, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WeaponName, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;

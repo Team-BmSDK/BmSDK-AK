@@ -90,6 +90,8 @@ public partial class RSearchRoutingWrapper : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PathSegmentStart, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PathSegmentEnd, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PullbackDist, paramsPtr + 36);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BranchStart);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BranchStart, paramsPtr + 40);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         BranchStart = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 40);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 52);
@@ -172,6 +174,10 @@ public partial class RSearchRoutingWrapper : BmSDK.GameObject, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[72];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FirstIndexOnMainPath, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestSideNode, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MainPathBranchStart);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MainPathBranchStart, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out StartStandPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(StartStandPos, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxTestDist, paramsPtr + 32);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         MainPathBranchStart = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RChasePoint>(paramsPtr + 12);
@@ -189,6 +195,8 @@ public partial class RSearchRoutingWrapper : BmSDK.GameObject, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CPPathIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CurrentTestPoint, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bHasValidEndsWithoutBranchStarts);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bHasValidEndsWithoutBranchStarts, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         BranchList = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.BmGame.RSearchRoutingWrapper.FSideBranchStruct>>(paramsPtr + 12);
         bHasValidEndsWithoutBranchStarts = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 28);
@@ -268,6 +276,10 @@ public partial class RSearchRoutingWrapper : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLandPosForLastLadderDownInPath, "BmGame.RSearchRoutingWrapper.GetLandPosForLastLadderDownInPath");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Index);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Index, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LandPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LandPos, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Index = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
         LandPos = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 4);
@@ -436,6 +448,8 @@ public partial class RSearchRoutingWrapper : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestSidePoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PathSegmentStart, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PathSegmentEnd, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BranchStart);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BranchStart, paramsPtr + 36);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

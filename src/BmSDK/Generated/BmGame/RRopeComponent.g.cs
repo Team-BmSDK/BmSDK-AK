@@ -87,6 +87,8 @@ public partial class RRopeComponent : BmSDK.BmGame.RRopeComponentBase, BmSDK.IGa
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetIsOverstretched, "BmGame.RRopeComponent.GetIsOverstretched");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestStartEnd, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutOverstretchPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutOverstretchPos, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverstretchRatio, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -189,6 +191,8 @@ public partial class RRopeComponent : BmSDK.BmGame.RRopeComponentBase, BmSDK.IGa
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SplitPos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MeasurementRopeEnd, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ThisSplitEnd);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ThisSplitEnd, paramsPtr + 5);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InOutOtherSplitEnd, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

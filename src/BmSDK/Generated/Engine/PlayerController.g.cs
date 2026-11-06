@@ -101,6 +101,8 @@ public partial class PlayerController : BmSDK.Engine.Controller, BmSDK.IGameObje
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AdjustCameraDeltaTime, "Engine.PlayerController.AdjustCameraDeltaTime");
         byte* paramsPtr = stackalloc byte[4];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DeltaTime);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         DeltaTime = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
         return;
@@ -208,6 +210,10 @@ public partial class PlayerController : BmSDK.Engine.Controller, BmSDK.IGameObje
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BugItStringCreator, "Engine.PlayerController.BugItStringCreator");
         byte* paramsPtr = stackalloc byte[56];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ViewLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ViewLocation, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ViewRotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ViewRotation, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ViewLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         ViewRotation = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 12);
@@ -308,6 +314,8 @@ public partial class PlayerController : BmSDK.Engine.Controller, BmSDK.IGameObje
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasPeerConnection, "Engine.PlayerController.HasPeerConnection");
         byte* paramsPtr = stackalloc byte[12];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PeerNetId);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PeerNetId, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -458,6 +466,10 @@ public partial class PlayerController : BmSDK.Engine.Controller, BmSDK.IGameObje
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAchievementProgression, "Engine.PlayerController.GetAchievementProgression");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AchievementId, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CurrentValue);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CurrentValue, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MaxValue);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxValue, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         CurrentValue = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 4);
         MaxValue = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
@@ -600,6 +612,8 @@ public partial class PlayerController : BmSDK.Engine.Controller, BmSDK.IGameObje
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsSplitscreenPlayer, "Engine.PlayerController.IsSplitscreenPlayer");
         byte* paramsPtr = stackalloc byte[36];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_SplitscreenPlayerIndex);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_SplitscreenPlayerIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         out_SplitscreenPlayerIndex = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
@@ -1174,6 +1188,8 @@ public partial class PlayerController : BmSDK.Engine.Controller, BmSDK.IGameObje
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnGameInviteAccepted, "Engine.PlayerController.OnGameInviteAccepted");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out InviteResult);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(InviteResult, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         InviteResult = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineGameSearch.FOnlineGameSearchResult>(paramsPtr + 0);
         return;
@@ -1453,6 +1469,8 @@ public partial class PlayerController : BmSDK.Engine.Controller, BmSDK.IGameObje
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPlayerMuted, "Engine.PlayerController.IsPlayerMuted");
         byte* paramsPtr = stackalloc byte[12];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Sender);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Sender, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -2059,6 +2077,10 @@ public partial class PlayerController : BmSDK.Engine.Controller, BmSDK.IGameObje
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisplayDebug, "Engine.PlayerController.DisplayDebug");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HUD, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_YL);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_YL, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_YPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_YPos, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         out_YL = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
         out_YPos = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 12);
@@ -2112,6 +2134,14 @@ public partial class PlayerController : BmSDK.Engine.Controller, BmSDK.IGameObje
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AdjustHUDRenderSize, "Engine.PlayerController.AdjustHUDRenderSize");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out X);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(X, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Y);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Y, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SizeX);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SizeX, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SizeY);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SizeY, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FullScreenSizeX, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FullScreenSizeY, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -2243,6 +2273,8 @@ public partial class PlayerController : BmSDK.Engine.Controller, BmSDK.IGameObje
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AdjustPlayerWalkingMoveAccel, "Engine.PlayerController.AdjustPlayerWalkingMoveAccel");
         byte* paramsPtr = stackalloc byte[12];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out newAccel);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(newAccel, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         newAccel = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         return;
@@ -2284,6 +2316,8 @@ public partial class PlayerController : BmSDK.Engine.Controller, BmSDK.IGameObje
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProcessViewRotation, "Engine.PlayerController.ProcessViewRotation");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_ViewRotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_ViewRotation, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaRot, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         out_ViewRotation = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 4);
@@ -2324,6 +2358,10 @@ public partial class PlayerController : BmSDK.Engine.Controller, BmSDK.IGameObje
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPlayerViewPointForLOSTrigger, "Engine.PlayerController.GetPlayerViewPointForLOSTrigger");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_Location);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_Location, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_Rotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_Rotation, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         out_Location = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         out_Rotation = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 12);
@@ -2338,6 +2376,10 @@ public partial class PlayerController : BmSDK.Engine.Controller, BmSDK.IGameObje
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPlayerViewPoint, "Engine.PlayerController.GetPlayerViewPoint");
         byte* paramsPtr = stackalloc byte[32];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_Location);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_Location, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_Rotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_Rotation, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         out_Location = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         out_Rotation = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 12);

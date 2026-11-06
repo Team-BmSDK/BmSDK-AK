@@ -82,9 +82,13 @@ public partial class Mutator : BmSDK.Engine.Info, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NetDamage, "Engine.Mutator.NetDamage");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OriginalDamage, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Damage);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Damage, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(injured, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InstigatedBy, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Momentum);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Momentum, paramsPtr + 36);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageType, paramsPtr + 48);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageCauser, paramsPtr + 56);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -148,6 +152,8 @@ public partial class Mutator : BmSDK.Engine.Info, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ItemClass, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Pickup, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bAllowPickup);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bAllowPickup, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         bAllowPickup = BmSDK.Framework.MarshalUtil.ToManaged<byte>(paramsPtr + 24);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);

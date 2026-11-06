@@ -1570,6 +1570,12 @@ public partial class RBMAIController : BmSDK.Engine.AIController, BmSDK.IGameObj
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLOSText, "BmGame.RBMAIController.GetLOSText");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestActor, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out R);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(R, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out G);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(G, paramsPtr + 25);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out B);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(B, paramsPtr + 26);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         LOSString = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 8);
         R = BmSDK.Framework.MarshalUtil.ToManaged<byte>(paramsPtr + 24);
@@ -2147,6 +2153,8 @@ public partial class RBMAIController : BmSDK.Engine.AIController, BmSDK.IGameObj
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindRailingForPoint, "BmGame.RBMAIController.FindRailingForPoint");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LockPoint, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LockPosition);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LockPosition, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

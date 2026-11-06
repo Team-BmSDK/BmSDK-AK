@@ -363,6 +363,14 @@ public partial class RDisruptableObjectBase : BmSDK.Engine.Actor, BmSDK.IGameObj
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDifficulty, "BmGame.RDisruptableObjectBase.GetDifficulty");
         byte* paramsPtr = stackalloc byte[28];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Threshold);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Threshold, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BuildUpTime);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BuildUpTime, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LeftMaxAngVelocity);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LeftMaxAngVelocity, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RightMaxAngVelocity);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RightMaxAngVelocity, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DifficultyMod, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Threshold = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);

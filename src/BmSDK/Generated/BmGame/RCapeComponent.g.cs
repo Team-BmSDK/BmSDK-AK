@@ -289,6 +289,8 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculateWindProperties, "BmGame.RCapeComponent.CalculateWindProperties");
         byte* paramsPtr = stackalloc byte[8];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutWindProperties);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutWindProperties, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -310,6 +312,8 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyWind, "BmGame.RCapeComponent.ApplyWind");
         byte* paramsPtr = stackalloc byte[104];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WindConfig, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out WindState);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(WindState, paramsPtr + 36);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

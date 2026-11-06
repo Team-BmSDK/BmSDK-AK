@@ -443,6 +443,8 @@ public partial class GameplayEventsUploadAnalytics : BmSDK.Engine.GameplayEvents
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LogGamePositionEvent, "Engine.GameplayEventsUploadAnalytics.LogGamePositionEvent");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventID, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Position);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Position, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

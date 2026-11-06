@@ -389,6 +389,8 @@ public partial class AccessControl : BmSDK.Engine.Info, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsIDBanned, "Engine.AccessControl.IsIDBanned");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NetId);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NetId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NetId = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineSubsystem.FUniqueNetId>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);

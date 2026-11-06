@@ -86,6 +86,10 @@ public partial class RBMAIAction_GestureAtCasualty : BmSDK.BmGame.RBMAIAction, B
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PickDiscoverAnim, "BmGame.RBMAIAction_GestureAtCasualty.PickDiscoverAnim");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AnimName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AnimSet);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimSet, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         AnimName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
         AnimSet = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSet>(paramsPtr + 8);

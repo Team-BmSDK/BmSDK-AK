@@ -202,6 +202,10 @@ public partial class RInGameCinematicCam : BmSDK.BmGame.RCameraActor, BmSDK.IGam
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsCameraBlockedFromTarget, "BmGame.RInGameCinematicCam.IsCameraBlockedFromTarget");
         byte* paramsPtr = stackalloc byte[36];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BlockActor);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BlockActor, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BlockTime);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BlockTime, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestTarget, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(normalisedTime, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DrawDebug, paramsPtr + 28);
@@ -226,6 +230,10 @@ public partial class RInGameCinematicCam : BmSDK.BmGame.RCameraActor, BmSDK.IGam
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindCameraLocationAtTime, "BmGame.RInGameCinematicCam.FindCameraLocationAtTime");
         byte* paramsPtr = stackalloc byte[32];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CameraLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CameraLocation, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CameraRotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CameraRotation, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(normalisedTime, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

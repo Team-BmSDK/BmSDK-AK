@@ -126,6 +126,8 @@ public partial class RBMPathNode_FenceJumpProxy : BmSDK.BmGame.RBMPathNode_Varia
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanLock, "BmGame.RBMPathNode_FenceJumpProxy.CanLock");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestLockedBy, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PredictedLockPoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PredictedLockPoint, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         PredictedLockPoint = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);

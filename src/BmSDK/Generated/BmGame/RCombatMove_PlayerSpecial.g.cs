@@ -99,6 +99,8 @@ public partial class RCombatMove_PlayerSpecial : BmSDK.BmGame.RCombatMove_Batman
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeTriggered, "BmGame.RCombatMove_PlayerSpecial.CanBeTriggered");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out outPotentialTarget);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(outPotentialTarget, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         outPotentialTarget = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 8);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);

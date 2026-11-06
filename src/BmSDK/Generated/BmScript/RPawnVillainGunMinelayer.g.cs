@@ -133,6 +133,10 @@ public partial class RPawnVillainGunMinelayer : BmSDK.BmScript.RPawnVillainGunPr
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDisruptedEquipmentLocationAndRotation, "BmScript.RPawnVillainGunMinelayer.GetDisruptedEquipmentLocationAndRotation");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out vLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(vLocation, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out rRotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(rRotation, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         vLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         rRotation = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 12);

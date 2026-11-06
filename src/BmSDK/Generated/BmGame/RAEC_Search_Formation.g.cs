@@ -120,6 +120,8 @@ public partial class RAEC_Search_Formation : BmSDK.BmGame.RAlertEventCoordinator
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBestFollowersForBranchOff, "BmGame.RAEC_Search_Formation.GetBestFollowersForBranchOff");
         byte* paramsPtr = stackalloc byte[40];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SplitGroupLeader);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SplitGroupLeader, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         SplitGroupLeader = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMAIController>(paramsPtr + 0);
         SplitFollowers = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.BmGame.RBMAIController>>(paramsPtr + 8);

@@ -1042,6 +1042,14 @@ public partial class RGameInfo : BmSDK.BmGame.RGameInfoBase, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RiddlerIcons_GetSecretsLeftIncTypeForMap, "BmGame.RGameInfo.RiddlerIcons_GetSecretsLeftIncTypeForMap");
         byte* paramsPtr = stackalloc byte[112];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MapName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Trophys);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Trophys, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Cameos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Cameos, paramsPtr + 20);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Breakables);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Breakables, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Bombs);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Bombs, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Trophys = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
         Cameos = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 20);
@@ -1165,6 +1173,10 @@ public partial class RGameInfo : BmSDK.BmGame.RGameInfoBase, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PositionBeaconUpdateSpring, "BmGame.RGameInfo.PositionBeaconUpdateSpring");
         byte* paramsPtr = stackalloc byte[60];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out vSpring);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(vSpring, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out vOutput);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(vOutput, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(fDistance, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(fMaxRange, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(fMinRange, paramsPtr + 32);
@@ -1221,6 +1233,8 @@ public partial class RGameInfo : BmSDK.BmGame.RGameInfoBase, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PositionBeaconGetBest, "BmGame.RGameInfo.PositionBeaconGetBest");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out nId);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(nId, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         sType = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
         nId = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
@@ -1543,6 +1557,8 @@ public partial class RGameInfo : BmSDK.BmGame.RGameInfoBase, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpgradeApplyBooster, "BmGame.RGameInfo.UpgradeApplyBooster");
         byte* paramsPtr = stackalloc byte[76];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sUpgrade, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out nPoints);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(nPoints, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         nPoints = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameInfo.UpgradeBoostAction>(paramsPtr + 20);
@@ -1568,6 +1584,8 @@ public partial class RGameInfo : BmSDK.BmGame.RGameInfoBase, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpgradesUnlockAll, "BmGame.RGameInfo.UpgradesUnlockAll");
         byte* paramsPtr = stackalloc byte[48];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out nPoints);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(nPoints, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         nPoints = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
@@ -1581,6 +1599,16 @@ public partial class RGameInfo : BmSDK.BmGame.RGameInfoBase, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpgradesGetPageCounts, "BmGame.RGameInfo.UpgradesGetPageCounts");
         byte* paramsPtr = stackalloc byte[216];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out nTotal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(nTotal, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out nPurchasable);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(nPurchasable, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out nOwned);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(nOwned, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out nPrerequisites);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(nPrerequisites, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out nNew);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(nNew, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sPage, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         nTotal = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
@@ -1638,6 +1666,10 @@ public partial class RGameInfo : BmSDK.BmGame.RGameInfoBase, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowcaseGetTotalCollected, "BmGame.RGameInfo.ShowcaseGetTotalCollected");
         byte* paramsPtr = stackalloc byte[192];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out nTotalPossible);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(nTotalPossible, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out nNewCollected);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(nNewCollected, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         nTotalPossible = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
         nNewCollected = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
@@ -1749,6 +1781,10 @@ public partial class RGameInfo : BmSDK.BmGame.RGameInfoBase, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ConceptGetTotalCollected, "BmGame.RGameInfo.ConceptGetTotalCollected");
         byte* paramsPtr = stackalloc byte[80];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out nTotalPossible);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(nTotalPossible, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out nNewCollected);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(nNewCollected, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         nTotalPossible = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
         nNewCollected = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
@@ -1945,6 +1981,10 @@ public partial class RGameInfo : BmSDK.BmGame.RGameInfoBase, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSmokeScreenCoverValue, "BmGame.RGameInfo.GetSmokeScreenCoverValue");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WorldPos, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bFireExtinguisher);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bFireExtinguisher, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MainSmokeScreen);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MainSmokeScreen, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         bFireExtinguisher = BmSDK.Framework.MarshalUtil.ToManaged<byte>(paramsPtr + 12);
         MainSmokeScreen = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RSmokeScreen>(paramsPtr + 16);
@@ -2105,6 +2145,8 @@ public partial class RGameInfo : BmSDK.BmGame.RGameInfoBase, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandleSeamlessTravelPlayer, "BmGame.RGameInfo.HandleSeamlessTravelPlayer");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out C);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(C, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         C = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Controller>(paramsPtr + 0);
         return;
@@ -2813,6 +2855,10 @@ public partial class RGameInfo : BmSDK.BmGame.RGameInfoBase, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GrapplePlayer, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetHidePointLocation, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForcingBatmanHidden, paramsPtr + 20);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bVillainHasSeen);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bVillainHasSeen, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bAllowPlayerToHide);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bAllowPlayerToHide, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         bVillainHasSeen = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 24);
         bAllowPlayerToHide = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 28);
@@ -3472,6 +3518,10 @@ public partial class RGameInfo : BmSDK.BmGame.RGameInfoBase, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindProjectileArc, "BmGame.RGameInfo.FindProjectileArc");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TraceActor, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ThrowVelocity);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ThrowVelocity, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FlightTime);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FlightTime, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartPoint, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 36);
         var oldFlags = funcManaged.FunctionFlags;
@@ -3748,6 +3798,8 @@ public partial class RGameInfo : BmSDK.BmGame.RGameInfoBase, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAnEpisodeAvailable, "BmGame.RGameInfo.IsAnEpisodeAvailable");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Count);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Count, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Count = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);

@@ -84,6 +84,8 @@ public partial class AkDialogue : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dlgLine, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dlgEvent, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dlgSpeaker, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out subDur);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(subDur, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1288,6 +1290,10 @@ public partial class AkDialogue : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSpeechMinMaxDuration, "Engine.AkDialogue.GetSpeechMinMaxDuration");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dlgSpeech, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out minDur);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(minDur, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out maxDur);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(maxDur, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1409,6 +1415,8 @@ public partial class AkDialogue : BmSDK.GameObject, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[136];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dlgSpeech, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dlgForPlayer, paramsPtr + 124);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out dlgPriority);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(dlgPriority, paramsPtr + 128);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

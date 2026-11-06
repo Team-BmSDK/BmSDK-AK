@@ -211,6 +211,10 @@ public partial class RBMAIAction_BaseMove : BmSDK.BmGame.RBMAIAction, BmSDK.IGam
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckForUpcomingCorner, "BmGame.RBMAIAction_BaseMove.CheckForUpcomingCorner");
         byte* paramsPtr = stackalloc byte[156];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SavedCornerPosition);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SavedCornerPosition, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SavedCornerRotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SavedCornerRotation, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bTestHigher, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         SavedCornerPosition = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);

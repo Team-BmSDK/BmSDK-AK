@@ -149,6 +149,10 @@ public partial class RSpecialMoveInstance_RobinPlaceStickyBomb : BmSDK.BmGame.RS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCombatAnimName, "BmScript.RSpecialMoveInstance_RobinPlaceStickyBomb.GetCombatAnimName");
         byte* paramsPtr = stackalloc byte[36];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutAnimSet);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutAnimSet, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out rearAttack);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(rearAttack, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         OutAnimSet = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSet>(paramsPtr + 0);
         rearAttack = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);

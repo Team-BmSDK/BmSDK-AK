@@ -277,6 +277,8 @@ public partial class RDebugMenu : BmSDK.BmGame.RDynamicMenu, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ItemFdB, "BmGame.RDebugMenu.ItemFdB");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Label, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinValue, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxValue, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StepSize, paramsPtr + 28);

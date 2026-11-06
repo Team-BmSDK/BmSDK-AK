@@ -428,6 +428,14 @@ public partial class RPawnVillainMultiStage : BmSDK.BmGame.RPawnVillainMultiStag
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetOverrideTakedownInfo, "BmScript.RPawnVillainMultiStage.GetOverrideTakedownInfo");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Attacker, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out takedownType);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(takedownType, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TakedownLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TakedownLocation, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TakedownRotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TakedownRotation, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DamageAmount);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageAmount, paramsPtr + 36);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         takedownType = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnPlayerCombat.ETakedownType>(paramsPtr + 8);
         TakedownLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
@@ -607,6 +615,10 @@ public partial class RPawnVillainMultiStage : BmSDK.BmGame.RPawnVillainMultiStag
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMultiAttackAnimSets, "BmScript.RPawnVillainMultiStage.GetMultiAttackAnimSets");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerPawn, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out VillainAnimSet);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(VillainAnimSet, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PlayerAnimset);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerAnimset, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         VillainAnimSet = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSet>(paramsPtr + 8);
         PlayerAnimset = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSet>(paramsPtr + 16);
@@ -621,6 +633,14 @@ public partial class RPawnVillainMultiStage : BmSDK.BmGame.RPawnVillainMultiStag
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMultiAttackAnimNames, "BmScript.RPawnVillainMultiStage.GetMultiAttackAnimNames");
         byte* paramsPtr = stackalloc byte[40];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out IntroName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(IntroName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AttackName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AttackName, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FailName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FailName, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CounterName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CounterName, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 32);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         IntroName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
@@ -883,6 +903,8 @@ public partial class RPawnVillainMultiStage : BmSDK.BmGame.RPawnVillainMultiStag
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ModifyDamageAmount, "BmScript.RPawnVillainMultiStage.ModifyDamageAmount");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DmgAmount);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DmgAmount, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         DmgAmount = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
         return;

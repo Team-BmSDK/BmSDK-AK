@@ -212,6 +212,8 @@ public partial class ParticleSystemComponent : BmSDK.Engine.PrimitiveComponent, 
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMaterialParameter, "Engine.ParticleSystemComponent.GetMaterialParameter");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutMaterial);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutMaterial, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -233,6 +235,8 @@ public partial class ParticleSystemComponent : BmSDK.Engine.PrimitiveComponent, 
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetActorParameter, "Engine.ParticleSystemComponent.GetActorParameter");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutActor);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutActor, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -254,6 +258,8 @@ public partial class ParticleSystemComponent : BmSDK.Engine.PrimitiveComponent, 
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetColorParameter, "Engine.ParticleSystemComponent.GetColorParameter");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutColor);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutColor, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -275,6 +281,8 @@ public partial class ParticleSystemComponent : BmSDK.Engine.PrimitiveComponent, 
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVectorParameter, "Engine.ParticleSystemComponent.GetVectorParameter");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutVector);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutVector, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -296,6 +304,8 @@ public partial class ParticleSystemComponent : BmSDK.Engine.PrimitiveComponent, 
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFloatParameter, "Engine.ParticleSystemComponent.GetFloatParameter");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutFloat);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutFloat, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -419,6 +429,10 @@ public partial class ParticleSystemComponent : BmSDK.Engine.PrimitiveComponent, 
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetVectorRandParameter, "Engine.ParticleSystemComponent.SetVectorRandParameter");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Param);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Param, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ParamLow);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ParamLow, paramsPtr + 20);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -684,6 +698,8 @@ public partial class ParticleSystemComponent : BmSDK.Engine.PrimitiveComponent, 
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DetermineLODLevelForLocation, "Engine.ParticleSystemComponent.DetermineLODLevelForLocation");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out EffectLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(EffectLocation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

@@ -347,6 +347,8 @@ public partial class RChaseLocationSearch : BmSDK.BmGame.RSearchTreeFinder, BmSD
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindChaseStart, "BmGame.RChaseLocationSearch.FindChaseStart");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ChaseStart);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ChaseStart, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

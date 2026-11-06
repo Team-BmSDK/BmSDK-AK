@@ -122,6 +122,12 @@ public partial class RCombatMove_BatmanHit : BmSDK.BmGame.RCombatMove, BmSDK.IGa
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHitReactionBombExplosion, "BmGame.RCombatMove_BatmanHit.GetHitReactionBombExplosion");
         byte* paramsPtr = stackalloc byte[56];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AnimName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AnimHeading);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimHeading, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CapeStateOverride);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CapeStateOverride, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         AnimName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
         AnimHeading = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
@@ -137,6 +143,12 @@ public partial class RCombatMove_BatmanHit : BmSDK.BmGame.RCombatMove, BmSDK.IGa
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHitReactionBomb, "BmGame.RCombatMove_BatmanHit.GetHitReactionBomb");
         byte* paramsPtr = stackalloc byte[56];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AnimName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AnimHeading);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimHeading, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CapeStateOverride);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CapeStateOverride, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         AnimName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
         AnimHeading = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
@@ -152,6 +164,14 @@ public partial class RCombatMove_BatmanHit : BmSDK.BmGame.RCombatMove, BmSDK.IGa
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHitReactionFromDmgInfo, "BmGame.RCombatMove_BatmanHit.GetHitReactionFromDmgInfo");
         byte* paramsPtr = stackalloc byte[36];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NewAnim);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAnim, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NewAnimSet);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAnimSet, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NewHeading);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NewHeading, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NewCapeStateOverride);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCapeStateOverride, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NewAnim = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
         NewAnimSet = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSet>(paramsPtr + 8);
@@ -168,6 +188,14 @@ public partial class RCombatMove_BatmanHit : BmSDK.BmGame.RCombatMove, BmSDK.IGa
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHeavyHitReaction, "BmGame.RCombatMove_BatmanHit.GetHeavyHitReaction");
         byte* paramsPtr = stackalloc byte[64];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AnimName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NewAnimSet);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAnimSet, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AnimHeading);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimHeading, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CapeStateOverride);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CapeStateOverride, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         AnimName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
         NewAnimSet = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSet>(paramsPtr + 8);
@@ -184,6 +212,12 @@ public partial class RCombatMove_BatmanHit : BmSDK.BmGame.RCombatMove, BmSDK.IGa
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHitReactionBrick, "BmGame.RCombatMove_BatmanHit.GetHitReactionBrick");
         byte* paramsPtr = stackalloc byte[60];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AnimName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AnimHeading);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimHeading, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CapeStateOverride);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CapeStateOverride, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         AnimName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
         AnimHeading = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
@@ -199,6 +233,12 @@ public partial class RCombatMove_BatmanHit : BmSDK.BmGame.RCombatMove, BmSDK.IGa
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHitReactionJokerfied, "BmGame.RCombatMove_BatmanHit.GetHitReactionJokerfied");
         byte* paramsPtr = stackalloc byte[60];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AnimName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AnimHeading);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimHeading, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CapeStateOverride);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CapeStateOverride, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         AnimName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
         AnimHeading = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
@@ -214,6 +254,12 @@ public partial class RCombatMove_BatmanHit : BmSDK.BmGame.RCombatMove, BmSDK.IGa
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHitReaction, "BmGame.RCombatMove_BatmanHit.GetHitReaction");
         byte* paramsPtr = stackalloc byte[64];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AnimName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AnimHeading);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimHeading, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CapeStateOverride);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CapeStateOverride, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         AnimName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
         AnimHeading = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);

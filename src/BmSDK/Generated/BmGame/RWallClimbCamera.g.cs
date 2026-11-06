@@ -121,6 +121,8 @@ public partial class RWallClimbCamera : BmSDK.BmGame.RCameraActor, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_convergei, "BmGame.RWallClimbCamera.convergei");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(targetv, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speed, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Tolerance, paramsPtr + 12);
@@ -163,6 +165,8 @@ public partial class RWallClimbCamera : BmSDK.BmGame.RCameraActor, BmSDK.IGameOb
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_converger, "BmGame.RWallClimbCamera.converger");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Delta, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(targetv, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speed, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Tolerance, paramsPtr + 32);
@@ -193,7 +197,11 @@ public partial class RWallClimbCamera : BmSDK.BmGame.RCameraActor, BmSDK.IGameOb
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_converge, "BmGame.RWallClimbCamera.converge");
         byte* paramsPtr = stackalloc byte[124];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Delta, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(targetv, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LastSpeed);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LastSpeed, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speed, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Tolerance, paramsPtr + 44);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bOvershoot, paramsPtr + 48);
@@ -223,6 +231,8 @@ public partial class RWallClimbCamera : BmSDK.BmGame.RCameraActor, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWallTargetLocation, "BmGame.RWallClimbCamera.GetWallTargetLocation");
         byte* paramsPtr = stackalloc byte[36];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NextLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NextLoc, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NextLoc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);

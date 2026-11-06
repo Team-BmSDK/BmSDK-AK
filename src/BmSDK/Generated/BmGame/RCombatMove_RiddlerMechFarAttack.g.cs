@@ -127,6 +127,10 @@ public partial class RCombatMove_RiddlerMechFarAttack : BmSDK.BmGame.RCombatMove
         byte* paramsPtr = stackalloc byte[80];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FromLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BeamVec, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TargetLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetLoc, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TargetNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetNormal, paramsPtr + 36);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         TargetLoc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 24);
         TargetNormal = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 36);

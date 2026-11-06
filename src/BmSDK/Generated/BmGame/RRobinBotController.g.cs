@@ -255,6 +255,8 @@ public partial class RRobinBotController : BmSDK.BmGame.RBotController, BmSDK.IG
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ChooseMoveToPlayerLocation, "BmGame.RRobinBotController.ChooseMoveToPlayerLocation");
         byte* paramsPtr = stackalloc byte[36];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out IdealLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(IdealLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         IdealLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
@@ -845,6 +847,8 @@ public partial class RRobinBotController : BmSDK.BmGame.RBotController, BmSDK.IG
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBestMoveToPoint, "BmGame.RRobinBotController.GetBestMoveToPoint");
         byte* paramsPtr = stackalloc byte[12];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TestLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TestLocation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

@@ -88,6 +88,8 @@ public partial class RAEC_HideFromBatmobile_Solo : BmSDK.BmGame.RAlertEventCoord
         byte* paramsPtr = stackalloc byte[112];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HideType, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MeetingPointTravelDist);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MeetingPointTravelDist, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         MeetingPointTravelDist = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 16);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 20);

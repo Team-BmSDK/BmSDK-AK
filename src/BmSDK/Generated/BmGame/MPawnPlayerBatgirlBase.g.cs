@@ -181,6 +181,12 @@ public partial class MPawnPlayerBatgirlBase : BmSDK.BmGame.RPawnPlayerBmBase, Bm
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRemaningCollectables, "BmGame.MPawnPlayerBatgirlBase.GetRemaningCollectables");
         byte* paramsPtr = stackalloc byte[12];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NbBalloon);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NbBalloon, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NbTheeth);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NbTheeth, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NbJITB);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NbJITB, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NbBalloon = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
         NbTheeth = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
@@ -196,6 +202,12 @@ public partial class MPawnPlayerBatgirlBase : BmSDK.BmGame.RPawnPlayerBmBase, Bm
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNumberCollectables, "BmGame.MPawnPlayerBatgirlBase.GetNumberCollectables");
         byte* paramsPtr = stackalloc byte[36];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NbBalloon);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NbBalloon, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NbTheeth);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NbTheeth, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NbJITB);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NbJITB, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NbBalloon = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
         NbTheeth = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
@@ -303,6 +315,14 @@ public partial class MPawnPlayerBatgirlBase : BmSDK.BmGame.RPawnPlayerBmBase, Bm
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSwingChuteSpecialMove, "BmGame.MPawnPlayerBatgirlBase.SetSwingChuteSpecialMove");
         byte* paramsPtr = stackalloc byte[32];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SwingMove);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SwingMove, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out GlideMove);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(GlideMove, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CrouchInMove);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CrouchInMove, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RollOutOfChute);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RollOutOfChute, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         SwingMove = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RSpecialMoveConfig>(paramsPtr + 0);
         GlideMove = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RSpecialMoveConfig>(paramsPtr + 8);
@@ -319,6 +339,12 @@ public partial class MPawnPlayerBatgirlBase : BmSDK.BmGame.RPawnPlayerBmBase, Bm
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetLadderSpecialMove, "BmGame.MPawnPlayerBatgirlBase.SetLadderSpecialMove");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BatmanClimbRunMove);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BatmanClimbRunMove, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BatmanClimbStandMove);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BatmanClimbStandMove, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BatmanGrateMove);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BatmanGrateMove, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         BatmanClimbRunMove = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RSpecialMoveConfig>(paramsPtr + 0);
         BatmanClimbStandMove = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RSpecialMoveConfig>(paramsPtr + 8);

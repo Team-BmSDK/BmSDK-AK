@@ -134,6 +134,14 @@ public partial class RBMBehaviour_GangPickUpObjectPoint : BmSDK.BmScript.RBMBeha
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBreakVars, "BmScript.RBMBehaviour_GangPickUpObjectPoint.GetBreakVars");
         byte* paramsPtr = stackalloc byte[64];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLoc, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitNorm);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNorm, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitSpeed);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitSpeed, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ThrownActor);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ThrownActor, paramsPtr + 36);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         HitLoc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         HitNorm = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);

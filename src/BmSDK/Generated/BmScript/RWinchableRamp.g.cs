@@ -252,6 +252,8 @@ public partial class RWinchableRamp : BmSDK.BmGame.RWinchableWallBase, BmSDK.IGa
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Batmobile, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Winch, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LimitVec);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LimitVec, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         LimitVec = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 16);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
@@ -267,6 +269,8 @@ public partial class RWinchableRamp : BmSDK.BmGame.RWinchableWallBase, BmSDK.IGa
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Batmobile, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Winch, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LimitVec);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LimitVec, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         LimitVec = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 16);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);

@@ -278,6 +278,8 @@ public partial class RBMBarkCoordinator : BmSDK.Engine.Actor, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddRegionFlagFromMapString, "BmGame.RBMBarkCoordinator.AddRegionFlagFromMapString");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MapStr, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ContextFlags);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ContextFlags, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ContextFlags = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBarkFlagBase>(paramsPtr + 16);
         return;
@@ -292,6 +294,8 @@ public partial class RBMBarkCoordinator : BmSDK.Engine.Actor, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddLocationFlags, "BmGame.RBMBarkCoordinator.AddLocationFlags");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Subject, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ContextFlags);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ContextFlags, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ContextFlags = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBarkFlagBase>(paramsPtr + 8);
         return;
@@ -391,6 +395,10 @@ public partial class RBMBarkCoordinator : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GroupContext, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewBarkFinished, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bOrphan, paramsPtr + 56);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out UsedLineContext);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(UsedLineContext, paramsPtr + 60);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bFoundSomethingThatMatchedFlags);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bFoundSomethingThatMatchedFlags, paramsPtr + 68);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         UsedLineContext = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBarkFlagBase>(paramsPtr + 60);
         bFoundSomethingThatMatchedFlags = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 68);
@@ -407,6 +415,10 @@ public partial class RBMBarkCoordinator : BmSDK.Engine.Actor, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ContextFlags, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OrderedSpeakerList, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Score);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Score, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bFoundSomethingThatMatchedFlags);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bFoundSomethingThatMatchedFlags, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Score = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 24);
         bFoundSomethingThatMatchedFlags = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 28);
@@ -535,7 +547,11 @@ public partial class RBMBarkCoordinator : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BarkSetList, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ContextFlags, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OrderedSpeakers, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Score);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Score, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(fallbackConvoParent, paramsPtr + 44);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bFoundSomethingThatMatchedFlags);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bFoundSomethingThatMatchedFlags, paramsPtr + 52);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

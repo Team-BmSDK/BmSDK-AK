@@ -364,6 +364,10 @@ public partial class RHarpoonDragPhysicsBase : BmSDK.BmGame.RSmashableProp, BmSD
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAnchorPointPositionAndRotation, "BmGame.RHarpoonDragPhysicsBase.GetAnchorPointPositionAndRotation");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(I, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Out_Position);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Out_Position, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_Rotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_Rotation, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

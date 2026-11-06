@@ -135,6 +135,12 @@ public partial class RSpecialMoveInstance_Interrogation : BmSDK.BmGame.RSpecialM
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 144);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bCamMirrored, paramsPtr + 152);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Index, paramsPtr + 156);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BestCollisionDistance);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BestCollisionDistance, paramsPtr + 160);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BestIndex);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BestIndex, paramsPtr + 164);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BestMirroredNess);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BestMirroredNess, paramsPtr + 168);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckTime, paramsPtr + 172);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CustomCamera, paramsPtr + 176);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -170,6 +176,8 @@ public partial class RSpecialMoveInstance_Interrogation : BmSDK.BmGame.RSpecialM
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_converge, "BmGame.RSpecialMoveInstance_Interrogation.converge");
         byte* paramsPtr = stackalloc byte[44];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(targetv, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speed, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Tolerance, paramsPtr + 28);
@@ -236,6 +244,8 @@ public partial class RSpecialMoveInstance_Interrogation : BmSDK.BmGame.RSpecialM
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCameraAnimName, "BmGame.RSpecialMoveInstance_Interrogation.GetCameraAnimName");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CharacterAnim, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CameraAnim);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CameraAnim, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CustomAnimSet, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Index, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
@@ -538,6 +548,8 @@ public partial class RSpecialMoveInstance_Interrogation : BmSDK.BmGame.RSpecialM
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetInferredReferenceLocation, "BmGame.RSpecialMoveInstance_Interrogation.GetInferredReferenceLocation");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RefLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RefLocation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -681,6 +693,8 @@ public partial class RSpecialMoveInstance_Interrogation : BmSDK.BmGame.RSpecialM
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetOuterRailingLocator, "BmGame.RSpecialMoveInstance_Interrogation.GetOuterRailingLocator");
         byte* paramsPtr = stackalloc byte[264];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveLocation, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutLocation, paramsPtr + 132);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         OutLocation = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator>(paramsPtr + 132);
         return;

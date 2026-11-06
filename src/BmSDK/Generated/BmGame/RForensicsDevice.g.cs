@@ -1432,6 +1432,8 @@ public partial class RForensicsDevice : BmSDK.Engine.Actor, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckEvidenceScanable, "BmGame.RForensicsDevice.CheckEvidenceScanable");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(evidence, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NotFullyVisible);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NotFullyVisible, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NotFullyVisible = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
@@ -1485,6 +1487,10 @@ public partial class RForensicsDevice : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AtLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Dir, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxIndexInRoute, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out StartPt);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(StartPt, paramsPtr + 28);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out IndexInRoute);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(IndexInRoute, paramsPtr + 32);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         StartPt = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 28);
         IndexInRoute = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 32);

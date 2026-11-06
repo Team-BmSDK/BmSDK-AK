@@ -227,6 +227,8 @@ public partial class RJokerTannoy : BmSDK.Engine.Actor, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLine, "BmGame.RJokerTannoy.GetLine");
         byte* paramsPtr = stackalloc byte[40];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PlayedScore);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayedScore, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         PlayedScore = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBarkConvo>(paramsPtr + 4);

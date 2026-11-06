@@ -81,6 +81,14 @@ public partial class ParticleModuleEventSendToGame : BmSDK.GameObject, BmSDK.IGa
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoEvent, "Engine.ParticleModuleEventSendToGame.DoEvent");
         byte* paramsPtr = stackalloc byte[44];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out InCollideDirection);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(InCollideDirection, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out InHitLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(InHitLocation, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out InHitNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(InHitNormal, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out InBoneName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(InBoneName, paramsPtr + 36);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         InCollideDirection = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         InHitLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);

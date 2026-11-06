@@ -176,6 +176,10 @@ public partial class RAIBrain_PredFull : BmSDK.BmGame.RAIBrain_Pred, BmSDK.IGame
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasLowPriorityEvent, "BmGame.RAIBrain_PredFull.HasLowPriorityEvent");
         byte* paramsPtr = stackalloc byte[28];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NewName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NewName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NewAEC);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAEC, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NewName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
         NewAEC = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RAlertEventCoordinatorBase>(paramsPtr + 8);
@@ -190,6 +194,10 @@ public partial class RAIBrain_PredFull : BmSDK.BmGame.RAIBrain_Pred, BmSDK.IGame
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BagCarryIsSentryGun, "BmGame.RAIBrain_PredFull.BagCarryIsSentryGun");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NewName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NewName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NewAEC);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAEC, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAllowBatarangResponse, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NewName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
@@ -205,6 +213,10 @@ public partial class RAIBrain_PredFull : BmSDK.BmGame.RAIBrain_Pred, BmSDK.IGame
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasLessThanShootButMoreThanChaseEvent, "BmGame.RAIBrain_PredFull.HasLessThanShootButMoreThanChaseEvent");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NewName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NewName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NewAEC);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAEC, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NewName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
         NewAEC = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RAlertEventCoordinatorBase>(paramsPtr + 8);
@@ -219,6 +231,10 @@ public partial class RAIBrain_PredFull : BmSDK.BmGame.RAIBrain_Pred, BmSDK.IGame
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasFullPredEventThatInterruptsBagCarry, "BmGame.RAIBrain_PredFull.HasFullPredEventThatInterruptsBagCarry");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NewName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NewName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NewAEC);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAEC, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NewName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
         NewAEC = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RAlertEventCoordinatorBase>(paramsPtr + 8);

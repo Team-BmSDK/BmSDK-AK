@@ -199,6 +199,8 @@ public partial class RMagneticBlastReceiver : BmSDK.BmGame.RProjectile, BmSDK.IG
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Str, paramsPtr + 116);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAffectedByGenerator, paramsPtr + 120);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSecondary, paramsPtr + 124);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out fEffectiveStrength);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(fEffectiveStrength, paramsPtr + 128);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -486,6 +488,10 @@ public partial class RMagneticBlastReceiver : BmSDK.BmGame.RProjectile, BmSDK.IG
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetChargeTime, "BmGame.RMagneticBlastReceiver.GetChargeTime");
         byte* paramsPtr = stackalloc byte[8];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ChargeTimer);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ChargeTimer, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ChargeDuration);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ChargeDuration, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ChargeTimer = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
         ChargeDuration = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 4);

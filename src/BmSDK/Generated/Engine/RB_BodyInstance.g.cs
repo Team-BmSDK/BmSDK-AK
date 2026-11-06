@@ -419,6 +419,10 @@ public partial class RB_BodyInstance : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetUnrealWorldLinearAndAngularVelocity, "Engine.RB_BodyInstance.GetUnrealWorldLinearAndAngularVelocity");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LinearVelocity);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LinearVelocity, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AngularVelocity);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AngularVelocity, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

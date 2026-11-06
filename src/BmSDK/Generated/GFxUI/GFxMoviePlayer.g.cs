@@ -1248,6 +1248,14 @@ public partial class GFxMoviePlayer : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVisibleFrameRect, "GFxUI.GFxMoviePlayer.GetVisibleFrameRect");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out x0);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(x0, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out y0);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(y0, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out X1);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(X1, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Y1);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Y1, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

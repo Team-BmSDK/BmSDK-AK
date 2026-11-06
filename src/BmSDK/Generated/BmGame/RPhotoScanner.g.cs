@@ -560,6 +560,10 @@ public partial class RPhotoScanner : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Origin, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Scale, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Canvas, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out cmin);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(cmin, paramsPtr + 32);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out cmax);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(cmax, paramsPtr + 40);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

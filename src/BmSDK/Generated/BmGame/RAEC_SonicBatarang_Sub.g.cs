@@ -160,6 +160,8 @@ public partial class RAEC_SonicBatarang_Sub : BmSDK.BmGame.RAlertEventCoordinato
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSentryKitAnimOffset, "BmGame.RAEC_SonicBatarang_Sub.GetSentryKitAnimOffset");
         byte* paramsPtr = stackalloc byte[104];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestKit, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MeetingPointTravelDist);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MeetingPointTravelDist, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         MeetingPointTravelDist = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
@@ -176,6 +178,8 @@ public partial class RAEC_SonicBatarang_Sub : BmSDK.BmGame.RAlertEventCoordinato
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestWall, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bCocky, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SideHintPos, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MeetingPointTravelDist);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MeetingPointTravelDist, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         MeetingPointTravelDist = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 24);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 28);
@@ -191,6 +195,8 @@ public partial class RAEC_SonicBatarang_Sub : BmSDK.BmGame.RAlertEventCoordinato
         byte* paramsPtr = stackalloc byte[112];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimPos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimYaw, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MeetingPointTravelDist);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MeetingPointTravelDist, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         MeetingPointTravelDist = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 16);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 20);
@@ -206,6 +212,8 @@ public partial class RAEC_SonicBatarang_Sub : BmSDK.BmGame.RAlertEventCoordinato
         byte* paramsPtr = stackalloc byte[108];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestLocker, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bCocky, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MeetingPointTravelDist);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MeetingPointTravelDist, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         MeetingPointTravelDist = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 12);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 16);
@@ -248,6 +256,10 @@ public partial class RAEC_SonicBatarang_Sub : BmSDK.BmGame.RAlertEventCoordinato
         byte* paramsPtr = stackalloc byte[96];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Grate, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(lookType, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out outRefLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(outRefLoc, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out outRefRot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(outRefRot, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         outRefLoc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
         outRefRot = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 24);

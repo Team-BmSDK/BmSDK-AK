@@ -93,6 +93,8 @@ public partial class RSeqAct_SpawnerBase : BmSDK.Engine.SequenceAction, BmSDK.IG
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCharacterData, "BmGame.RSeqAct_SpawnerBase.SetCharacterData");
         byte* paramsPtr = stackalloc byte[28];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Slot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Slot, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayableCharacterName, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayableCharacter, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CharacterMesh, paramsPtr + 20);

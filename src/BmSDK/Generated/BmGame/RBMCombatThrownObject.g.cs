@@ -964,7 +964,15 @@ public partial class RBMCombatThrownObject : BmSDK.Engine.KAsset, BmSDK.IGameObj
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInRangeOfMagneticSurface, "BmGame.RBMCombatThrownObject.IsInRangeOfMagneticSurface");
         byte* paramsPtr = stackalloc byte[40];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SourceLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SourceLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bInformMagneticSurface, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Strength);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Strength, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ChargeTimer);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ChargeTimer, paramsPtr + 20);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ChargeDuration);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ChargeDuration, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

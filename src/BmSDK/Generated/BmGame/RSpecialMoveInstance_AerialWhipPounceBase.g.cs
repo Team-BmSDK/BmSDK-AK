@@ -86,6 +86,14 @@ public partial class RSpecialMoveInstance_AerialWhipPounceBase : BmSDK.BmGame.RS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculateReferencePointAndNormal, "BmGame.RSpecialMoveInstance_AerialWhipPounceBase.CalculateReferencePointAndNormal");
         byte* paramsPtr = stackalloc byte[168];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ReferencePoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ReferencePoint, paramsPtr + 132);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ReferenceNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ReferenceNormal, paramsPtr + 144);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out WhipTargetPoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(WhipTargetPoint, paramsPtr + 156);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

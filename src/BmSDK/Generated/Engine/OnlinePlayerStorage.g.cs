@@ -203,6 +203,8 @@ public partial class OnlinePlayerStorage : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRangedProfileSettingValue, "Engine.OnlinePlayerStorage.GetRangedProfileSettingValue");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProfileId, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutValue);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutValue, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -245,6 +247,14 @@ public partial class OnlinePlayerStorage : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetProfileSettingRange, "Engine.OnlinePlayerStorage.GetProfileSettingRange");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProfileId, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutMinValue);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutMinValue, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutMaxValue);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutMaxValue, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RangeIncrement);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RangeIncrement, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bFormatAsInt);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bFormatAsInt, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -290,6 +300,8 @@ public partial class OnlinePlayerStorage : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetProfileSettingMappingType, "Engine.OnlinePlayerStorage.GetProfileSettingMappingType");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProfileId, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutType);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutType, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -374,6 +386,8 @@ public partial class OnlinePlayerStorage : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetProfileSettingValueFloat, "Engine.OnlinePlayerStorage.GetProfileSettingValueFloat");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProfileSettingId, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -395,6 +409,8 @@ public partial class OnlinePlayerStorage : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetProfileSettingValueInt, "Engine.OnlinePlayerStorage.GetProfileSettingValueInt");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProfileSettingId, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -417,6 +433,8 @@ public partial class OnlinePlayerStorage : BmSDK.GameObject, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProfileSettingId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ListIndex, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -438,6 +456,10 @@ public partial class OnlinePlayerStorage : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetProfileSettingValueId, "Engine.OnlinePlayerStorage.GetProfileSettingValueId");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProfileSettingId, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ValueId);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ValueId, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ListIndex);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ListIndex, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -726,6 +748,8 @@ public partial class OnlinePlayerStorage : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetProfileSettingId, "Engine.OnlinePlayerStorage.GetProfileSettingId");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProfileSettingName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ProfileSettingId);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ProfileSettingId, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

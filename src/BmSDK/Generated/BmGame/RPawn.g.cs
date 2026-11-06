@@ -99,6 +99,8 @@ public partial class RPawn : BmSDK.Engine.Pawn, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetInterceptHudLocation, "BmGame.RPawn.GetInterceptHudLocation");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HudLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HudLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         HudLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
@@ -282,6 +284,12 @@ public partial class RPawn : BmSDK.Engine.Pawn, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetColourForType, "BmGame.RPawn.SetColourForType");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(T, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out R);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(R, paramsPtr + 1);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out G);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(G, paramsPtr + 2);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out B);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(B, paramsPtr + 3);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         R = BmSDK.Framework.MarshalUtil.ToManaged<byte>(paramsPtr + 1);
         G = BmSDK.Framework.MarshalUtil.ToManaged<byte>(paramsPtr + 2);
@@ -536,6 +544,14 @@ public partial class RPawn : BmSDK.Engine.Pawn, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Type, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Foot, paramsPtr + 1);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Contact, paramsPtr + 2);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out InOut_FootLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(InOut_FootLocation, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Out_Normal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Out_Normal, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Out_Material);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Out_Material, paramsPtr + 28);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_Actor);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_Actor, paramsPtr + 36);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

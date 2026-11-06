@@ -389,6 +389,12 @@ public partial class RGFxMovie : BmSDK.GFxUI.GFxMoviePlayer, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAudioTrackIds, "BmGame.RGFxMovie.GetAudioTrackIds");
         byte* paramsPtr = stackalloc byte[12];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out EffectsAudioTrack);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(EffectsAudioTrack, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DialogueAudioTrack);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DialogueAudioTrack, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SubtitleTrackId);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SubtitleTrackId, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

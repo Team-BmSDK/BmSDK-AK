@@ -159,6 +159,8 @@ public partial class RBMAIAction_BuddyBump : BmSDK.BmGame.RBMAIAction, BmSDK.IGa
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ExpandBoxBounds, "BmGame.RBMAIAction_BuddyBump.ExpandBoxBounds");
         byte* paramsPtr = stackalloc byte[36];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutBox);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutBox, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPoint, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         OutBox = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.GameObject.FSimpleBox>(paramsPtr + 0);

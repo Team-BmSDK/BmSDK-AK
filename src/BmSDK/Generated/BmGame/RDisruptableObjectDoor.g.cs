@@ -180,6 +180,8 @@ public partial class RDisruptableObjectDoor : BmSDK.Engine.Actor, BmSDK.IGameObj
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalcCharge, "BmGame.RDisruptableObjectDoor.CalcCharge");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InLoc, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Dist);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Dist, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

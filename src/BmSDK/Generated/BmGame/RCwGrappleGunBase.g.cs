@@ -121,6 +121,10 @@ public partial class RCwGrappleGunBase : BmSDK.BmGame.RGrappleGun, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PointAndLineCheck, "BmGame.RCwGrappleGunBase.PointAndLineCheck");
         byte* paramsPtr = stackalloc byte[76];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(End, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Start, paramsPtr + 36);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Extent, paramsPtr + 48);
@@ -230,6 +234,8 @@ public partial class RCwGrappleGunBase : BmSDK.BmGame.RGrappleGun, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckForCeilingTarget, "BmGame.RCwGrappleGunBase.CheckForCeilingTarget");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CeilingTargetLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CeilingTargetLocation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -522,6 +528,8 @@ public partial class RCwGrappleGunBase : BmSDK.BmGame.RGrappleGun, BmSDK.IGameOb
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetWallLocation, paramsPtr + 56);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartCheck, paramsPtr + 276);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForcePounceCheck, paramsPtr + 280);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NewWallLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NewWallLocation, paramsPtr + 284);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -543,6 +551,8 @@ public partial class RCwGrappleGunBase : BmSDK.BmGame.RGrappleGun, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateClimbRoute, "BmGame.RCwGrappleGunBase.CreateClimbRoute");
         byte* paramsPtr = stackalloc byte[140];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bPersistent, paramsPtr + 132);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -746,6 +756,10 @@ public partial class RCwGrappleGunBase : BmSDK.BmGame.RGrappleGun, BmSDK.IGameOb
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EndLocation, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WallLocation, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out IdealSwingTime);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(IdealSwingTime, paramsPtr + 36);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out IdealSwingLength);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(IdealSwingLength, paramsPtr + 40);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         IdealSwingTime = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 36);
         IdealSwingLength = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 40);
@@ -760,6 +774,8 @@ public partial class RCwGrappleGunBase : BmSDK.BmGame.RGrappleGun, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAerialSwingWallEndParams, "BmGame.RCwGrappleGunBase.GetAerialSwingWallEndParams");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PlayerLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerLocation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -780,6 +796,8 @@ public partial class RCwGrappleGunBase : BmSDK.BmGame.RGrappleGun, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAerialSwingEndParams, "BmGame.RCwGrappleGunBase.GetAerialSwingEndParams");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PlayerLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bOnlyEstimate, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDebugDraw, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
@@ -802,6 +820,12 @@ public partial class RCwGrappleGunBase : BmSDK.BmGame.RGrappleGun, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAerialSwingStartParams, "BmGame.RCwGrappleGunBase.GetAerialSwingStartParams");
         byte* paramsPtr = stackalloc byte[36];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Origin);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Origin, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out StartVelocity);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(StartVelocity, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out StartTime);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(StartTime, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDrawDebug, paramsPtr + 28);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -865,6 +889,10 @@ public partial class RCwGrappleGunBase : BmSDK.BmGame.RGrappleGun, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetEdgeSwingGrappleTargetingParams, "BmGame.RCwGrappleGunBase.GetEdgeSwingGrappleTargetingParams");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Origin);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Origin, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AimDirection);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AimDirection, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -886,6 +914,8 @@ public partial class RCwGrappleGunBase : BmSDK.BmGame.RGrappleGun, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetEdgeSwingWallLocation, "BmGame.RCwGrappleGunBase.GetEdgeSwingWallLocation");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out WallNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(WallNormal, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -906,6 +936,8 @@ public partial class RCwGrappleGunBase : BmSDK.BmGame.RGrappleGun, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetEdgeSwingWallEndParams, "BmGame.RCwGrappleGunBase.GetEdgeSwingWallEndParams");
         byte* paramsPtr = stackalloc byte[12];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PlayerLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerLocation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -926,6 +958,8 @@ public partial class RCwGrappleGunBase : BmSDK.BmGame.RGrappleGun, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetEdgeSwingEndParams, "BmGame.RCwGrappleGunBase.GetEdgeSwingEndParams");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PlayerLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bOnlyEstimate, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDebugDraw, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1012,6 +1046,12 @@ public partial class RCwGrappleGunBase : BmSDK.BmGame.RGrappleGun, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetEdgeSwingStartParams, "BmGame.RCwGrappleGunBase.GetEdgeSwingStartParams");
         byte* paramsPtr = stackalloc byte[36];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Origin);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Origin, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out StartVelocity);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(StartVelocity, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out StartTime);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(StartTime, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDrawDebug, paramsPtr + 28);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1155,7 +1195,11 @@ public partial class RCwGrappleGunBase : BmSDK.BmGame.RGrappleGun, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TraceGround, "BmGame.RCwGrappleGunBase.TraceGround");
         byte* paramsPtr = stackalloc byte[164];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Direction, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDebugExtraPounce, paramsPtr + 156);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1180,6 +1224,8 @@ public partial class RCwGrappleGunBase : BmSDK.BmGame.RGrappleGun, BmSDK.IGameOb
         byte* paramsPtr = stackalloc byte[1252];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bHideOrGrapplePoint, paramsPtr + 1096);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WallLocation, paramsPtr + 1100);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 1112);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDebugLongPounce, paramsPtr + 1244);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1202,6 +1248,8 @@ public partial class RCwGrappleGunBase : BmSDK.BmGame.RGrappleGun, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckLongPounceFloor, "BmGame.RCwGrappleGunBase.CheckLongPounceFloor");
         byte* paramsPtr = stackalloc byte[168];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WallLocation, paramsPtr + 132);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WallNormal, paramsPtr + 144);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDebugDraw, paramsPtr + 156);
@@ -1267,6 +1315,8 @@ public partial class RCwGrappleGunBase : BmSDK.BmGame.RGrappleGun, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckAerialSwingCollision, "BmGame.RCwGrappleGunBase.CheckAerialSwingCollision");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FirstHitLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FirstHitLocation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1287,6 +1337,8 @@ public partial class RCwGrappleGunBase : BmSDK.BmGame.RGrappleGun, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckEdgeSwingCollision, "BmGame.RCwGrappleGunBase.CheckEdgeSwingCollision");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FirstHitLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FirstHitLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bTryShortJump, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1308,6 +1360,8 @@ public partial class RCwGrappleGunBase : BmSDK.BmGame.RGrappleGun, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateInitialLocator, "BmGame.RCwGrappleGunBase.UpdateInitialLocator");
         byte* paramsPtr = stackalloc byte[348];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewPath, paramsPtr + 340);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1484,6 +1538,10 @@ public partial class RCwGrappleGunBase : BmSDK.BmGame.RGrappleGun, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SwingLineCheck, "BmGame.RCwGrappleGunBase.SwingLineCheck");
         byte* paramsPtr = stackalloc byte[72];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EndLocation, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartLocation, paramsPtr + 36);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckExtent, paramsPtr + 48);
@@ -1552,6 +1610,8 @@ public partial class RCwGrappleGunBase : BmSDK.BmGame.RGrappleGun, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFlightPathDeltaTangent, "BmGame.RCwGrappleGunBase.GetFlightPathDeltaTangent");
         byte* paramsPtr = stackalloc byte[108];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SP);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SP, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Proportion, paramsPtr + 92);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1573,6 +1633,8 @@ public partial class RCwGrappleGunBase : BmSDK.BmGame.RGrappleGun, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFlightPathTangent, "BmGame.RCwGrappleGunBase.GetFlightPathTangent");
         byte* paramsPtr = stackalloc byte[108];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SP);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SP, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Proportion, paramsPtr + 92);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1594,6 +1656,8 @@ public partial class RCwGrappleGunBase : BmSDK.BmGame.RGrappleGun, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFlightPathPosition, "BmGame.RCwGrappleGunBase.GetFlightPathPosition");
         byte* paramsPtr = stackalloc byte[108];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SP);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SP, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Proportion, paramsPtr + 92);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1643,6 +1707,8 @@ public partial class RCwGrappleGunBase : BmSDK.BmGame.RGrappleGun, BmSDK.IGameOb
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IdealSwingTime, paramsPtr + 1144);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IdealSwingLength, paramsPtr + 1148);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckSizeMod, paramsPtr + 1152);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FirstHitLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FirstHitLocation, paramsPtr + 1156);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDebugDraw, paramsPtr + 1168);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDrawPersistent, paramsPtr + 1172);
         var oldFlags = funcManaged.FunctionFlags;

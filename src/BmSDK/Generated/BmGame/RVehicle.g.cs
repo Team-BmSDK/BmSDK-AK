@@ -237,6 +237,8 @@ public partial class RVehicle : BmSDK.Engine.AkVehicle, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateThroughWallsViewMesh, "BmGame.RVehicle.CreateThroughWallsViewMesh");
         byte* paramsPtr = stackalloc byte[17];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThroughWallsViewMaterial, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ThroughWallsViewMesh);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ThroughWallsViewMesh, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(depth_group, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -896,6 +898,8 @@ public partial class RVehicle : BmSDK.Engine.AkVehicle, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LeftVec, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckWidth, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinCos, paramsPtr + 44);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bZap);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bZap, paramsPtr + 48);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -999,6 +1003,8 @@ public partial class RVehicle : BmSDK.Engine.AkVehicle, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSelfDrivePatrolRoute, "BmGame.RVehicle.SetSelfDrivePatrolRoute");
         byte* paramsPtr = stackalloc byte[65];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartPoint, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FirstPoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FirstPoint, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MainRoadsOnly, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExcludeFromVolumes, paramsPtr + 32);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -1015,6 +1021,10 @@ public partial class RVehicle : BmSDK.Engine.AkVehicle, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MakePatrolRoute, "BmGame.RVehicle.MakePatrolRoute");
         byte* paramsPtr = stackalloc byte[304];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FirstPointOut);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FirstPointOut, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out IsLoopOut);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(IsLoopOut, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Roads, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartPoint, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MainRoadsOnly, paramsPtr + 40);
@@ -2225,6 +2235,12 @@ public partial class RVehicle : BmSDK.Engine.AkVehicle, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RefPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxRadius, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxRouteDist, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutPoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutPoint, paramsPtr + 20);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutRadius);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutRadius, paramsPtr + 32);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutRouteDist);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutRouteDist, paramsPtr + 36);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -2384,6 +2400,8 @@ public partial class RVehicle : BmSDK.Engine.AkVehicle, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DistToNextSpan, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LookAheadDist, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ResultingNextSpan);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ResultingNextSpan, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -2667,6 +2685,10 @@ public partial class RVehicle : BmSDK.Engine.AkVehicle, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRBTransform, "BmGame.RVehicle.GetRBTransform");
         byte* paramsPtr = stackalloc byte[28];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Rot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Rot, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

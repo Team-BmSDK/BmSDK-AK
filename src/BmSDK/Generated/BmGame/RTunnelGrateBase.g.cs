@@ -134,6 +134,10 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFinalGrateRotAndTrans, "BmGame.RTunnelGrateBase.GetFinalGrateRotAndTrans");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out GrateRot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(GrateRot, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out GrateTrans);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(GrateTrans, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -297,6 +301,8 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCwClimbDownLocator, "BmGame.RTunnelGrateBase.GetCwClimbDownLocator");
         byte* paramsPtr = stackalloc byte[152];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Locator);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Locator, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 132);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bRotateGrate, paramsPtr + 140);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(YawOffset, paramsPtr + 144);
@@ -313,6 +319,8 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCwClimbUpLocator, "BmGame.RTunnelGrateBase.GetCwClimbUpLocator");
         byte* paramsPtr = stackalloc byte[152];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Locator);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Locator, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 132);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bRotateGrate, paramsPtr + 140);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(YawOffset, paramsPtr + 144);
@@ -329,6 +337,8 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCwClimbLocator, "BmGame.RTunnelGrateBase.GetCwClimbLocator");
         byte* paramsPtr = stackalloc byte[224];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Locator);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Locator, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 132);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bCheckDown, paramsPtr + 140);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bRotateGrate, paramsPtr + 144);
@@ -722,6 +732,16 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNeighbours, "BmGame.RTunnelGrateBase.GetNeighbours");
         byte* paramsPtr = stackalloc byte[44];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NorthGrate);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NorthGrate, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SouthGrate);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SouthGrate, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out EastGrate);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(EastGrate, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out WestGrate);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(WestGrate, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NorthDir);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NorthDir, paramsPtr + 32);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -746,6 +766,8 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckSpaceToClimbOut, "BmGame.RTunnelGrateBase.CheckSpaceToClimbOut");
         byte* paramsPtr = stackalloc byte[136];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

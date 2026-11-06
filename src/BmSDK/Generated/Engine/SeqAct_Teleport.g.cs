@@ -98,6 +98,12 @@ public partial class SeqAct_Teleport : BmSDK.Engine.SequenceAction, BmSDK.IGameO
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDestination, "Engine.SeqAct_Teleport.GetDestination");
         byte* paramsPtr = stackalloc byte[112];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Rot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Rot, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bNoDestinationSet);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bNoDestinationSet, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Loc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         Rot = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 12);

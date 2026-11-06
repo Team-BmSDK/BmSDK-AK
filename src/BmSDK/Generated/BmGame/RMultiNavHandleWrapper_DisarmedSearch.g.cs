@@ -98,6 +98,10 @@ public partial class RMultiNavHandleWrapper_DisarmedSearch : BmSDK.BmGame.RMulti
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetShortestPath, "BmGame.RMultiNavHandleWrapper_DisarmedSearch.GetShortestPath");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bestDist);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bestDist, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BestPath);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BestPath, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         bestDist = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
         BestPath = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);

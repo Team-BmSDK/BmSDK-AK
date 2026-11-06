@@ -353,6 +353,8 @@ public partial class AkDialogueComponent : BmSDK.Engine.ActorComponent, BmSDK.IG
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasSpoken, "Engine.AkDialogueComponent.HasSpoken");
         byte* paramsPtr = stackalloc byte[8];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out timeSinceLastSpoke);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(timeSinceLastSpoke, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

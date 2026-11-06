@@ -257,6 +257,10 @@ public partial class PlayerReplicationInfo : BmSDK.Engine.ReplicationInfo, BmSDK
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisplayDebug, "Engine.PlayerReplicationInfo.DisplayDebug");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HUD, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out YL);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(YL, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out YPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(YPos, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         YL = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
         YPos = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 12);

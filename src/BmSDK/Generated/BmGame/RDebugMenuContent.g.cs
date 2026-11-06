@@ -87,6 +87,8 @@ public partial class RDebugMenuContent : BmSDK.BmGame.RDebugMenu, BmSDK.IGameObj
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoBackscreenMenu, "BmGame.RDebugMenuContent.DoBackscreenMenu");
         byte* paramsPtr = stackalloc byte[96];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RPC, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Debug_BackscreenDebugData);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Debug_BackscreenDebugData, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Debug_BackscreenDebugData = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPersistentDebugData.FBackscreenDebugData>(paramsPtr + 8);
         return;
@@ -653,6 +655,8 @@ public partial class RDebugMenuContent : BmSDK.BmGame.RDebugMenu, BmSDK.IGameObj
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoPerCharacterTypeAudioItems, "BmGame.RDebugMenuContent.DoPerCharacterTypeAudioItems");
         byte* paramsPtr = stackalloc byte[64];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Options);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Options, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CharacterName, paramsPtr + 48);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Options = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPersistentDebugData.FPerCharacterTypeAnimDebug>(paramsPtr + 0);
@@ -667,6 +671,8 @@ public partial class RDebugMenuContent : BmSDK.BmGame.RDebugMenu, BmSDK.IGameObj
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoCinematicAnimItems, "BmGame.RDebugMenuContent.DoCinematicAnimItems");
         byte* paramsPtr = stackalloc byte[4];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Options);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Options, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Options = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPersistentDebugData.FCinematicAnimDebug>(paramsPtr + 0);
         return;
@@ -680,6 +686,8 @@ public partial class RDebugMenuContent : BmSDK.BmGame.RDebugMenu, BmSDK.IGameObj
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoVehicleAnimItems, "BmGame.RDebugMenuContent.DoVehicleAnimItems");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Options);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Options, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MenuName, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Options = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPersistentDebugData.FVehicleAnimDebug>(paramsPtr + 0);
@@ -694,6 +702,8 @@ public partial class RDebugMenuContent : BmSDK.BmGame.RDebugMenu, BmSDK.IGameObj
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoPerCharacterTypeAnimItems, "BmGame.RDebugMenuContent.DoPerCharacterTypeAnimItems");
         byte* paramsPtr = stackalloc byte[64];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Options);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Options, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CharacterName, paramsPtr + 48);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Options = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPersistentDebugData.FPerCharacterTypeAnimDebug>(paramsPtr + 0);

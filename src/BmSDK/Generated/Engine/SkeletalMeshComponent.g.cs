@@ -305,6 +305,8 @@ public partial class SkeletalMeshComponent : BmSDK.Engine.MeshComponent, BmSDK.I
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDepthBiasData, "Engine.SkeletalMeshComponent.GetDepthBiasData");
         byte* paramsPtr = stackalloc byte[56];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutDepthBiasData);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutDepthBiasData, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1364,6 +1366,8 @@ public partial class SkeletalMeshComponent : BmSDK.Engine.MeshComponent, BmSDK.I
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindClosestBone, "Engine.SkeletalMeshComponent.FindClosestBone");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestLocation, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BoneLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneLocation, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IgnoreScale, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1388,6 +1392,10 @@ public partial class SkeletalMeshComponent : BmSDK.Engine.MeshComponent, BmSDK.I
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InPosition, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InRotation, paramsPtr + 20);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutPosition);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutPosition, paramsPtr + 32);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutRotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutRotation, paramsPtr + 44);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1412,6 +1420,10 @@ public partial class SkeletalMeshComponent : BmSDK.Engine.MeshComponent, BmSDK.I
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InPosition, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InRotation, paramsPtr + 20);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutPosition);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutPosition, paramsPtr + 32);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutRotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutRotation, paramsPtr + 44);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -2908,6 +2920,10 @@ public partial class SkeletalMeshComponent : BmSDK.Engine.MeshComponent, BmSDK.I
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSocketWorldLocationAndRotation, "Engine.SkeletalMeshComponent.GetSocketWorldLocationAndRotation");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InSocketName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutLocation, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutRotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutRotation, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Space, paramsPtr + 32);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

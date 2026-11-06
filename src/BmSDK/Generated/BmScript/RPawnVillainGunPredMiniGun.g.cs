@@ -229,6 +229,8 @@ public partial class RPawnVillainGunPredMiniGun : BmSDK.BmGame.RPawnVillainGunPr
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThrowVel, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnRot, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetLoc, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NadeProj);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NadeProj, paramsPtr + 36);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NadeProj = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RProjectile_GrenadeBase>(paramsPtr + 36);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 44);

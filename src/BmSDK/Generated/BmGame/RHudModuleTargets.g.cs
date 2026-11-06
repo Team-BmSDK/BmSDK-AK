@@ -255,6 +255,10 @@ public partial class RHudModuleTargets : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HudCanvas, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TheActor, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ScreenSize);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ScreenSize, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ScreenLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ScreenLocation, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ScreenSize = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 16);
         ScreenLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 20);

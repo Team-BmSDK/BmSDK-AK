@@ -100,6 +100,10 @@ public partial class RAEC_LockedIn : BmSDK.BmGame.RAlertEventCoordinatorBase, Bm
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBestThugAndReactPoint, "BmGame.RAEC_LockedIn.GetBestThugAndReactPoint");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThugPointDistList, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ThugIndex);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ThugIndex, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out UsablePoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(UsablePoint, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ThugIndex = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
         UsablePoint = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RLockedInReactionPoint>(paramsPtr + 20);

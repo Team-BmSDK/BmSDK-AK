@@ -257,6 +257,8 @@ public partial class RPawnPlayerCatwomanBase : BmSDK.BmGame.RPawnPlayer, BmSDK.I
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClampPointToCeilingVolumes, "BmGame.RPawnPlayerCatwomanBase.ClampPointToCeilingVolumes");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Point);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Point, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExtraShiftInwards, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDebugDraw, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
@@ -346,6 +348,8 @@ public partial class RPawnPlayerCatwomanBase : BmSDK.BmGame.RPawnPlayer, BmSDK.I
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetEdgeSwingWallLocation, "BmGame.RPawnPlayerCatwomanBase.GetEdgeSwingWallLocation");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out WallNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(WallNormal, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         WallNormal = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
@@ -432,6 +436,10 @@ public partial class RPawnPlayerCatwomanBase : BmSDK.BmGame.RPawnPlayer, BmSDK.I
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFirstClimbPoint, "BmGame.RPawnPlayerCatwomanBase.GetFirstClimbPoint");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Position);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Position, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Normal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Normal, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Position = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         Normal = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
@@ -528,6 +536,10 @@ public partial class RPawnPlayerCatwomanBase : BmSDK.BmGame.RPawnPlayer, BmSDK.I
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWhipTargetPose, "BmGame.RPawnPlayerCatwomanBase.GetWhipTargetPose");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutPosition);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutPosition, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutRotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutRotation, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -550,6 +562,8 @@ public partial class RPawnPlayerCatwomanBase : BmSDK.BmGame.RPawnPlayer, BmSDK.I
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindNearbyLedgeFromCeiling, "BmGame.RPawnPlayerCatwomanBase.FindNearbyLedgeFromCeiling");
         byte* paramsPtr = stackalloc byte[148];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerLocation, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Locator);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Locator, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

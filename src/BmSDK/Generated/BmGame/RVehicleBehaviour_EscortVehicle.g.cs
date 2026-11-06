@@ -168,6 +168,10 @@ public partial class RVehicleBehaviour_EscortVehicle : BmSDK.BmGame.RVehicleBeha
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFollowLaneLimitsForFollowerIndex, "BmGame.RVehicleBehaviour_EscortVehicle.GetFollowLaneLimitsForFollowerIndex");
         byte* paramsPtr = stackalloc byte[12];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FollowLaneMinOut);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FollowLaneMinOut, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FollowLaneMaxOut);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FollowLaneMaxOut, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FollowerIndex, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         FollowLaneMinOut = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
@@ -183,6 +187,10 @@ public partial class RVehicleBehaviour_EscortVehicle : BmSDK.BmGame.RVehicleBeha
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMinMaxOffsetBehindFollowVehicle, "BmGame.RVehicleBehaviour_EscortVehicle.GetMinMaxOffsetBehindFollowVehicle");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MinOffsetBehindOut);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MinOffsetBehindOut, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MaxOffsetBehindOut);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxOffsetBehindOut, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FollowVehicleOut, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         MinOffsetBehindOut = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);

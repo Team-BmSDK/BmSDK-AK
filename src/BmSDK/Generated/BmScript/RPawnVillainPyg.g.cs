@@ -222,6 +222,8 @@ public partial class RPawnVillainPyg : BmSDK.BmGame.RPawnVillainThug, BmSDK.IGam
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TryFindNewTablePoint, "BmScript.RPawnVillainPyg.TryFindNewTablePoint");
         byte* paramsPtr = stackalloc byte[120];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AttackerLoc, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DestTablePtIdx);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DestTablePtIdx, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         DestTablePtIdx = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 12);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
@@ -436,6 +438,8 @@ public partial class RPawnVillainPyg : BmSDK.BmGame.RPawnVillainThug, BmSDK.IGam
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFailedPairedAnimMoveAnimset, "BmScript.RPawnVillainPyg.GetFailedPairedAnimMoveAnimset");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MyAnimset);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MyAnimset, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherPawn, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         MyAnimset = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSet>(paramsPtr + 0);

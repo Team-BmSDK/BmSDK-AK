@@ -209,6 +209,8 @@ public partial class MaterialInstanceTimeVarying : BmSDK.Engine.MaterialInstance
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetLinearColorParameterValue, "Engine.MaterialInstanceTimeVarying.SetLinearColorParameterValue");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -251,6 +253,8 @@ public partial class MaterialInstanceTimeVarying : BmSDK.Engine.MaterialInstance
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetVectorParameterValue, "Engine.MaterialInstanceTimeVarying.SetVectorParameterValue");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

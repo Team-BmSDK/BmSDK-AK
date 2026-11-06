@@ -151,6 +151,8 @@ public partial class RStartlePoint : BmSDK.BmGame.RDummyTarget, BmSDK.IGameObjec
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPotentialTargetPositions, "BmGame.RStartlePoint.GetPotentialTargetPositions");
         byte* paramsPtr = stackalloc byte[36];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LineCheckActor);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LineCheckActor, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         TargetPositions = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<System.Numerics.Vector3>>(paramsPtr + 0);
         LineCheckActor = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 16);
@@ -165,6 +167,8 @@ public partial class RStartlePoint : BmSDK.BmGame.RDummyTarget, BmSDK.IGameObjec
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTargetLocationClosestToCamera, "BmGame.RStartlePoint.GetTargetLocationClosestToCamera");
         byte* paramsPtr = stackalloc byte[76];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out vSecondBestLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(vSecondBestLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         vSecondBestLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);

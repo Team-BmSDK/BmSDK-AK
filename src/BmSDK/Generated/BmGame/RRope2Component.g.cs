@@ -86,6 +86,8 @@ public partial class RRope2Component : BmSDK.Engine.PrimitiveComponent, BmSDK.IG
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetThoughts, "BmGame.RRope2Component.GetThoughts");
         byte* paramsPtr = stackalloc byte[60];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ThoughtLocationOverride);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ThoughtLocationOverride, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IndentString, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ThoughtList = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.Engine.Actor.FThought>>(paramsPtr + 0);
@@ -876,6 +878,8 @@ public partial class RRope2Component : BmSDK.Engine.PrimitiveComponent, BmSDK.IG
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNearestPointOnRopeToPoint, "BmGame.RRope2Component.GetNearestPointOnRopeToPoint");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WorldSpacePos, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutRopePos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutRopePos, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -898,6 +902,10 @@ public partial class RRope2Component : BmSDK.Engine.PrimitiveComponent, BmSDK.IG
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RayStartPos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RayDirection, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutRopePos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutRopePos, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutRayPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutRayPos, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BufferLength, paramsPtr + 32);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -922,6 +930,10 @@ public partial class RRope2Component : BmSDK.Engine.PrimitiveComponent, BmSDK.IG
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LineSegmentStartPos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LineSegmentEndPos, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutRopePos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutRopePos, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutLineSegmentPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutLineSegmentPos, paramsPtr + 28);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

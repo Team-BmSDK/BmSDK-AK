@@ -87,6 +87,8 @@ public partial class RAEC_SetBombOnPlant_Solo : BmSDK.BmGame.RAlertEventCoordina
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBombAnimOffset, "BmGame.RAEC_SetBombOnPlant_Solo.GetBombAnimOffset");
         byte* paramsPtr = stackalloc byte[100];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bCocky, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MeetingPointTravelDist);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MeetingPointTravelDist, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         MeetingPointTravelDist = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 4);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);

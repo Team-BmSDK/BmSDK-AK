@@ -87,6 +87,10 @@ public partial class RSpecialMoveInstance_ActivePoseTransition : BmSDK.BmGame.RS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetEndPositionAndYaw, "BmGame.RSpecialMoveInstance_ActivePoseTransition.GetEndPositionAndYaw");
         byte* paramsPtr = stackalloc byte[148];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveLocation, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out EndPosition);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(EndPosition, paramsPtr + 132);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out EndYaw);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(EndYaw, paramsPtr + 144);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         EndPosition = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 132);
         EndYaw = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 144);

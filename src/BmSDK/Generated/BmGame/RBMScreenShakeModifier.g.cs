@@ -101,6 +101,12 @@ public partial class RBMScreenShakeModifier : BmSDK.GameObject, BmSDK.IGameObjec
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CameraLoc, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Rot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Rot, paramsPtr + 28);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FOV);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FOV, paramsPtr + 40);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -197,6 +203,12 @@ public partial class RBMScreenShakeModifier : BmSDK.GameObject, BmSDK.IGameObjec
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateFast, "BmGame.RBMScreenShakeModifier.UpdateFast");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Rot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Rot, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FOV);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FOV, paramsPtr + 28);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -220,6 +232,14 @@ public partial class RBMScreenShakeModifier : BmSDK.GameObject, BmSDK.IGameObjec
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateShake, "BmGame.RBMScreenShakeModifier.UpdateShake");
         byte* paramsPtr = stackalloc byte[192];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Shake);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Shake, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 160);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Rot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Rot, paramsPtr + 172);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FOV);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FOV, paramsPtr + 184);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -244,6 +264,12 @@ public partial class RBMScreenShakeModifier : BmSDK.GameObject, BmSDK.IGameObjec
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyShake, "BmGame.RBMScreenShakeModifier.ApplyShake");
         byte* paramsPtr = stackalloc byte[188];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Shake);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Shake, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 160);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Rot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Rot, paramsPtr + 172);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ShakePct, paramsPtr + 184);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -267,6 +293,10 @@ public partial class RBMScreenShakeModifier : BmSDK.GameObject, BmSDK.IGameObjec
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyJitter, "BmGame.RBMScreenShakeModifier.ApplyJitter");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Amplitude);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Amplitude, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Offset);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Offset, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Frequency, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;

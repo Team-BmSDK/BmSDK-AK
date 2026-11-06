@@ -338,6 +338,10 @@ public partial class RCombatMove_BatmanCounter : BmSDK.BmGame.RCombatMove_Batman
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWindingStartTime, "BmGame.RCombatMove_BatmanCounter.GetWindingStartTime");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CounterName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BatmanWindingTime);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BatmanWindingTime, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ThugWindingTime);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ThugWindingTime, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

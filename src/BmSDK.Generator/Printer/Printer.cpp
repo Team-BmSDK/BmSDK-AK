@@ -527,10 +527,20 @@ void Printer::PrintFunction(const FunctionInfo& func, bool isInInterface, ostrea
         {
             auto& param = func.Params[i];
 
-            // Don't marshal in 'out' params
+            // UnrealScript 'out' params are in/out: pass in the caller's current value. Reading a
+            // C# 'out' param is legal once SkipInit marks it assigned (it never writes to it).
+            // Values that own memory (strings, arrays, structs holding one) stay zeroed: the callee
+            // may free that memory when it reassigns the param, and a C# caller doesn't expect an
+            // 'out' argument to be read, so it may still be using it.
             if (param.IsOutParam)
             {
-                continue;
+                if (param.OwnsMemory)
+                {
+                    continue;
+                }
+
+                Printer::Indent(out) << "System.Runtime.CompilerServices.Unsafe.SkipInit(out "
+                    << param.ManagedName << ");" << endl;
             }
 
             // Print

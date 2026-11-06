@@ -115,6 +115,10 @@ public partial class ApexDynamicGridActor : BmSDK.Engine.ApexFieldSamplerActor, 
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FetchStats, "Engine.ApexDynamicGridActor.FetchStats");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DGfirstLine);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DGfirstLine, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DGnumLines);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DGnumLines, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

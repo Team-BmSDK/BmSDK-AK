@@ -178,6 +178,10 @@ public partial class RHidePoint_LampPostTop : BmSDK.BmGame.RHidePoint_Walkable, 
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetHintLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThrowDir, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out mineLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(mineLoc, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MineRot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MineRot, paramsPtr + 36);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         mineLoc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 24);
         MineRot = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 36);
@@ -254,6 +258,10 @@ public partial class RHidePoint_LampPostTop : BmSDK.BmGame.RHidePoint_Walkable, 
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PickJokerMountAnims, "BmGame.RHidePoint_LampPostTop.PickJokerMountAnims");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TransIn);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TransIn, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Idle);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Idle, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         TransIn = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
         Idle = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 8);

@@ -248,6 +248,10 @@ public partial class RSeqAct_PlayCameraConversation : BmSDK.BmGame.RSeqAct_PlayS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetIdleStandPosition, "BmGame.RSeqAct_PlayCameraConversation.GetIdleStandPosition");
         byte* paramsPtr = stackalloc byte[72];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out StandPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(StandPos, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out wantedViewDir);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(wantedViewDir, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BadGuyLoc, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         StandPos = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);

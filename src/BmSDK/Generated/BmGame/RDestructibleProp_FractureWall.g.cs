@@ -588,6 +588,8 @@ public partial class RDestructibleProp_FractureWall : BmSDK.BmGame.RDestructible
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBoundingBoxForNavMeshObstacleInWorldSpace, "BmGame.RDestructibleProp_FractureWall.GetBoundingBoxForNavMeshObstacleInWorldSpace");
         byte* paramsPtr = stackalloc byte[76];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutObstacleBoxExtents);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutObstacleBoxExtents, paramsPtr + 64);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

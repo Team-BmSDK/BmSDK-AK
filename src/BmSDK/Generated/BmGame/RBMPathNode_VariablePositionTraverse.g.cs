@@ -162,6 +162,8 @@ public partial class RBMPathNode_VariablePositionTraverse : BmSDK.BmGame.RBMPath
         BmSDK.Framework.MarshalUtil.ToUnmanaged(User, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DestPoint, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Proxy, paramsPtr + 20);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SlotLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SlotLocation, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         SlotLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 28);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 40);
@@ -177,6 +179,10 @@ public partial class RBMPathNode_VariablePositionTraverse : BmSDK.BmGame.RBMPath
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(User, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Proxy, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PreferredLocVect);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PreferredLocVect, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out distAlongLine);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(distAlongLine, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         PreferredLocVect = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 16);
         distAlongLine = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 28);

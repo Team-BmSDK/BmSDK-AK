@@ -146,6 +146,10 @@ public partial class RHidePoint_GargoyleBase : BmSDK.BmGame.RHidePoint_Mesh, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PickJokerMountAnims, "BmGame.RHidePoint_GargoyleBase.PickJokerMountAnims");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TransIn);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TransIn, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Idle);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Idle, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         TransIn = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
         Idle = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 8);

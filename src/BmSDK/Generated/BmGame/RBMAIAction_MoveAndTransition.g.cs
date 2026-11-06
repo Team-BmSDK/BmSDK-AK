@@ -123,6 +123,8 @@ public partial class RBMAIAction_MoveAndTransition : BmSDK.BmGame.RBMAIAction_Ba
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMoveDest, "BmGame.RBMAIAction_MoveAndTransition.GetMoveDest");
         byte* paramsPtr = stackalloc byte[96];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MeetingPointTravelDist);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MeetingPointTravelDist, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         MeetingPointTravelDist = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 4);

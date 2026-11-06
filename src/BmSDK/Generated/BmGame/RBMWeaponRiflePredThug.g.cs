@@ -86,6 +86,8 @@ public partial class RBMWeaponRiflePredThug : BmSDK.BmGame.RBMWeaponRiflePredBas
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCustomEyeLocation, "BmGame.RBMWeaponRiflePredThug.GetCustomEyeLocation");
         byte* paramsPtr = stackalloc byte[12];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out EyeLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(EyeLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         EyeLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         return;

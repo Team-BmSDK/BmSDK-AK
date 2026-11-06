@@ -525,6 +525,10 @@ public partial class RVehicleHeavyTank : BmSDK.BmGame.RVehicleTank, BmSDK.IGameO
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetLoc, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetRadiusHorz, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetRadiusVert, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutMin);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutMin, paramsPtr + 28);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutMax);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutMax, paramsPtr + 36);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         OutMin = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector2>(paramsPtr + 28);
         OutMax = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector2>(paramsPtr + 36);
@@ -540,6 +544,8 @@ public partial class RVehicleHeavyTank : BmSDK.BmGame.RVehicleTank, BmSDK.IGameO
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckVisibility, "BmGame.RVehicleHeavyTank.CheckVisibility");
         byte* paramsPtr = stackalloc byte[72];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RPC, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FailReason);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FailReason, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         FailReason = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
@@ -684,6 +690,8 @@ public partial class RVehicleHeavyTank : BmSDK.BmGame.RVehicleTank, BmSDK.IGameO
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWeaponLockOnLocation, "BmGame.RVehicleHeavyTank.GetWeaponLockOnLocation");
         byte* paramsPtr = stackalloc byte[76];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out InSight);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(InSight, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         InSight = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 4);

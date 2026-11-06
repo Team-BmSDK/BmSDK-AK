@@ -87,6 +87,8 @@ public partial class AnimSequence : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFirstNotifyRealTime, "Engine.AnimSequence.GetFirstNotifyRealTime");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NotifyClass, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Realtime);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Realtime, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -108,6 +110,8 @@ public partial class AnimSequence : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFirstNotifyNormalizedTime, "Engine.AnimSequence.GetFirstNotifyNormalizedTime");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NotifyClass, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NormalizedTime);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NormalizedTime, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -390,6 +394,10 @@ public partial class AnimSequence : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NotifyClass, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayRate, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartPosition, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_Notify);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_Notify, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_Duration);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_Duration, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

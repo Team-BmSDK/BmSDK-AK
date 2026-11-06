@@ -446,6 +446,10 @@ public partial class RBMBehaviour_HitReaction : BmSDK.BmGame.RBMBehaviour, BmSDK
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckDir, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckDist, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckWidth, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out WallLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(WallLoc, paramsPtr + 20);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out WallNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(WallNormal, paramsPtr + 32);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

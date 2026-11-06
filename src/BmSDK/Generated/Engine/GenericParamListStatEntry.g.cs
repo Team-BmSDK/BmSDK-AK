@@ -127,6 +127,8 @@ public partial class GenericParamListStatEntry : BmSDK.GameObject, BmSDK.IGameOb
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVector, "Engine.GenericParamListStatEntry.GetVector");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParamName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_vector);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_vector, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -148,6 +150,8 @@ public partial class GenericParamListStatEntry : BmSDK.GameObject, BmSDK.IGameOb
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetInt, "Engine.GenericParamListStatEntry.GetInt");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParamName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_int);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_int, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -169,6 +173,8 @@ public partial class GenericParamListStatEntry : BmSDK.GameObject, BmSDK.IGameOb
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFloat, "Engine.GenericParamListStatEntry.GetFloat");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParamName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_Float);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_Float, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

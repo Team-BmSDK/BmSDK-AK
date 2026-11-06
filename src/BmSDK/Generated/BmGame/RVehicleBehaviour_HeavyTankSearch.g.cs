@@ -206,6 +206,8 @@ public partial class RVehicleBehaviour_HeavyTankSearch : BmSDK.BmGame.RVehicleBe
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NoiseReaction, paramsPtr + 36);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CommanderOnly, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Kismet, paramsPtr + 44);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CommanderAlerted);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CommanderAlerted, paramsPtr + 48);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         CommanderAlerted = BmSDK.Framework.MarshalUtil.ToManaged<byte>(paramsPtr + 48);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 52);
@@ -248,6 +250,10 @@ public partial class RVehicleBehaviour_HeavyTankSearch : BmSDK.BmGame.RVehicleBe
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Roads, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartLink, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Direction, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LinkT);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkT, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out EndLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(EndLoc, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         LinkT = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 24);
         EndLoc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 28);
@@ -350,6 +356,12 @@ public partial class RVehicleBehaviour_HeavyTankSearch : BmSDK.BmGame.RVehicleBe
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetScanColour, "BmGame.RVehicleBehaviour_HeavyTankSearch.GetScanColour");
         byte* paramsPtr = stackalloc byte[12];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out R);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(R, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out G);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(G, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out B);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(B, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         R = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
         G = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
@@ -493,6 +505,8 @@ public partial class RVehicleBehaviour_HeavyTankSearch : BmSDK.BmGame.RVehicleBe
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExcludeLink, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NoDeadEnds, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LinkEndPoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkEndPoint, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

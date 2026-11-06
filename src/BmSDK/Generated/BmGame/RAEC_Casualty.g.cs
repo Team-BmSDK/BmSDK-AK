@@ -201,6 +201,10 @@ public partial class RAEC_Casualty : BmSDK.BmGame.RAEC_CasualtyBase, BmSDK.IGame
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCrouchPosition, "BmGame.RAEC_Casualty.GetCrouchPosition");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(queryLoc, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out crouchPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(crouchPos, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out crouchRot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(crouchRot, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         crouchPos = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
         crouchRot = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 24);

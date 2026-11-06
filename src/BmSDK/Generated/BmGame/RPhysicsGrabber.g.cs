@@ -109,6 +109,20 @@ public partial class RPhysicsGrabber : BmSDK.BmGame.RInventoryGadget, BmSDK.IGam
         byte* paramsPtr = stackalloc byte[96];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GrabberLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GrabberRotation, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutUnrealHitDistance);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutUnrealHitDistance, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutHitActor);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutHitActor, paramsPtr + 28);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutHitBodyInstance);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutHitBodyInstance, paramsPtr + 36);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutHitShapeBoundsCentre);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutHitShapeBoundsCentre, paramsPtr + 44);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutHitShapeBoundsExtents);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutHitShapeBoundsExtents, paramsPtr + 56);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutHitLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutHitLocation, paramsPtr + 68);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutHitNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutHitNormal, paramsPtr + 80);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -172,6 +186,18 @@ public partial class RPhysicsGrabber : BmSDK.BmGame.RInventoryGadget, BmSDK.IGam
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PhysicsDragRaycast, "BmGame.RPhysicsGrabber.PhysicsDragRaycast");
         byte* paramsPtr = stackalloc byte[68];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitActor);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitActor, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitComponent);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitComponent, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 28);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitDistance);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitDistance, paramsPtr + 40);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitBoneName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitBoneName, paramsPtr + 44);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         HitActor = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 0);
         HitComponent = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.PrimitiveComponent>(paramsPtr + 8);
@@ -324,6 +350,18 @@ public partial class RPhysicsGrabber : BmSDK.BmGame.RInventoryGadget, BmSDK.IGam
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSurfaceType, "BmGame.RPhysicsGrabber.GetSurfaceType");
         byte* paramsPtr = stackalloc byte[468];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitInfo);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitInfo, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Dist);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Dist, paramsPtr + 96);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Foot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Foot, paramsPtr + 100);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out simpleCollision);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(simpleCollision, paramsPtr + 196);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out usingSimple);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(usingSimple, paramsPtr + 204);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out simpleDifference);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(simpleDifference, paramsPtr + 208);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         HitInfo = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor.FImpactInfo>(paramsPtr + 0);
         Dist = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 96);
@@ -403,6 +441,10 @@ public partial class RPhysicsGrabber : BmSDK.BmGame.RInventoryGadget, BmSDK.IGam
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStartEndTracePoints, "BmGame.RPhysicsGrabber.GetStartEndTracePoints");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TraceStart);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TraceStart, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TraceEnd);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TraceEnd, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -446,6 +488,16 @@ public partial class RPhysicsGrabber : BmSDK.BmGame.RInventoryGadget, BmSDK.IGam
         byte* paramsPtr = stackalloc byte[80];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Start, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(End, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NavMeshHitPoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NavMeshHitPoint, paramsPtr + 40);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NavMeshHitNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NavMeshHitNormal, paramsPtr + 52);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out StringR);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(StringR, paramsPtr + 64);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out StringG);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(StringG, paramsPtr + 68);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out StringB);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(StringB, paramsPtr + 72);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

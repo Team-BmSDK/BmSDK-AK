@@ -245,6 +245,8 @@ public partial class RAEC_Casualty_GroupCheckCas : BmSDK.BmGame.RAlertEventCoord
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetOpenSlot, "BmGame.RAEC_Casualty_GroupCheckCas.GetOpenSlot");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SlotFound);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SlotFound, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         SlotFound = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);

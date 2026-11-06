@@ -173,6 +173,8 @@ public partial class RB_ConstraintInstance : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDistanceJointMinLimit, "Engine.RB_ConstraintInstance.GetDistanceJointMinLimit");
         byte* paramsPtr = stackalloc byte[8];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutMinDistance);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutMinDistance, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -193,6 +195,8 @@ public partial class RB_ConstraintInstance : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDistanceJointMaxLimit, "Engine.RB_ConstraintInstance.GetDistanceJointMaxLimit");
         byte* paramsPtr = stackalloc byte[8];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutMaxDistance);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutMaxDistance, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -318,6 +322,8 @@ public partial class RB_ConstraintInstance : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAngularPositionTarget, "Engine.RB_ConstraintInstance.SetAngularPositionTarget");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out InPosTarget);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(InPosTarget, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

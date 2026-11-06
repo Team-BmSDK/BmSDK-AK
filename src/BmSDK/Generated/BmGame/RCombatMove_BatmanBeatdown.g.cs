@@ -99,6 +99,8 @@ public partial class RCombatMove_BatmanBeatdown : BmSDK.BmGame.RCombatMove_Batma
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ModifyDmgTypeFromWeaponGrabbed, "BmGame.RCombatMove_BatmanBeatdown.ModifyDmgTypeFromWeaponGrabbed");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WeaponInHand, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out dmgType);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         dmgType = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Class>(paramsPtr + 8);
         return;
@@ -396,6 +398,10 @@ public partial class RCombatMove_BatmanBeatdown : BmSDK.BmGame.RCombatMove_Batma
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetComboIncrease, "BmGame.RCombatMove_BatmanBeatdown.GetComboIncrease");
         byte* paramsPtr = stackalloc byte[8];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ComboIncrease);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ComboIncrease, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SpecialMoveCountIncrease);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SpecialMoveCountIncrease, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ComboIncrease = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
         SpecialMoveCountIncrease = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
@@ -410,6 +416,10 @@ public partial class RCombatMove_BatmanBeatdown : BmSDK.BmGame.RCombatMove_Batma
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldIncCombo, "BmGame.RCombatMove_BatmanBeatdown.ShouldIncCombo");
         byte* paramsPtr = stackalloc byte[12];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ComboIncrease);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ComboIncrease, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SpecialMoveCountIncrease);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SpecialMoveCountIncrease, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ComboIncrease = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
         SpecialMoveCountIncrease = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
@@ -498,6 +508,16 @@ public partial class RCombatMove_BatmanBeatdown : BmSDK.BmGame.RCombatMove_Batma
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ModifyInfoSearchParams, "BmGame.RCombatMove_BatmanBeatdown.ModifyInfoSearchParams");
         byte* paramsPtr = stackalloc byte[5];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out InfoDir);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(InfoDir, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out InfoStrength);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(InfoStrength, paramsPtr + 1);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out InfoRange);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(InfoRange, paramsPtr + 2);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out InfoRailingDir);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(InfoRailingDir, paramsPtr + 3);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out InfoWallDir);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(InfoWallDir, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

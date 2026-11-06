@@ -2950,6 +2950,10 @@ public partial class RBMPawnAI : BmSDK.BmGame.RBMPawnAIAnim, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanMoveToPoint, "BmGame.RBMPawnAI.CanMoveToPoint");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveToPoint, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitTime);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitTime, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitActor);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitActor, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSlopeCheck, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestLocation, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForceExtentCheck, paramsPtr + 40);
@@ -3172,6 +3176,12 @@ public partial class RBMPawnAI : BmSDK.BmGame.RBMPawnAIAnim, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBossAutomaticTutorialText, "BmGame.RBMPawnAI.GetBossAutomaticTutorialText");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RPC, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BestTutorial);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BestTutorial, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BestControlIcon);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BestControlIcon, paramsPtr + 28);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bShowTutorial);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bShowTutorial, paramsPtr + 32);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         BestTutorial = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPersistentData.ETutorialType>(paramsPtr + 8);
         BestTutorialPrompt = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 12);
@@ -3219,6 +3229,8 @@ public partial class RBMPawnAI : BmSDK.BmGame.RBMPawnAIAnim, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StorePlayerInteractions, "BmGame.RBMPawnAI.StorePlayerInteractions");
         byte* paramsPtr = stackalloc byte[8];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutInteractions);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutInteractions, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         OutInteractions = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.RInteractionComponent>(paramsPtr + 0);
         return;
@@ -3456,6 +3468,10 @@ public partial class RBMPawnAI : BmSDK.BmGame.RBMPawnAIAnim, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SkelComponent, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FromSocketName, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ToSocketName, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_Location);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_Location, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_Rotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_Rotation, paramsPtr + 36);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

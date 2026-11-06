@@ -196,6 +196,10 @@ public partial class RBM2Behaviour_IdleConfig : BmSDK.BmGame.RBMBehaviour_MoveTo
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDialogueLookFinalPosAndRot, "BmGame.RBM2Behaviour_IdleConfig.GetDialogueLookFinalPosAndRot");
         byte* paramsPtr = stackalloc byte[44];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out outLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(outLoc, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutRot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutRot, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         outLoc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         OutRot = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 12);
@@ -1646,6 +1650,8 @@ public partial class RBM2Behaviour_IdleConfig : BmSDK.BmGame.RBMBehaviour_MoveTo
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNotifies, "BmGame.RBM2Behaviour_IdleConfig.GetNotifies");
         byte* paramsPtr = stackalloc byte[32];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RunningCounter);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RunningCounter, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimationName, paramsPtr + 20);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

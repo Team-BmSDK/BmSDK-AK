@@ -2619,6 +2619,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bPickUpPlayer, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxXYRange, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FinalBatmobileLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FinalBatmobileLocation, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RoadNetworkXYRange, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RoadNetworkZRange, paramsPtr + 36);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDoCollisionCheck, paramsPtr + 40);
@@ -2661,6 +2663,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bPickUpPlayer, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxXYRange, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FinalBatmobileLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FinalBatmobileLocation, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         FinalBatmobileLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 20);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 32);
@@ -2689,6 +2693,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlanBatmobileMeetUp, "BmGame.RPlayerController.PlanBatmobileMeetUp");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GlideLocation, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PredictedBatmobileLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PredictedBatmobileLocation, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AllowEmergencyRoute, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         PredictedBatmobileLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
@@ -2875,6 +2881,12 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMedalColour, "BmGame.RPlayerController.GetMedalColour");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(medal, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out R);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(R, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out G);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(G, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out B);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(B, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         R = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
         G = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
@@ -3015,6 +3027,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RailingModeModifyPlayerMovement, "BmGame.RPlayerController.RailingModeModifyPlayerMovement");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MoveDirection);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveDirection, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HoldingRun, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
@@ -4144,6 +4158,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetIconAndTitleForCustomWaypoint, "BmGame.RPlayerController.GetIconAndTitleForCustomWaypoint");
         byte* paramsPtr = stackalloc byte[28];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Icon);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Icon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Icon = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGFxMovieModularHud.ObjIcon>(paramsPtr + 0);
         TitleStr = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 4);
@@ -4249,6 +4265,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[128];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ByName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerLocation, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out distanceOut);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(distanceOut, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         distanceOut = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 28);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 32);
@@ -7194,6 +7212,12 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TimeToHoursMinsSecs, "BmGame.RPlayerController.TimeToHoursMinsSecs");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(inTime, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out outHours);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(outHours, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out outMins);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(outMins, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out outSecs);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(outSecs, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -7440,6 +7464,14 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(nId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(nCharacterId, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Rating);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Rating, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Score);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Score, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Medals);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Medals, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Rivals);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Rivals, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Rating = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
         Score = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 12);
@@ -7971,6 +8003,12 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDownloadedContentCounts, "BmGame.RPlayerController.GetDownloadedContentCounts");
         byte* paramsPtr = stackalloc byte[52];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NumNewDownloads);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NumNewDownloads, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NumGotDownloads);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NumGotDownloads, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NumTotalDownloads);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NumTotalDownloads, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NumNewDownloads = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
         NumGotDownloads = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
@@ -9731,6 +9769,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StealthModeModifyPlayerMovement, "BmGame.RPlayerController.StealthModeModifyPlayerMovement");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MoveDirection);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveDirection, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -9864,6 +9904,10 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckSpaceToJump, "BmGame.RPlayerController.CheckSpaceToJump");
         byte* paramsPtr = stackalloc byte[33];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StickDirection, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out JumpDir);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(JumpDir, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitGlideVol);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitGlideVol, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -10114,6 +10158,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckSpaceForGrappleLaunch, "BmGame.RPlayerController.CheckSpaceForGrappleLaunch");
         byte* paramsPtr = stackalloc byte[140];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExtraHeight, paramsPtr + 132);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -10566,6 +10612,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldIReallyLand, "BmGame.RPlayerController.ShouldIReallyLand");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitFloor, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -11110,6 +11158,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FeatureType, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Distance, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FeatureNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FeatureNormal, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -11237,6 +11287,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ModifyPlayerMovement, "BmGame.RPlayerController.ModifyPlayerMovement");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MoveDirection);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveDirection, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         MoveDirection = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
@@ -11418,6 +11470,14 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGadgetPose, "BmGame.RPlayerController.GetGadgetPose");
         byte* paramsPtr = stackalloc byte[40];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PoseName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PoseName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Mirrored);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Mirrored, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CapeState);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CapeState, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutCapeTransitionState);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutCapeTransitionState, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         PoseName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
         Mirrored = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RAnimUtil.EMirrorChoice>(paramsPtr + 8);
@@ -12082,6 +12142,10 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckSpaceOnEithSide, "BmGame.RPlayerController.CheckSpaceOnEithSide");
         byte* paramsPtr = stackalloc byte[8];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LeftClear);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LeftClear, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RightClear);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RightClear, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -12353,6 +12417,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TraceKillVolume, "BmGame.RPlayerController.TraceKillVolume");
         byte* paramsPtr = stackalloc byte[48];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(End, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Start, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VolumeActor, paramsPtr + 36);
@@ -12376,6 +12442,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TraceWaterVolume, "BmGame.RPlayerController.TraceWaterVolume");
         byte* paramsPtr = stackalloc byte[40];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(End, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Start, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
@@ -12584,6 +12652,10 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPlayerViewPoint, "BmGame.RPlayerController.GetPlayerViewPoint");
         byte* paramsPtr = stackalloc byte[32];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_Location);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_Location, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_Rotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_Rotation, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         out_Location = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         out_Rotation = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 12);
@@ -12739,6 +12811,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRailingAlignedAimDir, "BmGame.RPlayerController.GetRailingAlignedAimDir");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AimDirection);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AimDirection, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -13089,6 +13163,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReplicateLastMove, "BmGame.RPlayerController.ReplicateLastMove");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MoveVelocity);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveVelocity, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         MoveVelocity = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 4);
         return;
@@ -13303,6 +13379,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGroundTakedownPromptPriority, "BmGame.RPlayerController.GetGroundTakedownPromptPriority");
         byte* paramsPtr = stackalloc byte[12];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TempTutorial);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TempTutorial, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         TempTutorial = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPersistentData.ETutorialType>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
@@ -14042,6 +14120,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLeftRightAxis, "BmGame.RPlayerController.GetLeftRightAxis");
         byte* paramsPtr = stackalloc byte[28];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MoveDirection);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveDirection, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NumDirections, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -14207,6 +14287,10 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTakedownPrompt, "BmGame.RPlayerController.GetTakedownPrompt");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Type);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Type, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FearTakedownTypeIfDifferentFromSilentTakedown);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FearTakedownTypeIfDifferentFromSilentTakedown, paramsPtr + 1);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Type = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameInfo.EStealthTakeDownStages>(paramsPtr + 0);
         FearTakedownTypeIfDifferentFromSilentTakedown = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameInfo.EStealthTakeDownStages>(paramsPtr + 1);
@@ -15517,6 +15601,10 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimSeq, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Time, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutLocation, paramsPtr + 28);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutRotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutRotation, paramsPtr + 40);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -15538,6 +15626,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsFreeSpot, "BmGame.RPlayerController.IsFreeSpot");
         byte* paramsPtr = stackalloc byte[84];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Rot, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Bounds, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FindFreeSpot, paramsPtr + 52);
@@ -15585,6 +15675,10 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetThugStartLocationForTakedown, "BmGame.RPlayerController.GetThugStartLocationForTakedown");
         byte* paramsPtr = stackalloc byte[68];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out vOutPosition);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(vOutPosition, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out rOutRotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(rOutRotation, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VictimMesh, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Anim, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(vWorldReferencePosition, paramsPtr + 40);
@@ -15611,6 +15705,10 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAnimSpaceToWorldSpaceTransform, "BmGame.RPlayerController.GetAnimSpaceToWorldSpaceTransform");
         byte* paramsPtr = stackalloc byte[68];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out animLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(animLoc, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AnimRot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimRot, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SkelMeshComp, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimSeq, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Mirrored, paramsPtr + 40);
@@ -15661,6 +15759,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindFreeSpot, "BmGame.RPlayerController.FindFreeSpot");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoxExtent, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SpotLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SpotLocation, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bCheckActors, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -15840,6 +15940,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AttackRadiusSqr, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNeedsReachCheck, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAllowedToAttackFlooredEnemies, paramsPtr + 20);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AttackCheckPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AttackCheckPos, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -15866,9 +15968,15 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NeedsReachCheck, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAllowedToAttackFlooredEnemies, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAllowAwareEnemies, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AttackCheckPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AttackCheckPos, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TakedownDamageType, paramsPtr + 40);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BarrierLocator);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BarrierLocator, paramsPtr + 48);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReachCheckRadius, paramsPtr + 180);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bCheckVillainInFrontLookAway, paramsPtr + 184);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FractureWall);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FractureWall, paramsPtr + 188);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Debug, paramsPtr + 196);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DisallowSilentTakedowns, paramsPtr + 200);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bUseIgnoreRailingLineCheck, paramsPtr + 204);
@@ -15894,12 +16002,22 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindDoubleStealthAttackTargetNative, "BmGame.RPlayerController.FindDoubleStealthAttackTargetNative");
         byte* paramsPtr = stackalloc byte[80];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AttackSearchPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AttackSearchPos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AttackSearchRadius, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Attack2ndTargetSearchRadius, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AttackDoubleTakedownDistance, paramsPtr + 20);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AttackCheckPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AttackCheckPos, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NeedsReachCheck, paramsPtr + 36);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAllowedToAttackFlooredEnemies, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TakedownDamageType, paramsPtr + 44);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Villain1);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Villain1, paramsPtr + 52);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Villain2);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Villain2, paramsPtr + 60);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FractureWall);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FractureWall, paramsPtr + 68);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bUseIgnoreRailingLineCheck, paramsPtr + 76);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -15925,11 +16043,17 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindStealthAttackTargetNative, "BmGame.RPlayerController.FindStealthAttackTargetNative");
         byte* paramsPtr = stackalloc byte[68];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AttackSearchPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AttackSearchPos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AttackSearchRadius, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AttackCheckPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AttackCheckPos, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NeedsReachCheck, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAllowedToAttackFlooredEnemies, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TakedownDamageType, paramsPtr + 36);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bCheckForInterrogation, paramsPtr + 44);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FractureWall);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FractureWall, paramsPtr + 48);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bUseIgnoreRailingLineCheck, paramsPtr + 56);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -15954,6 +16078,10 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFractureWallBase, "BmGame.RPlayerController.GetFractureWallBase");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Wall, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PointA);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PointA, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PointB);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PointB, paramsPtr + 20);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -15988,6 +16116,10 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinalFilterOutStealthAttackTargets, "BmGame.RPlayerController.FinalFilterOutStealthAttackTargets");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Target1);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Target1, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Target2);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Target2, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Target1 = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 0);
         Target2 = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 8);
@@ -16850,6 +16982,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProcessViewRotation, "BmGame.RPlayerController.ProcessViewRotation");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_ViewRotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_ViewRotation, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaRot, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -16872,6 +17006,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateControllerRotationFast, "BmGame.RPlayerController.UpdateControllerRotationFast");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MoveDirection);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveDirection, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -17023,6 +17159,12 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMovementAxes, "BmGame.RPlayerController.GetMovementAxes");
         byte* paramsPtr = stackalloc byte[40];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out X);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(X, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Y);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Y, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Z);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Z, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForceCurrentCameraPosAndRot, paramsPtr + 36);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -17328,6 +17470,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AreAnyCombatPawnsBlockingInterrogation, "BmGame.RPlayerController.AreAnyCombatPawnsBlockingInterrogation");
         byte* paramsPtr = stackalloc byte[40];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ClosestPawn);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ClosestPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ClosestPawn = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
@@ -17361,6 +17505,10 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindClosestPawnFromList, "BmGame.RPlayerController.FindClosestPawnFromList");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawnList, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ClosestDist);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ClosestDist, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ClosestPawn);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ClosestPawn, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HeightRange, paramsPtr + 28);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -17499,6 +17647,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[84];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StateName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Info, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FearTakedownTypeIfDifferentFromSilentTakedown);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FearTakedownTypeIfDifferentFromSilentTakedown, paramsPtr + 36);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         FearTakedownTypeIfDifferentFromSilentTakedown = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameInfo.EStealthTakeDownStages>(paramsPtr + 36);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameInfo.EStealthTakeDownStages>(paramsPtr + 37);
@@ -20532,6 +20682,10 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindInteractableItem, "BmGame.RPlayerController.FindInteractableItem");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out IILocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(IILocation, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LongRage);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LongRage, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -20567,6 +20721,16 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckInteractableItem, "BmGame.RPlayerController.CheckInteractableItem");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckActor, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LocationOffset);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LocationOffset, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HeightRange);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HeightRange, paramsPtr + 20);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Range2D);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Range2D, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FovRange);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FovRange, paramsPtr + 28);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Priority);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Priority, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bLongRange, paramsPtr + 36);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         LocationOffset = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);

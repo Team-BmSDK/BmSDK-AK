@@ -174,6 +174,8 @@ public partial class RAEC_Smoke_Outsider : BmSDK.BmGame.RAlertEventCoordinatorBa
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindPerimStartPos, "BmGame.RAEC_Smoke_Outsider.FindPerimStartPos");
         byte* paramsPtr = stackalloc byte[32];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out StartPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(StartPos, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         StartPos = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);

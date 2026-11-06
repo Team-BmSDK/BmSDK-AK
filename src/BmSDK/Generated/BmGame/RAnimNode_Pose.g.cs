@@ -109,6 +109,10 @@ public partial class RAnimNode_Pose : BmSDK.Engine.AnimNode, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Time, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Sequence, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Mirrored, paramsPtr + 20);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Out_Translation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Out_Translation, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_Rotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_Rotation, paramsPtr + 36);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -986,6 +990,10 @@ public partial class RAnimNode_Pose : BmSDK.Engine.AnimNode, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WorldReferencePosition, paramsPtr + 56);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WorldReferencRrotation, paramsPtr + 68);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Mirrored, paramsPtr + 80);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Out_Position);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Out_Position, paramsPtr + 84);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_Rotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_Rotation, paramsPtr + 96);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverrideReferencePointAnim, paramsPtr + 108);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1013,6 +1021,10 @@ public partial class RAnimNode_Pose : BmSDK.Engine.AnimNode, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WorldReferencePosition, paramsPtr + 56);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WorldReferenceYaw, paramsPtr + 68);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Mirrored, paramsPtr + 72);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Out_Position);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Out_Position, paramsPtr + 76);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_Rotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_Rotation, paramsPtr + 88);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverrideReferencePointAnim, paramsPtr + 100);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1397,6 +1409,8 @@ public partial class RAnimNode_Pose : BmSDK.Engine.AnimNode, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInAnyAutomaticTransition, "BmGame.RAnimNode_Pose.IsInAnyAutomaticTransition");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Fuzziness, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Transition);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Transition, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

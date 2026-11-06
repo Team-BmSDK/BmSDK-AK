@@ -299,6 +299,14 @@ public partial class RBMBehaviour_GangMovementBase : BmSDK.BmGame.RBMBehaviour_G
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBreakVars, "BmScript.RBMBehaviour_GangMovementBase.GetBreakVars");
         byte* paramsPtr = stackalloc byte[44];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLoc, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitNorm);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNorm, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitSpeed);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitSpeed, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ThrownActor);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ThrownActor, paramsPtr + 36);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         HitLoc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         HitNorm = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
@@ -328,6 +336,8 @@ public partial class RBMBehaviour_GangMovementBase : BmSDK.BmGame.RBMBehaviour_G
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnObject, "BmScript.RBMBehaviour_GangMovementBase.SpawnObject");
         byte* paramsPtr = stackalloc byte[32];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RiotObject);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RiotObject, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         RiotObject = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRiotObjectBase>(paramsPtr + 0);
         return;

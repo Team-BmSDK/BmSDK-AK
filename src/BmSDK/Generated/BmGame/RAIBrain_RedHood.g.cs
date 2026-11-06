@@ -86,6 +86,10 @@ public partial class RAIBrain_RedHood : BmSDK.BmGame.RAIBrain_Pred, BmSDK.IGameO
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EvaluateState, "BmGame.RAIBrain_RedHood.EvaluateState");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NewName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NewName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NewAEC);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAEC, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NewName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
         NewAEC = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RAlertEventCoordinatorBase>(paramsPtr + 8);

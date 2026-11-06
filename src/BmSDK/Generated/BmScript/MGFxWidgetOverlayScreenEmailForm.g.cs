@@ -236,6 +236,8 @@ public partial class MGFxWidgetOverlayScreenEmailForm : BmSDK.BmScript.MGFxWidge
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_QuickVerify, "BmScript.MGFxWidgetOverlayScreenEmailForm.QuickVerify");
         byte* paramsPtr = stackalloc byte[108];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Data, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Message);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Message, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bOnlyEmail, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Message = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.MWBIDEmailFormScreenMessage>(paramsPtr + 16);

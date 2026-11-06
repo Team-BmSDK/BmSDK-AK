@@ -385,6 +385,14 @@ public partial class GameViewportClient : BmSDK.Engine.ScriptViewportClient, BmS
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LPlayer, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Canvas, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out fTopSafeZone);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(fTopSafeZone, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out fBottomSafeZone);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(fBottomSafeZone, paramsPtr + 20);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out fLeftSafeZone);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(fLeftSafeZone, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out fRightSafeZone);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(fRightSafeZone, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bUseMaxPercent, paramsPtr + 32);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         fTopSafeZone = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 16);
@@ -402,6 +410,10 @@ public partial class GameViewportClient : BmSDK.Engine.ScriptViewportClient, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculateSafeZoneValues, "Engine.GameViewportClient.CalculateSafeZoneValues");
         byte* paramsPtr = stackalloc byte[40];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_Horizontal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_Horizontal, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_Vertical);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_Vertical, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Canvas, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalPlayerIndex, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bUseMaxPercent, paramsPtr + 20);
@@ -419,6 +431,10 @@ public partial class GameViewportClient : BmSDK.Engine.ScriptViewportClient, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPixelSizeOfScreen, "Engine.GameViewportClient.GetPixelSizeOfScreen");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_Width);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_Width, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_Height);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_Height, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Canvas, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalPlayerIndex, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -500,6 +516,10 @@ public partial class GameViewportClient : BmSDK.Engine.ScriptViewportClient, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSubtitleRegion, "Engine.GameViewportClient.GetSubtitleRegion");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MinPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MinPos, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MaxPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxPos, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         MinPos = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector2>(paramsPtr + 0);
         MaxPos = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector2>(paramsPtr + 8);
@@ -946,6 +966,8 @@ public partial class GameViewportClient : BmSDK.Engine.ScriptViewportClient, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCenterMonitorSize, "Engine.GameViewportClient.GetCenterMonitorSize");
         byte* paramsPtr = stackalloc byte[8];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_ViewportSize);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_ViewportSize, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -966,6 +988,8 @@ public partial class GameViewportClient : BmSDK.Engine.ScriptViewportClient, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetViewportSize, "Engine.GameViewportClient.GetViewportSize");
         byte* paramsPtr = stackalloc byte[8];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_ViewportSize);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_ViewportSize, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

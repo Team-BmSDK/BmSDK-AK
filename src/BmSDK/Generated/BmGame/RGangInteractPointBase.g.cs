@@ -277,6 +277,10 @@ public partial class RGangInteractPointBase : BmSDK.Engine.RGangInteractPointEng
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetEntryPointAndRotation, "BmGame.RGangInteractPointBase.GetEntryPointAndRotation");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Rot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Rot, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Index, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSecondTry, paramsPtr + 36);
         var oldFlags = funcManaged.FunctionFlags;

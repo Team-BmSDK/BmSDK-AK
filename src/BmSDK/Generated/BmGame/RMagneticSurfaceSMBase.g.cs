@@ -187,6 +187,10 @@ public partial class RMagneticSurfaceSMBase : BmSDK.Engine.Actor, BmSDK.IGameObj
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMotorActivationFXLocation, "BmGame.RMagneticSurfaceSMBase.GetMotorActivationFXLocation");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MotorComp, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Normal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Normal, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Loc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
         Normal = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 20);
@@ -291,6 +295,8 @@ public partial class RMagneticSurfaceSMBase : BmSDK.Engine.Actor, BmSDK.IGameObj
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_converge, "BmGame.RMagneticSurfaceSMBase.converge");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speed, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Tolerance, paramsPtr + 12);
@@ -604,6 +610,12 @@ public partial class RMagneticSurfaceSMBase : BmSDK.Engine.Actor, BmSDK.IGameObj
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetClosestTriangle, "BmGame.RMagneticSurfaceSMBase.GetClosestTriangle");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out v0);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(v0, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out v1);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(v1, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out v2);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(v2, paramsPtr + 36);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

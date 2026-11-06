@@ -182,6 +182,8 @@ public partial class RBMBehaviour_ExitVehicle : BmSDK.BmGame.RBMBehaviour, BmSDK
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimLocation, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bMirrored, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BypassNavMeshCheck, paramsPtr + 36);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SafeLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SafeLocation, paramsPtr + 40);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         SafeLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 40);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 52);

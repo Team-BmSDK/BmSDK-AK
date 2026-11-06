@@ -441,6 +441,8 @@ public partial class RFlagManager : BmSDK.GameObject, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Obj, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FlagName, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Found);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Found, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

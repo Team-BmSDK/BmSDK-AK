@@ -81,6 +81,12 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClosestPointOnComponentToComponent, "Engine.PrimitiveComponent.ClosestPointOnComponentToComponent");
         byte* paramsPtr = stackalloc byte[33];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OtherComponent);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherComponent, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PointOnComponentA);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PointOnComponentA, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PointOnComponentB);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PointOnComponentB, paramsPtr + 20);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -103,6 +109,14 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClosestPointOnComponentToPoint, "Engine.PrimitiveComponent.ClosestPointOnComponentToPoint");
         byte* paramsPtr = stackalloc byte[49];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out POI);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(POI, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Extent);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Extent, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutPointA);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutPointA, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutPointB);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutPointB, paramsPtr + 36);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

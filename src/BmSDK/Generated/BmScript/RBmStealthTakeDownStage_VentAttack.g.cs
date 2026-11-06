@@ -86,6 +86,8 @@ public partial class RBmStealthTakeDownStage_VentAttack : BmSDK.BmGame.RStealthT
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverrideChosenAnim, "BmScript.RBmStealthTakeDownStage_VentAttack.OverrideChosenAnim");
         byte* paramsPtr = stackalloc byte[72];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Anim);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Anim, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Anim = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
         return;

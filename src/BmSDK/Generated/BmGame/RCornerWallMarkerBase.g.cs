@@ -141,6 +141,10 @@ public partial class RCornerWallMarkerBase : BmSDK.Engine.Actor, BmSDK.IGameObje
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBatmanCornerPositionAndRotation, "BmGame.RCornerWallMarkerBase.GetBatmanCornerPositionAndRotation");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CollisionRadius, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BatmanPosition);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BatmanPosition, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BatmanCoverRotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BatmanCoverRotation, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

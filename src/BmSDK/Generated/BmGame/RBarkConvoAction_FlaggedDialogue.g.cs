@@ -99,6 +99,10 @@ public partial class RBarkConvoAction_FlaggedDialogue : BmSDK.BmGame.RBarkConvoA
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBestDataAndIndex, "BmGame.RBarkConvoAction_FlaggedDialogue.GetBestDataAndIndex");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ContextFlags, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutData);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutData, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BestIndex);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BestIndex, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         OutData = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBarkConvoData_FlagNode>(paramsPtr + 8);
         BestIndex = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
@@ -114,6 +118,8 @@ public partial class RBarkConvoAction_FlaggedDialogue : BmSDK.BmGame.RBarkConvoA
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddIndividualFlagsFor, "BmGame.RBarkConvoAction_FlaggedDialogue.AddIndividualFlagsFor");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speaker, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out context);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(context, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         context = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBarkFlagBase>(paramsPtr + 8);
         return;

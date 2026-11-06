@@ -86,6 +86,10 @@ public partial class Font : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStringHeightAndWidth, "Engine.Font.GetStringHeightAndWidth");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Height);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Height, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Width);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Width, paramsPtr + 20);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

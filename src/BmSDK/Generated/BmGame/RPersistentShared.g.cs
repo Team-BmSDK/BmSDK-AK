@@ -126,6 +126,10 @@ public partial class RPersistentShared : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetEpisodeProgress, "BmGame.RPersistentShared.GetEpisodeProgress");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Uid, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutProgress);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutProgress, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutNew);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutNew, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         OutProgress = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
         OutNew = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);

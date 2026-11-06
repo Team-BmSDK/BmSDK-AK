@@ -86,6 +86,10 @@ public partial class OnlineAuthInterfaceSteamworks : BmSDK.IpDrv.OnlineAuthInter
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetServerAddr, "OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.GetServerAddr");
         byte* paramsPtr = stackalloc byte[12];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutServerIP);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutServerIP, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutServerPort);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutServerPort, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -107,6 +111,8 @@ public partial class OnlineAuthInterfaceSteamworks : BmSDK.IpDrv.OnlineAuthInter
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetServerUniqueId, "OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.GetServerUniqueId");
         byte* paramsPtr = stackalloc byte[12];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutServerUID);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutServerUID, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -152,6 +158,8 @@ public partial class OnlineAuthInterfaceSteamworks : BmSDK.IpDrv.OnlineAuthInter
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClientUID, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClientIP, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClientPort, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutAuthTicketUID);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutAuthTicketUID, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -199,6 +207,8 @@ public partial class OnlineAuthInterfaceSteamworks : BmSDK.IpDrv.OnlineAuthInter
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ServerIP, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ServerPort, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSecure, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutAuthTicketUID);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutAuthTicketUID, paramsPtr + 20);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

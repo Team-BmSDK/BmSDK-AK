@@ -100,6 +100,8 @@ public partial class RKActorSpawnable : BmSDK.Engine.KActor, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateThroughWallsViewMesh, "BmGame.RKActorSpawnable.CreateThroughWallsViewMesh");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThroughWallsViewMaterial, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ThroughWallsViewMesh);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ThroughWallsViewMesh, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DepthGroup, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinDepthDelta, paramsPtr + 20);
         var oldFlags = funcManaged.FunctionFlags;

@@ -204,6 +204,10 @@ public partial class RPopulationManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDistrictAPCStatusForWheel, "BmGame.RPopulationManager.GetDistrictAPCStatusForWheel");
         byte* paramsPtr = stackalloc byte[14];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DistrictID, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out APCsRemaining);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(APCsRemaining, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MaxAPCs);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxAPCs, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         APCsRemaining = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
         MaxAPCs = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
@@ -1212,6 +1216,8 @@ public partial class RPopulationManager : BmSDK.Engine.Actor, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCurrentDistrictInfo, "BmGame.RPopulationManager.GetCurrentDistrictInfo");
         byte* paramsPtr = stackalloc byte[32];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DistrictID);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DistrictID, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         SpawnDistrict = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
         DistrictID = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
@@ -1226,6 +1232,8 @@ public partial class RPopulationManager : BmSDK.Engine.Actor, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetScenarioID, "BmGame.RPopulationManager.ResetScenarioID");
         byte* paramsPtr = stackalloc byte[8];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ResetID);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ResetID, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ResetID = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPopulationManager.FScenarioID>(paramsPtr + 0);
         return;
@@ -1239,6 +1247,8 @@ public partial class RPopulationManager : BmSDK.Engine.Actor, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsScenarioIDValid, "BmGame.RPopulationManager.IsScenarioIDValid");
         byte* paramsPtr = stackalloc byte[12];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CheckID);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckID, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         CheckID = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPopulationManager.FScenarioID>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
@@ -1335,6 +1345,8 @@ public partial class RPopulationManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(C, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Text, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out YPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(YPos, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bLeft, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         YPos = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 24);
@@ -1440,6 +1452,10 @@ public partial class RPopulationManager : BmSDK.Engine.Actor, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindWandererSpawnPoint, "BmGame.RPopulationManager.FindWandererSpawnPoint");
         byte* paramsPtr = stackalloc byte[28];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SpawnLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnLoc, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SpawnRot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnRot, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1527,6 +1543,8 @@ public partial class RPopulationManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Batmobile, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LeadWanderer, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bConsiderBatmobile);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bConsiderBatmobile, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1887,6 +1905,8 @@ public partial class RPopulationManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNumActiveScenariosOfType, "BmGame.RPopulationManager.GetNumActiveScenariosOfType");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ScenarioType, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Dormant);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Dormant, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Dormant = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
@@ -1900,6 +1920,8 @@ public partial class RPopulationManager : BmSDK.Engine.Actor, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNumActiveVehicleScenarios, "BmGame.RPopulationManager.GetNumActiveVehicleScenarios");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Dormant);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Dormant, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Dormant = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
@@ -2004,6 +2026,8 @@ public partial class RPopulationManager : BmSDK.Engine.Actor, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanSpawnFormation, "BmGame.RPopulationManager.CanSpawnFormation");
         byte* paramsPtr = stackalloc byte[40];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ScenarioInfo);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ScenarioInfo, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DistrictID, paramsPtr + 32);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ScenarioInfo = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameInfo.FVehicleScenarioInfo>(paramsPtr + 0);
@@ -3328,6 +3352,8 @@ public partial class RPopulationManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestVolume, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPoint, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_ClosestPoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_ClosestPoint, paramsPtr + 20);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

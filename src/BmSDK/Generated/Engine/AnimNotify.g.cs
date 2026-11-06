@@ -83,6 +83,8 @@ public partial class AnimNotify : BmSDK.GameObject, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimSeqInstigator, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NotifyClass, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutEvent);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutEvent, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         OutEvent = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSequence.FAnimNotifyEvent>(paramsPtr + 16);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);

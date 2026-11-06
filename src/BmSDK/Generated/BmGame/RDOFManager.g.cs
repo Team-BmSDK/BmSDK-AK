@@ -101,6 +101,8 @@ public partial class RDOFManager : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateBlur, "BmGame.RDOFManager.UpdateBlur");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Blur);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Blur, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Blur = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RDOFManager.FBlurStruct>(paramsPtr + 4);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);

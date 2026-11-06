@@ -150,6 +150,14 @@ public partial class RBMWeaponCombatExpertSword : BmSDK.BmGame.RBMWeaponMelee, B
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMultiAttackAnimNames, "BmScript.RBMWeaponCombatExpertSword.GetMultiAttackAnimNames");
         byte* paramsPtr = stackalloc byte[44];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out IntroName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(IntroName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AttackName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AttackName, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FailName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FailName, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CounterName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CounterName, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 32);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         IntroName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);

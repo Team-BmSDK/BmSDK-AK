@@ -1670,6 +1670,8 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ObstacleIsInQueue, "BmGame.RBMAIManager.ObstacleIsInQueue");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ObstacleToRemove, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bAddObstacle);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bAddObstacle, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1752,6 +1754,8 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestVolume, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPoint, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_ClosestPoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_ClosestPoint, paramsPtr + 20);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

@@ -286,6 +286,8 @@ public partial class RCombatMove_BatmanGroupFloorTakedown : BmSDK.BmGame.RCombat
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeTriggered, "BmGame.RCombatMove_BatmanGroupFloorTakedown.CanBeTriggered");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out outPotentialTarget);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(outPotentialTarget, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         outPotentialTarget = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 8);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
@@ -302,6 +304,10 @@ public partial class RCombatMove_BatmanGroupFloorTakedown : BmSDK.BmGame.RCombat
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FromPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EndPoint, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Radius, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CollidePoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CollidePoint, paramsPtr + 28);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CollideNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CollideNormal, paramsPtr + 40);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

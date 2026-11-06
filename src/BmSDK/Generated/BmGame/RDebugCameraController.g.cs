@@ -627,6 +627,8 @@ public partial class RDebugCameraController : BmSDK.Engine.DebugCameraController
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Set360ShotFileName, "BmGame.RDebugCameraController.Set360ShotFileName");
         byte* paramsPtr = stackalloc byte[12];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Series);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Series, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Index, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bOrbit, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;

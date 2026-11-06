@@ -506,6 +506,10 @@ public partial class RBMBehaviour_Sniper : BmSDK.BmGame.RBMBehaviour, BmSDK.IGam
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSniperPointInfo, "BmGame.RBMBehaviour_Sniper.GetSniperPointInfo");
         byte* paramsPtr = stackalloc byte[104];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out StandPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(StandPos, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out StandRotator);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(StandRotator, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         StandPos = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         StandRotator = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 12);

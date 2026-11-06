@@ -326,6 +326,8 @@ public partial class AkWwise : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveMultipointNetworkNode, "Engine.AkWwise.RemoveMultipointNetworkNode");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NetworkName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NodeID);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NodeID, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -432,6 +434,8 @@ public partial class AkWwise : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveMultipointAudioEventNode, "Engine.AkWwise.RemoveMultipointAudioEventNode");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AudioEvent, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NodeID);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NodeID, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -560,6 +564,8 @@ public partial class AkWwise : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopCustomAudioEvent, "Engine.AkWwise.StopCustomAudioEvent");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SoundHandle);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SoundHandle, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -838,6 +844,8 @@ public partial class AkWwise : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(colMag, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(colWet, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(priEvent, paramsPtr + 36);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out priInfo);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(priInfo, paramsPtr + 44);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -899,6 +907,8 @@ public partial class AkWwise : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopGlobalAudioEvent, "Engine.AkWwise.StopGlobalAudioEvent");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SoundHandle);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SoundHandle, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

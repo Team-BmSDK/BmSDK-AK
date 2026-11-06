@@ -88,6 +88,10 @@ public partial class RSpecialMoveInstance_BatmobileInterrogationBase : BmSDK.BmG
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BatmanAnimation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TimeInAnim, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RootLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RootLoc, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RootRot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RootRot, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bUseRefPoint, paramsPtr + 36);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

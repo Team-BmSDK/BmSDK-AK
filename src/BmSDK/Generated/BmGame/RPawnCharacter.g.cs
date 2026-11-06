@@ -232,6 +232,8 @@ public partial class RPawnCharacter : BmSDK.BmGame.RPawn, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DropRiotObject, "BmGame.RPawnCharacter.DropRiotObject");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RiotObject);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RiotObject, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PickupNotify, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         RiotObject = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRiotObjectBase>(paramsPtr + 0);
@@ -246,6 +248,8 @@ public partial class RPawnCharacter : BmSDK.BmGame.RPawn, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnObject, "BmGame.RPawnCharacter.SpawnObject");
         byte* paramsPtr = stackalloc byte[32];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RiotObject);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RiotObject, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         RiotObject = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRiotObjectBase>(paramsPtr + 0);
         return;
@@ -420,6 +424,10 @@ public partial class RPawnCharacter : BmSDK.BmGame.RPawn, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NavMeshPointReachable, "BmGame.RPawnCharacter.NavMeshPointReachable");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPoint, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bCheckForFloor, paramsPtr + 36);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverrideStartLocation, paramsPtr + 40);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1294,6 +1302,10 @@ public partial class RPawnCharacter : BmSDK.BmGame.RPawn, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFirstFootNotifyInAnim, "BmGame.RPawnCharacter.GetFirstFootNotifyInAnim");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(inAnim, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FootSyncPoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FootSyncPoint, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out normalisedTime);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(normalisedTime, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -2653,6 +2665,8 @@ public partial class RPawnCharacter : BmSDK.BmGame.RPawn, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInAnyAutomaticTransition, "BmGame.RPawnCharacter.IsInAnyAutomaticTransition");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Fuzziness, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Transition);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Transition, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

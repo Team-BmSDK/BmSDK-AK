@@ -88,6 +88,10 @@ public partial class RGFxMovieUI_WBIDUnlocksAndRewards : BmSDK.BmGame.RGFxMovieU
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TimeA, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TimeB, paramsPtr + 28);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AIsGreaterThanB);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AIsGreaterThanB, paramsPtr + 56);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AreEqual);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AreEqual, paramsPtr + 60);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         AIsGreaterThanB = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 56);
         AreEqual = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 60);
@@ -131,6 +135,8 @@ public partial class RGFxMovieUI_WBIDUnlocksAndRewards : BmSDK.BmGame.RGFxMovieU
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ParseUTCString, "BmScript.RGFxMovieUI_WBIDUnlocksAndRewards.ParseUTCString");
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UTCTime, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Time);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Time, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Time = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmScript.RGFxMovieUI_WBIDUnlocksAndRewards.FWBIDTime>(paramsPtr + 16);
         return;
@@ -144,6 +150,8 @@ public partial class RGFxMovieUI_WBIDUnlocksAndRewards : BmSDK.BmGame.RGFxMovieU
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCurrentUTCTimeViaWBIDTime, "BmScript.RGFxMovieUI_WBIDUnlocksAndRewards.GetCurrentUTCTimeViaWBIDTime");
         byte* paramsPtr = stackalloc byte[56];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Time);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Time, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Time = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmScript.RGFxMovieUI_WBIDUnlocksAndRewards.FWBIDTime>(paramsPtr + 0);
         return;

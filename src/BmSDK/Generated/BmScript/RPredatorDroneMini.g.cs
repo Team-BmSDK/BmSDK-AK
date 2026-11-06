@@ -240,6 +240,10 @@ public partial class RPredatorDroneMini : BmSDK.BmScript.RHelicopterIntermediate
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn__QueryGetVantagePointToTargets, "BmScript.RPredatorDroneMini._QueryGetVantagePointToTargets");
         byte* paramsPtr = stackalloc byte[80];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out vVantagePoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(vVantagePoint, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out vVantageTarget);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(vVantageTarget, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         vVantagePoint = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         vVantageTarget = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
@@ -254,6 +258,8 @@ public partial class RPredatorDroneMini : BmSDK.BmScript.RHelicopterIntermediate
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVantageTarget, "BmScript.RPredatorDroneMini.GetVantageTarget");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out vVantageTarget);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(vVantageTarget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         vVantageTarget = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 12);
@@ -402,6 +408,10 @@ public partial class RPredatorDroneMini : BmSDK.BmScript.RHelicopterIntermediate
         byte* paramsPtr = stackalloc byte[72];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(vSource, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(vDestination, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 36);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         HitLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 24);
         HitNormal = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 36);

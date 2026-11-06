@@ -211,6 +211,12 @@ public partial class RDestructibleProp : BmSDK.Engine.ApexDestructibleActor, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverrideDamageParams, "BmGame.RDestructibleProp.OverrideDamageParams");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BaseDamage);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BaseDamage, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DamageRadius);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageRadius, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Momentum);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Momentum, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageType, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         BaseDamage = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
@@ -465,6 +471,8 @@ public partial class RDestructibleProp : BmSDK.Engine.ApexDestructibleActor, BmS
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageType, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageAmount, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutDamageSuppressed);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutDamageSuppressed, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         OutDamageSuppressed = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RDestructibleProp.EDamageSuppressed>(paramsPtr + 12);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
@@ -746,6 +754,8 @@ public partial class RDestructibleProp : BmSDK.Engine.ApexDestructibleActor, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBoundingBoxForNavMeshObstacleInWorldSpace, "BmGame.RDestructibleProp.GetBoundingBoxForNavMeshObstacleInWorldSpace");
         byte* paramsPtr = stackalloc byte[76];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutObstacleBoxExtents);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutObstacleBoxExtents, paramsPtr + 64);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

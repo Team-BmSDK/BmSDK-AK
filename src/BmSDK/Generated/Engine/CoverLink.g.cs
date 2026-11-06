@@ -173,6 +173,8 @@ public partial class CoverLink : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SlotIdx, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Direction, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_Info);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_Info, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -310,6 +312,10 @@ public partial class CoverLink : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxDistance, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LeftSlotIdx);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LeftSlotIdx, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RightSlotIdx);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RightSlotIdx, paramsPtr + 20);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -456,6 +462,14 @@ public partial class CoverLink : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnPackFireLinkInteractionInfo, "Engine.CoverLink.UnPackFireLinkInteractionInfo");
         byte* paramsPtr = stackalloc byte[5];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PackedByte, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SrcType);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SrcType, paramsPtr + 1);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SrcAction);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SrcAction, paramsPtr + 2);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DestType);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DestType, paramsPtr + 3);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DestAction);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DestAction, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -504,6 +518,8 @@ public partial class CoverLink : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SlotIdx, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FireLinkIdx, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_Info);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_Info, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ArrayID, paramsPtr + 20);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

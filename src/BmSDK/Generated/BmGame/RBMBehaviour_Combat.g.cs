@@ -836,6 +836,10 @@ public partial class RBMBehaviour_Combat : BmSDK.BmGame.RBMBehaviour_Controlled,
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(From, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(To, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ParallelDist);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ParallelDist, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PerpendicularDist);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PerpendicularDist, paramsPtr + 28);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

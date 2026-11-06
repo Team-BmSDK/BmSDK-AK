@@ -670,6 +670,8 @@ public partial class RPawnPlayerCombat : BmSDK.BmGame.RPawnPlayerAnim, BmSDK.IGa
         byte* paramsPtr = stackalloc byte[412];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestTarget, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPos, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutInfo);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutInfo, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bMustReturnOne, paramsPtr + 84);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         OutInfo = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnPlayerCombat.FStrikeTargetInfo>(paramsPtr + 20);
@@ -686,6 +688,8 @@ public partial class RPawnPlayerCombat : BmSDK.BmGame.RPawnPlayerAnim, BmSDK.IGa
         byte* paramsPtr = stackalloc byte[116];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InputDir, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutInfo);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutInfo, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         OutInfo = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnPlayerCombat.FStrikeTargetInfo>(paramsPtr + 20);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 84);
@@ -2258,6 +2262,8 @@ public partial class RPawnPlayerCombat : BmSDK.BmGame.RPawnPlayerAnim, BmSDK.IGa
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNumberOfCounterHits, "BmGame.RPawnPlayerCombat.GetNumberOfCounterHits");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StrikeAnimSequence, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FirstCounterHitTime);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FirstCounterHitTime, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -2478,6 +2484,8 @@ public partial class RPawnPlayerCombat : BmSDK.BmGame.RPawnPlayerAnim, BmSDK.IGa
         byte* paramsPtr = stackalloc byte[124];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawnList, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PriorityPawn);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PriorityPawn, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxDist, paramsPtr + 32);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         PriorityPawn = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 24);
@@ -2493,6 +2501,8 @@ public partial class RPawnPlayerCombat : BmSDK.BmGame.RPawnPlayerAnim, BmSDK.IGa
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindHighestPriorityClosePawn, "BmGame.RPawnPlayerCombat.FindHighestPriorityClosePawn");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageType, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BestPawn);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BestPawn, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxDist, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         BestPawn = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 8);
@@ -2535,6 +2545,10 @@ public partial class RPawnPlayerCombat : BmSDK.BmGame.RPawnPlayerAnim, BmSDK.IGa
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindClosestDeadTarget, "BmGame.RPawnPlayerCombat.FindClosestDeadTarget");
         byte* paramsPtr = stackalloc byte[176];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageType, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ClosestDist);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ClosestDist, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ClosestPawn);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ClosestPawn, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ClosestDist = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
         ClosestPawn = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 12);
@@ -2550,6 +2564,10 @@ public partial class RPawnPlayerCombat : BmSDK.BmGame.RPawnPlayerAnim, BmSDK.IGa
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindClosestPawnFromList, "BmGame.RPawnPlayerCombat.FindClosestPawnFromList");
         byte* paramsPtr = stackalloc byte[160];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawnList, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ClosestDist);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ClosestDist, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ClosestPawn);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ClosestPawn, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ClosestDist = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 16);
         ClosestPawn = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnPlayerCombat.FStrikeTargetInfo>(paramsPtr + 20);
@@ -2565,6 +2583,10 @@ public partial class RPawnPlayerCombat : BmSDK.BmGame.RPawnPlayerAnim, BmSDK.IGa
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindClosestPawnForStrike, "BmGame.RPawnPlayerCombat.FindClosestPawnForStrike");
         byte* paramsPtr = stackalloc byte[104];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageType, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ClosestDist);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ClosestDist, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ClosestPawn);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ClosestPawn, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ClosestDist = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
         ClosestPawn = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 12);

@@ -102,6 +102,8 @@ public partial class OnlineStats : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetViewId, "Engine.OnlineStats.GetViewId");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ViewName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ViewId);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ViewId, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

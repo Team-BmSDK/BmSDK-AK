@@ -613,6 +613,12 @@ public partial class RGunShotManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GunWeapon, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GunInstigator, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WeaponDefine, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out WeaponLoop);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(WeaponLoop, paramsPtr + 28);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out WeaponSingle);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(WeaponSingle, paramsPtr + 36);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SecondsBetweenShots);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SecondsBetweenShots, paramsPtr + 44);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bulletTrace, paramsPtr + 48);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         WeaponLoop = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AkEvent>(paramsPtr + 28);

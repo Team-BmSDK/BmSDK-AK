@@ -686,6 +686,8 @@ public partial class AkVehicleSoundVar : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopEvent, "Engine.AkVehicleSoundVar.StopEvent");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out handleToStop);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(handleToStop, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

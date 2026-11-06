@@ -221,6 +221,10 @@ public partial class RPawnVillainLieutenant : BmSDK.BmGame.RPawnVillainCombat, B
         byte* paramsPtr = stackalloc byte[14];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PrevTarget, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StrikeDamage, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CurrRange);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CurrRange, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CurrStrength);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CurrStrength, paramsPtr + 13);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         CurrRange = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameInfo.StrikeRange>(paramsPtr + 12);
         CurrStrength = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameInfo.StrikeStrength>(paramsPtr + 13);
@@ -435,6 +439,8 @@ public partial class RPawnVillainLieutenant : BmSDK.BmGame.RPawnVillainCombat, B
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ModifyDamageAmount, "BmScript.RPawnVillainLieutenant.ModifyDamageAmount");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DmgAmount);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DmgAmount, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         DmgAmount = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
         return;

@@ -99,6 +99,8 @@ public partial class DebugCameraHUD : BmSDK.Engine.HUD, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisplayMaterials, "Engine.DebugCameraHUD.DisplayMaterials");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(X, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Y);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Y, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DY, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MeshComp, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

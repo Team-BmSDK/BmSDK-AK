@@ -134,6 +134,8 @@ public partial class PlayerInput : BmSDK.Engine.Input, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(aMouse, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SampleCount);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SampleCount, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Index, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         SampleCount = BmSDK.Framework.MarshalUtil.ToManaged<byte>(paramsPtr + 8);

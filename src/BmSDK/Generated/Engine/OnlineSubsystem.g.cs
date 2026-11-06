@@ -239,6 +239,8 @@ public partial class OnlineSubsystem : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StringToUniqueNetId, "Engine.OnlineSubsystem.StringToUniqueNetId");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UniqueNetIdString, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_UniqueId);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_UniqueId, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -259,6 +261,8 @@ public partial class OnlineSubsystem : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UniqueNetIdToString, "Engine.OnlineSubsystem.UniqueNetIdToString");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out IdToConvert);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(IdToConvert, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

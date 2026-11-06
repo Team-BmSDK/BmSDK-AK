@@ -110,6 +110,10 @@ public partial class Route : BmSDK.Engine.Info, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Idx, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RouteDirection, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_bComplete);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_bComplete, paramsPtr + 5);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_bReverse);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_bReverse, paramsPtr + 6);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

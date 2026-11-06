@@ -127,6 +127,8 @@ public partial class UIDataStore_InputAlias : BmSDK.Engine.UIDataStore_StringBas
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAliasInputKeyDataByIndex, "Engine.UIDataStore_InputAlias.GetAliasInputKeyDataByIndex");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_InputKeyData);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_InputKeyData, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AliasIndex, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverridePlatform, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
@@ -149,6 +151,8 @@ public partial class UIDataStore_InputAlias : BmSDK.Engine.UIDataStore_StringBas
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAliasInputKeyData, "Engine.UIDataStore_InputAlias.GetAliasInputKeyData");
         byte* paramsPtr = stackalloc byte[28];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_InputKeyData);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_InputKeyData, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DesiredAlias, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverridePlatform, paramsPtr + 20);
         var oldFlags = funcManaged.FunctionFlags;

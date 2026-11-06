@@ -393,6 +393,10 @@ public partial class RBMWeaponRanged : BmSDK.BmGame.RBMWeapon, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMuzzleLocAndRot, "BmGame.RBMWeaponRanged.GetMuzzleLocAndRot");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MuzzleLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MuzzleLoc, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MuzzleRot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MuzzleRot, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         MuzzleLoc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         MuzzleRot = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 12);
@@ -411,6 +415,8 @@ public partial class RBMWeaponRanged : BmSDK.BmGame.RBMWeapon, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Line1B, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Line2A, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Line2B, paramsPtr + 36);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Result);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Result, paramsPtr + 48);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Result = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 48);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 60);
@@ -513,6 +519,10 @@ public partial class RBMWeaponRanged : BmSDK.BmGame.RBMWeapon, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAudioSpatial, "BmGame.RBMWeaponRanged.GetAudioSpatial");
         byte* paramsPtr = stackalloc byte[32];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out sndPosition);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(sndPosition, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out sndOrientation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(sndOrientation, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(caller, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

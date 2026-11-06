@@ -86,6 +86,12 @@ public partial class RVehicleScenario : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNearestAvailableSpawnPoint, "BmGame.RVehicleScenario.GetNearestAvailableSpawnPoint");
         byte* paramsPtr = stackalloc byte[100];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SpawnLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnLoc, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SpawnRot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnRot, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RoadWidth);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RoadWidth, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestLoc, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CameraLoc, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(playerLoc, paramsPtr + 52);

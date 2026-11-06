@@ -149,6 +149,8 @@ public partial class OnlineGameInterfaceImpl : BmSDK.GameObject, BmSDK.IGameObje
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadPlatformSpecificSessionInfoBySessionName, "IpDrv.OnlineGameInterfaceImpl.ReadPlatformSpecificSessionInfoBySessionName");
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SessionName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PlatformSpecificInfo);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PlatformSpecificInfo, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         PlatformSpecificInfo = BmSDK.Framework.MarshalUtil.ToManaged<byte>(paramsPtr + 8);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 88);
@@ -162,6 +164,10 @@ public partial class OnlineGameInterfaceImpl : BmSDK.GameObject, BmSDK.IGameObje
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadPlatformSpecificSessionInfo, "IpDrv.OnlineGameInterfaceImpl.ReadPlatformSpecificSessionInfo");
         byte* paramsPtr = stackalloc byte[100];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DesiredGame);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DesiredGame, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PlatformSpecificInfo);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PlatformSpecificInfo, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -239,6 +245,8 @@ public partial class OnlineGameInterfaceImpl : BmSDK.GameObject, BmSDK.IGameObje
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SessionName, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DesiredGame);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DesiredGame, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         DesiredGame = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineGameSearch.FOnlineGameSearchResult>(paramsPtr + 12);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
@@ -402,6 +410,8 @@ public partial class OnlineGameInterfaceImpl : BmSDK.GameObject, BmSDK.IGameObje
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnGameInviteAccepted, "IpDrv.OnlineGameInterfaceImpl.OnGameInviteAccepted");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out InviteResult);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(InviteResult, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         InviteResult = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineGameSearch.FOnlineGameSearchResult>(paramsPtr + 0);
         return;
@@ -803,6 +813,8 @@ public partial class OnlineGameInterfaceImpl : BmSDK.GameObject, BmSDK.IGameObje
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SessionName, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DesiredGame);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DesiredGame, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

@@ -142,6 +142,10 @@ public partial class RBMBehaviour_Conversation : BmSDK.BmGame.RBMBehaviour_Contr
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SnapForFirstFrame, "BmGame.RBMBehaviour_Conversation.SnapForFirstFrame");
         byte* paramsPtr = stackalloc byte[84];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Rot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Rot, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForceLoc, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BatsPos, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

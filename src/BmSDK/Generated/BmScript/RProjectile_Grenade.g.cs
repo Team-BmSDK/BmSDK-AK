@@ -86,6 +86,8 @@ public partial class RProjectile_Grenade : BmSDK.BmGame.RProjectile_GrenadeBase,
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBounceLandLoc, "BmScript.RProjectile_Grenade.GetBounceLandLoc");
         byte* paramsPtr = stackalloc byte[88];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Result);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Result, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartPos, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BounceVel, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

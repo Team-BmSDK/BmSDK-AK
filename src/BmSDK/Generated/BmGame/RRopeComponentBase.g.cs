@@ -576,6 +576,8 @@ public partial class RRopeComponentBase : BmSDK.Engine.PrimitiveComponent, BmSDK
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WorldSpacePos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MeasurementRopeEnd, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RopePos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RopePos, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -599,6 +601,10 @@ public partial class RRopeComponentBase : BmSDK.Engine.PrimitiveComponent, BmSDK
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RayStartPos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RayDirection, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MeasurementRopeEnd, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RopePos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RopePos, paramsPtr + 28);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RayPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RayPos, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BufferLength, paramsPtr + 36);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -624,6 +630,10 @@ public partial class RRopeComponentBase : BmSDK.Engine.PrimitiveComponent, BmSDK
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LineSegmentStartPos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LineSegmentEndPos, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MeasurementRopeEnd, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RopePos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RopePos, paramsPtr + 28);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LineSegmentPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LineSegmentPos, paramsPtr + 32);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

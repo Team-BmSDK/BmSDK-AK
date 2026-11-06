@@ -88,6 +88,8 @@ public partial class CameraModifier_CameraShake : BmSDK.Engine.CameraModifier, B
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Camera, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutPOV);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutPOV, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -109,6 +111,8 @@ public partial class CameraModifier_CameraShake : BmSDK.Engine.CameraModifier, B
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateCameraShake, "Engine.CameraModifier_CameraShake.UpdateCameraShake");
         byte* paramsPtr = stackalloc byte[188];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutPOV);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutPOV, paramsPtr + 160);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -201,6 +205,8 @@ public partial class CameraModifier_CameraShake : BmSDK.Engine.CameraModifier, B
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitializeOffset, "Engine.CameraModifier_CameraShake.InitializeOffset");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Param);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Param, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Param = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.CameraShake.FFOscillator>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 12);

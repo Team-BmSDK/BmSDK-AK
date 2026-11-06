@@ -29,6 +29,7 @@ struct PropertyInfo : MemberInfo
     bool IsOutParam = false;
     bool IsReturnParam = false;
     bool ShouldReturnByRef = false;
+    bool OwnsMemory = false;
 };
 
 struct StructInfo : MemberInfo

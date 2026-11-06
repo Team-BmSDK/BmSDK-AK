@@ -110,6 +110,8 @@ public partial class RHelicopterIntermediateBase : BmSDK.BmGame.RHelicopterBase,
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateSearchLightSourceLocation, "BmGame.RHelicopterIntermediateBase.UpdateSearchLightSourceLocation");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(fDeltaTime, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SourceInfo);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SourceInfo, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -181,6 +183,10 @@ public partial class RHelicopterIntermediateBase : BmSDK.BmGame.RHelicopterBase,
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(vOrigin, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(hActor, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out hHitActor);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(hHitActor, paramsPtr + 20);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out vHitLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(vHitLocation, paramsPtr + 28);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

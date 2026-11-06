@@ -232,6 +232,10 @@ public partial class RCombatMove_BatmanComboTakedown : BmSDK.BmGame.RCombatMove_
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckEnvironmentType, "BmGame.RCombatMove_BatmanComboTakedown.CheckEnvironmentType");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EnvType, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out outLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(outLoc, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out outNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(outNormal, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         outLoc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 4);
         outNormal = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 16);

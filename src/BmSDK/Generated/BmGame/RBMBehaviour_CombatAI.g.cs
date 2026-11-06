@@ -535,6 +535,8 @@ public partial class RBMBehaviour_CombatAI : BmSDK.BmGame.RBMBehaviour_Combat, B
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckRunToCombatLocationIsSafe, "BmGame.RBMBehaviour_CombatAI.CheckRunToCombatLocationIsSafe");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bCheckForReachability, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LastSafeTargetLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LastSafeTargetLocation, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         LastSafeTargetLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 4);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);

@@ -88,6 +88,10 @@ public partial class RSpecialMoveConfig_ActivePoseTransitionWithOffset : BmSDK.B
         byte* paramsPtr = stackalloc byte[156];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveLocation, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out EndPosition);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(EndPosition, paramsPtr + 140);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out EndYaw);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(EndYaw, paramsPtr + 152);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         EndPosition = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 140);
         EndYaw = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 152);

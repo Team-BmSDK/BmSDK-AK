@@ -148,6 +148,8 @@ public partial class RCombatMove_DualStrike : BmSDK.BmGame.RCombatMove, BmSDK.IG
         BmSDK.Framework.MarshalUtil.ToUnmanaged(refLoc, paramsPtr + 64);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RefRot, paramsPtr + 76);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 88);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutYaw);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutYaw, paramsPtr + 96);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         OutYaw = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 96);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 100);

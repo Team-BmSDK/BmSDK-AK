@@ -107,6 +107,8 @@ public partial class RCombatMove : BmSDK.Engine.Actor, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetPawn, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AdditionalPriority);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AdditionalPriority, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         AdditionalPriority = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 16);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
@@ -256,6 +258,8 @@ public partial class RCombatMove : BmSDK.Engine.Actor, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[120];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimSeq, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimMesh, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out outRefLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(outRefLoc, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RefRot, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 40);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -273,6 +277,8 @@ public partial class RCombatMove : BmSDK.Engine.Actor, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[156];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimSeq, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimMesh, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out outRefLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(outRefLoc, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RefRot, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OffsetMargin, paramsPtr + 48);
@@ -289,6 +295,12 @@ public partial class RCombatMove : BmSDK.Engine.Actor, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetOverrideTakedownInfo, "BmGame.RCombatMove.GetOverrideTakedownInfo");
         byte* paramsPtr = stackalloc byte[32];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out takedownType);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(takedownType, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TakedownLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TakedownLocation, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TakedownRotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TakedownRotation, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         takedownType = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnPlayerCombat.ETakedownType>(paramsPtr + 0);
         TakedownLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 4);
@@ -1494,6 +1506,14 @@ public partial class RCombatMove : BmSDK.Engine.Actor, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateCamera, "BmGame.RCombatMove.UpdateCamera");
         byte* paramsPtr = stackalloc byte[32];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CamPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CamPos, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CamFocus);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CamFocus, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CamFOV);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CamFOV, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CamSpeedMulti);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CamSpeedMulti, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         CamPos = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         CamFocus = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
@@ -1616,6 +1636,10 @@ public partial class RCombatMove : BmSDK.Engine.Actor, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestAnimmSequence, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ScriptNameContaining, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FirstNotifyTime);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FirstNotifyTime, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NotifyCount);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NotifyCount, paramsPtr + 20);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1705,6 +1729,10 @@ public partial class RCombatMove : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckDist, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckStart, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 28);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out WallLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(WallLoc, paramsPtr + 36);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out WallNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(WallNormal, paramsPtr + 48);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestLeftDist, paramsPtr + 60);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAllowInvalidWall, paramsPtr + 64);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1732,6 +1760,10 @@ public partial class RCombatMove : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckDist, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckStart, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 28);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BlockedLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BlockedLoc, paramsPtr + 36);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BlockedNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BlockedNormal, paramsPtr + 48);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

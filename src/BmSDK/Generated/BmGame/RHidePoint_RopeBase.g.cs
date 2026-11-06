@@ -168,6 +168,8 @@ public partial class RHidePoint_RopeBase : BmSDK.BmGame.RHidePoint_Walkable, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetActorThoughts, "BmGame.RHidePoint_RopeBase.GetActorThoughts");
         byte* paramsPtr = stackalloc byte[44];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ThoughtLocationOverride);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ThoughtLocationOverride, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IndentString, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ThoughtList = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.Engine.Actor.FThought>>(paramsPtr + 0);
@@ -292,6 +294,8 @@ public partial class RHidePoint_RopeBase : BmSDK.BmGame.RHidePoint_Walkable, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProjectToRopePlane, "BmGame.RHidePoint_RopeBase.ProjectToRopePlane");
         byte* paramsPtr = stackalloc byte[12];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ProjLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ProjLocation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

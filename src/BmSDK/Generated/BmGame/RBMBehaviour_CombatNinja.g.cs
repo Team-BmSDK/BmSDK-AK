@@ -235,6 +235,8 @@ public partial class RBMBehaviour_CombatNinja : BmSDK.BmGame.RBMBehaviour_Combat
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPointEncroachedByNinjas, "BmGame.RBMBehaviour_CombatNinja.IsPointEncroachedByNinjas");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TestPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPos, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -255,7 +257,15 @@ public partial class RBMBehaviour_CombatNinja : BmSDK.BmGame.RBMBehaviour_Combat
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RateSingleTeleportLocation, "BmGame.RBMBehaviour_CombatNinja.RateSingleTeleportLocation");
         byte* paramsPtr = stackalloc byte[52];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TestLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TestLoc, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out camFuturePos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(camFuturePos, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out camDirNorm);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(camDirNorm, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 36);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Score);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Score, paramsPtr + 44);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -280,6 +290,8 @@ public partial class RBMBehaviour_CombatNinja : BmSDK.BmGame.RBMBehaviour_Combat
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindBestTeleportLocation, "BmGame.RBMBehaviour_CombatNinja.FindBestTeleportLocation");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out teleportLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(teleportLocation, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

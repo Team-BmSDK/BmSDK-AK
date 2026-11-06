@@ -1500,6 +1500,8 @@ public partial class RBMRoomAIState : BmSDK.Engine.ActorComponent, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRoomFlags, "BmGame.RBMRoomAIState.SetRoomFlags");
         byte* paramsPtr = stackalloc byte[44];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FB);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FB, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PP, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         FB = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBarkFlagBase>(paramsPtr + 0);
@@ -1993,6 +1995,8 @@ public partial class RBMRoomAIState : BmSDK.Engine.ActorComponent, BmSDK.IGameOb
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckSnapMineLocation, "BmGame.RBMRoomAIState.CheckSnapMineLocation");
         byte* paramsPtr = stackalloc byte[100];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InLoc, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out snappedLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(snappedLoc, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         snappedLoc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);

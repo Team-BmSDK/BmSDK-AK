@@ -179,6 +179,8 @@ public partial class RVehicleBehaviour_Wander : BmSDK.BmGame.RVehicleBehaviour_R
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ChooseNextLink, "BmGame.RVehicleBehaviour_Wander.ChooseNextLink");
         byte* paramsPtr = stackalloc byte[76];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Roads, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LinkEndPt);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkEndPt, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AwayFromBatman, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         LinkEndPt = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);

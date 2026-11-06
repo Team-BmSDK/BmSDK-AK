@@ -928,6 +928,10 @@ public partial class RChallengeManager : BmSDK.GameObject, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(nChallengeId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(nFriendIndex, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out nScore);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(nScore, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out nMedals);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(nMedals, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         sName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 8);
         nScore = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 24);

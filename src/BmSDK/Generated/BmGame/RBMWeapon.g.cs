@@ -452,6 +452,14 @@ public partial class RBMWeapon : BmSDK.Engine.Inventory, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMultiAttackAnimNames, "BmGame.RBMWeapon.GetMultiAttackAnimNames");
         byte* paramsPtr = stackalloc byte[40];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out IntroName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(IntroName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AttackName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AttackName, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FailName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FailName, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CounterName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CounterName, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 32);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         IntroName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
@@ -631,6 +639,10 @@ public partial class RBMWeapon : BmSDK.Engine.Inventory, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTauntAnim, "BmGame.RBMWeapon.GetTauntAnim");
         byte* paramsPtr = stackalloc byte[28];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AnimName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AnimSet);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimSet, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LastTauntID, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         AnimName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
@@ -1014,6 +1026,10 @@ public partial class RBMWeapon : BmSDK.Engine.Inventory, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLocationAndRotation, "BmGame.RBMWeapon.GetLocationAndRotation");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out WeaponLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(WeaponLocation, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out WeaponRotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(WeaponRotation, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         WeaponLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         WeaponRotation = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 12);

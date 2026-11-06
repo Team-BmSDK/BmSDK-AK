@@ -107,6 +107,10 @@ public partial class RBankDoorBase : BmSDK.Engine.NavMeshObstacle, BmSDK.IGameOb
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAnimRefPoint, "BmGame.RBankDoorBase.GetAnimRefPoint");
         byte* paramsPtr = stackalloc byte[80];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(pawnLoc, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out animRefLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(animRefLoc, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out animRefRot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(animRefRot, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         animRefLoc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
         animRefRot = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 24);

@@ -162,6 +162,8 @@ public partial class RInventoryManager : BmSDK.Engine.InventoryManager, BmSDK.IG
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Dir, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bBatarangButton, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out gadgetIndex);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(gadgetIndex, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         gadgetIndex = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RInventoryGadget>(paramsPtr + 12);

@@ -99,6 +99,10 @@ public partial class RAEC_RedHood_Base : BmSDK.BmGame.RAlertEventCoordinatorBase
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSearchChatBark, "BmGame.RAEC_RedHood_Base.GetSearchChatBark");
         byte* paramsPtr = stackalloc byte[44];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SearchConvo);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SearchConvo, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Score);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Score, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         SearchConvo = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBarkConvo>(paramsPtr + 0);
         Score = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);

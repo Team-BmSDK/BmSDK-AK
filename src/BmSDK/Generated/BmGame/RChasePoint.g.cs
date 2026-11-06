@@ -375,6 +375,8 @@ public partial class RChasePoint : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRadiusFromCenter, "BmGame.RChasePoint.GetRadiusFromCenter");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TreeLocation, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MaxRadiusSq);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxRadiusSq, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -395,6 +397,10 @@ public partial class RChasePoint : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAveragePointLocation, "BmGame.RChasePoint.GetAveragePointLocation");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TreeLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TreeLocation, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NumPoints);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NumPoints, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -416,6 +422,10 @@ public partial class RChasePoint : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTreeBounds, "BmGame.RChasePoint.GetTreeBounds");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TreeLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TreeLocation, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TreeRadius);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TreeRadius, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

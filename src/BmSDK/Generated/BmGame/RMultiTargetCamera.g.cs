@@ -86,6 +86,10 @@ public partial class RMultiTargetCamera : BmSDK.BmGame.RCameraActor, BmSDK.IGame
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculateViewSphere, "BmGame.RMultiTargetCamera.CalculateViewSphere");
         byte* paramsPtr = stackalloc byte[60];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutCentre);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutCentre, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutRadius);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutRadius, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CameraOrigin, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Circle1Centre, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Circle1Radius, paramsPtr + 40);

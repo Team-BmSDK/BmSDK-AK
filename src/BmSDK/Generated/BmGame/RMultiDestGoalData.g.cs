@@ -111,6 +111,10 @@ public partial class RMultiDestGoalData : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetShortestPathFromIndex, "BmGame.RMultiDestGoalData.GetShortestPathFromIndex");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartIndex, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bestDist);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bestDist, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BestPath);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BestPath, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         bestDist = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 4);
         BestPath = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
@@ -125,6 +129,10 @@ public partial class RMultiDestGoalData : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetShortestPath, "BmGame.RMultiDestGoalData.GetShortestPath");
         byte* paramsPtr = stackalloc byte[12];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bestDist);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bestDist, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BestPath);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BestPath, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         bestDist = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
         BestPath = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);

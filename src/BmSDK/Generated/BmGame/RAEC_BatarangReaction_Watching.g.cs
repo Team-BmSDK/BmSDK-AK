@@ -400,6 +400,8 @@ public partial class RAEC_BatarangReaction_Watching : BmSDK.BmGame.RAlertEventCo
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetParamsFromReactionType, "BmGame.RAEC_BatarangReaction_Watching.GetParamsFromReactionType");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestType, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out JumpRange);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(JumpRange, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         JumpRange = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 4);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);

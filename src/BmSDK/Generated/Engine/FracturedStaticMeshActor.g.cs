@@ -427,6 +427,8 @@ public partial class FracturedStaticMeshActor : BmSDK.Engine.RStaticClimbableAct
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForceDedicated, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EffectInstigator, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bWantPhysChunksAndParticles);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bWantPhysChunksAndParticles, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         bWantPhysChunksAndParticles = BmSDK.Framework.MarshalUtil.ToManaged<byte>(paramsPtr + 12);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
@@ -592,6 +594,12 @@ public partial class FracturedStaticMeshActor : BmSDK.Engine.RStaticClimbableAct
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindMeshFractureSounds, "Engine.FracturedStaticMeshActor.FindMeshFractureSounds");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ExpFracSound);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ExpFracSound, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ChkFractureSound);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ChkFractureSound, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NumChunksForExp);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NumChunksForExp, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

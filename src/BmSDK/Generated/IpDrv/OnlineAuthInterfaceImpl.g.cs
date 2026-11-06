@@ -86,6 +86,10 @@ public partial class OnlineAuthInterfaceImpl : BmSDK.GameObject, BmSDK.IGameObje
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetServerAddr, "IpDrv.OnlineAuthInterfaceImpl.GetServerAddr");
         byte* paramsPtr = stackalloc byte[12];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutServerIP);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutServerIP, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutServerPort);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutServerPort, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         OutServerIP = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
         OutServerPort = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
@@ -100,6 +104,8 @@ public partial class OnlineAuthInterfaceImpl : BmSDK.GameObject, BmSDK.IGameObje
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetServerUniqueId, "IpDrv.OnlineAuthInterfaceImpl.GetServerUniqueId");
         byte* paramsPtr = stackalloc byte[12];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutServerUID);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutServerUID, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         OutServerUID = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineSubsystem.FUniqueNetId>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
@@ -295,6 +301,8 @@ public partial class OnlineAuthInterfaceImpl : BmSDK.GameObject, BmSDK.IGameObje
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClientUID, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClientIP, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClientPort, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutAuthTicketUID);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutAuthTicketUID, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         OutAuthTicketUID = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
@@ -409,6 +417,8 @@ public partial class OnlineAuthInterfaceImpl : BmSDK.GameObject, BmSDK.IGameObje
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ServerIP, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ServerPort, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSecure, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutAuthTicketUID);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutAuthTicketUID, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         OutAuthTicketUID = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 20);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);

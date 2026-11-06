@@ -128,6 +128,8 @@ public partial class MaterialInterface : BmSDK.Engine.Surface, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMobileVectorParameterValue, "Engine.MaterialInterface.GetMobileVectorParameterValue");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutValue);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutValue, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -149,6 +151,8 @@ public partial class MaterialInterface : BmSDK.Engine.Surface, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMobileTextureParameterValue, "Engine.MaterialInterface.GetMobileTextureParameterValue");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutValue);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutValue, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -170,6 +174,8 @@ public partial class MaterialInterface : BmSDK.Engine.Surface, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMobileScalarParameterValue, "Engine.MaterialInterface.GetMobileScalarParameterValue");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutValue);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutValue, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -191,6 +197,8 @@ public partial class MaterialInterface : BmSDK.Engine.Surface, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGroupName, "Engine.MaterialInterface.GetGroupName");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out GroupName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(GroupName, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -233,6 +241,8 @@ public partial class MaterialInterface : BmSDK.Engine.Surface, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLinearColorParameterValue, "Engine.MaterialInterface.GetLinearColorParameterValue");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutValue);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutValue, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -275,6 +285,8 @@ public partial class MaterialInterface : BmSDK.Engine.Surface, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVectorParameterValue, "Engine.MaterialInterface.GetVectorParameterValue");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutValue);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutValue, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -296,6 +308,8 @@ public partial class MaterialInterface : BmSDK.Engine.Surface, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTextureParameterValue, "Engine.MaterialInterface.GetTextureParameterValue");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutValue);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutValue, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -338,6 +352,8 @@ public partial class MaterialInterface : BmSDK.Engine.Surface, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetScalarParameterValue, "Engine.MaterialInterface.GetScalarParameterValue");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutValue);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutValue, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -359,6 +375,10 @@ public partial class MaterialInterface : BmSDK.Engine.Surface, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFontParameterValue, "Engine.MaterialInterface.GetFontParameterValue");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutFontValue);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutFontValue, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutFontPage);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutFontPage, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

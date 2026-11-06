@@ -99,6 +99,8 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StaticGetValidatedAnchorPosition, "Engine.NavigationHandle.StaticGetValidatedAnchorPosition");
         byte* paramsPtr = stackalloc byte[40];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_NewAnchorLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_NewAnchorLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartCheckBaseLocation, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Extent, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
@@ -121,6 +123,8 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetValidatedAnchorPosition, "Engine.NavigationHandle.GetValidatedAnchorPosition");
         byte* paramsPtr = stackalloc byte[28];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_NewAnchorLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_NewAnchorLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverrideStartLoc, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -494,6 +498,10 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Start, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(End, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Extent, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_HitLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_HitLocation, paramsPtr + 36);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_HitNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_HitNormal, paramsPtr + 48);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bGetFirstHit, paramsPtr + 60);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIgnoreDynamicObstacles, paramsPtr + 64);
         var oldFlags = funcManaged.FunctionFlags;
@@ -541,6 +549,10 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Start, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(End, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Extent, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_HitLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_HitLoc, paramsPtr + 36);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_HitNorm);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_HitNorm, paramsPtr + 48);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bFirstHit, paramsPtr + 60);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -566,6 +578,10 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Start, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(End, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Extent, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_HitLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_HitLoc, paramsPtr + 36);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_HitNorm);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_HitNorm, paramsPtr + 48);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bFirstHit, paramsPtr + 60);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -588,6 +604,8 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SuggestMovePreparation, "Engine.NavigationHandle.SuggestMovePreparation");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MovePt);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MovePt, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(C, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -609,6 +627,12 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindPath, "Engine.NavigationHandle.FindPath");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_DestActor);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_DestActor, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_DestItem);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_DestItem, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PathRequestsUsed);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PathRequestsUsed, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -631,6 +655,8 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ComputeValidFinalDestination, "Engine.NavigationHandle.ComputeValidFinalDestination");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_ComputedPosition);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_ComputedPosition, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -671,6 +697,8 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNextMoveLocation, "Engine.NavigationHandle.GetNextMoveLocation");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_MoveDest);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_MoveDest, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ArrivalDistance, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -987,6 +1015,8 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNextBreadCrumb, "Engine.NavigationHandle.GetNextBreadCrumb");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_BreadCrumbLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_BreadCrumbLoc, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

@@ -97,6 +97,10 @@ public partial class RHidePoint_Walkable : BmSDK.BmGame.RHidePoint, BmSDK.IGameO
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GrapplePlayer, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetHidePointLocation, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForcingBatmanHidden, paramsPtr + 20);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bVillainHasSeen);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bVillainHasSeen, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bAllowPlayerToHide);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bAllowPlayerToHide, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         bVillainHasSeen = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 24);
         bAllowPlayerToHide = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 28);

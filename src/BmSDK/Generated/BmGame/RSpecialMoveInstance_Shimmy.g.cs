@@ -176,7 +176,13 @@ public partial class RSpecialMoveInstance_Shimmy : BmSDK.BmGame.RSpecialMoveInst
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindCornerPoint, "BmGame.RSpecialMoveInstance_Shimmy.FindCornerPoint");
         byte* paramsPtr = stackalloc byte[168];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartAnimName, paramsPtr + 132);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CornerLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CornerLoc, paramsPtr + 140);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CornerRot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CornerRot, paramsPtr + 152);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

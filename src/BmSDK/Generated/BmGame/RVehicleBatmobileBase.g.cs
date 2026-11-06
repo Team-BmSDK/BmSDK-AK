@@ -781,6 +781,8 @@ public partial class RVehicleBatmobileBase : BmSDK.BmGame.RVehicle, BmSDK.IGameO
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckSpaceToGetOutOfBatmobile, "BmGame.RVehicleBatmobileBase.CheckSpaceToGetOutOfBatmobile");
         byte* paramsPtr = stackalloc byte[141];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveToGetOut, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -826,6 +828,8 @@ public partial class RVehicleBatmobileBase : BmSDK.BmGame.RVehicle, BmSDK.IGameO
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LeftVec, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckWidth, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinCos, paramsPtr + 44);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bZap);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bZap, paramsPtr + 48);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -873,6 +877,8 @@ public partial class RVehicleBatmobileBase : BmSDK.BmGame.RVehicle, BmSDK.IGameO
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ModifyEjectUpLoc, "BmGame.RVehicleBatmobileBase.ModifyEjectUpLoc");
         byte* paramsPtr = stackalloc byte[144];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out outLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(outLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CapeTarget, paramsPtr + 132);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1076,6 +1082,10 @@ public partial class RVehicleBatmobileBase : BmSDK.BmGame.RVehicle, BmSDK.IGameO
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPredictedLocationAndRotation, "BmGame.RVehicleBatmobileBase.GetPredictedLocationAndRotation");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TimeInFuture, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PredictedLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PredictedLocation, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PredictedRotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PredictedRotation, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1304,6 +1314,10 @@ public partial class RVehicleBatmobileBase : BmSDK.BmGame.RVehicle, BmSDK.IGameO
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinDistFromStreamingEdge, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClearDistFromStreamingEdge, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SafeDir);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SafeDir, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CompletelyOutsideWorld);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CompletelyOutsideWorld, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         SafeDir = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
         CompletelyOutsideWorld = BmSDK.Framework.MarshalUtil.ToManaged<byte>(paramsPtr + 20);
@@ -1321,7 +1335,11 @@ public partial class RVehicleBatmobileBase : BmSDK.BmGame.RVehicle, BmSDK.IGameO
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinDistFromStreamingEdge, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClearDistFromStreamingEdge, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SafeDir);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SafeDir, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OnlyCheckRemoteVolumes, paramsPtr + 32);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CompletelyOutsideWorld);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CompletelyOutsideWorld, paramsPtr + 36);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         SafeDir = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 20);
         CompletelyOutsideWorld = BmSDK.Framework.MarshalUtil.ToManaged<byte>(paramsPtr + 36);
@@ -1583,6 +1601,8 @@ public partial class RVehicleBatmobileBase : BmSDK.BmGame.RVehicle, BmSDK.IGameO
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SideSwipeTargets, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Direction, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TargetDistance);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetDistance, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -2629,6 +2649,10 @@ public partial class RVehicleBatmobileBase : BmSDK.BmGame.RVehicle, BmSDK.IGameO
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BatmobileSnapToGround, "BmGame.RVehicleBatmobileBase.BatmobileSnapToGround");
         byte* paramsPtr = stackalloc byte[32];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BatmobilePos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BatmobilePos, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BatmobileRot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BatmobileRot, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BatmobileArchetype, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2779,6 +2803,8 @@ public partial class RVehicleBatmobileBase : BmSDK.BmGame.RVehicle, BmSDK.IGameO
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGuardPositionID, "BmGame.RVehicleBatmobileBase.GetGuardPositionID");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Guarder, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out GuardPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(GuardPos, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         GuardPos = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 20);
@@ -2967,6 +2993,8 @@ public partial class RVehicleBatmobileBase : BmSDK.BmGame.RVehicle, BmSDK.IGameO
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnCranePlatform, "BmGame.RVehicleBatmobileBase.OnCranePlatform");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CranePlatform);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CranePlatform, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         CranePlatform = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RCranePlatformBase>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
@@ -3242,6 +3270,8 @@ public partial class RVehicleBatmobileBase : BmSDK.BmGame.RVehicle, BmSDK.IGameO
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPlayerConfig, "BmGame.RVehicleBatmobileBase.GetPlayerConfig");
         byte* paramsPtr = stackalloc byte[28];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MeshData);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MeshData, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         MeshData = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RAddContentBatmobileMesh>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RAddContentBatmobile>(paramsPtr + 8);
@@ -3618,6 +3648,10 @@ public partial class RVehicleBatmobileBase : BmSDK.BmGame.RVehicle, BmSDK.IGameO
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Spans, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RacingLine, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LookAheadDist, paramsPtr + 32);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Position);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Position, paramsPtr + 36);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Direction);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Direction, paramsPtr + 48);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -3799,6 +3833,10 @@ public partial class RVehicleBatmobileBase : BmSDK.BmGame.RVehicle, BmSDK.IGameO
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TraceEmptyVehicleNPC, "BmGame.RVehicleBatmobileBase.TraceEmptyVehicleNPC");
         byte* paramsPtr = stackalloc byte[72];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(End, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Start, paramsPtr + 36);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filter, paramsPtr + 48);
@@ -3824,6 +3862,10 @@ public partial class RVehicleBatmobileBase : BmSDK.BmGame.RVehicle, BmSDK.IGameO
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TraceAbandonedVehicle, "BmGame.RVehicleBatmobileBase.TraceAbandonedVehicle");
         byte* paramsPtr = stackalloc byte[72];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(End, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Start, paramsPtr + 36);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filter, paramsPtr + 48);
@@ -3868,6 +3910,8 @@ public partial class RVehicleBatmobileBase : BmSDK.BmGame.RVehicle, BmSDK.IGameO
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAnyWheelOnCheckpointBlockade, "BmGame.RVehicleBatmobileBase.IsAnyWheelOnCheckpointBlockade");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CantMoveDir);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CantMoveDir, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

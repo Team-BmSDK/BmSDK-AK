@@ -105,6 +105,8 @@ public partial class RGrapplePoint : BmSDK.BmGame.RSnapToPositionActor, BmSDK.IG
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHighPriorityGrapplePointsInSphere, "BmGame.RGrapplePoint.GetHighPriorityGrapplePointsInSphere");
         byte* paramsPtr = stackalloc byte[32];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out centre);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(centre, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Radius, paramsPtr + 28);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -127,6 +129,10 @@ public partial class RGrapplePoint : BmSDK.BmGame.RSnapToPositionActor, BmSDK.IG
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGrappleEndPoints, "BmGame.RGrapplePoint.GetGrappleEndPoints");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutPointA);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutPointA, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutPointB);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutPointB, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

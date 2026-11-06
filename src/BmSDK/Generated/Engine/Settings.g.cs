@@ -223,6 +223,8 @@ public partial class Settings : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRangedPropertyValue, "Engine.Settings.GetRangedPropertyValue");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PropertyId, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutValue);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutValue, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -265,6 +267,14 @@ public partial class Settings : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPropertyRange, "Engine.Settings.GetPropertyRange");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PropertyId, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutMinValue);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutMinValue, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutMaxValue);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutMaxValue, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RangeIncrement);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RangeIncrement, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bFormatAsInt);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bFormatAsInt, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -289,6 +299,8 @@ public partial class Settings : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPropertyMappingType, "Engine.Settings.GetPropertyMappingType");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PropertyId, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutType);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutType, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -412,6 +424,8 @@ public partial class Settings : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPropertyValueId, "Engine.Settings.GetPropertyValueId");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PropertyId, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ValueId);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ValueId, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -496,6 +510,8 @@ public partial class Settings : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetIntProperty, "Engine.Settings.GetIntProperty");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PropertyId, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -538,6 +554,8 @@ public partial class Settings : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFloatProperty, "Engine.Settings.GetFloatProperty");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PropertyId, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -681,6 +699,8 @@ public partial class Settings : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPropertyId, "Engine.Settings.GetPropertyId");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PropertyName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PropertyId);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PropertyId, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -824,6 +844,8 @@ public partial class Settings : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStringSettingId, "Engine.Settings.GetStringSettingId");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StringSettingName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out StringSettingId);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(StringSettingId, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -845,6 +867,8 @@ public partial class Settings : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStringSettingValueByName, "Engine.Settings.GetStringSettingValueByName");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StringSettingName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ValueIndex);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ValueIndex, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -931,6 +955,8 @@ public partial class Settings : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStringSettingValue, "Engine.Settings.GetStringSettingValue");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StringSettingId, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ValueIndex);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ValueIndex, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -973,6 +999,12 @@ public partial class Settings : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSettingsDataDateTime, "Engine.Settings.GetSettingsDataDateTime");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Data);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Data, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutInt1);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutInt1, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutInt2);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutInt2, paramsPtr + 20);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -995,6 +1027,8 @@ public partial class Settings : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSettingsDataBlob, "Engine.Settings.GetSettingsDataBlob");
         byte* paramsPtr = stackalloc byte[32];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Data);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Data, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1016,6 +1050,8 @@ public partial class Settings : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSettingsDataInt, "Engine.Settings.GetSettingsDataInt");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Data);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Data, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1036,6 +1072,8 @@ public partial class Settings : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSettingsDataFloat, "Engine.Settings.GetSettingsDataFloat");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Data);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Data, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1056,6 +1094,8 @@ public partial class Settings : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EmptySettingsData, "Engine.Settings.EmptySettingsData");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Data);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Data, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1076,6 +1116,10 @@ public partial class Settings : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSettingsData, "Engine.Settings.SetSettingsData");
         byte* paramsPtr = stackalloc byte[32];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Data);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Data, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Data2Copy);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Data2Copy, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1097,6 +1141,8 @@ public partial class Settings : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSettingsDataBlob, "Engine.Settings.SetSettingsDataBlob");
         byte* paramsPtr = stackalloc byte[32];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Data);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Data, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1118,6 +1164,8 @@ public partial class Settings : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSettingsDataDateTime, "Engine.Settings.SetSettingsDataDateTime");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Data);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Data, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInt1, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInt2, paramsPtr + 20);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1140,6 +1188,8 @@ public partial class Settings : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSettingsDataInt, "Engine.Settings.SetSettingsDataInt");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Data);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Data, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInt, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1161,6 +1211,8 @@ public partial class Settings : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSettingsDataFloat, "Engine.Settings.SetSettingsDataFloat");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Data);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Data, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InFloat, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

@@ -135,6 +135,12 @@ public partial class RCombatMove_VillainUnarmedGrab : BmSDK.BmGame.RCombatMove_V
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckEnvInfo, "BmGame.RCombatMove_VillainUnarmedGrab.CheckEnvInfo");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out WallLocOut);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(WallLocOut, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out WallYawOut);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(WallYawOut, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DirOut);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DirOut, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         WallLocOut = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         WallYawOut = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 12);
@@ -151,6 +157,10 @@ public partial class RCombatMove_VillainUnarmedGrab : BmSDK.BmGame.RCombatMove_V
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckEnvInfoInDir, "BmGame.RCombatMove_VillainUnarmedGrab.CheckEnvInfoInDir");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckDir, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out WallLocOut);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(WallLocOut, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out WallYawOut);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(WallYawOut, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         WallLocOut = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
         WallYawOut = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 24);

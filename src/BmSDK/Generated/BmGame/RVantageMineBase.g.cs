@@ -269,6 +269,8 @@ public partial class RVantageMineBase : BmSDK.BmGame.RMineBase, BmSDK.IGameObjec
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPlayerNearMine, "BmGame.RVantageMineBase.IsPlayerNearMine");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PawnPlayer, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Dist);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Dist, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Dist = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);

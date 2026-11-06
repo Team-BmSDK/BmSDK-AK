@@ -86,6 +86,8 @@ public partial class RSeqEvent_LevelScripting : BmSDK.BmGame.RBMSeqEvent_Behavio
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDbgString, "BmGame.RSeqEvent_LevelScripting.GetDbgString");
         byte* paramsPtr = stackalloc byte[40];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Col);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Col, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Col = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.GameObject.FColor>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 4);

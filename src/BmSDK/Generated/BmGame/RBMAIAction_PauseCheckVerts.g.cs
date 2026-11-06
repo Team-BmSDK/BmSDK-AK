@@ -111,6 +111,8 @@ public partial class RBMAIAction_PauseCheckVerts : BmSDK.BmGame.RBMAIAction, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNextAimIndex_Checked, "BmGame.RBMAIAction_PauseCheckVerts.GetNextAimIndex_Checked");
         byte* paramsPtr = stackalloc byte[68];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FaceAtDir);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FaceAtDir, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         FaceAtDir = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 12);
@@ -124,6 +126,8 @@ public partial class RBMAIAction_PauseCheckVerts : BmSDK.BmGame.RBMAIAction, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNextAimIndex_Unchecked, "BmGame.RBMAIAction_PauseCheckVerts.GetNextAimIndex_Unchecked");
         byte* paramsPtr = stackalloc byte[68];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FaceAtDir);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FaceAtDir, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         FaceAtDir = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 12);
@@ -162,6 +166,8 @@ public partial class RBMAIAction_PauseCheckVerts : BmSDK.BmGame.RBMAIAction, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProcessUntraced_Checked, "BmGame.RBMAIAction_PauseCheckVerts.ProcessUntraced_Checked");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ChecksLeft);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ChecksLeft, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ChecksLeft = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
         return;
@@ -175,6 +181,8 @@ public partial class RBMAIAction_PauseCheckVerts : BmSDK.BmGame.RBMAIAction, BmS
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProcessUntraced_Unchecked, "BmGame.RBMAIAction_PauseCheckVerts.ProcessUntraced_Unchecked");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ChecksLeft);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ChecksLeft, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ChecksLeft = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
         return;

@@ -395,6 +395,10 @@ public partial class RPawnVillainMultiStageBase : BmSDK.BmGame.RPawnVillain, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FromPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EndPoint, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Radius, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CollidePoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CollidePoint, paramsPtr + 28);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CollideNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CollideNormal, paramsPtr + 40);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

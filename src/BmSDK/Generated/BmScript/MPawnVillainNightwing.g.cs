@@ -468,6 +468,14 @@ public partial class MPawnVillainNightwing : BmSDK.BmGame.MPawnVillainNightwingB
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetOverrideTakedownInfo, "BmScript.MPawnVillainNightwing.GetOverrideTakedownInfo");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Attacker, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out takedownType);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(takedownType, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TakedownLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TakedownLocation, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TakedownRotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TakedownRotation, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DamageAmount);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageAmount, paramsPtr + 36);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         takedownType = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnPlayerCombat.ETakedownType>(paramsPtr + 8);
         TakedownLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
@@ -559,6 +567,8 @@ public partial class MPawnVillainNightwing : BmSDK.BmGame.MPawnVillainNightwingB
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ModifyDamageAmount, "BmScript.MPawnVillainNightwing.ModifyDamageAmount");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DmgAmount);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DmgAmount, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         DmgAmount = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
         return;

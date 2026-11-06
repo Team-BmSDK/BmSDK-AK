@@ -131,6 +131,10 @@ public partial class RWaterVolumeBase : BmSDK.BmGame.RWaterRescueVolumeBase, BmS
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPosition, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestDirection, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutSurfacePosition);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutSurfacePosition, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutSurfaceNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutSurfaceNormal, paramsPtr + 36);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

@@ -340,6 +340,12 @@ public partial class RAlertEventCoordinatorSolo : BmSDK.Engine.Actor, BmSDK.IGam
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProjectPointOntoPlane, "BmGame.RAlertEventCoordinatorSolo.ProjectPointOntoPlane");
         byte* paramsPtr = stackalloc byte[48];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out rPlaneNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(rPlaneNormal, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out rPointOnPlane);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(rPointOnPlane, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out rPoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(rPoint, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

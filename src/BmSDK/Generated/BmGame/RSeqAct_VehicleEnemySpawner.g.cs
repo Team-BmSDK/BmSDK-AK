@@ -247,6 +247,10 @@ public partial class RSeqAct_VehicleEnemySpawner : BmSDK.BmGame.RSeqAct_SpawnVeh
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNearestAvailableSpawnPointStatic, "BmGame.RSeqAct_VehicleEnemySpawner.GetNearestAvailableSpawnPointStatic");
         byte* paramsPtr = stackalloc byte[260];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SpawnLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnLoc, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SpawnRot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnRot, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPlayer, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CameraLoc, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TemplateActor, paramsPtr + 44);
@@ -278,6 +282,10 @@ public partial class RSeqAct_VehicleEnemySpawner : BmSDK.BmGame.RSeqAct_SpawnVeh
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNearestAvailableSpawnPoint, "BmGame.RSeqAct_VehicleEnemySpawner.GetNearestAvailableSpawnPoint");
         byte* paramsPtr = stackalloc byte[260];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SpawnLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnLoc, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SpawnRot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnRot, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPlayer, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CameraLoc, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TemplateActor, paramsPtr + 44);
@@ -309,6 +317,10 @@ public partial class RSeqAct_VehicleEnemySpawner : BmSDK.BmGame.RSeqAct_SpawnVeh
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ChooseRandomTurretLocation, "BmGame.RSeqAct_VehicleEnemySpawner.ChooseRandomTurretLocation");
         byte* paramsPtr = stackalloc byte[68];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SpawnLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnLoc, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SpawnRot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnRot, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPlayer, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CameraLoc, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TemplateActor, paramsPtr + 44);

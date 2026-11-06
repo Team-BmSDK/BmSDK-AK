@@ -98,6 +98,8 @@ public partial class SeqAct_GetMatInstVectorParam : BmSDK.Engine.SequenceAction,
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetColour, "Engine.SeqAct_GetMatInstVectorParam.GetColour");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Colour);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Colour, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

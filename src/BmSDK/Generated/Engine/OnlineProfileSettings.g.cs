@@ -137,6 +137,8 @@ public partial class OnlineProfileSettings : BmSDK.Engine.OnlinePlayerStorage, B
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetProfileSettingDefaultFloat, "Engine.OnlineProfileSettings.GetProfileSettingDefaultFloat");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProfileSettingId, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DefaultFloat);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DefaultFloat, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -158,6 +160,8 @@ public partial class OnlineProfileSettings : BmSDK.Engine.OnlinePlayerStorage, B
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetProfileSettingDefaultInt, "Engine.OnlineProfileSettings.GetProfileSettingDefaultInt");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProfileSettingId, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DefaultInt);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DefaultInt, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -179,6 +183,10 @@ public partial class OnlineProfileSettings : BmSDK.Engine.OnlinePlayerStorage, B
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetProfileSettingDefaultId, "Engine.OnlineProfileSettings.GetProfileSettingDefaultId");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProfileSettingId, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DefaultId);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DefaultId, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ListIndex);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ListIndex, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

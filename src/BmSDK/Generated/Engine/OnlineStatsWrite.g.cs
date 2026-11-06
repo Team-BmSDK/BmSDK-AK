@@ -228,6 +228,8 @@ public partial class OnlineStatsWrite : BmSDK.Engine.OnlineStats, BmSDK.IGameObj
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStatId, "Engine.OnlineStatsWrite.GetStatId");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StatName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out StatId);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(StatId, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

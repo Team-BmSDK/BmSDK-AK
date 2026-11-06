@@ -87,6 +87,36 @@ string GetFieldPathNameManaged(UField* field)
     return managedName;
 }
 
+// True when a value of this property owns heap memory: a string, array or map, or a struct holding one.
+// Structs that extend another struct count as owning, because their inherited members aren't printed.
+static bool PropertyOwnsMemory(UProperty* prop)
+{
+    auto className = prop->Class->GetName();
+    if (className == "StrProperty" || className == "ArrayProperty" || className == "MapProperty")
+    {
+        return true;
+    }
+
+    if (prop->IsA(UStructProperty::StaticClass()))
+    {
+        auto _struct = (UStruct*)((UStructProperty*)prop)->Struct;
+        if (_struct->SuperStruct)
+        {
+            return true;
+        }
+
+        for (auto field = _struct->Children; field; field = field->Next)
+        {
+            if (field->IsA(UProperty::StaticClass()) && PropertyOwnsMemory((UProperty*)field))
+            {
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+
 PropertyInfo::PropertyInfo(UProperty* prop, bool isInStruct)
 {
     Name = prop->GetName();
@@ -104,6 +134,7 @@ PropertyInfo::PropertyInfo(UProperty* prop, bool isInStruct)
     IsOutParam = Flags & (uint64_t)EPropertyFlags::CPF_OutParm;
     IsReturnParam = Flags & (uint64_t)EPropertyFlags::CPF_ReturnParm;
     ShouldReturnByRef = prop->ShouldReturnByRef() && !IsInStruct;
+    OwnsMemory = PropertyOwnsMemory(prop);
 
     if (IsBool)
     {

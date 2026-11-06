@@ -148,6 +148,10 @@ public partial class RLootDestinationBase : BmSDK.Engine.SkeletalMeshActor, BmSD
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMusterLocationAndRotation, "BmGame.RLootDestinationBase.GetMusterLocationAndRotation");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(requestingPawn, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out musterLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(musterLoc, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out musterRot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(musterRot, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         musterLoc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
         musterRot = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 20);

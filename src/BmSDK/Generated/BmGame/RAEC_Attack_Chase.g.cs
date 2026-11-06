@@ -202,6 +202,8 @@ public partial class RAEC_Attack_Chase : BmSDK.BmGame.RAlertEventCoordinatorBase
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TryAssignVentThrower, "BmGame.RAEC_Attack_Chase.TryAssignVentThrower");
         byte* paramsPtr = stackalloc byte[60];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NewChasePos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NewChasePos, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NewChasePos = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
@@ -449,6 +451,8 @@ public partial class RAEC_Attack_Chase : BmSDK.BmGame.RAlertEventCoordinatorBase
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNextChasePointFor, "BmGame.RAEC_Attack_Chase.GetNextChasePointFor");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Arrivee, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NextChasePoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NextChasePoint, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NextChasePoint = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RChasePoint>(paramsPtr + 8);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);

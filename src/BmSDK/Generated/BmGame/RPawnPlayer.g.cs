@@ -129,6 +129,10 @@ public partial class RPawnPlayer : BmSDK.BmGame.RPawnPlayerSpeech, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSentryGunAniminfo, "BmGame.RPawnPlayer.GetSentryGunAniminfo");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out sentryGunAnimSet);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(sentryGunAnimSet, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PlayerMove);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerMove, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         sentryGunAnimSet = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSet>(paramsPtr + 0);
         PlayerMove = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RSpecialMoveConfig>(paramsPtr + 8);
@@ -695,6 +699,8 @@ public partial class RPawnPlayer : BmSDK.BmGame.RPawnPlayerSpeech, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverrideStartState, "BmGame.RPawnPlayer.OverrideStartState");
         byte* paramsPtr = stackalloc byte[8];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NewState);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NewState, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NewState = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
         return;
@@ -1087,6 +1093,8 @@ public partial class RPawnPlayer : BmSDK.BmGame.RPawnPlayerSpeech, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanSpawnIceRaft, "BmGame.RPawnPlayer.CanSpawnIceRaft");
         byte* paramsPtr = stackalloc byte[28];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NewLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NewLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RaftExtent, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NewLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
@@ -1470,6 +1478,8 @@ public partial class RPawnPlayer : BmSDK.BmGame.RPawnPlayerSpeech, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPlayerConfig, "BmGame.RPawnPlayer.GetPlayerConfig");
         byte* paramsPtr = stackalloc byte[28];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MeshData);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MeshData, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         MeshData = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RAddContentPlayerCharacterMesh>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RAddContentPlayerCharacter>(paramsPtr + 8);
@@ -1525,6 +1535,10 @@ public partial class RPawnPlayer : BmSDK.BmGame.RPawnPlayerSpeech, BmSDK.IGameOb
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SkelComp, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimSeq, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Mirrored, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out InferredReferencePointPosition);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(InferredReferencePointPosition, paramsPtr + 28);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out InferredReferencePointRotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(InferredReferencePointRotation, paramsPtr + 40);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1548,6 +1562,10 @@ public partial class RPawnPlayer : BmSDK.BmGame.RPawnPlayerSpeech, BmSDK.IGameOb
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Pawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SkelComp, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out InferredReferencePointPosition);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(InferredReferencePointPosition, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out InferredReferencePointRotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(InferredReferencePointRotation, paramsPtr + 28);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1573,6 +1591,10 @@ public partial class RPawnPlayer : BmSDK.BmGame.RPawnPlayerSpeech, BmSDK.IGameOb
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PointB, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckLocation, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Radius, paramsPtr + 36);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NewA);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NewA, paramsPtr + 40);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NewB);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NewB, paramsPtr + 52);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDebugClamp, paramsPtr + 64);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1682,6 +1704,10 @@ public partial class RPawnPlayer : BmSDK.BmGame.RPawnPlayerSpeech, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PointAndLineCheck, "BmGame.RPawnPlayer.PointAndLineCheck");
         byte* paramsPtr = stackalloc byte[72];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(End, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Start, paramsPtr + 36);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Extent, paramsPtr + 48);
@@ -1867,6 +1893,14 @@ public partial class RPawnPlayer : BmSDK.BmGame.RPawnPlayerSpeech, BmSDK.IGameOb
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NumIncrements, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IgnoreFirstNChecks, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(minZ, paramsPtr + 36);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FlightTimeToHit);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FlightTimeToHit, paramsPtr + 40);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out IterationsToHit);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(IterationsToHit, paramsPtr + 44);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 48);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out EndVelocity);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(EndVelocity, paramsPtr + 60);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDebugDraw, paramsPtr + 72);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1893,6 +1927,8 @@ public partial class RPawnPlayer : BmSDK.BmGame.RPawnPlayerSpeech, BmSDK.IGameOb
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LookAheadTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NumIncrements, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -2068,6 +2104,8 @@ public partial class RPawnPlayer : BmSDK.BmGame.RPawnPlayerSpeech, BmSDK.IGameOb
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCeilingLocator, "BmGame.RPawnPlayer.GetCeilingLocator");
         byte* paramsPtr = stackalloc byte[292];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc2);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc2, paramsPtr + 132);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Loc2 = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator>(paramsPtr + 132);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 264);
@@ -2081,6 +2119,8 @@ public partial class RPawnPlayer : BmSDK.BmGame.RPawnPlayerSpeech, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetClimbPointFeatureType, "BmGame.RPawnPlayer.SetClimbPointFeatureType");
         byte* paramsPtr = stackalloc byte[132];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ClimbPoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ClimbPoint, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -2437,6 +2477,8 @@ public partial class RPawnPlayer : BmSDK.BmGame.RPawnPlayerSpeech, BmSDK.IGameOb
         byte* paramsPtr = stackalloc byte[164];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Direction, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RailingPerp, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Locator);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Locator, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SteppingOffEnd, paramsPtr + 156);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2680,6 +2722,8 @@ public partial class RPawnPlayer : BmSDK.BmGame.RPawnPlayerSpeech, BmSDK.IGameOb
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindRailing, "BmGame.RPawnPlayer.FindRailing");
         byte* paramsPtr = stackalloc byte[148];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Direction, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RailingLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RailingLoc, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -2820,6 +2864,8 @@ public partial class RPawnPlayer : BmSDK.BmGame.RPawnPlayerSpeech, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddFakeCollisionNormal, "BmGame.RPawnPlayer.AddFakeCollisionNormal");
         byte* paramsPtr = stackalloc byte[12];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CollisionNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CollisionNormal, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -2840,6 +2886,10 @@ public partial class RPawnPlayer : BmSDK.BmGame.RPawnPlayerSpeech, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSecondRailingTop, "BmGame.RPawnPlayer.GetSecondRailingTop");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PointA);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PointA, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PointB);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PointB, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -2861,6 +2911,10 @@ public partial class RPawnPlayer : BmSDK.BmGame.RPawnPlayerSpeech, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRailingTop, "BmGame.RPawnPlayer.GetRailingTop");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PointA);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PointA, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PointB);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PointB, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -3189,6 +3243,8 @@ public partial class RPawnPlayer : BmSDK.BmGame.RPawnPlayerSpeech, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyArmour, "BmGame.RPawnPlayer.ApplyArmour");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Damage);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Damage, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageType, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Damage = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
@@ -3388,6 +3444,8 @@ public partial class RPawnPlayer : BmSDK.BmGame.RPawnPlayerSpeech, BmSDK.IGameOb
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupLocatorFromCornerPoint, "BmGame.RPawnPlayer.SetupLocatorFromCornerPoint");
         byte* paramsPtr = stackalloc byte[148];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Corner, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ForceCoverDirection, paramsPtr + 140);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ForCoverTurn, paramsPtr + 144);
         var oldFlags = funcManaged.FunctionFlags;
@@ -3411,6 +3469,8 @@ public partial class RPawnPlayer : BmSDK.BmGame.RPawnPlayerSpeech, BmSDK.IGameOb
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRailingTopAndNormal, "BmGame.RPawnPlayer.GetRailingTopAndNormal");
         byte* paramsPtr = stackalloc byte[140];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Railing, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_Locator);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_Locator, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -4161,6 +4221,8 @@ public partial class RPawnPlayer : BmSDK.BmGame.RPawnPlayerSpeech, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAIAwarenessStateToCurrentValues, "BmGame.RPawnPlayer.SetAIAwarenessStateToCurrentValues");
         byte* paramsPtr = stackalloc byte[172];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ThisAAS);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ThisAAS, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ThisAAS = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnPlayer.FAIAwarenessState>(paramsPtr + 0);
         return;
@@ -4313,6 +4375,8 @@ public partial class RPawnPlayer : BmSDK.BmGame.RPawnPlayerSpeech, BmSDK.IGameOb
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindNearbyLedge, "BmGame.RPawnPlayer.FindNearbyLedge");
         byte* paramsPtr = stackalloc byte[152];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerLocation, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Locator);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Locator, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinimalDrop, paramsPtr + 144);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -5317,6 +5381,8 @@ public partial class RPawnPlayer : BmSDK.BmGame.RPawnPlayerSpeech, BmSDK.IGameOb
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCustomChangeCameraAimPoint, "BmGame.RPawnPlayer.GetCustomChangeCameraAimPoint");
         byte* paramsPtr = stackalloc byte[16];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CustomAimRot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CustomAimRot, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         CustomAimRot = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);

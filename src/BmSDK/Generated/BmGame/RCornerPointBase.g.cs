@@ -140,6 +140,8 @@ public partial class RCornerPointBase : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetPos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HostPawn, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AmbushStart, paramsPtr + 20);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AmbushEnd);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AmbushEnd, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         AmbushEnd = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RCornerWallMarker>(paramsPtr + 28);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RCornerPointBase.AmbushDir>(paramsPtr + 36);

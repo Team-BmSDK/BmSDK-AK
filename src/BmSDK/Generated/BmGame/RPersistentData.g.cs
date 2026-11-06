@@ -151,6 +151,8 @@ public partial class RPersistentData : BmSDK.GameObject, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SideStoryIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IconName, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ReturnVector);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ReturnVector, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ReturnVector = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 20);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
@@ -285,6 +287,10 @@ public partial class RPersistentData : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStorySynopsis, "BmGame.RPersistentData.GetStorySynopsis");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Index, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Chapter);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Chapter, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ImageId);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ImageId, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Chapter = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
         ImageId = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
@@ -984,6 +990,10 @@ public partial class RPersistentData : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateButtonBashDDA, "BmGame.RPersistentData.UpdateButtonBashDDA");
         byte* paramsPtr = stackalloc byte[8];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TimeAtMinSpeed);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TimeAtMinSpeed, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TimeAtMaxSpeed);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TimeAtMaxSpeed, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         TimeAtMinSpeed = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
         TimeAtMaxSpeed = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 4);

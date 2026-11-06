@@ -292,6 +292,16 @@ public partial class RCombatMove_DualTakedown : BmSDK.BmGame.RCombatMove, BmSDK.
         BmSDK.Framework.MarshalUtil.ToUnmanaged(refLoc, paramsPtr + 56);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RefRot, paramsPtr + 68);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 80);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutAnim);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutAnim, paramsPtr + 88);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutYaw);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutYaw, paramsPtr + 96);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutBestAnim);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutBestAnim, paramsPtr + 100);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutBestPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutBestPos, paramsPtr + 108);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutBestYaw);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutBestYaw, paramsPtr + 120);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         OutAnim = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 88);
         OutYaw = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 96);

@@ -287,6 +287,8 @@ public partial class RBatmobileSonar : BmSDK.BmGame.RVehicleWeapon, BmSDK.IGameO
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MeshToHighlight, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NumScannedVehicles);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NumScannedVehicles, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaterialToUse, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NumScannedVehicles = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);

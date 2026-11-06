@@ -3415,6 +3415,10 @@ public partial class RPlayerControllerCombat : BmSDK.BmGame.RPlayerController, B
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWallEvadeInfo, "BmGame.RPlayerControllerCombat.GetWallEvadeInfo");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Dir, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out WallLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(WallLocation, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out WallNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(WallNormal, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -3574,6 +3578,12 @@ public partial class RPlayerControllerCombat : BmSDK.BmGame.RPlayerController, B
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHighestPriorityBatmobileTutorial, "BmGame.RPlayerControllerCombat.GetHighestPriorityBatmobileTutorial");
         byte* paramsPtr = stackalloc byte[49];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BestTutorial);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BestTutorial, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BestControlIcon);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BestControlIcon, paramsPtr + 20);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bShowTutorial);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bShowTutorial, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         BestTutorial = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPersistentData.ETutorialType>(paramsPtr + 0);
         BestTutorialPrompt = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 4);
@@ -3590,6 +3600,12 @@ public partial class RPlayerControllerCombat : BmSDK.BmGame.RPlayerController, B
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHighestPriorityTutorial, "BmGame.RPlayerControllerCombat.GetHighestPriorityTutorial");
         byte* paramsPtr = stackalloc byte[68];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BestTutorial);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BestTutorial, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BestControlIcon);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BestControlIcon, paramsPtr + 20);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bShowTutorial);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bShowTutorial, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         BestTutorial = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPersistentData.ETutorialType>(paramsPtr + 0);
         BestTutorialPrompt = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 4);
@@ -3619,6 +3635,12 @@ public partial class RPlayerControllerCombat : BmSDK.BmGame.RPlayerController, B
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckTutorial, "BmGame.RPlayerControllerCombat.CheckTutorial");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckTutorialType, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BestPriority);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BestPriority, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BestTutorial);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BestTutorial, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bShowTutorial);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bShowTutorial, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         BestPriority = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
         BestTutorial = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPersistentData.ETutorialType>(paramsPtr + 8);

@@ -132,6 +132,10 @@ public partial class RBmPawnSpawner_RobotBase : BmSDK.BmGame.RBmPawnSpawner, BmS
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestActor, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestLocation, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PlayerDistSq);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerDistSq, paramsPtr + 20);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out closestRobotDistSq);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(closestRobotDistSq, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         PlayerDistSq = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 20);
         closestRobotDistSq = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 24);

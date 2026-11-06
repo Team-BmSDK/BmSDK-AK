@@ -188,6 +188,8 @@ public partial class RPawnBossJokerCombat : BmSDK.BmGame.RPawnVillainThug, BmSDK
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddCustomPawnCombatBarkFlags, "BmScript.RPawnBossJokerCombat.AddCustomPawnCombatBarkFlags");
         byte* paramsPtr = stackalloc byte[8];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ContextFlags);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ContextFlags, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ContextFlags = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBarkFlagBase>(paramsPtr + 0);
         return;
@@ -370,6 +372,12 @@ public partial class RPawnBossJokerCombat : BmSDK.BmGame.RPawnVillainThug, BmSDK
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBossAutomaticTutorialText, "BmScript.RPawnBossJokerCombat.GetBossAutomaticTutorialText");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RPC, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BestTutorial);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BestTutorial, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BestControlIcon);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BestControlIcon, paramsPtr + 28);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bShowTutorial);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bShowTutorial, paramsPtr + 32);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         BestTutorial = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPersistentData.ETutorialType>(paramsPtr + 8);
         BestTutorialPrompt = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 12);

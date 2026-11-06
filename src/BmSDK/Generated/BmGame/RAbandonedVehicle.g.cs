@@ -1239,6 +1239,8 @@ public partial class RAbandonedVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRoadObstacleBounds, "BmGame.RAbandonedVehicle.GetRoadObstacleBounds");
         byte* paramsPtr = stackalloc byte[36];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Bounds);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Bounds, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NoExtrude, paramsPtr + 28);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

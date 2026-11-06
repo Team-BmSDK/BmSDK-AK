@@ -93,6 +93,8 @@ public partial class RBatarangProjectile_Controllable : BmSDK.BmGame.RBatarangPr
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TraceLaserSight, "BmGame.RBatarangProjectile_Controllable.TraceLaserSight");
         byte* paramsPtr = stackalloc byte[12];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ForwardCheckLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ForwardCheckLocation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

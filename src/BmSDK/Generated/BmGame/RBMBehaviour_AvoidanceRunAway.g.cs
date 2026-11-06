@@ -476,6 +476,10 @@ public partial class RBMBehaviour_AvoidanceRunAway : BmSDK.BmGame.RBMBehaviour_G
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetForceForActor, "BmGame.RBMBehaviour_AvoidanceRunAway.GetForceForActor");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Idx, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TotalForce);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TotalForce, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TotalInfluencers);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TotalInfluencers, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -497,6 +501,10 @@ public partial class RBMBehaviour_AvoidanceRunAway : BmSDK.BmGame.RBMBehaviour_G
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverrideGetupStances, "BmGame.RBMBehaviour_AvoidanceRunAway.OverrideGetupStances");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MovementStance);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MovementStance, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out WeaponStance);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(WeaponStance, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         MovementStance = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
         WeaponStance = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 8);

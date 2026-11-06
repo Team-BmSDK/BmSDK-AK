@@ -113,6 +113,8 @@ public partial class RNavigationManager : BmSDK.GameObject, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartPos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RestrictToVol, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SearchPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SearchPos, paramsPtr + 20);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -136,6 +138,8 @@ public partial class RNavigationManager : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CurrLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PointA, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PointB, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NavMeshLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NavMeshLocation, paramsPtr + 36);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -159,6 +163,10 @@ public partial class RNavigationManager : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Start, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(End, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Extent, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLoc, paramsPtr + 36);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitNorm);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNorm, paramsPtr + 48);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

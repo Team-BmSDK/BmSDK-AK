@@ -151,6 +151,8 @@ public partial class RAEC_Attack_Converge : BmSDK.BmGame.RAlertEventCoordinatorB
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldStartOnRail, "BmGame.RAEC_Attack_Converge.ShouldStartOnRail");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestCon, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CurrentFenceProxy);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CurrentFenceProxy, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         CurrentFenceProxy = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMPathNode_FenceJumpProxy>(paramsPtr + 8);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);

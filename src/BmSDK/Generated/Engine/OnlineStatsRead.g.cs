@@ -189,6 +189,8 @@ public partial class OnlineStatsRead : BmSDK.Engine.OnlineStats, BmSDK.IGameObje
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerID, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StatColumnNo, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out StatValue);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(StatValue, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -233,6 +235,8 @@ public partial class OnlineStatsRead : BmSDK.Engine.OnlineStats, BmSDK.IGameObje
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerID, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StatColumnNo, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out StatValue);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(StatValue, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

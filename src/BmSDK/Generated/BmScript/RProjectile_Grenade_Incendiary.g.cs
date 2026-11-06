@@ -184,6 +184,8 @@ public partial class RProjectile_Grenade_Incendiary : BmSDK.BmScript.RProjectile
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetOffsetsFromNorthRot, "BmScript.RProjectile_Grenade_Incendiary.GetOffsetsFromNorthRot");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NorthRot, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out toNeighbourOffsets);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(toNeighbourOffsets, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         toNeighbourOffsets = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
         return;

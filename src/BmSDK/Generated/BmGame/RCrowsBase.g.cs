@@ -135,6 +135,8 @@ public partial class RCrowsBase : BmSDK.Engine.Actor, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Range, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CrowLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CrowLoc, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -157,6 +159,10 @@ public partial class RCrowsBase : BmSDK.Engine.Actor, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Range, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CrowLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CrowLoc, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Crow);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Crow, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IgnoreFlying, paramsPtr + 36);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IgnoreIdle, paramsPtr + 40);
         var oldFlags = funcManaged.FunctionFlags;

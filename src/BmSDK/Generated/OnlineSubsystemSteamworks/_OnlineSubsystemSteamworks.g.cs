@@ -1914,6 +1914,8 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FriendlyName, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SaveFileName, paramsPtr + 40);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bIsValid);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bIsValid, paramsPtr + 56);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         bIsValid = BmSDK.Framework.MarshalUtil.ToManaged<byte>(paramsPtr + 56);
         SaveGameData = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<byte>>(paramsPtr + 60);
@@ -1946,6 +1948,10 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAvailableDownloadCounts, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetAvailableDownloadCounts");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NewDownloads);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NewDownloads, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TotalDownloads);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TotalDownloads, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NewDownloads = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
         TotalDownloads = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
@@ -2081,6 +2087,8 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FriendlyName, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SaveFileName, paramsPtr + 44);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bIsValid);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bIsValid, paramsPtr + 60);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         bIsValid = BmSDK.Framework.MarshalUtil.ToManaged<byte>(paramsPtr + 60);
         SaveGameData = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<byte>>(paramsPtr + 64);
@@ -2651,6 +2659,10 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Mus, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Sigmas, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutAggregateMu);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutAggregateMu, paramsPtr + 32);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutAggregateSigma);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutAggregateSigma, paramsPtr + 40);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         OutAggregateMu = BmSDK.Framework.MarshalUtil.ToManaged<double>(paramsPtr + 32);
         OutAggregateSigma = BmSDK.Framework.MarshalUtil.ToManaged<double>(paramsPtr + 40);
@@ -3319,6 +3331,10 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StreamingInstall_Poll, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.StreamingInstall_Poll");
         byte* paramsPtr = stackalloc byte[12];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Percent);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Percent, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Time);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Time, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -4978,6 +4994,8 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetKeyboardInputResults, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetKeyboardInputResults");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bWasCanceled);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasCanceled, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         bWasCanceled = BmSDK.Framework.MarshalUtil.ToManaged<byte>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 4);
@@ -5394,6 +5412,8 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Int64ToUniqueNetId, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.Int64ToUniqueNetId");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UIDString, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutUID);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutUID, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -5414,6 +5434,8 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UniqueNetIdToInt64, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UniqueNetIdToInt64");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Uid);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Uid, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -5456,6 +5478,8 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UniqueNetIdToPlayerName, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UniqueNetIdToPlayerName");
         byte* paramsPtr = stackalloc byte[24];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Uid);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Uid, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -6075,6 +6099,8 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetUniquePlayerId, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetUniquePlayerId");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PlayerID);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerID, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         PlayerID = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineSubsystem.FUniqueNetId>(paramsPtr + 4);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);

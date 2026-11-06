@@ -100,6 +100,8 @@ public partial class RLedgeLookDangerAreaInfo : BmSDK.Engine.Actor, BmSDK.IGameO
         byte* paramsPtr = stackalloc byte[96];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LineStart, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LineEnd, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out bestDist);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(bestDist, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         bestDist = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 24);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 28);

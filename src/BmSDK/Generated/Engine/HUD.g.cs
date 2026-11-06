@@ -141,6 +141,8 @@ public partial class HUD : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TextFont, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FontScale, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TextColor, paramsPtr + 40);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RenderInfo);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RenderInfo, paramsPtr + 44);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         RenderInfo = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Canvas.FFontRenderInfo>(paramsPtr + 44);
         return;
@@ -195,6 +197,10 @@ public partial class HUD : BmSDK.Engine.Actor, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(I, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PosY, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DX);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DX, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DY);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DY, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         DX = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
         DY = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 12);
@@ -210,6 +216,10 @@ public partial class HUD : BmSDK.Engine.Actor, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetScreenCoords, "Engine.HUD.GetScreenCoords");
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PosY, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ScreenX);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ScreenX, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ScreenY);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ScreenY, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ScreenX = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 4);
         ScreenY = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
@@ -399,6 +409,10 @@ public partial class HUD : BmSDK.Engine.Actor, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowDebugInfo, "Engine.HUD.ShowDebugInfo");
         byte* paramsPtr = stackalloc byte[8];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_YL);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_YL, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out out_YPos);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(out_YPos, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         out_YL = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
         out_YPos = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 4);

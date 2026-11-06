@@ -302,6 +302,10 @@ public partial class LocalPlayer : BmSDK.Engine.Player, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProjectMeshBounds, "Engine.LocalPlayer.ProjectMeshBounds");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MeshComponent, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Min);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Min, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Max);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Max, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -324,6 +328,10 @@ public partial class LocalPlayer : BmSDK.Engine.Player, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DeProject, "Engine.LocalPlayer.DeProject");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RelativeScreenPos, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out WorldOrigin);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(WorldOrigin, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out WorldDirection);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(WorldDirection, paramsPtr + 20);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

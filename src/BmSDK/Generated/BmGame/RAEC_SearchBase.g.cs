@@ -403,6 +403,10 @@ public partial class RAEC_SearchBase : BmSDK.BmGame.RAlertEventCoordinatorBase, 
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventFlag, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speakers, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SearchConvo);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SearchConvo, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Score);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Score, paramsPtr + 32);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         SearchConvo = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBarkConvo>(paramsPtr + 24);
         Score = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 32);
@@ -429,6 +433,10 @@ public partial class RAEC_SearchBase : BmSDK.BmGame.RAlertEventCoordinatorBase, 
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCheckinBark, "BmGame.RAEC_SearchBase.GetCheckinBark");
         byte* paramsPtr = stackalloc byte[36];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out CheckinConvo);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckinConvo, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Score);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Score, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         CheckinConvo = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBarkConvo>(paramsPtr + 0);
         Score = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
@@ -444,6 +452,10 @@ public partial class RAEC_SearchBase : BmSDK.BmGame.RAlertEventCoordinatorBase, 
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLoneThugBark, "BmGame.RAEC_SearchBase.GetLoneThugBark");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LoneSpeaker, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LoneThugConvo);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LoneThugConvo, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Score);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Score, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         LoneThugConvo = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBarkConvo>(paramsPtr + 8);
         Score = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 16);
@@ -471,6 +483,8 @@ public partial class RAEC_SearchBase : BmSDK.BmGame.RAlertEventCoordinatorBase, 
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBestAtmosphereBark, "BmGame.RAEC_SearchBase.GetBestAtmosphereBark");
         byte* paramsPtr = stackalloc byte[84];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BestScore);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BestScore, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         BestScore = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBarkConvo>(paramsPtr + 4);

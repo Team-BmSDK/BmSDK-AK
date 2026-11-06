@@ -428,6 +428,8 @@ public partial class RVehicleCombatManager : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDamageMod, "BmGame.RVehicleCombatManager.GetDamageMod");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamagedActor, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitNumber);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNumber, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IncrementCurrentAttackHits, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -449,6 +451,10 @@ public partial class RVehicleCombatManager : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHeavyTankExclusionZone, "BmGame.RVehicleCombatManager.GetHeavyTankExclusionZone");
         byte* paramsPtr = stackalloc byte[20];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RadiusOrigin);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RadiusOrigin, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Radius);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Radius, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1467,6 +1473,10 @@ public partial class RVehicleCombatManager : BmSDK.GameObject, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSectorAttackPoint, "BmGame.RVehicleCombatManager.GetSectorAttackPoint");
         byte* paramsPtr = stackalloc byte[56];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AttackLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AttackLocation, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MySector);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MySector, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1600,6 +1610,8 @@ public partial class RVehicleCombatManager : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckOrigin, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckDirection, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Attacker, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AttackRange);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AttackRange, paramsPtr + 32);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

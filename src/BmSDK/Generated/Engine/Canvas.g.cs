@@ -511,6 +511,10 @@ public partial class Canvas : BmSDK.GameObject, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Center, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Radius, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Min);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Min, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Max);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Max, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -533,6 +537,10 @@ public partial class Canvas : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProjectStaticMeshBounds, "Engine.Canvas.ProjectStaticMeshBounds");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MeshComponent, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Min);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Min, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Max);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Max, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -555,6 +563,8 @@ public partial class Canvas : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WorldToPixel, "Engine.Canvas.WorldToPixel");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InPosition, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutPosition);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutPosition, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -576,6 +586,10 @@ public partial class Canvas : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DeProject, "Engine.Canvas.DeProject");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ScreenPos, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out WorldOrigin);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(WorldOrigin, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out WorldDirection);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(WorldDirection, paramsPtr + 20);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -646,6 +660,10 @@ public partial class Canvas : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Flash_GetTextExtents, "Engine.Canvas.Flash_GetTextExtents");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TheText, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out outWidth);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(outWidth, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out outHeight);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(outHeight, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(atPointSize, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FixedWidth, paramsPtr + 28);
         var oldFlags = funcManaged.FunctionFlags;
@@ -699,6 +717,8 @@ public partial class Canvas : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CR, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(XScale, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(YScale, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RenderInfo);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RenderInfo, paramsPtr + 28);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -720,6 +740,10 @@ public partial class Canvas : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TextSize, "Engine.Canvas.TextSize");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(String, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out XL);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(XL, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out YL);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(YL, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(XScale, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(YScale, paramsPtr + 28);
         var oldFlags = funcManaged.FunctionFlags;
@@ -744,6 +768,10 @@ public partial class Canvas : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StrLen, "Engine.Canvas.StrLen");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(String, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out XL);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(XL, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out YL);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(YL, paramsPtr + 20);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

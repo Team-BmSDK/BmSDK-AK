@@ -110,6 +110,12 @@ public partial class RCombatMove_VillainGunLocker : BmSDK.BmGame.RCombatMove, Bm
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetOverrideTakedownInfo, "BmScript.RCombatMove_VillainGunLocker.GetOverrideTakedownInfo");
         byte* paramsPtr = stackalloc byte[32];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out takedownType);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(takedownType, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TakedownLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TakedownLocation, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TakedownRotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TakedownRotation, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         takedownType = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnPlayerCombat.ETakedownType>(paramsPtr + 0);
         TakedownLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 4);

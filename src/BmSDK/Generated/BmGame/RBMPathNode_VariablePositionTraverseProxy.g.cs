@@ -96,6 +96,8 @@ public partial class RBMPathNode_VariablePositionTraverseProxy : BmSDK.BmGame.RB
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(User, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DestPoint, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SlotLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SlotLocation, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         SlotLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 20);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);

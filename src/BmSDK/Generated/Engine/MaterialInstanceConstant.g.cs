@@ -165,6 +165,8 @@ public partial class MaterialInstanceConstant : BmSDK.Engine.MaterialInstance, B
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMobileVectorParameterValue, "Engine.MaterialInstanceConstant.GetMobileVectorParameterValue");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutValue);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutValue, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -186,6 +188,8 @@ public partial class MaterialInstanceConstant : BmSDK.Engine.MaterialInstance, B
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMobileTextureParameterValue, "Engine.MaterialInstanceConstant.GetMobileTextureParameterValue");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutValue);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutValue, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -207,6 +211,8 @@ public partial class MaterialInstanceConstant : BmSDK.Engine.MaterialInstance, B
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMobileScalarParameterValue, "Engine.MaterialInstanceConstant.GetMobileScalarParameterValue");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutValue);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutValue, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -250,6 +256,8 @@ public partial class MaterialInstanceConstant : BmSDK.Engine.MaterialInstance, B
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetVectorParameterValue, "Engine.MaterialInstanceConstant.SetVectorParameterValue");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Value);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

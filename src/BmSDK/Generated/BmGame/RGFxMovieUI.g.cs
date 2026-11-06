@@ -1984,6 +1984,20 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCurrentUTCTime, "BmGame.RGFxMovieUI.GetCurrentUTCTime");
         byte* paramsPtr = stackalloc byte[28];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Year);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Year, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Month);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Month, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Day);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Day, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Hour);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Hour, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Min);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Min, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Sec);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Sec, paramsPtr + 20);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MSec);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MSec, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

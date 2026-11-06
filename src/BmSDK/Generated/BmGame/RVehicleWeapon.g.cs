@@ -431,6 +431,12 @@ public partial class RVehicleWeapon : BmSDK.BmGame.RInventoryGadget, BmSDK.IGame
     {
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProcessDrivingInput, "BmGame.RVehicleWeapon.ProcessDrivingInput");
         byte* paramsPtr = stackalloc byte[32];
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Accel);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Accel, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Steering);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Steering, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AbsoluteMoveDirection);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AbsoluteMoveDirection, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Controller, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
