@@ -100,7 +100,7 @@ public partial class RAnimUtil_PosePlayer : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FPosePlayer
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 414)]
+    [StructLayout(LayoutKind.Explicit, Size = 416)]
     public partial record struct FPosePlayer
     {
         /// <summary>
@@ -1748,7 +1748,7 @@ public partial class RAnimUtil_PosePlayer : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FMoveToRequest
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 53)]
+    [StructLayout(LayoutKind.Explicit, Size = 56)]
     public partial record struct FMoveToRequest
     {
         /// <summary>
@@ -2777,7 +2777,7 @@ public partial class RAnimUtil_PosePlayer : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FAutomaticTransitionInstance
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 49)]
+    [StructLayout(LayoutKind.Explicit, Size = 52)]
     public partial record struct FAutomaticTransitionInstance
     {
         /// <summary>

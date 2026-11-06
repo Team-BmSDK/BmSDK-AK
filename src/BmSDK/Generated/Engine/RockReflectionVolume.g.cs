@@ -191,7 +191,7 @@ public partial class RockReflectionVolume : BmSDK.Engine.Actor, BmSDK.IGameObjec
     /// <summary>
     /// Struct: FFReflectionBoxInfo
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 276)]
+    [StructLayout(LayoutKind.Explicit, Size = 288)]
     public partial record struct FFReflectionBoxInfo
     {
         /// <summary>

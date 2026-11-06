@@ -81,7 +81,7 @@ public partial class RAnimUtil_ShimmyCorrection : BmSDK.GameObject, BmSDK.IGameO
     /// <summary>
     /// Struct: FShimmyDebug
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 344)]
+    [StructLayout(LayoutKind.Explicit, Size = 352)]
     public partial record struct FShimmyDebug
     {
         /// <summary>

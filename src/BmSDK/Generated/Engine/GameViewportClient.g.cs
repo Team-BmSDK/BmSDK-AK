@@ -1352,6 +1352,23 @@ public partial class GameViewportClient : BmSDK.Engine.ScriptViewportClient, BmS
     [StructLayout(LayoutKind.Explicit, Size = 16)]
     public partial record struct FExportShowFlags_Mirror
     {
+        /// <summary>
+        /// StructProperty: flags0
+        /// </summary>
+        public unsafe ulong flags0
+        {
+            get { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; return BmSDK.Framework.MarshalUtil.ToManaged<ulong>(Ptr + 0); }; }
+            set { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; BmSDK.Framework.MarshalUtil.ToUnmanaged(value, Ptr + 0); }; }
+        }
+
+        /// <summary>
+        /// StructProperty: flags1
+        /// </summary>
+        public unsafe ulong flags1
+        {
+            get { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; return BmSDK.Framework.MarshalUtil.ToManaged<ulong>(Ptr + 8); }; }
+            set { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; BmSDK.Framework.MarshalUtil.ToUnmanaged(value, Ptr + 8); }; }
+        }
     }
 
     /// <summary>

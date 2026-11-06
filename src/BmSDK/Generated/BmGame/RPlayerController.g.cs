@@ -26336,7 +26336,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
     /// <summary>
     /// Struct: FCheatCode
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 21)]
+    [StructLayout(LayoutKind.Explicit, Size = 24)]
     public partial record struct FCheatCode
     {
         /// <summary>

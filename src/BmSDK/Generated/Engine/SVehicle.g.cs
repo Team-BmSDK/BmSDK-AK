@@ -855,7 +855,7 @@ public partial class SVehicle : BmSDK.Engine.Vehicle, BmSDK.IGameObject
     /// <summary>
     /// Struct: FVehicleState
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 76)]
+    [StructLayout(LayoutKind.Explicit, Size = 80)]
     public partial record struct FVehicleState
     {
         /// <summary>

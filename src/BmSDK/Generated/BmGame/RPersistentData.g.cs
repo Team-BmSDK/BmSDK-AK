@@ -2617,7 +2617,7 @@ public partial class RPersistentData : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FSideStoryMapIconEntry
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 26)]
+    [StructLayout(LayoutKind.Explicit, Size = 28)]
     public partial record struct FSideStoryMapIconEntry
     {
         /// <summary>
@@ -3074,7 +3074,7 @@ public partial class RPersistentData : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FBatmobilePassengerSave
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 81)]
+    [StructLayout(LayoutKind.Explicit, Size = 84)]
     public partial record struct FBatmobilePassengerSave
     {
         /// <summary>

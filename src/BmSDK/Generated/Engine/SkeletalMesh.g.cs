@@ -525,7 +525,7 @@ public partial class SkeletalMesh : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FBoneMirrorExport
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 17)]
+    [StructLayout(LayoutKind.Explicit, Size = 20)]
     public partial record struct FBoneMirrorExport
     {
         /// <summary>
@@ -559,7 +559,7 @@ public partial class SkeletalMesh : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FBoneMirrorInfo
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 5)]
+    [StructLayout(LayoutKind.Explicit, Size = 8)]
     public partial record struct FBoneMirrorInfo
     {
         /// <summary>

@@ -444,7 +444,7 @@ public partial class RSkeletalMeshComponent_Export : BmSDK.GameObject, BmSDK.IGa
     /// <summary>
     /// Struct: FRotationBoneMass
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 24)]
+    [StructLayout(LayoutKind.Explicit, Size = 32)]
     public partial record struct FRotationBoneMass
     {
         /// <summary>
@@ -792,7 +792,7 @@ public partial class RSkeletalMeshComponent_Export : BmSDK.GameObject, BmSDK.IGa
     /// <summary>
     /// Struct: FStretchInstance
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 20)]
+    [StructLayout(LayoutKind.Explicit, Size = 32)]
     public partial record struct FStretchInstance
     {
         /// <summary>
@@ -817,7 +817,7 @@ public partial class RSkeletalMeshComponent_Export : BmSDK.GameObject, BmSDK.IGa
     /// <summary>
     /// Struct: FStretchDescription
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 25)]
+    [StructLayout(LayoutKind.Explicit, Size = 28)]
     public partial record struct FStretchDescription
     {
         /// <summary>
@@ -1063,7 +1063,7 @@ public partial class RSkeletalMeshComponent_Export : BmSDK.GameObject, BmSDK.IGa
     /// <summary>
     /// Struct: FFaceFXRegisterConstant
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 9)]
+    [StructLayout(LayoutKind.Explicit, Size = 12)]
     public partial record struct FFaceFXRegisterConstant
     {
         /// <summary>
@@ -1097,7 +1097,7 @@ public partial class RSkeletalMeshComponent_Export : BmSDK.GameObject, BmSDK.IGa
     /// <summary>
     /// Struct: FFaceFXRegisterTransition
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 21)]
+    [StructLayout(LayoutKind.Explicit, Size = 24)]
     public partial record struct FFaceFXRegisterTransition
     {
         /// <summary>

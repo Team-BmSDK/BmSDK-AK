@@ -339,7 +339,7 @@ public partial class KMeshProps : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FKSphylElem
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 76)]
+    [StructLayout(LayoutKind.Explicit, Size = 80)]
     public partial record struct FKSphylElem
     {
         /// <summary>
@@ -515,7 +515,7 @@ public partial class KMeshProps : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FKSphereElem
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 72)]
+    [StructLayout(LayoutKind.Explicit, Size = 80)]
     public partial record struct FKSphereElem
     {
         /// <summary>

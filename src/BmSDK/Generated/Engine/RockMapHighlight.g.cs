@@ -185,7 +185,7 @@ public partial class RockMapHighlight : BmSDK.Engine.Actor, BmSDK.IGameObject
     /// <summary>
     /// Struct: FFMapHighlightInfo
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 237)]
+    [StructLayout(LayoutKind.Explicit, Size = 240)]
     public partial record struct FFMapHighlightInfo
     {
         /// <summary>

@@ -893,7 +893,7 @@ public partial class RCapeStateController : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FCapeBoneFakeSkinningData
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 9)]
+    [StructLayout(LayoutKind.Explicit, Size = 12)]
     public partial record struct FCapeBoneFakeSkinningData
     {
         /// <summary>

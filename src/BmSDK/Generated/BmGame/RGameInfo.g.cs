@@ -4955,7 +4955,7 @@ public partial class RGameInfo : BmSDK.BmGame.RGameInfoBase, BmSDK.IGameObject
     /// <summary>
     /// Struct: FMapElementsItem
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 99)]
+    [StructLayout(LayoutKind.Explicit, Size = 100)]
     public partial record struct FMapElementsItem
     {
         /// <summary>
@@ -5350,7 +5350,7 @@ public partial class RGameInfo : BmSDK.BmGame.RGameInfoBase, BmSDK.IGameObject
     /// <summary>
     /// Struct: FLevelVolumeBsp
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 24)]
+    [StructLayout(LayoutKind.Explicit, Size = 32)]
     public partial record struct FLevelVolumeBsp
     {
         /// <summary>
@@ -5384,7 +5384,7 @@ public partial class RGameInfo : BmSDK.BmGame.RGameInfoBase, BmSDK.IGameObject
     /// <summary>
     /// Struct: FLevelVolumeDesc
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 97)]
+    [StructLayout(LayoutKind.Explicit, Size = 112)]
     public partial record struct FLevelVolumeDesc
     {
         /// <summary>
@@ -5659,7 +5659,7 @@ public partial class RGameInfo : BmSDK.BmGame.RGameInfoBase, BmSDK.IGameObject
     /// <summary>
     /// Struct: FChallengeDesc
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 113)]
+    [StructLayout(LayoutKind.Explicit, Size = 116)]
     public partial record struct FChallengeDesc
     {
         /// <summary>
@@ -5862,7 +5862,7 @@ public partial class RGameInfo : BmSDK.BmGame.RGameInfoBase, BmSDK.IGameObject
     /// <summary>
     /// Struct: FVehicleScenarioInfo
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 31)]
+    [StructLayout(LayoutKind.Explicit, Size = 32)]
     public partial record struct FVehicleScenarioInfo
     {
         /// <summary>
@@ -7401,7 +7401,7 @@ public partial class RGameInfo : BmSDK.BmGame.RGameInfoBase, BmSDK.IGameObject
     /// <summary>
     /// Struct: FGameActionToAAITakedownMapping
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 17)]
+    [StructLayout(LayoutKind.Explicit, Size = 20)]
     public partial record struct FGameActionToAAITakedownMapping
     {
         /// <summary>
@@ -7920,7 +7920,7 @@ public partial class RGameInfo : BmSDK.BmGame.RGameInfoBase, BmSDK.IGameObject
     /// <summary>
     /// Struct: FRiddlerPuzzle
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 41)]
+    [StructLayout(LayoutKind.Explicit, Size = 44)]
     public partial record struct FRiddlerPuzzle
     {
         /// <summary>
@@ -9376,7 +9376,7 @@ public partial class RGameInfo : BmSDK.BmGame.RGameInfoBase, BmSDK.IGameObject
     /// <summary>
     /// Struct: FHelicopterPointOfInterest
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 9)]
+    [StructLayout(LayoutKind.Explicit, Size = 12)]
     public partial record struct FHelicopterPointOfInterest
     {
         /// <summary>

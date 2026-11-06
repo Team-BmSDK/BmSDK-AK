@@ -6521,7 +6521,7 @@ public partial class Actor : BmSDK.StateObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FRigidBodyState
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 57)]
+    [StructLayout(LayoutKind.Explicit, Size = 64)]
     public partial record struct FRigidBodyState
     {
         /// <summary>

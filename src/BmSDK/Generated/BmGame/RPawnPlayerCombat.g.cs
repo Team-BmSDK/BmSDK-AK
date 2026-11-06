@@ -4182,7 +4182,7 @@ public partial class RPawnPlayerCombat : BmSDK.BmGame.RPawnPlayerAnim, BmSDK.IGa
     /// <summary>
     /// Struct: FWeaponSnatchInfo
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 33)]
+    [StructLayout(LayoutKind.Explicit, Size = 36)]
     public partial record struct FWeaponSnatchInfo
     {
         /// <summary>

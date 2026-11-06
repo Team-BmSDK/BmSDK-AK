@@ -168,7 +168,7 @@ public partial class RAnimNode_BlendBonesFromPoses : BmSDK.Engine.AnimNodeBlendB
     /// <summary>
     /// Struct: FBlendBoneData
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 72)]
+    [StructLayout(LayoutKind.Explicit, Size = 80)]
     public partial record struct FBlendBoneData
     {
         /// <summary>

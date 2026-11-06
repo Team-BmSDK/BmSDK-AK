@@ -319,7 +319,7 @@ public partial class RFlapsAssetInstance : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FRFlapsInstanceRenderData
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 100)]
+    [StructLayout(LayoutKind.Explicit, Size = 112)]
     public partial record struct FRFlapsInstanceRenderData
     {
         /// <summary>
@@ -638,7 +638,7 @@ public partial class RFlapsAssetInstance : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FRWriteBackMapEntry
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 65)]
+    [StructLayout(LayoutKind.Explicit, Size = 68)]
     public partial record struct FRWriteBackMapEntry
     {
         /// <summary>

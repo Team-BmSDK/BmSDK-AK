@@ -134,7 +134,7 @@ public partial class RAnimUtil : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FRelativeTarget
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 41)]
+    [StructLayout(LayoutKind.Explicit, Size = 44)]
     public partial record struct FRelativeTarget
     {
         /// <summary>
@@ -671,7 +671,7 @@ public partial class RAnimUtil : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FRotationTranslation
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 28)]
+    [StructLayout(LayoutKind.Explicit, Size = 32)]
     public partial record struct FRotationTranslation
     {
         /// <summary>

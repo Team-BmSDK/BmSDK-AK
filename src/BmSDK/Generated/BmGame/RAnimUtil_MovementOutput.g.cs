@@ -76,7 +76,7 @@ public partial class RAnimUtil_MovementOutput : BmSDK.GameObject, BmSDK.IGameObj
     /// <summary>
     /// Struct: FMovementOutput
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 120)]
+    [StructLayout(LayoutKind.Explicit, Size = 128)]
     public partial record struct FMovementOutput
     {
         /// <summary>

@@ -391,7 +391,7 @@ public partial class Scout : BmSDK.Engine.Pawn, BmSDK.IGameObject
     /// <summary>
     /// Struct: FPathSizeInfo
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 21)]
+    [StructLayout(LayoutKind.Explicit, Size = 24)]
     public partial record struct FPathSizeInfo
     {
         /// <summary>

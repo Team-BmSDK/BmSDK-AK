@@ -1040,7 +1040,7 @@ public partial class AnimSequence : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FAnimReferenceCopy
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 21)]
+    [StructLayout(LayoutKind.Explicit, Size = 24)]
     public partial record struct FAnimReferenceCopy
     {
         /// <summary>

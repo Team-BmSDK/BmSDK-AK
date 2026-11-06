@@ -5967,7 +5967,7 @@ public partial class PlayerController : BmSDK.Engine.Controller, BmSDK.IGameObje
     /// <summary>
     /// Struct: FInputEntry
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 13)]
+    [StructLayout(LayoutKind.Explicit, Size = 16)]
     public partial record struct FInputEntry
     {
         /// <summary>
@@ -6064,7 +6064,7 @@ public partial class PlayerController : BmSDK.Engine.Controller, BmSDK.IGameObje
     /// <summary>
     /// Struct: FClientAdjustment
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 53)]
+    [StructLayout(LayoutKind.Explicit, Size = 56)]
     public partial record struct FClientAdjustment
     {
         /// <summary>

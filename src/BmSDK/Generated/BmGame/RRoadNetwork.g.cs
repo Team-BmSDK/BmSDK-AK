@@ -1476,7 +1476,7 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
     /// <summary>
     /// Struct: FRacingLineSeg
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 14)]
+    [StructLayout(LayoutKind.Explicit, Size = 16)]
     public partial record struct FRacingLineSeg
     {
         /// <summary>
@@ -2079,7 +2079,7 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
     /// <summary>
     /// Struct: FRoadRouteRestriction
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 165)]
+    [StructLayout(LayoutKind.Explicit, Size = 168)]
     public partial record struct FRoadRouteRestriction
     {
         /// <summary>

@@ -351,7 +351,7 @@ public partial class MWBIDOverlayManager : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FNetworkStatus_Data
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 97)]
+    [StructLayout(LayoutKind.Explicit, Size = 100)]
     public partial record struct FNetworkStatus_Data
     {
         /// <summary>

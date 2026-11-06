@@ -145,7 +145,7 @@ public partial class SeqCond_SwitchClass : BmSDK.Engine.SeqCond_SwitchBase, BmSD
     /// <summary>
     /// Struct: FSwitchClassInfo
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 9)]
+    [StructLayout(LayoutKind.Explicit, Size = 12)]
     public partial record struct FSwitchClassInfo
     {
         /// <summary>

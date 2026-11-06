@@ -941,7 +941,7 @@ public partial class CoverLink : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
     /// <summary>
     /// Struct: FExposedLink
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 29)]
+    [StructLayout(LayoutKind.Explicit, Size = 32)]
     public partial record struct FExposedLink
     {
         /// <summary>
@@ -1246,6 +1246,24 @@ public partial class CoverLink : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
     [StructLayout(LayoutKind.Explicit, Size = 28)]
     public partial record struct FCoverReference
     {
+        /// <summary>
+        /// ObjectProperty: Actor
+        /// </summary>
+        public unsafe BmSDK.Engine.Actor Actor
+        {
+            get { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(Ptr + 0); }; }
+            set { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; BmSDK.Framework.MarshalUtil.ToUnmanaged(value, Ptr + 0); }; }
+        }
+
+        /// <summary>
+        /// StructProperty: Guid
+        /// </summary>
+        public unsafe BmSDK.GameObject.FGuid Guid
+        {
+            get { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.GameObject.FGuid>(Ptr + 8); }; }
+            set { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; BmSDK.Framework.MarshalUtil.ToUnmanaged(value, Ptr + 8); }; }
+        }
+
         /// <summary>
         /// IntProperty: SlotIdx
         /// </summary>

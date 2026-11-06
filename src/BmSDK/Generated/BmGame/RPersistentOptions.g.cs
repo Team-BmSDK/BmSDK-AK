@@ -2615,7 +2615,7 @@ public partial class RPersistentOptions : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FStoredKeyMap
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 38)]
+    [StructLayout(LayoutKind.Explicit, Size = 40)]
     public partial record struct FStoredKeyMap
     {
         /// <summary>

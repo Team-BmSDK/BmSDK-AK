@@ -6344,7 +6344,7 @@ public partial class RPawnPlayer : BmSDK.BmGame.RPawnPlayerSpeech, BmSDK.IGameOb
     /// <summary>
     /// Struct: FRailingInfo
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 25)]
+    [StructLayout(LayoutKind.Explicit, Size = 28)]
     public partial record struct FRailingInfo
     {
         /// <summary>

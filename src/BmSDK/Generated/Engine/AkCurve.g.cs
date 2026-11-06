@@ -133,7 +133,7 @@ public partial class AkCurve : BmSDK.Engine.AkHash, BmSDK.IGameObject
     /// <summary>
     /// Struct: FAkCurvePoint
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 9)]
+    [StructLayout(LayoutKind.Explicit, Size = 12)]
     public partial record struct FAkCurvePoint
     {
         /// <summary>

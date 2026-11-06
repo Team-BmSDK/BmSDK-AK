@@ -4638,7 +4638,7 @@ public partial class GameObject : BmSDK.IGameObject
     /// <summary>
     /// Struct: FInterpCurveLinearColor
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 17)]
+    [StructLayout(LayoutKind.Explicit, Size = 20)]
     public partial record struct FInterpCurveLinearColor
     {
         /// <summary>
@@ -4663,7 +4663,7 @@ public partial class GameObject : BmSDK.IGameObject
     /// <summary>
     /// Struct: FInterpCurvePointLinearColor
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 53)]
+    [StructLayout(LayoutKind.Explicit, Size = 56)]
     public partial record struct FInterpCurvePointLinearColor
     {
         /// <summary>
@@ -4715,7 +4715,7 @@ public partial class GameObject : BmSDK.IGameObject
     /// <summary>
     /// Struct: FInterpCurveQuat
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 17)]
+    [StructLayout(LayoutKind.Explicit, Size = 20)]
     public partial record struct FInterpCurveQuat
     {
         /// <summary>
@@ -4740,7 +4740,7 @@ public partial class GameObject : BmSDK.IGameObject
     /// <summary>
     /// Struct: FInterpCurvePointQuat
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 65)]
+    [StructLayout(LayoutKind.Explicit, Size = 80)]
     public partial record struct FInterpCurvePointQuat
     {
         /// <summary>
@@ -4792,7 +4792,7 @@ public partial class GameObject : BmSDK.IGameObject
     /// <summary>
     /// Struct: FInterpCurveTwoVectors
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 17)]
+    [StructLayout(LayoutKind.Explicit, Size = 20)]
     public partial record struct FInterpCurveTwoVectors
     {
         /// <summary>
@@ -4817,7 +4817,7 @@ public partial class GameObject : BmSDK.IGameObject
     /// <summary>
     /// Struct: FInterpCurvePointTwoVectors
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 77)]
+    [StructLayout(LayoutKind.Explicit, Size = 80)]
     public partial record struct FInterpCurvePointTwoVectors
     {
         /// <summary>
@@ -4869,7 +4869,7 @@ public partial class GameObject : BmSDK.IGameObject
     /// <summary>
     /// Struct: FInterpCurveVector
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 17)]
+    [StructLayout(LayoutKind.Explicit, Size = 20)]
     public partial record struct FInterpCurveVector
     {
         /// <summary>
@@ -4894,7 +4894,7 @@ public partial class GameObject : BmSDK.IGameObject
     /// <summary>
     /// Struct: FInterpCurvePointVector
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 41)]
+    [StructLayout(LayoutKind.Explicit, Size = 44)]
     public partial record struct FInterpCurvePointVector
     {
         /// <summary>
@@ -4946,7 +4946,7 @@ public partial class GameObject : BmSDK.IGameObject
     /// <summary>
     /// Struct: FInterpCurveVector2D
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 17)]
+    [StructLayout(LayoutKind.Explicit, Size = 20)]
     public partial record struct FInterpCurveVector2D
     {
         /// <summary>
@@ -4971,7 +4971,7 @@ public partial class GameObject : BmSDK.IGameObject
     /// <summary>
     /// Struct: FInterpCurvePointVector2D
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 29)]
+    [StructLayout(LayoutKind.Explicit, Size = 32)]
     public partial record struct FInterpCurvePointVector2D
     {
         /// <summary>
@@ -5023,7 +5023,7 @@ public partial class GameObject : BmSDK.IGameObject
     /// <summary>
     /// Struct: FInterpCurveFloat
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 17)]
+    [StructLayout(LayoutKind.Explicit, Size = 20)]
     public partial record struct FInterpCurveFloat
     {
         /// <summary>
@@ -5048,7 +5048,7 @@ public partial class GameObject : BmSDK.IGameObject
     /// <summary>
     /// Struct: FInterpCurvePointFloat
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 17)]
+    [StructLayout(LayoutKind.Explicit, Size = 20)]
     public partial record struct FInterpCurvePointFloat
     {
         /// <summary>
@@ -5252,7 +5252,7 @@ public partial class GameObject : BmSDK.IGameObject
     /// <summary>
     /// Struct: FBox
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 25)]
+    [StructLayout(LayoutKind.Explicit, Size = 28)]
     public partial record struct FBox
     {
         /// <summary>
@@ -5420,7 +5420,7 @@ public partial class GameObject : BmSDK.IGameObject
     /// <summary>
     /// Struct: FTAlphaBlend
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 21)]
+    [StructLayout(LayoutKind.Explicit, Size = 24)]
     public partial record struct FTAlphaBlend
     {
         /// <summary>
@@ -5847,6 +5847,33 @@ public partial class GameObject : BmSDK.IGameObject
     [StructLayout(LayoutKind.Explicit, Size = 16)]
     public partial record struct FPlane
     {
+        /// <summary>
+        /// FloatProperty: X
+        /// </summary>
+        public unsafe float X
+        {
+            get { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; return BmSDK.Framework.MarshalUtil.ToManaged<float>(Ptr + 0); }; }
+            set { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; BmSDK.Framework.MarshalUtil.ToUnmanaged(value, Ptr + 0); }; }
+        }
+
+        /// <summary>
+        /// FloatProperty: Y
+        /// </summary>
+        public unsafe float Y
+        {
+            get { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; return BmSDK.Framework.MarshalUtil.ToManaged<float>(Ptr + 4); }; }
+            set { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; BmSDK.Framework.MarshalUtil.ToUnmanaged(value, Ptr + 4); }; }
+        }
+
+        /// <summary>
+        /// FloatProperty: Z
+        /// </summary>
+        public unsafe float Z
+        {
+            get { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; return BmSDK.Framework.MarshalUtil.ToManaged<float>(Ptr + 8); }; }
+            set { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; BmSDK.Framework.MarshalUtil.ToUnmanaged(value, Ptr + 8); }; }
+        }
+
         /// <summary>
         /// FloatProperty: W
         /// </summary>

@@ -3392,7 +3392,7 @@ public partial class GameInfo : BmSDK.Engine.Info, BmSDK.IGameObject
     /// <summary>
     /// Struct: FRMap3DRenderingData
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 92)]
+    [StructLayout(LayoutKind.Explicit, Size = 96)]
     public partial record struct FRMap3DRenderingData
     {
         /// <summary>

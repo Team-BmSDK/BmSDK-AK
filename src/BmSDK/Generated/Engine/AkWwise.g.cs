@@ -1624,7 +1624,7 @@ public partial class AkWwise : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FAkPhysEvent
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 81)]
+    [StructLayout(LayoutKind.Explicit, Size = 84)]
     public partial record struct FAkPhysEvent
     {
         /// <summary>

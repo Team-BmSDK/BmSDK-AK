@@ -403,7 +403,7 @@ public partial class RSkelControlWhip : BmSDK.Engine.SkelControlBase, BmSDK.IGam
     /// <summary>
     /// Struct: FWhipTargetingData
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 156)]
+    [StructLayout(LayoutKind.Explicit, Size = 160)]
     public partial record struct FWhipTargetingData
     {
         /// <summary>

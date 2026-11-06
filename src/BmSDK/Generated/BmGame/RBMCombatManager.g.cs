@@ -4175,7 +4175,7 @@ public partial class RBMCombatManager : BmSDK.Engine.Actor, BmSDK.IGameObject
     /// <summary>
     /// Struct: FDynamicallyLoadedAnimsetDef
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 25)]
+    [StructLayout(LayoutKind.Explicit, Size = 28)]
     public partial record struct FDynamicallyLoadedAnimsetDef
     {
         /// <summary>

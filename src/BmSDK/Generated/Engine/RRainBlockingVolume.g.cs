@@ -140,7 +140,7 @@ public partial class RRainBlockingVolume : BmSDK.Engine.Actor, BmSDK.IGameObject
     /// <summary>
     /// Struct: FFRainBlockInfo
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 236)]
+    [StructLayout(LayoutKind.Explicit, Size = 240)]
     public partial record struct FFRainBlockInfo
     {
         /// <summary>

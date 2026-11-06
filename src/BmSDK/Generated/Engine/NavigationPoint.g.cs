@@ -420,7 +420,7 @@ public partial class NavigationPoint : BmSDK.Engine.Actor, BmSDK.IGameObject
     /// <summary>
     /// Struct: FNavigationOctreeObject
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 57)]
+    [StructLayout(LayoutKind.Explicit, Size = 60)]
     public partial record struct FNavigationOctreeObject
     {
         /// <summary>

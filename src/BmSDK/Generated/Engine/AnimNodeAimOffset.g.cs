@@ -497,7 +497,7 @@ public partial class AnimNodeAimOffset : BmSDK.Engine.AnimNodeBlendBase, BmSDK.I
     /// <summary>
     /// Struct: FAimTransform
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 28)]
+    [StructLayout(LayoutKind.Explicit, Size = 32)]
     public partial record struct FAimTransform
     {
         /// <summary>

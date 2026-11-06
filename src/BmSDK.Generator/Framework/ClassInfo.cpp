@@ -146,15 +146,27 @@ StructInfo::StructInfo(UStruct* _struct)
 {
     ManagedName = GetFieldNameManaged(_struct);
     PropertiesSize = _struct->PropertiesSize;
+    MinAlignment = _struct->MinAlignment;
 }
 
 StructInfo::StructInfo(UScriptStruct* _struct) : StructInfo((UStruct*)_struct)
 {
-    for (auto field = _struct->Children; field; field = field->Next)
+    // A struct that extends another struct holds its parent's members at the same offsets, so
+    // print the whole chain, outermost parent first. C# record structs can't inherit.
+    vector<UStruct*> chain;
+    for (auto s = (UStruct*)_struct; s; s = s->SuperStruct)
     {
-        if (field->IsA(UProperty::StaticClass()))
+        chain.insert(chain.begin(), s);
+    }
+
+    for (auto s : chain)
+    {
+        for (auto field = s->Children; field; field = field->Next)
         {
-            Members.push_back(new PropertyInfo((UProperty*)field, true));
+            if (field->IsA(UProperty::StaticClass()))
+            {
+                Members.push_back(new PropertyInfo((UProperty*)field, true));
+            }
         }
     }
 }

@@ -240,7 +240,7 @@ public partial class LocHelper : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FCountryCodeMap
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 53)]
+    [StructLayout(LayoutKind.Explicit, Size = 56)]
     public partial record struct FCountryCodeMap
     {
         /// <summary>

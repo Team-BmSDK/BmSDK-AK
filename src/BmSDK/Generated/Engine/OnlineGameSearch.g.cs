@@ -157,7 +157,7 @@ public partial class OnlineGameSearch : BmSDK.Engine.Settings, BmSDK.IGameObject
     /// <summary>
     /// Struct: FOnlineGameSearchSortClause
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 14)]
+    [StructLayout(LayoutKind.Explicit, Size = 16)]
     public partial record struct FOnlineGameSearchSortClause
     {
         /// <summary>
@@ -210,7 +210,7 @@ public partial class OnlineGameSearch : BmSDK.Engine.Settings, BmSDK.IGameObject
     /// <summary>
     /// Struct: FOnlineGameSearchParameter
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 14)]
+    [StructLayout(LayoutKind.Explicit, Size = 16)]
     public partial record struct FOnlineGameSearchParameter
     {
         /// <summary>

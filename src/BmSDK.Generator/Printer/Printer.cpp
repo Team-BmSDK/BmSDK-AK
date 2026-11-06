@@ -280,8 +280,9 @@ void Printer::PrintStruct(const StructInfo& _struct, ostream& out)
     Printer::Indent(out) << "/// Struct: " << _struct.ManagedName << endl;
     Printer::Indent(out) << "/// </summary>" << endl;
 
-    // Print struct declaration
-    Printer::Indent(out) << "[StructLayout(LayoutKind.Explicit, Size = " << _struct.PropertiesSize
+    // Print struct declaration. The size is the array stride (PropertiesSize rounded up to the
+    // struct's alignment), so TArray<T> and inline arrays of this struct index correctly.
+    Printer::Indent(out) << "[StructLayout(LayoutKind.Explicit, Size = " << _struct.GetAlignedSize()
         << ")]" << endl;
     Printer::Indent(out) << "public partial record struct " << _struct.ManagedName << endl;
 

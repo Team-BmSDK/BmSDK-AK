@@ -2695,7 +2695,7 @@ public partial class RBMRoomAIState : BmSDK.Engine.ActorComponent, BmSDK.IGameOb
     /// <summary>
     /// Struct: FLocationToAvoidMining
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 17)]
+    [StructLayout(LayoutKind.Explicit, Size = 20)]
     public partial record struct FLocationToAvoidMining
     {
         /// <summary>

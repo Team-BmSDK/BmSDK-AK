@@ -140,7 +140,7 @@ public partial class ROceanHeightBlockingVolume : BmSDK.Engine.Actor, BmSDK.IGam
     /// <summary>
     /// Struct: FFOceanBlockInfo
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 236)]
+    [StructLayout(LayoutKind.Explicit, Size = 240)]
     public partial record struct FFOceanBlockInfo
     {
         /// <summary>

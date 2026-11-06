@@ -189,7 +189,7 @@ public partial class RCameraOverlayPlayer : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FCameraOverlayLayer
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 168)]
+    [StructLayout(LayoutKind.Explicit, Size = 176)]
     public partial record struct FCameraOverlayLayer
     {
         /// <summary>
