@@ -78,69 +78,75 @@ public partial class RTwoFaceTannoy : BmSDK.BmGame.RPredator_Tannoy, BmSDK.IGame
         where TComponent : class, Framework.IScriptComponent<RTwoFaceTannoy>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsAbleToPlayChatter;
     /// <summary>
     /// Function: IsAbleToPlayChatter
     /// </summary>
     public unsafe override bool IsAbleToPlayChatter()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTwoFaceTannoy.IsAbleToPlayChatter", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAbleToPlayChatter, "BmGame.RTwoFaceTannoy.IsAbleToPlayChatter");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsAbleToPlayLines;
     /// <summary>
     /// Function: IsAbleToPlayLines
     /// </summary>
     public unsafe override bool IsAbleToPlayLines()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTwoFaceTannoy.IsAbleToPlayLines", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAbleToPlayLines, "BmGame.RTwoFaceTannoy.IsAbleToPlayLines");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsTannoyActive;
     /// <summary>
     /// Function: IsTannoyActive
     /// </summary>
     public unsafe override bool IsTannoyActive()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTwoFaceTannoy.IsTannoyActive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsTannoyActive, "BmGame.RTwoFaceTannoy.IsTannoyActive");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_HandleBarkPlayed;
     /// <summary>
     /// Function: HandleBarkPlayed
     /// </summary>
     public unsafe override void HandleBarkPlayed(BmSDK.BmGame.RBarkFlagBase FlagsOfLinePlayed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTwoFaceTannoy.HandleBarkPlayed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandleBarkPlayed, "BmGame.RTwoFaceTannoy.HandleBarkPlayed");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FlagsOfLinePlayed, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetLine;
     /// <summary>
     /// Function: GetLine
     /// </summary>
     public unsafe override BmSDK.BmGame.RBarkConvo GetLine(out float PlayedScore)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTwoFaceTannoy.GetLine", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLine, "BmGame.RTwoFaceTannoy.GetLine");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         PlayedScore = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBarkConvo>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTwoFaceTannoy.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RTwoFaceTannoy.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

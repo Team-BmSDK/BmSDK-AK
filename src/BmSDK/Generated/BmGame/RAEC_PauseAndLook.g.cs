@@ -78,12 +78,13 @@ public partial class RAEC_PauseAndLook : BmSDK.BmGame.RAlertEventCoordinatorSolo
         where TComponent : class, Framework.IScriptComponent<RAEC_PauseAndLook>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe virtual void Init(bool bSetLookPoint = default, System.Numerics.Vector3 LookPoint = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_PauseAndLook.Init", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmGame.RAEC_PauseAndLook.Init");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSetLookPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LookPoint, paramsPtr + 4);

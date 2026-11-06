@@ -78,36 +78,39 @@ public partial class RAEC_IncendiaryStartle : BmSDK.BmGame.RAlertEventCoordinato
         where TComponent : class, Framework.IScriptComponent<RAEC_IncendiaryStartle>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnRemoveSoloChild;
     /// <summary>
     /// Function: OnRemoveSoloChild
     /// </summary>
     public unsafe override void OnRemoveSoloChild(BmSDK.BmGame.RAlertEventCoordinatorSolo RemAEC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_IncendiaryStartle.OnRemoveSoloChild", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnRemoveSoloChild, "BmGame.RAEC_IncendiaryStartle.OnRemoveSoloChild");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RemAEC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishTopLevelAEC;
     /// <summary>
     /// Function: FinishTopLevelAEC
     /// </summary>
     public unsafe override void FinishTopLevelAEC(BmSDK.BmGame.RBMAIController StolenCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_IncendiaryStartle.FinishTopLevelAEC", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishTopLevelAEC, "BmGame.RAEC_IncendiaryStartle.FinishTopLevelAEC");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StolenCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnAssign;
     /// <summary>
     /// Function: OnAssign
     /// </summary>
     public unsafe override void OnAssign(BmSDK.BmGame.RBMAIController NewCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_IncendiaryStartle.OnAssign", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnAssign, "BmGame.RAEC_IncendiaryStartle.OnAssign");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

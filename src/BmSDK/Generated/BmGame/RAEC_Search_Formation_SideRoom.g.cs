@@ -78,12 +78,13 @@ public partial class RAEC_Search_Formation_SideRoom : BmSDK.BmGame.RAEC_Search_F
         where TComponent : class, Framework.IScriptComponent<RAEC_Search_Formation_SideRoom>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_NotifyChildStolen;
     /// <summary>
     /// Function: NotifyChildStolen
     /// </summary>
     public unsafe override void NotifyChildStolen(BmSDK.BmGame.RAlertEventCoordinatorSolo StoleFromAEC, BmSDK.BmGame.RAlertEventCoordinatorSolo StealingAEC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Formation_SideRoom.NotifyChildStolen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyChildStolen, "BmGame.RAEC_Search_Formation_SideRoom.NotifyChildStolen");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StoleFromAEC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StealingAEC, paramsPtr + 8);
@@ -91,47 +92,51 @@ public partial class RAEC_Search_Formation_SideRoom : BmSDK.BmGame.RAEC_Search_F
         return;
     }
 
+    private static BmSDK.Function __fn_LeaderSignalledStart;
     /// <summary>
     /// Function: LeaderSignalledStart
     /// </summary>
     public unsafe virtual void LeaderSignalledStart()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Formation_SideRoom.LeaderSignalledStart", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LeaderSignalledStart, "BmGame.RAEC_Search_Formation_SideRoom.LeaderSignalledStart");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddFollower;
     /// <summary>
     /// Function: AddFollower
     /// </summary>
     public unsafe override void AddFollower(BmSDK.BmGame.RBMAIController FollowCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Formation_SideRoom.AddFollower", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddFollower, "BmGame.RAEC_Search_Formation_SideRoom.AddFollower");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FollowCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetLeader;
     /// <summary>
     /// Function: SetLeader
     /// </summary>
     public unsafe override void SetLeader(BmSDK.BmGame.RBMAIController NewLeader)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Formation_SideRoom.SetLeader", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetLeader, "BmGame.RAEC_Search_Formation_SideRoom.SetLeader");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewLeader, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe virtual void Init(System.Numerics.Vector3 inLeaderLoc, System.Numerics.Vector3 inSearchLoc, BmSDK.BmGame.RSideRoomVolume sideRoomVol)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Formation_SideRoom.Init", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmGame.RAEC_Search_Formation_SideRoom.Init");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(inLeaderLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(inSearchLoc, paramsPtr + 12);

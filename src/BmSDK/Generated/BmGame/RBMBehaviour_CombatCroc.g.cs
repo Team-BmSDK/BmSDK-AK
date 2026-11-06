@@ -78,23 +78,25 @@ public partial class RBMBehaviour_CombatCroc : BmSDK.BmGame.RBMBehaviour_CombatJ
         where TComponent : class, Framework.IScriptComponent<RBMBehaviour_CombatCroc>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GotoMoveToCombatState;
     /// <summary>
     /// Function: GotoMoveToCombatState
     /// </summary>
     public unsafe override void GotoMoveToCombatState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CombatCroc.GotoMoveToCombatState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GotoMoveToCombatState, "BmGame.RBMBehaviour_CombatCroc.GotoMoveToCombatState");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayTurnStep;
     /// <summary>
     /// Function: PlayTurnStep
     /// </summary>
     public unsafe override void PlayTurnStep(System.Numerics.Vector3 TargetHeading, bool bForce = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CombatCroc.PlayTurnStep", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayTurnStep, "BmGame.RBMBehaviour_CombatCroc.PlayTurnStep");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetHeading, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForce, paramsPtr + 12);
@@ -102,35 +104,38 @@ public partial class RBMBehaviour_CombatCroc : BmSDK.BmGame.RBMBehaviour_CombatJ
         return;
     }
 
+    private static BmSDK.Function __fn_GetAttackPriority;
     /// <summary>
     /// Function: GetAttackPriority
     /// </summary>
     public unsafe override int GetAttackPriority(bool bForceAttack)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CombatCroc.GetAttackPriority", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAttackPriority, "BmGame.RBMBehaviour_CombatCroc.GetAttackPriority");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForceAttack, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CombatCroc.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMBehaviour_CombatCroc.OnActivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetForceToGiveToPawn;
     /// <summary>
     /// Function: GetForceToGiveToPawn
     /// </summary>
     public unsafe override System.Numerics.Vector3 GetForceToGiveToPawn(BmSDK.BmGame.RPawnCombat ForceReceiver, float MaxForce, float MinRange = default, float MaxRange = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CombatCroc.GetForceToGiveToPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetForceToGiveToPawn, "BmGame.RBMBehaviour_CombatCroc.GetForceToGiveToPawn");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ForceReceiver, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxForce, paramsPtr + 8);
@@ -147,12 +152,13 @@ public partial class RBMBehaviour_CombatCroc : BmSDK.BmGame.RBMBehaviour_CombatJ
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_GetMovementForce;
     /// <summary>
     /// Function: GetMovementForce
     /// </summary>
     public unsafe override System.Numerics.Vector3 GetMovementForce(System.Numerics.Vector3 SourceLocation = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CombatCroc.GetMovementForce", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMovementForce, "BmGame.RBMBehaviour_CombatCroc.GetMovementForce");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SourceLocation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -166,12 +172,13 @@ public partial class RBMBehaviour_CombatCroc : BmSDK.BmGame.RBMBehaviour_CombatJ
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_GatherForcesFromVillains;
     /// <summary>
     /// Function: GatherForcesFromVillains
     /// </summary>
     public unsafe override System.Numerics.Vector3 GatherForcesFromVillains(float MaxForce, float MinRange)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CombatCroc.GatherForcesFromVillains", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GatherForcesFromVillains, "BmGame.RBMBehaviour_CombatCroc.GatherForcesFromVillains");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxForce, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinRange, paramsPtr + 4);

@@ -78,12 +78,13 @@ public partial class GameStatsAggregator : BmSDK.Engine.GameplayEventsHandler, B
         where TComponent : class, Framework.IScriptComponent<GameStatsAggregator>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetAggregateMappingIDs;
     /// <summary>
     /// Function: GetAggregateMappingIDs
     /// </summary>
     public unsafe virtual bool GetAggregateMappingIDs(int EventID, out int AggregateID, out int TargetAggregateID)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.GameStatsAggregator.GetAggregateMappingIDs", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAggregateMappingIDs, "Engine.GameStatsAggregator.GetAggregateMappingIDs");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventID, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -99,12 +100,13 @@ public partial class GameStatsAggregator : BmSDK.Engine.GameplayEventsHandler, B
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_Reset;
     /// <summary>
     /// Function: Reset
     /// </summary>
     public unsafe virtual void Reset()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.GameStatsAggregator.Reset", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Reset, "Engine.GameStatsAggregator.Reset");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -117,12 +119,13 @@ public partial class GameStatsAggregator : BmSDK.Engine.GameplayEventsHandler, B
         return;
     }
 
+    private static BmSDK.Function __fn_PostProcessStream;
     /// <summary>
     /// Function: PostProcessStream
     /// </summary>
     public unsafe override void PostProcessStream()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.GameStatsAggregator.PostProcessStream", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostProcessStream, "Engine.GameStatsAggregator.PostProcessStream");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -135,12 +138,13 @@ public partial class GameStatsAggregator : BmSDK.Engine.GameplayEventsHandler, B
         return;
     }
 
+    private static BmSDK.Function __fn_PreProcessStream;
     /// <summary>
     /// Function: PreProcessStream
     /// </summary>
     public unsafe override void PreProcessStream()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.GameStatsAggregator.PreProcessStream", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreProcessStream, "Engine.GameStatsAggregator.PreProcessStream");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

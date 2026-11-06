@@ -78,12 +78,13 @@ public partial class RBMBehaviour_CombatRiddlerMechSuitBase : BmSDK.BmGame.RBMBe
         where TComponent : class, Framework.IScriptComponent<RBMBehaviour_CombatRiddlerMechSuitBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetForceToGiveToPawn;
     /// <summary>
     /// Function: GetForceToGiveToPawn
     /// </summary>
     public unsafe override System.Numerics.Vector3 GetForceToGiveToPawn(BmSDK.BmGame.RPawnCombat ForceReceiver, float MaxForce, float MinRange = default, float MaxRange = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CombatRiddlerMechSuitBase.GetForceToGiveToPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetForceToGiveToPawn, "BmGame.RBMBehaviour_CombatRiddlerMechSuitBase.GetForceToGiveToPawn");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ForceReceiver, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxForce, paramsPtr + 8);
@@ -100,12 +101,13 @@ public partial class RBMBehaviour_CombatRiddlerMechSuitBase : BmSDK.BmGame.RBMBe
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_GetMovementForce;
     /// <summary>
     /// Function: GetMovementForce
     /// </summary>
     public unsafe override System.Numerics.Vector3 GetMovementForce(System.Numerics.Vector3 SourceLocation = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CombatRiddlerMechSuitBase.GetMovementForce", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMovementForce, "BmGame.RBMBehaviour_CombatRiddlerMechSuitBase.GetMovementForce");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SourceLocation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

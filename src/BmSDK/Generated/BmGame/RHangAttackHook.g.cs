@@ -78,35 +78,38 @@ public partial class RHangAttackHook : BmSDK.BmGame.RHidePoint, BmSDK.IGameObjec
         where TComponent : class, Framework.IScriptComponent<RHangAttackHook>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_LeaveHangPoint;
     /// <summary>
     /// Function: LeaveHangPoint
     /// </summary>
     public unsafe virtual void LeaveHangPoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHangAttackHook.LeaveHangPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LeaveHangPoint, "BmGame.RHangAttackHook.LeaveHangPoint");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_MovePawnTo;
     /// <summary>
     /// Function: MovePawnTo
     /// </summary>
     public unsafe override void MovePawnTo(BmSDK.Engine.Pawn PawnToMove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHangAttackHook.MovePawnTo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MovePawnTo, "BmGame.RHangAttackHook.MovePawnTo");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PawnToMove, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Deactivate;
     /// <summary>
     /// Function: Deactivate
     /// </summary>
     public unsafe virtual void Deactivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHangAttackHook.Deactivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Deactivate, "BmGame.RHangAttackHook.Deactivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

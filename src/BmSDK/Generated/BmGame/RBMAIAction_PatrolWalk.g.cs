@@ -78,81 +78,88 @@ public partial class RBMAIAction_PatrolWalk : BmSDK.BmGame.RBMAIAction_BaseMove,
         where TComponent : class, Framework.IScriptComponent<RBMAIAction_PatrolWalk>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_HandlesGlance;
     /// <summary>
     /// Function: HandlesGlance
     /// </summary>
     public unsafe override bool HandlesGlance()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PatrolWalk.HandlesGlance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandlesGlance, "BmGame.RBMAIAction_PatrolWalk.HandlesGlance");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ActionTick;
     /// <summary>
     /// Function: ActionTick
     /// </summary>
     public unsafe override BmSDK.BmGame.RBMAIAction.ActionTickResult ActionTick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PatrolWalk.ActionTick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActionTick, "BmGame.RBMAIAction_PatrolWalk.ActionTick");
         byte* paramsPtr = stackalloc byte[6];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMAIAction.ActionTickResult>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_MoveToInit;
     /// <summary>
     /// Function: MoveToInit
     /// </summary>
     public unsafe virtual void MoveToInit(BmSDK.FName IdleName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PatrolWalk.MoveToInit", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MoveToInit, "BmGame.RBMAIAction_PatrolWalk.MoveToInit");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IdleName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_BuildHandle;
     /// <summary>
     /// Function: BuildHandle
     /// </summary>
     public unsafe override BmSDK.BmGame.RNavigationHandle BuildHandle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PatrolWalk.BuildHandle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BuildHandle, "BmGame.RBMAIAction_PatrolWalk.BuildHandle");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RNavigationHandle>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PatrolWalk.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMAIAction_PatrolWalk.OnActivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddGoalPoint;
     /// <summary>
     /// Function: AddGoalPoint
     /// </summary>
     public unsafe virtual void AddGoalPoint(System.Numerics.Vector3 NewGoalPos)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PatrolWalk.AddGoalPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddGoalPoint, "BmGame.RBMAIAction_PatrolWalk.AddGoalPoint");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewGoalPos, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetupGoal;
     /// <summary>
     /// Function: SetupGoal
     /// </summary>
     public unsafe virtual void SetupGoal(System.Numerics.Vector3 NewGoalPos)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PatrolWalk.SetupGoal", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupGoal, "BmGame.RBMAIAction_PatrolWalk.SetupGoal");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewGoalPos, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

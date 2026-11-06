@@ -78,79 +78,86 @@ public partial class RBMBehaviour_ScarecrowShadow : BmSDK.BmGame.RBMBehaviour, B
         where TComponent : class, Framework.IScriptComponent<RBMBehaviour_ScarecrowShadow>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_ScarecrowShadow.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmScript.RBMBehaviour_ScarecrowShadow.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Update;
     /// <summary>
     /// Function: Update
     /// </summary>
     public unsafe override bool Update(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_ScarecrowShadow.Update", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Update, "BmScript.RBMBehaviour_ScarecrowShadow.Update");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_HideJoker;
     /// <summary>
     /// Function: HideJoker
     /// </summary>
     public unsafe virtual void HideJoker()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_ScarecrowShadow.HideJoker", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideJoker, "BmScript.RBMBehaviour_ScarecrowShadow.HideJoker");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanShowJoker;
     /// <summary>
     /// Function: CanShowJoker
     /// </summary>
     public unsafe virtual bool CanShowJoker()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_ScarecrowShadow.CanShowJoker", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanShowJoker, "BmScript.RBMBehaviour_ScarecrowShadow.CanShowJoker");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Switch_to_ScareCrow_Head;
     /// <summary>
     /// Function: Switch_to_ScareCrow_Head
     /// </summary>
     public unsafe virtual void Switch_to_ScareCrow_Head()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_ScarecrowShadow.Switch_to_ScareCrow_Head", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Switch_to_ScareCrow_Head, "BmScript.RBMBehaviour_ScarecrowShadow.Switch_to_ScareCrow_Head");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetScarecrowWeapConfig;
     /// <summary>
     /// Function: GetScarecrowWeapConfig
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RWeaponConfig GetScarecrowWeapConfig()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_ScarecrowShadow.GetScarecrowWeapConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetScarecrowWeapConfig, "BmScript.RBMBehaviour_ScarecrowShadow.GetScarecrowWeapConfig");
         byte* paramsPtr = stackalloc byte[444];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RWeaponConfig>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CheckToSeeIfTheresABetterSide;
     /// <summary>
     /// Function: CheckToSeeIfTheresABetterSide
     /// </summary>
     public unsafe virtual bool CheckToSeeIfTheresABetterSide()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_ScarecrowShadow.CheckToSeeIfTheresABetterSide", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckToSeeIfTheresABetterSide, "BmScript.RBMBehaviour_ScarecrowShadow.CheckToSeeIfTheresABetterSide");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

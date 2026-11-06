@@ -78,34 +78,37 @@ public partial class RBatSignalBase : BmSDK.Engine.Actor, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RBatSignalBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UpdateBeamStartPoint;
     /// <summary>
     /// Function: UpdateBeamStartPoint
     /// </summary>
     public unsafe virtual void UpdateBeamStartPoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatSignalBase.UpdateBeamStartPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateBeamStartPoint, "BmGame.RBatSignalBase.UpdateBeamStartPoint");
         byte* paramsPtr = stackalloc byte[72];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateBeamStartPointFirstTime;
     /// <summary>
     /// Function: UpdateBeamStartPointFirstTime
     /// </summary>
     public unsafe virtual void UpdateBeamStartPointFirstTime()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatSignalBase.UpdateBeamStartPointFirstTime", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateBeamStartPointFirstTime, "BmGame.RBatSignalBase.UpdateBeamStartPointFirstTime");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatSignalBase.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RBatSignalBase.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

@@ -78,35 +78,38 @@ public partial class RAEC_GoggleBlinded_Solo : BmSDK.BmGame.RAlertEventCoordinat
         where TComponent : class, Framework.IScriptComponent<RAEC_GoggleBlinded_Solo>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnBeginShutdown;
     /// <summary>
     /// Function: OnBeginShutdown
     /// </summary>
     public unsafe override void OnBeginShutdown()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_GoggleBlinded_Solo.OnBeginShutdown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnBeginShutdown, "BmGame.RAEC_GoggleBlinded_Solo.OnBeginShutdown");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_WantsToGlanceAt;
     /// <summary>
     /// Function: WantsToGlanceAt
     /// </summary>
     public unsafe override bool WantsToGlanceAt(BmSDK.Engine.Actor TestTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_GoggleBlinded_Solo.WantsToGlanceAt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WantsToGlanceAt, "BmGame.RAEC_GoggleBlinded_Solo.WantsToGlanceAt");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestTarget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_OnStartChild;
     /// <summary>
     /// Function: OnStartChild
     /// </summary>
     public unsafe override void OnStartChild()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_GoggleBlinded_Solo.OnStartChild", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnStartChild, "BmGame.RAEC_GoggleBlinded_Solo.OnStartChild");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

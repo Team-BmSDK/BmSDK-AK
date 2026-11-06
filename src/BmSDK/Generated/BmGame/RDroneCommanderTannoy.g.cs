@@ -78,34 +78,37 @@ public partial class RDroneCommanderTannoy : BmSDK.Engine.Actor, BmSDK.IGameObje
         where TComponent : class, Framework.IScriptComponent<RDroneCommanderTannoy>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDroneCommanderTannoy.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmGame.RDroneCommanderTannoy.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDroneCommanderTannoy.PreStreamOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmGame.RDroneCommanderTannoy.PreStreamOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayTestBark;
     /// <summary>
     /// Function: PlayTestBark
     /// </summary>
     public unsafe virtual void PlayTestBark(BmSDK.FName EventID, BmSDK.FName Loc, BmSDK.FName VehicleType, BmSDK.FName Battle, int Priority = default, float Delay = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDroneCommanderTannoy.PlayTestBark", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayTestBark, "BmGame.RDroneCommanderTannoy.PlayTestBark");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventID, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 8);
@@ -117,12 +120,13 @@ public partial class RDroneCommanderTannoy : BmSDK.Engine.Actor, BmSDK.IGameObje
         return;
     }
 
+    private static BmSDK.Function __fn_PlayBark;
     /// <summary>
     /// Function: PlayBark
     /// </summary>
     public unsafe virtual void PlayBark(BmSDK.FName EventID, int Priority = default, BmSDK.Engine.Actor Subject = default, float Delay = default, int Slot = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDroneCommanderTannoy.PlayBark", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayBark, "BmGame.RDroneCommanderTannoy.PlayBark");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventID, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Priority, paramsPtr + 8);
@@ -133,35 +137,38 @@ public partial class RDroneCommanderTannoy : BmSDK.Engine.Actor, BmSDK.IGameObje
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateCommentator;
     /// <summary>
     /// Function: UpdateCommentator
     /// </summary>
     public unsafe virtual void UpdateCommentator()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDroneCommanderTannoy.UpdateCommentator", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateCommentator, "BmGame.RDroneCommanderTannoy.UpdateCommentator");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InternalPlaySlotBark;
     /// <summary>
     /// Function: InternalPlaySlotBark
     /// </summary>
     public unsafe virtual void InternalPlaySlotBark(int Slot)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDroneCommanderTannoy.InternalPlaySlotBark", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InternalPlaySlotBark, "BmGame.RDroneCommanderTannoy.InternalPlaySlotBark");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Slot, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDroneCommanderTannoy.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RDroneCommanderTannoy.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

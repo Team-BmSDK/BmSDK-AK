@@ -78,23 +78,25 @@ public partial class SeqAct_GetMatInstScalarParam : BmSDK.Engine.SequenceAction,
         where TComponent : class, Framework.IScriptComponent<SeqAct_GetMatInstScalarParam>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SeqAct_GetMatInstScalarParam.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "Engine.SeqAct_GetMatInstScalarParam.Activated");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetScalar;
     /// <summary>
     /// Function: GetScalar
     /// </summary>
     public unsafe virtual void GetScalar(out float Scalar)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SeqAct_GetMatInstScalarParam.GetScalar", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetScalar, "Engine.SeqAct_GetMatInstScalarParam.GetScalar");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

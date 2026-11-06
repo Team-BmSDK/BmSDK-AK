@@ -78,36 +78,39 @@ public partial class RAudioGlassVolume : BmSDK.Engine.Volume, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RAudioGlassVolume>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetWindow;
     /// <summary>
     /// Function: SetWindow
     /// </summary>
     public unsafe virtual void SetWindow(BmSDK.BmGame.RDestructibleProp_FractureWall win)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAudioGlassVolume.SetWindow", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetWindow, "BmGame.RAudioGlassVolume.SetWindow");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(win, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UnTouch;
     /// <summary>
     /// Function: UnTouch
     /// </summary>
     public unsafe override void UnTouch(BmSDK.Engine.Actor Other)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAudioGlassVolume.UnTouch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnTouch, "BmGame.RAudioGlassVolume.UnTouch");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Touch;
     /// <summary>
     /// Function: Touch
     /// </summary>
     public unsafe override void Touch(BmSDK.Engine.Actor Other, BmSDK.Engine.PrimitiveComponent OtherComp, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAudioGlassVolume.Touch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Touch, "BmGame.RAudioGlassVolume.Touch");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherComp, paramsPtr + 8);
@@ -117,12 +120,13 @@ public partial class RAudioGlassVolume : BmSDK.Engine.Volume, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_HandleTouch;
     /// <summary>
     /// Function: HandleTouch
     /// </summary>
     public unsafe virtual void HandleTouch(BmSDK.BmGame.RAudioGlassVolume Volume, bool bEnabled)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAudioGlassVolume.HandleTouch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandleTouch, "BmGame.RAudioGlassVolume.HandleTouch");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Volume, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bEnabled, paramsPtr + 8);
@@ -137,12 +141,13 @@ public partial class RAudioGlassVolume : BmSDK.Engine.Volume, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetFootstepGlassValue;
     /// <summary>
     /// Function: GetFootstepGlassValue
     /// </summary>
     public unsafe static float GetFootstepGlassValue(System.Numerics.Vector3 footstepPosition)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAudioGlassVolume.GetFootstepGlassValue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFootstepGlassValue, "BmGame.RAudioGlassVolume.GetFootstepGlassValue");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(footstepPosition, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

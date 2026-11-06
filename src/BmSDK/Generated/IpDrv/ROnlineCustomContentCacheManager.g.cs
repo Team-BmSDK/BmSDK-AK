@@ -78,12 +78,13 @@ public partial class ROnlineCustomContentCacheManager : BmSDK.GameObject, BmSDK.
         where TComponent : class, Framework.IScriptComponent<ROnlineCustomContentCacheManager>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CheckStateChange;
     /// <summary>
     /// Function: CheckStateChange
     /// </summary>
     public unsafe void CheckStateChange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.CheckStateChange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckStateChange, "IpDrv.ROnlineCustomContentCacheManager.CheckStateChange");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class ROnlineCustomContentCacheManager : BmSDK.GameObject, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe virtual void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "IpDrv.ROnlineCustomContentCacheManager.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -115,24 +117,26 @@ public partial class ROnlineCustomContentCacheManager : BmSDK.GameObject, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_GetActivityLogAsList;
     /// <summary>
     /// Function: GetActivityLogAsList
     /// </summary>
     public unsafe virtual void GetActivityLogAsList(out BmSDK.TArray<BmSDK.FString> OutList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.GetActivityLogAsList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetActivityLogAsList, "IpDrv.ROnlineCustomContentCacheManager.GetActivityLogAsList");
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         OutList = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateActivity;
     /// <summary>
     /// Function: UpdateActivity
     /// </summary>
     public unsafe virtual void UpdateActivity(BmSDK.FString Filename, BmSDK.IpDrv.ROnlineCustomContentCacheManager.CacheActivityType Type, BmSDK.IpDrv.ROnlineCustomContentCacheManager.CacheActivityStatus Status, int bytesTransferred, float timeTaken)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.UpdateActivity", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateActivity, "IpDrv.ROnlineCustomContentCacheManager.UpdateActivity");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Type, paramsPtr + 16);
@@ -143,12 +147,13 @@ public partial class ROnlineCustomContentCacheManager : BmSDK.GameObject, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_OnCleanupObsoleteInternal;
     /// <summary>
     /// Function: OnCleanupObsoleteInternal
     /// </summary>
     public unsafe virtual void OnCleanupObsoleteInternal(bool bWasSuccessful, BmSDK.FString sCustomId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.OnCleanupObsoleteInternal", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnCleanupObsoleteInternal, "IpDrv.ROnlineCustomContentCacheManager.OnCleanupObsoleteInternal");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sCustomId, paramsPtr + 4);
@@ -156,12 +161,13 @@ public partial class ROnlineCustomContentCacheManager : BmSDK.GameObject, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_OnCrcDownloadComplete;
     /// <summary>
     /// Function: OnCrcDownloadComplete
     /// </summary>
     public unsafe virtual void OnCrcDownloadComplete(BmSDK.Engine.OnlineCustomContentRequestHydra SubRequest, BmSDK.FString Category)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.OnCrcDownloadComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnCrcDownloadComplete, "IpDrv.ROnlineCustomContentCacheManager.OnCrcDownloadComplete");
         byte* paramsPtr = stackalloc byte[136];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SubRequest, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Category, paramsPtr + 8);
@@ -169,36 +175,39 @@ public partial class ROnlineCustomContentCacheManager : BmSDK.GameObject, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_GetRegistryAsFileNames;
     /// <summary>
     /// Function: GetRegistryAsFileNames
     /// </summary>
     public unsafe virtual void GetRegistryAsFileNames(out BmSDK.TArray<BmSDK.FString> OutList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.GetRegistryAsFileNames", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRegistryAsFileNames, "IpDrv.ROnlineCustomContentCacheManager.GetRegistryAsFileNames");
         byte* paramsPtr = stackalloc byte[96];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         OutList = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetRegistryAsList;
     /// <summary>
     /// Function: GetRegistryAsList
     /// </summary>
     public unsafe virtual int GetRegistryAsList(out BmSDK.TArray<BmSDK.FString> OutList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.GetRegistryAsList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRegistryAsList, "IpDrv.ROnlineCustomContentCacheManager.GetRegistryAsList");
         byte* paramsPtr = stackalloc byte[104];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         OutList = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_GetIndexOfFolderInRegistry;
     /// <summary>
     /// Function: GetIndexOfFolderInRegistry
     /// </summary>
     public unsafe virtual int GetIndexOfFolderInRegistry(out BmSDK.IpDrv.ROnlineCustomContentCacheManager.FRegistryFolder folderCopy, BmSDK.FString Subfolder)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.GetIndexOfFolderInRegistry", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetIndexOfFolderInRegistry, "IpDrv.ROnlineCustomContentCacheManager.GetIndexOfFolderInRegistry");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Subfolder, paramsPtr + 36);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -206,12 +215,13 @@ public partial class ROnlineCustomContentCacheManager : BmSDK.GameObject, BmSDK.
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 52);
     }
 
+    private static BmSDK.Function __fn_GetIndexOfEntryInFolder;
     /// <summary>
     /// Function: GetIndexOfEntryInFolder
     /// </summary>
     public unsafe virtual int GetIndexOfEntryInFolder(out BmSDK.IpDrv.ROnlineCustomContentCacheManager.FRegistryEntry entryCopy, BmSDK.IpDrv.ROnlineCustomContentCacheManager.FRegistryFolder folderCopy, BmSDK.FString Filename)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.GetIndexOfEntryInFolder", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetIndexOfEntryInFolder, "IpDrv.ROnlineCustomContentCacheManager.GetIndexOfEntryInFolder");
         byte* paramsPtr = stackalloc byte[88];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(folderCopy, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 64);
@@ -220,12 +230,13 @@ public partial class ROnlineCustomContentCacheManager : BmSDK.GameObject, BmSDK.
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 80);
     }
 
+    private static BmSDK.Function __fn_GetCopyOfEntryInRegistry;
     /// <summary>
     /// Function: GetCopyOfEntryInRegistry
     /// </summary>
     public unsafe virtual bool GetCopyOfEntryInRegistry(out BmSDK.IpDrv.ROnlineCustomContentCacheManager.FRegistryEntry entryCopy, BmSDK.FString Filename, BmSDK.FString Subfolder)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.GetCopyOfEntryInRegistry", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCopyOfEntryInRegistry, "IpDrv.ROnlineCustomContentCacheManager.GetCopyOfEntryInRegistry");
         byte* paramsPtr = stackalloc byte[100];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Subfolder, paramsPtr + 44);
@@ -234,12 +245,13 @@ public partial class ROnlineCustomContentCacheManager : BmSDK.GameObject, BmSDK.
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 60);
     }
 
+    private static BmSDK.Function __fn_FlagObsoleteInRegistry;
     /// <summary>
     /// Function: FlagObsoleteInRegistry
     /// </summary>
     public unsafe virtual bool FlagObsoleteInRegistry(BmSDK.FString Filename, BmSDK.FString Subfolder)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.FlagObsoleteInRegistry", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FlagObsoleteInRegistry, "IpDrv.ROnlineCustomContentCacheManager.FlagObsoleteInRegistry");
         byte* paramsPtr = stackalloc byte[108];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Subfolder, paramsPtr + 16);
@@ -247,12 +259,13 @@ public partial class ROnlineCustomContentCacheManager : BmSDK.GameObject, BmSDK.
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_RemoveFromRegistry;
     /// <summary>
     /// Function: RemoveFromRegistry
     /// </summary>
     public unsafe virtual bool RemoveFromRegistry(BmSDK.FString Filename, BmSDK.FString Subfolder)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.RemoveFromRegistry", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveFromRegistry, "IpDrv.ROnlineCustomContentCacheManager.RemoveFromRegistry");
         byte* paramsPtr = stackalloc byte[108];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Subfolder, paramsPtr + 16);
@@ -260,12 +273,13 @@ public partial class ROnlineCustomContentCacheManager : BmSDK.GameObject, BmSDK.
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_UpdateRegistry;
     /// <summary>
     /// Function: UpdateRegistry
     /// </summary>
     public unsafe virtual void UpdateRegistry(BmSDK.FString Filename, BmSDK.FString Subfolder, int Crc32, int Size, bool bObsolete)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.UpdateRegistry", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateRegistry, "IpDrv.ROnlineCustomContentCacheManager.UpdateRegistry");
         byte* paramsPtr = stackalloc byte[116];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Subfolder, paramsPtr + 16);
@@ -276,12 +290,13 @@ public partial class ROnlineCustomContentCacheManager : BmSDK.GameObject, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_GetFileCacheSize;
     /// <summary>
     /// Function: GetFileCacheSize
     /// </summary>
     public unsafe virtual int GetFileCacheSize(BmSDK.FString Filename, BmSDK.FString Subfolder)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.GetFileCacheSize", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFileCacheSize, "IpDrv.ROnlineCustomContentCacheManager.GetFileCacheSize");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Subfolder, paramsPtr + 16);
@@ -289,12 +304,13 @@ public partial class ROnlineCustomContentCacheManager : BmSDK.GameObject, BmSDK.
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_GetFileCacheStatus;
     /// <summary>
     /// Function: GetFileCacheStatus
     /// </summary>
     public unsafe virtual BmSDK.IpDrv.ROnlineCustomContentCacheManager.CacheFileStatus GetFileCacheStatus(BmSDK.FString Filename, BmSDK.FString Subfolder, int ExpectedCrc32)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.GetFileCacheStatus", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFileCacheStatus, "IpDrv.ROnlineCustomContentCacheManager.GetFileCacheStatus");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Subfolder, paramsPtr + 16);
@@ -303,23 +319,25 @@ public partial class ROnlineCustomContentCacheManager : BmSDK.GameObject, BmSDK.
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.IpDrv.ROnlineCustomContentCacheManager.CacheFileStatus>(paramsPtr + 36);
     }
 
+    private static BmSDK.Function __fn_InitializeCacheRegistry;
     /// <summary>
     /// Function: InitializeCacheRegistry
     /// </summary>
     public unsafe virtual void InitializeCacheRegistry()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.InitializeCacheRegistry", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitializeCacheRegistry, "IpDrv.ROnlineCustomContentCacheManager.InitializeCacheRegistry");
         byte* paramsPtr = stackalloc byte[144];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnCacheDeleteComplete;
     /// <summary>
     /// Function: OnCacheDeleteComplete
     /// </summary>
     public unsafe virtual void OnCacheDeleteComplete(bool bWasSuccessful, BmSDK.FString Filename, float timeTaken)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.OnCacheDeleteComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnCacheDeleteComplete, "IpDrv.ROnlineCustomContentCacheManager.OnCacheDeleteComplete");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 4);
@@ -328,23 +346,25 @@ public partial class ROnlineCustomContentCacheManager : BmSDK.GameObject, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_OnCacheDeleteBegin;
     /// <summary>
     /// Function: OnCacheDeleteBegin
     /// </summary>
     public unsafe virtual void OnCacheDeleteBegin()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.OnCacheDeleteBegin", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnCacheDeleteBegin, "IpDrv.ROnlineCustomContentCacheManager.OnCacheDeleteBegin");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnCacheSaveComplete;
     /// <summary>
     /// Function: OnCacheSaveComplete
     /// </summary>
     public unsafe virtual void OnCacheSaveComplete(bool bWasSuccessful, BmSDK.FString Filename, int bytesTransferred, float timeTaken)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.OnCacheSaveComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnCacheSaveComplete, "IpDrv.ROnlineCustomContentCacheManager.OnCacheSaveComplete");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 4);
@@ -354,23 +374,25 @@ public partial class ROnlineCustomContentCacheManager : BmSDK.GameObject, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_OnCacheSaveBegin;
     /// <summary>
     /// Function: OnCacheSaveBegin
     /// </summary>
     public unsafe virtual void OnCacheSaveBegin()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.OnCacheSaveBegin", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnCacheSaveBegin, "IpDrv.ROnlineCustomContentCacheManager.OnCacheSaveBegin");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnCacheLoadComplete;
     /// <summary>
     /// Function: OnCacheLoadComplete
     /// </summary>
     public unsafe virtual void OnCacheLoadComplete(bool bWasSuccessful, BmSDK.FString Filename, int bytesTransferred, float timeTaken)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.OnCacheLoadComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnCacheLoadComplete, "IpDrv.ROnlineCustomContentCacheManager.OnCacheLoadComplete");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 4);
@@ -380,23 +402,25 @@ public partial class ROnlineCustomContentCacheManager : BmSDK.GameObject, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_OnCacheLoadBegin;
     /// <summary>
     /// Function: OnCacheLoadBegin
     /// </summary>
     public unsafe virtual void OnCacheLoadBegin()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.OnCacheLoadBegin", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnCacheLoadBegin, "IpDrv.ROnlineCustomContentCacheManager.OnCacheLoadBegin");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddToDeleteQueue;
     /// <summary>
     /// Function: AddToDeleteQueue
     /// </summary>
     public unsafe virtual void AddToDeleteQueue(BmSDK.Engine.OnlineCustomContentRequestCacheableHydra Request)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.AddToDeleteQueue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddToDeleteQueue, "IpDrv.ROnlineCustomContentCacheManager.AddToDeleteQueue");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Request, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -410,12 +434,13 @@ public partial class ROnlineCustomContentCacheManager : BmSDK.GameObject, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_AddToWriteQueue;
     /// <summary>
     /// Function: AddToWriteQueue
     /// </summary>
     public unsafe virtual void AddToWriteQueue(BmSDK.Engine.OnlineCustomContentRequestCacheableHydra Request)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.AddToWriteQueue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddToWriteQueue, "IpDrv.ROnlineCustomContentCacheManager.AddToWriteQueue");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Request, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -429,12 +454,13 @@ public partial class ROnlineCustomContentCacheManager : BmSDK.GameObject, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_RemoveFromReadQueue;
     /// <summary>
     /// Function: RemoveFromReadQueue
     /// </summary>
     public unsafe virtual void RemoveFromReadQueue(BmSDK.Engine.OnlineCustomContentRequestCacheableHydra Request)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.RemoveFromReadQueue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveFromReadQueue, "IpDrv.ROnlineCustomContentCacheManager.RemoveFromReadQueue");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Request, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -448,12 +474,13 @@ public partial class ROnlineCustomContentCacheManager : BmSDK.GameObject, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_AddToReadQueue;
     /// <summary>
     /// Function: AddToReadQueue
     /// </summary>
     public unsafe virtual void AddToReadQueue(BmSDK.Engine.OnlineCustomContentRequestCacheableHydra Request)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.ROnlineCustomContentCacheManager.AddToReadQueue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddToReadQueue, "IpDrv.ROnlineCustomContentCacheManager.AddToReadQueue");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Request, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

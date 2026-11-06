@@ -78,12 +78,13 @@ public partial class RSeqAct_GameActionPerformedWithTarget : BmSDK.BmGame.RSeqAc
         where TComponent : class, Framework.IScriptComponent<RSeqAct_GameActionPerformedWithTarget>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GameActionPerformed;
     /// <summary>
     /// Function: GameActionPerformed
     /// </summary>
     public unsafe override void GameActionPerformed(BmSDK.BmGame.RGameInfo.EGameAction ActionPerformed, BmSDK.Engine.Actor Target)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_GameActionPerformedWithTarget.GameActionPerformed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GameActionPerformed, "BmGame.RSeqAct_GameActionPerformedWithTarget.GameActionPerformed");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ActionPerformed, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 4);

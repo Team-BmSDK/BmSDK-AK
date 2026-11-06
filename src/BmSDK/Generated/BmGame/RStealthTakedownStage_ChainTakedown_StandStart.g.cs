@@ -78,12 +78,13 @@ public partial class RStealthTakedownStage_ChainTakedown_StandStart : BmSDK.BmGa
         where TComponent : class, Framework.IScriptComponent<RStealthTakedownStage_ChainTakedown_StandStart>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Begin;
     /// <summary>
     /// Function: Begin
     /// </summary>
     public unsafe override void Begin()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStealthTakedownStage_ChainTakedown_StandStart.Begin", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Begin, "BmGame.RStealthTakedownStage_ChainTakedown_StandStart.Begin");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

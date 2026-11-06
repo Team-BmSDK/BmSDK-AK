@@ -78,24 +78,26 @@ public partial class ReachSpec : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<ReachSpec>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsBlockedFor;
     /// <summary>
     /// Function: IsBlockedFor
     /// </summary>
     public unsafe virtual bool IsBlockedFor(BmSDK.Engine.Pawn P)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ReachSpec.IsBlockedFor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsBlockedFor, "Engine.ReachSpec.IsBlockedFor");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetDirection;
     /// <summary>
     /// Function: GetDirection
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetDirection()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ReachSpec.GetDirection", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDirection, "Engine.ReachSpec.GetDirection");
         byte* paramsPtr = stackalloc byte[12];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -108,12 +110,13 @@ public partial class ReachSpec : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetEnd;
     /// <summary>
     /// Function: GetEnd
     /// </summary>
     public unsafe virtual BmSDK.Engine.NavigationPoint GetEnd()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ReachSpec.GetEnd", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetEnd, "Engine.ReachSpec.GetEnd");
         byte* paramsPtr = stackalloc byte[8];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -126,12 +129,13 @@ public partial class ReachSpec : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.NavigationPoint>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CostFor;
     /// <summary>
     /// Function: CostFor
     /// </summary>
     public unsafe virtual int CostFor(BmSDK.Engine.Pawn P)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ReachSpec.CostFor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CostFor, "Engine.ReachSpec.CostFor");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

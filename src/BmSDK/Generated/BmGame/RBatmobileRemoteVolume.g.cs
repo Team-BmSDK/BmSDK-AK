@@ -78,57 +78,62 @@ public partial class RBatmobileRemoteVolume : BmSDK.Engine.Volume, BmSDK.IGameOb
         where TComponent : class, Framework.IScriptComponent<RBatmobileRemoteVolume>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnToggle;
     /// <summary>
     /// Function: OnToggle
     /// </summary>
     public unsafe override void OnToggle(BmSDK.Engine.SeqAct_Toggle Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileRemoteVolume.OnToggle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggle, "BmGame.RBatmobileRemoteVolume.OnToggle");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileRemoteVolume.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmGame.RBatmobileRemoteVolume.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileRemoteVolume.PreStreamOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmGame.RBatmobileRemoteVolume.PreStreamOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileRemoteVolume.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RBatmobileRemoteVolume.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetIsActive;
     /// <summary>
     /// Function: GetIsActive
     /// </summary>
     public unsafe virtual int GetIsActive(BmSDK.BmGame.RGameInfo RGI)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileRemoteVolume.GetIsActive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetIsActive, "BmGame.RBatmobileRemoteVolume.GetIsActive");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RGI, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

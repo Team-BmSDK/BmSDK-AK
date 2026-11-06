@@ -78,23 +78,25 @@ public partial class RMultiNavHandleWrapper_DisarmedSearch : BmSDK.BmGame.RMulti
         where TComponent : class, Framework.IScriptComponent<RMultiNavHandleWrapper_DisarmedSearch>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_FreeAllHandles;
     /// <summary>
     /// Function: FreeAllHandles
     /// </summary>
     public unsafe override void FreeAllHandles()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RMultiNavHandleWrapper_DisarmedSearch.FreeAllHandles", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FreeAllHandles, "BmGame.RMultiNavHandleWrapper_DisarmedSearch.FreeAllHandles");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetShortestPath;
     /// <summary>
     /// Function: GetShortestPath
     /// </summary>
     public unsafe override bool GetShortestPath(out float bestDist, out int BestPath)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RMultiNavHandleWrapper_DisarmedSearch.GetShortestPath", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetShortestPath, "BmGame.RMultiNavHandleWrapper_DisarmedSearch.GetShortestPath");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         bestDist = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
@@ -102,12 +104,13 @@ public partial class RMultiNavHandleWrapper_DisarmedSearch : BmSDK.BmGame.RMulti
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_AddDestActor;
     /// <summary>
     /// Function: AddDestActor
     /// </summary>
     public unsafe virtual void AddDestActor(System.Numerics.Vector3 NewLoc, BmSDK.Engine.Actor NewActor, int NewIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RMultiNavHandleWrapper_DisarmedSearch.AddDestActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddDestActor, "BmGame.RMultiNavHandleWrapper_DisarmedSearch.AddDestActor");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewActor, paramsPtr + 12);

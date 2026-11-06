@@ -78,141 +78,153 @@ public partial class Admin : BmSDK.Engine.PlayerController, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<Admin>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ServerSwitch;
     /// <summary>
     /// Function: ServerSwitch
     /// </summary>
     public unsafe virtual void ServerSwitch(BmSDK.FString URL)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Admin.ServerSwitch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ServerSwitch, "Engine.Admin.ServerSwitch");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(URL, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Switch;
     /// <summary>
     /// Function: Switch
     /// </summary>
     public unsafe virtual void Switch(BmSDK.FString URL)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Admin.Switch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Switch, "Engine.Admin.Switch");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(URL, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ServerRestartMap;
     /// <summary>
     /// Function: ServerRestartMap
     /// </summary>
     public unsafe virtual void ServerRestartMap()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Admin.ServerRestartMap", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ServerRestartMap, "Engine.Admin.ServerRestartMap");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RestartMap;
     /// <summary>
     /// Function: RestartMap
     /// </summary>
     public unsafe virtual void RestartMap()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Admin.RestartMap", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RestartMap, "Engine.Admin.RestartMap");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayerList;
     /// <summary>
     /// Function: PlayerList
     /// </summary>
     public unsafe virtual void PlayerList()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Admin.PlayerList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayerList, "Engine.Admin.PlayerList");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ServerKick;
     /// <summary>
     /// Function: ServerKick
     /// </summary>
     public unsafe virtual void ServerKick(BmSDK.FString S)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Admin.ServerKick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ServerKick, "Engine.Admin.ServerKick");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(S, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Kick;
     /// <summary>
     /// Function: Kick
     /// </summary>
     public unsafe virtual void Kick(BmSDK.FString S)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Admin.Kick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Kick, "Engine.Admin.Kick");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(S, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ServerKickBan;
     /// <summary>
     /// Function: ServerKickBan
     /// </summary>
     public unsafe virtual void ServerKickBan(BmSDK.FString S)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Admin.ServerKickBan", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ServerKickBan, "Engine.Admin.ServerKickBan");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(S, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_KickBan;
     /// <summary>
     /// Function: KickBan
     /// </summary>
     public unsafe virtual void KickBan(BmSDK.FString S)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Admin.KickBan", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_KickBan, "Engine.Admin.KickBan");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(S, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ServerAdmin;
     /// <summary>
     /// Function: ServerAdmin
     /// </summary>
     public unsafe virtual void ServerAdmin(BmSDK.FString CommandLine)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Admin.ServerAdmin", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ServerAdmin, "Engine.Admin.ServerAdmin");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CommandLine, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn__Admin;
     /// <summary>
     /// Function: Admin
     /// </summary>
     public unsafe virtual void _Admin(BmSDK.FString CommandLine)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Admin.Admin", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn__Admin, "Engine.Admin.Admin");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CommandLine, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Admin.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "Engine.Admin.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

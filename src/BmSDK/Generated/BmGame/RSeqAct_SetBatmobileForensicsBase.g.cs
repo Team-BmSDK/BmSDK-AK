@@ -73,47 +73,51 @@ public partial class RSeqAct_SetBatmobileForensicsBase : BmSDK.Engine.SeqAct_Lat
         where TComponent : class, Framework.IScriptComponent<RSeqAct_SetBatmobileForensicsBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DrawHUD;
     /// <summary>
     /// Function: DrawHUD
     /// </summary>
     public unsafe virtual void DrawHUD(BmSDK.Engine.HUD H)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SetBatmobileForensicsBase.DrawHUD", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DrawHUD, "BmGame.RSeqAct_SetBatmobileForensicsBase.DrawHUD");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(H, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DoPulse;
     /// <summary>
     /// Function: DoPulse
     /// </summary>
     public unsafe virtual bool DoPulse(bool bFirstPulse)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SetBatmobileForensicsBase.DoPulse", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoPulse, "BmGame.RSeqAct_SetBatmobileForensicsBase.DoPulse");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bFirstPulse, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SetBatmobileForensicsBase.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmGame.RSeqAct_SetBatmobileForensicsBase.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetForensicParametersOnActors;
     /// <summary>
     /// Function: SetForensicParametersOnActors
     /// </summary>
     public unsafe virtual void SetForensicParametersOnActors(BmSDK.GameObject.FLinearColor lightParams, BmSDK.GameObject.FLinearColor lightWorldPos, BmSDK.GameObject.FLinearColor LightDir)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SetBatmobileForensicsBase.SetForensicParametersOnActors", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetForensicParametersOnActors, "BmGame.RSeqAct_SetBatmobileForensicsBase.SetForensicParametersOnActors");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(lightParams, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(lightWorldPos, paramsPtr + 16);
@@ -122,12 +126,13 @@ public partial class RSeqAct_SetBatmobileForensicsBase : BmSDK.Engine.SeqAct_Lat
         return;
     }
 
+    private static BmSDK.Function __fn_SetTrailVisible;
     /// <summary>
     /// Function: SetTrailVisible
     /// </summary>
     public unsafe virtual void SetTrailVisible(bool is_visible)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SetBatmobileForensicsBase.SetTrailVisible", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetTrailVisible, "BmGame.RSeqAct_SetBatmobileForensicsBase.SetTrailVisible");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(is_visible, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

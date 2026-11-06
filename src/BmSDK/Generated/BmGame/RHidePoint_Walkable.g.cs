@@ -73,24 +73,26 @@ public partial class RHidePoint_Walkable : BmSDK.BmGame.RHidePoint, BmSDK.IGameO
         where TComponent : class, Framework.IScriptComponent<RHidePoint_Walkable>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PlayerWalkedOn;
     /// <summary>
     /// Function: PlayerWalkedOn
     /// </summary>
     public unsafe virtual void PlayerWalkedOn(BmSDK.BmGame.RPawnPlayer Player)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_Walkable.PlayerWalkedOn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayerWalkedOn, "BmGame.RHidePoint_Walkable.PlayerWalkedOn");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanAISeePlayerForGrapple;
     /// <summary>
     /// Function: CanAISeePlayerForGrapple
     /// </summary>
     public unsafe virtual void CanAISeePlayerForGrapple(BmSDK.Engine.Pawn GrapplePlayer, System.Numerics.Vector3 TargetHidePointLocation, bool bForcingBatmanHidden, out int bVillainHasSeen, out int bAllowPlayerToHide)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_Walkable.CanAISeePlayerForGrapple", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanAISeePlayerForGrapple, "BmGame.RHidePoint_Walkable.CanAISeePlayerForGrapple");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GrapplePlayer, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetHidePointLocation, paramsPtr + 8);

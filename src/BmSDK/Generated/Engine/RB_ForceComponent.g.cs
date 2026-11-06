@@ -73,36 +73,39 @@ public partial class RB_ForceComponent : BmSDK.Engine.PrimitiveComponent, BmSDK.
         where TComponent : class, Framework.IScriptComponent<RB_ForceComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_AttachCloneToActor;
     /// <summary>
     /// Function: AttachCloneToActor
     /// </summary>
     public unsafe virtual void AttachCloneToActor(BmSDK.Engine.Actor NewOwner)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RB_ForceComponent.AttachCloneToActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttachCloneToActor, "Engine.RB_ForceComponent.AttachCloneToActor");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewOwner, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetBaseCloneParameters;
     /// <summary>
     /// Function: SetBaseCloneParameters
     /// </summary>
     public unsafe virtual void SetBaseCloneParameters(BmSDK.Engine.RB_ForceComponent ForceComp)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RB_ForceComponent.SetBaseCloneParameters", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBaseCloneParameters, "Engine.RB_ForceComponent.SetBaseCloneParameters");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ForceComp, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Clone;
     /// <summary>
     /// Function: Clone
     /// </summary>
     public unsafe virtual BmSDK.Engine.RB_ForceComponent Clone()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RB_ForceComponent.Clone", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Clone, "Engine.RB_ForceComponent.Clone");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.RB_ForceComponent>(paramsPtr + 0);

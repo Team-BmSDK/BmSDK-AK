@@ -78,12 +78,13 @@ public partial class TriggerStreamingLevel : BmSDK.Engine.Trigger, BmSDK.IGameOb
         where TComponent : class, Framework.IScriptComponent<TriggerStreamingLevel>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Touch;
     /// <summary>
     /// Function: Touch
     /// </summary>
     public unsafe override void Touch(BmSDK.Engine.Actor Other, BmSDK.Engine.PrimitiveComponent OtherComp, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.TriggerStreamingLevel.Touch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Touch, "Engine.TriggerStreamingLevel.Touch");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherComp, paramsPtr + 8);

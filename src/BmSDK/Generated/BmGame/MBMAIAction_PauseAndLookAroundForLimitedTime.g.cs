@@ -78,58 +78,63 @@ public partial class MBMAIAction_PauseAndLookAroundForLimitedTime : BmSDK.BmGame
         where TComponent : class, Framework.IScriptComponent<MBMAIAction_PauseAndLookAroundForLimitedTime>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ActionTick;
     /// <summary>
     /// Function: ActionTick
     /// </summary>
     public unsafe override BmSDK.BmGame.RBMAIAction.ActionTickResult ActionTick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MBMAIAction_PauseAndLookAroundForLimitedTime.ActionTick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActionTick, "BmGame.MBMAIAction_PauseAndLookAroundForLimitedTime.ActionTick");
         byte* paramsPtr = stackalloc byte[5];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMAIAction.ActionTickResult>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_OnDeactivate;
     /// <summary>
     /// Function: OnDeactivate
     /// </summary>
     public unsafe override void OnDeactivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MBMAIAction_PauseAndLookAroundForLimitedTime.OnDeactivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeactivate, "BmGame.MBMAIAction_PauseAndLookAroundForLimitedTime.OnDeactivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MBMAIAction_PauseAndLookAroundForLimitedTime.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.MBMAIAction_PauseAndLookAroundForLimitedTime.OnActivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetTimeLimit;
     /// <summary>
     /// Function: SetTimeLimit
     /// </summary>
     public unsafe virtual void SetTimeLimit(float newTimeLimit)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MBMAIAction_PauseAndLookAroundForLimitedTime.SetTimeLimit", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetTimeLimit, "BmGame.MBMAIAction_PauseAndLookAroundForLimitedTime.SetTimeLimit");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(newTimeLimit, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetLookLocation;
     /// <summary>
     /// Function: SetLookLocation
     /// </summary>
     public unsafe virtual void SetLookLocation(System.Numerics.Vector3 NewLoc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MBMAIAction_PauseAndLookAroundForLimitedTime.SetLookLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetLookLocation, "BmGame.MBMAIAction_PauseAndLookAroundForLimitedTime.SetLookLocation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewLoc, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

@@ -73,91 +73,99 @@ public partial class RSeqAct_JokerRooftopControllerBase : BmSDK.Engine.SeqAct_La
         where TComponent : class, Framework.IScriptComponent<RSeqAct_JokerRooftopControllerBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetJokerPointFromBehaviour;
     /// <summary>
     /// Function: GetJokerPointFromBehaviour
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RJokerRooftopPointBase GetJokerPointFromBehaviour(BmSDK.BmGame.RBMBehaviour JokerBehav)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_JokerRooftopControllerBase.GetJokerPointFromBehaviour", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetJokerPointFromBehaviour, "BmGame.RSeqAct_JokerRooftopControllerBase.GetJokerPointFromBehaviour");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(JokerBehav, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RJokerRooftopPointBase>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_JokerInView;
     /// <summary>
     /// Function: JokerInView
     /// </summary>
     public unsafe virtual bool JokerInView(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_JokerRooftopControllerBase.JokerInView", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_JokerInView, "BmGame.RSeqAct_JokerRooftopControllerBase.JokerInView");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_DrawTestingSpheres;
     /// <summary>
     /// Function: DrawTestingSpheres
     /// </summary>
     public unsafe virtual void DrawTestingSpheres()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_JokerRooftopControllerBase.DrawTestingSpheres", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DrawTestingSpheres, "BmGame.RSeqAct_JokerRooftopControllerBase.DrawTestingSpheres");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnRooftopJoker;
     /// <summary>
     /// Function: SpawnRooftopJoker
     /// </summary>
     public unsafe virtual void SpawnRooftopJoker()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_JokerRooftopControllerBase.SpawnRooftopJoker", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnRooftopJoker, "BmGame.RSeqAct_JokerRooftopControllerBase.SpawnRooftopJoker");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayDialogue;
     /// <summary>
     /// Function: PlayDialogue
     /// </summary>
     public unsafe virtual void PlayDialogue()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_JokerRooftopControllerBase.PlayDialogue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayDialogue, "BmGame.RSeqAct_JokerRooftopControllerBase.PlayDialogue");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartNextDialogue;
     /// <summary>
     /// Function: StartNextDialogue
     /// </summary>
     public unsafe virtual void StartNextDialogue()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_JokerRooftopControllerBase.StartNextDialogue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartNextDialogue, "BmGame.RSeqAct_JokerRooftopControllerBase.StartNextDialogue");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnAllJokers;
     /// <summary>
     /// Function: SpawnAllJokers
     /// </summary>
     public unsafe virtual void SpawnAllJokers()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_JokerRooftopControllerBase.SpawnAllJokers", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnAllJokers, "BmGame.RSeqAct_JokerRooftopControllerBase.SpawnAllJokers");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_JokerHallucinationsAllowed;
     /// <summary>
     /// Function: JokerHallucinationsAllowed
     /// </summary>
     public unsafe virtual bool JokerHallucinationsAllowed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_JokerRooftopControllerBase.JokerHallucinationsAllowed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_JokerHallucinationsAllowed, "BmGame.RSeqAct_JokerRooftopControllerBase.JokerHallucinationsAllowed");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -170,24 +178,26 @@ public partial class RSeqAct_JokerRooftopControllerBase : BmSDK.Engine.SeqAct_La
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Update;
     /// <summary>
     /// Function: Update
     /// </summary>
     public unsafe override bool Update(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_JokerRooftopControllerBase.Update", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Update, "BmGame.RSeqAct_JokerRooftopControllerBase.Update");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetDebugValues;
     /// <summary>
     /// Function: GetDebugValues
     /// </summary>
     public unsafe virtual void GetDebugValues()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_JokerRooftopControllerBase.GetDebugValues", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDebugValues, "BmGame.RSeqAct_JokerRooftopControllerBase.GetDebugValues");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -200,12 +210,13 @@ public partial class RSeqAct_JokerRooftopControllerBase : BmSDK.Engine.SeqAct_La
         return;
     }
 
+    private static BmSDK.Function __fn_NativeUpdate;
     /// <summary>
     /// Function: NativeUpdate
     /// </summary>
     public unsafe virtual bool NativeUpdate(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_JokerRooftopControllerBase.NativeUpdate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NativeUpdate, "BmGame.RSeqAct_JokerRooftopControllerBase.NativeUpdate");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -219,12 +230,13 @@ public partial class RSeqAct_JokerRooftopControllerBase : BmSDK.Engine.SeqAct_La
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_CancelConversationLoading;
     /// <summary>
     /// Function: CancelConversationLoading
     /// </summary>
     public unsafe virtual void CancelConversationLoading()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_JokerRooftopControllerBase.CancelConversationLoading", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelConversationLoading, "BmGame.RSeqAct_JokerRooftopControllerBase.CancelConversationLoading");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -237,12 +249,13 @@ public partial class RSeqAct_JokerRooftopControllerBase : BmSDK.Engine.SeqAct_La
         return;
     }
 
+    private static BmSDK.Function __fn_InitConversation;
     /// <summary>
     /// Function: InitConversation
     /// </summary>
     public unsafe virtual bool InitConversation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_JokerRooftopControllerBase.InitConversation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitConversation, "BmGame.RSeqAct_JokerRooftopControllerBase.InitConversation");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -255,12 +268,13 @@ public partial class RSeqAct_JokerRooftopControllerBase : BmSDK.Engine.SeqAct_La
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_LoadConversation;
     /// <summary>
     /// Function: LoadConversation
     /// </summary>
     public unsafe virtual bool LoadConversation(BmSDK.FString StringPackageName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_JokerRooftopControllerBase.LoadConversation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LoadConversation, "BmGame.RSeqAct_JokerRooftopControllerBase.LoadConversation");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StringPackageName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

@@ -78,35 +78,38 @@ public partial class RCombatMove_RobinThrow : BmSDK.BmGame.RCombatMove_PlayerSpe
         where TComponent : class, Framework.IScriptComponent<RCombatMove_RobinThrow>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ExitMoveForPawn;
     /// <summary>
     /// Function: ExitMoveForPawn
     /// </summary>
     public unsafe override void ExitMoveForPawn(BmSDK.BmGame.RPawnCombat PawnToExit)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_RobinThrow.ExitMoveForPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ExitMoveForPawn, "BmScript.RCombatMove_RobinThrow.ExitMoveForPawn");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PawnToExit, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ExitMove;
     /// <summary>
     /// Function: ExitMove
     /// </summary>
     public unsafe override void ExitMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_RobinThrow.ExitMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ExitMove, "BmScript.RCombatMove_RobinThrow.ExitMove");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_MoveOverridenForPawn;
     /// <summary>
     /// Function: MoveOverridenForPawn
     /// </summary>
     public unsafe override void MoveOverridenForPawn(BmSDK.BmGame.RPawnCombat OverridenPawn, BmSDK.BmGame.RCombatMove NewMove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_RobinThrow.MoveOverridenForPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MoveOverridenForPawn, "BmScript.RCombatMove_RobinThrow.MoveOverridenForPawn");
         byte* paramsPtr = stackalloc byte[264];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverridenPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewMove, paramsPtr + 8);
@@ -114,34 +117,37 @@ public partial class RCombatMove_RobinThrow : BmSDK.BmGame.RCombatMove_PlayerSpe
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateControllerInput;
     /// <summary>
     /// Function: UpdateControllerInput
     /// </summary>
     public unsafe virtual void UpdateControllerInput()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_RobinThrow.UpdateControllerInput", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateControllerInput, "BmScript.RCombatMove_RobinThrow.UpdateControllerInput");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetThrowInfo;
     /// <summary>
     /// Function: SetThrowInfo
     /// </summary>
     public unsafe virtual bool SetThrowInfo()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_RobinThrow.SetThrowInfo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetThrowInfo, "BmScript.RCombatMove_RobinThrow.SetThrowInfo");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_FindThrowTarget;
     /// <summary>
     /// Function: FindThrowTarget
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RPawnVillain FindThrowTarget(System.Numerics.Vector3 TestThrowDir, bool throwee)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_RobinThrow.FindThrowTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindThrowTarget, "BmScript.RCombatMove_RobinThrow.FindThrowTarget");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestThrowDir, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(throwee, paramsPtr + 12);
@@ -149,12 +155,13 @@ public partial class RCombatMove_RobinThrow : BmSDK.BmGame.RCombatMove_PlayerSpe
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_GetScoreForThrowTarget;
     /// <summary>
     /// Function: GetScoreForThrowTarget
     /// </summary>
     public unsafe virtual float GetScoreForThrowTarget(BmSDK.BmGame.RThrowTarget TestTarget, System.Numerics.Vector3 TestThrowDir)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_RobinThrow.GetScoreForThrowTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetScoreForThrowTarget, "BmScript.RCombatMove_RobinThrow.GetScoreForThrowTarget");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestTarget, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestThrowDir, paramsPtr + 8);
@@ -162,12 +169,13 @@ public partial class RCombatMove_RobinThrow : BmSDK.BmGame.RCombatMove_PlayerSpe
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_GetScoreForPawn;
     /// <summary>
     /// Function: GetScoreForPawn
     /// </summary>
     public unsafe virtual float GetScoreForPawn(BmSDK.BmGame.RPawnVillain TestPawn, System.Numerics.Vector3 TestThrowDir, float MaxRange)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_RobinThrow.GetScoreForPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetScoreForPawn, "BmScript.RCombatMove_RobinThrow.GetScoreForPawn");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestThrowDir, paramsPtr + 8);
@@ -176,23 +184,25 @@ public partial class RCombatMove_RobinThrow : BmSDK.BmGame.RCombatMove_PlayerSpe
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_LockThrowDir;
     /// <summary>
     /// Function: LockThrowDir
     /// </summary>
     public unsafe virtual void LockThrowDir()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_RobinThrow.LockThrowDir", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LockThrowDir, "BmScript.RCombatMove_RobinThrow.LockThrowDir");
         byte* paramsPtr = stackalloc byte[72];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanReceiveAttackFromPawn;
     /// <summary>
     /// Function: CanReceiveAttackFromPawn
     /// </summary>
     public unsafe override bool CanReceiveAttackFromPawn(BmSDK.BmGame.RPawnCombat TestPawn, BmSDK.BmGame.RPawnCombat NewAttacker)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_RobinThrow.CanReceiveAttackFromPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanReceiveAttackFromPawn, "BmScript.RCombatMove_RobinThrow.CanReceiveAttackFromPawn");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAttacker, paramsPtr + 8);
@@ -200,35 +210,38 @@ public partial class RCombatMove_RobinThrow : BmSDK.BmGame.RCombatMove_PlayerSpe
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_CanNewAttackBeStarted;
     /// <summary>
     /// Function: CanNewAttackBeStarted
     /// </summary>
     public unsafe override bool CanNewAttackBeStarted()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_RobinThrow.CanNewAttackBeStarted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanNewAttackBeStarted, "BmScript.RCombatMove_RobinThrow.CanNewAttackBeStarted");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsValidTarget;
     /// <summary>
     /// Function: IsValidTarget
     /// </summary>
     public unsafe virtual bool IsValidTarget(BmSDK.BmGame.RPawnVillain Enemy)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_RobinThrow.IsValidTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsValidTarget, "BmScript.RCombatMove_RobinThrow.IsValidTarget");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Enemy, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_Initialise;
     /// <summary>
     /// Function: Initialise
     /// </summary>
     public unsafe override void Initialise()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_RobinThrow.Initialise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Initialise, "BmScript.RCombatMove_RobinThrow.Initialise");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

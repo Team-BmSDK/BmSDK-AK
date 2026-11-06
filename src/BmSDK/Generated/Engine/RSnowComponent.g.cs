@@ -78,12 +78,13 @@ public partial class RSnowComponent : BmSDK.Engine.PrimitiveComponent, BmSDK.IGa
         where TComponent : class, Framework.IScriptComponent<RSnowComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DisableSnowSound;
     /// <summary>
     /// Function: DisableSnowSound
     /// </summary>
     public unsafe virtual void DisableSnowSound()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RSnowComponent.DisableSnowSound", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisableSnowSound, "Engine.RSnowComponent.DisableSnowSound");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class RSnowComponent : BmSDK.Engine.PrimitiveComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_EnableSnowSound;
     /// <summary>
     /// Function: EnableSnowSound
     /// </summary>
     public unsafe virtual void EnableSnowSound()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RSnowComponent.EnableSnowSound", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnableSnowSound, "Engine.RSnowComponent.EnableSnowSound");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

@@ -78,46 +78,50 @@ public partial class RSpecialMoveConfigConfigurable : BmSDK.BmGame.RSpecialMoveC
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveConfigConfigurable>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetEndControllerState;
     /// <summary>
     /// Function: GetEndControllerState
     /// </summary>
     public unsafe override BmSDK.FName GetEndControllerState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveConfigConfigurable.GetEndControllerState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetEndControllerState, "BmGame.RSpecialMoveConfigConfigurable.GetEndControllerState");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsCurrentSpecialMove;
     /// <summary>
     /// Function: IsCurrentSpecialMove
     /// </summary>
     public unsafe override bool IsCurrentSpecialMove(BmSDK.BmGame.RPawnPlayer Player)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveConfigConfigurable.IsCurrentSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsCurrentSpecialMove, "BmGame.RSpecialMoveConfigConfigurable.IsCurrentSpecialMove");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetPrompt;
     /// <summary>
     /// Function: GetPrompt
     /// </summary>
     public unsafe override BmSDK.FString GetPrompt()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveConfigConfigurable.GetPrompt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPrompt, "BmGame.RSpecialMoveConfigConfigurable.GetPrompt");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetPredictedEndLocation;
     /// <summary>
     /// Function: GetPredictedEndLocation
     /// </summary>
     public unsafe override System.Numerics.Vector3 GetPredictedEndLocation(BmSDK.BmGame.RPlayerController Controller, BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator MoveLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveConfigConfigurable.GetPredictedEndLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPredictedEndLocation, "BmGame.RSpecialMoveConfigConfigurable.GetPredictedEndLocation");
         byte* paramsPtr = stackalloc byte[152];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Controller, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveLocation, paramsPtr + 8);
@@ -125,12 +129,13 @@ public partial class RSpecialMoveConfigConfigurable : BmSDK.BmGame.RSpecialMoveC
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 140);
     }
 
+    private static BmSDK.Function __fn_GetSpecialMoveIdealStartLoc;
     /// <summary>
     /// Function: GetSpecialMoveIdealStartLoc
     /// </summary>
     public unsafe override System.Numerics.Vector3 GetSpecialMoveIdealStartLoc(BmSDK.BmGame.RPlayerController Controller, BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator MoveLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveConfigConfigurable.GetSpecialMoveIdealStartLoc", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSpecialMoveIdealStartLoc, "BmGame.RSpecialMoveConfigConfigurable.GetSpecialMoveIdealStartLoc");
         byte* paramsPtr = stackalloc byte[152];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Controller, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveLocation, paramsPtr + 8);
@@ -138,12 +143,13 @@ public partial class RSpecialMoveConfigConfigurable : BmSDK.BmGame.RSpecialMoveC
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 140);
     }
 
+    private static BmSDK.Function __fn_TriggerSpecialMove;
     /// <summary>
     /// Function: TriggerSpecialMove
     /// </summary>
     public unsafe override void TriggerSpecialMove(BmSDK.BmGame.RPlayerController Controller, BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator MoveLocation, bool ForceReplicateToClient = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveConfigConfigurable.TriggerSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerSpecialMove, "BmGame.RSpecialMoveConfigConfigurable.TriggerSpecialMove");
         byte* paramsPtr = stackalloc byte[144];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Controller, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveLocation, paramsPtr + 8);

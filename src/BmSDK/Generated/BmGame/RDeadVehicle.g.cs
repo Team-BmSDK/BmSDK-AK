@@ -78,45 +78,49 @@ public partial class RDeadVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.IGame
         where TComponent : class, Framework.IScriptComponent<RDeadVehicle>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObstacleActor;
     /// <summary>
     /// Function: GetObstacleActor
     /// </summary>
     public unsafe virtual BmSDK.Engine.Actor GetObstacleActor()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadVehicle.GetObstacleActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObstacleActor, "BmGame.RDeadVehicle.GetObstacleActor");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_AllowObstaclesToRegister;
     /// <summary>
     /// Function: AllowObstaclesToRegister
     /// </summary>
     public unsafe virtual void AllowObstaclesToRegister()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadVehicle.AllowObstaclesToRegister", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowObstaclesToRegister, "BmGame.RDeadVehicle.AllowObstaclesToRegister");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ReregisterNavMeshObstacle;
     /// <summary>
     /// Function: ReregisterNavMeshObstacle
     /// </summary>
     public unsafe virtual void ReregisterNavMeshObstacle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadVehicle.ReregisterNavMeshObstacle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReregisterNavMeshObstacle, "BmGame.RDeadVehicle.ReregisterNavMeshObstacle");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UnRegisterObstacle;
     /// <summary>
     /// Function: UnRegisterObstacle
     /// </summary>
     public unsafe virtual void UnRegisterObstacle(bool bForceInstant = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadVehicle.UnRegisterObstacle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnRegisterObstacle, "BmGame.RDeadVehicle.UnRegisterObstacle");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForceInstant, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -130,12 +134,13 @@ public partial class RDeadVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_RegisterObstacle;
     /// <summary>
     /// Function: RegisterObstacle
     /// </summary>
     public unsafe virtual void RegisterObstacle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadVehicle.RegisterObstacle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterObstacle, "BmGame.RDeadVehicle.RegisterObstacle");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -148,45 +153,49 @@ public partial class RDeadVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_TickRegisterObstacle;
     /// <summary>
     /// Function: TickRegisterObstacle
     /// </summary>
     public unsafe virtual void TickRegisterObstacle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadVehicle.TickRegisterObstacle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TickRegisterObstacle, "BmGame.RDeadVehicle.TickRegisterObstacle");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnSleepRBPhysics;
     /// <summary>
     /// Function: OnSleepRBPhysics
     /// </summary>
     public unsafe override void OnSleepRBPhysics()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadVehicle.OnSleepRBPhysics", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnSleepRBPhysics, "BmGame.RDeadVehicle.OnSleepRBPhysics");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnWakeRBPhysics;
     /// <summary>
     /// Function: OnWakeRBPhysics
     /// </summary>
     public unsafe override void OnWakeRBPhysics()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadVehicle.OnWakeRBPhysics", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnWakeRBPhysics, "BmGame.RDeadVehicle.OnWakeRBPhysics");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ApplyVisualDamage;
     /// <summary>
     /// Function: ApplyVisualDamage
     /// </summary>
     public unsafe virtual void ApplyVisualDamage(System.Numerics.Vector3 WorldPos, float Radius, float Amount, System.Numerics.Vector3 ChannelMask, bool bDeformAllowed, float PartBreakOffImpulse)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadVehicle.ApplyVisualDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyVisualDamage, "BmGame.RDeadVehicle.ApplyVisualDamage");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WorldPos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Radius, paramsPtr + 12);
@@ -198,12 +207,13 @@ public partial class RDeadVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_ApplyVisualDamageFromDamageType;
     /// <summary>
     /// Function: ApplyVisualDamageFromDamageType
     /// </summary>
     public unsafe virtual void ApplyVisualDamageFromDamageType(BmSDK.Class dmgType, System.Numerics.Vector3 HitLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadVehicle.ApplyVisualDamageFromDamageType", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyVisualDamageFromDamageType, "BmGame.RDeadVehicle.ApplyVisualDamageFromDamageType");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 8);
@@ -211,12 +221,13 @@ public partial class RDeadVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_TakeDamage;
     /// <summary>
     /// Function: TakeDamage
     /// </summary>
     public unsafe override void TakeDamage(int DamageAmount, BmSDK.Engine.Controller EventInstigator, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 Momentum, BmSDK.Class DamageType, BmSDK.Engine.Actor.FTraceHitInfo HitInfo = default, BmSDK.Engine.Actor DamageCauser = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadVehicle.TakeDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TakeDamage, "BmGame.RDeadVehicle.TakeDamage");
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageAmount, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventInstigator, paramsPtr + 4);
@@ -229,12 +240,13 @@ public partial class RDeadVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnDeformEffects;
     /// <summary>
     /// Function: SpawnDeformEffects
     /// </summary>
     public unsafe virtual void SpawnDeformEffects(System.Numerics.Vector3 WorldPos, float Speed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadVehicle.SpawnDeformEffects", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnDeformEffects, "BmGame.RDeadVehicle.SpawnDeformEffects");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WorldPos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speed, paramsPtr + 12);
@@ -242,12 +254,13 @@ public partial class RDeadVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_ConstraintBrokenNotify;
     /// <summary>
     /// Function: ConstraintBrokenNotify
     /// </summary>
     public unsafe override void ConstraintBrokenNotify(BmSDK.Engine.Actor ConOwner, BmSDK.Engine.RB_ConstraintSetup ConSetup, BmSDK.Engine.RB_ConstraintInstance ConInstance)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadVehicle.ConstraintBrokenNotify", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ConstraintBrokenNotify, "BmGame.RDeadVehicle.ConstraintBrokenNotify");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ConOwner, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ConSetup, paramsPtr + 8);
@@ -256,34 +269,37 @@ public partial class RDeadVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadVehicle.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmGame.RDeadVehicle.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadVehicle.PreStreamOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmGame.RDeadVehicle.PreStreamOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InitVehicleCustomisations;
     /// <summary>
     /// Function: InitVehicleCustomisations
     /// </summary>
     public unsafe virtual void InitVehicleCustomisations(BmSDK.Engine.SkeletalMeshComponent SourceMeshComp, BmSDK.BmGame.RVehicleCustomisation SourceCustom, bool RemapMaterials)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadVehicle.InitVehicleCustomisations", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitVehicleCustomisations, "BmGame.RDeadVehicle.InitVehicleCustomisations");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SourceMeshComp, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SourceCustom, paramsPtr + 8);
@@ -292,35 +308,38 @@ public partial class RDeadVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_InitHitMask;
     /// <summary>
     /// Function: InitHitMask
     /// </summary>
     public unsafe virtual void InitHitMask(BmSDK.Engine.SceneCapture2DHitMaskComponent SourceHitMask)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadVehicle.InitHitMask", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitHitMask, "BmGame.RDeadVehicle.InitHitMask");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SourceHitMask, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadVehicle.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RDeadVehicle.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HideTurret;
     /// <summary>
     /// Function: HideTurret
     /// </summary>
     public unsafe virtual void HideTurret(BmSDK.FName TurretBoneName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadVehicle.HideTurret", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideTurret, "BmGame.RDeadVehicle.HideTurret");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TurretBoneName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -334,12 +353,13 @@ public partial class RDeadVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_HideAllButTurret;
     /// <summary>
     /// Function: HideAllButTurret
     /// </summary>
     public unsafe virtual void HideAllButTurret(BmSDK.FName TurretBoneName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadVehicle.HideAllButTurret", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideAllButTurret, "BmGame.RDeadVehicle.HideAllButTurret");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TurretBoneName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -353,12 +373,13 @@ public partial class RDeadVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_HideBonesForBrokenOffParts;
     /// <summary>
     /// Function: HideBonesForBrokenOffParts
     /// </summary>
     public unsafe virtual void HideBonesForBrokenOffParts(BmSDK.BmGame.RVisualDamageComponent VisualDamageComp, BmSDK.Engine.SkeletalMeshComponent SkelMeshComp)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadVehicle.HideBonesForBrokenOffParts", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideBonesForBrokenOffParts, "BmGame.RDeadVehicle.HideBonesForBrokenOffParts");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VisualDamageComp, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SkelMeshComp, paramsPtr + 8);
@@ -373,12 +394,13 @@ public partial class RDeadVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateConstraintFramesForDeformation;
     /// <summary>
     /// Function: UpdateConstraintFramesForDeformation
     /// </summary>
     public unsafe virtual void UpdateConstraintFramesForDeformation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadVehicle.UpdateConstraintFramesForDeformation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateConstraintFramesForDeformation, "BmGame.RDeadVehicle.UpdateConstraintFramesForDeformation");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -391,12 +413,13 @@ public partial class RDeadVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_BreakRandomConstraints;
     /// <summary>
     /// Function: BreakRandomConstraints
     /// </summary>
     public unsafe virtual void BreakRandomConstraints(int PercentChanceOfBreak)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadVehicle.BreakRandomConstraints", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BreakRandomConstraints, "BmGame.RDeadVehicle.BreakRandomConstraints");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PercentChanceOfBreak, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -410,12 +433,13 @@ public partial class RDeadVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_HideChunksInVolume;
     /// <summary>
     /// Function: HideChunksInVolume
     /// </summary>
     public unsafe virtual void HideChunksInVolume(BmSDK.Engine.Volume InVolume)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadVehicle.HideChunksInVolume", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideChunksInVolume, "BmGame.RDeadVehicle.HideChunksInVolume");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InVolume, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -429,12 +453,13 @@ public partial class RDeadVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_PreventChunksFallingOutOfWorld;
     /// <summary>
     /// Function: PreventChunksFallingOutOfWorld
     /// </summary>
     public unsafe virtual void PreventChunksFallingOutOfWorld()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadVehicle.PreventChunksFallingOutOfWorld", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreventChunksFallingOutOfWorld, "BmGame.RDeadVehicle.PreventChunksFallingOutOfWorld");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

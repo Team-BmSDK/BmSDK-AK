@@ -73,68 +73,74 @@ public partial class RTurret_WatchtowerBase : BmSDK.BmGame.RTurretBase, BmSDK.IG
         where TComponent : class, Framework.IScriptComponent<RTurret_WatchtowerBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnToggleHidden;
     /// <summary>
     /// Function: OnToggleHidden
     /// </summary>
     public unsafe override void OnToggleHidden(BmSDK.Engine.SeqAct_ToggleHidden Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_WatchtowerBase.OnToggleHidden", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggleHidden, "BmGame.RTurret_WatchtowerBase.OnToggleHidden");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShootTooCloseTargets;
     /// <summary>
     /// Function: ShootTooCloseTargets
     /// </summary>
     public unsafe override void ShootTooCloseTargets()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_WatchtowerBase.ShootTooCloseTargets", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShootTooCloseTargets, "BmGame.RTurret_WatchtowerBase.ShootTooCloseTargets");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DettachFiringComponents;
     /// <summary>
     /// Function: DettachFiringComponents
     /// </summary>
     public unsafe virtual void DettachFiringComponents()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_WatchtowerBase.DettachFiringComponents", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DettachFiringComponents, "BmGame.RTurret_WatchtowerBase.DettachFiringComponents");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AttachFiringComponents;
     /// <summary>
     /// Function: AttachFiringComponents
     /// </summary>
     public unsafe virtual void AttachFiringComponents()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_WatchtowerBase.AttachFiringComponents", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttachFiringComponents, "BmGame.RTurret_WatchtowerBase.AttachFiringComponents");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetXrayMaterials;
     /// <summary>
     /// Function: SetXrayMaterials
     /// </summary>
     public unsafe virtual void SetXrayMaterials()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_WatchtowerBase.SetXrayMaterials", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetXrayMaterials, "BmGame.RTurret_WatchtowerBase.SetXrayMaterials");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetAngleDistToBM;
     /// <summary>
     /// Function: GetAngleDistToBM
     /// </summary>
     public unsafe virtual void GetAngleDistToBM(System.Numerics.Vector3 BMLoc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_WatchtowerBase.GetAngleDistToBM", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAngleDistToBM, "BmGame.RTurret_WatchtowerBase.GetAngleDistToBM");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BMLoc, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -148,12 +154,13 @@ public partial class RTurret_WatchtowerBase : BmSDK.BmGame.RTurretBase, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_CanShootAtCurrentTarget;
     /// <summary>
     /// Function: CanShootAtCurrentTarget
     /// </summary>
     public unsafe override bool CanShootAtCurrentTarget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_WatchtowerBase.CanShootAtCurrentTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanShootAtCurrentTarget, "BmGame.RTurret_WatchtowerBase.CanShootAtCurrentTarget");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -166,12 +173,13 @@ public partial class RTurret_WatchtowerBase : BmSDK.BmGame.RTurretBase, BmSDK.IG
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_AttachLights;
     /// <summary>
     /// Function: AttachLights
     /// </summary>
     public unsafe virtual void AttachLights()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_WatchtowerBase.AttachLights", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttachLights, "BmGame.RTurret_WatchtowerBase.AttachLights");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -184,12 +192,13 @@ public partial class RTurret_WatchtowerBase : BmSDK.BmGame.RTurretBase, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_CheckForBMInVolume;
     /// <summary>
     /// Function: CheckForBMInVolume
     /// </summary>
     public unsafe override void CheckForBMInVolume()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_WatchtowerBase.CheckForBMInVolume", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckForBMInVolume, "BmGame.RTurret_WatchtowerBase.CheckForBMInVolume");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -202,12 +211,13 @@ public partial class RTurret_WatchtowerBase : BmSDK.BmGame.RTurretBase, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_CheckLOSToPlayer;
     /// <summary>
     /// Function: CheckLOSToPlayer
     /// </summary>
     public unsafe virtual bool CheckLOSToPlayer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_WatchtowerBase.CheckLOSToPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckLOSToPlayer, "BmGame.RTurret_WatchtowerBase.CheckLOSToPlayer");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -220,12 +230,13 @@ public partial class RTurret_WatchtowerBase : BmSDK.BmGame.RTurretBase, BmSDK.IG
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UpdateMuzzleLoc;
     /// <summary>
     /// Function: UpdateMuzzleLoc
     /// </summary>
     public unsafe virtual void UpdateMuzzleLoc()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_WatchtowerBase.UpdateMuzzleLoc", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateMuzzleLoc, "BmGame.RTurret_WatchtowerBase.UpdateMuzzleLoc");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -238,12 +249,13 @@ public partial class RTurret_WatchtowerBase : BmSDK.BmGame.RTurretBase, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_GetTrackingOrigin;
     /// <summary>
     /// Function: GetTrackingOrigin
     /// </summary>
     public unsafe override System.Numerics.Vector3 GetTrackingOrigin()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_WatchtowerBase.GetTrackingOrigin", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTrackingOrigin, "BmGame.RTurret_WatchtowerBase.GetTrackingOrigin");
         byte* paramsPtr = stackalloc byte[12];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -256,12 +268,13 @@ public partial class RTurret_WatchtowerBase : BmSDK.BmGame.RTurretBase, BmSDK.IG
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetLightConeAngleForPlayerSpotlight;
     /// <summary>
     /// Function: GetLightConeAngleForPlayerSpotlight
     /// </summary>
     public unsafe virtual float GetLightConeAngleForPlayerSpotlight()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_WatchtowerBase.GetLightConeAngleForPlayerSpotlight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLightConeAngleForPlayerSpotlight, "BmGame.RTurret_WatchtowerBase.GetLightConeAngleForPlayerSpotlight");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -274,12 +287,13 @@ public partial class RTurret_WatchtowerBase : BmSDK.BmGame.RTurretBase, BmSDK.IG
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_RaycastForLightRadius;
     /// <summary>
     /// Function: RaycastForLightRadius
     /// </summary>
     public unsafe virtual float RaycastForLightRadius()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_WatchtowerBase.RaycastForLightRadius", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RaycastForLightRadius, "BmGame.RTurret_WatchtowerBase.RaycastForLightRadius");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -292,12 +306,13 @@ public partial class RTurret_WatchtowerBase : BmSDK.BmGame.RTurretBase, BmSDK.IG
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UpdateLight;
     /// <summary>
     /// Function: UpdateLight
     /// </summary>
     public unsafe virtual void UpdateLight(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_WatchtowerBase.UpdateLight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateLight, "BmGame.RTurret_WatchtowerBase.UpdateLight");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -311,12 +326,13 @@ public partial class RTurret_WatchtowerBase : BmSDK.BmGame.RTurretBase, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_SetDesiredRotation;
     /// <summary>
     /// Function: SetDesiredRotation
     /// </summary>
     public unsafe override void SetDesiredRotation(BmSDK.Rotator DesiredRot)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_WatchtowerBase.SetDesiredRotation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDesiredRotation, "BmGame.RTurret_WatchtowerBase.SetDesiredRotation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DesiredRot, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -330,12 +346,13 @@ public partial class RTurret_WatchtowerBase : BmSDK.BmGame.RTurretBase, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_TickJammed;
     /// <summary>
     /// Function: TickJammed
     /// </summary>
     public unsafe virtual void TickJammed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_WatchtowerBase.TickJammed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TickJammed, "BmGame.RTurret_WatchtowerBase.TickJammed");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -348,12 +365,13 @@ public partial class RTurret_WatchtowerBase : BmSDK.BmGame.RTurretBase, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_GetBlindedTimeRemaining;
     /// <summary>
     /// Function: GetBlindedTimeRemaining
     /// </summary>
     public unsafe override float GetBlindedTimeRemaining()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_WatchtowerBase.GetBlindedTimeRemaining", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBlindedTimeRemaining, "BmGame.RTurret_WatchtowerBase.GetBlindedTimeRemaining");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -366,12 +384,13 @@ public partial class RTurret_WatchtowerBase : BmSDK.BmGame.RTurretBase, BmSDK.IG
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UnBlind;
     /// <summary>
     /// Function: UnBlind
     /// </summary>
     public unsafe override void UnBlind()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_WatchtowerBase.UnBlind", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnBlind, "BmGame.RTurret_WatchtowerBase.UnBlind");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -384,12 +403,13 @@ public partial class RTurret_WatchtowerBase : BmSDK.BmGame.RTurretBase, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_IsBlinded;
     /// <summary>
     /// Function: IsBlinded
     /// </summary>
     public unsafe override bool IsBlinded()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_WatchtowerBase.IsBlinded", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsBlinded, "BmGame.RTurret_WatchtowerBase.IsBlinded");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

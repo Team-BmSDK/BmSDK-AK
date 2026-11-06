@@ -78,12 +78,13 @@ public partial class RSpecialMoveConfig_CwJump : BmSDK.BmGame.RSpecialMoveConfig
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveConfig_CwJump>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CheckFreeJumpSpace;
     /// <summary>
     /// Function: CheckFreeJumpSpace
     /// </summary>
     public unsafe virtual bool CheckFreeJumpSpace(BmSDK.BmGame.RPawnPlayer Player, BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator Loc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveConfig_CwJump.CheckFreeJumpSpace", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckFreeJumpSpace, "BmScript.RSpecialMoveConfig_CwJump.CheckFreeJumpSpace");
         byte* paramsPtr = stackalloc byte[380];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 8);
@@ -91,12 +92,13 @@ public partial class RSpecialMoveConfig_CwJump : BmSDK.BmGame.RSpecialMoveConfig
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 140);
     }
 
+    private static BmSDK.Function __fn_UpdateLocator;
     /// <summary>
     /// Function: UpdateLocator
     /// </summary>
     public unsafe virtual void UpdateLocator(out BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator Loc, BmSDK.BmGame.RPawnPlayer Player)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveConfig_CwJump.UpdateLocator", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateLocator, "BmScript.RSpecialMoveConfig_CwJump.UpdateLocator");
         byte* paramsPtr = stackalloc byte[164];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 132);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -104,24 +106,26 @@ public partial class RSpecialMoveConfig_CwJump : BmSDK.BmGame.RSpecialMoveConfig
         return;
     }
 
+    private static BmSDK.Function __fn_GetAnimSet;
     /// <summary>
     /// Function: GetAnimSet
     /// </summary>
     public unsafe virtual BmSDK.Engine.AnimSet GetAnimSet(BmSDK.BmGame.RPawnPlayer Player)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveConfig_CwJump.GetAnimSet", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAnimSet, "BmScript.RSpecialMoveConfig_CwJump.GetAnimSet");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSet>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetFreeRotation;
     /// <summary>
     /// Function: GetFreeRotation
     /// </summary>
     public unsafe override BmSDK.Rotator GetFreeRotation(BmSDK.BmGame.RPlayerController Controller, BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator Loc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveConfig_CwJump.GetFreeRotation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFreeRotation, "BmScript.RSpecialMoveConfig_CwJump.GetFreeRotation");
         byte* paramsPtr = stackalloc byte[172];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Controller, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 8);

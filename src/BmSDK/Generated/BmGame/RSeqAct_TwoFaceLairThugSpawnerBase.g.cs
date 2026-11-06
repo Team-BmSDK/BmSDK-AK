@@ -73,12 +73,13 @@ public partial class RSeqAct_TwoFaceLairThugSpawnerBase : BmSDK.BmGame.RSeqAct_C
         where TComponent : class, Framework.IScriptComponent<RSeqAct_TwoFaceLairThugSpawnerBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetThugsOnHigherBalconies;
     /// <summary>
     /// Function: GetThugsOnHigherBalconies
     /// </summary>
     public unsafe virtual int GetThugsOnHigherBalconies()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_TwoFaceLairThugSpawnerBase.GetThugsOnHigherBalconies", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetThugsOnHigherBalconies, "BmGame.RSeqAct_TwoFaceLairThugSpawnerBase.GetThugsOnHigherBalconies");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -91,12 +92,13 @@ public partial class RSeqAct_TwoFaceLairThugSpawnerBase : BmSDK.BmGame.RSeqAct_C
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UpdateThugs;
     /// <summary>
     /// Function: UpdateThugs
     /// </summary>
     public unsafe virtual bool UpdateThugs(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_TwoFaceLairThugSpawnerBase.UpdateThugs", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateThugs, "BmGame.RSeqAct_TwoFaceLairThugSpawnerBase.UpdateThugs");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -110,24 +112,26 @@ public partial class RSeqAct_TwoFaceLairThugSpawnerBase : BmSDK.BmGame.RSeqAct_C
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_LookingAtItem;
     /// <summary>
     /// Function: LookingAtItem
     /// </summary>
     public unsafe virtual bool LookingAtItem(BmSDK.Engine.Actor TestItem)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_TwoFaceLairThugSpawnerBase.LookingAtItem", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LookingAtItem, "BmGame.RSeqAct_TwoFaceLairThugSpawnerBase.LookingAtItem");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestItem, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_SpawnThug;
     /// <summary>
     /// Function: SpawnThug
     /// </summary>
     public unsafe virtual void SpawnThug(BmSDK.Engine.Actor SpawnPoint, BmSDK.Engine.Actor GuardPoint, int SpawnIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_TwoFaceLairThugSpawnerBase.SpawnThug", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnThug, "BmGame.RSeqAct_TwoFaceLairThugSpawnerBase.SpawnThug");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GuardPoint, paramsPtr + 8);

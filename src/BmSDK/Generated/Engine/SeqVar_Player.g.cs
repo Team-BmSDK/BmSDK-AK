@@ -78,23 +78,25 @@ public partial class SeqVar_Player : BmSDK.Engine.SeqVar_Object, BmSDK.IGameObje
         where TComponent : class, Framework.IScriptComponent<SeqVar_Player>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjectValue;
     /// <summary>
     /// Function: GetObjectValue
     /// </summary>
     public unsafe override BmSDK.GameObject GetObjectValue()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SeqVar_Player.GetObjectValue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjectValue, "Engine.SeqVar_Player.GetObjectValue");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.GameObject>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UpdatePlayersList;
     /// <summary>
     /// Function: UpdatePlayersList
     /// </summary>
     public unsafe virtual void UpdatePlayersList()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SeqVar_Player.UpdatePlayersList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdatePlayersList, "Engine.SeqVar_Player.UpdatePlayersList");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

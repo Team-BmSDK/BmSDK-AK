@@ -78,23 +78,25 @@ public partial class RHarpoonGunLv2 : BmSDK.BmScript.RHarpoonGunBm, BmSDK.IGameO
         where TComponent : class, Framework.IScriptComponent<RHarpoonGunLv2>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetPromptName;
     /// <summary>
     /// Function: GetPromptName
     /// </summary>
     public unsafe static BmSDK.FName GetPromptName()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHarpoonGunLv2.GetPromptName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPromptName, "BmScript.RHarpoonGunLv2.GetPromptName");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetPotentialTargetPositions;
     /// <summary>
     /// Function: GetPotentialTargetPositions
     /// </summary>
     public unsafe override bool GetPotentialTargetPositions(BmSDK.Engine.Actor Target, out System.Numerics.Vector3 TargetPosition, out BmSDK.TArray<System.Numerics.Vector3> PotentialTargetPositions, out BmSDK.Engine.Actor LineCheckActor)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHarpoonGunLv2.GetPotentialTargetPositions", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPotentialTargetPositions, "BmScript.RHarpoonGunLv2.GetPotentialTargetPositions");
         byte* paramsPtr = stackalloc byte[80];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -104,12 +106,13 @@ public partial class RHarpoonGunLv2 : BmSDK.BmScript.RHarpoonGunBm, BmSDK.IGameO
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 44);
     }
 
+    private static BmSDK.Function __fn_UpdateTarget;
     /// <summary>
     /// Function: UpdateTarget
     /// </summary>
     public unsafe override void UpdateTarget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHarpoonGunLv2.UpdateTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateTarget, "BmScript.RHarpoonGunLv2.UpdateTarget");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

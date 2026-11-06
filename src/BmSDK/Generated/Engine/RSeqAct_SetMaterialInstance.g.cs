@@ -78,12 +78,13 @@ public partial class RSeqAct_SetMaterialInstance : BmSDK.Engine.SequenceAction, 
         where TComponent : class, Framework.IScriptComponent<RSeqAct_SetMaterialInstance>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CreateInstance;
     /// <summary>
     /// Function: CreateInstance
     /// </summary>
     public unsafe virtual void CreateInstance()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RSeqAct_SetMaterialInstance.CreateInstance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateInstance, "Engine.RSeqAct_SetMaterialInstance.CreateInstance");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

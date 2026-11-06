@@ -78,12 +78,13 @@ public partial class RProximityGadgetTrigger : BmSDK.BmGame.RThugTrap, BmSDK.IGa
         where TComponent : class, Framework.IScriptComponent<RProximityGadgetTrigger>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetCylinderSize;
     /// <summary>
     /// Function: SetCylinderSize
     /// </summary>
     public unsafe virtual void SetCylinderSize(float Radius = default, float Height = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RProximityGadgetTrigger.SetCylinderSize", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCylinderSize, "BmGame.RProximityGadgetTrigger.SetCylinderSize");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Radius, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Height, paramsPtr + 4);
@@ -91,36 +92,39 @@ public partial class RProximityGadgetTrigger : BmSDK.BmGame.RThugTrap, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_CheckExplode;
     /// <summary>
     /// Function: CheckExplode
     /// </summary>
     public unsafe virtual void CheckExplode(BmSDK.BmGame.RPawnVillain VillainTouched)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RProximityGadgetTrigger.CheckExplode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckExplode, "BmGame.RProximityGadgetTrigger.CheckExplode");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VillainTouched, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ProximityTriggerInvulnerable;
     /// <summary>
     /// Function: ProximityTriggerInvulnerable
     /// </summary>
     public unsafe virtual bool ProximityTriggerInvulnerable(BmSDK.BmGame.RPawnVillain VillainTouched)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RProximityGadgetTrigger.ProximityTriggerInvulnerable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProximityTriggerInvulnerable, "BmGame.RProximityGadgetTrigger.ProximityTriggerInvulnerable");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VillainTouched, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_Touch;
     /// <summary>
     /// Function: Touch
     /// </summary>
     public unsafe override void Touch(BmSDK.Engine.Actor Other, BmSDK.Engine.PrimitiveComponent OtherComp, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RProximityGadgetTrigger.Touch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Touch, "BmGame.RProximityGadgetTrigger.Touch");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherComp, paramsPtr + 8);

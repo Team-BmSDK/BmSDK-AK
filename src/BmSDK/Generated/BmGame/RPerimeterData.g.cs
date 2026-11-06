@@ -78,107 +78,116 @@ public partial class RPerimeterData : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RPerimeterData>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetNumPointsFree;
     /// <summary>
     /// Function: GetNumPointsFree
     /// </summary>
     public unsafe virtual int GetNumPointsFree()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPerimeterData.GetNumPointsFree", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNumPointsFree, "BmGame.RPerimeterData.GetNumPointsFree");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ThugAtStandPoint;
     /// <summary>
     /// Function: ThugAtStandPoint
     /// </summary>
     public unsafe virtual void ThugAtStandPoint(BmSDK.BmGame.RAEC_Casualty_Sub_Perim Arrivee)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPerimeterData.ThugAtStandPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ThugAtStandPoint, "BmGame.RPerimeterData.ThugAtStandPoint");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Arrivee, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetFirstOccupiedAntiClockwise;
     /// <summary>
     /// Function: GetFirstOccupiedAntiClockwise
     /// </summary>
     public unsafe virtual int GetFirstOccupiedAntiClockwise(int StartIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPerimeterData.GetFirstOccupiedAntiClockwise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFirstOccupiedAntiClockwise, "BmGame.RPerimeterData.GetFirstOccupiedAntiClockwise");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetFirstOccupiedClockwise;
     /// <summary>
     /// Function: GetFirstOccupiedClockwise
     /// </summary>
     public unsafe virtual int GetFirstOccupiedClockwise(int StartIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPerimeterData.GetFirstOccupiedClockwise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFirstOccupiedClockwise, "BmGame.RPerimeterData.GetFirstOccupiedClockwise");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetWatchList;
     /// <summary>
     /// Function: GetWatchList
     /// </summary>
     public unsafe virtual BmSDK.TArray<System.Numerics.Vector3> GetWatchList(int StandPointIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPerimeterData.GetWatchList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWatchList, "BmGame.RPerimeterData.GetWatchList");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StandPointIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<System.Numerics.Vector3>>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetWatcherAtIndex;
     /// <summary>
     /// Function: GetWatcherAtIndex
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RAEC_Casualty_Sub_Perim GetWatcherAtIndex(int StandPointIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPerimeterData.GetWatcherAtIndex", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWatcherAtIndex, "BmGame.RPerimeterData.GetWatcherAtIndex");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StandPointIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RAEC_Casualty_Sub_Perim>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_HasWatcher;
     /// <summary>
     /// Function: HasWatcher
     /// </summary>
     public unsafe virtual bool HasWatcher(int StandPointIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPerimeterData.HasWatcher", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasWatcher, "BmGame.RPerimeterData.HasWatcher");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StandPointIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_FreeWatcher;
     /// <summary>
     /// Function: FreeWatcher
     /// </summary>
     public unsafe virtual void FreeWatcher(BmSDK.BmGame.RAEC_Casualty_Sub_Perim Watcher)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPerimeterData.FreeWatcher", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FreeWatcher, "BmGame.RPerimeterData.FreeWatcher");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Watcher, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetWatcher;
     /// <summary>
     /// Function: SetWatcher
     /// </summary>
     public unsafe virtual void SetWatcher(int StandPointIndex, BmSDK.BmGame.RAEC_Casualty_Sub_Perim Watcher)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPerimeterData.SetWatcher", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetWatcher, "BmGame.RPerimeterData.SetWatcher");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StandPointIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Watcher, paramsPtr + 4);
@@ -186,12 +195,13 @@ public partial class RPerimeterData : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_InitFromPathResults;
     /// <summary>
     /// Function: InitFromPathResults
     /// </summary>
     public unsafe virtual void InitFromPathResults(BmSDK.BmGame.RExitPoints ExitPoints)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPerimeterData.InitFromPathResults", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitFromPathResults, "BmGame.RPerimeterData.InitFromPathResults");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExitPoints, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

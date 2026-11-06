@@ -73,12 +73,13 @@ public partial class Surface : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<Surface>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetSurfaceHeight;
     /// <summary>
     /// Function: GetSurfaceHeight
     /// </summary>
     public unsafe virtual float GetSurfaceHeight()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Surface.GetSurfaceHeight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSurfaceHeight, "Engine.Surface.GetSurfaceHeight");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -91,12 +92,13 @@ public partial class Surface : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetSurfaceWidth;
     /// <summary>
     /// Function: GetSurfaceWidth
     /// </summary>
     public unsafe virtual float GetSurfaceWidth()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Surface.GetSurfaceWidth", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSurfaceWidth, "Engine.Surface.GetSurfaceWidth");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

@@ -78,35 +78,38 @@ public partial class RBMAIAction_PointAtCas_Minigunner : BmSDK.BmGame.RBMAIActio
         where TComponent : class, Framework.IScriptComponent<RBMAIAction_PointAtCas_Minigunner>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ActionTick;
     /// <summary>
     /// Function: ActionTick
     /// </summary>
     public unsafe override BmSDK.BmGame.RBMAIAction.ActionTickResult ActionTick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PointAtCas_Minigunner.ActionTick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActionTick, "BmGame.RBMAIAction_PointAtCas_Minigunner.ActionTick");
         byte* paramsPtr = stackalloc byte[5];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMAIAction.ActionTickResult>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_StartPointAnim;
     /// <summary>
     /// Function: StartPointAnim
     /// </summary>
     public unsafe virtual void StartPointAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PointAtCas_Minigunner.StartPointAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartPointAnim, "BmGame.RBMAIAction_PointAtCas_Minigunner.StartPointAnim");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PointAtCas_Minigunner.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMAIAction_PointAtCas_Minigunner.OnActivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

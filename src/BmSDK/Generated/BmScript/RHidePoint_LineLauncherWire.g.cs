@@ -78,71 +78,77 @@ public partial class RHidePoint_LineLauncherWire : BmSDK.BmGame.RHidePoint_RopeB
         where TComponent : class, Framework.IScriptComponent<RHidePoint_LineLauncherWire>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetPerfectConcealment;
     /// <summary>
     /// Function: SetPerfectConcealment
     /// </summary>
     public unsafe override void SetPerfectConcealment(bool bNewPerfectConcealment)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHidePoint_LineLauncherWire.SetPerfectConcealment", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetPerfectConcealment, "BmScript.RHidePoint_LineLauncherWire.SetPerfectConcealment");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewPerfectConcealment, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Attach;
     /// <summary>
     /// Function: Attach
     /// </summary>
     public unsafe override void Attach(BmSDK.Engine.Actor Other)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHidePoint_LineLauncherWire.Attach", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Attach, "BmScript.RHidePoint_LineLauncherWire.Attach");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetLightEnvironmentBounds;
     /// <summary>
     /// Function: SetLightEnvironmentBounds
     /// </summary>
     public unsafe override void SetLightEnvironmentBounds(BmSDK.GameObject.FBoxSphereBounds Bounds)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHidePoint_LineLauncherWire.SetLightEnvironmentBounds", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetLightEnvironmentBounds, "BmScript.RHidePoint_LineLauncherWire.SetLightEnvironmentBounds");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Bounds, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHidePoint_LineLauncherWire.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmScript.RHidePoint_LineLauncherWire.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHidePoint_LineLauncherWire.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmScript.RHidePoint_LineLauncherWire.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Bump;
     /// <summary>
     /// Function: Bump
     /// </summary>
     public unsafe override void Bump(BmSDK.Engine.Actor Other, BmSDK.Engine.PrimitiveComponent OtherComp, System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHidePoint_LineLauncherWire.Bump", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Bump, "BmScript.RHidePoint_LineLauncherWire.Bump");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherComp, paramsPtr + 8);
@@ -151,23 +157,25 @@ public partial class RHidePoint_LineLauncherWire : BmSDK.BmGame.RHidePoint_RopeB
         return;
     }
 
+    private static BmSDK.Function __fn_DestroyLLWire;
     /// <summary>
     /// Function: DestroyLLWire
     /// </summary>
     public unsafe override void DestroyLLWire()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHidePoint_LineLauncherWire.DestroyLLWire", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DestroyLLWire, "BmScript.RHidePoint_LineLauncherWire.DestroyLLWire");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_BMLeft;
     /// <summary>
     /// Function: BMLeft
     /// </summary>
     public unsafe override void BMLeft()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHidePoint_LineLauncherWire.BMLeft", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BMLeft, "BmScript.RHidePoint_LineLauncherWire.BMLeft");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

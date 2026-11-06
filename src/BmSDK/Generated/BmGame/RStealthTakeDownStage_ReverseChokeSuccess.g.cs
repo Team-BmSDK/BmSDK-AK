@@ -78,46 +78,50 @@ public partial class RStealthTakeDownStage_ReverseChokeSuccess : BmSDK.BmGame.RS
         where TComponent : class, Framework.IScriptComponent<RStealthTakeDownStage_ReverseChokeSuccess>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_End;
     /// <summary>
     /// Function: End
     /// </summary>
     public unsafe override void End(bool bLastStage = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStealthTakeDownStage_ReverseChokeSuccess.End", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_End, "BmGame.RStealthTakeDownStage_ReverseChokeSuccess.End");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bLastStage, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ResetCamera;
     /// <summary>
     /// Function: ResetCamera
     /// </summary>
     public unsafe virtual void ResetCamera()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStealthTakeDownStage_ReverseChokeSuccess.ResetCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetCamera, "BmGame.RStealthTakeDownStage_ReverseChokeSuccess.ResetCamera");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_LookAtCeiling;
     /// <summary>
     /// Function: LookAtCeiling
     /// </summary>
     public unsafe virtual void LookAtCeiling()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStealthTakeDownStage_ReverseChokeSuccess.LookAtCeiling", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LookAtCeiling, "BmGame.RStealthTakeDownStage_ReverseChokeSuccess.LookAtCeiling");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetReferencePosition;
     /// <summary>
     /// Function: GetReferencePosition
     /// </summary>
     public unsafe override void GetReferencePosition(out System.Numerics.Vector3 ReferencePosition, out BmSDK.Rotator ReferenceRotation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStealthTakeDownStage_ReverseChokeSuccess.GetReferencePosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetReferencePosition, "BmGame.RStealthTakeDownStage_ReverseChokeSuccess.GetReferencePosition");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ReferencePosition = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);

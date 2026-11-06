@@ -78,12 +78,13 @@ public partial class GameStateObject : BmSDK.Engine.GameplayEventsHandler, BmSDK
         where TComponent : class, Framework.IScriptComponent<GameStateObject>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Reset;
     /// <summary>
     /// Function: Reset
     /// </summary>
     public unsafe virtual void Reset()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.GameStateObject.Reset", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Reset, "Engine.GameStateObject.Reset");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class GameStateObject : BmSDK.Engine.GameplayEventsHandler, BmSDK
         return;
     }
 
+    private static BmSDK.Function __fn_PreProcessStream;
     /// <summary>
     /// Function: PreProcessStream
     /// </summary>
     public unsafe override void PreProcessStream()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.GameStateObject.PreProcessStream", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreProcessStream, "Engine.GameStateObject.PreProcessStream");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

@@ -78,59 +78,64 @@ public partial class RExplosiveGooMine : BmSDK.BmGame.RThugTrap, BmSDK.IGameObje
         where TComponent : class, Framework.IScriptComponent<RExplosiveGooMine>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetGlanceScore;
     /// <summary>
     /// Function: GetGlanceScore
     /// </summary>
     public unsafe virtual int GetGlanceScore()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.GetGlanceScore", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGlanceScore, "BmGame.RExplosiveGooMine.GetGlanceScore");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_DoControlledExplosion;
     /// <summary>
     /// Function: DoControlledExplosion
     /// </summary>
     public unsafe virtual void DoControlledExplosion(BmSDK.BmGame.RPawnVillain shooter)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.DoControlledExplosion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoControlledExplosion, "BmGame.RExplosiveGooMine.DoControlledExplosion");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(shooter, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SeenByThug;
     /// <summary>
     /// Function: SeenByThug
     /// </summary>
     public unsafe virtual void SeenByThug(BmSDK.BmGame.RBMAIController SpottingThug)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.SeenByThug", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SeenByThug, "BmGame.RExplosiveGooMine.SeenByThug");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpottingThug, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShowVantageInfluenceArea;
     /// <summary>
     /// Function: ShowVantageInfluenceArea
     /// </summary>
     public unsafe virtual void ShowVantageInfluenceArea(bool bShow)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.ShowVantageInfluenceArea", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowVantageInfluenceArea, "BmGame.RExplosiveGooMine.ShowVantageInfluenceArea");
         byte* paramsPtr = stackalloc byte[84];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bShow, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ConditionalSetupPosition;
     /// <summary>
     /// Function: ConditionalSetupPosition
     /// </summary>
     public unsafe virtual BmSDK.Engine.Actor ConditionalSetupPosition()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.ConditionalSetupPosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ConditionalSetupPosition, "BmGame.RExplosiveGooMine.ConditionalSetupPosition");
         byte* paramsPtr = stackalloc byte[8];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -143,12 +148,13 @@ public partial class RExplosiveGooMine : BmSDK.BmGame.RThugTrap, BmSDK.IGameObje
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ComplexTrace;
     /// <summary>
     /// Function: ComplexTrace
     /// </summary>
     public unsafe virtual BmSDK.Engine.Actor ComplexTrace(BmSDK.Engine.Actor MyOwner, out System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 End, System.Numerics.Vector3 Start)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.ComplexTrace", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ComplexTrace, "BmGame.RExplosiveGooMine.ComplexTrace");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MyOwner, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(End, paramsPtr + 20);
@@ -165,23 +171,25 @@ public partial class RExplosiveGooMine : BmSDK.BmGame.RThugTrap, BmSDK.IGameObje
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 44);
     }
 
+    private static BmSDK.Function __fn_Explode;
     /// <summary>
     /// Function: Explode
     /// </summary>
     public unsafe virtual void Explode()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.Explode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Explode, "BmGame.RExplosiveGooMine.Explode");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetExplosionDirection;
     /// <summary>
     /// Function: SetExplosionDirection
     /// </summary>
     public unsafe virtual void SetExplosionDirection(System.Numerics.Vector3 Dir, bool bShowArrow = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.SetExplosionDirection", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetExplosionDirection, "BmGame.RExplosiveGooMine.SetExplosionDirection");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Dir, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bShowArrow, paramsPtr + 12);
@@ -189,35 +197,38 @@ public partial class RExplosiveGooMine : BmSDK.BmGame.RThugTrap, BmSDK.IGameObje
         return;
     }
 
+    private static BmSDK.Function __fn_FinishedPlacing;
     /// <summary>
     /// Function: FinishedPlacing
     /// </summary>
     public unsafe virtual void FinishedPlacing()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.FinishedPlacing", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishedPlacing, "BmGame.RExplosiveGooMine.FinishedPlacing");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RExplosiveGooMine.Tick");
         byte* paramsPtr = stackalloc byte[148];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Touch;
     /// <summary>
     /// Function: Touch
     /// </summary>
     public unsafe override void Touch(BmSDK.Engine.Actor Other, BmSDK.Engine.PrimitiveComponent OtherComp, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.Touch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Touch, "BmGame.RExplosiveGooMine.Touch");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherComp, paramsPtr + 8);
@@ -227,12 +238,13 @@ public partial class RExplosiveGooMine : BmSDK.BmGame.RThugTrap, BmSDK.IGameObje
         return;
     }
 
+    private static BmSDK.Function __fn_IsValidTarget;
     /// <summary>
     /// Function: IsValidTarget
     /// </summary>
     public unsafe virtual bool IsValidTarget(BmSDK.Engine.Actor TestActor)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.IsValidTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsValidTarget, "BmGame.RExplosiveGooMine.IsValidTarget");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestActor, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -246,134 +258,146 @@ public partial class RExplosiveGooMine : BmSDK.BmGame.RThugTrap, BmSDK.IGameObje
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_ExplodeParticles;
     /// <summary>
     /// Function: ExplodeParticles
     /// </summary>
     public unsafe virtual void ExplodeParticles()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.ExplodeParticles", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ExplodeParticles, "BmGame.RExplosiveGooMine.ExplodeParticles");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EndGelSpray2;
     /// <summary>
     /// Function: EndGelSpray2
     /// </summary>
     public unsafe virtual void EndGelSpray2()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.EndGelSpray2", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EndGelSpray2, "BmGame.RExplosiveGooMine.EndGelSpray2");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartGelSpray2;
     /// <summary>
     /// Function: StartGelSpray2
     /// </summary>
     public unsafe virtual void StartGelSpray2()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.StartGelSpray2", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartGelSpray2, "BmGame.RExplosiveGooMine.StartGelSpray2");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EndGelSpray;
     /// <summary>
     /// Function: EndGelSpray
     /// </summary>
     public unsafe virtual void EndGelSpray()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.EndGelSpray", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EndGelSpray, "BmGame.RExplosiveGooMine.EndGelSpray");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartGelSpray;
     /// <summary>
     /// Function: StartGelSpray
     /// </summary>
     public unsafe virtual void StartGelSpray()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.StartGelSpray", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartGelSpray, "BmGame.RExplosiveGooMine.StartGelSpray");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmGame.RExplosiveGooMine.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.PreStreamOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmGame.RExplosiveGooMine.PreStreamOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Finished;
     /// <summary>
     /// Function: Finished
     /// </summary>
     public unsafe virtual void Finished()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.Finished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Finished, "BmGame.RExplosiveGooMine.Finished");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DoExplodeStartle;
     /// <summary>
     /// Function: DoExplodeStartle
     /// </summary>
     public unsafe virtual void DoExplodeStartle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.DoExplodeStartle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoExplodeStartle, "BmGame.RExplosiveGooMine.DoExplodeStartle");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DoExplodeEvent;
     /// <summary>
     /// Function: DoExplodeEvent
     /// </summary>
     public unsafe virtual void DoExplodeEvent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.DoExplodeEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoExplodeEvent, "BmGame.RExplosiveGooMine.DoExplodeEvent");
         byte* paramsPtr = stackalloc byte[80];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetGooSprayer;
     /// <summary>
     /// Function: SetGooSprayer
     /// </summary>
     public unsafe virtual void SetGooSprayer(BmSDK.BmGame.RPawnPlayer Sprayer)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.SetGooSprayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetGooSprayer, "BmGame.RExplosiveGooMine.SetGooSprayer");
         byte* paramsPtr = stackalloc byte[124];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Sprayer, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AreLevelsCompatible;
     /// <summary>
     /// Function: AreLevelsCompatible
     /// </summary>
     public unsafe virtual bool AreLevelsCompatible(BmSDK.Engine.Actor Check1, BmSDK.Engine.Actor Check2)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.AreLevelsCompatible", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AreLevelsCompatible, "BmGame.RExplosiveGooMine.AreLevelsCompatible");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Check1, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Check2, paramsPtr + 8);
@@ -388,23 +412,25 @@ public partial class RExplosiveGooMine : BmSDK.BmGame.RThugTrap, BmSDK.IGameObje
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RExplosiveGooMine.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreBeginPlay;
     /// <summary>
     /// Function: PreBeginPlay
     /// </summary>
     public unsafe override void PreBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RExplosiveGooMine.PreBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreBeginPlay, "BmGame.RExplosiveGooMine.PreBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

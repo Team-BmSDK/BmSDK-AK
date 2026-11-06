@@ -78,68 +78,74 @@ public partial class RStealthTakeDownStage_CornerGrab : BmSDK.BmGame.RStealthTak
         where TComponent : class, Framework.IScriptComponent<RStealthTakeDownStage_CornerGrab>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Begin;
     /// <summary>
     /// Function: Begin
     /// </summary>
     public unsafe override void Begin()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStealthTakeDownStage_CornerGrab.Begin", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Begin, "BmGame.RStealthTakeDownStage_CornerGrab.Begin");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GotoStage;
     /// <summary>
     /// Function: GotoStage
     /// </summary>
     public unsafe override void GotoStage(BmSDK.BmGame.RGameInfo.EStealthTakeDownStages NextStageClass)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStealthTakeDownStage_CornerGrab.GotoStage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GotoStage, "BmGame.RStealthTakeDownStage_CornerGrab.GotoStage");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NextStageClass, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerNextStage;
     /// <summary>
     /// Function: TriggerNextStage
     /// </summary>
     public unsafe override void TriggerNextStage()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStealthTakeDownStage_CornerGrab.TriggerNextStage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerNextStage, "BmGame.RStealthTakeDownStage_CornerGrab.TriggerNextStage");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetNextStage;
     /// <summary>
     /// Function: GetNextStage
     /// </summary>
     public unsafe override BmSDK.BmGame.RGameInfo.EStealthTakeDownStages GetNextStage()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStealthTakeDownStage_CornerGrab.GetNextStage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNextStage, "BmGame.RStealthTakeDownStage_CornerGrab.GetNextStage");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameInfo.EStealthTakeDownStages>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetStageAnim;
     /// <summary>
     /// Function: GetStageAnim
     /// </summary>
     public unsafe override int GetStageAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStealthTakeDownStage_CornerGrab.GetStageAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStageAnim, "BmGame.RStealthTakeDownStage_CornerGrab.GetStageAnim");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetReferencePosition;
     /// <summary>
     /// Function: GetReferencePosition
     /// </summary>
     public unsafe override void GetReferencePosition(out System.Numerics.Vector3 ReferencePosition, out BmSDK.Rotator ReferenceRotation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStealthTakeDownStage_CornerGrab.GetReferencePosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetReferencePosition, "BmGame.RStealthTakeDownStage_CornerGrab.GetReferencePosition");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ReferencePosition = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);

@@ -78,188 +78,205 @@ public partial class MSpecialMoveInstance_HarleyPounce : BmSDK.BmGame.RSpecialMo
         where TComponent : class, Framework.IScriptComponent<MSpecialMoveInstance_HarleyPounce>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_FinishSpecialMove;
     /// <summary>
     /// Function: FinishSpecialMove
     /// </summary>
     public unsafe override void FinishSpecialMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MSpecialMoveInstance_HarleyPounce.FinishSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishSpecialMove, "BmScript.MSpecialMoveInstance_HarleyPounce.FinishSpecialMove");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CheckGrapplePressed;
     /// <summary>
     /// Function: CheckGrapplePressed
     /// </summary>
     public unsafe virtual void CheckGrapplePressed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MSpecialMoveInstance_HarleyPounce.CheckGrapplePressed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckGrapplePressed, "BmScript.MSpecialMoveInstance_HarleyPounce.CheckGrapplePressed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartDisableCameraCollision;
     /// <summary>
     /// Function: StartDisableCameraCollision
     /// </summary>
     public unsafe virtual void StartDisableCameraCollision()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MSpecialMoveInstance_HarleyPounce.StartDisableCameraCollision", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartDisableCameraCollision, "BmScript.MSpecialMoveInstance_HarleyPounce.StartDisableCameraCollision");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetEndCameraState;
     /// <summary>
     /// Function: SetEndCameraState
     /// </summary>
     public unsafe virtual void SetEndCameraState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MSpecialMoveInstance_HarleyPounce.SetEndCameraState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetEndCameraState, "BmScript.MSpecialMoveInstance_HarleyPounce.SetEndCameraState");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_WallClimbStartCam;
     /// <summary>
     /// Function: WallClimbStartCam
     /// </summary>
     public unsafe virtual void WallClimbStartCam()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MSpecialMoveInstance_HarleyPounce.WallClimbStartCam", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WallClimbStartCam, "BmScript.MSpecialMoveInstance_HarleyPounce.WallClimbStartCam");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetEndControllerState;
     /// <summary>
     /// Function: GetEndControllerState
     /// </summary>
     public unsafe override BmSDK.FName GetEndControllerState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MSpecialMoveInstance_HarleyPounce.GetEndControllerState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetEndControllerState, "BmScript.MSpecialMoveInstance_HarleyPounce.GetEndControllerState");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PlayAnimLandOverRailing;
     /// <summary>
     /// Function: PlayAnimLandOverRailing
     /// </summary>
     public unsafe virtual void PlayAnimLandOverRailing()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MSpecialMoveInstance_HarleyPounce.PlayAnimLandOverRailing", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayAnimLandOverRailing, "BmScript.MSpecialMoveInstance_HarleyPounce.PlayAnimLandOverRailing");
         byte* paramsPtr = stackalloc byte[10];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayAnimLandOnRailing;
     /// <summary>
     /// Function: PlayAnimLandOnRailing
     /// </summary>
     public unsafe virtual void PlayAnimLandOnRailing()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MSpecialMoveInstance_HarleyPounce.PlayAnimLandOnRailing", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayAnimLandOnRailing, "BmScript.MSpecialMoveInstance_HarleyPounce.PlayAnimLandOnRailing");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayAnimSlipThroughGrate;
     /// <summary>
     /// Function: PlayAnimSlipThroughGrate
     /// </summary>
     public unsafe virtual void PlayAnimSlipThroughGrate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MSpecialMoveInstance_HarleyPounce.PlayAnimSlipThroughGrate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayAnimSlipThroughGrate, "BmScript.MSpecialMoveInstance_HarleyPounce.PlayAnimSlipThroughGrate");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FlipOverRailing;
     /// <summary>
     /// Function: FlipOverRailing
     /// </summary>
     public unsafe virtual bool FlipOverRailing()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MSpecialMoveInstance_HarleyPounce.FlipOverRailing", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FlipOverRailing, "BmScript.MSpecialMoveInstance_HarleyPounce.FlipOverRailing");
         byte* paramsPtr = stackalloc byte[9];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CalculateIsAngleJump;
     /// <summary>
     /// Function: CalculateIsAngleJump
     /// </summary>
     public unsafe virtual void CalculateIsAngleJump()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MSpecialMoveInstance_HarleyPounce.CalculateIsAngleJump", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculateIsAngleJump, "BmScript.MSpecialMoveInstance_HarleyPounce.CalculateIsAngleJump");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayAnimAir;
     /// <summary>
     /// Function: PlayAnimAir
     /// </summary>
     public unsafe virtual void PlayAnimAir()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MSpecialMoveInstance_HarleyPounce.PlayAnimAir", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayAnimAir, "BmScript.MSpecialMoveInstance_HarleyPounce.PlayAnimAir");
         byte* paramsPtr = stackalloc byte[9];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayAnimJump;
     /// <summary>
     /// Function: PlayAnimJump
     /// </summary>
     public unsafe virtual void PlayAnimJump()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MSpecialMoveInstance_HarleyPounce.PlayAnimJump", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayAnimJump, "BmScript.MSpecialMoveInstance_HarleyPounce.PlayAnimJump");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayAnimCartWheel;
     /// <summary>
     /// Function: PlayAnimCartWheel
     /// </summary>
     public unsafe virtual void PlayAnimCartWheel()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MSpecialMoveInstance_HarleyPounce.PlayAnimCartWheel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayAnimCartWheel, "BmScript.MSpecialMoveInstance_HarleyPounce.PlayAnimCartWheel");
         byte* paramsPtr = stackalloc byte[156];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayBreakWindowAnim;
     /// <summary>
     /// Function: PlayBreakWindowAnim
     /// </summary>
     public unsafe virtual void PlayBreakWindowAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MSpecialMoveInstance_HarleyPounce.PlayBreakWindowAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayBreakWindowAnim, "BmScript.MSpecialMoveInstance_HarleyPounce.PlayBreakWindowAnim");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CheckForBreakableWindow;
     /// <summary>
     /// Function: CheckForBreakableWindow
     /// </summary>
     public unsafe virtual bool CheckForBreakableWindow()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MSpecialMoveInstance_HarleyPounce.CheckForBreakableWindow", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckForBreakableWindow, "BmScript.MSpecialMoveInstance_HarleyPounce.CheckForBreakableWindow");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsCartWheelValid;
     /// <summary>
     /// Function: IsCartWheelValid
     /// </summary>
     public unsafe virtual bool IsCartWheelValid(System.Numerics.Vector3 Start, System.Numerics.Vector3 End, BmSDK.BmGame.MHarleyGrappleGunBase GrappleGun, out BmSDK.FName AnimName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MSpecialMoveInstance_HarleyPounce.IsCartWheelValid", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsCartWheelValid, "BmScript.MSpecialMoveInstance_HarleyPounce.IsCartWheelValid");
         byte* paramsPtr = stackalloc byte[112];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Start, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(End, paramsPtr + 12);
@@ -269,12 +286,13 @@ public partial class MSpecialMoveInstance_HarleyPounce : BmSDK.BmGame.RSpecialMo
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 40);
     }
 
+    private static BmSDK.Function __fn_TraceProperCartWheelPath;
     /// <summary>
     /// Function: TraceProperCartWheelPath
     /// </summary>
     public unsafe virtual bool TraceProperCartWheelPath(System.Numerics.Vector3 TraceStart, System.Numerics.Vector3 TraceEnd, float TraceForwardDist, System.Numerics.Vector3 TraceExtent, out System.Numerics.Vector3 HitLocation, out System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MSpecialMoveInstance_HarleyPounce.TraceProperCartWheelPath", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TraceProperCartWheelPath, "BmScript.MSpecialMoveInstance_HarleyPounce.TraceProperCartWheelPath");
         byte* paramsPtr = stackalloc byte[172];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TraceStart, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TraceEnd, paramsPtr + 12);
@@ -286,12 +304,13 @@ public partial class MSpecialMoveInstance_HarleyPounce : BmSDK.BmGame.RSpecialMo
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 64);
     }
 
+    private static BmSDK.Function __fn_GetCartWheelAnimBasedOnDistance;
     /// <summary>
     /// Function: GetCartWheelAnimBasedOnDistance
     /// </summary>
     public unsafe virtual bool GetCartWheelAnimBasedOnDistance(float DistanceSq, BmSDK.BmGame.MHarleyGrappleGunBase GrappleGun, out BmSDK.FName AnimName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MSpecialMoveInstance_HarleyPounce.GetCartWheelAnimBasedOnDistance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCartWheelAnimBasedOnDistance, "BmScript.MSpecialMoveInstance_HarleyPounce.GetCartWheelAnimBasedOnDistance");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DistanceSq, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GrappleGun, paramsPtr + 4);
@@ -300,68 +319,74 @@ public partial class MSpecialMoveInstance_HarleyPounce : BmSDK.BmGame.RSpecialMo
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_TriggerSpecialMove;
     /// <summary>
     /// Function: TriggerSpecialMove
     /// </summary>
     public unsafe override void TriggerSpecialMove(BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator MoveLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MSpecialMoveInstance_HarleyPounce.TriggerSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerSpecialMove, "BmScript.MSpecialMoveInstance_HarleyPounce.TriggerSpecialMove");
         byte* paramsPtr = stackalloc byte[132];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NextSwing;
     /// <summary>
     /// Function: NextSwing
     /// </summary>
     public unsafe virtual void NextSwing()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MSpecialMoveInstance_HarleyPounce.NextSwing", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NextSwing, "BmScript.MSpecialMoveInstance_HarleyPounce.NextSwing");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetTargetHidePoint;
     /// <summary>
     /// Function: GetTargetHidePoint
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RHidePoint GetTargetHidePoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MSpecialMoveInstance_HarleyPounce.GetTargetHidePoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTargetHidePoint, "BmScript.MSpecialMoveInstance_HarleyPounce.GetTargetHidePoint");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RHidePoint>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanUpdateGrapple;
     /// <summary>
     /// Function: CanUpdateGrapple
     /// </summary>
     public unsafe virtual bool CanUpdateGrapple()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MSpecialMoveInstance_HarleyPounce.CanUpdateGrapple", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanUpdateGrapple, "BmScript.MSpecialMoveInstance_HarleyPounce.CanUpdateGrapple");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetNextHidePoint;
     /// <summary>
     /// Function: GetNextHidePoint
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RHidePoint GetNextHidePoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MSpecialMoveInstance_HarleyPounce.GetNextHidePoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNextHidePoint, "BmScript.MSpecialMoveInstance_HarleyPounce.GetNextHidePoint");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RHidePoint>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetNextHidePoint;
     /// <summary>
     /// Function: SetNextHidePoint
     /// </summary>
     public unsafe virtual void SetNextHidePoint(BmSDK.BmGame.RHidePoint NextPoint, System.Numerics.Vector3 NextPos)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MSpecialMoveInstance_HarleyPounce.SetNextHidePoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetNextHidePoint, "BmScript.MSpecialMoveInstance_HarleyPounce.SetNextHidePoint");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NextPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NextPos, paramsPtr + 8);

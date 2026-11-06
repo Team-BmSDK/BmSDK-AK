@@ -78,23 +78,25 @@ public partial class SeqAct_SetCameraTarget : BmSDK.Engine.SequenceAction, BmSDK
         where TComponent : class, Framework.IScriptComponent<SeqAct_SetCameraTarget>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SeqAct_SetCameraTarget.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "Engine.SeqAct_SetCameraTarget.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsValidLevelSequenceObject;
     /// <summary>
     /// Function: IsValidLevelSequenceObject
     /// </summary>
     public unsafe override bool IsValidLevelSequenceObject()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SeqAct_SetCameraTarget.IsValidLevelSequenceObject", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsValidLevelSequenceObject, "Engine.SeqAct_SetCameraTarget.IsValidLevelSequenceObject");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

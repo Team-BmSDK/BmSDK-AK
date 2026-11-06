@@ -78,145 +78,158 @@ public partial class RBMBehaviour_MoveTo : BmSDK.BmGame.RBMBehaviour_MoveToBase,
         where TComponent : class, Framework.IScriptComponent<RBMBehaviour_MoveTo>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_MoveTo.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmGame.RBMBehaviour_MoveTo.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanLookAtPlayer;
     /// <summary>
     /// Function: CanLookAtPlayer
     /// </summary>
     public unsafe override bool CanLookAtPlayer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_MoveTo.CanLookAtPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanLookAtPlayer, "BmGame.RBMBehaviour_MoveTo.CanLookAtPlayer");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_AtGoalFinaliseLookAt;
     /// <summary>
     /// Function: AtGoalFinaliseLookAt
     /// </summary>
     public unsafe virtual void AtGoalFinaliseLookAt()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_MoveTo.AtGoalFinaliseLookAt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AtGoalFinaliseLookAt, "BmGame.RBMBehaviour_MoveTo.AtGoalFinaliseLookAt");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AtGoalFinalise;
     /// <summary>
     /// Function: AtGoalFinalise
     /// </summary>
     public unsafe virtual void AtGoalFinalise()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_MoveTo.AtGoalFinalise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AtGoalFinalise, "BmGame.RBMBehaviour_MoveTo.AtGoalFinalise");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HandlePathNotFound;
     /// <summary>
     /// Function: HandlePathNotFound
     /// </summary>
     public unsafe virtual void HandlePathNotFound()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_MoveTo.HandlePathNotFound", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandlePathNotFound, "BmGame.RBMBehaviour_MoveTo.HandlePathNotFound");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Repath;
     /// <summary>
     /// Function: Repath
     /// </summary>
     public unsafe virtual void Repath()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_MoveTo.Repath", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Repath, "BmGame.RBMBehaviour_MoveTo.Repath");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartNavMeshSearch;
     /// <summary>
     /// Function: StartNavMeshSearch
     /// </summary>
     public unsafe virtual void StartNavMeshSearch()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_MoveTo.StartNavMeshSearch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartNavMeshSearch, "BmGame.RBMBehaviour_MoveTo.StartNavMeshSearch");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_VeryCloseToGoal;
     /// <summary>
     /// Function: VeryCloseToGoal
     /// </summary>
     public unsafe virtual bool VeryCloseToGoal(float CheckDist)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_MoveTo.VeryCloseToGoal", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_VeryCloseToGoal, "BmGame.RBMBehaviour_MoveTo.VeryCloseToGoal");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckDist, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_OnEndInterrupt;
     /// <summary>
     /// Function: OnEndInterrupt
     /// </summary>
     public unsafe override void OnEndInterrupt()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_MoveTo.OnEndInterrupt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnEndInterrupt, "BmGame.RBMBehaviour_MoveTo.OnEndInterrupt");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnDeactivate;
     /// <summary>
     /// Function: OnDeactivate
     /// </summary>
     public unsafe override void OnDeactivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_MoveTo.OnDeactivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeactivate, "BmGame.RBMBehaviour_MoveTo.OnDeactivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetInitialState;
     /// <summary>
     /// Function: SetInitialState
     /// </summary>
     public unsafe override void SetInitialState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_MoveTo.SetInitialState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetInitialState, "BmGame.RBMBehaviour_MoveTo.SetInitialState");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_MoveTo.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMBehaviour_MoveTo.OnActivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AwareOfPlayer;
     /// <summary>
     /// Function: AwareOfPlayer
     /// </summary>
     public unsafe override bool AwareOfPlayer(BmSDK.Engine.Actor Player, BmSDK.Class dmgType = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_MoveTo.AwareOfPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AwareOfPlayer, "BmGame.RBMBehaviour_MoveTo.AwareOfPlayer");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 8);
@@ -224,34 +237,37 @@ public partial class RBMBehaviour_MoveTo : BmSDK.BmGame.RBMBehaviour_MoveToBase,
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_CanBatmanGrab;
     /// <summary>
     /// Function: CanBatmanGrab
     /// </summary>
     public unsafe override BmSDK.BmGame.RBMAIController.BatmanGrabType CanBatmanGrab()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_MoveTo.CanBatmanGrab", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBatmanGrab, "BmGame.RBMBehaviour_MoveTo.CanBatmanGrab");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMAIController.BatmanGrabType>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetMoveLocation;
     /// <summary>
     /// Function: GetMoveLocation
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetMoveLocation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_MoveTo.GetMoveLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMoveLocation, "BmGame.RBMBehaviour_MoveTo.GetMoveLocation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanBeHitInCombat;
     /// <summary>
     /// Function: CanBeHitInCombat
     /// </summary>
     public unsafe override bool CanBeHitInCombat(BmSDK.BmGame.RDamageType DamageType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_MoveTo.CanBeHitInCombat", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeHitInCombat, "BmGame.RBMBehaviour_MoveTo.CanBeHitInCombat");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageType, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

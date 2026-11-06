@@ -78,60 +78,65 @@ public partial class RAEC_Parent : BmSDK.BmGame.RAlertEventCoordinatorBase, BmSD
         where TComponent : class, Framework.IScriptComponent<RAEC_Parent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_AssignToEvent;
     /// <summary>
     /// Function: AssignToEvent
     /// </summary>
     public unsafe override void AssignToEvent(BmSDK.BmGame.RBMAIController Con)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Parent.AssignToEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AssignToEvent, "BmGame.RAEC_Parent.AssignToEvent");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Con, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_WantsToGlanceAt;
     /// <summary>
     /// Function: WantsToGlanceAt
     /// </summary>
     public unsafe override bool WantsToGlanceAt(BmSDK.Engine.Actor TestTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Parent.WantsToGlanceAt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WantsToGlanceAt, "BmGame.RAEC_Parent.WantsToGlanceAt");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestTarget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_SetNewFearLevel;
     /// <summary>
     /// Function: SetNewFearLevel
     /// </summary>
     public unsafe virtual void SetNewFearLevel(BmSDK.BmGame.RBMRoomAIState.VillainFearLevel NewFearLevel)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Parent.SetNewFearLevel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetNewFearLevel, "BmGame.RAEC_Parent.SetNewFearLevel");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewFearLevel, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetRoom;
     /// <summary>
     /// Function: SetRoom
     /// </summary>
     public unsafe virtual void SetRoom(BmSDK.BmGame.RBMRoomAIState NewRoomState)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Parent.SetRoom", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRoom, "BmGame.RAEC_Parent.SetRoom");
         byte* paramsPtr = stackalloc byte[9];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewRoomState, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetBarkPriority;
     /// <summary>
     /// Function: GetBarkPriority
     /// </summary>
     public unsafe override int GetBarkPriority()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Parent.GetBarkPriority", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBarkPriority, "BmGame.RAEC_Parent.GetBarkPriority");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);

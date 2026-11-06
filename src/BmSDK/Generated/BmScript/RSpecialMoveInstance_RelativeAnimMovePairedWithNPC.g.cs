@@ -78,35 +78,38 @@ public partial class RSpecialMoveInstance_RelativeAnimMovePairedWithNPC : BmSDK.
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveInstance_RelativeAnimMovePairedWithNPC>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_FinishSpecialMove;
     /// <summary>
     /// Function: FinishSpecialMove
     /// </summary>
     public unsafe override void FinishSpecialMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_RelativeAnimMovePairedWithNPC.FinishSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishSpecialMove, "BmScript.RSpecialMoveInstance_RelativeAnimMovePairedWithNPC.FinishSpecialMove");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayLinkedTransition;
     /// <summary>
     /// Function: PlayLinkedTransition
     /// </summary>
     public unsafe virtual void PlayLinkedTransition(BmSDK.BmGame.RBMPawnAI LinkedPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_RelativeAnimMovePairedWithNPC.PlayLinkedTransition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayLinkedTransition, "BmScript.RSpecialMoveInstance_RelativeAnimMovePairedWithNPC.PlayLinkedTransition");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkedPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateSpecialMove;
     /// <summary>
     /// Function: UpdateSpecialMove
     /// </summary>
     public unsafe override bool UpdateSpecialMove(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_RelativeAnimMovePairedWithNPC.UpdateSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateSpecialMove, "BmScript.RSpecialMoveInstance_RelativeAnimMovePairedWithNPC.UpdateSpecialMove");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

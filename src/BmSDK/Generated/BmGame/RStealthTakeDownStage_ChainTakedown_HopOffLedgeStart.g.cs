@@ -78,36 +78,39 @@ public partial class RStealthTakeDownStage_ChainTakedown_HopOffLedgeStart : BmSD
         where TComponent : class, Framework.IScriptComponent<RStealthTakeDownStage_ChainTakedown_HopOffLedgeStart>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GotoStage;
     /// <summary>
     /// Function: GotoStage
     /// </summary>
     public unsafe override void GotoStage(BmSDK.BmGame.RGameInfo.EStealthTakeDownStages NextStageClass)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStealthTakeDownStage_ChainTakedown_HopOffLedgeStart.GotoStage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GotoStage, "BmGame.RStealthTakeDownStage_ChainTakedown_HopOffLedgeStart.GotoStage");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NextStageClass, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStealthTakeDownStage_ChainTakedown_HopOffLedgeStart.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RStealthTakeDownStage_ChainTakedown_HopOffLedgeStart.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetReferencePosition;
     /// <summary>
     /// Function: GetReferencePosition
     /// </summary>
     public unsafe override void GetReferencePosition(out System.Numerics.Vector3 ReferencePosition, out BmSDK.Rotator ReferenceRotation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStealthTakeDownStage_ChainTakedown_HopOffLedgeStart.GetReferencePosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetReferencePosition, "BmGame.RStealthTakeDownStage_ChainTakedown_HopOffLedgeStart.GetReferencePosition");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ReferencePosition = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
@@ -115,12 +118,13 @@ public partial class RStealthTakeDownStage_ChainTakedown_HopOffLedgeStart : BmSD
         return;
     }
 
+    private static BmSDK.Function __fn_Begin;
     /// <summary>
     /// Function: Begin
     /// </summary>
     public unsafe override void Begin()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStealthTakeDownStage_ChainTakedown_HopOffLedgeStart.Begin", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Begin, "BmGame.RStealthTakeDownStage_ChainTakedown_HopOffLedgeStart.Begin");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

@@ -78,57 +78,62 @@ public partial class RHudModuleSuicideCars : BmSDK.BmGame.RHudModule, BmSDK.IGam
         where TComponent : class, Framework.IScriptComponent<RHudModuleSuicideCars>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Close;
     /// <summary>
     /// Function: Close
     /// </summary>
     public unsafe override void Close()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleSuicideCars.Close", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Close, "BmGame.RHudModuleSuicideCars.Close");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DoOutro;
     /// <summary>
     /// Function: DoOutro
     /// </summary>
     public unsafe virtual void DoOutro()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleSuicideCars.DoOutro", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoOutro, "BmGame.RHudModuleSuicideCars.DoOutro");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CloseSuicideCarsHud;
     /// <summary>
     /// Function: CloseSuicideCarsHud
     /// </summary>
     public unsafe virtual void CloseSuicideCarsHud()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleSuicideCars.CloseSuicideCarsHud", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CloseSuicideCarsHud, "BmGame.RHudModuleSuicideCars.CloseSuicideCarsHud");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetSuicideCarsLevel;
     /// <summary>
     /// Function: SetSuicideCarsLevel
     /// </summary>
     public unsafe virtual void SetSuicideCarsLevel(float _CurrentSuicideCarsLevel)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleSuicideCars.SetSuicideCarsLevel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSuicideCarsLevel, "BmGame.RHudModuleSuicideCars.SetSuicideCarsLevel");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_CurrentSuicideCarsLevel, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe override bool Init(BmSDK.BmGame.RPlayerController _RPC, BmSDK.FString _ExtensionName, BmSDK.FString _ExtensionPath)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleSuicideCars.Init", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmGame.RHudModuleSuicideCars.Init");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_RPC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_ExtensionName, paramsPtr + 8);

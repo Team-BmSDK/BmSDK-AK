@@ -78,12 +78,13 @@ public partial class OnlineEventsInterfaceMcp : BmSDK.IpDrv.MCPBase, BmSDK.IGame
         where TComponent : class, Framework.IScriptComponent<OnlineEventsInterfaceMcp>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UploadMatchmakingStats;
     /// <summary>
     /// Function: UploadMatchmakingStats
     /// </summary>
     public unsafe virtual bool UploadMatchmakingStats(BmSDK.Engine.OnlineSubsystem.FUniqueNetId UniqueId, BmSDK.Engine.OnlineMatchmakingStats MMStats)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.OnlineEventsInterfaceMcp.UploadMatchmakingStats", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UploadMatchmakingStats, "IpDrv.OnlineEventsInterfaceMcp.UploadMatchmakingStats");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UniqueId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MMStats, paramsPtr + 8);
@@ -98,12 +99,13 @@ public partial class OnlineEventsInterfaceMcp : BmSDK.IpDrv.MCPBase, BmSDK.IGame
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_UpdatePlaylistPopulation;
     /// <summary>
     /// Function: UpdatePlaylistPopulation
     /// </summary>
     public unsafe virtual bool UpdatePlaylistPopulation(int PlaylistId, int NumPlayers)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.OnlineEventsInterfaceMcp.UpdatePlaylistPopulation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdatePlaylistPopulation, "IpDrv.OnlineEventsInterfaceMcp.UpdatePlaylistPopulation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlaylistId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NumPlayers, paramsPtr + 4);
@@ -118,12 +120,13 @@ public partial class OnlineEventsInterfaceMcp : BmSDK.IpDrv.MCPBase, BmSDK.IGame
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_UploadGameplayEventsData;
     /// <summary>
     /// Function: UploadGameplayEventsData
     /// </summary>
     public unsafe virtual bool UploadGameplayEventsData(BmSDK.Engine.OnlineSubsystem.FUniqueNetId UniqueId, out BmSDK.TArray<byte> Payload)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.OnlineEventsInterfaceMcp.UploadGameplayEventsData", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UploadGameplayEventsData, "IpDrv.OnlineEventsInterfaceMcp.UploadGameplayEventsData");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UniqueId, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -138,12 +141,13 @@ public partial class OnlineEventsInterfaceMcp : BmSDK.IpDrv.MCPBase, BmSDK.IGame
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_UploadPlayerData;
     /// <summary>
     /// Function: UploadPlayerData
     /// </summary>
     public unsafe virtual bool UploadPlayerData(BmSDK.Engine.OnlineSubsystem.FUniqueNetId UniqueId, BmSDK.FString PlayerNick, BmSDK.Engine.OnlineProfileSettings ProfileSettings, BmSDK.Engine.OnlinePlayerStorage PlayerStorage)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.OnlineEventsInterfaceMcp.UploadPlayerData", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UploadPlayerData, "IpDrv.OnlineEventsInterfaceMcp.UploadPlayerData");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UniqueId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerNick, paramsPtr + 8);

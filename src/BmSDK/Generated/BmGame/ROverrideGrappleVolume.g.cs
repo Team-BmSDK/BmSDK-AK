@@ -78,12 +78,13 @@ public partial class ROverrideGrappleVolume : BmSDK.Engine.Volume, BmSDK.IGameOb
         where TComponent : class, Framework.IScriptComponent<ROverrideGrappleVolume>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OverrideGrapple;
     /// <summary>
     /// Function: OverrideGrapple
     /// </summary>
     public unsafe virtual bool OverrideGrapple(BmSDK.BmGame.RPawnPlayer GrapplingPlayer, BmSDK.BmGame.RGrappleGun GrappleGun)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverrideGrappleVolume.OverrideGrapple", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverrideGrapple, "BmGame.ROverrideGrappleVolume.OverrideGrapple");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GrapplingPlayer, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GrappleGun, paramsPtr + 8);

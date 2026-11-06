@@ -78,35 +78,38 @@ public partial class RBatarangProjectile_MultiTarget : BmSDK.BmScript.RBatarangP
         where TComponent : class, Framework.IScriptComponent<RBatarangProjectile_MultiTarget>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_VillainHit;
     /// <summary>
     /// Function: VillainHit
     /// </summary>
     public unsafe override void VillainHit(BmSDK.BmGame.RPawnVillain Target)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBatarangProjectile_MultiTarget.VillainHit", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_VillainHit, "BmScript.RBatarangProjectile_MultiTarget.VillainHit");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StopSpinSound;
     /// <summary>
     /// Function: StopSpinSound
     /// </summary>
     public unsafe override void StopSpinSound()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBatarangProjectile_MultiTarget.StopSpinSound", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopSpinSound, "BmScript.RBatarangProjectile_MultiTarget.StopSpinSound");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartSpinSound;
     /// <summary>
     /// Function: StartSpinSound
     /// </summary>
     public unsafe override void StartSpinSound()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBatarangProjectile_MultiTarget.StartSpinSound", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartSpinSound, "BmScript.RBatarangProjectile_MultiTarget.StartSpinSound");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

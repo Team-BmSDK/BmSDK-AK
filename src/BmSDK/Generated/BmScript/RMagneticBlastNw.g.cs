@@ -78,12 +78,13 @@ public partial class RMagneticBlastNw : BmSDK.BmScript.RMagneticBlastBm, BmSDK.I
         where TComponent : class, Framework.IScriptComponent<RMagneticBlastNw>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_FinishFiring;
     /// <summary>
     /// Function: FinishFiring
     /// </summary>
     public unsafe override void FinishFiring()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RMagneticBlastNw.FinishFiring", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishFiring, "BmScript.RMagneticBlastNw.FinishFiring");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

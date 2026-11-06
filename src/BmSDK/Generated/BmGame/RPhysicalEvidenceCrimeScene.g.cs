@@ -78,23 +78,25 @@ public partial class RPhysicalEvidenceCrimeScene : BmSDK.BmGame.RPhysicalEvidenc
         where TComponent : class, Framework.IScriptComponent<RPhysicalEvidenceCrimeScene>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_AutomaticallySetVisibility;
     /// <summary>
     /// Function: AutomaticallySetVisibility
     /// </summary>
     public unsafe override void AutomaticallySetVisibility()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPhysicalEvidenceCrimeScene.AutomaticallySetVisibility", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AutomaticallySetVisibility, "BmGame.RPhysicalEvidenceCrimeScene.AutomaticallySetVisibility");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AutoPopulateParentCrimeScene;
     /// <summary>
     /// Function: AutoPopulateParentCrimeScene
     /// </summary>
     public unsafe virtual void AutoPopulateParentCrimeScene()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPhysicalEvidenceCrimeScene.AutoPopulateParentCrimeScene", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AutoPopulateParentCrimeScene, "BmGame.RPhysicalEvidenceCrimeScene.AutoPopulateParentCrimeScene");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

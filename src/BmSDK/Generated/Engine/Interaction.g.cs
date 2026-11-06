@@ -78,12 +78,13 @@ public partial class Interaction : BmSDK.Engine.UIRoot, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<Interaction>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_NotifyPlayerRemoved;
     /// <summary>
     /// Function: NotifyPlayerRemoved
     /// </summary>
     public unsafe virtual void NotifyPlayerRemoved(int PlayerIndex, BmSDK.Engine.LocalPlayer RemovedPlayer)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Interaction.NotifyPlayerRemoved", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyPlayerRemoved, "Engine.Interaction.NotifyPlayerRemoved");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RemovedPlayer, paramsPtr + 4);
@@ -91,12 +92,13 @@ public partial class Interaction : BmSDK.Engine.UIRoot, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyPlayerAdded;
     /// <summary>
     /// Function: NotifyPlayerAdded
     /// </summary>
     public unsafe virtual void NotifyPlayerAdded(int PlayerIndex, BmSDK.Engine.LocalPlayer AddedPlayer)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Interaction.NotifyPlayerAdded", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyPlayerAdded, "Engine.Interaction.NotifyPlayerAdded");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AddedPlayer, paramsPtr + 4);
@@ -104,45 +106,49 @@ public partial class Interaction : BmSDK.Engine.UIRoot, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyGameSessionEnded;
     /// <summary>
     /// Function: NotifyGameSessionEnded
     /// </summary>
     public unsafe virtual void NotifyGameSessionEnded()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Interaction.NotifyGameSessionEnded", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyGameSessionEnded, "Engine.Interaction.NotifyGameSessionEnded");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Initialized;
     /// <summary>
     /// Function: Initialized
     /// </summary>
     public unsafe virtual void Initialized()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Interaction.Initialized", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Initialized, "Engine.Interaction.Initialized");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnInitialize;
     /// <summary>
     /// Function: OnInitialize
     /// </summary>
     public unsafe virtual void OnInitialize()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Interaction.OnInitialize", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnInitialize, "Engine.Interaction.OnInitialize");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe virtual void Init()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Interaction.Init", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "Engine.Interaction.Init");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -155,36 +161,39 @@ public partial class Interaction : BmSDK.Engine.UIRoot, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_PostRender;
     /// <summary>
     /// Function: PostRender
     /// </summary>
     public unsafe virtual void PostRender(BmSDK.Engine.Canvas Canvas)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Interaction.PostRender", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostRender, "Engine.Interaction.PostRender");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Canvas, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe virtual void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Interaction.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "Engine.Interaction.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnReceivedNativeInputChar;
     /// <summary>
     /// Function: OnReceivedNativeInputChar
     /// </summary>
     public unsafe virtual bool OnReceivedNativeInputChar(int ControllerId, BmSDK.FString Unicode)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Interaction.OnReceivedNativeInputChar", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReceivedNativeInputChar, "Engine.Interaction.OnReceivedNativeInputChar");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Unicode, paramsPtr + 4);
@@ -192,12 +201,13 @@ public partial class Interaction : BmSDK.Engine.UIRoot, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_OnReceivedNativeInputAxis;
     /// <summary>
     /// Function: OnReceivedNativeInputAxis
     /// </summary>
     public unsafe virtual bool OnReceivedNativeInputAxis(int ControllerId, BmSDK.FName Key, float Delta, float DeltaTime, bool bGamepad = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Interaction.OnReceivedNativeInputAxis", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReceivedNativeInputAxis, "Engine.Interaction.OnReceivedNativeInputAxis");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Key, paramsPtr + 4);
@@ -244,12 +254,13 @@ public partial class Interaction : BmSDK.Engine.UIRoot, BmSDK.IGameObject
         set { BmSDK.Framework.MarshalUtil.ToUnmanaged(value, Ptr + 156); }
     }
 
+    private static BmSDK.Function __fn_OnReceivedNativeInputKey;
     /// <summary>
     /// Function: OnReceivedNativeInputKey
     /// </summary>
     public unsafe virtual bool OnReceivedNativeInputKey(int ControllerId, BmSDK.FName Key, BmSDK.GameObject.EInputEvent EventType, float AmountDepressed = default, bool bGamepad = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Interaction.OnReceivedNativeInputKey", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReceivedNativeInputKey, "Engine.Interaction.OnReceivedNativeInputKey");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Key, paramsPtr + 4);

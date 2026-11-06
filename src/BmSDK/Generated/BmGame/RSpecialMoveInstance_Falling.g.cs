@@ -78,12 +78,13 @@ public partial class RSpecialMoveInstance_Falling : BmSDK.BmGame.RSpecialMoveIns
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveInstance_Falling>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UpdateFallAnim;
     /// <summary>
     /// Function: UpdateFallAnim
     /// </summary>
     public unsafe virtual void UpdateFallAnim(float DeltaTime, float FallScale = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Falling.UpdateFallAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateFallAnim, "BmGame.RSpecialMoveInstance_Falling.UpdateFallAnim");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FallScale, paramsPtr + 4);
@@ -98,70 +99,76 @@ public partial class RSpecialMoveInstance_Falling : BmSDK.BmGame.RSpecialMoveIns
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Falling.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RSpecialMoveInstance_Falling.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostFallingPhysicsCallback;
     /// <summary>
     /// Function: PostFallingPhysicsCallback
     /// </summary>
     public unsafe override void PostFallingPhysicsCallback()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Falling.PostFallingPhysicsCallback", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostFallingPhysicsCallback, "BmGame.RSpecialMoveInstance_Falling.PostFallingPhysicsCallback");
         byte* paramsPtr = stackalloc byte[140];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayerMove;
     /// <summary>
     /// Function: PlayerMove
     /// </summary>
     public unsafe virtual void PlayerMove(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Falling.PlayerMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayerMove, "BmGame.RSpecialMoveInstance_Falling.PlayerMove");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CancelSpecialMove;
     /// <summary>
     /// Function: CancelSpecialMove
     /// </summary>
     public unsafe override void CancelSpecialMove(BmSDK.BmGame.RSpecialMoveConfig NextSpecialMove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Falling.CancelSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelSpecialMove, "BmGame.RSpecialMoveInstance_Falling.CancelSpecialMove");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NextSpecialMove, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishSpecialMove;
     /// <summary>
     /// Function: FinishSpecialMove
     /// </summary>
     public unsafe override void FinishSpecialMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Falling.FinishSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishSpecialMove, "BmGame.RSpecialMoveInstance_Falling.FinishSpecialMove");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerSpecialMove;
     /// <summary>
     /// Function: TriggerSpecialMove
     /// </summary>
     public unsafe override void TriggerSpecialMove(BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator Loc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Falling.TriggerSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerSpecialMove, "BmGame.RSpecialMoveInstance_Falling.TriggerSpecialMove");
         byte* paramsPtr = stackalloc byte[140];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

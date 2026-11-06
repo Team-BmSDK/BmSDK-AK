@@ -78,12 +78,13 @@ public partial class RAnimatedCameraActor : BmSDK.BmGame.RCameraActor, BmSDK.IGa
         where TComponent : class, Framework.IScriptComponent<RAnimatedCameraActor>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetCameraView;
     /// <summary>
     /// Function: GetCameraView
     /// </summary>
     public unsafe override void GetCameraView(float DeltaTime, out BmSDK.GameObject.FTPOV OutPOV)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAnimatedCameraActor.GetCameraView", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCameraView, "BmGame.RAnimatedCameraActor.GetCameraView");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -91,12 +92,13 @@ public partial class RAnimatedCameraActor : BmSDK.BmGame.RCameraActor, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_NativeGetCameraView;
     /// <summary>
     /// Function: NativeGetCameraView
     /// </summary>
     public unsafe virtual void NativeGetCameraView(out BmSDK.GameObject.FTPOV OutPOV)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAnimatedCameraActor.NativeGetCameraView", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NativeGetCameraView, "BmGame.RAnimatedCameraActor.NativeGetCameraView");
         byte* paramsPtr = stackalloc byte[28];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

@@ -73,105 +73,114 @@ public partial class RBMAIAction_HardDriveLeaderBase : BmSDK.BmGame.RBMAIAction_
         where TComponent : class, Framework.IScriptComponent<RBMAIAction_HardDriveLeaderBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CarrierIncoming;
     /// <summary>
     /// Function: CarrierIncoming
     /// </summary>
     public unsafe virtual bool CarrierIncoming()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_HardDriveLeaderBase.CarrierIncoming", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CarrierIncoming, "BmGame.RBMAIAction_HardDriveLeaderBase.CarrierIncoming");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetGestureAnimFor;
     /// <summary>
     /// Function: GetGestureAnimFor
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RPawnCharacter.FCustomTransitionConfig GetGestureAnimFor(System.Numerics.Vector3 DestLoc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_HardDriveLeaderBase.GetGestureAnimFor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGestureAnimFor, "BmGame.RBMAIAction_HardDriveLeaderBase.GetGestureAnimFor");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DestLoc, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnCharacter.FCustomTransitionConfig>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_GetGuardIdleAnim;
     /// <summary>
     /// Function: GetGuardIdleAnim
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RPawnCharacter.FCustomTransitionConfig GetGuardIdleAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_HardDriveLeaderBase.GetGuardIdleAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGuardIdleAnim, "BmGame.RBMAIAction_HardDriveLeaderBase.GetGuardIdleAnim");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnCharacter.FCustomTransitionConfig>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_HandlesGlance;
     /// <summary>
     /// Function: HandlesGlance
     /// </summary>
     public unsafe override bool HandlesGlance()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_HardDriveLeaderBase.HandlesGlance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandlesGlance, "BmGame.RBMAIAction_HardDriveLeaderBase.HandlesGlance");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ActionTick;
     /// <summary>
     /// Function: ActionTick
     /// </summary>
     public unsafe override BmSDK.BmGame.RBMAIAction.ActionTickResult ActionTick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_HardDriveLeaderBase.ActionTick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActionTick, "BmGame.RBMAIAction_HardDriveLeaderBase.ActionTick");
         byte* paramsPtr = stackalloc byte[5];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMAIAction.ActionTickResult>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_PlayGesture;
     /// <summary>
     /// Function: PlayGesture
     /// </summary>
     public unsafe virtual void PlayGesture(System.Numerics.Vector3 TargetDestLoc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_HardDriveLeaderBase.PlayGesture", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayGesture, "BmGame.RBMAIAction_HardDriveLeaderBase.PlayGesture");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetDestLoc, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayIdleAnim;
     /// <summary>
     /// Function: PlayIdleAnim
     /// </summary>
     public unsafe virtual void PlayIdleAnim(BmSDK.BmGame.RPawnCharacter.FCustomTransitionConfig CustomIdleAnim)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_HardDriveLeaderBase.PlayIdleAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayIdleAnim, "BmGame.RBMAIAction_HardDriveLeaderBase.PlayIdleAnim");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CustomIdleAnim, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetGuardPoint;
     /// <summary>
     /// Function: SetGuardPoint
     /// </summary>
     public unsafe override void SetGuardPoint(BmSDK.BmGame.RGuardPoint NewGuardPoint)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_HardDriveLeaderBase.SetGuardPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetGuardPoint, "BmGame.RBMAIAction_HardDriveLeaderBase.SetGuardPoint");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewGuardPoint, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_HardDriveLeaderBase.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMAIAction_HardDriveLeaderBase.OnActivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

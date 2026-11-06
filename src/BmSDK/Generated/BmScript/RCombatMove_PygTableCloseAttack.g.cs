@@ -78,34 +78,37 @@ public partial class RCombatMove_PygTableCloseAttack : BmSDK.BmGame.RCombatMove_
         where TComponent : class, Framework.IScriptComponent<RCombatMove_PygTableCloseAttack>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ExitMove;
     /// <summary>
     /// Function: ExitMove
     /// </summary>
     public unsafe override void ExitMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_PygTableCloseAttack.ExitMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ExitMove, "BmScript.RCombatMove_PygTableCloseAttack.ExitMove");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Initialise;
     /// <summary>
     /// Function: Initialise
     /// </summary>
     public unsafe override void Initialise()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_PygTableCloseAttack.Initialise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Initialise, "BmScript.RCombatMove_PygTableCloseAttack.Initialise");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanBeUsed;
     /// <summary>
     /// Function: CanBeUsed
     /// </summary>
     public unsafe static bool CanBeUsed(BmSDK.BmGame.RBMCombatManager CombatManager, BmSDK.BmGame.RPawnCombat User, BmSDK.BmGame.RPawnCombat NewTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_PygTableCloseAttack.CanBeUsed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeUsed, "BmScript.RCombatMove_PygTableCloseAttack.CanBeUsed");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CombatManager, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(User, paramsPtr + 8);
@@ -114,23 +117,25 @@ public partial class RCombatMove_PygTableCloseAttack : BmSDK.BmGame.RCombatMove_
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_SwingEnd;
     /// <summary>
     /// Function: SwingEnd
     /// </summary>
     public unsafe virtual void SwingEnd()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_PygTableCloseAttack.SwingEnd", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SwingEnd, "BmScript.RCombatMove_PygTableCloseAttack.SwingEnd");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SwingStart;
     /// <summary>
     /// Function: SwingStart
     /// </summary>
     public unsafe virtual void SwingStart()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_PygTableCloseAttack.SwingStart", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SwingStart, "BmScript.RCombatMove_PygTableCloseAttack.SwingStart");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

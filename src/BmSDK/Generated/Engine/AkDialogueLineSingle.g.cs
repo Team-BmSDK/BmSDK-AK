@@ -78,12 +78,13 @@ public partial class AkDialogueLineSingle : BmSDK.Engine.AkDialogueLine, BmSDK.I
         where TComponent : class, Framework.IScriptComponent<AkDialogueLineSingle>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetSingleDialogueEventDuration;
     /// <summary>
     /// Function: GetSingleDialogueEventDuration
     /// </summary>
     public unsafe virtual float GetSingleDialogueEventDuration()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkDialogueLineSingle.GetSingleDialogueEventDuration", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSingleDialogueEventDuration, "Engine.AkDialogueLineSingle.GetSingleDialogueEventDuration");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class AkDialogueLineSingle : BmSDK.Engine.AkDialogueLine, BmSDK.I
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetSingleDialogueEvent;
     /// <summary>
     /// Function: GetSingleDialogueEvent
     /// </summary>
     public unsafe virtual BmSDK.Engine.AkEvent GetSingleDialogueEvent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkDialogueLineSingle.GetSingleDialogueEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSingleDialogueEvent, "Engine.AkDialogueLineSingle.GetSingleDialogueEvent");
         byte* paramsPtr = stackalloc byte[8];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

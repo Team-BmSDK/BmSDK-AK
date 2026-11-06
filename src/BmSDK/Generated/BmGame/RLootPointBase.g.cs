@@ -73,166 +73,181 @@ public partial class RLootPointBase : BmSDK.Engine.Actor, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RLootPointBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsDisrupted;
     /// <summary>
     /// Function: IsDisrupted
     /// </summary>
     public unsafe virtual bool IsDisrupted()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLootPointBase.IsDisrupted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsDisrupted, "BmGame.RLootPointBase.IsDisrupted");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDisruptorDescriptionParameters;
     /// <summary>
     /// Function: GetDisruptorDescriptionParameters
     /// </summary>
     public unsafe virtual BmSDK.FString GetDisruptorDescriptionParameters()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLootPointBase.GetDisruptorDescriptionParameters", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDisruptorDescriptionParameters, "BmGame.RLootPointBase.GetDisruptorDescriptionParameters");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_RequiresDisruptorUpgrade;
     /// <summary>
     /// Function: RequiresDisruptorUpgrade
     /// </summary>
     public unsafe virtual bool RequiresDisruptorUpgrade()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLootPointBase.RequiresDisruptorUpgrade", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RequiresDisruptorUpgrade, "BmGame.RLootPointBase.RequiresDisruptorUpgrade");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_RequiresDroneDisruptor;
     /// <summary>
     /// Function: RequiresDroneDisruptor
     /// </summary>
     public unsafe virtual bool RequiresDroneDisruptor()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLootPointBase.RequiresDroneDisruptor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RequiresDroneDisruptor, "BmGame.RLootPointBase.RequiresDroneDisruptor");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDisruptorTargetMesh;
     /// <summary>
     /// Function: GetDisruptorTargetMesh
     /// </summary>
     public unsafe virtual BmSDK.Engine.MeshComponent GetDisruptorTargetMesh()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLootPointBase.GetDisruptorTargetMesh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDisruptorTargetMesh, "BmGame.RLootPointBase.GetDisruptorTargetMesh");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.MeshComponent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_HitByDisruptorGadgetSecondary;
     /// <summary>
     /// Function: HitByDisruptorGadgetSecondary
     /// </summary>
     public unsafe virtual bool HitByDisruptorGadgetSecondary()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLootPointBase.HitByDisruptorGadgetSecondary", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitByDisruptorGadgetSecondary, "BmGame.RLootPointBase.HitByDisruptorGadgetSecondary");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanBeDisruptedSecondary;
     /// <summary>
     /// Function: CanBeDisruptedSecondary
     /// </summary>
     public unsafe virtual bool CanBeDisruptedSecondary()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLootPointBase.CanBeDisruptedSecondary", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeDisruptedSecondary, "BmGame.RLootPointBase.CanBeDisruptedSecondary");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDisruptorOverridePriority;
     /// <summary>
     /// Function: GetDisruptorOverridePriority
     /// </summary>
     public unsafe virtual float GetDisruptorOverridePriority()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLootPointBase.GetDisruptorOverridePriority", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDisruptorOverridePriority, "BmGame.RLootPointBase.GetDisruptorOverridePriority");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanBeDisrupted;
     /// <summary>
     /// Function: CanBeDisrupted
     /// </summary>
     public unsafe virtual bool CanBeDisrupted()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLootPointBase.CanBeDisrupted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeDisrupted, "BmGame.RLootPointBase.CanBeDisrupted");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_HitByDisruptorGadgetCharge;
     /// <summary>
     /// Function: HitByDisruptorGadgetCharge
     /// </summary>
     public unsafe virtual bool HitByDisruptorGadgetCharge()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLootPointBase.HitByDisruptorGadgetCharge", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitByDisruptorGadgetCharge, "BmGame.RLootPointBase.HitByDisruptorGadgetCharge");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDisruptorTargetPosition;
     /// <summary>
     /// Function: GetDisruptorTargetPosition
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetDisruptorTargetPosition()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLootPointBase.GetDisruptorTargetPosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDisruptorTargetPosition, "BmGame.RLootPointBase.GetDisruptorTargetPosition");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLootPointBase.PreStreamOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmGame.RLootPointBase.PreStreamOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLootPointBase.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmGame.RLootPointBase.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay_Delayed;
     /// <summary>
     /// Function: PostBeginPlay_Delayed
     /// </summary>
     public unsafe virtual void PostBeginPlay_Delayed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLootPointBase.PostBeginPlay_Delayed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay_Delayed, "BmGame.RLootPointBase.PostBeginPlay_Delayed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLootPointBase.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RLootPointBase.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

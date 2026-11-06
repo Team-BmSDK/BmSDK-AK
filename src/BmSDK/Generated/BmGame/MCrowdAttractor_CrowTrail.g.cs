@@ -78,35 +78,38 @@ public partial class MCrowdAttractor_CrowTrail : BmSDK.BmGame.RCrowdAttractor, B
         where TComponent : class, Framework.IScriptComponent<MCrowdAttractor_CrowTrail>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCrowdAttractor_CrowTrail.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.MCrowdAttractor_CrowTrail.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DrawDebug;
     /// <summary>
     /// Function: DrawDebug
     /// </summary>
     public unsafe override void DrawDebug()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCrowdAttractor_CrowTrail.DrawDebug", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DrawDebug, "BmGame.MCrowdAttractor_CrowTrail.DrawDebug");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetAttractionForce;
     /// <summary>
     /// Function: GetAttractionForce
     /// </summary>
     public unsafe override System.Numerics.Vector3 GetAttractionForce(BmSDK.BmGame.RCrowdAgent Agent, float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCrowdAttractor_CrowTrail.GetAttractionForce", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAttractionForce, "BmGame.MCrowdAttractor_CrowTrail.GetAttractionForce");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Agent, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 8);

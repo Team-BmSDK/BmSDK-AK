@@ -73,46 +73,50 @@ public partial class RBMAIAction_RestoreSpecial : BmSDK.BmGame.RBMAIAction, BmSD
         where TComponent : class, Framework.IScriptComponent<RBMAIAction_RestoreSpecial>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ActionTick;
     /// <summary>
     /// Function: ActionTick
     /// </summary>
     public unsafe override BmSDK.BmGame.RBMAIAction.ActionTickResult ActionTick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_RestoreSpecial.ActionTick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActionTick, "BmGame.RBMAIAction_RestoreSpecial.ActionTick");
         byte* paramsPtr = stackalloc byte[5];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMAIAction.ActionTickResult>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_RestoreFinished;
     /// <summary>
     /// Function: RestoreFinished
     /// </summary>
     public unsafe virtual void RestoreFinished()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_RestoreSpecial.RestoreFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RestoreFinished, "BmGame.RBMAIAction_RestoreSpecial.RestoreFinished");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartOutAnim;
     /// <summary>
     /// Function: StartOutAnim
     /// </summary>
     public unsafe virtual void StartOutAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_RestoreSpecial.StartOutAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartOutAnim, "BmGame.RBMAIAction_RestoreSpecial.StartOutAnim");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartInAnim;
     /// <summary>
     /// Function: StartInAnim
     /// </summary>
     public unsafe virtual void StartInAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_RestoreSpecial.StartInAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartInAnim, "BmGame.RBMAIAction_RestoreSpecial.StartInAnim");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

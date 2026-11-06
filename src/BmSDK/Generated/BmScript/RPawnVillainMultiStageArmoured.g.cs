@@ -78,12 +78,13 @@ public partial class RPawnVillainMultiStageArmoured : BmSDK.BmScript.RPawnVillai
         where TComponent : class, Framework.IScriptComponent<RPawnVillainMultiStageArmoured>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetRedirectWeaponStance;
     /// <summary>
     /// Function: GetRedirectWeaponStance
     /// </summary>
     public unsafe override BmSDK.FName GetRedirectWeaponStance()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainMultiStageArmoured.GetRedirectWeaponStance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRedirectWeaponStance, "BmScript.RPawnVillainMultiStageArmoured.GetRedirectWeaponStance");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);

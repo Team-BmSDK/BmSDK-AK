@@ -78,80 +78,87 @@ public partial class RFreezeClusterTrap : BmSDK.BmGame.RFreezeClusterTrapBase, B
         where TComponent : class, Framework.IScriptComponent<RFreezeClusterTrap>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_StartleNearbyThugs;
     /// <summary>
     /// Function: StartleNearbyThugs
     /// </summary>
     public unsafe virtual void StartleNearbyThugs(BmSDK.BmGame.RPawnVillain Victim)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFreezeClusterTrap.StartleNearbyThugs", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartleNearbyThugs, "BmScript.RFreezeClusterTrap.StartleNearbyThugs");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Victim, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DrawCollisionCylinders;
     /// <summary>
     /// Function: DrawCollisionCylinders
     /// </summary>
     public unsafe virtual void DrawCollisionCylinders()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFreezeClusterTrap.DrawCollisionCylinders", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DrawCollisionCylinders, "BmScript.RFreezeClusterTrap.DrawCollisionCylinders");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFreezeClusterTrap.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmScript.RFreezeClusterTrap.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DestroySelf;
     /// <summary>
     /// Function: DestroySelf
     /// </summary>
     public unsafe virtual void DestroySelf()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFreezeClusterTrap.DestroySelf", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DestroySelf, "BmScript.RFreezeClusterTrap.DestroySelf");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnActivated;
     /// <summary>
     /// Function: OnActivated
     /// </summary>
     public unsafe virtual void OnActivated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFreezeClusterTrap.OnActivated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivated, "BmScript.RFreezeClusterTrap.OnActivated");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnTouchVillain;
     /// <summary>
     /// Function: OnTouchVillain
     /// </summary>
     public unsafe virtual void OnTouchVillain(BmSDK.BmGame.RPawnVillain touchVillain)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFreezeClusterTrap.OnTouchVillain", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnTouchVillain, "BmScript.RFreezeClusterTrap.OnTouchVillain");
         byte* paramsPtr = stackalloc byte[328];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(touchVillain, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnIceSphere;
     /// <summary>
     /// Function: SpawnIceSphere
     /// </summary>
     public unsafe virtual void SpawnIceSphere(System.Numerics.Vector3 SpawnLocation, BmSDK.Rotator SpawnRotation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFreezeClusterTrap.SpawnIceSphere", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnIceSphere, "BmScript.RFreezeClusterTrap.SpawnIceSphere");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnRotation, paramsPtr + 12);
@@ -159,12 +166,13 @@ public partial class RFreezeClusterTrap : BmSDK.BmGame.RFreezeClusterTrapBase, B
         return;
     }
 
+    private static BmSDK.Function __fn_Touch;
     /// <summary>
     /// Function: Touch
     /// </summary>
     public unsafe override void Touch(BmSDK.Engine.Actor Other, BmSDK.Engine.PrimitiveComponent OtherComp, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFreezeClusterTrap.Touch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Touch, "BmScript.RFreezeClusterTrap.Touch");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherComp, paramsPtr + 8);
@@ -174,24 +182,26 @@ public partial class RFreezeClusterTrap : BmSDK.BmGame.RFreezeClusterTrapBase, B
         return;
     }
 
+    private static BmSDK.Function __fn_Initialise;
     /// <summary>
     /// Function: Initialise
     /// </summary>
     public unsafe virtual void Initialise(bool bSecondary)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFreezeClusterTrap.Initialise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Initialise, "BmScript.RFreezeClusterTrap.Initialise");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSecondary, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFreezeClusterTrap.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmScript.RFreezeClusterTrap.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

@@ -78,80 +78,87 @@ public partial class RSeqAct_CanSeePawn : BmSDK.Engine.SeqAct_Latent, BmSDK.IGam
         where TComponent : class, Framework.IScriptComponent<RSeqAct_CanSeePawn>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_CanSeePawn.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmGame.RSeqAct_CanSeePawn.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ReverseFovCheck;
     /// <summary>
     /// Function: ReverseFovCheck
     /// </summary>
     public unsafe virtual bool ReverseFovCheck()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_CanSeePawn.ReverseFovCheck", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReverseFovCheck, "BmGame.RSeqAct_CanSeePawn.ReverseFovCheck");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CheckForSightChange;
     /// <summary>
     /// Function: CheckForSightChange
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RSeqAct_CanSeePawn.SightCheckResult CheckForSightChange(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_CanSeePawn.CheckForSightChange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckForSightChange, "BmGame.RSeqAct_CanSeePawn.CheckForSightChange");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RSeqAct_CanSeePawn.SightCheckResult>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_LOS_Lost;
     /// <summary>
     /// Function: LOS_Lost
     /// </summary>
     public unsafe virtual void LOS_Lost()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_CanSeePawn.LOS_Lost", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LOS_Lost, "BmGame.RSeqAct_CanSeePawn.LOS_Lost");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_LOS_Gained;
     /// <summary>
     /// Function: LOS_Gained
     /// </summary>
     public unsafe virtual void LOS_Gained()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_CanSeePawn.LOS_Gained", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LOS_Gained, "BmGame.RSeqAct_CanSeePawn.LOS_Gained");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_LOS_NoChange;
     /// <summary>
     /// Function: LOS_NoChange
     /// </summary>
     public unsafe virtual void LOS_NoChange(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_CanSeePawn.LOS_NoChange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LOS_NoChange, "BmGame.RSeqAct_CanSeePawn.LOS_NoChange");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Update;
     /// <summary>
     /// Function: Update
     /// </summary>
     public unsafe override bool Update(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_CanSeePawn.Update", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Update, "BmGame.RSeqAct_CanSeePawn.Update");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

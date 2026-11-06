@@ -78,12 +78,13 @@ public partial class RLockedInReactionPoint : BmSDK.Engine.Actor, BmSDK.IGameObj
         where TComponent : class, Framework.IScriptComponent<RLockedInReactionPoint>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetBehaviourRootFor;
     /// <summary>
     /// Function: GetBehaviourRootFor
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RSeqEvent_StartBangOnDoor GetBehaviourRootFor(BmSDK.BmGame.RPawnVillain TestPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLockedInReactionPoint.GetBehaviourRootFor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBehaviourRootFor, "BmGame.RLockedInReactionPoint.GetBehaviourRootFor");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

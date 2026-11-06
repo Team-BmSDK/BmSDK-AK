@@ -78,12 +78,13 @@ public partial class RAEC_Casualty_Sub_TerrorCas : BmSDK.BmGame.RAEC_Casualty_Su
         where TComponent : class, Framework.IScriptComponent<RAEC_Casualty_Sub_TerrorCas>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_AssignCasualty;
     /// <summary>
     /// Function: AssignCasualty
     /// </summary>
     public unsafe override void AssignCasualty(BmSDK.BmGame.RPawnVillain NewCas)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Casualty_Sub_TerrorCas.AssignCasualty", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AssignCasualty, "BmGame.RAEC_Casualty_Sub_TerrorCas.AssignCasualty");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCas, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

@@ -78,12 +78,13 @@ public partial class HttpRequestWindowsMcp : BmSDK.WinDrv.HttpRequestWindows, Bm
         where TComponent : class, Framework.IScriptComponent<HttpRequestWindowsMcp>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ProcessRequest;
     /// <summary>
     /// Function: ProcessRequest
     /// </summary>
     public unsafe override bool ProcessRequest()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.HttpRequestWindowsMcp.ProcessRequest", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProcessRequest, "WinDrv.HttpRequestWindowsMcp.ProcessRequest");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

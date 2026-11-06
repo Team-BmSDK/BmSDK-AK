@@ -73,12 +73,13 @@ public partial class AkAsset : BmSDK.Engine.AkHash, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<AkAsset>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsAssetBankLoaded;
     /// <summary>
     /// Function: IsAssetBankLoaded
     /// </summary>
     public unsafe virtual bool IsAssetBankLoaded()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkAsset.IsAssetBankLoaded", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAssetBankLoaded, "Engine.AkAsset.IsAssetBankLoaded");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -91,12 +92,13 @@ public partial class AkAsset : BmSDK.Engine.AkHash, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_RequestAssetBankUnload;
     /// <summary>
     /// Function: RequestAssetBankUnload
     /// </summary>
     public unsafe virtual void RequestAssetBankUnload()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkAsset.RequestAssetBankUnload", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RequestAssetBankUnload, "Engine.AkAsset.RequestAssetBankUnload");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -109,12 +111,13 @@ public partial class AkAsset : BmSDK.Engine.AkHash, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_RequestAssetBankLoad;
     /// <summary>
     /// Function: RequestAssetBankLoad
     /// </summary>
     public unsafe virtual bool RequestAssetBankLoad()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkAsset.RequestAssetBankLoad", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RequestAssetBankLoad, "Engine.AkAsset.RequestAssetBankLoad");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

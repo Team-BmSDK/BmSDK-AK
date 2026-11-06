@@ -78,12 +78,13 @@ public partial class RBMCombatThrownObject_CleaverCatch : BmSDK.BmScript.RBMComb
         where TComponent : class, Framework.IScriptComponent<RBMCombatThrownObject_CleaverCatch>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DamagePawn;
     /// <summary>
     /// Function: DamagePawn
     /// </summary>
     public unsafe override void DamagePawn(BmSDK.BmGame.RPawnCombat HitPawn, float Speed, float DamageGiven)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatThrownObject_CleaverCatch.DamagePawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DamagePawn, "BmScript.RBMCombatThrownObject_CleaverCatch.DamagePawn");
         byte* paramsPtr = stackalloc byte[284];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speed, paramsPtr + 8);
@@ -92,12 +93,13 @@ public partial class RBMCombatThrownObject_CleaverCatch : BmSDK.BmScript.RBMComb
         return;
     }
 
+    private static BmSDK.Function __fn_GetCatchStartTime;
     /// <summary>
     /// Function: GetCatchStartTime
     /// </summary>
     public unsafe override float GetCatchStartTime(BmSDK.BmGame.RPawnPlayerCombat Batman)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatThrownObject_CleaverCatch.GetCatchStartTime", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCatchStartTime, "BmScript.RBMCombatThrownObject_CleaverCatch.GetCatchStartTime");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Batman, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

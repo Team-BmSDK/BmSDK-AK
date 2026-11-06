@@ -78,12 +78,13 @@ public partial class RJokerHallucinationFrequencyController : BmSDK.GameObject, 
         where TComponent : class, Framework.IScriptComponent<RJokerHallucinationFrequencyController>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ShouldJokerHelpUpThug;
     /// <summary>
     /// Function: ShouldJokerHelpUpThug
     /// </summary>
     public unsafe virtual bool ShouldJokerHelpUpThug(BmSDK.BmGame.RPawnVillain Thug, BmSDK.FName TargetStance)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerHallucinationFrequencyController.ShouldJokerHelpUpThug", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldJokerHelpUpThug, "BmGame.RJokerHallucinationFrequencyController.ShouldJokerHelpUpThug");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Thug, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetStance, paramsPtr + 8);
@@ -91,24 +92,26 @@ public partial class RJokerHallucinationFrequencyController : BmSDK.GameObject, 
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_HelpUpThug;
     /// <summary>
     /// Function: HelpUpThug
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RAnimUtil_PosePlayer.FTransitionId HelpUpThug(BmSDK.BmGame.RPawnVillain Thug)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerHallucinationFrequencyController.HelpUpThug", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HelpUpThug, "BmGame.RJokerHallucinationFrequencyController.HelpUpThug");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Thug, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RAnimUtil_PosePlayer.FTransitionId>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_DoGenericSlavedJokerHallucination;
     /// <summary>
     /// Function: DoGenericSlavedJokerHallucination
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RPawnJokerHallucination DoGenericSlavedJokerHallucination(BmSDK.BmGame.RPawnCharacter HostPawn, bool bIgnoreCollisionCheck, BmSDK.Rotator AngleOffset, System.Numerics.Vector3 refLoc, BmSDK.FName TransAnimName, BmSDK.FName idleAnimName, BmSDK.BmGame.RPawnJokerHallucination.TypesOfHallucination HallucinationType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerHallucinationFrequencyController.DoGenericSlavedJokerHallucination", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoGenericSlavedJokerHallucination, "BmGame.RJokerHallucinationFrequencyController.DoGenericSlavedJokerHallucination");
         byte* paramsPtr = stackalloc byte[200];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HostPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIgnoreCollisionCheck, paramsPtr + 8);
@@ -121,12 +124,13 @@ public partial class RJokerHallucinationFrequencyController : BmSDK.GameObject, 
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnJokerHallucination>(paramsPtr + 56);
     }
 
+    private static BmSDK.Function __fn_SpawnJokerHallucination;
     /// <summary>
     /// Function: SpawnJokerHallucination
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RPawnJokerHallucination SpawnJokerHallucination(BmSDK.BmGame.RCharacterDefine CustomDefine = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerHallucinationFrequencyController.SpawnJokerHallucination", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnJokerHallucination, "BmGame.RJokerHallucinationFrequencyController.SpawnJokerHallucination");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CustomDefine, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -140,12 +144,13 @@ public partial class RJokerHallucinationFrequencyController : BmSDK.GameObject, 
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnJokerHallucination>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_IsSpaceForJokerAnimationCheckWholeAnim;
     /// <summary>
     /// Function: IsSpaceForJokerAnimationCheckWholeAnim
     /// </summary>
     public unsafe virtual bool IsSpaceForJokerAnimationCheckWholeAnim(BmSDK.BmGame.RAnimConfig.FCustomAnimConfig AnimConf, BmSDK.BmGame.RPawnCharacter TestPawn, float CheckDistance, System.Numerics.Vector3 refLoc, BmSDK.Rotator RefRot)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerHallucinationFrequencyController.IsSpaceForJokerAnimationCheckWholeAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsSpaceForJokerAnimationCheckWholeAnim, "BmGame.RJokerHallucinationFrequencyController.IsSpaceForJokerAnimationCheckWholeAnim");
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimConf, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 52);
@@ -163,12 +168,13 @@ public partial class RJokerHallucinationFrequencyController : BmSDK.GameObject, 
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 88);
     }
 
+    private static BmSDK.Function __fn_IsSpaceForJokerAnimation;
     /// <summary>
     /// Function: IsSpaceForJokerAnimation
     /// </summary>
     public unsafe virtual bool IsSpaceForJokerAnimation(BmSDK.FName AnimName, BmSDK.Engine.Actor TestActor, float CheckDistance, System.Numerics.Vector3 TestLoc = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerHallucinationFrequencyController.IsSpaceForJokerAnimation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsSpaceForJokerAnimation, "BmGame.RJokerHallucinationFrequencyController.IsSpaceForJokerAnimation");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestActor, paramsPtr + 8);
@@ -185,57 +191,62 @@ public partial class RJokerHallucinationFrequencyController : BmSDK.GameObject, 
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_GetJokerHallucinationAnimSet;
     /// <summary>
     /// Function: GetJokerHallucinationAnimSet
     /// </summary>
     public unsafe virtual BmSDK.TArray<BmSDK.Engine.AnimSet> GetJokerHallucinationAnimSet()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerHallucinationFrequencyController.GetJokerHallucinationAnimSet", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetJokerHallucinationAnimSet, "BmGame.RJokerHallucinationFrequencyController.GetJokerHallucinationAnimSet");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.Engine.AnimSet>>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsJokerAnimationLoaded;
     /// <summary>
     /// Function: IsJokerAnimationLoaded
     /// </summary>
     public unsafe virtual bool IsJokerAnimationLoaded(BmSDK.FName AnimName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerHallucinationFrequencyController.IsJokerAnimationLoaded", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsJokerAnimationLoaded, "BmGame.RJokerHallucinationFrequencyController.IsJokerAnimationLoaded");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_JokerHallucinationsAllowed;
     /// <summary>
     /// Function: JokerHallucinationsAllowed
     /// </summary>
     public unsafe virtual bool JokerHallucinationsAllowed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerHallucinationFrequencyController.JokerHallucinationsAllowed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_JokerHallucinationsAllowed, "BmGame.RJokerHallucinationFrequencyController.JokerHallucinationsAllowed");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetWorldInfo;
     /// <summary>
     /// Function: GetWorldInfo
     /// </summary>
     public unsafe virtual BmSDK.Engine.WorldInfo GetWorldInfo()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerHallucinationFrequencyController.GetWorldInfo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWorldInfo, "BmGame.RJokerHallucinationFrequencyController.GetWorldInfo");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.WorldInfo>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_HasAnimBeenUsedRecently;
     /// <summary>
     /// Function: HasAnimBeenUsedRecently
     /// </summary>
     public unsafe virtual bool HasAnimBeenUsedRecently(BmSDK.BmGame.RPawnJokerHallucination.TypesOfHallucination AppearanceType, BmSDK.FName AnimationName, int NumHistoryToCheck)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerHallucinationFrequencyController.HasAnimBeenUsedRecently", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasAnimBeenUsedRecently, "BmGame.RJokerHallucinationFrequencyController.HasAnimBeenUsedRecently");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AppearanceType, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimationName, paramsPtr + 4);
@@ -244,12 +255,13 @@ public partial class RJokerHallucinationFrequencyController : BmSDK.GameObject, 
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_RegisterJokerAppearance;
     /// <summary>
     /// Function: RegisterJokerAppearance
     /// </summary>
     public unsafe virtual void RegisterJokerAppearance(BmSDK.BmGame.RPawnJokerHallucination.TypesOfHallucination AppearanceType, BmSDK.FName AnimationName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerHallucinationFrequencyController.RegisterJokerAppearance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterJokerAppearance, "BmGame.RJokerHallucinationFrequencyController.RegisterJokerAppearance");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AppearanceType, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimationName, paramsPtr + 4);
@@ -257,23 +269,25 @@ public partial class RJokerHallucinationFrequencyController : BmSDK.GameObject, 
         return;
     }
 
+    private static BmSDK.Function __fn_SetIntialValues;
     /// <summary>
     /// Function: SetIntialValues
     /// </summary>
     public unsafe virtual void SetIntialValues()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerHallucinationFrequencyController.SetIntialValues", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetIntialValues, "BmGame.RJokerHallucinationFrequencyController.SetIntialValues");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShouldSpawnJokerThisTime;
     /// <summary>
     /// Function: ShouldSpawnJokerThisTime
     /// </summary>
     public unsafe virtual bool ShouldSpawnJokerThisTime(BmSDK.BmGame.RPawnJokerHallucination.TypesOfHallucination AppearanceType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerHallucinationFrequencyController.ShouldSpawnJokerThisTime", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldSpawnJokerThisTime, "BmGame.RJokerHallucinationFrequencyController.ShouldSpawnJokerThisTime");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AppearanceType, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

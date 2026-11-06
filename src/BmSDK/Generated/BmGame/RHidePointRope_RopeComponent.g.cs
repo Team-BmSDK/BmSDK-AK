@@ -78,12 +78,13 @@ public partial class RHidePointRope_RopeComponent : BmSDK.BmGame.RRope2Component
         where TComponent : class, Framework.IScriptComponent<RHidePointRope_RopeComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsRopeLengthAutoCalculated;
     /// <summary>
     /// Function: IsRopeLengthAutoCalculated
     /// </summary>
     public unsafe override bool IsRopeLengthAutoCalculated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePointRope_RopeComponent.IsRopeLengthAutoCalculated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsRopeLengthAutoCalculated, "BmGame.RHidePointRope_RopeComponent.IsRopeLengthAutoCalculated");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

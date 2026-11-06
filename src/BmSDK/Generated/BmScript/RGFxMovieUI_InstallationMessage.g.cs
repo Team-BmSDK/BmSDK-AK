@@ -78,91 +78,99 @@ public partial class RGFxMovieUI_InstallationMessage : BmSDK.BmGame.RGFxMovieUI,
         where TComponent : class, Framework.IScriptComponent<RGFxMovieUI_InstallationMessage>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ConstructExitMsg;
     /// <summary>
     /// Function: ConstructExitMsg
     /// </summary>
     public unsafe virtual BmSDK.FString ConstructExitMsg(BmSDK.FString BaseMsg)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_InstallationMessage.ConstructExitMsg", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ConstructExitMsg, "BmScript.RGFxMovieUI_InstallationMessage.ConstructExitMsg");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BaseMsg, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_XI_OnOut;
     /// <summary>
     /// Function: XI_OnOut
     /// </summary>
     public unsafe override void XI_OnOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_InstallationMessage.XI_OnOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_OnOut, "BmScript.RGFxMovieUI_InstallationMessage.XI_OnOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnFadeCompleted_Callback;
     /// <summary>
     /// Function: OnFadeCompleted_Callback
     /// </summary>
     public unsafe override void OnFadeCompleted_Callback()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_InstallationMessage.OnFadeCompleted_Callback", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnFadeCompleted_Callback, "BmScript.RGFxMovieUI_InstallationMessage.OnFadeCompleted_Callback");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_OnB;
     /// <summary>
     /// Function: XI_OnB
     /// </summary>
     public unsafe virtual void XI_OnB()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_InstallationMessage.XI_OnB", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_OnB, "BmScript.RGFxMovieUI_InstallationMessage.XI_OnB");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_OnA;
     /// <summary>
     /// Function: XI_OnA
     /// </summary>
     public unsafe virtual void XI_OnA()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_InstallationMessage.XI_OnA", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_OnA, "BmScript.RGFxMovieUI_InstallationMessage.XI_OnA");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_GetTimeAsHHMMSS;
     /// <summary>
     /// Function: XI_GetTimeAsHHMMSS
     /// </summary>
     public unsafe virtual BmSDK.FString XI_GetTimeAsHHMMSS(float TimeSec)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_InstallationMessage.XI_GetTimeAsHHMMSS", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_GetTimeAsHHMMSS, "BmScript.RGFxMovieUI_InstallationMessage.XI_GetTimeAsHHMMSS");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TimeSec, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_XI_GetPercent;
     /// <summary>
     /// Function: XI_GetPercent
     /// </summary>
     public unsafe virtual int XI_GetPercent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_InstallationMessage.XI_GetPercent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_GetPercent, "BmScript.RGFxMovieUI_InstallationMessage.XI_GetPercent");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PopupRequester_Callback;
     /// <summary>
     /// Function: PopupRequester_Callback
     /// </summary>
     public unsafe override void PopupRequester_Callback(BmSDK.BmGame.RGFxMoviePopupRequester ThePopUpMsg, int ButtonId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_InstallationMessage.PopupRequester_Callback", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PopupRequester_Callback, "BmScript.RGFxMovieUI_InstallationMessage.PopupRequester_Callback");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThePopUpMsg, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ButtonId, paramsPtr + 8);
@@ -170,12 +178,13 @@ public partial class RGFxMovieUI_InstallationMessage : BmSDK.BmGame.RGFxMovieUI,
         return;
     }
 
+    private static BmSDK.Function __fn_CustomInit;
     /// <summary>
     /// Function: CustomInit
     /// </summary>
     public unsafe virtual bool CustomInit(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_InstallationMessage.CustomInit", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CustomInit, "BmScript.RGFxMovieUI_InstallationMessage.CustomInit");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

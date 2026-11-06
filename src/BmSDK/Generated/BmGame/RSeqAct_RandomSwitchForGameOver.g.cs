@@ -78,23 +78,25 @@ public partial class RSeqAct_RandomSwitchForGameOver : BmSDK.Engine.SeqAct_Switc
         where TComponent : class, Framework.IScriptComponent<RSeqAct_RandomSwitchForGameOver>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CopyOutState;
     /// <summary>
     /// Function: CopyOutState
     /// </summary>
     public unsafe virtual void CopyOutState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_RandomSwitchForGameOver.CopyOutState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CopyOutState, "BmGame.RSeqAct_RandomSwitchForGameOver.CopyOutState");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CopyInState;
     /// <summary>
     /// Function: CopyInState
     /// </summary>
     public unsafe virtual void CopyInState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_RandomSwitchForGameOver.CopyInState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CopyInState, "BmGame.RSeqAct_RandomSwitchForGameOver.CopyInState");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

@@ -78,155 +78,168 @@ public partial class RTunnelGrateShared : BmSDK.BmGame.RTunnelGrateBase, BmSDK.I
         where TComponent : class, Framework.IScriptComponent<RTunnelGrateShared>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RTunnelGrateShared.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmScript.RTunnelGrateShared.Tick");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetPrompt;
     /// <summary>
     /// Function: GetPrompt
     /// </summary>
     public unsafe override BmSDK.FString GetPrompt(BmSDK.Engine.PlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RTunnelGrateShared.GetPrompt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPrompt, "BmScript.RTunnelGrateShared.GetPrompt");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_OverridesRun;
     /// <summary>
     /// Function: OverridesRun
     /// </summary>
     public unsafe override float OverridesRun(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RTunnelGrateShared.OverridesRun", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverridesRun, "BmScript.RTunnelGrateShared.OverridesRun");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CanReachItem;
     /// <summary>
     /// Function: CanReachItem
     /// </summary>
     public unsafe override bool CanReachItem(BmSDK.Engine.Pawn CheckingPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RTunnelGrateShared.CanReachItem", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanReachItem, "BmScript.RTunnelGrateShared.CanReachItem");
         byte* paramsPtr = stackalloc byte[96];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckingPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetInteractButton;
     /// <summary>
     /// Function: GetInteractButton
     /// </summary>
     public unsafe override BmSDK.BmGame.RInteractInterface.EInteractableItemFaceButton GetInteractButton(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RTunnelGrateShared.GetInteractButton", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetInteractButton, "BmScript.RTunnelGrateShared.GetInteractButton");
         byte* paramsPtr = stackalloc byte[9];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RInteractInterface.EInteractableItemFaceButton>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_MustBeCrouched;
     /// <summary>
     /// Function: MustBeCrouched
     /// </summary>
     public unsafe override bool MustBeCrouched(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RTunnelGrateShared.MustBeCrouched", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MustBeCrouched, "BmScript.RTunnelGrateShared.MustBeCrouched");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_IsActive;
     /// <summary>
     /// Function: IsActive
     /// </summary>
     public unsafe override bool IsActive(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RTunnelGrateShared.IsActive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsActive, "BmScript.RTunnelGrateShared.IsActive");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_Interact;
     /// <summary>
     /// Function: Interact
     /// </summary>
     public unsafe override void Interact(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RTunnelGrateShared.Interact", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Interact, "BmScript.RTunnelGrateShared.Interact");
         byte* paramsPtr = stackalloc byte[208];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerFarMove;
     /// <summary>
     /// Function: TriggerFarMove
     /// </summary>
     public unsafe virtual void TriggerFarMove(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RTunnelGrateShared.TriggerFarMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerFarMove, "BmScript.RTunnelGrateShared.TriggerFarMove");
         byte* paramsPtr = stackalloc byte[176];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerSpecialMove;
     /// <summary>
     /// Function: TriggerSpecialMove
     /// </summary>
     public unsafe override void TriggerSpecialMove(BmSDK.Engine.PlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RTunnelGrateShared.TriggerSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerSpecialMove, "BmScript.RTunnelGrateShared.TriggerSpecialMove");
         byte* paramsPtr = stackalloc byte[176];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetFOVDegrees;
     /// <summary>
     /// Function: GetFOVDegrees
     /// </summary>
     public unsafe override float GetFOVDegrees(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RTunnelGrateShared.GetFOVDegrees", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFOVDegrees, "BmScript.RTunnelGrateShared.GetFOVDegrees");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetHeightRange;
     /// <summary>
     /// Function: GetHeightRange
     /// </summary>
     public unsafe override float GetHeightRange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RTunnelGrateShared.GetHeightRange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHeightRange, "BmScript.RTunnelGrateShared.GetHeightRange");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay_Delayed;
     /// <summary>
     /// Function: PostBeginPlay_Delayed
     /// </summary>
     public unsafe override void PostBeginPlay_Delayed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RTunnelGrateShared.PostBeginPlay_Delayed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay_Delayed, "BmScript.RTunnelGrateShared.PostBeginPlay_Delayed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

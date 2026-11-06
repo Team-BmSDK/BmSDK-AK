@@ -78,23 +78,25 @@ public partial class RStealthTakeDownStage_RailingAttack : BmSDK.BmGame.RStealth
         where TComponent : class, Framework.IScriptComponent<RStealthTakeDownStage_RailingAttack>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Begin;
     /// <summary>
     /// Function: Begin
     /// </summary>
     public unsafe override void Begin()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStealthTakeDownStage_RailingAttack.Begin", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Begin, "BmGame.RStealthTakeDownStage_RailingAttack.Begin");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetRopeLength;
     /// <summary>
     /// Function: GetRopeLength
     /// </summary>
     public unsafe static float GetRopeLength(System.Numerics.Vector3 RopeTopPoint, BmSDK.BmGame.RPawnPlayer Attacker)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStealthTakeDownStage_RailingAttack.GetRopeLength", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRopeLength, "BmGame.RStealthTakeDownStage_RailingAttack.GetRopeLength");
         byte* paramsPtr = stackalloc byte[100];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RopeTopPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Attacker, paramsPtr + 12);
@@ -102,80 +104,87 @@ public partial class RStealthTakeDownStage_RailingAttack : BmSDK.BmGame.RStealth
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_SetupRope;
     /// <summary>
     /// Function: SetupRope
     /// </summary>
     public unsafe virtual void SetupRope(float RopeLen)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStealthTakeDownStage_RailingAttack.SetupRope", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupRope, "BmGame.RStealthTakeDownStage_RailingAttack.SetupRope");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RopeLen, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CreateRope;
     /// <summary>
     /// Function: CreateRope
     /// </summary>
     public unsafe virtual void CreateRope()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStealthTakeDownStage_RailingAttack.CreateRope", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateRope, "BmGame.RStealthTakeDownStage_RailingAttack.CreateRope");
         byte* paramsPtr = stackalloc byte[200];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishAttackVictim;
     /// <summary>
     /// Function: FinishAttackVictim
     /// </summary>
     public unsafe override bool FinishAttackVictim(int iVictimNumber)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStealthTakeDownStage_RailingAttack.FinishAttackVictim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishAttackVictim, "BmGame.RStealthTakeDownStage_RailingAttack.FinishAttackVictim");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(iVictimNumber, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetWritheAnim;
     /// <summary>
     /// Function: GetWritheAnim
     /// </summary>
     public unsafe override BmSDK.FName GetWritheAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStealthTakeDownStage_RailingAttack.GetWritheAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWritheAnim, "BmGame.RStealthTakeDownStage_RailingAttack.GetWritheAnim");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetFinishState;
     /// <summary>
     /// Function: GetFinishState
     /// </summary>
     public unsafe override BmSDK.FName GetFinishState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStealthTakeDownStage_RailingAttack.GetFinishState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFinishState, "BmGame.RStealthTakeDownStage_RailingAttack.GetFinishState");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_FindRopeAttachPoints;
     /// <summary>
     /// Function: FindRopeAttachPoints
     /// </summary>
     public unsafe virtual void FindRopeAttachPoints()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStealthTakeDownStage_RailingAttack.FindRopeAttachPoints", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindRopeAttachPoints, "BmGame.RStealthTakeDownStage_RailingAttack.FindRopeAttachPoints");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetReferencePosition;
     /// <summary>
     /// Function: GetReferencePosition
     /// </summary>
     public unsafe override void GetReferencePosition(out System.Numerics.Vector3 ReferencePosition, out BmSDK.Rotator ReferenceRotation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStealthTakeDownStage_RailingAttack.GetReferencePosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetReferencePosition, "BmGame.RStealthTakeDownStage_RailingAttack.GetReferencePosition");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ReferencePosition = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);

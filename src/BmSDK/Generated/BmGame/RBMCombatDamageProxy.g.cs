@@ -78,12 +78,13 @@ public partial class RBMCombatDamageProxy : BmSDK.Engine.Actor, BmSDK.IGameObjec
         where TComponent : class, Framework.IScriptComponent<RBMCombatDamageProxy>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_RegisterTransform;
     /// <summary>
     /// Function: RegisterTransform
     /// </summary>
     public unsafe virtual void RegisterTransform(System.Numerics.Vector3 NewLoc, BmSDK.Rotator NewRot)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCombatDamageProxy.RegisterTransform", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterTransform, "BmGame.RBMCombatDamageProxy.RegisterTransform");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewRot, paramsPtr + 12);
@@ -98,23 +99,25 @@ public partial class RBMCombatDamageProxy : BmSDK.Engine.Actor, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCombatDamageProxy.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmGame.RBMCombatDamageProxy.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CombatTouch;
     /// <summary>
     /// Function: CombatTouch
     /// </summary>
     public unsafe virtual bool CombatTouch(BmSDK.Engine.Actor Other, BmSDK.Engine.PrimitiveComponent OtherComp, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCombatDamageProxy.CombatTouch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CombatTouch, "BmGame.RBMCombatDamageProxy.CombatTouch");
         byte* paramsPtr = stackalloc byte[144];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherComp, paramsPtr + 8);
@@ -124,46 +127,50 @@ public partial class RBMCombatDamageProxy : BmSDK.Engine.Actor, BmSDK.IGameObjec
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 40);
     }
 
+    private static BmSDK.Function __fn_GetDamageDirection;
     /// <summary>
     /// Function: GetDamageDirection
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetDamageDirection()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCombatDamageProxy.GetDamageDirection", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDamageDirection, "BmGame.RBMCombatDamageProxy.GetDamageDirection");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Deactivate;
     /// <summary>
     /// Function: Deactivate
     /// </summary>
     public unsafe virtual void Deactivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCombatDamageProxy.Deactivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Deactivate, "BmGame.RBMCombatDamageProxy.Deactivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DeactivateDelayed;
     /// <summary>
     /// Function: DeactivateDelayed
     /// </summary>
     public unsafe virtual void DeactivateDelayed(float Delay)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCombatDamageProxy.DeactivateDelayed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DeactivateDelayed, "BmGame.RBMCombatDamageProxy.DeactivateDelayed");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Delay, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ActivateOnSocket;
     /// <summary>
     /// Function: ActivateOnSocket
     /// </summary>
     public unsafe virtual void ActivateOnSocket(float NewRadius, BmSDK.Engine.SkeletalMeshComponent NewMesh, BmSDK.FName NewSocketName, float NewActiveTime = default, System.Numerics.Vector3 NewCylinderProjection = default, bool bHasCollision = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCombatDamageProxy.ActivateOnSocket", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActivateOnSocket, "BmGame.RBMCombatDamageProxy.ActivateOnSocket");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewRadius, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewMesh, paramsPtr + 4);
@@ -175,12 +182,13 @@ public partial class RBMCombatDamageProxy : BmSDK.Engine.Actor, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_Activate;
     /// <summary>
     /// Function: Activate
     /// </summary>
     public unsafe virtual void Activate(float NewRadius, BmSDK.FName NewBoneName, float NewActiveTime = default, System.Numerics.Vector3 NewCylinderProjection = default, bool bHasCollision = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCombatDamageProxy.Activate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activate, "BmGame.RBMCombatDamageProxy.Activate");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewRadius, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewBoneName, paramsPtr + 4);
@@ -191,23 +199,25 @@ public partial class RBMCombatDamageProxy : BmSDK.Engine.Actor, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCombatDamageProxy.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RBMCombatDamageProxy.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateLocation;
     /// <summary>
     /// Function: UpdateLocation
     /// </summary>
     public unsafe virtual void UpdateLocation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCombatDamageProxy.UpdateLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateLocation, "BmGame.RBMCombatDamageProxy.UpdateLocation");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

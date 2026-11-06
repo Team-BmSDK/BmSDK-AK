@@ -78,59 +78,64 @@ public partial class RAIBrain_Hostage : BmSDK.BmGame.RAIBrain, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RAIBrain_Hostage>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetEscaped;
     /// <summary>
     /// Function: SetEscaped
     /// </summary>
     public unsafe virtual void SetEscaped(bool bNewVal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAIBrain_Hostage.SetEscaped", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetEscaped, "BmGame.RAIBrain_Hostage.SetEscaped");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewVal, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetEndOfWave;
     /// <summary>
     /// Function: SetEndOfWave
     /// </summary>
     public unsafe virtual void SetEndOfWave(bool bNewVal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAIBrain_Hostage.SetEndOfWave", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetEndOfWave, "BmGame.RAIBrain_Hostage.SetEndOfWave");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewVal, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetPlayerSeenEscapeType;
     /// <summary>
     /// Function: SetPlayerSeenEscapeType
     /// </summary>
     public unsafe virtual void SetPlayerSeenEscapeType(BmSDK.BmGame.RAIBrain_Hostage.PlayerSeenEscapeTypeEnum NewVal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAIBrain_Hostage.SetPlayerSeenEscapeType", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetPlayerSeenEscapeType, "BmGame.RAIBrain_Hostage.SetPlayerSeenEscapeType");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewVal, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HandleNonAECState;
     /// <summary>
     /// Function: HandleNonAECState
     /// </summary>
     public unsafe override void HandleNonAECState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAIBrain_Hostage.HandleNonAECState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandleNonAECState, "BmGame.RAIBrain_Hostage.HandleNonAECState");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EvaluateState;
     /// <summary>
     /// Function: EvaluateState
     /// </summary>
     public unsafe override void EvaluateState(out BmSDK.FName NewName, out BmSDK.BmGame.RAlertEventCoordinatorBase NewAEC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAIBrain_Hostage.EvaluateState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EvaluateState, "BmGame.RAIBrain_Hostage.EvaluateState");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NewName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);

@@ -78,12 +78,13 @@ public partial class RThugMineablePointWall : BmSDK.BmGame.RThugMineablePointBas
         where TComponent : class, Framework.IScriptComponent<RThugMineablePointWall>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetStandPoint;
     /// <summary>
     /// Function: GetStandPoint
     /// </summary>
     public unsafe override System.Numerics.Vector3 GetStandPoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RThugMineablePointWall.GetStandPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStandPoint, "BmGame.RThugMineablePointWall.GetStandPoint");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);

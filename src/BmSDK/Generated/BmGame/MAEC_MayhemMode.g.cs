@@ -78,48 +78,52 @@ public partial class MAEC_MayhemMode : BmSDK.BmGame.RAlertEventCoordinatorBase, 
         where TComponent : class, Framework.IScriptComponent<MAEC_MayhemMode>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_AssignToEvent;
     /// <summary>
     /// Function: AssignToEvent
     /// </summary>
     public unsafe override void AssignToEvent(BmSDK.BmGame.RBMAIController Con)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_MayhemMode.AssignToEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AssignToEvent, "BmGame.MAEC_MayhemMode.AssignToEvent");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Con, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsNewController;
     /// <summary>
     /// Function: IsNewController
     /// </summary>
     public unsafe virtual bool IsNewController(BmSDK.BmGame.RBMAIController NewCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_MayhemMode.IsNewController", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsNewController, "BmGame.MAEC_MayhemMode.IsNewController");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_MayhemMode.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.MAEC_MayhemMode.Tick");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddAttacker;
     /// <summary>
     /// Function: AddAttacker
     /// </summary>
     public unsafe virtual void AddAttacker(BmSDK.BmGame.RBMAIController NewCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_MayhemMode.AddAttacker", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddAttacker, "BmGame.MAEC_MayhemMode.AddAttacker");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

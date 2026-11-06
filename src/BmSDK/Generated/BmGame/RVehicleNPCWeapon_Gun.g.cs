@@ -78,92 +78,100 @@ public partial class RVehicleNPCWeapon_Gun : BmSDK.BmGame.RVehicleNPCWeapon, BmS
         where TComponent : class, Framework.IScriptComponent<RVehicleNPCWeapon_Gun>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ThrowGrenade;
     /// <summary>
     /// Function: ThrowGrenade
     /// </summary>
     public unsafe virtual void ThrowGrenade()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleNPCWeapon_Gun.ThrowGrenade", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ThrowGrenade, "BmGame.RVehicleNPCWeapon_Gun.ThrowGrenade");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GrabGrenade;
     /// <summary>
     /// Function: GrabGrenade
     /// </summary>
     public unsafe virtual void GrabGrenade()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleNPCWeapon_Gun.GrabGrenade", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GrabGrenade, "BmGame.RVehicleNPCWeapon_Gun.GrabGrenade");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanShootTarget;
     /// <summary>
     /// Function: CanShootTarget
     /// </summary>
     public unsafe override bool CanShootTarget(BmSDK.Engine.Actor Target)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleNPCWeapon_Gun.CanShootTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanShootTarget, "BmGame.RVehicleNPCWeapon_Gun.CanShootTarget");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_IsFiring;
     /// <summary>
     /// Function: IsFiring
     /// </summary>
     public unsafe override bool IsFiring()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleNPCWeapon_Gun.IsFiring", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsFiring, "BmGame.RVehicleNPCWeapon_Gun.IsFiring");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CancelAttack;
     /// <summary>
     /// Function: CancelAttack
     /// </summary>
     public unsafe override void CancelAttack(bool DueToBeingRammed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleNPCWeapon_Gun.CancelAttack", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelAttack, "BmGame.RVehicleNPCWeapon_Gun.CancelAttack");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DueToBeingRammed, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StopAttack;
     /// <summary>
     /// Function: StopAttack
     /// </summary>
     public unsafe override void StopAttack()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleNPCWeapon_Gun.StopAttack", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopAttack, "BmGame.RVehicleNPCWeapon_Gun.StopAttack");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleNPCWeapon_Gun.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RVehicleNPCWeapon_Gun.Tick");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartAttack;
     /// <summary>
     /// Function: StartAttack
     /// </summary>
     public unsafe override bool StartAttack(BmSDK.Engine.Actor Target, float WarningTime, System.Numerics.Vector3 AttackLoc = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleNPCWeapon_Gun.StartAttack", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartAttack, "BmGame.RVehicleNPCWeapon_Gun.StartAttack");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WarningTime, paramsPtr + 8);
@@ -172,23 +180,25 @@ public partial class RVehicleNPCWeapon_Gun : BmSDK.BmGame.RVehicleNPCWeapon, BmS
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_CanDisableTick;
     /// <summary>
     /// Function: CanDisableTick
     /// </summary>
     public unsafe override bool CanDisableTick()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleNPCWeapon_Gun.CanDisableTick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanDisableTick, "BmGame.RVehicleNPCWeapon_Gun.CanDisableTick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CreateAimingPoseConfig;
     /// <summary>
     /// Function: CreateAimingPoseConfig
     /// </summary>
     public unsafe virtual bool CreateAimingPoseConfig(BmSDK.BmGame.RBMPawnAI Pawn, BmSDK.Engine.AnimSet Anims)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleNPCWeapon_Gun.CreateAimingPoseConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateAimingPoseConfig, "BmGame.RVehicleNPCWeapon_Gun.CreateAimingPoseConfig");
         byte* paramsPtr = stackalloc byte[1792];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Pawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Anims, paramsPtr + 8);
@@ -196,23 +206,25 @@ public partial class RVehicleNPCWeapon_Gun : BmSDK.BmGame.RVehicleNPCWeapon, BmS
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_Deinit;
     /// <summary>
     /// Function: Deinit
     /// </summary>
     public unsafe override void Deinit()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleNPCWeapon_Gun.Deinit", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Deinit, "BmGame.RVehicleNPCWeapon_Gun.Deinit");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe override void Init(int PassengerIndex, BmSDK.BmGame.RVehicleNPC NewOwner)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleNPCWeapon_Gun.Init", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmGame.RVehicleNPCWeapon_Gun.Init");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PassengerIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewOwner, paramsPtr + 4);
@@ -220,12 +232,13 @@ public partial class RVehicleNPCWeapon_Gun : BmSDK.BmGame.RVehicleNPCWeapon, BmS
         return;
     }
 
+    private static BmSDK.Function __fn_UpdatePawnAnim;
     /// <summary>
     /// Function: UpdatePawnAnim
     /// </summary>
     public unsafe virtual float UpdatePawnAnim(System.Numerics.Vector3 Target, float DeltaTime, bool IsFiring)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleNPCWeapon_Gun.UpdatePawnAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdatePawnAnim, "BmGame.RVehicleNPCWeapon_Gun.UpdatePawnAnim");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 12);

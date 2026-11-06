@@ -78,47 +78,51 @@ public partial class Trigger : BmSDK.Engine.Actor, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<Trigger>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ApplyCheckpointRecord;
     /// <summary>
     /// Function: ApplyCheckpointRecord
     /// </summary>
     public unsafe virtual void ApplyCheckpointRecord(out BmSDK.Engine.Trigger.FCheckpointRecord Record)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Trigger.ApplyCheckpointRecord", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyCheckpointRecord, "Engine.Trigger.ApplyCheckpointRecord");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Record = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Trigger.FCheckpointRecord>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CreateCheckpointRecord;
     /// <summary>
     /// Function: CreateCheckpointRecord
     /// </summary>
     public unsafe virtual void CreateCheckpointRecord(out BmSDK.Engine.Trigger.FCheckpointRecord Record)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Trigger.CreateCheckpointRecord", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateCheckpointRecord, "Engine.Trigger.CreateCheckpointRecord");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Record = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Trigger.FCheckpointRecord>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShouldSaveForCheckpoint;
     /// <summary>
     /// Function: ShouldSaveForCheckpoint
     /// </summary>
     public unsafe virtual bool ShouldSaveForCheckpoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Trigger.ShouldSaveForCheckpoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldSaveForCheckpoint, "Engine.Trigger.ShouldSaveForCheckpoint");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_StopsProjectile;
     /// <summary>
     /// Function: StopsProjectile
     /// </summary>
     public unsafe override bool StopsProjectile(BmSDK.Engine.Projectile P, BmSDK.Engine.PrimitiveComponent HitComponent = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Trigger.StopsProjectile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopsProjectile, "Engine.Trigger.StopsProjectile");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitComponent, paramsPtr + 8);
@@ -126,34 +130,37 @@ public partial class Trigger : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_UnTrigger;
     /// <summary>
     /// Function: UnTrigger
     /// </summary>
     public unsafe virtual void UnTrigger()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Trigger.UnTrigger", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnTrigger, "Engine.Trigger.UnTrigger");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyTriggered;
     /// <summary>
     /// Function: NotifyTriggered
     /// </summary>
     public unsafe virtual void NotifyTriggered()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Trigger.NotifyTriggered", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyTriggered, "Engine.Trigger.NotifyTriggered");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Touch;
     /// <summary>
     /// Function: Touch
     /// </summary>
     public unsafe override void Touch(BmSDK.Engine.Actor Other, BmSDK.Engine.PrimitiveComponent OtherComp, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Trigger.Touch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Touch, "Engine.Trigger.Touch");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherComp, paramsPtr + 8);
@@ -163,12 +170,13 @@ public partial class Trigger : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Trigger.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "Engine.Trigger.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

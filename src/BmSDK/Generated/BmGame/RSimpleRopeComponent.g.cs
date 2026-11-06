@@ -78,12 +78,13 @@ public partial class RSimpleRopeComponent : BmSDK.BmGame.RRopeComponentBase, BmS
         where TComponent : class, Framework.IScriptComponent<RSimpleRopeComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetPointAtDistanceAlongSplineRope;
     /// <summary>
     /// Function: GetPointAtDistanceAlongSplineRope
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetPointAtDistanceAlongSplineRope(float DistanceAlongRope)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSimpleRopeComponent.GetPointAtDistanceAlongSplineRope", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPointAtDistanceAlongSplineRope, "BmGame.RSimpleRopeComponent.GetPointAtDistanceAlongSplineRope");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DistanceAlongRope, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -97,12 +98,13 @@ public partial class RSimpleRopeComponent : BmSDK.BmGame.RRopeComponentBase, BmS
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_FinaliseRope;
     /// <summary>
     /// Function: FinaliseRope
     /// </summary>
     public unsafe override void FinaliseRope()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSimpleRopeComponent.FinaliseRope", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinaliseRope, "BmGame.RSimpleRopeComponent.FinaliseRope");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -115,12 +117,13 @@ public partial class RSimpleRopeComponent : BmSDK.BmGame.RRopeComponentBase, BmS
         return;
     }
 
+    private static BmSDK.Function __fn_InitialiseRope;
     /// <summary>
     /// Function: InitialiseRope
     /// </summary>
     public unsafe override void InitialiseRope()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSimpleRopeComponent.InitialiseRope", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitialiseRope, "BmGame.RSimpleRopeComponent.InitialiseRope");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -133,12 +136,13 @@ public partial class RSimpleRopeComponent : BmSDK.BmGame.RRopeComponentBase, BmS
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateRope;
     /// <summary>
     /// Function: UpdateRope
     /// </summary>
     public unsafe override void UpdateRope()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSimpleRopeComponent.UpdateRope", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateRope, "BmGame.RSimpleRopeComponent.UpdateRope");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

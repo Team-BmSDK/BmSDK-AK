@@ -78,24 +78,26 @@ public partial class RFuseBoxSwitch : BmSDK.BmGame.RInteractableItem, BmSDK.IGam
         where TComponent : class, Framework.IScriptComponent<RFuseBoxSwitch>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CanReachItem;
     /// <summary>
     /// Function: CanReachItem
     /// </summary>
     public unsafe override bool CanReachItem(BmSDK.Engine.Pawn CheckingPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFuseBoxSwitch.CanReachItem", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanReachItem, "BmScript.RFuseBoxSwitch.CanReachItem");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckingPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_TakeDamage;
     /// <summary>
     /// Function: TakeDamage
     /// </summary>
     public unsafe override void TakeDamage(int Damage, BmSDK.Engine.Controller InstigatedBy, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 Momentum, BmSDK.Class DamageType, BmSDK.Engine.Actor.FTraceHitInfo HitInfo = default, BmSDK.Engine.Actor DamageCauser = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFuseBoxSwitch.TakeDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TakeDamage, "BmScript.RFuseBoxSwitch.TakeDamage");
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Damage, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InstigatedBy, paramsPtr + 4);
@@ -108,23 +110,25 @@ public partial class RFuseBoxSwitch : BmSDK.BmGame.RInteractableItem, BmSDK.IGam
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFuseBoxSwitch.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmScript.RFuseBoxSwitch.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UsedBy;
     /// <summary>
     /// Function: UsedBy
     /// </summary>
     public unsafe override bool UsedBy(BmSDK.Engine.Pawn User)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFuseBoxSwitch.UsedBy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UsedBy, "BmScript.RFuseBoxSwitch.UsedBy");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(User, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

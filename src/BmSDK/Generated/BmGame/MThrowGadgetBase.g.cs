@@ -78,12 +78,13 @@ public partial class MThrowGadgetBase : BmSDK.BmGame.RInventoryGadget, BmSDK.IGa
         where TComponent : class, Framework.IScriptComponent<MThrowGadgetBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetGadgetCamera;
     /// <summary>
     /// Function: GetGadgetCamera
     /// </summary>
     public unsafe override BmSDK.FName GetGadgetCamera(bool InSoftCover = default, BmSDK.BmGame.RInventoryGadget.CoverCornerType CornerType = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MThrowGadgetBase.GetGadgetCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGadgetCamera, "BmGame.MThrowGadgetBase.GetGadgetCamera");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InSoftCover, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CornerType, paramsPtr + 4);
@@ -91,12 +92,13 @@ public partial class MThrowGadgetBase : BmSDK.BmGame.RInventoryGadget, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetThrowFinishPose;
     /// <summary>
     /// Function: GetThrowFinishPose
     /// </summary>
     public unsafe virtual BmSDK.FName GetThrowFinishPose(out BmSDK.BmGame.RInventoryGadget.PlayerWantsToCrouch StanceIsCrouched, out BmSDK.BmGame.RAnimUtil.EMirrorChoice MirroredNess)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MThrowGadgetBase.GetThrowFinishPose", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetThrowFinishPose, "BmGame.MThrowGadgetBase.GetThrowFinishPose");
         byte* paramsPtr = stackalloc byte[21];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         StanceIsCrouched = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RInventoryGadget.PlayerWantsToCrouch>(paramsPtr + 0);
@@ -104,12 +106,13 @@ public partial class MThrowGadgetBase : BmSDK.BmGame.RInventoryGadget, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetThrowAnim;
     /// <summary>
     /// Function: GetThrowAnim
     /// </summary>
     public unsafe virtual BmSDK.FName GetThrowAnim(BmSDK.Rotator ThrowDirection, out BmSDK.BmGame.RPawnPlayerAnim.AimingConfigDesc AimingConfig, bool Mirrored)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MThrowGadgetBase.GetThrowAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetThrowAnim, "BmGame.MThrowGadgetBase.GetThrowAnim");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThrowDirection, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Mirrored, paramsPtr + 16);
@@ -118,79 +121,86 @@ public partial class MThrowGadgetBase : BmSDK.BmGame.RInventoryGadget, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_GetAutoTargetAngle;
     /// <summary>
     /// Function: GetAutoTargetAngle
     /// </summary>
     public unsafe virtual float GetAutoTargetAngle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MThrowGadgetBase.GetAutoTargetAngle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAutoTargetAngle, "BmGame.MThrowGadgetBase.GetAutoTargetAngle");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PlayThrowAnim;
     /// <summary>
     /// Function: PlayThrowAnim
     /// </summary>
     public unsafe virtual void PlayThrowAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MThrowGadgetBase.PlayThrowAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayThrowAnim, "BmGame.MThrowGadgetBase.PlayThrowAnim");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DrawAimingHUD;
     /// <summary>
     /// Function: DrawAimingHUD
     /// </summary>
     public unsafe virtual void DrawAimingHUD()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MThrowGadgetBase.DrawAimingHUD", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DrawAimingHUD, "BmGame.MThrowGadgetBase.DrawAimingHUD");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateAutoTarget;
     /// <summary>
     /// Function: UpdateAutoTarget
     /// </summary>
     public unsafe virtual void UpdateAutoTarget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MThrowGadgetBase.UpdateAutoTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateAutoTarget, "BmGame.MThrowGadgetBase.UpdateAutoTarget");
         byte* paramsPtr = stackalloc byte[144];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsAllowedToExitFiring;
     /// <summary>
     /// Function: IsAllowedToExitFiring
     /// </summary>
     public unsafe virtual bool IsAllowedToExitFiring()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MThrowGadgetBase.IsAllowedToExitFiring", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAllowedToExitFiring, "BmGame.MThrowGadgetBase.IsAllowedToExitFiring");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsVillainInTargettableState;
     /// <summary>
     /// Function: IsVillainInTargettableState
     /// </summary>
     public unsafe virtual bool IsVillainInTargettableState(BmSDK.BmGame.RPawnVillain Villain)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MThrowGadgetBase.IsVillainInTargettableState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsVillainInTargettableState, "BmGame.MThrowGadgetBase.IsVillainInTargettableState");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Villain, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_ThrowGadget;
     /// <summary>
     /// Function: ThrowGadget
     /// </summary>
     public unsafe override void ThrowGadget(System.Numerics.Vector3 ThrownFromPos, BmSDK.BmGame.RBMAIController.BRAECReactionType Type, int LaunchID)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MThrowGadgetBase.ThrowGadget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ThrowGadget, "BmGame.MThrowGadgetBase.ThrowGadget");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThrownFromPos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Type, paramsPtr + 12);
@@ -199,56 +209,61 @@ public partial class MThrowGadgetBase : BmSDK.BmGame.RInventoryGadget, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_CanFireGadget;
     /// <summary>
     /// Function: CanFireGadget
     /// </summary>
     public unsafe virtual bool CanFireGadget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MThrowGadgetBase.CanFireGadget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanFireGadget, "BmGame.MThrowGadgetBase.CanFireGadget");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_AllowMovementExit;
     /// <summary>
     /// Function: AllowMovementExit
     /// </summary>
     public unsafe virtual void AllowMovementExit()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MThrowGadgetBase.AllowMovementExit", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowMovementExit, "BmGame.MThrowGadgetBase.AllowMovementExit");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TryContinueComboStartMove;
     /// <summary>
     /// Function: TryContinueComboStartMove
     /// </summary>
     public unsafe virtual void TryContinueComboStartMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MThrowGadgetBase.TryContinueComboStartMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TryContinueComboStartMove, "BmGame.MThrowGadgetBase.TryContinueComboStartMove");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FireGadgetCombat;
     /// <summary>
     /// Function: FireGadgetCombat
     /// </summary>
     public unsafe override bool FireGadgetCombat()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MThrowGadgetBase.FireGadgetCombat", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireGadgetCombat, "BmGame.MThrowGadgetBase.FireGadgetCombat");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CalculateFireGunHitResult;
     /// <summary>
     /// Function: CalculateFireGunHitResult
     /// </summary>
     public unsafe virtual bool CalculateFireGunHitResult(BmSDK.Rotator FireRotation, System.Numerics.Vector3 FirePosition, out BmSDK.Engine.Actor.FImpactInfo OutImpactInfo, float CheckBoxExtent = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MThrowGadgetBase.CalculateFireGunHitResult", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculateFireGunHitResult, "BmGame.MThrowGadgetBase.CalculateFireGunHitResult");
         byte* paramsPtr = stackalloc byte[128];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FireRotation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FirePosition, paramsPtr + 12);
@@ -265,12 +280,13 @@ public partial class MThrowGadgetBase : BmSDK.BmGame.RInventoryGadget, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 124);
     }
 
+    private static BmSDK.Function __fn_CalculateAutoTargetHitResult;
     /// <summary>
     /// Function: CalculateAutoTargetHitResult
     /// </summary>
     public unsafe virtual bool CalculateAutoTargetHitResult(System.Numerics.Vector3 LaunchPosition, BmSDK.Rotator LaunchAngle, float Range, float TargetAngle, out BmSDK.Engine.Actor.FImpactInfo OutImpactInfo, float CheckBoxExtent = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MThrowGadgetBase.CalculateAutoTargetHitResult", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculateAutoTargetHitResult, "BmGame.MThrowGadgetBase.CalculateAutoTargetHitResult");
         byte* paramsPtr = stackalloc byte[136];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LaunchPosition, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LaunchAngle, paramsPtr + 12);

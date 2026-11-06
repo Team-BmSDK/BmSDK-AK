@@ -78,23 +78,25 @@ public partial class RBMAIAction_RunToWithAvoid : BmSDK.BmGame.RBMAIAction_RunTo
         where TComponent : class, Framework.IScriptComponent<RBMAIAction_RunToWithAvoid>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_BuildHandle;
     /// <summary>
     /// Function: BuildHandle
     /// </summary>
     public unsafe override BmSDK.BmGame.RNavigationHandle BuildHandle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_RunToWithAvoid.BuildHandle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BuildHandle, "BmGame.RBMAIAction_RunToWithAvoid.BuildHandle");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RNavigationHandle>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetAvoidActor;
     /// <summary>
     /// Function: SetAvoidActor
     /// </summary>
     public unsafe virtual void SetAvoidActor(BmSDK.Engine.Actor NewAvoidActor)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_RunToWithAvoid.SetAvoidActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAvoidActor, "BmGame.RBMAIAction_RunToWithAvoid.SetAvoidActor");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAvoidActor, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

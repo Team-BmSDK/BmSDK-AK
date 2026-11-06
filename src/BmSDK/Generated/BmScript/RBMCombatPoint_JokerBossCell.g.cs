@@ -78,45 +78,49 @@ public partial class RBMCombatPoint_JokerBossCell : BmSDK.BmGame.RBMCombatPoint_
         where TComponent : class, Framework.IScriptComponent<RBMCombatPoint_JokerBossCell>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetTargetEndStance;
     /// <summary>
     /// Function: GetTargetEndStance
     /// </summary>
     public unsafe override BmSDK.FName GetTargetEndStance()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_JokerBossCell.GetTargetEndStance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTargetEndStance, "BmScript.RBMCombatPoint_JokerBossCell.GetTargetEndStance");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetPlayerInRange;
     /// <summary>
     /// Function: GetPlayerInRange
     /// </summary>
     public unsafe override BmSDK.BmGame.RPawnPlayerCombat GetPlayerInRange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_JokerBossCell.GetPlayerInRange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPlayerInRange, "BmScript.RBMCombatPoint_JokerBossCell.GetPlayerInRange");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnPlayerCombat>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetVillainInRange;
     /// <summary>
     /// Function: GetVillainInRange
     /// </summary>
     public unsafe override BmSDK.BmGame.RPawnVillain GetVillainInRange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_JokerBossCell.GetVillainInRange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVillainInRange, "BmScript.RBMCombatPoint_JokerBossCell.GetVillainInRange");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UsedByPawn;
     /// <summary>
     /// Function: UsedByPawn
     /// </summary>
     public unsafe override void UsedByPawn(BmSDK.BmGame.RPawnCombat NewUser, BmSDK.Engine.Actor NewTarget = default, bool bUsedDuringTaunt = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_JokerBossCell.UsedByPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UsedByPawn, "BmScript.RBMCombatPoint_JokerBossCell.UsedByPawn");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewUser, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewTarget, paramsPtr + 8);
@@ -125,23 +129,25 @@ public partial class RBMCombatPoint_JokerBossCell : BmSDK.BmGame.RBMCombatPoint_
         return;
     }
 
+    private static BmSDK.Function __fn_ShouldKill;
     /// <summary>
     /// Function: ShouldKill
     /// </summary>
     public unsafe override bool ShouldKill()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_JokerBossCell.ShouldKill", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldKill, "BmScript.RBMCombatPoint_JokerBossCell.ShouldKill");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetAnimName;
     /// <summary>
     /// Function: GetAnimName
     /// </summary>
     public unsafe override BmSDK.FName GetAnimName(BmSDK.BmGame.RPawnVillain TargetPawn, BmSDK.BmGame.RPawnPlayerCombat PlayerPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_JokerBossCell.GetAnimName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAnimName, "BmScript.RBMCombatPoint_JokerBossCell.GetAnimName");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerPawn, paramsPtr + 8);
@@ -149,23 +155,25 @@ public partial class RBMCombatPoint_JokerBossCell : BmSDK.BmGame.RBMCombatPoint_
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_SetupHighlightMesh;
     /// <summary>
     /// Function: SetupHighlightMesh
     /// </summary>
     public unsafe override void SetupHighlightMesh()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_JokerBossCell.SetupHighlightMesh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupHighlightMesh, "BmScript.RBMCombatPoint_JokerBossCell.SetupHighlightMesh");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetMyPylon;
     /// <summary>
     /// Function: SetMyPylon
     /// </summary>
     public unsafe override void SetMyPylon()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_JokerBossCell.SetMyPylon", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMyPylon, "BmScript.RBMCombatPoint_JokerBossCell.SetMyPylon");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

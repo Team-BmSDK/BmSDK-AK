@@ -78,69 +78,75 @@ public partial class RSpecialMoveInstance_Shimmy : BmSDK.BmGame.RSpecialMoveInst
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveInstance_Shimmy>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CantSwitchPlayer;
     /// <summary>
     /// Function: CantSwitchPlayer
     /// </summary>
     public unsafe override bool CantSwitchPlayer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Shimmy.CantSwitchPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CantSwitchPlayer, "BmGame.RSpecialMoveInstance_Shimmy.CantSwitchPlayer");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CancelSpecialMove;
     /// <summary>
     /// Function: CancelSpecialMove
     /// </summary>
     public unsafe override void CancelSpecialMove(BmSDK.BmGame.RSpecialMoveConfig NextSpecialMove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Shimmy.CancelSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelSpecialMove, "BmGame.RSpecialMoveInstance_Shimmy.CancelSpecialMove");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NextSpecialMove, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishSpecialMove;
     /// <summary>
     /// Function: FinishSpecialMove
     /// </summary>
     public unsafe override void FinishSpecialMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Shimmy.FinishSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishSpecialMove, "BmGame.RSpecialMoveInstance_Shimmy.FinishSpecialMove");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishOnLadder;
     /// <summary>
     /// Function: FinishOnLadder
     /// </summary>
     public unsafe virtual void FinishOnLadder()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Shimmy.FinishOnLadder", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishOnLadder, "BmGame.RSpecialMoveInstance_Shimmy.FinishOnLadder");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateSpecialMove;
     /// <summary>
     /// Function: UpdateSpecialMove
     /// </summary>
     public unsafe override bool UpdateSpecialMove(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Shimmy.UpdateSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateSpecialMove, "BmGame.RSpecialMoveInstance_Shimmy.UpdateSpecialMove");
         byte* paramsPtr = stackalloc byte[196];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_MoveInDirection;
     /// <summary>
     /// Function: MoveInDirection
     /// </summary>
     public unsafe override void MoveInDirection(float X, float Y)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Shimmy.MoveInDirection", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MoveInDirection, "BmGame.RSpecialMoveInstance_Shimmy.MoveInDirection");
         byte* paramsPtr = stackalloc byte[96];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(X, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Y, paramsPtr + 4);
@@ -148,12 +154,13 @@ public partial class RSpecialMoveInstance_Shimmy : BmSDK.BmGame.RSpecialMoveInst
         return;
     }
 
+    private static BmSDK.Function __fn_FirstShimmyAnimFinished;
     /// <summary>
     /// Function: FirstShimmyAnimFinished
     /// </summary>
     public unsafe virtual void FirstShimmyAnimFinished(BmSDK.BmGame.RAnimUtil_PosePlayer.FTransitionId Id, float TimeLeftOver)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Shimmy.FirstShimmyAnimFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FirstShimmyAnimFinished, "BmGame.RSpecialMoveInstance_Shimmy.FirstShimmyAnimFinished");
         byte* paramsPtr = stackalloc byte[196];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Id, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TimeLeftOver, paramsPtr + 4);
@@ -161,12 +168,13 @@ public partial class RSpecialMoveInstance_Shimmy : BmSDK.BmGame.RSpecialMoveInst
         return;
     }
 
+    private static BmSDK.Function __fn_FindCornerPoint;
     /// <summary>
     /// Function: FindCornerPoint
     /// </summary>
     public unsafe virtual bool FindCornerPoint(out BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator Loc, BmSDK.FName StartAnimName, out System.Numerics.Vector3 CornerLoc, out BmSDK.Rotator CornerRot)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Shimmy.FindCornerPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindCornerPoint, "BmGame.RSpecialMoveInstance_Shimmy.FindCornerPoint");
         byte* paramsPtr = stackalloc byte[168];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartAnimName, paramsPtr + 132);
         var oldFlags = funcManaged.FunctionFlags;
@@ -183,12 +191,13 @@ public partial class RSpecialMoveInstance_Shimmy : BmSDK.BmGame.RSpecialMoveInst
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 164);
     }
 
+    private static BmSDK.Function __fn_TriggerSpecialMove;
     /// <summary>
     /// Function: TriggerSpecialMove
     /// </summary>
     public unsafe override void TriggerSpecialMove(BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator MoveLocator)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Shimmy.TriggerSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerSpecialMove, "BmGame.RSpecialMoveInstance_Shimmy.TriggerSpecialMove");
         byte* paramsPtr = stackalloc byte[168];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveLocator, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

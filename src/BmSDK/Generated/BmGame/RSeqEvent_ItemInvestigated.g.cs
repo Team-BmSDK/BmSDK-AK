@@ -78,23 +78,25 @@ public partial class RSeqEvent_ItemInvestigated : BmSDK.Engine.SequenceEvent, Bm
         where TComponent : class, Framework.IScriptComponent<RSeqEvent_ItemInvestigated>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqEvent_ItemInvestigated.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmGame.RSeqEvent_ItemInvestigated.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Handle;
     /// <summary>
     /// Function: Handle
     /// </summary>
     public unsafe virtual bool Handle(BmSDK.Engine.Actor InOriginator, int typeNo)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqEvent_ItemInvestigated.Handle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Handle, "BmGame.RSeqEvent_ItemInvestigated.Handle");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InOriginator, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(typeNo, paramsPtr + 8);

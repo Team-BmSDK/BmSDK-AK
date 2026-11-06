@@ -78,35 +78,38 @@ public partial class MAEC_LaughingGas_Sub_Armed : BmSDK.BmGame.RAlertEventCoordi
         where TComponent : class, Framework.IScriptComponent<MAEC_LaughingGas_Sub_Armed>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DisarmedDuringSmoke;
     /// <summary>
     /// Function: DisarmedDuringSmoke
     /// </summary>
     public unsafe virtual void DisarmedDuringSmoke()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_LaughingGas_Sub_Armed.DisarmedDuringSmoke", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisarmedDuringSmoke, "BmGame.MAEC_LaughingGas_Sub_Armed.DisarmedDuringSmoke");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetShootTarget;
     /// <summary>
     /// Function: GetShootTarget
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetShootTarget(System.Numerics.Vector3 SmokeCentre)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_LaughingGas_Sub_Armed.GetShootTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetShootTarget, "BmGame.MAEC_LaughingGas_Sub_Armed.GetShootTarget");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SmokeCentre, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe virtual void Init(BmSDK.BmGame.MLaughingGasScreenBase NewLaughingGas)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_LaughingGas_Sub_Armed.Init", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmGame.MAEC_LaughingGas_Sub_Armed.Init");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewLaughingGas, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

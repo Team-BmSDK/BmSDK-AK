@@ -78,12 +78,13 @@ public partial class ROceanSMActor : BmSDK.Engine.DynamicSMActor, BmSDK.IGameObj
         where TComponent : class, Framework.IScriptComponent<ROceanSMActor>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UpdateEditorComponents;
     /// <summary>
     /// Function: UpdateEditorComponents
     /// </summary>
     public unsafe virtual void UpdateEditorComponents()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROceanSMActor.UpdateEditorComponents", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateEditorComponents, "BmGame.ROceanSMActor.UpdateEditorComponents");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,24 +97,26 @@ public partial class ROceanSMActor : BmSDK.Engine.DynamicSMActor, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_UnTouch;
     /// <summary>
     /// Function: UnTouch
     /// </summary>
     public unsafe override void UnTouch(BmSDK.Engine.Actor Other)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROceanSMActor.UnTouch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnTouch, "BmGame.ROceanSMActor.UnTouch");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Touch;
     /// <summary>
     /// Function: Touch
     /// </summary>
     public unsafe override void Touch(BmSDK.Engine.Actor Other, BmSDK.Engine.PrimitiveComponent OtherComp, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROceanSMActor.Touch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Touch, "BmGame.ROceanSMActor.Touch");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherComp, paramsPtr + 8);
@@ -123,12 +126,13 @@ public partial class ROceanSMActor : BmSDK.Engine.DynamicSMActor, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_OnUntouchWaterVolume;
     /// <summary>
     /// Function: OnUntouchWaterVolume
     /// </summary>
     public unsafe virtual void OnUntouchWaterVolume(BmSDK.BmGame.RWaterVolumeBase WaterVolume)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROceanSMActor.OnUntouchWaterVolume", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnUntouchWaterVolume, "BmGame.ROceanSMActor.OnUntouchWaterVolume");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WaterVolume, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -142,12 +146,13 @@ public partial class ROceanSMActor : BmSDK.Engine.DynamicSMActor, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_OnTouchWaterVolume;
     /// <summary>
     /// Function: OnTouchWaterVolume
     /// </summary>
     public unsafe virtual void OnTouchWaterVolume(BmSDK.BmGame.RWaterVolumeBase WaterVolume, BmSDK.Engine.PrimitiveComponent OtherComp, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROceanSMActor.OnTouchWaterVolume", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnTouchWaterVolume, "BmGame.ROceanSMActor.OnTouchWaterVolume");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WaterVolume, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherComp, paramsPtr + 8);

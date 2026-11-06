@@ -73,24 +73,26 @@ public partial class RBMPathNode_VariablePositionTraverseProxy : BmSDK.BmGame.RB
         where TComponent : class, Framework.IScriptComponent<RBMPathNode_VariablePositionTraverseProxy>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UnlockSlot;
     /// <summary>
     /// Function: UnlockSlot
     /// </summary>
     public unsafe override void UnlockSlot(BmSDK.BmGame.RPawn User)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMPathNode_VariablePositionTraverseProxy.UnlockSlot", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnlockSlot, "BmGame.RBMPathNode_VariablePositionTraverseProxy.UnlockSlot");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(User, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetDynamicMoveSlotFor;
     /// <summary>
     /// Function: GetDynamicMoveSlotFor
     /// </summary>
     public unsafe override bool GetDynamicMoveSlotFor(BmSDK.BmGame.RPawn User, System.Numerics.Vector3 DestPoint, out System.Numerics.Vector3 SlotLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMPathNode_VariablePositionTraverseProxy.GetDynamicMoveSlotFor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDynamicMoveSlotFor, "BmGame.RBMPathNode_VariablePositionTraverseProxy.GetDynamicMoveSlotFor");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(User, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DestPoint, paramsPtr + 8);
@@ -99,23 +101,25 @@ public partial class RBMPathNode_VariablePositionTraverseProxy : BmSDK.BmGame.RB
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_GetSpecialMoveNode;
     /// <summary>
     /// Function: GetSpecialMoveNode
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RBMPathNode_SpecialMove GetSpecialMoveNode()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMPathNode_VariablePositionTraverseProxy.GetSpecialMoveNode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSpecialMoveNode, "BmGame.RBMPathNode_VariablePositionTraverseProxy.GetSpecialMoveNode");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMPathNode_SpecialMove>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetIntersectionPoint;
     /// <summary>
     /// Function: GetIntersectionPoint
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetIntersectionPoint(System.Numerics.Vector3 pawnLoc, System.Numerics.Vector3 DestLoc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMPathNode_VariablePositionTraverseProxy.GetIntersectionPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetIntersectionPoint, "BmGame.RBMPathNode_VariablePositionTraverseProxy.GetIntersectionPoint");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(pawnLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DestLoc, paramsPtr + 12);

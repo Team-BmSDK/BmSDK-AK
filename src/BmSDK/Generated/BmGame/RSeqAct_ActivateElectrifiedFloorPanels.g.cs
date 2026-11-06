@@ -78,35 +78,38 @@ public partial class RSeqAct_ActivateElectrifiedFloorPanels : BmSDK.Engine.SeqAc
         where TComponent : class, Framework.IScriptComponent<RSeqAct_ActivateElectrifiedFloorPanels>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_ActivateElectrifiedFloorPanels.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmGame.RSeqAct_ActivateElectrifiedFloorPanels.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Update;
     /// <summary>
     /// Function: Update
     /// </summary>
     public unsafe override bool Update(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_ActivateElectrifiedFloorPanels.Update", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Update, "BmGame.RSeqAct_ActivateElectrifiedFloorPanels.Update");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_NativeUpdate;
     /// <summary>
     /// Function: NativeUpdate
     /// </summary>
     public unsafe virtual bool NativeUpdate(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_ActivateElectrifiedFloorPanels.NativeUpdate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NativeUpdate, "BmGame.RSeqAct_ActivateElectrifiedFloorPanels.NativeUpdate");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -120,23 +123,25 @@ public partial class RSeqAct_ActivateElectrifiedFloorPanels : BmSDK.Engine.SeqAc
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_ActivateElectrifiedFloorPanels.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmGame.RSeqAct_ActivateElectrifiedFloorPanels.Activated");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetClosestCurrent;
     /// <summary>
     /// Function: GetClosestCurrent
     /// </summary>
     public unsafe virtual void GetClosestCurrent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_ActivateElectrifiedFloorPanels.GetClosestCurrent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetClosestCurrent, "BmGame.RSeqAct_ActivateElectrifiedFloorPanels.GetClosestCurrent");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -149,12 +154,13 @@ public partial class RSeqAct_ActivateElectrifiedFloorPanels : BmSDK.Engine.SeqAc
         return;
     }
 
+    private static BmSDK.Function __fn_GetPlateDistances;
     /// <summary>
     /// Function: GetPlateDistances
     /// </summary>
     public unsafe virtual void GetPlateDistances()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_ActivateElectrifiedFloorPanels.GetPlateDistances", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPlateDistances, "BmGame.RSeqAct_ActivateElectrifiedFloorPanels.GetPlateDistances");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -167,12 +173,13 @@ public partial class RSeqAct_ActivateElectrifiedFloorPanels : BmSDK.Engine.SeqAc
         return;
     }
 
+    private static BmSDK.Function __fn_GetFloorPanels;
     /// <summary>
     /// Function: GetFloorPanels
     /// </summary>
     public unsafe virtual void GetFloorPanels()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_ActivateElectrifiedFloorPanels.GetFloorPanels", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFloorPanels, "BmGame.RSeqAct_ActivateElectrifiedFloorPanels.GetFloorPanels");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

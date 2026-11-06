@@ -78,58 +78,63 @@ public partial class RAEC_Attack_Converge : BmSDK.BmGame.RAlertEventCoordinatorB
         where TComponent : class, Framework.IScriptComponent<RAEC_Attack_Converge>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnBeginShutdown;
     /// <summary>
     /// Function: OnBeginShutdown
     /// </summary>
     public unsafe override void OnBeginShutdown()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Converge.OnBeginShutdown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnBeginShutdown, "BmGame.RAEC_Attack_Converge.OnBeginShutdown");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HasThugTryingToFire;
     /// <summary>
     /// Function: HasThugTryingToFire
     /// </summary>
     public unsafe virtual bool HasThugTryingToFire()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Converge.HasThugTryingToFire", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasThugTryingToFire, "BmGame.RAEC_Attack_Converge.HasThugTryingToFire");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_InitRail;
     /// <summary>
     /// Function: InitRail
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RAEC_Attack_Sub_Rail InitRail(BmSDK.BmGame.RBMAIController NewCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Converge.InitRail", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitRail, "BmGame.RAEC_Attack_Converge.InitRail");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RAEC_Attack_Sub_Rail>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_InitHoldPos;
     /// <summary>
     /// Function: InitHoldPos
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RAEC_Attack_Sub_HoldPos InitHoldPos(BmSDK.BmGame.RBMAIController NewCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Converge.InitHoldPos", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitHoldPos, "BmGame.RAEC_Attack_Converge.InitHoldPos");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RAEC_Attack_Sub_HoldPos>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_InterruptPlayerDoingFearTakedown;
     /// <summary>
     /// Function: InterruptPlayerDoingFearTakedown
     /// </summary>
     public unsafe virtual void InterruptPlayerDoingFearTakedown(BmSDK.BmGame.RBMAIController NewCon, float PoseChangeDeadline)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Converge.InterruptPlayerDoingFearTakedown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InterruptPlayerDoingFearTakedown, "BmGame.RAEC_Attack_Converge.InterruptPlayerDoingFearTakedown");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCon, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PoseChangeDeadline, paramsPtr + 8);
@@ -137,12 +142,13 @@ public partial class RAEC_Attack_Converge : BmSDK.BmGame.RAlertEventCoordinatorB
         return;
     }
 
+    private static BmSDK.Function __fn_ShouldStartOnRail;
     /// <summary>
     /// Function: ShouldStartOnRail
     /// </summary>
     public unsafe virtual bool ShouldStartOnRail(BmSDK.BmGame.RBMAIController TestCon, out BmSDK.BmGame.RBMPathNode_FenceJumpProxy CurrentFenceProxy)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Converge.ShouldStartOnRail", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldStartOnRail, "BmGame.RAEC_Attack_Converge.ShouldStartOnRail");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -150,149 +156,162 @@ public partial class RAEC_Attack_Converge : BmSDK.BmGame.RAlertEventCoordinatorB
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_AddToGroup;
     /// <summary>
     /// Function: AddToGroup
     /// </summary>
     public unsafe virtual void AddToGroup(BmSDK.BmGame.RBMAIController NewCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Converge.AddToGroup", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddToGroup, "BmGame.RAEC_Attack_Converge.AddToGroup");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShouldStartle;
     /// <summary>
     /// Function: ShouldStartle
     /// </summary>
     public unsafe virtual bool ShouldStartle(BmSDK.BmGame.RPawnVillain TestVillain)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Converge.ShouldStartle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldStartle, "BmGame.RAEC_Attack_Converge.ShouldStartle");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestVillain, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_ClearConvergeSearch;
     /// <summary>
     /// Function: ClearConvergeSearch
     /// </summary>
     public unsafe virtual void ClearConvergeSearch()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Converge.ClearConvergeSearch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearConvergeSearch, "BmGame.RAEC_Attack_Converge.ClearConvergeSearch");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InitGoalDataInstance;
     /// <summary>
     /// Function: InitGoalDataInstance
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RMultiDestGoalData InitGoalDataInstance()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Converge.InitGoalDataInstance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitGoalDataInstance, "BmGame.RAEC_Attack_Converge.InitGoalDataInstance");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RMultiDestGoalData>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_InitMultiGoalSearch;
     /// <summary>
     /// Function: InitMultiGoalSearch
     /// </summary>
     public unsafe virtual void InitMultiGoalSearch()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Converge.InitMultiGoalSearch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitMultiGoalSearch, "BmGame.RAEC_Attack_Converge.InitMultiGoalSearch");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdatePlayerSeenInGuardVolumes;
     /// <summary>
     /// Function: UpdatePlayerSeenInGuardVolumes
     /// </summary>
     public unsafe virtual void UpdatePlayerSeenInGuardVolumes()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Converge.UpdatePlayerSeenInGuardVolumes", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdatePlayerSeenInGuardVolumes, "BmGame.RAEC_Attack_Converge.UpdatePlayerSeenInGuardVolumes");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetAIThoughts;
     /// <summary>
     /// Function: GetAIThoughts
     /// </summary>
     public unsafe override void GetAIThoughts(out BmSDK.TArray<BmSDK.Engine.Actor.FThought> ThoughtList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Converge.GetAIThoughts", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAIThoughts, "BmGame.RAEC_Attack_Converge.GetAIThoughts");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ThoughtList = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.Engine.Actor.FThought>>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetStable;
     /// <summary>
     /// Function: SetStable
     /// </summary>
     public unsafe virtual void SetStable()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Converge.SetStable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetStable, "BmGame.RAEC_Attack_Converge.SetStable");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Converge.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RAEC_Attack_Converge.Tick");
         byte* paramsPtr = stackalloc byte[156];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetNumActivelyResponding;
     /// <summary>
     /// Function: GetNumActivelyResponding
     /// </summary>
     public unsafe virtual int GetNumActivelyResponding()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Converge.GetNumActivelyResponding", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNumActivelyResponding, "BmGame.RAEC_Attack_Converge.GetNumActivelyResponding");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanCurrentlyRespond;
     /// <summary>
     /// Function: CanCurrentlyRespond
     /// </summary>
     public unsafe virtual bool CanCurrentlyRespond(BmSDK.BmGame.RBMAIController TestCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Converge.CanCurrentlyRespond", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanCurrentlyRespond, "BmGame.RAEC_Attack_Converge.CanCurrentlyRespond");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetDangerLadder;
     /// <summary>
     /// Function: GetDangerLadder
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RLadder GetDangerLadder()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Converge.GetDangerLadder", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDangerLadder, "BmGame.RAEC_Attack_Converge.GetDangerLadder");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RLadder>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ForceStartAttack;
     /// <summary>
     /// Function: ForceStartAttack
     /// </summary>
     public unsafe virtual void ForceStartAttack(bool bForceRestart = default, BmSDK.BmGame.RPawnVillain TriggeringVillain = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Converge.ForceStartAttack", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForceStartAttack, "BmGame.RAEC_Attack_Converge.ForceStartAttack");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForceRestart, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TriggeringVillain, paramsPtr + 4);
@@ -300,12 +319,13 @@ public partial class RAEC_Attack_Converge : BmSDK.BmGame.RAlertEventCoordinatorB
         return;
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Converge.PreStreamOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmGame.RAEC_Attack_Converge.PreStreamOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

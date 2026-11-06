@@ -73,23 +73,25 @@ public partial class RSeqAct_IntegratedChallengeBase : BmSDK.Engine.SeqAct_Laten
         where TComponent : class, Framework.IScriptComponent<RSeqAct_IntegratedChallengeBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_TeleportPlayerToStartPoint;
     /// <summary>
     /// Function: TeleportPlayerToStartPoint
     /// </summary>
     public unsafe virtual void TeleportPlayerToStartPoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_IntegratedChallengeBase.TeleportPlayerToStartPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TeleportPlayerToStartPoint, "BmGame.RSeqAct_IntegratedChallengeBase.TeleportPlayerToStartPoint");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AdjustTime;
     /// <summary>
     /// Function: AdjustTime
     /// </summary>
     public unsafe virtual void AdjustTime(float fTime, bool bBonus)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_IntegratedChallengeBase.AdjustTime", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AdjustTime, "BmGame.RSeqAct_IntegratedChallengeBase.AdjustTime");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(fTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bBonus, paramsPtr + 4);
@@ -97,12 +99,13 @@ public partial class RSeqAct_IntegratedChallengeBase : BmSDK.Engine.SeqAct_Laten
         return;
     }
 
+    private static BmSDK.Function __fn_AdjustScore;
     /// <summary>
     /// Function: AdjustScore
     /// </summary>
     public unsafe virtual void AdjustScore(int nScore, bool bCheat = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_IntegratedChallengeBase.AdjustScore", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AdjustScore, "BmGame.RSeqAct_IntegratedChallengeBase.AdjustScore");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(nScore, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bCheat, paramsPtr + 4);
@@ -110,34 +113,37 @@ public partial class RSeqAct_IntegratedChallengeBase : BmSDK.Engine.SeqAct_Laten
         return;
     }
 
+    private static BmSDK.Function __fn_StopTimer;
     /// <summary>
     /// Function: StopTimer
     /// </summary>
     public unsafe virtual void StopTimer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_IntegratedChallengeBase.StopTimer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopTimer, "BmGame.RSeqAct_IntegratedChallengeBase.StopTimer");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartTimer;
     /// <summary>
     /// Function: StartTimer
     /// </summary>
     public unsafe virtual void StartTimer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_IntegratedChallengeBase.StartTimer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartTimer, "BmGame.RSeqAct_IntegratedChallengeBase.StartTimer");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetState;
     /// <summary>
     /// Function: GetState
     /// </summary>
     public unsafe virtual bool GetState(BmSDK.BmGame.RSeqAct_IntegratedChallengeBase.IntegratedChallengeState eState)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_IntegratedChallengeBase.GetState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetState, "BmGame.RSeqAct_IntegratedChallengeBase.GetState");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(eState, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

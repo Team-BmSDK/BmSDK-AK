@@ -78,35 +78,38 @@ public partial class TitleFileDownloadCache : BmSDK.IpDrv.MCPBase, BmSDK.IGameOb
         where TComponent : class, Framework.IScriptComponent<TitleFileDownloadCache>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CancelIO;
     /// <summary>
     /// Function: CancelIO
     /// </summary>
     public unsafe virtual void CancelIO()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.CancelIO", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelIO, "IpDrv.TitleFileDownloadCache.CancelIO");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AttemptDeleteDownloadFile;
     /// <summary>
     /// Function: AttemptDeleteDownloadFile
     /// </summary>
     public unsafe virtual bool AttemptDeleteDownloadFile(BmSDK.FString Filename)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.AttemptDeleteDownloadFile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttemptDeleteDownloadFile, "IpDrv.TitleFileDownloadCache.AttemptDeleteDownloadFile");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_OnDeleteDownloadFileCompleteInternal;
     /// <summary>
     /// Function: OnDeleteDownloadFileCompleteInternal
     /// </summary>
     public unsafe virtual bool OnDeleteDownloadFileCompleteInternal(bool bWasSuccessful, BmSDK.FString Filename)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.OnDeleteDownloadFileCompleteInternal", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeleteDownloadFileCompleteInternal, "IpDrv.TitleFileDownloadCache.OnDeleteDownloadFileCompleteInternal");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 4);
@@ -121,12 +124,13 @@ public partial class TitleFileDownloadCache : BmSDK.IpDrv.MCPBase, BmSDK.IGameOb
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_OnDeleteDownloadFileComplete;
     /// <summary>
     /// Function: OnDeleteDownloadFileComplete
     /// </summary>
     public unsafe virtual void OnDeleteDownloadFileComplete(bool bWasSuccessful, BmSDK.FString Filename)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.OnDeleteDownloadFileComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeleteDownloadFileComplete, "IpDrv.TitleFileDownloadCache.OnDeleteDownloadFileComplete");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 4);
@@ -134,24 +138,26 @@ public partial class TitleFileDownloadCache : BmSDK.IpDrv.MCPBase, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_AttemptReadDownloadFile;
     /// <summary>
     /// Function: AttemptReadDownloadFile
     /// </summary>
     public unsafe virtual bool AttemptReadDownloadFile(BmSDK.FString Filename)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.AttemptReadDownloadFile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttemptReadDownloadFile, "IpDrv.TitleFileDownloadCache.AttemptReadDownloadFile");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_OnReadDownloadFileCompleteInternal;
     /// <summary>
     /// Function: OnReadDownloadFileCompleteInternal
     /// </summary>
     public unsafe virtual bool OnReadDownloadFileCompleteInternal(bool bWasSuccessful, BmSDK.FString Filename, int bytesProcessed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.OnReadDownloadFileCompleteInternal", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReadDownloadFileCompleteInternal, "IpDrv.TitleFileDownloadCache.OnReadDownloadFileCompleteInternal");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 4);
@@ -167,12 +173,13 @@ public partial class TitleFileDownloadCache : BmSDK.IpDrv.MCPBase, BmSDK.IGameOb
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_OnReadDownloadFileComplete;
     /// <summary>
     /// Function: OnReadDownloadFileComplete
     /// </summary>
     public unsafe virtual void OnReadDownloadFileComplete(bool bWasSuccessful, BmSDK.FString Filename, int bytesProcessed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.OnReadDownloadFileComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReadDownloadFileComplete, "IpDrv.TitleFileDownloadCache.OnReadDownloadFileComplete");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 4);
@@ -181,12 +188,13 @@ public partial class TitleFileDownloadCache : BmSDK.IpDrv.MCPBase, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_AttemptWriteDownloadFile;
     /// <summary>
     /// Function: AttemptWriteDownloadFile
     /// </summary>
     public unsafe virtual bool AttemptWriteDownloadFile(BmSDK.FString Filename, BmSDK.TArray<byte> FileContents, BmSDK.FString FileCRC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.AttemptWriteDownloadFile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttemptWriteDownloadFile, "IpDrv.TitleFileDownloadCache.AttemptWriteDownloadFile");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FileContents, paramsPtr + 16);
@@ -195,12 +203,13 @@ public partial class TitleFileDownloadCache : BmSDK.IpDrv.MCPBase, BmSDK.IGameOb
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 48);
     }
 
+    private static BmSDK.Function __fn_OnWriteDownloadFileCompleteInternal;
     /// <summary>
     /// Function: OnWriteDownloadFileCompleteInternal
     /// </summary>
     public unsafe virtual bool OnWriteDownloadFileCompleteInternal(bool bWasSuccessful, BmSDK.FString Filename, int bytesProcessed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.OnWriteDownloadFileCompleteInternal", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnWriteDownloadFileCompleteInternal, "IpDrv.TitleFileDownloadCache.OnWriteDownloadFileCompleteInternal");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 4);
@@ -216,12 +225,13 @@ public partial class TitleFileDownloadCache : BmSDK.IpDrv.MCPBase, BmSDK.IGameOb
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_OnWriteDownloadFileComplete;
     /// <summary>
     /// Function: OnWriteDownloadFileComplete
     /// </summary>
     public unsafe virtual void OnWriteDownloadFileComplete(bool bWasSuccessful, BmSDK.FString Filename, int bytesProcessed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.OnWriteDownloadFileComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnWriteDownloadFileComplete, "IpDrv.TitleFileDownloadCache.OnWriteDownloadFileComplete");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 4);
@@ -230,12 +240,13 @@ public partial class TitleFileDownloadCache : BmSDK.IpDrv.MCPBase, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_AttemptGetDownloadFileSize;
     /// <summary>
     /// Function: AttemptGetDownloadFileSize
     /// </summary>
     public unsafe virtual int AttemptGetDownloadFileSize(BmSDK.FString Filename, bool KeepHandle = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.AttemptGetDownloadFileSize", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttemptGetDownloadFileSize, "IpDrv.TitleFileDownloadCache.AttemptGetDownloadFileSize");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(KeepHandle, paramsPtr + 16);
@@ -243,24 +254,26 @@ public partial class TitleFileDownloadCache : BmSDK.IpDrv.MCPBase, BmSDK.IGameOb
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_FindFolders;
     /// <summary>
     /// Function: FindFolders
     /// </summary>
     public unsafe virtual void FindFolders(out BmSDK.TArray<BmSDK.FString> Results)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.FindFolders", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindFolders, "IpDrv.TitleFileDownloadCache.FindFolders");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Results = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FindFiles;
     /// <summary>
     /// Function: FindFiles
     /// </summary>
     public unsafe virtual void FindFiles(out BmSDK.TArray<BmSDK.FString> Results, BmSDK.FString Subfolder)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.FindFiles", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindFiles, "IpDrv.TitleFileDownloadCache.FindFiles");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Subfolder, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -268,12 +281,13 @@ public partial class TitleFileDownloadCache : BmSDK.IpDrv.MCPBase, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_DeleteTitleFile;
     /// <summary>
     /// Function: DeleteTitleFile
     /// </summary>
     public unsafe virtual bool DeleteTitleFile(BmSDK.FString Filename)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.DeleteTitleFile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DeleteTitleFile, "IpDrv.TitleFileDownloadCache.DeleteTitleFile");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -287,12 +301,13 @@ public partial class TitleFileDownloadCache : BmSDK.IpDrv.MCPBase, BmSDK.IGameOb
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_DeleteTitleFiles;
     /// <summary>
     /// Function: DeleteTitleFiles
     /// </summary>
     public unsafe virtual bool DeleteTitleFiles(float MaxAgeSeconds)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.DeleteTitleFiles", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DeleteTitleFiles, "IpDrv.TitleFileDownloadCache.DeleteTitleFiles");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxAgeSeconds, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -306,12 +321,13 @@ public partial class TitleFileDownloadCache : BmSDK.IpDrv.MCPBase, BmSDK.IGameOb
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_ClearCachedFile;
     /// <summary>
     /// Function: ClearCachedFile
     /// </summary>
     public unsafe virtual bool ClearCachedFile(BmSDK.FString Filename)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.ClearCachedFile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearCachedFile, "IpDrv.TitleFileDownloadCache.ClearCachedFile");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -325,12 +341,13 @@ public partial class TitleFileDownloadCache : BmSDK.IpDrv.MCPBase, BmSDK.IGameOb
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_ClearCachedFiles;
     /// <summary>
     /// Function: ClearCachedFiles
     /// </summary>
     public unsafe virtual bool ClearCachedFiles()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.ClearCachedFiles", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearCachedFiles, "IpDrv.TitleFileDownloadCache.ClearCachedFiles");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -343,12 +360,13 @@ public partial class TitleFileDownloadCache : BmSDK.IpDrv.MCPBase, BmSDK.IGameOb
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetTitleFileLogicalName;
     /// <summary>
     /// Function: GetTitleFileLogicalName
     /// </summary>
     public unsafe virtual BmSDK.FString GetTitleFileLogicalName(BmSDK.FString Filename)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.GetTitleFileLogicalName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTitleFileLogicalName, "IpDrv.TitleFileDownloadCache.GetTitleFileLogicalName");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -362,12 +380,13 @@ public partial class TitleFileDownloadCache : BmSDK.IpDrv.MCPBase, BmSDK.IGameOb
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_GetTitleFileHash;
     /// <summary>
     /// Function: GetTitleFileHash
     /// </summary>
     public unsafe virtual BmSDK.FString GetTitleFileHash(BmSDK.FString Filename)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.GetTitleFileHash", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTitleFileHash, "IpDrv.TitleFileDownloadCache.GetTitleFileHash");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -381,12 +400,13 @@ public partial class TitleFileDownloadCache : BmSDK.IpDrv.MCPBase, BmSDK.IGameOb
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_GetTitleFileState;
     /// <summary>
     /// Function: GetTitleFileState
     /// </summary>
     public unsafe virtual BmSDK.Engine.OnlineSubsystem.EOnlineEnumerationReadState GetTitleFileState(BmSDK.FString Filename)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.GetTitleFileState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTitleFileState, "IpDrv.TitleFileDownloadCache.GetTitleFileState");
         byte* paramsPtr = stackalloc byte[17];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -400,12 +420,13 @@ public partial class TitleFileDownloadCache : BmSDK.IpDrv.MCPBase, BmSDK.IGameOb
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineSubsystem.EOnlineEnumerationReadState>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_GetTitleFileContents;
     /// <summary>
     /// Function: GetTitleFileContents
     /// </summary>
     public unsafe virtual bool GetTitleFileContents(BmSDK.FString Filename, out BmSDK.TArray<byte> FileContents)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.GetTitleFileContents", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTitleFileContents, "IpDrv.TitleFileDownloadCache.GetTitleFileContents");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -420,36 +441,39 @@ public partial class TitleFileDownloadCache : BmSDK.IpDrv.MCPBase, BmSDK.IGameOb
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_ClearDeleteTitleFileCompleteDelegate;
     /// <summary>
     /// Function: ClearDeleteTitleFileCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearDeleteTitleFileCompleteDelegate(System.IntPtr DeleteCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.ClearDeleteTitleFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearDeleteTitleFileCompleteDelegate, "IpDrv.TitleFileDownloadCache.ClearDeleteTitleFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeleteCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddDeleteTitleFileCompleteDelegate;
     /// <summary>
     /// Function: AddDeleteTitleFileCompleteDelegate
     /// </summary>
     public unsafe virtual void AddDeleteTitleFileCompleteDelegate(System.IntPtr DeleteCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.AddDeleteTitleFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddDeleteTitleFileCompleteDelegate, "IpDrv.TitleFileDownloadCache.AddDeleteTitleFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeleteCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnDeleteTitleFileComplete;
     /// <summary>
     /// Function: OnDeleteTitleFileComplete
     /// </summary>
     public unsafe virtual void OnDeleteTitleFileComplete(bool bWasSuccessful, BmSDK.FString Filename, float timeTaken)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.OnDeleteTitleFileComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeleteTitleFileComplete, "IpDrv.TitleFileDownloadCache.OnDeleteTitleFileComplete");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 4);
@@ -458,36 +482,39 @@ public partial class TitleFileDownloadCache : BmSDK.IpDrv.MCPBase, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_ClearSaveTitleFileCompleteDelegate;
     /// <summary>
     /// Function: ClearSaveTitleFileCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearSaveTitleFileCompleteDelegate(System.IntPtr SaveCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.ClearSaveTitleFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearSaveTitleFileCompleteDelegate, "IpDrv.TitleFileDownloadCache.ClearSaveTitleFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SaveCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddSaveTitleFileCompleteDelegate;
     /// <summary>
     /// Function: AddSaveTitleFileCompleteDelegate
     /// </summary>
     public unsafe virtual void AddSaveTitleFileCompleteDelegate(System.IntPtr SaveCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.AddSaveTitleFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddSaveTitleFileCompleteDelegate, "IpDrv.TitleFileDownloadCache.AddSaveTitleFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SaveCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnSaveTitleFileComplete;
     /// <summary>
     /// Function: OnSaveTitleFileComplete
     /// </summary>
     public unsafe virtual void OnSaveTitleFileComplete(bool bWasSuccessful, BmSDK.FString Filename, int bytesTransferred, float timeTaken)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.OnSaveTitleFileComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnSaveTitleFileComplete, "IpDrv.TitleFileDownloadCache.OnSaveTitleFileComplete");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 4);
@@ -497,12 +524,13 @@ public partial class TitleFileDownloadCache : BmSDK.IpDrv.MCPBase, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_SaveTitleFile;
     /// <summary>
     /// Function: SaveTitleFile
     /// </summary>
     public unsafe virtual bool SaveTitleFile(BmSDK.FString Filename, BmSDK.FString LogicalName, BmSDK.TArray<byte> FileContents)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.SaveTitleFile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SaveTitleFile, "IpDrv.TitleFileDownloadCache.SaveTitleFile");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LogicalName, paramsPtr + 16);
@@ -518,36 +546,39 @@ public partial class TitleFileDownloadCache : BmSDK.IpDrv.MCPBase, BmSDK.IGameOb
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 48);
     }
 
+    private static BmSDK.Function __fn_ClearLoadTitleFileCompleteDelegate;
     /// <summary>
     /// Function: ClearLoadTitleFileCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearLoadTitleFileCompleteDelegate(System.IntPtr LoadCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.ClearLoadTitleFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearLoadTitleFileCompleteDelegate, "IpDrv.TitleFileDownloadCache.ClearLoadTitleFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LoadCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddLoadTitleFileCompleteDelegate;
     /// <summary>
     /// Function: AddLoadTitleFileCompleteDelegate
     /// </summary>
     public unsafe virtual void AddLoadTitleFileCompleteDelegate(System.IntPtr LoadCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.AddLoadTitleFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddLoadTitleFileCompleteDelegate, "IpDrv.TitleFileDownloadCache.AddLoadTitleFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LoadCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnLoadTitleFileComplete;
     /// <summary>
     /// Function: OnLoadTitleFileComplete
     /// </summary>
     public unsafe virtual void OnLoadTitleFileComplete(bool bWasSuccessful, BmSDK.FString Filename, int bytesTransferred, float timeTaken)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.OnLoadTitleFileComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnLoadTitleFileComplete, "IpDrv.TitleFileDownloadCache.OnLoadTitleFileComplete");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 4);
@@ -557,12 +588,13 @@ public partial class TitleFileDownloadCache : BmSDK.IpDrv.MCPBase, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_LoadTitleFile;
     /// <summary>
     /// Function: LoadTitleFile
     /// </summary>
     public unsafe virtual bool LoadTitleFile(BmSDK.FString Filename)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.TitleFileDownloadCache.LoadTitleFile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LoadTitleFile, "IpDrv.TitleFileDownloadCache.LoadTitleFile");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

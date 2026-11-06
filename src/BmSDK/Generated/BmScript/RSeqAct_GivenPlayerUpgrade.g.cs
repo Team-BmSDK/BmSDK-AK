@@ -78,12 +78,13 @@ public partial class RSeqAct_GivenPlayerUpgrade : BmSDK.Engine.SequenceAction, B
         where TComponent : class, Framework.IScriptComponent<RSeqAct_GivenPlayerUpgrade>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_GivenPlayerUpgrade.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmScript.RSeqAct_GivenPlayerUpgrade.Activated");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

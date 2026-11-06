@@ -78,24 +78,26 @@ public partial class RHelicopterControlVolume : BmSDK.Engine.Volume, BmSDK.IGame
         where TComponent : class, Framework.IScriptComponent<RHelicopterControlVolume>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UnTouch;
     /// <summary>
     /// Function: UnTouch
     /// </summary>
     public unsafe override void UnTouch(BmSDK.Engine.Actor Other)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHelicopterControlVolume.UnTouch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnTouch, "BmGame.RHelicopterControlVolume.UnTouch");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Touch;
     /// <summary>
     /// Function: Touch
     /// </summary>
     public unsafe override void Touch(BmSDK.Engine.Actor Other, BmSDK.Engine.PrimitiveComponent OtherComp, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHelicopterControlVolume.Touch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Touch, "BmGame.RHelicopterControlVolume.Touch");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherComp, paramsPtr + 8);
@@ -105,12 +107,13 @@ public partial class RHelicopterControlVolume : BmSDK.Engine.Volume, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_GetForcedAltitude;
     /// <summary>
     /// Function: GetForcedAltitude
     /// </summary>
     public unsafe virtual float GetForcedAltitude()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHelicopterControlVolume.GetForcedAltitude", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetForcedAltitude, "BmGame.RHelicopterControlVolume.GetForcedAltitude");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);

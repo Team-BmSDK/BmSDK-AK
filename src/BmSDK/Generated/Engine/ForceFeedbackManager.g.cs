@@ -73,12 +73,13 @@ public partial class ForceFeedbackManager : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<ForceFeedbackManager>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PlayForceFeedbackWaveform;
     /// <summary>
     /// Function: PlayForceFeedbackWaveform
     /// </summary>
     public unsafe virtual void PlayForceFeedbackWaveform(BmSDK.Engine.ForceFeedbackWaveform WaveForm, BmSDK.Engine.Actor WaveInstigator)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ForceFeedbackManager.PlayForceFeedbackWaveform", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayForceFeedbackWaveform, "Engine.ForceFeedbackManager.PlayForceFeedbackWaveform");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WaveForm, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WaveInstigator, paramsPtr + 8);
@@ -93,24 +94,26 @@ public partial class ForceFeedbackManager : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_PauseWaveform;
     /// <summary>
     /// Function: PauseWaveform
     /// </summary>
     public unsafe virtual void PauseWaveform(bool bPause = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ForceFeedbackManager.PauseWaveform", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PauseWaveform, "Engine.ForceFeedbackManager.PauseWaveform");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bPause, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StopForceFeedbackWaveform;
     /// <summary>
     /// Function: StopForceFeedbackWaveform
     /// </summary>
     public unsafe virtual void StopForceFeedbackWaveform(BmSDK.Engine.ForceFeedbackWaveform WaveForm = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ForceFeedbackManager.StopForceFeedbackWaveform", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopForceFeedbackWaveform, "Engine.ForceFeedbackManager.StopForceFeedbackWaveform");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WaveForm, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

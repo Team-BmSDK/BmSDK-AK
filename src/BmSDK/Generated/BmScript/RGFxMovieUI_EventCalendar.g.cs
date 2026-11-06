@@ -78,24 +78,26 @@ public partial class RGFxMovieUI_EventCalendar : BmSDK.BmGame.RGFxMovieUI, BmSDK
         where TComponent : class, Framework.IScriptComponent<RGFxMovieUI_EventCalendar>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PriceToString;
     /// <summary>
     /// Function: PriceToString
     /// </summary>
     public unsafe virtual BmSDK.FString PriceToString(BmSDK.FString Price)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.PriceToString", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PriceToString, "BmScript.RGFxMovieUI_EventCalendar.PriceToString");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Price, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_OnGetSteamDLCAppInfoComplete;
     /// <summary>
     /// Function: OnGetSteamDLCAppInfoComplete
     /// </summary>
     public unsafe virtual void OnGetSteamDLCAppInfoComplete(BmSDK.Engine.HttpRequestInterface OriginalRequest, BmSDK.Engine.HttpResponseInterface Response, bool bDidSucceed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.OnGetSteamDLCAppInfoComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnGetSteamDLCAppInfoComplete, "BmScript.RGFxMovieUI_EventCalendar.OnGetSteamDLCAppInfoComplete");
         byte* paramsPtr = stackalloc byte[136];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OriginalRequest, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Response, paramsPtr + 8);
@@ -104,92 +106,100 @@ public partial class RGFxMovieUI_EventCalendar : BmSDK.BmGame.RGFxMovieUI, BmSDK
         return;
     }
 
+    private static BmSDK.Function __fn_GetSteamDLCAppInfo;
     /// <summary>
     /// Function: GetSteamDLCAppInfo
     /// </summary>
     public unsafe virtual void GetSteamDLCAppInfo()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.GetSteamDLCAppInfo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSteamDLCAppInfo, "BmScript.RGFxMovieUI_EventCalendar.GetSteamDLCAppInfo");
         byte* paramsPtr = stackalloc byte[204];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CreateEventCalendar;
     /// <summary>
     /// Function: CreateEventCalendar
     /// </summary>
     public unsafe virtual void CreateEventCalendar()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.CreateEventCalendar", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateEventCalendar, "BmScript.RGFxMovieUI_EventCalendar.CreateEventCalendar");
         byte* paramsPtr = stackalloc byte[376];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_PurchaseProduct;
     /// <summary>
     /// Function: XI_PurchaseProduct
     /// </summary>
     public unsafe virtual void XI_PurchaseProduct(BmSDK.FString sProductId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.XI_PurchaseProduct", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_PurchaseProduct, "BmScript.RGFxMovieUI_EventCalendar.XI_PurchaseProduct");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sProductId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_DownloadProduct;
     /// <summary>
     /// Function: XI_DownloadProduct
     /// </summary>
     public unsafe virtual void XI_DownloadProduct()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.XI_DownloadProduct", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_DownloadProduct, "BmScript.RGFxMovieUI_EventCalendar.XI_DownloadProduct");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_RedeemVoucher;
     /// <summary>
     /// Function: XI_RedeemVoucher
     /// </summary>
     public unsafe virtual bool XI_RedeemVoucher(BmSDK.FString sRedeemCode = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.XI_RedeemVoucher", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_RedeemVoucher, "BmScript.RGFxMovieUI_EventCalendar.XI_RedeemVoucher");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sRedeemCode, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_XI_InspectStore;
     /// <summary>
     /// Function: XI_InspectStore
     /// </summary>
     public unsafe virtual void XI_InspectStore()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.XI_InspectStore", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_InspectStore, "BmScript.RGFxMovieUI_EventCalendar.XI_InspectStore");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_InspectProduct;
     /// <summary>
     /// Function: XI_InspectProduct
     /// </summary>
     public unsafe virtual void XI_InspectProduct(BmSDK.FString sProductId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.XI_InspectProduct", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_InspectProduct, "BmScript.RGFxMovieUI_EventCalendar.XI_InspectProduct");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sProductId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_SelectedItem;
     /// <summary>
     /// Function: XI_SelectedItem
     /// </summary>
     public unsafe virtual void XI_SelectedItem(BmSDK.FString sName, BmSDK.FString sStatus)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.XI_SelectedItem", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_SelectedItem, "BmScript.RGFxMovieUI_EventCalendar.XI_SelectedItem");
         byte* paramsPtr = stackalloc byte[84];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sStatus, paramsPtr + 16);
@@ -197,46 +207,50 @@ public partial class RGFxMovieUI_EventCalendar : BmSDK.BmGame.RGFxMovieUI, BmSDK
         return;
     }
 
+    private static BmSDK.Function __fn_XI_Enumerate;
     /// <summary>
     /// Function: XI_Enumerate
     /// </summary>
     public unsafe virtual void XI_Enumerate(BmSDK.FString sTargetPath)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.XI_Enumerate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_Enumerate, "BmScript.RGFxMovieUI_EventCalendar.XI_Enumerate");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sTargetPath, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_Tick;
     /// <summary>
     /// Function: XI_Tick
     /// </summary>
     public unsafe override void XI_Tick()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.XI_Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_Tick, "BmScript.RGFxMovieUI_EventCalendar.XI_Tick");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_OnBack;
     /// <summary>
     /// Function: XI_OnBack
     /// </summary>
     public unsafe override void XI_OnBack()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.XI_OnBack", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_OnBack, "BmScript.RGFxMovieUI_EventCalendar.XI_OnBack");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CustomContentLoadedEC;
     /// <summary>
     /// Function: CustomContentLoadedEC
     /// </summary>
     public unsafe virtual void CustomContentLoadedEC(bool bWasSuccessful, BmSDK.FString sCustomId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.CustomContentLoadedEC", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CustomContentLoadedEC, "BmScript.RGFxMovieUI_EventCalendar.CustomContentLoadedEC");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sCustomId, paramsPtr + 4);
@@ -244,12 +258,13 @@ public partial class RGFxMovieUI_EventCalendar : BmSDK.BmGame.RGFxMovieUI, BmSDK
         return;
     }
 
+    private static BmSDK.Function __fn_CustomManifestLoadedEC;
     /// <summary>
     /// Function: CustomManifestLoadedEC
     /// </summary>
     public unsafe virtual void CustomManifestLoadedEC(bool bWasSuccessful, BmSDK.FString sCustomId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.CustomManifestLoadedEC", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CustomManifestLoadedEC, "BmScript.RGFxMovieUI_EventCalendar.CustomManifestLoadedEC");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sCustomId, paramsPtr + 4);
@@ -257,12 +272,13 @@ public partial class RGFxMovieUI_EventCalendar : BmSDK.BmGame.RGFxMovieUI, BmSDK
         return;
     }
 
+    private static BmSDK.Function __fn_UC_SetPrice;
     /// <summary>
     /// Function: UC_SetPrice
     /// </summary>
     public unsafe virtual void UC_SetPrice(BmSDK.FString sName, BmSDK.FString sPrice)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.UC_SetPrice", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_SetPrice, "BmScript.RGFxMovieUI_EventCalendar.UC_SetPrice");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sPrice, paramsPtr + 16);
@@ -270,35 +286,38 @@ public partial class RGFxMovieUI_EventCalendar : BmSDK.BmGame.RGFxMovieUI, BmSDK
         return;
     }
 
+    private static BmSDK.Function __fn_UC_SeasonPass;
     /// <summary>
     /// Function: UC_SeasonPass
     /// </summary>
     public unsafe virtual void UC_SeasonPass()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.UC_SeasonPass", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_SeasonPass, "BmScript.RGFxMovieUI_EventCalendar.UC_SeasonPass");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UC_GetNameById;
     /// <summary>
     /// Function: UC_GetNameById
     /// </summary>
     public unsafe virtual BmSDK.FString UC_GetNameById(BmSDK.FString sName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.UC_GetNameById", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_GetNameById, "BmScript.RGFxMovieUI_EventCalendar.UC_GetNameById");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_UC_UpdateState;
     /// <summary>
     /// Function: UC_UpdateState
     /// </summary>
     public unsafe virtual void UC_UpdateState(BmSDK.FString sName, BmSDK.FString sState)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.UC_UpdateState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_UpdateState, "BmScript.RGFxMovieUI_EventCalendar.UC_UpdateState");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sState, paramsPtr + 16);
@@ -306,24 +325,26 @@ public partial class RGFxMovieUI_EventCalendar : BmSDK.BmGame.RGFxMovieUI, BmSDK
         return;
     }
 
+    private static BmSDK.Function __fn_UC_SetError;
     /// <summary>
     /// Function: UC_SetError
     /// </summary>
     public unsafe virtual void UC_SetError(BmSDK.FString sName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.UC_SetError", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_SetError, "BmScript.RGFxMovieUI_EventCalendar.UC_SetError");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UC_SetImage;
     /// <summary>
     /// Function: UC_SetImage
     /// </summary>
     public unsafe virtual void UC_SetImage(BmSDK.FString sName, BmSDK.GFxUI.GFxObject iImage, BmSDK.FString sFromPath)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.UC_SetImage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_SetImage, "BmScript.RGFxMovieUI_EventCalendar.UC_SetImage");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(iImage, paramsPtr + 16);
@@ -332,12 +353,13 @@ public partial class RGFxMovieUI_EventCalendar : BmSDK.BmGame.RGFxMovieUI, BmSDK
         return;
     }
 
+    private static BmSDK.Function __fn_UC_SelectIndex;
     /// <summary>
     /// Function: UC_SelectIndex
     /// </summary>
     public unsafe virtual void UC_SelectIndex(int nIndex, bool bImmediate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.UC_SelectIndex", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_SelectIndex, "BmScript.RGFxMovieUI_EventCalendar.UC_SelectIndex");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(nIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bImmediate, paramsPtr + 4);
@@ -345,12 +367,13 @@ public partial class RGFxMovieUI_EventCalendar : BmSDK.BmGame.RGFxMovieUI, BmSDK
         return;
     }
 
+    private static BmSDK.Function __fn_UC_AddContent;
     /// <summary>
     /// Function: UC_AddContent
     /// </summary>
     public unsafe virtual void UC_AddContent(BmSDK.FString sName, BmSDK.FString sId, BmSDK.FString sDate, BmSDK.FString sTitle, BmSDK.FString sDescription, BmSDK.FString sPrice, BmSDK.FString sStatus, float fImageShift)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.UC_AddContent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_AddContent, "BmScript.RGFxMovieUI_EventCalendar.UC_AddContent");
         byte* paramsPtr = stackalloc byte[116];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sId, paramsPtr + 16);
@@ -364,35 +387,38 @@ public partial class RGFxMovieUI_EventCalendar : BmSDK.BmGame.RGFxMovieUI, BmSDK
         return;
     }
 
+    private static BmSDK.Function __fn_GetCachedSteamDLCAppInfo;
     /// <summary>
     /// Function: GetCachedSteamDLCAppInfo
     /// </summary>
     public unsafe virtual void GetCachedSteamDLCAppInfo()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.GetCachedSteamDLCAppInfo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCachedSteamDLCAppInfo, "BmScript.RGFxMovieUI_EventCalendar.GetCachedSteamDLCAppInfo");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnReadSteamDLCAppInfoComplete;
     /// <summary>
     /// Function: OnReadSteamDLCAppInfoComplete
     /// </summary>
     public unsafe virtual void OnReadSteamDLCAppInfoComplete(bool bWasSuccessful)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.OnReadSteamDLCAppInfoComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReadSteamDLCAppInfoComplete, "BmScript.RGFxMovieUI_EventCalendar.OnReadSteamDLCAppInfoComplete");
         byte* paramsPtr = stackalloc byte[132];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnReadInGameStoreContentComplete;
     /// <summary>
     /// Function: OnReadInGameStoreContentComplete
     /// </summary>
     public unsafe virtual void OnReadInGameStoreContentComplete(bool bWasSuccessful, bool bTimeout)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.OnReadInGameStoreContentComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReadInGameStoreContentComplete, "BmScript.RGFxMovieUI_EventCalendar.OnReadInGameStoreContentComplete");
         byte* paramsPtr = stackalloc byte[104];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bTimeout, paramsPtr + 4);
@@ -400,24 +426,26 @@ public partial class RGFxMovieUI_EventCalendar : BmSDK.BmGame.RGFxMovieUI, BmSDK
         return;
     }
 
+    private static BmSDK.Function __fn_OnReadHydraContentComplete;
     /// <summary>
     /// Function: OnReadHydraContentComplete
     /// </summary>
     public unsafe virtual void OnReadHydraContentComplete(bool bWasSuccessful)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.OnReadHydraContentComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReadHydraContentComplete, "BmScript.RGFxMovieUI_EventCalendar.OnReadHydraContentComplete");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PopupRequester_Callback;
     /// <summary>
     /// Function: PopupRequester_Callback
     /// </summary>
     public unsafe override void PopupRequester_Callback(BmSDK.BmGame.RGFxMoviePopupRequester ThePopUpMsg, int ButtonId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.PopupRequester_Callback", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PopupRequester_Callback, "BmScript.RGFxMovieUI_EventCalendar.PopupRequester_Callback");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThePopUpMsg, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ButtonId, paramsPtr + 8);
@@ -425,93 +453,101 @@ public partial class RGFxMovieUI_EventCalendar : BmSDK.BmGame.RGFxMovieUI, BmSDK
         return;
     }
 
+    private static BmSDK.Function __fn_OnNotifyLoginStatusChanged;
     /// <summary>
     /// Function: OnNotifyLoginStatusChanged
     /// </summary>
     public unsafe virtual void OnNotifyLoginStatusChanged(byte nLocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.OnNotifyLoginStatusChanged", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnNotifyLoginStatusChanged, "BmScript.RGFxMovieUI_EventCalendar.OnNotifyLoginStatusChanged");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(nLocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnNotifyOnlineServiceStatusChanged;
     /// <summary>
     /// Function: OnNotifyOnlineServiceStatusChanged
     /// </summary>
     public unsafe virtual void OnNotifyOnlineServiceStatusChanged(BmSDK.Engine.OnlineSubsystem.EOnlineServerConnectionStatus eStatus)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.OnNotifyOnlineServiceStatusChanged", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnNotifyOnlineServiceStatusChanged, "BmScript.RGFxMovieUI_EventCalendar.OnNotifyOnlineServiceStatusChanged");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(eStatus, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnPurchaseInGameStoreContentComplete;
     /// <summary>
     /// Function: OnPurchaseInGameStoreContentComplete
     /// </summary>
     public unsafe virtual void OnPurchaseInGameStoreContentComplete(bool bBoughtItem)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.OnPurchaseInGameStoreContentComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnPurchaseInGameStoreContentComplete, "BmScript.RGFxMovieUI_EventCalendar.OnPurchaseInGameStoreContentComplete");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bBoughtItem, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnContentStatusChanged;
     /// <summary>
     /// Function: OnContentStatusChanged
     /// </summary>
     public unsafe virtual void OnContentStatusChanged()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.OnContentStatusChanged", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnContentStatusChanged, "BmScript.RGFxMovieUI_EventCalendar.OnContentStatusChanged");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnMessageBoxComplete;
     /// <summary>
     /// Function: OnMessageBoxComplete
     /// </summary>
     public unsafe virtual void OnMessageBoxComplete(int ButtonResult)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.OnMessageBoxComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnMessageBoxComplete, "BmScript.RGFxMovieUI_EventCalendar.OnMessageBoxComplete");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ButtonResult, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ForceBack;
     /// <summary>
     /// Function: ForceBack
     /// </summary>
     public unsafe virtual void ForceBack()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.ForceBack", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForceBack, "BmScript.RGFxMovieUI_EventCalendar.ForceBack");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CloseScreen;
     /// <summary>
     /// Function: CloseScreen
     /// </summary>
     public unsafe override void CloseScreen()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.CloseScreen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CloseScreen, "BmScript.RGFxMovieUI_EventCalendar.CloseScreen");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe override void Init(BmSDK.Engine.LocalPlayer iPlayer = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_EventCalendar.Init", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmScript.RGFxMovieUI_EventCalendar.Init");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(iPlayer, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

@@ -78,104 +78,113 @@ public partial class RBMAIAction_WalkAndShoot : BmSDK.BmGame.RBMAIAction, BmSDK.
         where TComponent : class, Framework.IScriptComponent<RBMAIAction_WalkAndShoot>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_HandlesGlance;
     /// <summary>
     /// Function: HandlesGlance
     /// </summary>
     public unsafe override bool HandlesGlance()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_WalkAndShoot.HandlesGlance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandlesGlance, "BmGame.RBMAIAction_WalkAndShoot.HandlesGlance");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ActionTick;
     /// <summary>
     /// Function: ActionTick
     /// </summary>
     public unsafe override BmSDK.BmGame.RBMAIAction.ActionTickResult ActionTick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_WalkAndShoot.ActionTick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActionTick, "BmGame.RBMAIAction_WalkAndShoot.ActionTick");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMAIAction.ActionTickResult>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_Cleanup;
     /// <summary>
     /// Function: Cleanup
     /// </summary>
     public unsafe override void Cleanup()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_WalkAndShoot.Cleanup", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Cleanup, "BmGame.RBMAIAction_WalkAndShoot.Cleanup");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnDeactivate;
     /// <summary>
     /// Function: OnDeactivate
     /// </summary>
     public unsafe override void OnDeactivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_WalkAndShoot.OnDeactivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeactivate, "BmGame.RBMAIAction_WalkAndShoot.OnDeactivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_MoveAndShootInit;
     /// <summary>
     /// Function: MoveAndShootInit
     /// </summary>
     public unsafe virtual void MoveAndShootInit(BmSDK.Engine.Pawn PawnTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_WalkAndShoot.MoveAndShootInit", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MoveAndShootInit, "BmGame.RBMAIAction_WalkAndShoot.MoveAndShootInit");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PawnTarget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_WalkAndShoot.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMAIAction_WalkAndShoot.OnActivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetPlayerAlert;
     /// <summary>
     /// Function: SetPlayerAlert
     /// </summary>
     public unsafe virtual void SetPlayerAlert(BmSDK.BmGame.AlertInstance NewAlert)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_WalkAndShoot.SetPlayerAlert", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetPlayerAlert, "BmGame.RBMAIAction_WalkAndShoot.SetPlayerAlert");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAlert, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetAvoidActor;
     /// <summary>
     /// Function: SetAvoidActor
     /// </summary>
     public unsafe virtual void SetAvoidActor(BmSDK.Engine.Actor NewAvoidActor)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_WalkAndShoot.SetAvoidActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAvoidActor, "BmGame.RBMAIAction_WalkAndShoot.SetAvoidActor");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAvoidActor, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetupGoal;
     /// <summary>
     /// Function: SetupGoal
     /// </summary>
     public unsafe virtual void SetupGoal(System.Numerics.Vector3 NewGoalPos)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_WalkAndShoot.SetupGoal", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupGoal, "BmGame.RBMAIAction_WalkAndShoot.SetupGoal");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewGoalPos, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

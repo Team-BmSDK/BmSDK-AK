@@ -78,12 +78,13 @@ public partial class GFxAction_CloseMovie : BmSDK.Engine.SequenceAction, BmSDK.I
         where TComponent : class, Framework.IScriptComponent<GFxAction_CloseMovie>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsValidLevelSequenceObject;
     /// <summary>
     /// Function: IsValidLevelSequenceObject
     /// </summary>
     public unsafe override bool IsValidLevelSequenceObject()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "GFxUI.GFxAction_CloseMovie.IsValidLevelSequenceObject", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsValidLevelSequenceObject, "GFxUI.GFxAction_CloseMovie.IsValidLevelSequenceObject");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

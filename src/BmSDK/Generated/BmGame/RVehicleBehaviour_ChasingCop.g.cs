@@ -78,12 +78,13 @@ public partial class RVehicleBehaviour_ChasingCop : BmSDK.BmGame.RVehicleBehavio
         where TComponent : class, Framework.IScriptComponent<RVehicleBehaviour_ChasingCop>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_NotifyBumpedVehicleNPC;
     /// <summary>
     /// Function: NotifyBumpedVehicleNPC
     /// </summary>
     public unsafe override void NotifyBumpedVehicleNPC(BmSDK.BmGame.RVehicleNPC Other, System.Numerics.Vector3 ContactPos, float Speed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleBehaviour_ChasingCop.NotifyBumpedVehicleNPC", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyBumpedVehicleNPC, "BmGame.RVehicleBehaviour_ChasingCop.NotifyBumpedVehicleNPC");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ContactPos, paramsPtr + 8);
@@ -92,46 +93,50 @@ public partial class RVehicleBehaviour_ChasingCop : BmSDK.BmGame.RVehicleBehavio
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleBehaviour_ChasingCop.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RVehicleBehaviour_ChasingCop.Tick");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnFollowGiveUp;
     /// <summary>
     /// Function: OnFollowGiveUp
     /// </summary>
     public unsafe override void OnFollowGiveUp()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleBehaviour_ChasingCop.OnFollowGiveUp", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnFollowGiveUp, "BmGame.RVehicleBehaviour_ChasingCop.OnFollowGiveUp");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnFollowVehicleDied;
     /// <summary>
     /// Function: OnFollowVehicleDied
     /// </summary>
     public unsafe override void OnFollowVehicleDied()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleBehaviour_ChasingCop.OnFollowVehicleDied", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnFollowVehicleDied, "BmGame.RVehicleBehaviour_ChasingCop.OnFollowVehicleDied");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetDesiredFollowOffsetBehind;
     /// <summary>
     /// Function: GetDesiredFollowOffsetBehind
     /// </summary>
     public unsafe override float GetDesiredFollowOffsetBehind(int FollowerIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleBehaviour_ChasingCop.GetDesiredFollowOffsetBehind", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDesiredFollowOffsetBehind, "BmGame.RVehicleBehaviour_ChasingCop.GetDesiredFollowOffsetBehind");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FollowerIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

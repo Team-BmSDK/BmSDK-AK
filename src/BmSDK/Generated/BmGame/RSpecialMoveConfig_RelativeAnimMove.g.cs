@@ -78,12 +78,13 @@ public partial class RSpecialMoveConfig_RelativeAnimMove : BmSDK.BmGame.RSpecial
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveConfig_RelativeAnimMove>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_TriggerSpecialMove;
     /// <summary>
     /// Function: TriggerSpecialMove
     /// </summary>
     public unsafe override void TriggerSpecialMove(BmSDK.BmGame.RPlayerController Controller, BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator MoveLocation, bool ForceReplicateToClient = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveConfig_RelativeAnimMove.TriggerSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerSpecialMove, "BmGame.RSpecialMoveConfig_RelativeAnimMove.TriggerSpecialMove");
         byte* paramsPtr = stackalloc byte[144];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Controller, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveLocation, paramsPtr + 8);
@@ -92,12 +93,13 @@ public partial class RSpecialMoveConfig_RelativeAnimMove : BmSDK.BmGame.RSpecial
         return;
     }
 
+    private static BmSDK.Function __fn_GetFreeRotation;
     /// <summary>
     /// Function: GetFreeRotation
     /// </summary>
     public unsafe virtual BmSDK.Rotator GetFreeRotation(BmSDK.BmGame.RPlayerController Controller, BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator Loc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveConfig_RelativeAnimMove.GetFreeRotation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFreeRotation, "BmGame.RSpecialMoveConfig_RelativeAnimMove.GetFreeRotation");
         byte* paramsPtr = stackalloc byte[152];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Controller, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 8);
@@ -105,12 +107,13 @@ public partial class RSpecialMoveConfig_RelativeAnimMove : BmSDK.BmGame.RSpecial
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 140);
     }
 
+    private static BmSDK.Function __fn_GetPredictedEndLocation;
     /// <summary>
     /// Function: GetPredictedEndLocation
     /// </summary>
     public unsafe override System.Numerics.Vector3 GetPredictedEndLocation(BmSDK.BmGame.RPlayerController Controller, BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator MoveLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveConfig_RelativeAnimMove.GetPredictedEndLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPredictedEndLocation, "BmGame.RSpecialMoveConfig_RelativeAnimMove.GetPredictedEndLocation");
         byte* paramsPtr = stackalloc byte[172];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Controller, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveLocation, paramsPtr + 8);
@@ -118,12 +121,13 @@ public partial class RSpecialMoveConfig_RelativeAnimMove : BmSDK.BmGame.RSpecial
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 140);
     }
 
+    private static BmSDK.Function __fn_GetSpecialMoveIdealStartLoc;
     /// <summary>
     /// Function: GetSpecialMoveIdealStartLoc
     /// </summary>
     public unsafe override System.Numerics.Vector3 GetSpecialMoveIdealStartLoc(BmSDK.BmGame.RPlayerController Controller, BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator MoveLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveConfig_RelativeAnimMove.GetSpecialMoveIdealStartLoc", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSpecialMoveIdealStartLoc, "BmGame.RSpecialMoveConfig_RelativeAnimMove.GetSpecialMoveIdealStartLoc");
         byte* paramsPtr = stackalloc byte[172];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Controller, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveLocation, paramsPtr + 8);

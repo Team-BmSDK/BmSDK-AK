@@ -78,12 +78,13 @@ public partial class RAEC_Casualty_Sub_Centre : BmSDK.BmGame.RAlertEventCoordina
         where TComponent : class, Framework.IScriptComponent<RAEC_Casualty_Sub_Centre>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_NotifyEvent;
     /// <summary>
     /// Function: NotifyEvent
     /// </summary>
     public unsafe override void NotifyEvent(BmSDK.BmGame.RBMAIAction EventAction, BmSDK.FString EventType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Casualty_Sub_Centre.NotifyEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyEvent, "BmGame.RAEC_Casualty_Sub_Centre.NotifyEvent");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventAction, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventType, paramsPtr + 8);
@@ -91,78 +92,85 @@ public partial class RAEC_Casualty_Sub_Centre : BmSDK.BmGame.RAlertEventCoordina
         return;
     }
 
+    private static BmSDK.Function __fn_IsReadyToDisperse;
     /// <summary>
     /// Function: IsReadyToDisperse
     /// </summary>
     public unsafe virtual bool IsReadyToDisperse()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Casualty_Sub_Centre.IsReadyToDisperse", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsReadyToDisperse, "BmGame.RAEC_Casualty_Sub_Centre.IsReadyToDisperse");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_StartDisperse;
     /// <summary>
     /// Function: StartDisperse
     /// </summary>
     public unsafe virtual void StartDisperse()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Casualty_Sub_Centre.StartDisperse", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartDisperse, "BmGame.RAEC_Casualty_Sub_Centre.StartDisperse");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HasLongWayLeftToRun;
     /// <summary>
     /// Function: HasLongWayLeftToRun
     /// </summary>
     public unsafe virtual bool HasLongWayLeftToRun()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Casualty_Sub_Centre.HasLongWayLeftToRun", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasLongWayLeftToRun, "BmGame.RAEC_Casualty_Sub_Centre.HasLongWayLeftToRun");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_HasDoneConsole;
     /// <summary>
     /// Function: HasDoneConsole
     /// </summary>
     public unsafe virtual bool HasDoneConsole()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Casualty_Sub_Centre.HasDoneConsole", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasDoneConsole, "BmGame.RAEC_Casualty_Sub_Centre.HasDoneConsole");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsAtCasualty;
     /// <summary>
     /// Function: IsAtCasualty
     /// </summary>
     public unsafe virtual bool IsAtCasualty()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Casualty_Sub_Centre.IsAtCasualty", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAtCasualty, "BmGame.RAEC_Casualty_Sub_Centre.IsAtCasualty");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_HasDoneDiscoverGesture;
     /// <summary>
     /// Function: HasDoneDiscoverGesture
     /// </summary>
     public unsafe virtual bool HasDoneDiscoverGesture()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Casualty_Sub_Centre.HasDoneDiscoverGesture", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasDoneDiscoverGesture, "BmGame.RAEC_Casualty_Sub_Centre.HasDoneDiscoverGesture");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_AssignCasualty;
     /// <summary>
     /// Function: AssignCasualty
     /// </summary>
     public unsafe virtual void AssignCasualty(BmSDK.BmGame.RPawnVillain NewCas)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Casualty_Sub_Centre.AssignCasualty", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AssignCasualty, "BmGame.RAEC_Casualty_Sub_Centre.AssignCasualty");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCas, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

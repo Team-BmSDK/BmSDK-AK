@@ -78,23 +78,25 @@ public partial class RBatmobileVehicleTracker : BmSDK.BmGame.RPursuitModeMissile
         where TComponent : class, Framework.IScriptComponent<RBatmobileVehicleTracker>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ReadyToFire;
     /// <summary>
     /// Function: ReadyToFire
     /// </summary>
     public unsafe override bool ReadyToFire()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileVehicleTracker.ReadyToFire", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadyToFire, "BmGame.RBatmobileVehicleTracker.ReadyToFire");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CheckAutoTarget;
     /// <summary>
     /// Function: CheckAutoTarget
     /// </summary>
     public unsafe override bool CheckAutoTarget(BmSDK.Engine.Actor Target, out System.Numerics.Vector3 TargetPosition, out float OverridePriority, out float OverrideMaxRange, out byte DoLOSCheck)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileVehicleTracker.CheckAutoTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckAutoTarget, "BmGame.RBatmobileVehicleTracker.CheckAutoTarget");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -105,12 +107,13 @@ public partial class RBatmobileVehicleTracker : BmSDK.BmGame.RPursuitModeMissile
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_ProjectileHitActor;
     /// <summary>
     /// Function: ProjectileHitActor
     /// </summary>
     public unsafe override void ProjectileHitActor(BmSDK.Engine.Actor Target, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitVelocity, int Damage)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileVehicleTracker.ProjectileHitActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProjectileHitActor, "BmGame.RBatmobileVehicleTracker.ProjectileHitActor");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 8);

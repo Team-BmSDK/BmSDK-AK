@@ -78,57 +78,62 @@ public partial class RBMAIAction_PlaceMine : BmSDK.BmGame.RBMAIAction, BmSDK.IGa
         where TComponent : class, Framework.IScriptComponent<RBMAIAction_PlaceMine>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ActionTick;
     /// <summary>
     /// Function: ActionTick
     /// </summary>
     public unsafe override BmSDK.BmGame.RBMAIAction.ActionTickResult ActionTick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PlaceMine.ActionTick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActionTick, "BmGame.RBMAIAction_PlaceMine.ActionTick");
         byte* paramsPtr = stackalloc byte[5];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMAIAction.ActionTickResult>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_PlaceMine;
     /// <summary>
     /// Function: PlaceMine
     /// </summary>
     public unsafe virtual void PlaceMine()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PlaceMine.PlaceMine", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlaceMine, "BmGame.RBMAIAction_PlaceMine.PlaceMine");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_MineInHand;
     /// <summary>
     /// Function: MineInHand
     /// </summary>
     public unsafe virtual void MineInHand()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PlaceMine.MineInHand", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MineInHand, "BmGame.RBMAIAction_PlaceMine.MineInHand");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartShockAnim;
     /// <summary>
     /// Function: StartShockAnim
     /// </summary>
     public unsafe virtual void StartShockAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PlaceMine.StartShockAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartShockAnim, "BmGame.RBMAIAction_PlaceMine.StartShockAnim");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartPlaceAnim;
     /// <summary>
     /// Function: StartPlaceAnim
     /// </summary>
     public unsafe virtual void StartPlaceAnim(System.Numerics.Vector3 MineAnimPos, float MineAnimYaw)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PlaceMine.StartPlaceAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartPlaceAnim, "BmGame.RBMAIAction_PlaceMine.StartPlaceAnim");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MineAnimPos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MineAnimYaw, paramsPtr + 12);
@@ -136,23 +141,25 @@ public partial class RBMAIAction_PlaceMine : BmSDK.BmGame.RBMAIAction, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_OnDeactivate;
     /// <summary>
     /// Function: OnDeactivate
     /// </summary>
     public unsafe override void OnDeactivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PlaceMine.OnDeactivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeactivate, "BmGame.RBMAIAction_PlaceMine.OnDeactivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetupMinePoint;
     /// <summary>
     /// Function: SetupMinePoint
     /// </summary>
     public unsafe virtual void SetupMinePoint(BmSDK.BmGame.RThugMineablePointBase NewMinePoint)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PlaceMine.SetupMinePoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupMinePoint, "BmGame.RBMAIAction_PlaceMine.SetupMinePoint");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewMinePoint, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

@@ -78,23 +78,25 @@ public partial class Path_AlongLine : BmSDK.Engine.PathConstraint, BmSDK.IGameOb
         where TComponent : class, Framework.IScriptComponent<Path_AlongLine>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Recycle;
     /// <summary>
     /// Function: Recycle
     /// </summary>
     public unsafe override void Recycle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Path_AlongLine.Recycle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Recycle, "Engine.Path_AlongLine.Recycle");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AlongLine;
     /// <summary>
     /// Function: AlongLine
     /// </summary>
     public unsafe static bool AlongLine(BmSDK.Engine.Pawn P, System.Numerics.Vector3 Dir)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Path_AlongLine.AlongLine", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AlongLine, "Engine.Path_AlongLine.AlongLine");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Dir, paramsPtr + 8);

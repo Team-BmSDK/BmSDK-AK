@@ -78,102 +78,111 @@ public partial class RAEC_SearchBase : BmSDK.BmGame.RAlertEventCoordinatorBase, 
         where TComponent : class, Framework.IScriptComponent<RAEC_SearchBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnBeginShutdown;
     /// <summary>
     /// Function: OnBeginShutdown
     /// </summary>
     public unsafe override void OnBeginShutdown()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.OnBeginShutdown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnBeginShutdown, "BmGame.RAEC_SearchBase.OnBeginShutdown");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ProcessBuddyPaths;
     /// <summary>
     /// Function: ProcessBuddyPaths
     /// </summary>
     public unsafe virtual void ProcessBuddyPaths()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.ProcessBuddyPaths", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProcessBuddyPaths, "BmGame.RAEC_SearchBase.ProcessBuddyPaths");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ClearThugSearch;
     /// <summary>
     /// Function: ClearThugSearch
     /// </summary>
     public unsafe virtual void ClearThugSearch()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.ClearThugSearch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearThugSearch, "BmGame.RAEC_SearchBase.ClearThugSearch");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InsertThugIntoSearch;
     /// <summary>
     /// Function: InsertThugIntoSearch
     /// </summary>
     public unsafe virtual void InsertThugIntoSearch(BmSDK.BmGame.RBMPawnAI SearchPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.InsertThugIntoSearch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InsertThugIntoSearch, "BmGame.RAEC_SearchBase.InsertThugIntoSearch");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SearchPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InitPaths;
     /// <summary>
     /// Function: InitPaths
     /// </summary>
     public unsafe virtual void InitPaths()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.InitPaths", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitPaths, "BmGame.RAEC_SearchBase.InitPaths");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartThugLookingForBuddy;
     /// <summary>
     /// Function: StartThugLookingForBuddy
     /// </summary>
     public unsafe virtual void StartThugLookingForBuddy(BmSDK.BmGame.RBMAIController NewSearcher)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.StartThugLookingForBuddy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartThugLookingForBuddy, "BmGame.RAEC_SearchBase.StartThugLookingForBuddy");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewSearcher, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RoomNeedsForcedPairs;
     /// <summary>
     /// Function: RoomNeedsForcedPairs
     /// </summary>
     public unsafe virtual bool RoomNeedsForcedPairs()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.RoomNeedsForcedPairs", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RoomNeedsForcedPairs, "BmGame.RAEC_SearchBase.RoomNeedsForcedPairs");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_NumPairsAllowed;
     /// <summary>
     /// Function: NumPairsAllowed
     /// </summary>
     public unsafe virtual int NumPairsAllowed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.NumPairsAllowed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NumPairsAllowed, "BmGame.RAEC_SearchBase.NumPairsAllowed");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_RegisterSplit;
     /// <summary>
     /// Function: RegisterSplit
     /// </summary>
     public unsafe virtual void RegisterSplit(BmSDK.BmGame.RPawnVillainGunBase Thug1, BmSDK.BmGame.RPawnVillainGunBase Thug2)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.RegisterSplit", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterSplit, "BmGame.RAEC_SearchBase.RegisterSplit");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Thug1, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Thug2, paramsPtr + 8);
@@ -181,23 +190,25 @@ public partial class RAEC_SearchBase : BmSDK.BmGame.RAlertEventCoordinatorBase, 
         return;
     }
 
+    private static BmSDK.Function __fn_ClearOldBlockedGroups;
     /// <summary>
     /// Function: ClearOldBlockedGroups
     /// </summary>
     public unsafe virtual void ClearOldBlockedGroups()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.ClearOldBlockedGroups", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearOldBlockedGroups, "BmGame.RAEC_SearchBase.ClearOldBlockedGroups");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetBlockedGroupIndexFor;
     /// <summary>
     /// Function: GetBlockedGroupIndexFor
     /// </summary>
     public unsafe virtual int GetBlockedGroupIndexFor(BmSDK.BmGame.RPawnVillainGunBase Thug1, BmSDK.BmGame.RPawnVillainGunBase Thug2)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.GetBlockedGroupIndexFor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBlockedGroupIndexFor, "BmGame.RAEC_SearchBase.GetBlockedGroupIndexFor");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Thug1, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Thug2, paramsPtr + 8);
@@ -205,12 +216,13 @@ public partial class RAEC_SearchBase : BmSDK.BmGame.RAlertEventCoordinatorBase, 
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_IsInBlockedGroups;
     /// <summary>
     /// Function: IsInBlockedGroups
     /// </summary>
     public unsafe virtual bool IsInBlockedGroups(BmSDK.BmGame.RPawnVillainGunBase Thug1, BmSDK.BmGame.RPawnVillainGunBase Thug2)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.IsInBlockedGroups", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInBlockedGroups, "BmGame.RAEC_SearchBase.IsInBlockedGroups");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Thug1, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Thug2, paramsPtr + 8);
@@ -218,12 +230,13 @@ public partial class RAEC_SearchBase : BmSDK.BmGame.RAlertEventCoordinatorBase, 
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_AddToBlockedGroups;
     /// <summary>
     /// Function: AddToBlockedGroups
     /// </summary>
     public unsafe virtual void AddToBlockedGroups(BmSDK.BmGame.RPawnVillainGunBase NewThug1, BmSDK.BmGame.RPawnVillainGunBase NewThug2)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.AddToBlockedGroups", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddToBlockedGroups, "BmGame.RAEC_SearchBase.AddToBlockedGroups");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewThug1, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewThug2, paramsPtr + 8);
@@ -231,12 +244,13 @@ public partial class RAEC_SearchBase : BmSDK.BmGame.RAlertEventCoordinatorBase, 
         return;
     }
 
+    private static BmSDK.Function __fn_GetCurrentForcedGroupIndexFor;
     /// <summary>
     /// Function: GetCurrentForcedGroupIndexFor
     /// </summary>
     public unsafe virtual int GetCurrentForcedGroupIndexFor(BmSDK.BmGame.RPawnVillainGunBase Thug1, BmSDK.BmGame.RPawnVillainGunBase Thug2)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.GetCurrentForcedGroupIndexFor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCurrentForcedGroupIndexFor, "BmGame.RAEC_SearchBase.GetCurrentForcedGroupIndexFor");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Thug1, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Thug2, paramsPtr + 8);
@@ -244,12 +258,13 @@ public partial class RAEC_SearchBase : BmSDK.BmGame.RAlertEventCoordinatorBase, 
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_IsInCurrentForcedGroups;
     /// <summary>
     /// Function: IsInCurrentForcedGroups
     /// </summary>
     public unsafe virtual bool IsInCurrentForcedGroups(BmSDK.BmGame.RPawnVillainGunBase Thug1, BmSDK.BmGame.RPawnVillainGunBase Thug2)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.IsInCurrentForcedGroups", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInCurrentForcedGroups, "BmGame.RAEC_SearchBase.IsInCurrentForcedGroups");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Thug1, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Thug2, paramsPtr + 8);
@@ -257,24 +272,26 @@ public partial class RAEC_SearchBase : BmSDK.BmGame.RAlertEventCoordinatorBase, 
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_IsInForcedGroup;
     /// <summary>
     /// Function: IsInForcedGroup
     /// </summary>
     public unsafe virtual bool IsInForcedGroup(BmSDK.BmGame.RPawnVillainGunBase TestThug)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.IsInForcedGroup", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInForcedGroup, "BmGame.RAEC_SearchBase.IsInForcedGroup");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestThug, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_AddToCurrentForcedGroups;
     /// <summary>
     /// Function: AddToCurrentForcedGroups
     /// </summary>
     public unsafe virtual void AddToCurrentForcedGroups(BmSDK.BmGame.RPawnVillainGunBase NewThug1, BmSDK.BmGame.RPawnVillainGunBase NewThug2)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.AddToCurrentForcedGroups", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddToCurrentForcedGroups, "BmGame.RAEC_SearchBase.AddToCurrentForcedGroups");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewThug1, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewThug2, paramsPtr + 8);
@@ -282,12 +299,13 @@ public partial class RAEC_SearchBase : BmSDK.BmGame.RAlertEventCoordinatorBase, 
         return;
     }
 
+    private static BmSDK.Function __fn_GroupsCanTryJoin;
     /// <summary>
     /// Function: GroupsCanTryJoin
     /// </summary>
     public unsafe virtual bool GroupsCanTryJoin(BmSDK.BmGame.RAEC_Search_Group Group1, BmSDK.BmGame.RAEC_Search_Group Group2)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.GroupsCanTryJoin", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GroupsCanTryJoin, "BmGame.RAEC_SearchBase.GroupsCanTryJoin");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Group1, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Group2, paramsPtr + 8);
@@ -295,12 +313,13 @@ public partial class RAEC_SearchBase : BmSDK.BmGame.RAlertEventCoordinatorBase, 
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_GroupLinesSuitableForPassingGestures;
     /// <summary>
     /// Function: GroupLinesSuitableForPassingGestures
     /// </summary>
     public unsafe virtual bool GroupLinesSuitableForPassingGestures(System.Numerics.Vector3 Group1MoveLineStart, System.Numerics.Vector3 Group1MoveLineEnd, System.Numerics.Vector3 Group2MoveLineStart, System.Numerics.Vector3 Group2MoveLineEnd)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.GroupLinesSuitableForPassingGestures", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GroupLinesSuitableForPassingGestures, "BmGame.RAEC_SearchBase.GroupLinesSuitableForPassingGestures");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Group1MoveLineStart, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Group1MoveLineEnd, paramsPtr + 12);
@@ -310,12 +329,13 @@ public partial class RAEC_SearchBase : BmSDK.BmGame.RAlertEventCoordinatorBase, 
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 48);
     }
 
+    private static BmSDK.Function __fn_SuccessfullyMergedGroups;
     /// <summary>
     /// Function: SuccessfullyMergedGroups
     /// </summary>
     public unsafe virtual bool SuccessfullyMergedGroups(BmSDK.BmGame.RAEC_Search_Group Group1, BmSDK.BmGame.RAEC_Search_Group Group2)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.SuccessfullyMergedGroups", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SuccessfullyMergedGroups, "BmGame.RAEC_SearchBase.SuccessfullyMergedGroups");
         byte* paramsPtr = stackalloc byte[156];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Group1, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Group2, paramsPtr + 8);
@@ -323,58 +343,63 @@ public partial class RAEC_SearchBase : BmSDK.BmGame.RAlertEventCoordinatorBase, 
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_GetLoneThugForLoneThugBark;
     /// <summary>
     /// Function: GetLoneThugForLoneThugBark
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RPawnVillain GetLoneThugForLoneThugBark()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.GetLoneThugForLoneThugBark", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLoneThugForLoneThugBark, "BmGame.RAEC_SearchBase.GetLoneThugForLoneThugBark");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetThugsForAtmosphereBark;
     /// <summary>
     /// Function: GetThugsForAtmosphereBark
     /// </summary>
     public unsafe virtual void GetThugsForAtmosphereBark(out BmSDK.TArray<BmSDK.BmGame.RPawnVillain> Speakers)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.GetThugsForAtmosphereBark", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetThugsForAtmosphereBark, "BmGame.RAEC_SearchBase.GetThugsForAtmosphereBark");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Speakers = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.BmGame.RPawnVillain>>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetValidAdaptiveReminderFlagVals;
     /// <summary>
     /// Function: GetValidAdaptiveReminderFlagVals
     /// </summary>
     public unsafe virtual BmSDK.TArray<BmSDK.FName> GetValidAdaptiveReminderFlagVals()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.GetValidAdaptiveReminderFlagVals", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetValidAdaptiveReminderFlagVals, "BmGame.RAEC_SearchBase.GetValidAdaptiveReminderFlagVals");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.FName>>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsAdaptiveReminderEvent;
     /// <summary>
     /// Function: IsAdaptiveReminderEvent
     /// </summary>
     public unsafe virtual bool IsAdaptiveReminderEvent(BmSDK.FName TestVal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.IsAdaptiveReminderEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAdaptiveReminderEvent, "BmGame.RAEC_SearchBase.IsAdaptiveReminderEvent");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestVal, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetSearchConvo;
     /// <summary>
     /// Function: GetSearchConvo
     /// </summary>
     public unsafe virtual void GetSearchConvo(BmSDK.FName EventFlag, BmSDK.TArray<BmSDK.BmGame.RPawnVillain> Speakers, out BmSDK.BmGame.RBarkConvo SearchConvo, out float Score)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.GetSearchConvo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSearchConvo, "BmGame.RAEC_SearchBase.GetSearchConvo");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventFlag, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speakers, paramsPtr + 8);
@@ -384,23 +409,25 @@ public partial class RAEC_SearchBase : BmSDK.BmGame.RAlertEventCoordinatorBase, 
         return;
     }
 
+    private static BmSDK.Function __fn_GetFormationLeaders;
     /// <summary>
     /// Function: GetFormationLeaders
     /// </summary>
     public unsafe virtual BmSDK.TArray<BmSDK.BmGame.RPawnVillain> GetFormationLeaders()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.GetFormationLeaders", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFormationLeaders, "BmGame.RAEC_SearchBase.GetFormationLeaders");
         byte* paramsPtr = stackalloc byte[88];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.BmGame.RPawnVillain>>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetCheckinBark;
     /// <summary>
     /// Function: GetCheckinBark
     /// </summary>
     public unsafe virtual void GetCheckinBark(out BmSDK.BmGame.RBarkConvo CheckinConvo, out float Score)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.GetCheckinBark", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCheckinBark, "BmGame.RAEC_SearchBase.GetCheckinBark");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         CheckinConvo = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBarkConvo>(paramsPtr + 0);
@@ -408,12 +435,13 @@ public partial class RAEC_SearchBase : BmSDK.BmGame.RAlertEventCoordinatorBase, 
         return;
     }
 
+    private static BmSDK.Function __fn_GetLoneThugBark;
     /// <summary>
     /// Function: GetLoneThugBark
     /// </summary>
     public unsafe virtual void GetLoneThugBark(BmSDK.BmGame.RPawnVillain LoneSpeaker, out BmSDK.BmGame.RBarkConvo LoneThugConvo, out float Score)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.GetLoneThugBark", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLoneThugBark, "BmGame.RAEC_SearchBase.GetLoneThugBark");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LoneSpeaker, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -422,36 +450,39 @@ public partial class RAEC_SearchBase : BmSDK.BmGame.RAlertEventCoordinatorBase, 
         return;
     }
 
+    private static BmSDK.Function __fn_HandleBarkPlayed;
     /// <summary>
     /// Function: HandleBarkPlayed
     /// </summary>
     public unsafe virtual void HandleBarkPlayed(BmSDK.BmGame.RBarkFlagBase FlagsOfLinePlayed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.HandleBarkPlayed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandleBarkPlayed, "BmGame.RAEC_SearchBase.HandleBarkPlayed");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FlagsOfLinePlayed, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetBestAtmosphereBark;
     /// <summary>
     /// Function: GetBestAtmosphereBark
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RBarkConvo GetBestAtmosphereBark(out float BestScore)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.GetBestAtmosphereBark", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBestAtmosphereBark, "BmGame.RAEC_SearchBase.GetBestAtmosphereBark");
         byte* paramsPtr = stackalloc byte[84];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         BestScore = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBarkConvo>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_AssignFromChase;
     /// <summary>
     /// Function: AssignFromChase
     /// </summary>
     public unsafe virtual void AssignFromChase(BmSDK.BmGame.RBMAIController NewMember, System.Numerics.Vector3 NewUDestFromChase)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.AssignFromChase", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AssignFromChase, "BmGame.RAEC_SearchBase.AssignFromChase");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewMember, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewUDestFromChase, paramsPtr + 8);
@@ -459,12 +490,13 @@ public partial class RAEC_SearchBase : BmSDK.BmGame.RAlertEventCoordinatorBase, 
         return;
     }
 
+    private static BmSDK.Function __fn_SearchAssign;
     /// <summary>
     /// Function: SearchAssign
     /// </summary>
     public unsafe virtual void SearchAssign(BmSDK.BmGame.RBMAIController NewMember, bool bHasHintLoc = default, System.Numerics.Vector3 HintLoc = default, BmSDK.BmGame.RAEC_Search_Group PreviousParent = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.SearchAssign", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SearchAssign, "BmGame.RAEC_SearchBase.SearchAssign");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewMember, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bHasHintLoc, paramsPtr + 8);
@@ -474,59 +506,64 @@ public partial class RAEC_SearchBase : BmSDK.BmGame.RAlertEventCoordinatorBase, 
         return;
     }
 
+    private static BmSDK.Function __fn_OnAssign;
     /// <summary>
     /// Function: OnAssign
     /// </summary>
     public unsafe override void OnAssign(BmSDK.BmGame.RBMAIController NewMember)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.OnAssign", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnAssign, "BmGame.RAEC_SearchBase.OnAssign");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewMember, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetNewFearLevel;
     /// <summary>
     /// Function: SetNewFearLevel
     /// </summary>
     public unsafe virtual void SetNewFearLevel(BmSDK.BmGame.RBMRoomAIState.VillainFearLevel FearLevel)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.SetNewFearLevel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetNewFearLevel, "BmGame.RAEC_SearchBase.SetNewFearLevel");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FearLevel, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanSnipe;
     /// <summary>
     /// Function: CanSnipe
     /// </summary>
     public unsafe virtual bool CanSnipe()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.CanSnipe", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanSnipe, "BmGame.RAEC_SearchBase.CanSnipe");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RAEC_SearchBase.Tick");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_SearchBase.PreStreamOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmGame.RAEC_SearchBase.PreStreamOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

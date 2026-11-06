@@ -78,35 +78,38 @@ public partial class RSeqEvent_LevelScripting : BmSDK.BmGame.RBMSeqEvent_Behavio
         where TComponent : class, Framework.IScriptComponent<RSeqEvent_LevelScripting>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetDbgString;
     /// <summary>
     /// Function: GetDbgString
     /// </summary>
     public unsafe virtual BmSDK.FString GetDbgString(out BmSDK.GameObject.FColor Col)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqEvent_LevelScripting.GetDbgString", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDbgString, "BmGame.RSeqEvent_LevelScripting.GetDbgString");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Col = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.GameObject.FColor>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_BehaviourIsRunning;
     /// <summary>
     /// Function: BehaviourIsRunning
     /// </summary>
     public unsafe virtual bool BehaviourIsRunning()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqEvent_LevelScripting.BehaviourIsRunning", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BehaviourIsRunning, "BmGame.RSeqEvent_LevelScripting.BehaviourIsRunning");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetJoiningLocations;
     /// <summary>
     /// Function: GetJoiningLocations
     /// </summary>
     public unsafe virtual bool GetJoiningLocations(out BmSDK.TArray<System.Numerics.Vector3> outLocations, out BmSDK.TArray<BmSDK.GameObject> outObjects)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqEvent_LevelScripting.GetJoiningLocations", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetJoiningLocations, "BmGame.RSeqEvent_LevelScripting.GetJoiningLocations");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         outLocations = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<System.Numerics.Vector3>>(paramsPtr + 0);
@@ -114,12 +117,13 @@ public partial class RSeqEvent_LevelScripting : BmSDK.BmGame.RBMSeqEvent_Behavio
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_RegisterEvent;
     /// <summary>
     /// Function: RegisterEvent
     /// </summary>
     public unsafe override void RegisterEvent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqEvent_LevelScripting.RegisterEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterEvent, "BmGame.RSeqEvent_LevelScripting.RegisterEvent");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

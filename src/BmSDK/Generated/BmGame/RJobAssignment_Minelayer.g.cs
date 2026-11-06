@@ -78,12 +78,13 @@ public partial class RJobAssignment_Minelayer : BmSDK.BmGame.RJobAssignment, BmS
         where TComponent : class, Framework.IScriptComponent<RJobAssignment_Minelayer>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DoAssignment;
     /// <summary>
     /// Function: DoAssignment
     /// </summary>
     public unsafe override void DoAssignment(BmSDK.BmGame.RBMRoomAIState RoomState, BmSDK.BmGame.RBMAIController ThugCon, BmSDK.GameObject AssignTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJobAssignment_Minelayer.DoAssignment", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoAssignment, "BmGame.RJobAssignment_Minelayer.DoAssignment");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RoomState, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThugCon, paramsPtr + 8);
@@ -92,12 +93,13 @@ public partial class RJobAssignment_Minelayer : BmSDK.BmGame.RJobAssignment, BmS
         return;
     }
 
+    private static BmSDK.Function __fn_CanBeAssigned;
     /// <summary>
     /// Function: CanBeAssigned
     /// </summary>
     public unsafe override bool CanBeAssigned(BmSDK.BmGame.RBMRoomAIState RoomState, BmSDK.BmGame.RBMAIController ThugCon, BmSDK.GameObject AssignTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJobAssignment_Minelayer.CanBeAssigned", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeAssigned, "BmGame.RJobAssignment_Minelayer.CanBeAssigned");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RoomState, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThugCon, paramsPtr + 8);
@@ -106,24 +108,26 @@ public partial class RJobAssignment_Minelayer : BmSDK.BmGame.RJobAssignment, BmS
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_IsAlreadyDoingJob;
     /// <summary>
     /// Function: IsAlreadyDoingJob
     /// </summary>
     public unsafe override bool IsAlreadyDoingJob(BmSDK.BmGame.RBMAIController TestCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJobAssignment_Minelayer.IsAlreadyDoingJob", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAlreadyDoingJob, "BmGame.RJobAssignment_Minelayer.IsAlreadyDoingJob");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_IsPointCloseToCas;
     /// <summary>
     /// Function: IsPointCloseToCas
     /// </summary>
     public unsafe virtual bool IsPointCloseToCas(BmSDK.BmGame.RBMRoomAIState RoomState, System.Numerics.Vector3 Loc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJobAssignment_Minelayer.IsPointCloseToCas", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPointCloseToCas, "BmGame.RJobAssignment_Minelayer.IsPointCloseToCas");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RoomState, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 8);
@@ -131,12 +135,13 @@ public partial class RJobAssignment_Minelayer : BmSDK.BmGame.RJobAssignment, BmS
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_AddToDestList;
     /// <summary>
     /// Function: AddToDestList
     /// </summary>
     public unsafe override void AddToDestList(BmSDK.BmGame.RBMRoomAIState RoomState, out BmSDK.TArray<BmSDK.BmGame.RAEC_LevelScripting.FSearchTarget> OutList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJobAssignment_Minelayer.AddToDestList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddToDestList, "BmGame.RJobAssignment_Minelayer.AddToDestList");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RoomState, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

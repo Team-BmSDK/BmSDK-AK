@@ -78,67 +78,73 @@ public partial class RGrenadeGrateAssignmentPicker : BmSDK.BmGame.RGroupAssignme
         where TComponent : class, Framework.IScriptComponent<RGrenadeGrateAssignmentPicker>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_InitGoalDataInstance;
     /// <summary>
     /// Function: InitGoalDataInstance
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RMultiDestGoalData InitGoalDataInstance()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGrenadeGrateAssignmentPicker.InitGoalDataInstance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitGoalDataInstance, "BmGame.RGrenadeGrateAssignmentPicker.InitGoalDataInstance");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RMultiDestGoalData>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_BuildThugSearch;
     /// <summary>
     /// Function: BuildThugSearch
     /// </summary>
     public unsafe virtual void BuildThugSearch()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGrenadeGrateAssignmentPicker.BuildThugSearch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BuildThugSearch, "BmGame.RGrenadeGrateAssignmentPicker.BuildThugSearch");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Update;
     /// <summary>
     /// Function: Update
     /// </summary>
     public unsafe override bool Update()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGrenadeGrateAssignmentPicker.Update", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Update, "BmGame.RGrenadeGrateAssignmentPicker.Update");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ClearAllSearch;
     /// <summary>
     /// Function: ClearAllSearch
     /// </summary>
     public unsafe virtual void ClearAllSearch()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGrenadeGrateAssignmentPicker.ClearAllSearch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearAllSearch, "BmGame.RGrenadeGrateAssignmentPicker.ClearAllSearch");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Abort;
     /// <summary>
     /// Function: Abort
     /// </summary>
     public unsafe virtual void Abort()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGrenadeGrateAssignmentPicker.Abort", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Abort, "BmGame.RGrenadeGrateAssignmentPicker.Abort");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe virtual void Init(BmSDK.BmGame.RBMRoomAIState NewRoomState, System.IntPtr NewGrenadeGrateAssignmentFound, System.IntPtr NewGrenadeGrateAssignmentFailed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGrenadeGrateAssignmentPicker.Init", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmGame.RGrenadeGrateAssignmentPicker.Init");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewRoomState, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewGrenadeGrateAssignmentFound, paramsPtr + 8);
@@ -147,24 +153,26 @@ public partial class RGrenadeGrateAssignmentPicker : BmSDK.BmGame.RGroupAssignme
         return;
     }
 
+    private static BmSDK.Function __fn_GrenadeGrateAssignmentFailed;
     /// <summary>
     /// Function: GrenadeGrateAssignmentFailed
     /// </summary>
     public unsafe virtual void GrenadeGrateAssignmentFailed(BmSDK.BmGame.RGrenadeGrateAssignmentPicker GMAP)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGrenadeGrateAssignmentPicker.GrenadeGrateAssignmentFailed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GrenadeGrateAssignmentFailed, "BmGame.RGrenadeGrateAssignmentPicker.GrenadeGrateAssignmentFailed");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GMAP, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GrenadeGrateAssignmentFound;
     /// <summary>
     /// Function: GrenadeGrateAssignmentFound
     /// </summary>
     public unsafe virtual void GrenadeGrateAssignmentFound(BmSDK.BmGame.RGrenadeGrateAssignmentPicker GMAP, BmSDK.BmGame.RTunnelGrateBase Grate, BmSDK.BmGame.RBMPawnAI GrenadePawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGrenadeGrateAssignmentPicker.GrenadeGrateAssignmentFound", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GrenadeGrateAssignmentFound, "BmGame.RGrenadeGrateAssignmentPicker.GrenadeGrateAssignmentFound");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GMAP, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Grate, paramsPtr + 8);

@@ -78,12 +78,13 @@ public partial class RVehicleBehaviour_FlyingGuard : BmSDK.BmGame.RVehicleBehavi
         where TComponent : class, Framework.IScriptComponent<RVehicleBehaviour_FlyingGuard>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnHostVehicleDied;
     /// <summary>
     /// Function: OnHostVehicleDied
     /// </summary>
     public unsafe override void OnHostVehicleDied(BmSDK.Class DamageType, System.Numerics.Vector3 HitLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleBehaviour_FlyingGuard.OnHostVehicleDied", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnHostVehicleDied, "BmGame.RVehicleBehaviour_FlyingGuard.OnHostVehicleDied");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageType, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 8);
@@ -91,47 +92,51 @@ public partial class RVehicleBehaviour_FlyingGuard : BmSDK.BmGame.RVehicleBehavi
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleBehaviour_FlyingGuard.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RVehicleBehaviour_FlyingGuard.Tick");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HandlesTurretAndShooting;
     /// <summary>
     /// Function: HandlesTurretAndShooting
     /// </summary>
     public unsafe override bool HandlesTurretAndShooting()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleBehaviour_FlyingGuard.HandlesTurretAndShooting", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandlesTurretAndShooting, "BmGame.RVehicleBehaviour_FlyingGuard.HandlesTurretAndShooting");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ExitBehaviour;
     /// <summary>
     /// Function: ExitBehaviour
     /// </summary>
     public unsafe override void ExitBehaviour(BmSDK.BmGame.RVehicleBehaviour NextBehaviour)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleBehaviour_FlyingGuard.ExitBehaviour", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ExitBehaviour, "BmGame.RVehicleBehaviour_FlyingGuard.ExitBehaviour");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NextBehaviour, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EnterBehaviour;
     /// <summary>
     /// Function: EnterBehaviour
     /// </summary>
     public unsafe override void EnterBehaviour(BmSDK.BmGame.RVehicleBehaviour PreviousBehaviour)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleBehaviour_FlyingGuard.EnterBehaviour", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnterBehaviour, "BmGame.RVehicleBehaviour_FlyingGuard.EnterBehaviour");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PreviousBehaviour, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

@@ -78,57 +78,62 @@ public partial class RAEC_Search_Sub_VantageResponse : BmSDK.BmGame.RAlertEventC
         where TComponent : class, Framework.IScriptComponent<RAEC_Search_Sub_VantageResponse>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Cleanup;
     /// <summary>
     /// Function: Cleanup
     /// </summary>
     public unsafe virtual void Cleanup()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Sub_VantageResponse.Cleanup", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Cleanup, "BmGame.RAEC_Search_Sub_VantageResponse.Cleanup");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnVillainStolen;
     /// <summary>
     /// Function: OnVillainStolen
     /// </summary>
     public unsafe override void OnVillainStolen()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Sub_VantageResponse.OnVillainStolen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnVillainStolen, "BmGame.RAEC_Search_Sub_VantageResponse.OnVillainStolen");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnBeginShutdown;
     /// <summary>
     /// Function: OnBeginShutdown
     /// </summary>
     public unsafe override void OnBeginShutdown()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Sub_VantageResponse.OnBeginShutdown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnBeginShutdown, "BmGame.RAEC_Search_Sub_VantageResponse.OnBeginShutdown");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddVantageResponseAction;
     /// <summary>
     /// Function: AddVantageResponseAction
     /// </summary>
     public unsafe virtual void AddVantageResponseAction(BmSDK.FString actionlabel)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Sub_VantageResponse.AddVantageResponseAction", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddVantageResponseAction, "BmGame.RAEC_Search_Sub_VantageResponse.AddVantageResponseAction");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(actionlabel, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetBestDestroyVantagePointsFromAPS;
     /// <summary>
     /// Function: GetBestDestroyVantagePointsFromAPS
     /// </summary>
     public unsafe virtual void GetBestDestroyVantagePointsFromAPS(System.Numerics.Vector3 VantageRefPoint, BmSDK.BmGame.RAttackPointSearch APS, out BmSDK.TArray<System.Numerics.Vector3> BestPoints)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Sub_VantageResponse.GetBestDestroyVantagePointsFromAPS", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBestDestroyVantagePointsFromAPS, "BmGame.RAEC_Search_Sub_VantageResponse.GetBestDestroyVantagePointsFromAPS");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VantageRefPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(APS, paramsPtr + 12);
@@ -137,67 +142,73 @@ public partial class RAEC_Search_Sub_VantageResponse : BmSDK.BmGame.RAlertEventC
         return;
     }
 
+    private static BmSDK.Function __fn_BuildGargSearch;
     /// <summary>
     /// Function: BuildGargSearch
     /// </summary>
     public unsafe virtual void BuildGargSearch()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Sub_VantageResponse.BuildGargSearch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BuildGargSearch, "BmGame.RAEC_Search_Sub_VantageResponse.BuildGargSearch");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartAPS;
     /// <summary>
     /// Function: StartAPS
     /// </summary>
     public unsafe virtual void StartAPS()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Sub_VantageResponse.StartAPS", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartAPS, "BmGame.RAEC_Search_Sub_VantageResponse.StartAPS");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ClearGargSearch;
     /// <summary>
     /// Function: ClearGargSearch
     /// </summary>
     public unsafe virtual void ClearGargSearch()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Sub_VantageResponse.ClearGargSearch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearGargSearch, "BmGame.RAEC_Search_Sub_VantageResponse.ClearGargSearch");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AtUltimateDest;
     /// <summary>
     /// Function: AtUltimateDest
     /// </summary>
     public unsafe virtual void AtUltimateDest()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Sub_VantageResponse.AtUltimateDest", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AtUltimateDest, "BmGame.RAEC_Search_Sub_VantageResponse.AtUltimateDest");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnStartChild;
     /// <summary>
     /// Function: OnStartChild
     /// </summary>
     public unsafe override void OnStartChild()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Sub_VantageResponse.OnStartChild", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnStartChild, "BmGame.RAEC_Search_Sub_VantageResponse.OnStartChild");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Sub_VantageResponse.PreStreamOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmGame.RAEC_Search_Sub_VantageResponse.PreStreamOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

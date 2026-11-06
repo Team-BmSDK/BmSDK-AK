@@ -78,123 +78,134 @@ public partial class RBMBehaviour_ScarecrowWalkAroundBats : BmSDK.BmGame.RBMBeha
         where TComponent : class, Framework.IScriptComponent<RBMBehaviour_ScarecrowWalkAroundBats>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_ScarecrowWalkAroundBats.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmScript.RBMBehaviour_ScarecrowWalkAroundBats.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanLookAtPlayer;
     /// <summary>
     /// Function: CanLookAtPlayer
     /// </summary>
     public unsafe override bool CanLookAtPlayer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_ScarecrowWalkAroundBats.CanLookAtPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanLookAtPlayer, "BmScript.RBMBehaviour_ScarecrowWalkAroundBats.CanLookAtPlayer");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_StartCutscene;
     /// <summary>
     /// Function: StartCutscene
     /// </summary>
     public unsafe virtual void StartCutscene()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_ScarecrowWalkAroundBats.StartCutscene", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartCutscene, "BmScript.RBMBehaviour_ScarecrowWalkAroundBats.StartCutscene");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CreateWeaponConfig;
     /// <summary>
     /// Function: CreateWeaponConfig
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RWeaponConfig CreateWeaponConfig()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_ScarecrowWalkAroundBats.CreateWeaponConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateWeaponConfig, "BmScript.RBMBehaviour_ScarecrowWalkAroundBats.CreateWeaponConfig");
         byte* paramsPtr = stackalloc byte[444];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RWeaponConfig>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Update;
     /// <summary>
     /// Function: Update
     /// </summary>
     public unsafe override bool Update(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_ScarecrowWalkAroundBats.Update", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Update, "BmScript.RBMBehaviour_ScarecrowWalkAroundBats.Update");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetSafeEndingPoint;
     /// <summary>
     /// Function: GetSafeEndingPoint
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetSafeEndingPoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_ScarecrowWalkAroundBats.GetSafeEndingPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSafeEndingPoint, "BmScript.RBMBehaviour_ScarecrowWalkAroundBats.GetSafeEndingPoint");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Repath;
     /// <summary>
     /// Function: Repath
     /// </summary>
     public unsafe virtual void Repath()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_ScarecrowWalkAroundBats.Repath", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Repath, "BmScript.RBMBehaviour_ScarecrowWalkAroundBats.Repath");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetTargetLocation;
     /// <summary>
     /// Function: GetTargetLocation
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetTargetLocation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_ScarecrowWalkAroundBats.GetTargetLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTargetLocation, "BmScript.RBMBehaviour_ScarecrowWalkAroundBats.GetTargetLocation");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CloseToTargetOrBatmanMoved;
     /// <summary>
     /// Function: CloseToTargetOrBatmanMoved
     /// </summary>
     public unsafe virtual void CloseToTargetOrBatmanMoved()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_ScarecrowWalkAroundBats.CloseToTargetOrBatmanMoved", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CloseToTargetOrBatmanMoved, "BmScript.RBMBehaviour_ScarecrowWalkAroundBats.CloseToTargetOrBatmanMoved");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanBatmanGrab;
     /// <summary>
     /// Function: CanBatmanGrab
     /// </summary>
     public unsafe override BmSDK.BmGame.RBMAIController.BatmanGrabType CanBatmanGrab()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_ScarecrowWalkAroundBats.CanBatmanGrab", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBatmanGrab, "BmScript.RBMBehaviour_ScarecrowWalkAroundBats.CanBatmanGrab");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMAIController.BatmanGrabType>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_AwareOfPlayer;
     /// <summary>
     /// Function: AwareOfPlayer
     /// </summary>
     public unsafe override bool AwareOfPlayer(BmSDK.Engine.Actor Player, BmSDK.Class dmgType = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_ScarecrowWalkAroundBats.AwareOfPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AwareOfPlayer, "BmScript.RBMBehaviour_ScarecrowWalkAroundBats.AwareOfPlayer");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 8);
@@ -202,12 +213,13 @@ public partial class RBMBehaviour_ScarecrowWalkAroundBats : BmSDK.BmGame.RBMBeha
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_ScarecrowWalkAroundBats.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmScript.RBMBehaviour_ScarecrowWalkAroundBats.OnActivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

@@ -78,83 +78,90 @@ public partial class RViewPostProcess : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RViewPostProcess>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Deactivate;
     /// <summary>
     /// Function: Deactivate
     /// </summary>
     public unsafe virtual void Deactivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RViewPostProcess.Deactivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Deactivate, "BmGame.RViewPostProcess.Deactivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetValForVectorOne;
     /// <summary>
     /// Function: SetValForVectorOne
     /// </summary>
     public unsafe virtual void SetValForVectorOne(BmSDK.GameObject.FLinearColor val)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RViewPostProcess.SetValForVectorOne", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetValForVectorOne, "BmGame.RViewPostProcess.SetValForVectorOne");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(val, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetValForScalarThree;
     /// <summary>
     /// Function: SetValForScalarThree
     /// </summary>
     public unsafe virtual void SetValForScalarThree(float val)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RViewPostProcess.SetValForScalarThree", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetValForScalarThree, "BmGame.RViewPostProcess.SetValForScalarThree");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(val, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetValForScalarTwo;
     /// <summary>
     /// Function: SetValForScalarTwo
     /// </summary>
     public unsafe virtual void SetValForScalarTwo(float val)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RViewPostProcess.SetValForScalarTwo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetValForScalarTwo, "BmGame.RViewPostProcess.SetValForScalarTwo");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(val, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetValForScalarOne;
     /// <summary>
     /// Function: SetValForScalarOne
     /// </summary>
     public unsafe virtual void SetValForScalarOne(float val)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RViewPostProcess.SetValForScalarOne", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetValForScalarOne, "BmGame.RViewPostProcess.SetValForScalarOne");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(val, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Activate;
     /// <summary>
     /// Function: Activate
     /// </summary>
     public unsafe virtual void Activate(BmSDK.BmGame.RPlayerController Controller)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RViewPostProcess.Activate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activate, "BmGame.RViewPostProcess.Activate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Controller, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Update;
     /// <summary>
     /// Function: Update
     /// </summary>
     public unsafe virtual void Update(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RViewPostProcess.Update", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Update, "BmGame.RViewPostProcess.Update");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

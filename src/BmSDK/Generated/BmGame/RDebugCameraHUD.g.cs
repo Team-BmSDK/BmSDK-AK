@@ -78,34 +78,37 @@ public partial class RDebugCameraHUD : BmSDK.Engine.HUD, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RDebugCameraHUD>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DrawHUD;
     /// <summary>
     /// Function: DrawHUD
     /// </summary>
     public unsafe override void DrawHUD()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDebugCameraHUD.DrawHUD", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DrawHUD, "BmGame.RDebugCameraHUD.DrawHUD");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostRender;
     /// <summary>
     /// Function: PostRender
     /// </summary>
     public unsafe override void PostRender()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDebugCameraHUD.PostRender", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostRender, "BmGame.RDebugCameraHUD.PostRender");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreRender;
     /// <summary>
     /// Function: PreRender
     /// </summary>
     public unsafe override void PreRender()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDebugCameraHUD.PreRender", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreRender, "BmGame.RDebugCameraHUD.PreRender");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

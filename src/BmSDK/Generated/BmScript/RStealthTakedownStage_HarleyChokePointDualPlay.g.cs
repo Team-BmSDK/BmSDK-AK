@@ -78,12 +78,13 @@ public partial class RStealthTakedownStage_HarleyChokePointDualPlay : BmSDK.BmGa
         where TComponent : class, Framework.IScriptComponent<RStealthTakedownStage_HarleyChokePointDualPlay>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Begin;
     /// <summary>
     /// Function: Begin
     /// </summary>
     public unsafe override void Begin()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RStealthTakedownStage_HarleyChokePointDualPlay.Begin", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Begin, "BmScript.RStealthTakedownStage_HarleyChokePointDualPlay.Begin");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

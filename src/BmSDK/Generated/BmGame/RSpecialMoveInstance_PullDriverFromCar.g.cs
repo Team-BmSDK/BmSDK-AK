@@ -78,158 +78,172 @@ public partial class RSpecialMoveInstance_PullDriverFromCar : BmSDK.BmGame.RSpec
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveInstance_PullDriverFromCar>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_StopAnimFollowingCar;
     /// <summary>
     /// Function: StopAnimFollowingCar
     /// </summary>
     public unsafe virtual void StopAnimFollowingCar()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_PullDriverFromCar.StopAnimFollowingCar", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopAnimFollowingCar, "BmGame.RSpecialMoveInstance_PullDriverFromCar.StopAnimFollowingCar");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_WatchCar;
     /// <summary>
     /// Function: WatchCar
     /// </summary>
     public unsafe virtual void WatchCar()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_PullDriverFromCar.WatchCar", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WatchCar, "BmGame.RSpecialMoveInstance_PullDriverFromCar.WatchCar");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ExplodeBonnet;
     /// <summary>
     /// Function: ExplodeBonnet
     /// </summary>
     public unsafe virtual void ExplodeBonnet()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_PullDriverFromCar.ExplodeBonnet", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ExplodeBonnet, "BmGame.RSpecialMoveInstance_PullDriverFromCar.ExplodeBonnet");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PunchWindowRHand;
     /// <summary>
     /// Function: PunchWindowRHand
     /// </summary>
     public unsafe virtual void PunchWindowRHand()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_PullDriverFromCar.PunchWindowRHand", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PunchWindowRHand, "BmGame.RSpecialMoveInstance_PullDriverFromCar.PunchWindowRHand");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PunchWindowLHand;
     /// <summary>
     /// Function: PunchWindowLHand
     /// </summary>
     public unsafe virtual void PunchWindowLHand()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_PullDriverFromCar.PunchWindowLHand", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PunchWindowLHand, "BmGame.RSpecialMoveInstance_PullDriverFromCar.PunchWindowLHand");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AboutToJumpOff;
     /// <summary>
     /// Function: AboutToJumpOff
     /// </summary>
     public unsafe virtual void AboutToJumpOff()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_PullDriverFromCar.AboutToJumpOff", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AboutToJumpOff, "BmGame.RSpecialMoveInstance_PullDriverFromCar.AboutToJumpOff");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TargetGoRagdoll;
     /// <summary>
     /// Function: TargetGoRagdoll
     /// </summary>
     public unsafe virtual void TargetGoRagdoll()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_PullDriverFromCar.TargetGoRagdoll", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TargetGoRagdoll, "BmGame.RSpecialMoveInstance_PullDriverFromCar.TargetGoRagdoll");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FlipCar;
     /// <summary>
     /// Function: FlipCar
     /// </summary>
     public unsafe virtual void FlipCar()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_PullDriverFromCar.FlipCar", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FlipCar, "BmGame.RSpecialMoveInstance_PullDriverFromCar.FlipCar");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DriverRescued;
     /// <summary>
     /// Function: DriverRescued
     /// </summary>
     public unsafe virtual void DriverRescued()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_PullDriverFromCar.DriverRescued", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DriverRescued, "BmGame.RSpecialMoveInstance_PullDriverFromCar.DriverRescued");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateSpecialMove;
     /// <summary>
     /// Function: UpdateSpecialMove
     /// </summary>
     public unsafe override bool UpdateSpecialMove(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_PullDriverFromCar.UpdateSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateSpecialMove, "BmGame.RSpecialMoveInstance_PullDriverFromCar.UpdateSpecialMove");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_PunchWindow;
     /// <summary>
     /// Function: PunchWindow
     /// </summary>
     public unsafe virtual void PunchWindow(BmSDK.FName BoneName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_PullDriverFromCar.PunchWindow", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PunchWindow, "BmGame.RSpecialMoveInstance_PullDriverFromCar.PunchWindow");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishSpecialMove;
     /// <summary>
     /// Function: FinishSpecialMove
     /// </summary>
     public unsafe override void FinishSpecialMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_PullDriverFromCar.FinishSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishSpecialMove, "BmGame.RSpecialMoveInstance_PullDriverFromCar.FinishSpecialMove");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerSpecialMove;
     /// <summary>
     /// Function: TriggerSpecialMove
     /// </summary>
     public unsafe override void TriggerSpecialMove(BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator MoveLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_PullDriverFromCar.TriggerSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerSpecialMove, "BmGame.RSpecialMoveInstance_PullDriverFromCar.TriggerSpecialMove");
         byte* paramsPtr = stackalloc byte[148];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PickRandomAnim;
     /// <summary>
     /// Function: PickRandomAnim
     /// </summary>
     public unsafe override void PickRandomAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_PullDriverFromCar.PickRandomAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PickRandomAnim, "BmGame.RSpecialMoveInstance_PullDriverFromCar.PickRandomAnim");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

@@ -78,12 +78,13 @@ public partial class RHidePoint_Batmobile : BmSDK.BmGame.RHidePoint, BmSDK.IGame
         where TComponent : class, Framework.IScriptComponent<RHidePoint_Batmobile>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_MovePawnTo;
     /// <summary>
     /// Function: MovePawnTo
     /// </summary>
     public unsafe override void MovePawnTo(BmSDK.Engine.Pawn PawnToMove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHidePoint_Batmobile.MovePawnTo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MovePawnTo, "BmScript.RHidePoint_Batmobile.MovePawnTo");
         byte* paramsPtr = stackalloc byte[148];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PawnToMove, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

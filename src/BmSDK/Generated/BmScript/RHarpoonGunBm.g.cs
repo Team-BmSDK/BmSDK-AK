@@ -78,23 +78,25 @@ public partial class RHarpoonGunBm : BmSDK.BmGame.RHarpoonGun, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RHarpoonGunBm>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ReSpawnProjectile;
     /// <summary>
     /// Function: ReSpawnProjectile
     /// </summary>
     public unsafe override void ReSpawnProjectile()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHarpoonGunBm.ReSpawnProjectile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReSpawnProjectile, "BmScript.RHarpoonGunBm.ReSpawnProjectile");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHarpoonGunBm.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmScript.RHarpoonGunBm.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

@@ -78,23 +78,25 @@ public partial class RAEC_FearDart_Sub_Armed : BmSDK.BmGame.RAlertEventCoordinat
         where TComponent : class, Framework.IScriptComponent<RAEC_FearDart_Sub_Armed>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_StartFinish;
     /// <summary>
     /// Function: StartFinish
     /// </summary>
     public unsafe virtual void StartFinish()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_FearDart_Sub_Armed.StartFinish", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartFinish, "BmGame.RAEC_FearDart_Sub_Armed.StartFinish");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyEvent;
     /// <summary>
     /// Function: NotifyEvent
     /// </summary>
     public unsafe override void NotifyEvent(BmSDK.BmGame.RBMAIAction NotifyAction, BmSDK.FString EventType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_FearDart_Sub_Armed.NotifyEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyEvent, "BmGame.RAEC_FearDart_Sub_Armed.NotifyEvent");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NotifyAction, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventType, paramsPtr + 8);
@@ -102,24 +104,26 @@ public partial class RAEC_FearDart_Sub_Armed : BmSDK.BmGame.RAlertEventCoordinat
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyFinished;
     /// <summary>
     /// Function: NotifyFinished
     /// </summary>
     public unsafe override void NotifyFinished(BmSDK.BmGame.RBMAIAction FinishedAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_FearDart_Sub_Armed.NotifyFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyFinished, "BmGame.RAEC_FearDart_Sub_Armed.NotifyFinished");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FinishedAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnStartChild;
     /// <summary>
     /// Function: OnStartChild
     /// </summary>
     public unsafe override void OnStartChild()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_FearDart_Sub_Armed.OnStartChild", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnStartChild, "BmGame.RAEC_FearDart_Sub_Armed.OnStartChild");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

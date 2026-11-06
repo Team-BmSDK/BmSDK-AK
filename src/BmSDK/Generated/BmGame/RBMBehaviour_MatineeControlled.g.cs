@@ -78,12 +78,13 @@ public partial class RBMBehaviour_MatineeControlled : BmSDK.BmGame.RBMBehaviour_
         where TComponent : class, Framework.IScriptComponent<RBMBehaviour_MatineeControlled>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_AwareOfPlayer;
     /// <summary>
     /// Function: AwareOfPlayer
     /// </summary>
     public unsafe override bool AwareOfPlayer(BmSDK.Engine.Actor Player, BmSDK.Class dmgType = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_MatineeControlled.AwareOfPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AwareOfPlayer, "BmGame.RBMBehaviour_MatineeControlled.AwareOfPlayer");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 8);
@@ -91,23 +92,25 @@ public partial class RBMBehaviour_MatineeControlled : BmSDK.BmGame.RBMBehaviour_
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_CanRepel;
     /// <summary>
     /// Function: CanRepel
     /// </summary>
     public unsafe override bool CanRepel()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_MatineeControlled.CanRepel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanRepel, "BmGame.RBMBehaviour_MatineeControlled.CanRepel");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanBlock;
     /// <summary>
     /// Function: CanBlock
     /// </summary>
     public unsafe override bool CanBlock()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_MatineeControlled.CanBlock", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBlock, "BmGame.RBMBehaviour_MatineeControlled.CanBlock");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

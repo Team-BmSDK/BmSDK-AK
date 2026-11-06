@@ -78,12 +78,13 @@ public partial class RMagBlastLight : BmSDK.Engine.Actor, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RMagBlastLight>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UpdateLight;
     /// <summary>
     /// Function: UpdateLight
     /// </summary>
     public unsafe virtual void UpdateLight(float DeltaTime, System.Numerics.Vector3 Position, float NewRadius, float Power)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RMagBlastLight.UpdateLight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateLight, "BmScript.RMagBlastLight.UpdateLight");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Position, paramsPtr + 4);
@@ -93,23 +94,25 @@ public partial class RMagBlastLight : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_StartLight;
     /// <summary>
     /// Function: StartLight
     /// </summary>
     public unsafe virtual void StartLight()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RMagBlastLight.StartLight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartLight, "BmScript.RMagBlastLight.StartLight");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RMagBlastLight.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmScript.RMagBlastLight.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

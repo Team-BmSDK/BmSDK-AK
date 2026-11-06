@@ -78,12 +78,13 @@ public partial class AkMultipointEmitter : BmSDK.AkAudio.AkEmitter, BmSDK.IGameO
         where TComponent : class, Framework.IScriptComponent<AkMultipointEmitter>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_HandleUnlinkAll;
     /// <summary>
     /// Function: HandleUnlinkAll
     /// </summary>
     public unsafe virtual void HandleUnlinkAll()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkMultipointEmitter.HandleUnlinkAll", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandleUnlinkAll, "AkAudio.AkMultipointEmitter.HandleUnlinkAll");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class AkMultipointEmitter : BmSDK.AkAudio.AkEmitter, BmSDK.IGameO
         return;
     }
 
+    private static BmSDK.Function __fn_HandleUnlink;
     /// <summary>
     /// Function: HandleUnlink
     /// </summary>
     public unsafe virtual bool HandleUnlink(BmSDK.Engine.Actor Target)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkMultipointEmitter.HandleUnlink", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandleUnlink, "AkAudio.AkMultipointEmitter.HandleUnlink");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -115,12 +117,13 @@ public partial class AkMultipointEmitter : BmSDK.AkAudio.AkEmitter, BmSDK.IGameO
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_HandleLink;
     /// <summary>
     /// Function: HandleLink
     /// </summary>
     public unsafe virtual bool HandleLink(BmSDK.Engine.Actor Target)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkMultipointEmitter.HandleLink", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandleLink, "AkAudio.AkMultipointEmitter.HandleLink");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -134,12 +137,13 @@ public partial class AkMultipointEmitter : BmSDK.AkAudio.AkEmitter, BmSDK.IGameO
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_ApplyEmitterSpatial;
     /// <summary>
     /// Function: ApplyEmitterSpatial
     /// </summary>
     public unsafe override void ApplyEmitterSpatial()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkMultipointEmitter.ApplyEmitterSpatial", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyEmitterSpatial, "AkAudio.AkMultipointEmitter.ApplyEmitterSpatial");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -152,12 +156,13 @@ public partial class AkMultipointEmitter : BmSDK.AkAudio.AkEmitter, BmSDK.IGameO
         return;
     }
 
+    private static BmSDK.Function __fn_DisableEmitter;
     /// <summary>
     /// Function: DisableEmitter
     /// </summary>
     public unsafe override void DisableEmitter()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkMultipointEmitter.DisableEmitter", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisableEmitter, "AkAudio.AkMultipointEmitter.DisableEmitter");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -170,12 +175,13 @@ public partial class AkMultipointEmitter : BmSDK.AkAudio.AkEmitter, BmSDK.IGameO
         return;
     }
 
+    private static BmSDK.Function __fn_EnableEmitter;
     /// <summary>
     /// Function: EnableEmitter
     /// </summary>
     public unsafe override void EnableEmitter()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkMultipointEmitter.EnableEmitter", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnableEmitter, "AkAudio.AkMultipointEmitter.EnableEmitter");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -188,12 +194,13 @@ public partial class AkMultipointEmitter : BmSDK.AkAudio.AkEmitter, BmSDK.IGameO
         return;
     }
 
+    private static BmSDK.Function __fn_GetAudioSpatial;
     /// <summary>
     /// Function: GetAudioSpatial
     /// </summary>
     public unsafe override void GetAudioSpatial(out System.Numerics.Vector3 sndPosition, out BmSDK.Rotator sndOrientation, BmSDK.GameObject caller = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkMultipointEmitter.GetAudioSpatial", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAudioSpatial, "AkAudio.AkMultipointEmitter.GetAudioSpatial");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(caller, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
@@ -209,12 +216,13 @@ public partial class AkMultipointEmitter : BmSDK.AkAudio.AkEmitter, BmSDK.IGameO
         return;
     }
 
+    private static BmSDK.Function __fn_GetAkAudible;
     /// <summary>
     /// Function: GetAkAudible
     /// </summary>
     public unsafe override BmSDK.Engine.RAkAudible GetAkAudible(bool allowCreate = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkMultipointEmitter.GetAkAudible", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAkAudible, "AkAudio.AkMultipointEmitter.GetAkAudible");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(allowCreate, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -228,12 +236,13 @@ public partial class AkMultipointEmitter : BmSDK.AkAudio.AkEmitter, BmSDK.IGameO
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.RAkAudible>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_AudibleUpdateSourceCallback;
     /// <summary>
     /// Function: AudibleUpdateSourceCallback
     /// </summary>
     public unsafe override void AudibleUpdateSourceCallback(BmSDK.Engine.RAkAudible akAud, bool hasSource)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkMultipointEmitter.AudibleUpdateSourceCallback", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AudibleUpdateSourceCallback, "AkAudio.AkMultipointEmitter.AudibleUpdateSourceCallback");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(akAud, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(hasSource, paramsPtr + 8);
@@ -248,24 +257,26 @@ public partial class AkMultipointEmitter : BmSDK.AkAudio.AkEmitter, BmSDK.IGameO
         return;
     }
 
+    private static BmSDK.Function __fn_UnlinkToActor;
     /// <summary>
     /// Function: UnlinkToActor
     /// </summary>
     public unsafe override bool UnlinkToActor(BmSDK.Engine.Actor LinkTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkMultipointEmitter.UnlinkToActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnlinkToActor, "AkAudio.AkMultipointEmitter.UnlinkToActor");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkTarget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_LinkToActor;
     /// <summary>
     /// Function: LinkToActor
     /// </summary>
     public unsafe override bool LinkToActor(BmSDK.Engine.Actor LinkTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkMultipointEmitter.LinkToActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LinkToActor, "AkAudio.AkMultipointEmitter.LinkToActor");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkTarget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

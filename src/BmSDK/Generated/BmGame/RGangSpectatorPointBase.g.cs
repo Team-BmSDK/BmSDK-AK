@@ -78,12 +78,13 @@ public partial class RGangSpectatorPointBase : BmSDK.BmGame.RGangInteractPointBa
         where TComponent : class, Framework.IScriptComponent<RGangSpectatorPointBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsValidForPawnSpec;
     /// <summary>
     /// Function: IsValidForPawnSpec
     /// </summary>
     public unsafe override BmSDK.BmGame.RGangInteractPointBase IsValidForPawnSpec(BmSDK.BmGame.RBMPawnAI TestPawn, bool bSkipSpeedTest = default, bool bSkipAngleCheck = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGangSpectatorPointBase.IsValidForPawnSpec", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsValidForPawnSpec, "BmGame.RGangSpectatorPointBase.IsValidForPawnSpec");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSkipSpeedTest, paramsPtr + 8);

@@ -78,34 +78,37 @@ public partial class RFallInWaterCamera : BmSDK.BmGame.RCameraActor, BmSDK.IGame
         where TComponent : class, Framework.IScriptComponent<RFallInWaterCamera>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_AudioStopWater;
     /// <summary>
     /// Function: AudioStopWater
     /// </summary>
     public unsafe virtual void AudioStopWater()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFallInWaterCamera.AudioStopWater", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AudioStopWater, "BmGame.RFallInWaterCamera.AudioStopWater");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AudioStartWater;
     /// <summary>
     /// Function: AudioStartWater
     /// </summary>
     public unsafe virtual void AudioStartWater()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFallInWaterCamera.AudioStartWater", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AudioStartWater, "BmGame.RFallInWaterCamera.AudioStartWater");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateTrackingPosition;
     /// <summary>
     /// Function: UpdateTrackingPosition
     /// </summary>
     public unsafe virtual void UpdateTrackingPosition(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFallInWaterCamera.UpdateTrackingPosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateTrackingPosition, "BmGame.RFallInWaterCamera.UpdateTrackingPosition");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -119,36 +122,39 @@ public partial class RFallInWaterCamera : BmSDK.BmGame.RCameraActor, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFallInWaterCamera.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RFallInWaterCamera.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishWaterCamera;
     /// <summary>
     /// Function: FinishWaterCamera
     /// </summary>
     public unsafe virtual void FinishWaterCamera(bool InstantFinish = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFallInWaterCamera.FinishWaterCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishWaterCamera, "BmGame.RFallInWaterCamera.FinishWaterCamera");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InstantFinish, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetupWaterCamera;
     /// <summary>
     /// Function: SetupWaterCamera
     /// </summary>
     public unsafe virtual void SetupWaterCamera(BmSDK.BmGame.RPlayerController PC, bool bTracking = default, bool bDontPlayWaterSound = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFallInWaterCamera.SetupWaterCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupWaterCamera, "BmGame.RFallInWaterCamera.SetupWaterCamera");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bTracking, paramsPtr + 8);

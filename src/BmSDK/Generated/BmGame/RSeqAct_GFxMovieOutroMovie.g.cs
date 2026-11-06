@@ -78,12 +78,13 @@ public partial class RSeqAct_GFxMovieOutroMovie : BmSDK.Engine.SequenceAction, B
         where TComponent : class, Framework.IScriptComponent<RSeqAct_GFxMovieOutroMovie>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsValidLevelSequenceObject;
     /// <summary>
     /// Function: IsValidLevelSequenceObject
     /// </summary>
     public unsafe override bool IsValidLevelSequenceObject()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_GFxMovieOutroMovie.IsValidLevelSequenceObject", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsValidLevelSequenceObject, "BmGame.RSeqAct_GFxMovieOutroMovie.IsValidLevelSequenceObject");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

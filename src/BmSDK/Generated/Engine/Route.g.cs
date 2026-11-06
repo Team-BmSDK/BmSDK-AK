@@ -78,12 +78,13 @@ public partial class Route : BmSDK.Engine.Info, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<Route>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_MoveOntoRoutePath;
     /// <summary>
     /// Function: MoveOntoRoutePath
     /// </summary>
     public unsafe virtual int MoveOntoRoutePath(BmSDK.Engine.Pawn P, BmSDK.Engine.Route.ERouteDirection RouteDirection = default, float DistFudgeFactor = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Route.MoveOntoRoutePath", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MoveOntoRoutePath, "Engine.Route.MoveOntoRoutePath");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RouteDirection, paramsPtr + 8);
@@ -99,12 +100,13 @@ public partial class Route : BmSDK.Engine.Info, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_ResolveRouteIndex;
     /// <summary>
     /// Function: ResolveRouteIndex
     /// </summary>
     public unsafe virtual int ResolveRouteIndex(int Idx, BmSDK.Engine.Route.ERouteDirection RouteDirection, out byte out_bComplete, out byte out_bReverse)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Route.ResolveRouteIndex", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResolveRouteIndex, "Engine.Route.ResolveRouteIndex");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Idx, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RouteDirection, paramsPtr + 4);

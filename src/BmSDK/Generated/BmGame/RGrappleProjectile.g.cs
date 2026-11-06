@@ -73,35 +73,38 @@ public partial class RGrappleProjectile : BmSDK.BmGame.RProjectileWithRope, BmSD
         where TComponent : class, Framework.IScriptComponent<RGrappleProjectile>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Hide;
     /// <summary>
     /// Function: Hide
     /// </summary>
     public unsafe override void Hide(bool NewHidden)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGrappleProjectile.Hide", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Hide, "BmGame.RGrappleProjectile.Hide");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewHidden, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ReachedDest;
     /// <summary>
     /// Function: ReachedDest
     /// </summary>
     public unsafe override void ReachedDest()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGrappleProjectile.ReachedDest", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReachedDest, "BmGame.RGrappleProjectile.ReachedDest");
         byte* paramsPtr = stackalloc byte[148];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Fire;
     /// <summary>
     /// Function: Fire
     /// </summary>
     public unsafe override void Fire(System.Numerics.Vector3 To)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGrappleProjectile.Fire", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Fire, "BmGame.RGrappleProjectile.Fire");
         byte* paramsPtr = stackalloc byte[72];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(To, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

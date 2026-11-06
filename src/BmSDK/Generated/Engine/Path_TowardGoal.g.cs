@@ -78,23 +78,25 @@ public partial class Path_TowardGoal : BmSDK.Engine.PathConstraint, BmSDK.IGameO
         where TComponent : class, Framework.IScriptComponent<Path_TowardGoal>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Recycle;
     /// <summary>
     /// Function: Recycle
     /// </summary>
     public unsafe override void Recycle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Path_TowardGoal.Recycle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Recycle, "Engine.Path_TowardGoal.Recycle");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TowardGoal;
     /// <summary>
     /// Function: TowardGoal
     /// </summary>
     public unsafe static bool TowardGoal(BmSDK.Engine.Pawn P, BmSDK.Engine.Actor Goal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Path_TowardGoal.TowardGoal", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TowardGoal, "Engine.Path_TowardGoal.TowardGoal");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Goal, paramsPtr + 8);

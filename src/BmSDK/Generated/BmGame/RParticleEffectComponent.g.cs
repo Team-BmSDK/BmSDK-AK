@@ -78,12 +78,13 @@ public partial class RParticleEffectComponent : BmSDK.BmGame.RPawnEffectComponen
         where TComponent : class, Framework.IScriptComponent<RParticleEffectComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Stop;
     /// <summary>
     /// Function: Stop
     /// </summary>
     public unsafe override void Stop(bool bPlayBreakEffect = default, float Delay = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RParticleEffectComponent.Stop", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Stop, "BmGame.RParticleEffectComponent.Stop");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bPlayBreakEffect, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Delay, paramsPtr + 4);
@@ -91,24 +92,26 @@ public partial class RParticleEffectComponent : BmSDK.BmGame.RPawnEffectComponen
         return;
     }
 
+    private static BmSDK.Function __fn_Start;
     /// <summary>
     /// Function: Start
     /// </summary>
     public unsafe override void Start(float fDrawScale = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RParticleEffectComponent.Start", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Start, "BmGame.RParticleEffectComponent.Start");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(fDrawScale, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Deactivate;
     /// <summary>
     /// Function: Deactivate
     /// </summary>
     public unsafe override void Deactivate(bool bIsEarlyInterrupt)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RParticleEffectComponent.Deactivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Deactivate, "BmGame.RParticleEffectComponent.Deactivate");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIsEarlyInterrupt, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

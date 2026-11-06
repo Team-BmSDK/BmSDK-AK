@@ -78,34 +78,37 @@ public partial class RBMBehaviour_DebugGrenadeTrial : BmSDK.BmGame.RBMBehaviour,
         where TComponent : class, Framework.IScriptComponent<RBMBehaviour_DebugGrenadeTrial>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_DebugGrenadeTrial.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmGame.RBMBehaviour_DebugGrenadeTrial.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_DebugKickPoint;
     /// <summary>
     /// Function: DebugKickPoint
     /// </summary>
     public unsafe virtual void DebugKickPoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_DebugGrenadeTrial.DebugKickPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DebugKickPoint, "BmGame.RBMBehaviour_DebugGrenadeTrial.DebugKickPoint");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnGrenade;
     /// <summary>
     /// Function: SpawnGrenade
     /// </summary>
     public unsafe virtual void SpawnGrenade()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_DebugGrenadeTrial.SpawnGrenade", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnGrenade, "BmGame.RBMBehaviour_DebugGrenadeTrial.SpawnGrenade");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

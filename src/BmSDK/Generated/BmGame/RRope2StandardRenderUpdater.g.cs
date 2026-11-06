@@ -78,12 +78,13 @@ public partial class RRope2StandardRenderUpdater : BmSDK.BmGame.RRope2RenderUpda
         where TComponent : class, Framework.IScriptComponent<RRope2StandardRenderUpdater>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetRopeRenderInterpolationScaleTarget;
     /// <summary>
     /// Function: SetRopeRenderInterpolationScaleTarget
     /// </summary>
     public unsafe virtual void SetRopeRenderInterpolationScaleTarget(float NewInterpolationScaleTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRope2StandardRenderUpdater.SetRopeRenderInterpolationScaleTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRopeRenderInterpolationScaleTarget, "BmGame.RRope2StandardRenderUpdater.SetRopeRenderInterpolationScaleTarget");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewInterpolationScaleTarget, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -97,12 +98,13 @@ public partial class RRope2StandardRenderUpdater : BmSDK.BmGame.RRope2RenderUpda
         return;
     }
 
+    private static BmSDK.Function __fn_SetRopeRenderInterpolationScale;
     /// <summary>
     /// Function: SetRopeRenderInterpolationScale
     /// </summary>
     public unsafe virtual void SetRopeRenderInterpolationScale(float NewInterpolationScale)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRope2StandardRenderUpdater.SetRopeRenderInterpolationScale", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRopeRenderInterpolationScale, "BmGame.RRope2StandardRenderUpdater.SetRopeRenderInterpolationScale");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewInterpolationScale, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -116,12 +118,13 @@ public partial class RRope2StandardRenderUpdater : BmSDK.BmGame.RRope2RenderUpda
         return;
     }
 
+    private static BmSDK.Function __fn_SetMaterialOverride;
     /// <summary>
     /// Function: SetMaterialOverride
     /// </summary>
     public unsafe override void SetMaterialOverride(BmSDK.Engine.MaterialInstanceConstant OverrideMat)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRope2StandardRenderUpdater.SetMaterialOverride", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMaterialOverride, "BmGame.RRope2StandardRenderUpdater.SetMaterialOverride");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverrideMat, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

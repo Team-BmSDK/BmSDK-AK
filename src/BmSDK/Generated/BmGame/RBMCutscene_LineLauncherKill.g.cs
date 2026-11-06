@@ -78,92 +78,100 @@ public partial class RBMCutscene_LineLauncherKill : BmSDK.BmGame.RBMCutscene_Cam
         where TComponent : class, Framework.IScriptComponent<RBMCutscene_LineLauncherKill>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetTargetBone;
     /// <summary>
     /// Function: GetTargetBone
     /// </summary>
     public unsafe static BmSDK.FName GetTargetBone()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCutscene_LineLauncherKill.GetTargetBone", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTargetBone, "BmGame.RBMCutscene_LineLauncherKill.GetTargetBone");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanUseCam;
     /// <summary>
     /// Function: CanUseCam
     /// </summary>
     public unsafe static bool CanUseCam(BmSDK.BmGame.RBMCutsceneBase CheckCutscene)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCutscene_LineLauncherKill.CanUseCam", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanUseCam, "BmGame.RBMCutscene_LineLauncherKill.CanUseCam");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckCutscene, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_ResetViewTarget;
     /// <summary>
     /// Function: ResetViewTarget
     /// </summary>
     public unsafe override void ResetViewTarget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCutscene_LineLauncherKill.ResetViewTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetViewTarget, "BmGame.RBMCutscene_LineLauncherKill.ResetViewTarget");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnDeactivate;
     /// <summary>
     /// Function: OnDeactivate
     /// </summary>
     public unsafe override void OnDeactivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCutscene_LineLauncherKill.OnDeactivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeactivate, "BmGame.RBMCutscene_LineLauncherKill.OnDeactivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCutscene_LineLauncherKill.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RBMCutscene_LineLauncherKill.Tick");
         byte* paramsPtr = stackalloc byte[84];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetSlowMoOff;
     /// <summary>
     /// Function: SetSlowMoOff
     /// </summary>
     public unsafe virtual void SetSlowMoOff()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCutscene_LineLauncherKill.SetSlowMoOff", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSlowMoOff, "BmGame.RBMCutscene_LineLauncherKill.SetSlowMoOff");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetSlowMoSpeed;
     /// <summary>
     /// Function: SetSlowMoSpeed
     /// </summary>
     public unsafe virtual void SetSlowMoSpeed(float Speed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCutscene_LineLauncherKill.SetSlowMoSpeed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSlowMoSpeed, "BmGame.RBMCutscene_LineLauncherKill.SetSlowMoSpeed");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speed, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override bool OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCutscene_LineLauncherKill.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMCutscene_LineLauncherKill.OnActivate");
         byte* paramsPtr = stackalloc byte[72];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

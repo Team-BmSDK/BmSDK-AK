@@ -78,45 +78,49 @@ public partial class RDownloadableContentManager : BmSDK.Engine.DownloadableCont
         where TComponent : class, Framework.IScriptComponent<RDownloadableContentManager>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UnloadDLC;
     /// <summary>
     /// Function: UnloadDLC
     /// </summary>
     public unsafe virtual void UnloadDLC()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDownloadableContentManager.UnloadDLC", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnloadDLC, "BmGame.RDownloadableContentManager.UnloadDLC");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RefreshDLCEnumComplete;
     /// <summary>
     /// Function: RefreshDLCEnumComplete
     /// </summary>
     public unsafe override void RefreshDLCEnumComplete()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDownloadableContentManager.RefreshDLCEnumComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RefreshDLCEnumComplete, "BmGame.RDownloadableContentManager.RefreshDLCEnumComplete");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RefreshDLC;
     /// <summary>
     /// Function: RefreshDLC
     /// </summary>
     public unsafe override void RefreshDLC()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDownloadableContentManager.RefreshDLC", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RefreshDLC, "BmGame.RDownloadableContentManager.RefreshDLC");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsScanInProgress;
     /// <summary>
     /// Function: IsScanInProgress
     /// </summary>
     public unsafe virtual bool IsScanInProgress()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDownloadableContentManager.IsScanInProgress", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsScanInProgress, "BmGame.RDownloadableContentManager.IsScanInProgress");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

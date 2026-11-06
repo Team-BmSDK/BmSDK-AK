@@ -78,12 +78,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         where TComponent : class, Framework.IScriptComponent<_OnlineSubsystemSteamworks>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CancelFetchSteamDLC;
     /// <summary>
     /// Function: CancelFetchSteamDLC
     /// </summary>
     public unsafe virtual void CancelFetchSteamDLC(BmSDK.GameObject TargetObject)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CancelFetchSteamDLC", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelFetchSteamDLC, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CancelFetchSteamDLC");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetObject, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -97,12 +98,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_FetchSteamDLC;
     /// <summary>
     /// Function: FetchSteamDLC
     /// </summary>
     public unsafe virtual void FetchSteamDLC(BmSDK.GameObject TargetObject, System.IntPtr cback)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.FetchSteamDLC", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FetchSteamDLC, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.FetchSteamDLC");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetObject, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(cback, paramsPtr + 8);
@@ -117,12 +119,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_SteamDLCCallback;
     /// <summary>
     /// Function: SteamDLCCallback
     /// </summary>
     public unsafe virtual void SteamDLCCallback(bool bWasSuccessful, BmSDK.TArray<BmSDK.IpDrv.OnlineSubsystemCommonImpl.FSteam_PriceInfo> aPrices)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SteamDLCCallback", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SteamDLCCallback, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SteamDLCCallback");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(aPrices, paramsPtr + 4);
@@ -130,12 +133,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_Exit;
     /// <summary>
     /// Function: Exit
     /// </summary>
     public unsafe override void Exit()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.Exit", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Exit, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.Exit");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -148,12 +152,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe override bool Init()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.Init", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.Init");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -166,12 +171,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_OnRequestComplete;
     /// <summary>
     /// Function: OnRequestComplete
     /// </summary>
     public unsafe virtual void OnRequestComplete(BmSDK.Engine.HttpRequestInterface OriginalRequest, BmSDK.Engine.HttpResponseInterface Response, bool bDidSucceed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnRequestComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnRequestComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnRequestComplete");
         byte* paramsPtr = stackalloc byte[72];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OriginalRequest, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Response, paramsPtr + 8);
@@ -180,12 +186,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_WebRequest;
     /// <summary>
     /// Function: WebRequest
     /// </summary>
     public unsafe virtual void WebRequest(BmSDK.FString HttpMethod, BmSDK.FString URL, BmSDK.FString Params = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WebRequest", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WebRequest, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WebRequest");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HttpMethod, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(URL, paramsPtr + 16);
@@ -194,12 +201,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_GetSteamID;
     /// <summary>
     /// Function: GetSteamID
     /// </summary>
     public unsafe virtual BmSDK.FString GetSteamID()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetSteamID", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSteamID, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetSteamID");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -212,36 +220,39 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ClearWriteSharedFileCompleteDelegate;
     /// <summary>
     /// Function: ClearWriteSharedFileCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearWriteSharedFileCompleteDelegate(System.IntPtr WriteSharedFileCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearWriteSharedFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearWriteSharedFileCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearWriteSharedFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WriteSharedFileCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddWriteSharedFileCompleteDelegate;
     /// <summary>
     /// Function: AddWriteSharedFileCompleteDelegate
     /// </summary>
     public unsafe virtual void AddWriteSharedFileCompleteDelegate(System.IntPtr WriteSharedFileCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddWriteSharedFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddWriteSharedFileCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddWriteSharedFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WriteSharedFileCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_WriteSharedFile;
     /// <summary>
     /// Function: WriteSharedFile
     /// </summary>
     public unsafe virtual bool WriteSharedFile(BmSDK.FString UserId, BmSDK.FString Filename, out BmSDK.TArray<byte> Contents)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteSharedFile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WriteSharedFile, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteSharedFile");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UserId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 16);
@@ -257,12 +268,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 48);
     }
 
+    private static BmSDK.Function __fn_OnWriteSharedFileComplete;
     /// <summary>
     /// Function: OnWriteSharedFileComplete
     /// </summary>
     public unsafe virtual void OnWriteSharedFileComplete(bool bWasSuccessful, BmSDK.FString UserId, BmSDK.FString Filename, BmSDK.FString SharedHandle)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnWriteSharedFileComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnWriteSharedFileComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnWriteSharedFileComplete");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UserId, paramsPtr + 4);
@@ -272,36 +284,39 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ClearReadSharedFileCompleteDelegate;
     /// <summary>
     /// Function: ClearReadSharedFileCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearReadSharedFileCompleteDelegate(System.IntPtr ReadSharedFileCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadSharedFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearReadSharedFileCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadSharedFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadSharedFileCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddReadSharedFileCompleteDelegate;
     /// <summary>
     /// Function: AddReadSharedFileCompleteDelegate
     /// </summary>
     public unsafe virtual void AddReadSharedFileCompleteDelegate(System.IntPtr ReadSharedFileCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadSharedFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddReadSharedFileCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadSharedFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadSharedFileCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ReadSharedFile;
     /// <summary>
     /// Function: ReadSharedFile
     /// </summary>
     public unsafe virtual bool ReadSharedFile(BmSDK.FString SharedHandle)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadSharedFile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadSharedFile, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadSharedFile");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SharedHandle, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -315,12 +330,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_OnReadSharedFileComplete;
     /// <summary>
     /// Function: OnReadSharedFileComplete
     /// </summary>
     public unsafe virtual void OnReadSharedFileComplete(bool bWasSuccessful, BmSDK.FString SharedHandle)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadSharedFileComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReadSharedFileComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadSharedFileComplete");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SharedHandle, paramsPtr + 4);
@@ -328,12 +344,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ClearSharedFile;
     /// <summary>
     /// Function: ClearSharedFile
     /// </summary>
     public unsafe virtual bool ClearSharedFile(BmSDK.FString SharedHandle)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearSharedFile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearSharedFile, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearSharedFile");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SharedHandle, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -347,12 +364,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_ClearSharedFiles;
     /// <summary>
     /// Function: ClearSharedFiles
     /// </summary>
     public unsafe virtual bool ClearSharedFiles()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearSharedFiles", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearSharedFiles, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearSharedFiles");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -365,12 +383,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetSharedFileContents;
     /// <summary>
     /// Function: GetSharedFileContents
     /// </summary>
     public unsafe virtual bool GetSharedFileContents(BmSDK.FString SharedHandle, out BmSDK.TArray<byte> FileContents)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetSharedFileContents", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSharedFileContents, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetSharedFileContents");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SharedHandle, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -385,12 +404,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_WriteFileToScatch;
     /// <summary>
     /// Function: WriteFileToScatch
     /// </summary>
     public unsafe virtual bool WriteFileToScatch(byte LocalUserNum, BmSDK.FString Filename, out BmSDK.TArray<byte> FileContents)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteFileToScatch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WriteFileToScatch, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteFileToScatch");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 4);
@@ -406,12 +426,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 36);
     }
 
+    private static BmSDK.Function __fn_ReadFileFromScatch;
     /// <summary>
     /// Function: ReadFileFromScatch
     /// </summary>
     public unsafe virtual bool ReadFileFromScatch(byte LocalUserNum, BmSDK.FString Filename, out BmSDK.TArray<byte> OutFileContents)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadFileFromScatch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadFileFromScatch, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadFileFromScatch");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 4);
@@ -427,23 +448,25 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 36);
     }
 
+    private static BmSDK.Function __fn_ClearAllDelegates;
     /// <summary>
     /// Function: ClearAllDelegates
     /// </summary>
     public unsafe virtual void ClearAllDelegates()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearAllDelegates", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearAllDelegates, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearAllDelegates");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CancelDownloadFileIO;
     /// <summary>
     /// Function: CancelDownloadFileIO
     /// </summary>
     public unsafe virtual void CancelDownloadFileIO()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CancelDownloadFileIO", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelDownloadFileIO, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CancelDownloadFileIO");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -456,36 +479,39 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ClearDeleteDownloadFileCompleteDelegate;
     /// <summary>
     /// Function: ClearDeleteDownloadFileCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearDeleteDownloadFileCompleteDelegate(System.IntPtr DeleteDownloadFileCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearDeleteDownloadFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearDeleteDownloadFileCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearDeleteDownloadFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeleteDownloadFileCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddDeleteDownloadFileCompleteDelegate;
     /// <summary>
     /// Function: AddDeleteDownloadFileCompleteDelegate
     /// </summary>
     public unsafe virtual void AddDeleteDownloadFileCompleteDelegate(System.IntPtr DeleteDownloadFileCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddDeleteDownloadFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddDeleteDownloadFileCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddDeleteDownloadFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeleteDownloadFileCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnDeleteDownloadFileComplete;
     /// <summary>
     /// Function: OnDeleteDownloadFileComplete
     /// </summary>
     public unsafe virtual void OnDeleteDownloadFileComplete(bool bWasSuccessful, BmSDK.FString Filename)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnDeleteDownloadFileComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeleteDownloadFileComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnDeleteDownloadFileComplete");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 4);
@@ -493,12 +519,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_DeleteDownloadFile;
     /// <summary>
     /// Function: DeleteDownloadFile
     /// </summary>
     public unsafe virtual bool DeleteDownloadFile(BmSDK.FString Filename)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DeleteDownloadFile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DeleteDownloadFile, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DeleteDownloadFile");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -512,36 +539,39 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_ClearWriteDownloadFileCompleteDelegate;
     /// <summary>
     /// Function: ClearWriteDownloadFileCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearWriteDownloadFileCompleteDelegate(System.IntPtr WriteDownloadFileCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearWriteDownloadFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearWriteDownloadFileCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearWriteDownloadFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WriteDownloadFileCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddWriteDownloadFileCompleteDelegate;
     /// <summary>
     /// Function: AddWriteDownloadFileCompleteDelegate
     /// </summary>
     public unsafe virtual void AddWriteDownloadFileCompleteDelegate(System.IntPtr WriteDownloadFileCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddWriteDownloadFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddWriteDownloadFileCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddWriteDownloadFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WriteDownloadFileCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnWriteDownloadFileComplete;
     /// <summary>
     /// Function: OnWriteDownloadFileComplete
     /// </summary>
     public unsafe virtual void OnWriteDownloadFileComplete(bool bWasSuccessful, BmSDK.FString Filename, int bytesProcessed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnWriteDownloadFileComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnWriteDownloadFileComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnWriteDownloadFileComplete");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 4);
@@ -550,12 +580,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_WriteDownloadFile;
     /// <summary>
     /// Function: WriteDownloadFile
     /// </summary>
     public unsafe virtual bool WriteDownloadFile(BmSDK.FString Filename, out BmSDK.TArray<byte> FileContents, out BmSDK.FString FileCRC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteDownloadFile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WriteDownloadFile, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteDownloadFile");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -571,36 +602,39 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 48);
     }
 
+    private static BmSDK.Function __fn_ClearReadDownloadFileCompleteDelegate;
     /// <summary>
     /// Function: ClearReadDownloadFileCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearReadDownloadFileCompleteDelegate(System.IntPtr ReadDownloadFileCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadDownloadFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearReadDownloadFileCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadDownloadFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadDownloadFileCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddReadDownloadFileCompleteDelegate;
     /// <summary>
     /// Function: AddReadDownloadFileCompleteDelegate
     /// </summary>
     public unsafe virtual void AddReadDownloadFileCompleteDelegate(System.IntPtr ReadDownloadFileCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadDownloadFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddReadDownloadFileCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadDownloadFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadDownloadFileCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnReadDownloadFileComplete;
     /// <summary>
     /// Function: OnReadDownloadFileComplete
     /// </summary>
     public unsafe virtual void OnReadDownloadFileComplete(bool bWasSuccessful, BmSDK.FString Filename, int bytesProcessed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadDownloadFileComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReadDownloadFileComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadDownloadFileComplete");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 4);
@@ -609,12 +643,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ReadDownloadFile;
     /// <summary>
     /// Function: ReadDownloadFile
     /// </summary>
     public unsafe virtual bool ReadDownloadFile(BmSDK.FString Filename, out BmSDK.TArray<byte> OutFileContents, out BmSDK.FString OutFileCRC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadDownloadFile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadDownloadFile, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadDownloadFile");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -630,12 +665,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 48);
     }
 
+    private static BmSDK.Function __fn_GetDownloadFileSize;
     /// <summary>
     /// Function: GetDownloadFileSize
     /// </summary>
     public unsafe virtual int GetDownloadFileSize(BmSDK.FString Filename, bool KeepHandle = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetDownloadFileSize", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDownloadFileSize, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetDownloadFileSize");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(KeepHandle, paramsPtr + 16);
@@ -650,12 +686,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_EnumerateDownloadFiles;
     /// <summary>
     /// Function: EnumerateDownloadFiles
     /// </summary>
     public unsafe virtual void EnumerateDownloadFiles(out BmSDK.TArray<BmSDK.FString> OutFiles, BmSDK.FString Subfolder)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.EnumerateDownloadFiles", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnumerateDownloadFiles, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.EnumerateDownloadFiles");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Subfolder, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
@@ -670,12 +707,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_EnumerateDownloadFolders;
     /// <summary>
     /// Function: EnumerateDownloadFolders
     /// </summary>
     public unsafe virtual void EnumerateDownloadFolders(out BmSDK.TArray<BmSDK.FString> OutFolders)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.EnumerateDownloadFolders", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnumerateDownloadFolders, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.EnumerateDownloadFolders");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -689,36 +727,39 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ClearDeleteUserFileCompleteDelegate;
     /// <summary>
     /// Function: ClearDeleteUserFileCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearDeleteUserFileCompleteDelegate(System.IntPtr DeleteUserFileCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearDeleteUserFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearDeleteUserFileCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearDeleteUserFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeleteUserFileCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddDeleteUserFileCompleteDelegate;
     /// <summary>
     /// Function: AddDeleteUserFileCompleteDelegate
     /// </summary>
     public unsafe virtual void AddDeleteUserFileCompleteDelegate(System.IntPtr DeleteUserFileCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddDeleteUserFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddDeleteUserFileCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddDeleteUserFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeleteUserFileCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DeleteUserFile;
     /// <summary>
     /// Function: DeleteUserFile
     /// </summary>
     public unsafe virtual bool DeleteUserFile(BmSDK.FString UserId, BmSDK.FString Filename, bool bShouldCloudDelete, bool bShouldLocallyDelete)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DeleteUserFile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DeleteUserFile, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DeleteUserFile");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UserId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 16);
@@ -735,12 +776,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 40);
     }
 
+    private static BmSDK.Function __fn_OnDeleteUserFileComplete;
     /// <summary>
     /// Function: OnDeleteUserFileComplete
     /// </summary>
     public unsafe virtual void OnDeleteUserFileComplete(bool bWasSuccessful, BmSDK.FString UserId, BmSDK.FString Filename)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnDeleteUserFileComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeleteUserFileComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnDeleteUserFileComplete");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UserId, paramsPtr + 4);
@@ -749,36 +791,39 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ClearWriteUserFileCompleteDelegate;
     /// <summary>
     /// Function: ClearWriteUserFileCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearWriteUserFileCompleteDelegate(System.IntPtr WriteUserFileCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearWriteUserFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearWriteUserFileCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearWriteUserFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WriteUserFileCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddWriteUserFileCompleteDelegate;
     /// <summary>
     /// Function: AddWriteUserFileCompleteDelegate
     /// </summary>
     public unsafe virtual void AddWriteUserFileCompleteDelegate(System.IntPtr WriteUserFileCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddWriteUserFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddWriteUserFileCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddWriteUserFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WriteUserFileCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ManageLocalBackups;
     /// <summary>
     /// Function: ManageLocalBackups
     /// </summary>
     public unsafe virtual bool ManageLocalBackups(BmSDK.FString Filename)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ManageLocalBackups", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ManageLocalBackups, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ManageLocalBackups");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -792,12 +837,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_WriteUserFileLocal;
     /// <summary>
     /// Function: WriteUserFileLocal
     /// </summary>
     public unsafe virtual bool WriteUserFileLocal(BmSDK.FString SaveName, out BmSDK.TArray<byte> Contents, bool isSteamBackup)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteUserFileLocal", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WriteUserFileLocal, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteUserFileLocal");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SaveName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(isSteamBackup, paramsPtr + 32);
@@ -813,12 +859,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 36);
     }
 
+    private static BmSDK.Function __fn_WriteUserFile;
     /// <summary>
     /// Function: WriteUserFile
     /// </summary>
     public unsafe virtual bool WriteUserFile(BmSDK.FString UserId, BmSDK.FString Filename, out BmSDK.TArray<byte> FileContents)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteUserFile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WriteUserFile, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteUserFile");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UserId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 16);
@@ -834,12 +881,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 48);
     }
 
+    private static BmSDK.Function __fn_OnWriteUserFileComplete;
     /// <summary>
     /// Function: OnWriteUserFileComplete
     /// </summary>
     public unsafe virtual void OnWriteUserFileComplete(bool bWasSuccessful, BmSDK.FString UserId, BmSDK.FString Filename)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnWriteUserFileComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnWriteUserFileComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnWriteUserFileComplete");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UserId, paramsPtr + 4);
@@ -848,36 +896,39 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ClearReadUserFileCompleteDelegate;
     /// <summary>
     /// Function: ClearReadUserFileCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearReadUserFileCompleteDelegate(System.IntPtr ReadUserFileCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadUserFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearReadUserFileCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadUserFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadUserFileCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddReadUserFileCompleteDelegate;
     /// <summary>
     /// Function: AddReadUserFileCompleteDelegate
     /// </summary>
     public unsafe virtual void AddReadUserFileCompleteDelegate(System.IntPtr ReadUserFileCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadUserFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddReadUserFileCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadUserFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadUserFileCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ReadUserFile;
     /// <summary>
     /// Function: ReadUserFile
     /// </summary>
     public unsafe virtual bool ReadUserFile(BmSDK.FString UserId, BmSDK.FString Filename)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadUserFile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadUserFile, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadUserFile");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UserId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 16);
@@ -892,12 +943,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_OnReadUserFileComplete;
     /// <summary>
     /// Function: OnReadUserFileComplete
     /// </summary>
     public unsafe virtual void OnReadUserFileComplete(bool bWasSuccessful, BmSDK.FString UserId, BmSDK.FString Filename)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadUserFileComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReadUserFileComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadUserFileComplete");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UserId, paramsPtr + 4);
@@ -906,12 +958,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_GetUserFileList;
     /// <summary>
     /// Function: GetUserFileList
     /// </summary>
     public unsafe virtual void GetUserFileList(BmSDK.FString UserId, out BmSDK.TArray<BmSDK.Engine.OnlineSubsystem.FEmsFile> UserFiles)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetUserFileList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetUserFileList, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetUserFileList");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UserId, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -926,36 +979,39 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ClearEnumerateUserFileCompleteDelegate;
     /// <summary>
     /// Function: ClearEnumerateUserFileCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearEnumerateUserFileCompleteDelegate(System.IntPtr EnumerateUserFileCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearEnumerateUserFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearEnumerateUserFileCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearEnumerateUserFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EnumerateUserFileCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddEnumerateUserFileCompleteDelegate;
     /// <summary>
     /// Function: AddEnumerateUserFileCompleteDelegate
     /// </summary>
     public unsafe virtual void AddEnumerateUserFileCompleteDelegate(System.IntPtr EnumerateUserFileCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddEnumerateUserFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddEnumerateUserFileCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddEnumerateUserFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EnumerateUserFileCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EnumerateUserFiles;
     /// <summary>
     /// Function: EnumerateUserFiles
     /// </summary>
     public unsafe virtual void EnumerateUserFiles(BmSDK.FString UserId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.EnumerateUserFiles", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnumerateUserFiles, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.EnumerateUserFiles");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UserId, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -969,12 +1025,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnEnumerateUserFilesComplete;
     /// <summary>
     /// Function: OnEnumerateUserFilesComplete
     /// </summary>
     public unsafe virtual void OnEnumerateUserFilesComplete(bool bWasSuccessful, BmSDK.FString UserId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnEnumerateUserFilesComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnEnumerateUserFilesComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnEnumerateUserFilesComplete");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UserId, paramsPtr + 4);
@@ -982,12 +1039,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ClearFile;
     /// <summary>
     /// Function: ClearFile
     /// </summary>
     public unsafe virtual bool ClearFile(BmSDK.FString UserId, BmSDK.FString Filename)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearFile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearFile, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearFile");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UserId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 16);
@@ -1002,12 +1060,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_ClearFiles;
     /// <summary>
     /// Function: ClearFiles
     /// </summary>
     public unsafe virtual bool ClearFiles(BmSDK.FString UserId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearFiles", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearFiles, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearFiles");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UserId, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1021,12 +1080,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_GetFileContents;
     /// <summary>
     /// Function: GetFileContents
     /// </summary>
     public unsafe virtual bool GetFileContents(BmSDK.FString UserId, BmSDK.FString Filename, out BmSDK.TArray<byte> FileContents)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetFileContents", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFileContents, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetFileContents");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UserId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 16);
@@ -1042,12 +1102,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 48);
     }
 
+    private static BmSDK.Function __fn_NotifyVOIPPlaybackFinished;
     /// <summary>
     /// Function: NotifyVOIPPlaybackFinished
     /// </summary>
     public unsafe virtual void NotifyVOIPPlaybackFinished(BmSDK.Engine.AudioComponent VOIPAudioComponent)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.NotifyVOIPPlaybackFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyVOIPPlaybackFinished, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.NotifyVOIPPlaybackFinished");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VOIPAudioComponent, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1061,36 +1122,39 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnVOIPPlaybackFinished;
     /// <summary>
     /// Function: OnVOIPPlaybackFinished
     /// </summary>
     public unsafe virtual void OnVOIPPlaybackFinished(BmSDK.Engine.AudioComponent AC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnVOIPPlaybackFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnVOIPPlaybackFinished, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnVOIPPlaybackFinished");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UnmuteAll;
     /// <summary>
     /// Function: UnmuteAll
     /// </summary>
     public unsafe virtual bool UnmuteAll(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnmuteAll", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnmuteAll, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnmuteAll");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_MuteAll;
     /// <summary>
     /// Function: MuteAll
     /// </summary>
     public unsafe virtual bool MuteAll(byte LocalUserNum, bool bAllowFriends)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.MuteAll", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MuteAll, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.MuteAll");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAllowFriends, paramsPtr + 4);
@@ -1098,12 +1162,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_SetSpeechRecognitionObject;
     /// <summary>
     /// Function: SetSpeechRecognitionObject
     /// </summary>
     public unsafe virtual bool SetSpeechRecognitionObject(byte LocalUserNum, BmSDK.Engine.SpeechRecognition SpeechRecogObj)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SetSpeechRecognitionObject", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSpeechRecognitionObject, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SetSpeechRecognitionObject");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpeechRecogObj, paramsPtr + 4);
@@ -1118,12 +1183,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_SelectVocabulary;
     /// <summary>
     /// Function: SelectVocabulary
     /// </summary>
     public unsafe virtual bool SelectVocabulary(byte LocalUserNum, int VocabularyId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SelectVocabulary", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SelectVocabulary, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SelectVocabulary");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VocabularyId, paramsPtr + 4);
@@ -1138,12 +1204,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_ClearRecognitionCompleteDelegate;
     /// <summary>
     /// Function: ClearRecognitionCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearRecognitionCompleteDelegate(byte LocalUserNum, System.IntPtr RecognitionDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearRecognitionCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearRecognitionCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearRecognitionCompleteDelegate");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RecognitionDelegate, paramsPtr + 4);
@@ -1151,12 +1218,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddRecognitionCompleteDelegate;
     /// <summary>
     /// Function: AddRecognitionCompleteDelegate
     /// </summary>
     public unsafe virtual void AddRecognitionCompleteDelegate(byte LocalUserNum, System.IntPtr RecognitionDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddRecognitionCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddRecognitionCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddRecognitionCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RecognitionDelegate, paramsPtr + 4);
@@ -1164,23 +1232,25 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnRecognitionComplete;
     /// <summary>
     /// Function: OnRecognitionComplete
     /// </summary>
     public unsafe virtual void OnRecognitionComplete()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnRecognitionComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnRecognitionComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnRecognitionComplete");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetRecognitionResults;
     /// <summary>
     /// Function: GetRecognitionResults
     /// </summary>
     public unsafe virtual bool GetRecognitionResults(byte LocalUserNum, out BmSDK.TArray<BmSDK.Engine.OnlineSubsystem.FSpeechRecognizedWord> Words)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetRecognitionResults", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRecognitionResults, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetRecognitionResults");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1195,12 +1265,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_StopSpeechRecognition;
     /// <summary>
     /// Function: StopSpeechRecognition
     /// </summary>
     public unsafe virtual bool StopSpeechRecognition(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.StopSpeechRecognition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopSpeechRecognition, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.StopSpeechRecognition");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1214,12 +1285,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_StartSpeechRecognition;
     /// <summary>
     /// Function: StartSpeechRecognition
     /// </summary>
     public unsafe virtual bool StartSpeechRecognition(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.StartSpeechRecognition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartSpeechRecognition, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.StartSpeechRecognition");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1233,12 +1305,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_StopNetworkedVoice;
     /// <summary>
     /// Function: StopNetworkedVoice
     /// </summary>
     public unsafe virtual void StopNetworkedVoice(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.StopNetworkedVoice", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopNetworkedVoice, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.StopNetworkedVoice");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1252,12 +1325,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_StartNetworkedVoice;
     /// <summary>
     /// Function: StartNetworkedVoice
     /// </summary>
     public unsafe virtual void StartNetworkedVoice(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.StartNetworkedVoice", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartNetworkedVoice, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.StartNetworkedVoice");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1271,36 +1345,39 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ClearPlayerTalkingDelegate;
     /// <summary>
     /// Function: ClearPlayerTalkingDelegate
     /// </summary>
     public unsafe virtual void ClearPlayerTalkingDelegate(System.IntPtr TalkerDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearPlayerTalkingDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearPlayerTalkingDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearPlayerTalkingDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TalkerDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddPlayerTalkingDelegate;
     /// <summary>
     /// Function: AddPlayerTalkingDelegate
     /// </summary>
     public unsafe virtual void AddPlayerTalkingDelegate(System.IntPtr TalkerDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddPlayerTalkingDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddPlayerTalkingDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddPlayerTalkingDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TalkerDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnPlayerTalkingStateChange;
     /// <summary>
     /// Function: OnPlayerTalkingStateChange
     /// </summary>
     public unsafe virtual void OnPlayerTalkingStateChange(BmSDK.Engine.OnlineSubsystem.FUniqueNetId Player, bool bIsTalking)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnPlayerTalkingStateChange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnPlayerTalkingStateChange, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnPlayerTalkingStateChange");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIsTalking, paramsPtr + 8);
@@ -1308,12 +1385,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_UnmuteRemoteTalker;
     /// <summary>
     /// Function: UnmuteRemoteTalker
     /// </summary>
     public unsafe virtual bool UnmuteRemoteTalker(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.FUniqueNetId PlayerID, bool bIsSystemWide = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnmuteRemoteTalker", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnmuteRemoteTalker, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnmuteRemoteTalker");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerID, paramsPtr + 4);
@@ -1329,12 +1407,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_MuteRemoteTalker;
     /// <summary>
     /// Function: MuteRemoteTalker
     /// </summary>
     public unsafe virtual bool MuteRemoteTalker(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.FUniqueNetId PlayerID, bool bIsSystemWide = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.MuteRemoteTalker", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MuteRemoteTalker, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.MuteRemoteTalker");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerID, paramsPtr + 4);
@@ -1350,12 +1429,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_SetRemoteTalkerPriority;
     /// <summary>
     /// Function: SetRemoteTalkerPriority
     /// </summary>
     public unsafe virtual bool SetRemoteTalkerPriority(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.FUniqueNetId PlayerID, int Priority)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SetRemoteTalkerPriority", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRemoteTalkerPriority, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SetRemoteTalkerPriority");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerID, paramsPtr + 4);
@@ -1371,12 +1451,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_IsHeadsetPresent;
     /// <summary>
     /// Function: IsHeadsetPresent
     /// </summary>
     public unsafe virtual bool IsHeadsetPresent(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsHeadsetPresent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsHeadsetPresent, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsHeadsetPresent");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1390,12 +1471,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_IsRemotePlayerTalking;
     /// <summary>
     /// Function: IsRemotePlayerTalking
     /// </summary>
     public unsafe virtual bool IsRemotePlayerTalking(BmSDK.Engine.OnlineSubsystem.FUniqueNetId PlayerID)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsRemotePlayerTalking", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsRemotePlayerTalking, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsRemotePlayerTalking");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerID, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1409,12 +1491,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_IsLocalPlayerTalking;
     /// <summary>
     /// Function: IsLocalPlayerTalking
     /// </summary>
     public unsafe virtual bool IsLocalPlayerTalking(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsLocalPlayerTalking", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsLocalPlayerTalking, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsLocalPlayerTalking");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1428,12 +1511,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_UnregisterRemoteTalker;
     /// <summary>
     /// Function: UnregisterRemoteTalker
     /// </summary>
     public unsafe virtual bool UnregisterRemoteTalker(BmSDK.Engine.OnlineSubsystem.FUniqueNetId PlayerID)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnregisterRemoteTalker", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnregisterRemoteTalker, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnregisterRemoteTalker");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerID, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1447,12 +1531,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_RegisterRemoteTalker;
     /// <summary>
     /// Function: RegisterRemoteTalker
     /// </summary>
     public unsafe virtual bool RegisterRemoteTalker(BmSDK.Engine.OnlineSubsystem.FUniqueNetId PlayerID)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RegisterRemoteTalker", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterRemoteTalker, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RegisterRemoteTalker");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerID, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1466,12 +1551,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_UnregisterLocalTalker;
     /// <summary>
     /// Function: UnregisterLocalTalker
     /// </summary>
     public unsafe virtual bool UnregisterLocalTalker(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnregisterLocalTalker", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnregisterLocalTalker, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnregisterLocalTalker");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1485,12 +1571,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_RegisterLocalTalker;
     /// <summary>
     /// Function: RegisterLocalTalker
     /// </summary>
     public unsafe virtual bool RegisterLocalTalker(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RegisterLocalTalker", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterLocalTalker, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RegisterLocalTalker");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1504,36 +1591,39 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_ClearRequestTitleFileListCompleteDelegate;
     /// <summary>
     /// Function: ClearRequestTitleFileListCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearRequestTitleFileListCompleteDelegate(System.IntPtr RequestTitleFileListDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearRequestTitleFileListCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearRequestTitleFileListCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearRequestTitleFileListCompleteDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RequestTitleFileListDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddRequestTitleFileListCompleteDelegate;
     /// <summary>
     /// Function: AddRequestTitleFileListCompleteDelegate
     /// </summary>
     public unsafe virtual void AddRequestTitleFileListCompleteDelegate(System.IntPtr RequestTitleFileListDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddRequestTitleFileListCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddRequestTitleFileListCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddRequestTitleFileListCompleteDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RequestTitleFileListDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnRequestTitleFileListComplete;
     /// <summary>
     /// Function: OnRequestTitleFileListComplete
     /// </summary>
     public unsafe virtual void OnRequestTitleFileListComplete(bool bWasSuccessful, BmSDK.FString ResultStr)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnRequestTitleFileListComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnRequestTitleFileListComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnRequestTitleFileListComplete");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ResultStr, paramsPtr + 4);
@@ -1541,58 +1631,63 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_RequestTitleFileList;
     /// <summary>
     /// Function: RequestTitleFileList
     /// </summary>
     public unsafe virtual void RequestTitleFileList()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RequestTitleFileList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RequestTitleFileList, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RequestTitleFileList");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ClearDownloadedFile;
     /// <summary>
     /// Function: ClearDownloadedFile
     /// </summary>
     public unsafe virtual bool ClearDownloadedFile(BmSDK.FString Filename)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearDownloadedFile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearDownloadedFile, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearDownloadedFile");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_ClearDownloadedFiles;
     /// <summary>
     /// Function: ClearDownloadedFiles
     /// </summary>
     public unsafe virtual bool ClearDownloadedFiles()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearDownloadedFiles", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearDownloadedFiles, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearDownloadedFiles");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetTitleFileState;
     /// <summary>
     /// Function: GetTitleFileState
     /// </summary>
     public unsafe virtual BmSDK.Engine.OnlineSubsystem.EOnlineEnumerationReadState GetTitleFileState(BmSDK.FString Filename)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetTitleFileState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTitleFileState, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetTitleFileState");
         byte* paramsPtr = stackalloc byte[17];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineSubsystem.EOnlineEnumerationReadState>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_GetTitleFileContents;
     /// <summary>
     /// Function: GetTitleFileContents
     /// </summary>
     public unsafe virtual bool GetTitleFileContents(BmSDK.FString Filename, out BmSDK.TArray<byte> FileContents)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetTitleFileContents", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTitleFileContents, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetTitleFileContents");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1607,36 +1702,39 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_ClearReadTitleFileCompleteDelegate;
     /// <summary>
     /// Function: ClearReadTitleFileCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearReadTitleFileCompleteDelegate(System.IntPtr ReadTitleFileCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadTitleFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearReadTitleFileCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadTitleFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadTitleFileCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddReadTitleFileCompleteDelegate;
     /// <summary>
     /// Function: AddReadTitleFileCompleteDelegate
     /// </summary>
     public unsafe virtual void AddReadTitleFileCompleteDelegate(System.IntPtr ReadTitleFileCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadTitleFileCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddReadTitleFileCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadTitleFileCompleteDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadTitleFileCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ReadTitleFile;
     /// <summary>
     /// Function: ReadTitleFile
     /// </summary>
     public unsafe virtual bool ReadTitleFile(BmSDK.FString FileToRead)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadTitleFile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadTitleFile, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadTitleFile");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FileToRead, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1650,12 +1748,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_OnReadTitleFileComplete;
     /// <summary>
     /// Function: OnReadTitleFileComplete
     /// </summary>
     public unsafe virtual void OnReadTitleFileComplete(bool bWasSuccessful, BmSDK.FString Filename)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadTitleFileComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReadTitleFileComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadTitleFileComplete");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 4);
@@ -1663,24 +1762,26 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ClearSaveGames;
     /// <summary>
     /// Function: ClearSaveGames
     /// </summary>
     public unsafe virtual bool ClearSaveGames(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearSaveGames", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearSaveGames, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearSaveGames");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_DeleteSaveGame;
     /// <summary>
     /// Function: DeleteSaveGame
     /// </summary>
     public unsafe virtual bool DeleteSaveGame(byte LocalUserNum, int DeviceID, BmSDK.FString FriendlyName, BmSDK.FString Filename)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DeleteSaveGame", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DeleteSaveGame, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DeleteSaveGame");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeviceID, paramsPtr + 4);
@@ -1690,12 +1791,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 40);
     }
 
+    private static BmSDK.Function __fn_ClearWriteSaveGameDataComplete;
     /// <summary>
     /// Function: ClearWriteSaveGameDataComplete
     /// </summary>
     public unsafe virtual void ClearWriteSaveGameDataComplete(byte LocalUserNum, System.IntPtr WriteSaveGameDataCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearWriteSaveGameDataComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearWriteSaveGameDataComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearWriteSaveGameDataComplete");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WriteSaveGameDataCompleteDelegate, paramsPtr + 4);
@@ -1703,12 +1805,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddWriteSaveGameDataComplete;
     /// <summary>
     /// Function: AddWriteSaveGameDataComplete
     /// </summary>
     public unsafe virtual void AddWriteSaveGameDataComplete(byte LocalUserNum, System.IntPtr WriteSaveGameDataCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddWriteSaveGameDataComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddWriteSaveGameDataComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddWriteSaveGameDataComplete");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WriteSaveGameDataCompleteDelegate, paramsPtr + 4);
@@ -1716,12 +1819,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnWriteSaveGameDataComplete;
     /// <summary>
     /// Function: OnWriteSaveGameDataComplete
     /// </summary>
     public unsafe virtual void OnWriteSaveGameDataComplete(bool bWasSuccessful, byte LocalUserNum, int DeviceID, BmSDK.FString FriendlyName, BmSDK.FString Filename, BmSDK.FString SaveFileName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnWriteSaveGameDataComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnWriteSaveGameDataComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnWriteSaveGameDataComplete");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 4);
@@ -1733,12 +1837,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_WriteSaveGameData;
     /// <summary>
     /// Function: WriteSaveGameData
     /// </summary>
     public unsafe virtual bool WriteSaveGameData(byte LocalUserNum, int DeviceID, BmSDK.FString FriendlyName, BmSDK.FString Filename, BmSDK.FString SaveFileName, out BmSDK.TArray<byte> SaveGameData)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteSaveGameData", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WriteSaveGameData, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteSaveGameData");
         byte* paramsPtr = stackalloc byte[76];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeviceID, paramsPtr + 4);
@@ -1750,12 +1855,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 72);
     }
 
+    private static BmSDK.Function __fn_ClearReadSaveGameDataComplete;
     /// <summary>
     /// Function: ClearReadSaveGameDataComplete
     /// </summary>
     public unsafe virtual void ClearReadSaveGameDataComplete(byte LocalUserNum, System.IntPtr ReadSaveGameDataCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadSaveGameDataComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearReadSaveGameDataComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadSaveGameDataComplete");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadSaveGameDataCompleteDelegate, paramsPtr + 4);
@@ -1763,12 +1869,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddReadSaveGameDataComplete;
     /// <summary>
     /// Function: AddReadSaveGameDataComplete
     /// </summary>
     public unsafe virtual void AddReadSaveGameDataComplete(byte LocalUserNum, System.IntPtr ReadSaveGameDataCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadSaveGameDataComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddReadSaveGameDataComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadSaveGameDataComplete");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadSaveGameDataCompleteDelegate, paramsPtr + 4);
@@ -1776,12 +1883,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnReadSaveGameDataComplete;
     /// <summary>
     /// Function: OnReadSaveGameDataComplete
     /// </summary>
     public unsafe virtual void OnReadSaveGameDataComplete(bool bWasSuccessful, byte LocalUserNum, int DeviceID, BmSDK.FString FriendlyName, BmSDK.FString Filename, BmSDK.FString SaveFileName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadSaveGameDataComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReadSaveGameDataComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadSaveGameDataComplete");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 4);
@@ -1793,12 +1901,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_GetSaveGameData;
     /// <summary>
     /// Function: GetSaveGameData
     /// </summary>
     public unsafe virtual bool GetSaveGameData(byte LocalUserNum, int DeviceID, BmSDK.FString FriendlyName, BmSDK.FString Filename, BmSDK.FString SaveFileName, out byte bIsValid, out BmSDK.TArray<byte> SaveGameData)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetSaveGameData", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSaveGameData, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetSaveGameData");
         byte* paramsPtr = stackalloc byte[80];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeviceID, paramsPtr + 4);
@@ -1811,12 +1920,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 76);
     }
 
+    private static BmSDK.Function __fn_ReadSaveGameData;
     /// <summary>
     /// Function: ReadSaveGameData
     /// </summary>
     public unsafe virtual bool ReadSaveGameData(byte LocalUserNum, int DeviceID, BmSDK.FString FriendlyName, BmSDK.FString Filename, BmSDK.FString SaveFileName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadSaveGameData", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadSaveGameData, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadSaveGameData");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeviceID, paramsPtr + 4);
@@ -1827,12 +1937,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 56);
     }
 
+    private static BmSDK.Function __fn_GetAvailableDownloadCounts;
     /// <summary>
     /// Function: GetAvailableDownloadCounts
     /// </summary>
     public unsafe virtual void GetAvailableDownloadCounts(byte LocalUserNum, out int NewDownloads, out int TotalDownloads)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetAvailableDownloadCounts", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAvailableDownloadCounts, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetAvailableDownloadCounts");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -1841,12 +1952,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ClearQueryAvailableDownloadsComplete;
     /// <summary>
     /// Function: ClearQueryAvailableDownloadsComplete
     /// </summary>
     public unsafe virtual void ClearQueryAvailableDownloadsComplete(byte LocalUserNum, System.IntPtr QueryDownloadsDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearQueryAvailableDownloadsComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearQueryAvailableDownloadsComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearQueryAvailableDownloadsComplete");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(QueryDownloadsDelegate, paramsPtr + 4);
@@ -1854,12 +1966,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddQueryAvailableDownloadsComplete;
     /// <summary>
     /// Function: AddQueryAvailableDownloadsComplete
     /// </summary>
     public unsafe virtual void AddQueryAvailableDownloadsComplete(byte LocalUserNum, System.IntPtr QueryDownloadsDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddQueryAvailableDownloadsComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddQueryAvailableDownloadsComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddQueryAvailableDownloadsComplete");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(QueryDownloadsDelegate, paramsPtr + 4);
@@ -1867,24 +1980,26 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnQueryAvailableDownloadsComplete;
     /// <summary>
     /// Function: OnQueryAvailableDownloadsComplete
     /// </summary>
     public unsafe virtual void OnQueryAvailableDownloadsComplete(bool bWasSuccessful)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnQueryAvailableDownloadsComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnQueryAvailableDownloadsComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnQueryAvailableDownloadsComplete");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_QueryAvailableDownloads;
     /// <summary>
     /// Function: QueryAvailableDownloads
     /// </summary>
     public unsafe virtual bool QueryAvailableDownloads(byte LocalUserNum, int CategoryMask = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.QueryAvailableDownloads", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_QueryAvailableDownloads, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.QueryAvailableDownloads");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CategoryMask, paramsPtr + 4);
@@ -1892,24 +2007,26 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_ClearCrossTitleSaveGames;
     /// <summary>
     /// Function: ClearCrossTitleSaveGames
     /// </summary>
     public unsafe virtual bool ClearCrossTitleSaveGames(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearCrossTitleSaveGames", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearCrossTitleSaveGames, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearCrossTitleSaveGames");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_ClearReadCrossTitleSaveGameDataComplete;
     /// <summary>
     /// Function: ClearReadCrossTitleSaveGameDataComplete
     /// </summary>
     public unsafe virtual void ClearReadCrossTitleSaveGameDataComplete(byte LocalUserNum, System.IntPtr ReadSaveGameDataCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadCrossTitleSaveGameDataComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearReadCrossTitleSaveGameDataComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadCrossTitleSaveGameDataComplete");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadSaveGameDataCompleteDelegate, paramsPtr + 4);
@@ -1917,12 +2034,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddReadCrossTitleSaveGameDataComplete;
     /// <summary>
     /// Function: AddReadCrossTitleSaveGameDataComplete
     /// </summary>
     public unsafe virtual void AddReadCrossTitleSaveGameDataComplete(byte LocalUserNum, System.IntPtr ReadSaveGameDataCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadCrossTitleSaveGameDataComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddReadCrossTitleSaveGameDataComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadCrossTitleSaveGameDataComplete");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadSaveGameDataCompleteDelegate, paramsPtr + 4);
@@ -1930,12 +2048,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnReadCrossTitleSaveGameDataComplete;
     /// <summary>
     /// Function: OnReadCrossTitleSaveGameDataComplete
     /// </summary>
     public unsafe virtual void OnReadCrossTitleSaveGameDataComplete(bool bWasSuccessful, byte LocalUserNum, int DeviceID, int TitleId, BmSDK.FString FriendlyName, BmSDK.FString Filename, BmSDK.FString SaveFileName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadCrossTitleSaveGameDataComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReadCrossTitleSaveGameDataComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadCrossTitleSaveGameDataComplete");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 4);
@@ -1948,12 +2067,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_GetCrossTitleSaveGameData;
     /// <summary>
     /// Function: GetCrossTitleSaveGameData
     /// </summary>
     public unsafe virtual bool GetCrossTitleSaveGameData(byte LocalUserNum, int DeviceID, int TitleId, BmSDK.FString FriendlyName, BmSDK.FString Filename, BmSDK.FString SaveFileName, out byte bIsValid, out BmSDK.TArray<byte> SaveGameData)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCrossTitleSaveGameData", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCrossTitleSaveGameData, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCrossTitleSaveGameData");
         byte* paramsPtr = stackalloc byte[84];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeviceID, paramsPtr + 4);
@@ -1967,12 +2087,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 80);
     }
 
+    private static BmSDK.Function __fn_ReadCrossTitleSaveGameData;
     /// <summary>
     /// Function: ReadCrossTitleSaveGameData
     /// </summary>
     public unsafe virtual bool ReadCrossTitleSaveGameData(byte LocalUserNum, int DeviceID, int TitleId, BmSDK.FString FriendlyName, BmSDK.FString Filename, BmSDK.FString SaveFileName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadCrossTitleSaveGameData", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadCrossTitleSaveGameData, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadCrossTitleSaveGameData");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeviceID, paramsPtr + 4);
@@ -1984,12 +2105,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 60);
     }
 
+    private static BmSDK.Function __fn_ClearReadCrossTitleContentCompleteDelegate;
     /// <summary>
     /// Function: ClearReadCrossTitleContentCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearReadCrossTitleContentCompleteDelegate(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.EOnlineContentType ContentType, System.IntPtr ReadContentCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadCrossTitleContentCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearReadCrossTitleContentCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadCrossTitleContentCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ContentType, paramsPtr + 1);
@@ -1998,12 +2120,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddReadCrossTitleContentCompleteDelegate;
     /// <summary>
     /// Function: AddReadCrossTitleContentCompleteDelegate
     /// </summary>
     public unsafe virtual void AddReadCrossTitleContentCompleteDelegate(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.EOnlineContentType ContentType, System.IntPtr ReadContentCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadCrossTitleContentCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddReadCrossTitleContentCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadCrossTitleContentCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ContentType, paramsPtr + 1);
@@ -2012,24 +2135,26 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnReadCrossTitleContentComplete;
     /// <summary>
     /// Function: OnReadCrossTitleContentComplete
     /// </summary>
     public unsafe virtual void OnReadCrossTitleContentComplete(bool bWasSuccessful)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadCrossTitleContentComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReadCrossTitleContentComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadCrossTitleContentComplete");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetCrossTitleContentList;
     /// <summary>
     /// Function: GetCrossTitleContentList
     /// </summary>
     public unsafe virtual BmSDK.Engine.OnlineSubsystem.EOnlineEnumerationReadState GetCrossTitleContentList(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.EOnlineContentType ContentType, out BmSDK.TArray<BmSDK.Engine.OnlineSubsystem.FOnlineCrossTitleContent> ContentList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCrossTitleContentList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCrossTitleContentList, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCrossTitleContentList");
         byte* paramsPtr = stackalloc byte[21];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ContentType, paramsPtr + 1);
@@ -2038,12 +2163,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineSubsystem.EOnlineEnumerationReadState>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_ClearCrossTitleContentList;
     /// <summary>
     /// Function: ClearCrossTitleContentList
     /// </summary>
     public unsafe virtual void ClearCrossTitleContentList(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.EOnlineContentType ContentType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearCrossTitleContentList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearCrossTitleContentList, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearCrossTitleContentList");
         byte* paramsPtr = stackalloc byte[2];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ContentType, paramsPtr + 1);
@@ -2051,12 +2177,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ReadCrossTitleContentList;
     /// <summary>
     /// Function: ReadCrossTitleContentList
     /// </summary>
     public unsafe virtual bool ReadCrossTitleContentList(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.EOnlineContentType ContentType, int TitleId = default, int DeviceID = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadCrossTitleContentList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadCrossTitleContentList, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadCrossTitleContentList");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ContentType, paramsPtr + 1);
@@ -2066,12 +2193,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_GetUserLanguage;
     /// <summary>
     /// Function: GetUserLanguage
     /// </summary>
     public unsafe virtual BmSDK.FString GetUserLanguage()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetUserLanguage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetUserLanguage, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetUserLanguage");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2084,12 +2212,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetUserCountryCode;
     /// <summary>
     /// Function: GetUserCountryCode
     /// </summary>
     public unsafe virtual BmSDK.FString GetUserCountryCode()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetUserCountryCode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetUserCountryCode, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetUserCountryCode");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2102,24 +2231,26 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ShowPS4DownloadList;
     /// <summary>
     /// Function: ShowPS4DownloadList
     /// </summary>
     public unsafe virtual void ShowPS4DownloadList(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowPS4DownloadList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowPS4DownloadList, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowPS4DownloadList");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShowPS4StoreIcon;
     /// <summary>
     /// Function: ShowPS4StoreIcon
     /// </summary>
     public unsafe virtual void ShowPS4StoreIcon(bool bShow, int Position = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowPS4StoreIcon", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowPS4StoreIcon, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowPS4StoreIcon");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bShow, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Position, paramsPtr + 4);
@@ -2127,12 +2258,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_BrowseInGameStoreItem;
     /// <summary>
     /// Function: BrowseInGameStoreItem
     /// </summary>
     public unsafe virtual void BrowseInGameStoreItem(byte LocalUserNum, BmSDK.FString ItemId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.BrowseInGameStoreItem", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BrowseInGameStoreItem, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.BrowseInGameStoreItem");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ItemId, paramsPtr + 4);
@@ -2147,12 +2279,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_PurchaseInGameStoreItem;
     /// <summary>
     /// Function: PurchaseInGameStoreItem
     /// </summary>
     public unsafe virtual void PurchaseInGameStoreItem(byte LocalUserNum, BmSDK.FString ItemId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.PurchaseInGameStoreItem", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PurchaseInGameStoreItem, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.PurchaseInGameStoreItem");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ItemId, paramsPtr + 4);
@@ -2167,12 +2300,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ClearPurchaseInGameStoreContentComplete;
     /// <summary>
     /// Function: ClearPurchaseInGameStoreContentComplete
     /// </summary>
     public unsafe virtual void ClearPurchaseInGameStoreContentComplete(byte LocalUserNum, System.IntPtr PurchaseInGameStoreContentComplete)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearPurchaseInGameStoreContentComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearPurchaseInGameStoreContentComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearPurchaseInGameStoreContentComplete");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PurchaseInGameStoreContentComplete, paramsPtr + 4);
@@ -2180,12 +2314,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddPurchaseInGameStoreContentComplete;
     /// <summary>
     /// Function: AddPurchaseInGameStoreContentComplete
     /// </summary>
     public unsafe virtual void AddPurchaseInGameStoreContentComplete(byte LocalUserNum, System.IntPtr PurchaseInGameStoreContentComplete)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddPurchaseInGameStoreContentComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddPurchaseInGameStoreContentComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddPurchaseInGameStoreContentComplete");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PurchaseInGameStoreContentComplete, paramsPtr + 4);
@@ -2193,24 +2328,26 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnPurchaseInGameStoreContentComplete;
     /// <summary>
     /// Function: OnPurchaseInGameStoreContentComplete
     /// </summary>
     public unsafe virtual void OnPurchaseInGameStoreContentComplete(bool bWasSuccessful)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnPurchaseInGameStoreContentComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnPurchaseInGameStoreContentComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnPurchaseInGameStoreContentComplete");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetInGameStoreContentList;
     /// <summary>
     /// Function: GetInGameStoreContentList
     /// </summary>
     public unsafe virtual void GetInGameStoreContentList(byte LocalUserNum, out BmSDK.TArray<BmSDK.Engine.OnlineSubsystem.FOnlineStoreContent> ContentList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetInGameStoreContentList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetInGameStoreContentList, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetInGameStoreContentList");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2225,12 +2362,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ReadInGameStoreContentList;
     /// <summary>
     /// Function: ReadInGameStoreContentList
     /// </summary>
     public unsafe virtual bool ReadInGameStoreContentList(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadInGameStoreContentList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadInGameStoreContentList, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadInGameStoreContentList");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2244,12 +2382,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_ClearInGameStoreContentList;
     /// <summary>
     /// Function: ClearInGameStoreContentList
     /// </summary>
     public unsafe virtual void ClearInGameStoreContentList(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearInGameStoreContentList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearInGameStoreContentList, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearInGameStoreContentList");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2263,12 +2402,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ClearReadInGameStoreContentComplete;
     /// <summary>
     /// Function: ClearReadInGameStoreContentComplete
     /// </summary>
     public unsafe virtual void ClearReadInGameStoreContentComplete(byte LocalUserNum, System.IntPtr ReadInGameStoreContentComplete)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadInGameStoreContentComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearReadInGameStoreContentComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadInGameStoreContentComplete");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadInGameStoreContentComplete, paramsPtr + 4);
@@ -2276,12 +2416,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddReadInGameStoreContentComplete;
     /// <summary>
     /// Function: AddReadInGameStoreContentComplete
     /// </summary>
     public unsafe virtual void AddReadInGameStoreContentComplete(byte LocalUserNum, System.IntPtr ReadInGameStoreContentComplete)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadInGameStoreContentComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddReadInGameStoreContentComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadInGameStoreContentComplete");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadInGameStoreContentComplete, paramsPtr + 4);
@@ -2289,59 +2430,64 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnReadInGameStoreContentComplete;
     /// <summary>
     /// Function: OnReadInGameStoreContentComplete
     /// </summary>
     public unsafe virtual void OnReadInGameStoreContentComplete(bool bWasSuccessful)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadInGameStoreContentComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReadInGameStoreContentComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadInGameStoreContentComplete");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ClearContentStatusChangeDelegate;
     /// <summary>
     /// Function: ClearContentStatusChangeDelegate
     /// </summary>
     public unsafe virtual void ClearContentStatusChangeDelegate(System.IntPtr ContentStatusChangeDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearContentStatusChangeDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearContentStatusChangeDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearContentStatusChangeDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ContentStatusChangeDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddContentStatusChangeDelegate;
     /// <summary>
     /// Function: AddContentStatusChangeDelegate
     /// </summary>
     public unsafe virtual void AddContentStatusChangeDelegate(System.IntPtr ContentStatusChangeDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddContentStatusChangeDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddContentStatusChangeDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddContentStatusChangeDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ContentStatusChangeDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnContentStatusChange;
     /// <summary>
     /// Function: OnContentStatusChange
     /// </summary>
     public unsafe virtual void OnContentStatusChange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnContentStatusChange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnContentStatusChange, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnContentStatusChange");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetContentList;
     /// <summary>
     /// Function: GetContentList
     /// </summary>
     public unsafe virtual BmSDK.Engine.OnlineSubsystem.EOnlineEnumerationReadState GetContentList(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.EOnlineContentType ContentType, out BmSDK.TArray<BmSDK.Engine.OnlineSubsystem.FOnlineContent> ContentList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetContentList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetContentList, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetContentList");
         byte* paramsPtr = stackalloc byte[21];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ContentType, paramsPtr + 1);
@@ -2350,12 +2496,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineSubsystem.EOnlineEnumerationReadState>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_ClearContentList;
     /// <summary>
     /// Function: ClearContentList
     /// </summary>
     public unsafe virtual void ClearContentList(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.EOnlineContentType ContentType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearContentList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearContentList, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearContentList");
         byte* paramsPtr = stackalloc byte[2];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ContentType, paramsPtr + 1);
@@ -2370,12 +2517,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ReadContentList;
     /// <summary>
     /// Function: ReadContentList
     /// </summary>
     public unsafe virtual bool ReadContentList(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.EOnlineContentType ContentType, int DeviceID = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadContentList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadContentList, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadContentList");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ContentType, paramsPtr + 1);
@@ -2391,12 +2539,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_HasContentUpdated;
     /// <summary>
     /// Function: HasContentUpdated
     /// </summary>
     public unsafe virtual bool HasContentUpdated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.HasContentUpdated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasContentUpdated, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.HasContentUpdated");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2409,12 +2558,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ClearReadContentComplete;
     /// <summary>
     /// Function: ClearReadContentComplete
     /// </summary>
     public unsafe virtual void ClearReadContentComplete(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.EOnlineContentType ContentType, System.IntPtr ReadContentCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadContentComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearReadContentComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadContentComplete");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ContentType, paramsPtr + 1);
@@ -2423,12 +2573,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddReadContentComplete;
     /// <summary>
     /// Function: AddReadContentComplete
     /// </summary>
     public unsafe virtual void AddReadContentComplete(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.EOnlineContentType ContentType, System.IntPtr ReadContentCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadContentComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddReadContentComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadContentComplete");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ContentType, paramsPtr + 1);
@@ -2437,24 +2588,26 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnReadContentComplete;
     /// <summary>
     /// Function: OnReadContentComplete
     /// </summary>
     public unsafe virtual void OnReadContentComplete(bool bWasSuccessful)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadContentComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReadContentComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadContentComplete");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ClearContentChangeDelegate;
     /// <summary>
     /// Function: ClearContentChangeDelegate
     /// </summary>
     public unsafe virtual void ClearContentChangeDelegate(System.IntPtr ContentDelegate, byte LocalUserNum = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearContentChangeDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearContentChangeDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearContentChangeDelegate");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ContentDelegate, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 16);
@@ -2462,12 +2615,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddContentChangeDelegate;
     /// <summary>
     /// Function: AddContentChangeDelegate
     /// </summary>
     public unsafe virtual void AddContentChangeDelegate(System.IntPtr ContentDelegate, byte LocalUserNum = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddContentChangeDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddContentChangeDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddContentChangeDelegate");
         byte* paramsPtr = stackalloc byte[17];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ContentDelegate, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 16);
@@ -2475,23 +2629,25 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnContentChange;
     /// <summary>
     /// Function: OnContentChange
     /// </summary>
     public unsafe virtual void OnContentChange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnContentChange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnContentChange, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnContentChange");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CalcAggregateSkill;
     /// <summary>
     /// Function: CalcAggregateSkill
     /// </summary>
     public unsafe virtual void CalcAggregateSkill(BmSDK.TArray<double> Mus, BmSDK.TArray<double> Sigmas, out double OutAggregateMu, out double OutAggregateSigma)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CalcAggregateSkill", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalcAggregateSkill, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CalcAggregateSkill");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Mus, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Sigmas, paramsPtr + 16);
@@ -2501,12 +2657,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_RegisterStatGuid;
     /// <summary>
     /// Function: RegisterStatGuid
     /// </summary>
     public unsafe virtual bool RegisterStatGuid(BmSDK.Engine.OnlineSubsystem.FUniqueNetId PlayerID, out BmSDK.FString ClientStatGuid)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RegisterStatGuid", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterStatGuid, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RegisterStatGuid");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerID, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2521,12 +2678,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_GetClientStatGuid;
     /// <summary>
     /// Function: GetClientStatGuid
     /// </summary>
     public unsafe virtual BmSDK.FString GetClientStatGuid()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetClientStatGuid", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetClientStatGuid, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetClientStatGuid");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2539,48 +2697,52 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ClearRegisterHostStatGuidCompleteDelegateDelegate;
     /// <summary>
     /// Function: ClearRegisterHostStatGuidCompleteDelegateDelegate
     /// </summary>
     public unsafe virtual void ClearRegisterHostStatGuidCompleteDelegateDelegate(System.IntPtr RegisterHostStatGuidCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearRegisterHostStatGuidCompleteDelegateDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearRegisterHostStatGuidCompleteDelegateDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearRegisterHostStatGuidCompleteDelegateDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RegisterHostStatGuidCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddRegisterHostStatGuidCompleteDelegate;
     /// <summary>
     /// Function: AddRegisterHostStatGuidCompleteDelegate
     /// </summary>
     public unsafe virtual void AddRegisterHostStatGuidCompleteDelegate(System.IntPtr RegisterHostStatGuidCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddRegisterHostStatGuidCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddRegisterHostStatGuidCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddRegisterHostStatGuidCompleteDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RegisterHostStatGuidCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnRegisterHostStatGuidComplete;
     /// <summary>
     /// Function: OnRegisterHostStatGuidComplete
     /// </summary>
     public unsafe virtual void OnRegisterHostStatGuidComplete(bool bWasSuccessful)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnRegisterHostStatGuidComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnRegisterHostStatGuidComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnRegisterHostStatGuidComplete");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RegisterHostStatGuid;
     /// <summary>
     /// Function: RegisterHostStatGuid
     /// </summary>
     public unsafe virtual bool RegisterHostStatGuid(out BmSDK.FString HostStatGuid)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RegisterHostStatGuid", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterHostStatGuid, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RegisterHostStatGuid");
         byte* paramsPtr = stackalloc byte[20];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2594,12 +2756,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_GetHostStatGuid;
     /// <summary>
     /// Function: GetHostStatGuid
     /// </summary>
     public unsafe virtual BmSDK.FString GetHostStatGuid()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetHostStatGuid", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHostStatGuid, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetHostStatGuid");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2612,12 +2775,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_WriteOnlinePlayerScores;
     /// <summary>
     /// Function: WriteOnlinePlayerScores
     /// </summary>
     public unsafe virtual bool WriteOnlinePlayerScores(BmSDK.FName SessionName, int LeaderboardId, out BmSDK.TArray<BmSDK.Engine.OnlineSubsystem.FOnlinePlayerScore> PlayerScores)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteOnlinePlayerScores", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WriteOnlinePlayerScores, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteOnlinePlayerScores");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SessionName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LeaderboardId, paramsPtr + 8);
@@ -2633,12 +2797,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_CreateLeaderboard;
     /// <summary>
     /// Function: CreateLeaderboard
     /// </summary>
     public unsafe virtual bool CreateLeaderboard(BmSDK.FString LeaderboardName, BmSDK.OnlineSubsystemSteamworks._OnlineSubsystemSteamworks.ELeaderboardSortType SortType, BmSDK.OnlineSubsystemSteamworks._OnlineSubsystemSteamworks.ELeaderboardFormat DisplayFormat)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CreateLeaderboard", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateLeaderboard, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CreateLeaderboard");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LeaderboardName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SortType, paramsPtr + 16);
@@ -2654,12 +2819,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_ResetStats;
     /// <summary>
     /// Function: ResetStats
     /// </summary>
     public unsafe virtual bool ResetStats(bool bResetAchievements)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ResetStats", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetStats, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ResetStats");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bResetAchievements, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2673,36 +2839,39 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_ClearFlushOnlineStatsCompleteDelegate;
     /// <summary>
     /// Function: ClearFlushOnlineStatsCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearFlushOnlineStatsCompleteDelegate(System.IntPtr FlushOnlineStatsCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearFlushOnlineStatsCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearFlushOnlineStatsCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearFlushOnlineStatsCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FlushOnlineStatsCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddFlushOnlineStatsCompleteDelegate;
     /// <summary>
     /// Function: AddFlushOnlineStatsCompleteDelegate
     /// </summary>
     public unsafe virtual void AddFlushOnlineStatsCompleteDelegate(System.IntPtr FlushOnlineStatsCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFlushOnlineStatsCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddFlushOnlineStatsCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFlushOnlineStatsCompleteDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FlushOnlineStatsCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnFlushOnlineStatsComplete;
     /// <summary>
     /// Function: OnFlushOnlineStatsComplete
     /// </summary>
     public unsafe virtual void OnFlushOnlineStatsComplete(BmSDK.FName SessionName, bool bWasSuccessful)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnFlushOnlineStatsComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnFlushOnlineStatsComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnFlushOnlineStatsComplete");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SessionName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 8);
@@ -2710,12 +2879,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_FlushOnlineStats;
     /// <summary>
     /// Function: FlushOnlineStats
     /// </summary>
     public unsafe virtual bool FlushOnlineStats(BmSDK.FName SessionName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.FlushOnlineStats", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FlushOnlineStats, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.FlushOnlineStats");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SessionName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2729,12 +2899,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_WriteOnlineStats;
     /// <summary>
     /// Function: WriteOnlineStats
     /// </summary>
     public unsafe virtual bool WriteOnlineStats(BmSDK.FName SessionName, BmSDK.Engine.OnlineSubsystem.FUniqueNetId Player, BmSDK.Engine.OnlineStatsWrite StatsWrite)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteOnlineStats", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WriteOnlineStats, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteOnlineStats");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SessionName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 8);
@@ -2750,12 +2921,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_FreeStats;
     /// <summary>
     /// Function: FreeStats
     /// </summary>
     public unsafe virtual void FreeStats(BmSDK.Engine.OnlineStatsRead StatsRead)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.FreeStats", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FreeStats, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.FreeStats");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StatsRead, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2769,48 +2941,52 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ClearReadOnlineStatsCompleteDelegate;
     /// <summary>
     /// Function: ClearReadOnlineStatsCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearReadOnlineStatsCompleteDelegate(System.IntPtr ReadOnlineStatsCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadOnlineStatsCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearReadOnlineStatsCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadOnlineStatsCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadOnlineStatsCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddReadOnlineStatsCompleteDelegate;
     /// <summary>
     /// Function: AddReadOnlineStatsCompleteDelegate
     /// </summary>
     public unsafe virtual void AddReadOnlineStatsCompleteDelegate(System.IntPtr ReadOnlineStatsCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadOnlineStatsCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddReadOnlineStatsCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadOnlineStatsCompleteDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadOnlineStatsCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnReadOnlineStatsComplete;
     /// <summary>
     /// Function: OnReadOnlineStatsComplete
     /// </summary>
     public unsafe virtual void OnReadOnlineStatsComplete(bool bWasSuccessful)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadOnlineStatsComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReadOnlineStatsComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadOnlineStatsComplete");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ReadOnlineStatsByRankAroundPlayer;
     /// <summary>
     /// Function: ReadOnlineStatsByRankAroundPlayer
     /// </summary>
     public unsafe virtual bool ReadOnlineStatsByRankAroundPlayer(byte LocalUserNum, BmSDK.Engine.OnlineStatsRead StatsRead, int NumRows = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadOnlineStatsByRankAroundPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadOnlineStatsByRankAroundPlayer, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadOnlineStatsByRankAroundPlayer");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StatsRead, paramsPtr + 4);
@@ -2826,12 +3002,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_ReadOnlineStatsByRank;
     /// <summary>
     /// Function: ReadOnlineStatsByRank
     /// </summary>
     public unsafe virtual bool ReadOnlineStatsByRank(BmSDK.Engine.OnlineStatsRead StatsRead, int StartIndex = default, int NumToRead = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadOnlineStatsByRank", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadOnlineStatsByRank, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadOnlineStatsByRank");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StatsRead, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartIndex, paramsPtr + 8);
@@ -2847,12 +3024,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_ReadOnlineStatsForFriends;
     /// <summary>
     /// Function: ReadOnlineStatsForFriends
     /// </summary>
     public unsafe virtual bool ReadOnlineStatsForFriends(byte LocalUserNum, BmSDK.Engine.OnlineStatsRead StatsRead)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadOnlineStatsForFriends", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadOnlineStatsForFriends, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadOnlineStatsForFriends");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StatsRead, paramsPtr + 4);
@@ -2867,12 +3045,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_ReadOnlineStats;
     /// <summary>
     /// Function: ReadOnlineStats
     /// </summary>
     public unsafe virtual bool ReadOnlineStats(out BmSDK.TArray<BmSDK.Engine.OnlineSubsystem.FUniqueNetId> Players, BmSDK.Engine.OnlineStatsRead StatsRead)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadOnlineStats", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadOnlineStats, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadOnlineStats");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StatsRead, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2887,12 +3066,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_DebugWriteLBForUser;
     /// <summary>
     /// Function: DebugWriteLBForUser
     /// </summary>
     public unsafe virtual void DebugWriteLBForUser(BmSDK.FString User, int BoardID, int RankValue, BmSDK.TArray<int> StatsArray)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DebugWriteLBForUser", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DebugWriteLBForUser, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DebugWriteLBForUser");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(User, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoardID, paramsPtr + 16);
@@ -2902,12 +3082,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_DropOnlineStatsRead;
     /// <summary>
     /// Function: DropOnlineStatsRead
     /// </summary>
     public unsafe virtual void DropOnlineStatsRead()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DropOnlineStatsRead", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DropOnlineStatsRead, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DropOnlineStatsRead");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2920,24 +3101,26 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ResetOnlineStatsForAllUsers;
     /// <summary>
     /// Function: ResetOnlineStatsForAllUsers
     /// </summary>
     public unsafe virtual bool ResetOnlineStatsForAllUsers(int BoardID)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ResetOnlineStatsForAllUsers", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetOnlineStatsForAllUsers, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ResetOnlineStatsForAllUsers");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoardID, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_ResetOnlineStatsForUser;
     /// <summary>
     /// Function: ResetOnlineStatsForUser
     /// </summary>
     public unsafe virtual bool ResetOnlineStatsForUser(byte LocalUserNum, int BoardID)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ResetOnlineStatsForUser", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetOnlineStatsForUser, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ResetOnlineStatsForUser");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoardID, paramsPtr + 4);
@@ -2945,24 +3128,26 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetLocalAccountNames;
     /// <summary>
     /// Function: GetLocalAccountNames
     /// </summary>
     public unsafe virtual bool GetLocalAccountNames(out BmSDK.TArray<BmSDK.FString> Accounts)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetLocalAccountNames", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLocalAccountNames, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetLocalAccountNames");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Accounts = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_DeleteLocalAccount;
     /// <summary>
     /// Function: DeleteLocalAccount
     /// </summary>
     public unsafe virtual bool DeleteLocalAccount(BmSDK.FString UserName, BmSDK.FString Password = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DeleteLocalAccount", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DeleteLocalAccount, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DeleteLocalAccount");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UserName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Password, paramsPtr + 16);
@@ -2970,12 +3155,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_RenameLocalAccount;
     /// <summary>
     /// Function: RenameLocalAccount
     /// </summary>
     public unsafe virtual bool RenameLocalAccount(BmSDK.FString NewUserName, BmSDK.FString OldUserName, BmSDK.FString Password = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RenameLocalAccount", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RenameLocalAccount, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RenameLocalAccount");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewUserName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OldUserName, paramsPtr + 16);
@@ -2984,12 +3170,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 48);
     }
 
+    private static BmSDK.Function __fn_CreateLocalAccount;
     /// <summary>
     /// Function: CreateLocalAccount
     /// </summary>
     public unsafe virtual bool CreateLocalAccount(BmSDK.FString UserName, BmSDK.FString Password = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CreateLocalAccount", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateLocalAccount, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CreateLocalAccount");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UserName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Password, paramsPtr + 16);
@@ -2997,48 +3184,52 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_ClearCreateOnlineAccountCompletedDelegate;
     /// <summary>
     /// Function: ClearCreateOnlineAccountCompletedDelegate
     /// </summary>
     public unsafe virtual void ClearCreateOnlineAccountCompletedDelegate(System.IntPtr AccountCreateDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearCreateOnlineAccountCompletedDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearCreateOnlineAccountCompletedDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearCreateOnlineAccountCompletedDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AccountCreateDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddCreateOnlineAccountCompletedDelegate;
     /// <summary>
     /// Function: AddCreateOnlineAccountCompletedDelegate
     /// </summary>
     public unsafe virtual void AddCreateOnlineAccountCompletedDelegate(System.IntPtr AccountCreateDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddCreateOnlineAccountCompletedDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddCreateOnlineAccountCompletedDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddCreateOnlineAccountCompletedDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AccountCreateDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnCreateOnlineAccountCompleted;
     /// <summary>
     /// Function: OnCreateOnlineAccountCompleted
     /// </summary>
     public unsafe virtual void OnCreateOnlineAccountCompleted(BmSDK.Engine.OnlineSubsystem.EOnlineAccountCreateStatus ErrorStatus)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnCreateOnlineAccountCompleted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnCreateOnlineAccountCompleted, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnCreateOnlineAccountCompleted");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ErrorStatus, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CreateOnlineAccount;
     /// <summary>
     /// Function: CreateOnlineAccount
     /// </summary>
     public unsafe virtual bool CreateOnlineAccount(BmSDK.FString UserName, BmSDK.FString Password, BmSDK.FString EmailAddress, BmSDK.FString ProductKey = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CreateOnlineAccount", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateOnlineAccount, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CreateOnlineAccount");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UserName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Password, paramsPtr + 16);
@@ -3055,12 +3246,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 64);
     }
 
+    private static BmSDK.Function __fn_IsExternalRemoteDevice;
     /// <summary>
     /// Function: IsExternalRemoteDevice
     /// </summary>
     public unsafe virtual bool IsExternalRemoteDevice()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsExternalRemoteDevice", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsExternalRemoteDevice, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsExternalRemoteDevice");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -3073,12 +3265,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_OpenWebBrowser;
     /// <summary>
     /// Function: OpenWebBrowser
     /// </summary>
     public unsafe virtual void OpenWebBrowser(BmSDK.FString sURL)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OpenWebBrowser", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OpenWebBrowser, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OpenWebBrowser");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sURL, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -3092,36 +3285,39 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_GetNpAvailabilityForUser;
     /// <summary>
     /// Function: GetNpAvailabilityForUser
     /// </summary>
     public unsafe virtual int GetNpAvailabilityForUser(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetNpAvailabilityForUser", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNpAvailabilityForUser, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetNpAvailabilityForUser");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_CheckNpAvailabilityForUser;
     /// <summary>
     /// Function: CheckNpAvailabilityForUser
     /// </summary>
     public unsafe virtual void CheckNpAvailabilityForUser(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CheckNpAvailabilityForUser", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckNpAvailabilityForUser, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CheckNpAvailabilityForUser");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StreamingInstall_Poll;
     /// <summary>
     /// Function: StreamingInstall_Poll
     /// </summary>
     public unsafe virtual int StreamingInstall_Poll(out int Percent, out int Time)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.StreamingInstall_Poll", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StreamingInstall_Poll, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.StreamingInstall_Poll");
         byte* paramsPtr = stackalloc byte[12];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -3136,12 +3332,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_StreamingInstall_CheckChunk;
     /// <summary>
     /// Function: StreamingInstall_CheckChunk
     /// </summary>
     public unsafe virtual bool StreamingInstall_CheckChunk(int Chunk)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.StreamingInstall_CheckChunk", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StreamingInstall_CheckChunk, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.StreamingInstall_CheckChunk");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Chunk, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -3155,12 +3352,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_StreamingInstall_IsFinished;
     /// <summary>
     /// Function: StreamingInstall_IsFinished
     /// </summary>
     public unsafe virtual bool StreamingInstall_IsFinished()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.StreamingInstall_IsFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StreamingInstall_IsFinished, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.StreamingInstall_IsFinished");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -3173,24 +3371,26 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetDurangoKinectState;
     /// <summary>
     /// Function: SetDurangoKinectState
     /// </summary>
     public unsafe virtual void SetDurangoKinectState(bool bEnabled)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SetDurangoKinectState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDurangoKinectState, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SetDurangoKinectState");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bEnabled, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetGTCStates;
     /// <summary>
     /// Function: SetGTCStates
     /// </summary>
     public unsafe virtual void SetGTCStates(bool bPlayEnabled, bool bPauseEnabled, bool bMenuEnabled, bool bViewEnabled, bool bBackEnabled)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SetGTCStates", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetGTCStates, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SetGTCStates");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bPlayEnabled, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bPauseEnabled, paramsPtr + 4);
@@ -3201,12 +3401,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_SetGTCState;
     /// <summary>
     /// Function: SetGTCState
     /// </summary>
     public unsafe virtual void SetGTCState(BmSDK.Engine.OnlineSubsystem.EGTCCommand Id, bool bState)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SetGTCState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetGTCState, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SetGTCState");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Id, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bState, paramsPtr + 4);
@@ -3214,71 +3415,77 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ClearGTCCommandDelegate;
     /// <summary>
     /// Function: ClearGTCCommandDelegate
     /// </summary>
     public unsafe virtual void ClearGTCCommandDelegate(System.IntPtr GTCCommandDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearGTCCommandDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearGTCCommandDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearGTCCommandDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GTCCommandDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddGTCCommandDelegate;
     /// <summary>
     /// Function: AddGTCCommandDelegate
     /// </summary>
     public unsafe virtual void AddGTCCommandDelegate(System.IntPtr GTCCommandDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddGTCCommandDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddGTCCommandDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddGTCCommandDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GTCCommandDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnGTCCommand;
     /// <summary>
     /// Function: OnGTCCommand
     /// </summary>
     public unsafe virtual void OnGTCCommand(BmSDK.Engine.OnlineSubsystem.EGTCCommand NewCommand)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnGTCCommand", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnGTCCommand, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnGTCCommand");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCommand, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NavigateBack;
     /// <summary>
     /// Function: NavigateBack
     /// </summary>
     public unsafe virtual void NavigateBack()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.NavigateBack", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NavigateBack, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.NavigateBack");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OpenHelpManual;
     /// <summary>
     /// Function: OpenHelpManual
     /// </summary>
     public unsafe virtual void OpenHelpManual(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OpenHelpManual", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OpenHelpManual, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OpenHelpManual");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_VideoRecordStop;
     /// <summary>
     /// Function: VideoRecordStop
     /// </summary>
     public unsafe virtual bool VideoRecordStop(byte LocalUserNum, byte VideoId, BmSDK.FString TitleStr)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.VideoRecordStop", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_VideoRecordStop, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.VideoRecordStop");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VideoId, paramsPtr + 1);
@@ -3287,24 +3494,26 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_VideoRecordStart;
     /// <summary>
     /// Function: VideoRecordStart
     /// </summary>
     public unsafe virtual bool VideoRecordStart(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.VideoRecordStart", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_VideoRecordStart, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.VideoRecordStart");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_VideoRecord;
     /// <summary>
     /// Function: VideoRecord
     /// </summary>
     public unsafe virtual void VideoRecord(byte LocalUserNum, byte VideoId, BmSDK.FString TitleStr, float TimeStart, float TimeStop)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.VideoRecord", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_VideoRecord, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.VideoRecord");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VideoId, paramsPtr + 1);
@@ -3315,70 +3524,76 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_VideoRecordSetGameSectionId;
     /// <summary>
     /// Function: VideoRecordSetGameSectionId
     /// </summary>
     public unsafe virtual void VideoRecordSetGameSectionId(int SectionId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.VideoRecordSetGameSectionId", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_VideoRecordSetGameSectionId, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.VideoRecordSetGameSectionId");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SectionId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_VideoRecordAllowed;
     /// <summary>
     /// Function: VideoRecordAllowed
     /// </summary>
     public unsafe virtual void VideoRecordAllowed(bool bEnabled)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.VideoRecordAllowed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_VideoRecordAllowed, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.VideoRecordAllowed");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bEnabled, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsVideoRecordAllowed;
     /// <summary>
     /// Function: IsVideoRecordAllowed
     /// </summary>
     public unsafe virtual bool IsVideoRecordAllowed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsVideoRecordAllowed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsVideoRecordAllowed, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsVideoRecordAllowed");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UnBindAllPlayers;
     /// <summary>
     /// Function: UnBindAllPlayers
     /// </summary>
     public unsafe virtual void UnBindAllPlayers()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnBindAllPlayers", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnBindAllPlayers, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnBindAllPlayers");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UnBindPlayer;
     /// <summary>
     /// Function: UnBindPlayer
     /// </summary>
     public unsafe virtual void UnBindPlayer(int ControllerId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnBindPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnBindPlayer, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnBindPlayer");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ResumePlayer;
     /// <summary>
     /// Function: ResumePlayer
     /// </summary>
     public unsafe virtual int ResumePlayer(int ControllerId, int ControllerIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ResumePlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResumePlayer, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ResumePlayer");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerIndex, paramsPtr + 4);
@@ -3386,12 +3601,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_ReBindPlayer;
     /// <summary>
     /// Function: ReBindPlayer
     /// </summary>
     public unsafe virtual void ReBindPlayer(int ControllerId, int ControllerIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReBindPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReBindPlayer, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReBindPlayer");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerIndex, paramsPtr + 4);
@@ -3399,35 +3615,38 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_BindPlayer;
     /// <summary>
     /// Function: BindPlayer
     /// </summary>
     public unsafe virtual int BindPlayer(int ControllerIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.BindPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BindPlayer, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.BindPlayer");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetBoundCount;
     /// <summary>
     /// Function: GetBoundCount
     /// </summary>
     public unsafe virtual int GetBoundCount()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetBoundCount", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBoundCount, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetBoundCount");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ReadOnlineAvatar;
     /// <summary>
     /// Function: ReadOnlineAvatar
     /// </summary>
     public unsafe virtual void ReadOnlineAvatar(BmSDK.Engine.OnlineSubsystem.FUniqueNetId PlayerNetId, int Size, System.IntPtr ReadOnlineAvatarCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadOnlineAvatar", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadOnlineAvatar, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadOnlineAvatar");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerNetId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Size, paramsPtr + 8);
@@ -3443,12 +3662,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnReadOnlineAvatarComplete;
     /// <summary>
     /// Function: OnReadOnlineAvatarComplete
     /// </summary>
     public unsafe virtual void OnReadOnlineAvatarComplete(BmSDK.Engine.OnlineSubsystem.FUniqueNetId PlayerNetId, BmSDK.Engine.Texture2D Avatar)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadOnlineAvatarComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReadOnlineAvatarComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadOnlineAvatarComplete");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerNetId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Avatar, paramsPtr + 8);
@@ -3456,12 +3676,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ShowCustomMessageUI;
     /// <summary>
     /// Function: ShowCustomMessageUI
     /// </summary>
     public unsafe virtual bool ShowCustomMessageUI(byte LocalUserNum, out BmSDK.TArray<BmSDK.Engine.OnlineSubsystem.FUniqueNetId> Recipients, BmSDK.FString MessageTitle, BmSDK.FString NonEditableMessage, BmSDK.FString EditableMessage = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowCustomMessageUI", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowCustomMessageUI, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowCustomMessageUI");
         byte* paramsPtr = stackalloc byte[72];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MessageTitle, paramsPtr + 20);
@@ -3472,12 +3693,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 68);
     }
 
+    private static BmSDK.Function __fn_ClearCrossTitleProfileSettings;
     /// <summary>
     /// Function: ClearCrossTitleProfileSettings
     /// </summary>
     public unsafe virtual void ClearCrossTitleProfileSettings(byte LocalUserNum, int TitleId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearCrossTitleProfileSettings", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearCrossTitleProfileSettings, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearCrossTitleProfileSettings");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TitleId, paramsPtr + 4);
@@ -3485,12 +3707,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_GetCrossTitleProfileSettings;
     /// <summary>
     /// Function: GetCrossTitleProfileSettings
     /// </summary>
     public unsafe virtual BmSDK.Engine.OnlineProfileSettings GetCrossTitleProfileSettings(byte LocalUserNum, int TitleId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCrossTitleProfileSettings", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCrossTitleProfileSettings, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCrossTitleProfileSettings");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TitleId, paramsPtr + 4);
@@ -3498,12 +3721,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineProfileSettings>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_ClearReadCrossTitleProfileSettingsCompleteDelegate;
     /// <summary>
     /// Function: ClearReadCrossTitleProfileSettingsCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearReadCrossTitleProfileSettingsCompleteDelegate(byte LocalUserNum, System.IntPtr ReadProfileSettingsCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadCrossTitleProfileSettingsCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearReadCrossTitleProfileSettingsCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadCrossTitleProfileSettingsCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadProfileSettingsCompleteDelegate, paramsPtr + 4);
@@ -3511,12 +3735,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddReadCrossTitleProfileSettingsCompleteDelegate;
     /// <summary>
     /// Function: AddReadCrossTitleProfileSettingsCompleteDelegate
     /// </summary>
     public unsafe virtual void AddReadCrossTitleProfileSettingsCompleteDelegate(byte LocalUserNum, System.IntPtr ReadProfileSettingsCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadCrossTitleProfileSettingsCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddReadCrossTitleProfileSettingsCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadCrossTitleProfileSettingsCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadProfileSettingsCompleteDelegate, paramsPtr + 4);
@@ -3524,12 +3749,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnReadCrossTitleProfileSettingsComplete;
     /// <summary>
     /// Function: OnReadCrossTitleProfileSettingsComplete
     /// </summary>
     public unsafe virtual void OnReadCrossTitleProfileSettingsComplete(byte LocalUserNum, int TitleId, bool bWasSuccessful)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadCrossTitleProfileSettingsComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReadCrossTitleProfileSettingsComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadCrossTitleProfileSettingsComplete");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TitleId, paramsPtr + 4);
@@ -3538,12 +3764,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ReadCrossTitleProfileSettings;
     /// <summary>
     /// Function: ReadCrossTitleProfileSettings
     /// </summary>
     public unsafe virtual bool ReadCrossTitleProfileSettings(byte LocalUserNum, int TitleId, BmSDK.Engine.OnlineProfileSettings ProfileSettings)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadCrossTitleProfileSettings", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadCrossTitleProfileSettings, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadCrossTitleProfileSettings");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TitleId, paramsPtr + 4);
@@ -3552,12 +3779,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_UnlockAvatarAward;
     /// <summary>
     /// Function: UnlockAvatarAward
     /// </summary>
     public unsafe virtual bool UnlockAvatarAward(byte LocalUserNum, int AvatarItemId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnlockAvatarAward", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnlockAvatarAward, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnlockAvatarAward");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AvatarItemId, paramsPtr + 4);
@@ -3565,23 +3793,25 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetTimeSinceGuideLastClosed;
     /// <summary>
     /// Function: GetTimeSinceGuideLastClosed
     /// </summary>
     public unsafe virtual float GetTimeSinceGuideLastClosed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetTimeSinceGuideLastClosed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTimeSinceGuideLastClosed, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetTimeSinceGuideLastClosed");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CreateInfocastSystem;
     /// <summary>
     /// Function: CreateInfocastSystem
     /// </summary>
     public unsafe virtual void CreateInfocastSystem()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CreateInfocastSystem", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateInfocastSystem, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CreateInfocastSystem");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -3594,48 +3824,52 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ClearNewInfocastDelegate;
     /// <summary>
     /// Function: ClearNewInfocastDelegate
     /// </summary>
     public unsafe virtual void ClearNewInfocastDelegate(System.IntPtr InfocastDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearNewInfocastDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearNewInfocastDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearNewInfocastDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InfocastDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddNewInfocastDelegate;
     /// <summary>
     /// Function: AddNewInfocastDelegate
     /// </summary>
     public unsafe virtual void AddNewInfocastDelegate(System.IntPtr InfocastDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddNewInfocastDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddNewInfocastDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddNewInfocastDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InfocastDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnNewInfocast;
     /// <summary>
     /// Function: OnNewInfocast
     /// </summary>
     public unsafe virtual void OnNewInfocast(BmSDK.FString Infocast)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnNewInfocast", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnNewInfocast, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnNewInfocast");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Infocast, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShowCustomPlayersUI;
     /// <summary>
     /// Function: ShowCustomPlayersUI
     /// </summary>
     public unsafe virtual bool ShowCustomPlayersUI(byte LocalUserNum, out BmSDK.TArray<BmSDK.Engine.OnlineSubsystem.FUniqueNetId> Players, BmSDK.FString Title, BmSDK.FString Description)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowCustomPlayersUI", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowCustomPlayersUI, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowCustomPlayersUI");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Title, paramsPtr + 20);
@@ -3652,12 +3886,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 52);
     }
 
+    private static BmSDK.Function __fn_ShowPlayersUI;
     /// <summary>
     /// Function: ShowPlayersUI
     /// </summary>
     public unsafe virtual bool ShowPlayersUI(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowPlayersUI", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowPlayersUI, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowPlayersUI");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -3671,23 +3906,25 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_ShowGuideUI;
     /// <summary>
     /// Function: ShowGuideUI
     /// </summary>
     public unsafe virtual bool ShowGuideUI()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowGuideUI", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowGuideUI, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowGuideUI");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ShowFriendsInviteUI;
     /// <summary>
     /// Function: ShowFriendsInviteUI
     /// </summary>
     public unsafe virtual bool ShowFriendsInviteUI(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.FUniqueNetId PlayerID)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowFriendsInviteUI", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowFriendsInviteUI, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowFriendsInviteUI");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerID, paramsPtr + 4);
@@ -3702,12 +3939,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_ClearProfileDataChangedDelegate;
     /// <summary>
     /// Function: ClearProfileDataChangedDelegate
     /// </summary>
     public unsafe virtual void ClearProfileDataChangedDelegate(byte LocalUserNum, System.IntPtr ProfileDataChangedDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearProfileDataChangedDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearProfileDataChangedDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearProfileDataChangedDelegate");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProfileDataChangedDelegate, paramsPtr + 4);
@@ -3715,12 +3953,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddProfileDataChangedDelegate;
     /// <summary>
     /// Function: AddProfileDataChangedDelegate
     /// </summary>
     public unsafe virtual void AddProfileDataChangedDelegate(byte LocalUserNum, System.IntPtr ProfileDataChangedDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddProfileDataChangedDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddProfileDataChangedDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddProfileDataChangedDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProfileDataChangedDelegate, paramsPtr + 4);
@@ -3728,23 +3967,25 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnProfileDataChanged;
     /// <summary>
     /// Function: OnProfileDataChanged
     /// </summary>
     public unsafe virtual void OnProfileDataChanged()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnProfileDataChanged", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnProfileDataChanged, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnProfileDataChanged");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UnlockGamerPicture;
     /// <summary>
     /// Function: UnlockGamerPicture
     /// </summary>
     public unsafe virtual bool UnlockGamerPicture(byte LocalUserNum, int PictureId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnlockGamerPicture", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnlockGamerPicture, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnlockGamerPicture");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PictureId, paramsPtr + 4);
@@ -3759,12 +4000,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_IsDeviceValid;
     /// <summary>
     /// Function: IsDeviceValid
     /// </summary>
     public unsafe virtual bool IsDeviceValid(int DeviceID, int SizeNeeded = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsDeviceValid", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsDeviceValid, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsDeviceValid");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeviceID, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SizeNeeded, paramsPtr + 4);
@@ -3779,12 +4021,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetDeviceSelectionResults;
     /// <summary>
     /// Function: GetDeviceSelectionResults
     /// </summary>
     public unsafe virtual int GetDeviceSelectionResults(byte LocalUserNum, out BmSDK.FString DeviceName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetDeviceSelectionResults", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDeviceSelectionResults, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetDeviceSelectionResults");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -3799,12 +4042,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_ClearDeviceSelectionDoneDelegate;
     /// <summary>
     /// Function: ClearDeviceSelectionDoneDelegate
     /// </summary>
     public unsafe virtual void ClearDeviceSelectionDoneDelegate(byte LocalUserNum, System.IntPtr DeviceDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearDeviceSelectionDoneDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearDeviceSelectionDoneDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearDeviceSelectionDoneDelegate");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeviceDelegate, paramsPtr + 4);
@@ -3812,12 +4056,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddDeviceSelectionDoneDelegate;
     /// <summary>
     /// Function: AddDeviceSelectionDoneDelegate
     /// </summary>
     public unsafe virtual void AddDeviceSelectionDoneDelegate(byte LocalUserNum, System.IntPtr DeviceDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddDeviceSelectionDoneDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddDeviceSelectionDoneDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddDeviceSelectionDoneDelegate");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeviceDelegate, paramsPtr + 4);
@@ -3825,24 +4070,26 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnDeviceSelectionComplete;
     /// <summary>
     /// Function: OnDeviceSelectionComplete
     /// </summary>
     public unsafe virtual void OnDeviceSelectionComplete(bool bWasSuccessful)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnDeviceSelectionComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeviceSelectionComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnDeviceSelectionComplete");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShowDeviceSelectionUI;
     /// <summary>
     /// Function: ShowDeviceSelectionUI
     /// </summary>
     public unsafe virtual bool ShowDeviceSelectionUI(byte LocalUserNum, int SizeNeeded, bool bForceShowUI = default, bool bManageStorage = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowDeviceSelectionUI", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowDeviceSelectionUI, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowDeviceSelectionUI");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SizeNeeded, paramsPtr + 4);
@@ -3859,12 +4106,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_ShowMembershipMarketplaceUI;
     /// <summary>
     /// Function: ShowMembershipMarketplaceUI
     /// </summary>
     public unsafe virtual bool ShowMembershipMarketplaceUI(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowMembershipMarketplaceUI", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowMembershipMarketplaceUI, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowMembershipMarketplaceUI");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -3878,12 +4126,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_ShowContentMarketplaceUI;
     /// <summary>
     /// Function: ShowContentMarketplaceUI
     /// </summary>
     public unsafe virtual bool ShowContentMarketplaceUI(byte LocalUserNum, int CategoryMask = default, int OfferId = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowContentMarketplaceUI", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowContentMarketplaceUI, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowContentMarketplaceUI");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CategoryMask, paramsPtr + 4);
@@ -3899,12 +4148,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_ShowInviteUI;
     /// <summary>
     /// Function: ShowInviteUI
     /// </summary>
     public unsafe virtual bool ShowInviteUI(byte LocalUserNum, BmSDK.FString InviteText = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowInviteUI", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowInviteUI, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowInviteUI");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InviteText, paramsPtr + 4);
@@ -3919,12 +4169,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_ShowAchievementsUI;
     /// <summary>
     /// Function: ShowAchievementsUI
     /// </summary>
     public unsafe virtual bool ShowAchievementsUI(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowAchievementsUI", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowAchievementsUI, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowAchievementsUI");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -3938,12 +4189,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_ShowMessagesUI;
     /// <summary>
     /// Function: ShowMessagesUI
     /// </summary>
     public unsafe virtual bool ShowMessagesUI(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowMessagesUI", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowMessagesUI, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowMessagesUI");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -3957,12 +4209,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_ShowTokenRedemptionUI;
     /// <summary>
     /// Function: ShowTokenRedemptionUI
     /// </summary>
     public unsafe virtual bool ShowTokenRedemptionUI(byte LocalUserNum, BmSDK.FString OfferId = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowTokenRedemptionUI", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowTokenRedemptionUI, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowTokenRedemptionUI");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OfferId, paramsPtr + 4);
@@ -3970,24 +4223,26 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_ShowAccountPickerUI;
     /// <summary>
     /// Function: ShowAccountPickerUI
     /// </summary>
     public unsafe virtual bool ShowAccountPickerUI(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowAccountPickerUI", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowAccountPickerUI, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowAccountPickerUI");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_ShowGamerCardUI;
     /// <summary>
     /// Function: ShowGamerCardUI
     /// </summary>
     public unsafe virtual bool ShowGamerCardUI(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.FUniqueNetId PlayerID, BmSDK.FString NickName = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowGamerCardUI", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowGamerCardUI, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowGamerCardUI");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerID, paramsPtr + 4);
@@ -4003,12 +4258,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_ShowFeedbackUI;
     /// <summary>
     /// Function: ShowFeedbackUI
     /// </summary>
     public unsafe virtual bool ShowFeedbackUI(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.FUniqueNetId PlayerID)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowFeedbackUI", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowFeedbackUI, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowFeedbackUI");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerID, paramsPtr + 4);
@@ -4023,48 +4279,52 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_ClearMsgBoxUIDelegate;
     /// <summary>
     /// Function: ClearMsgBoxUIDelegate
     /// </summary>
     public unsafe virtual void ClearMsgBoxUIDelegate(System.IntPtr MsgDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearMsgBoxUIDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearMsgBoxUIDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearMsgBoxUIDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MsgDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddMsgBoxUIDoneDelegate;
     /// <summary>
     /// Function: AddMsgBoxUIDoneDelegate
     /// </summary>
     public unsafe virtual void AddMsgBoxUIDoneDelegate(System.IntPtr MsgDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddMsgBoxUIDoneDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddMsgBoxUIDoneDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddMsgBoxUIDoneDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MsgDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnMsgBoxUIComplete;
     /// <summary>
     /// Function: OnMsgBoxUIComplete
     /// </summary>
     public unsafe virtual void OnMsgBoxUIComplete(int ButtonResult)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnMsgBoxUIComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnMsgBoxUIComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnMsgBoxUIComplete");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ButtonResult, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShowSystemMsgBoxUI;
     /// <summary>
     /// Function: ShowSystemMsgBoxUI
     /// </summary>
     public unsafe virtual bool ShowSystemMsgBoxUI(byte LocalUserNum, int SysMsg)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowSystemMsgBoxUI", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowSystemMsgBoxUI, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowSystemMsgBoxUI");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SysMsg, paramsPtr + 4);
@@ -4072,12 +4332,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_WriteUserFileInternal;
     /// <summary>
     /// Function: WriteUserFileInternal
     /// </summary>
     public unsafe bool WriteUserFileInternal(BmSDK.FString UserId, BmSDK.FString Filename, out BmSDK.TArray<byte> FileContents)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteUserFileInternal", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WriteUserFileInternal, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteUserFileInternal");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UserId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 16);
@@ -4093,24 +4354,26 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 48);
     }
 
+    private static BmSDK.Function __fn_GetPlayerNicknameFromIndex;
     /// <summary>
     /// Function: GetPlayerNicknameFromIndex
     /// </summary>
     public unsafe override BmSDK.FString GetPlayerNicknameFromIndex(int UserIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetPlayerNicknameFromIndex", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPlayerNicknameFromIndex, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetPlayerNicknameFromIndex");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UserIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetAchievements;
     /// <summary>
     /// Function: GetAchievements
     /// </summary>
     public unsafe virtual BmSDK.Engine.OnlineSubsystem.EOnlineEnumerationReadState GetAchievements(byte LocalUserNum, out BmSDK.TArray<BmSDK.Engine.OnlineSubsystem.FAchievementDetails> Achievements, int TitleId = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetAchievements", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAchievements, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetAchievements");
         byte* paramsPtr = stackalloc byte[25];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TitleId, paramsPtr + 20);
@@ -4126,12 +4389,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineSubsystem.EOnlineEnumerationReadState>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_ClearReadAchievementsCompleteDelegate;
     /// <summary>
     /// Function: ClearReadAchievementsCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearReadAchievementsCompleteDelegate(byte LocalUserNum, System.IntPtr ReadAchievementsCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadAchievementsCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearReadAchievementsCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadAchievementsCompleteDelegate");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadAchievementsCompleteDelegate, paramsPtr + 4);
@@ -4139,12 +4403,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddReadAchievementsCompleteDelegate;
     /// <summary>
     /// Function: AddReadAchievementsCompleteDelegate
     /// </summary>
     public unsafe virtual void AddReadAchievementsCompleteDelegate(byte LocalUserNum, System.IntPtr ReadAchievementsCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadAchievementsCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddReadAchievementsCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadAchievementsCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadAchievementsCompleteDelegate, paramsPtr + 4);
@@ -4152,24 +4417,26 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnReadAchievementsComplete;
     /// <summary>
     /// Function: OnReadAchievementsComplete
     /// </summary>
     public unsafe virtual void OnReadAchievementsComplete(int TitleId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadAchievementsComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReadAchievementsComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadAchievementsComplete");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TitleId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ReadAchievements;
     /// <summary>
     /// Function: ReadAchievements
     /// </summary>
     public unsafe virtual bool ReadAchievements(byte LocalUserNum, int TitleId = default, bool bShouldReadText = default, bool bShouldReadImages = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadAchievements", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadAchievements, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadAchievements");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TitleId, paramsPtr + 4);
@@ -4186,12 +4453,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_ClearUnlockAchievementCompleteDelegate;
     /// <summary>
     /// Function: ClearUnlockAchievementCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearUnlockAchievementCompleteDelegate(byte LocalUserNum, System.IntPtr UnlockAchievementCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearUnlockAchievementCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearUnlockAchievementCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearUnlockAchievementCompleteDelegate");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UnlockAchievementCompleteDelegate, paramsPtr + 4);
@@ -4199,12 +4467,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddUnlockAchievementCompleteDelegate;
     /// <summary>
     /// Function: AddUnlockAchievementCompleteDelegate
     /// </summary>
     public unsafe virtual void AddUnlockAchievementCompleteDelegate(byte LocalUserNum, System.IntPtr UnlockAchievementCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddUnlockAchievementCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddUnlockAchievementCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddUnlockAchievementCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UnlockAchievementCompleteDelegate, paramsPtr + 4);
@@ -4212,24 +4481,26 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnUnlockAchievementComplete;
     /// <summary>
     /// Function: OnUnlockAchievementComplete
     /// </summary>
     public unsafe virtual void OnUnlockAchievementComplete(bool bWasSuccessful)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnUnlockAchievementComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnUnlockAchievementComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnUnlockAchievementComplete");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UnlockAchievement;
     /// <summary>
     /// Function: UnlockAchievement
     /// </summary>
     public unsafe virtual bool UnlockAchievement(byte LocalUserNum, int AchievementId, float PercentComplete = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnlockAchievement", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnlockAchievement, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnlockAchievement");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AchievementId, paramsPtr + 4);
@@ -4245,12 +4516,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_DisplayAchievementProgress;
     /// <summary>
     /// Function: DisplayAchievementProgress
     /// </summary>
     public unsafe virtual bool DisplayAchievementProgress(int AchievementId, int ProgressCount, int MaxProgress)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DisplayAchievementProgress", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisplayAchievementProgress, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DisplayAchievementProgress");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AchievementId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProgressCount, paramsPtr + 4);
@@ -4266,12 +4538,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_DeleteMessage;
     /// <summary>
     /// Function: DeleteMessage
     /// </summary>
     public unsafe virtual bool DeleteMessage(byte LocalUserNum, int MessageIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DeleteMessage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DeleteMessage, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DeleteMessage");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MessageIndex, paramsPtr + 4);
@@ -4279,12 +4552,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_ClearFriendMessageReceivedDelegate;
     /// <summary>
     /// Function: ClearFriendMessageReceivedDelegate
     /// </summary>
     public unsafe virtual void ClearFriendMessageReceivedDelegate(byte LocalUserNum, System.IntPtr MessageDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearFriendMessageReceivedDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearFriendMessageReceivedDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearFriendMessageReceivedDelegate");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MessageDelegate, paramsPtr + 4);
@@ -4292,12 +4566,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddFriendMessageReceivedDelegate;
     /// <summary>
     /// Function: AddFriendMessageReceivedDelegate
     /// </summary>
     public unsafe virtual void AddFriendMessageReceivedDelegate(byte LocalUserNum, System.IntPtr MessageDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFriendMessageReceivedDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddFriendMessageReceivedDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFriendMessageReceivedDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MessageDelegate, paramsPtr + 4);
@@ -4305,12 +4580,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnFriendMessageReceived;
     /// <summary>
     /// Function: OnFriendMessageReceived
     /// </summary>
     public unsafe virtual void OnFriendMessageReceived(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.FUniqueNetId SendingPlayer, BmSDK.FString SendingNick, BmSDK.FString Message)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnFriendMessageReceived", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnFriendMessageReceived, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnFriendMessageReceived");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SendingPlayer, paramsPtr + 4);
@@ -4320,12 +4596,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_GetFriendMessages;
     /// <summary>
     /// Function: GetFriendMessages
     /// </summary>
     public unsafe virtual void GetFriendMessages(byte LocalUserNum, out BmSDK.TArray<BmSDK.Engine.OnlineSubsystem.FOnlineFriendMessage> FriendMessages)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetFriendMessages", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFriendMessages, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetFriendMessages");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -4333,48 +4610,52 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ClearJoinFriendGameCompleteDelegate;
     /// <summary>
     /// Function: ClearJoinFriendGameCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearJoinFriendGameCompleteDelegate(System.IntPtr JoinFriendGameCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearJoinFriendGameCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearJoinFriendGameCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearJoinFriendGameCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(JoinFriendGameCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddJoinFriendGameCompleteDelegate;
     /// <summary>
     /// Function: AddJoinFriendGameCompleteDelegate
     /// </summary>
     public unsafe virtual void AddJoinFriendGameCompleteDelegate(System.IntPtr JoinFriendGameCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddJoinFriendGameCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddJoinFriendGameCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddJoinFriendGameCompleteDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(JoinFriendGameCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnJoinFriendGameComplete;
     /// <summary>
     /// Function: OnJoinFriendGameComplete
     /// </summary>
     public unsafe virtual void OnJoinFriendGameComplete(bool bWasSuccessful)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnJoinFriendGameComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnJoinFriendGameComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnJoinFriendGameComplete");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_JoinFriendGame;
     /// <summary>
     /// Function: JoinFriendGame
     /// </summary>
     public unsafe virtual bool JoinFriendGame(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.FUniqueNetId Friend)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.JoinFriendGame", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_JoinFriendGame, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.JoinFriendGame");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Friend, paramsPtr + 4);
@@ -4389,12 +4670,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_ClearReceivedGameInviteDelegate;
     /// <summary>
     /// Function: ClearReceivedGameInviteDelegate
     /// </summary>
     public unsafe virtual void ClearReceivedGameInviteDelegate(byte LocalUserNum, System.IntPtr ReceivedGameInviteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReceivedGameInviteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearReceivedGameInviteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReceivedGameInviteDelegate");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReceivedGameInviteDelegate, paramsPtr + 4);
@@ -4402,12 +4684,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddReceivedGameInviteDelegate;
     /// <summary>
     /// Function: AddReceivedGameInviteDelegate
     /// </summary>
     public unsafe virtual void AddReceivedGameInviteDelegate(byte LocalUserNum, System.IntPtr ReceivedGameInviteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReceivedGameInviteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddReceivedGameInviteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReceivedGameInviteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReceivedGameInviteDelegate, paramsPtr + 4);
@@ -4415,12 +4698,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnReceivedGameInvite;
     /// <summary>
     /// Function: OnReceivedGameInvite
     /// </summary>
     public unsafe virtual void OnReceivedGameInvite(byte LocalUserNum, BmSDK.FString InviterName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReceivedGameInvite", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReceivedGameInvite, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReceivedGameInvite");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InviterName, paramsPtr + 4);
@@ -4428,12 +4712,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_SendGameInviteToFriends;
     /// <summary>
     /// Function: SendGameInviteToFriends
     /// </summary>
     public unsafe virtual bool SendGameInviteToFriends(byte LocalUserNum, BmSDK.TArray<BmSDK.Engine.OnlineSubsystem.FUniqueNetId> Friends, BmSDK.FString Text = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SendGameInviteToFriends", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SendGameInviteToFriends, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SendGameInviteToFriends");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Friends, paramsPtr + 4);
@@ -4449,12 +4734,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 36);
     }
 
+    private static BmSDK.Function __fn_SendGameInviteToFriend;
     /// <summary>
     /// Function: SendGameInviteToFriend
     /// </summary>
     public unsafe virtual bool SendGameInviteToFriend(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.FUniqueNetId Friend, BmSDK.FString Text = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SendGameInviteToFriend", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SendGameInviteToFriend, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SendGameInviteToFriend");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Friend, paramsPtr + 4);
@@ -4470,12 +4756,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_SendMessageToFriend;
     /// <summary>
     /// Function: SendMessageToFriend
     /// </summary>
     public unsafe virtual bool SendMessageToFriend(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.FUniqueNetId Friend, BmSDK.FString Message)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SendMessageToFriend", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SendMessageToFriend, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SendMessageToFriend");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Friend, paramsPtr + 4);
@@ -4491,12 +4778,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_ClearFriendInviteReceivedDelegate;
     /// <summary>
     /// Function: ClearFriendInviteReceivedDelegate
     /// </summary>
     public unsafe virtual void ClearFriendInviteReceivedDelegate(byte LocalUserNum, System.IntPtr InviteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearFriendInviteReceivedDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearFriendInviteReceivedDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearFriendInviteReceivedDelegate");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InviteDelegate, paramsPtr + 4);
@@ -4504,12 +4792,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddFriendInviteReceivedDelegate;
     /// <summary>
     /// Function: AddFriendInviteReceivedDelegate
     /// </summary>
     public unsafe virtual void AddFriendInviteReceivedDelegate(byte LocalUserNum, System.IntPtr InviteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFriendInviteReceivedDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddFriendInviteReceivedDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFriendInviteReceivedDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InviteDelegate, paramsPtr + 4);
@@ -4517,12 +4806,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnFriendInviteReceived;
     /// <summary>
     /// Function: OnFriendInviteReceived
     /// </summary>
     public unsafe virtual void OnFriendInviteReceived(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.FUniqueNetId RequestingPlayer, BmSDK.FString RequestingNick, BmSDK.FString Message)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnFriendInviteReceived", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnFriendInviteReceived, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnFriendInviteReceived");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RequestingPlayer, paramsPtr + 4);
@@ -4532,12 +4822,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_RemoveFriend;
     /// <summary>
     /// Function: RemoveFriend
     /// </summary>
     public unsafe virtual bool RemoveFriend(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.FUniqueNetId FormerFriend)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RemoveFriend", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveFriend, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RemoveFriend");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FormerFriend, paramsPtr + 4);
@@ -4552,12 +4843,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_DenyFriendInvite;
     /// <summary>
     /// Function: DenyFriendInvite
     /// </summary>
     public unsafe virtual bool DenyFriendInvite(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.FUniqueNetId RequestingPlayer)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DenyFriendInvite", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DenyFriendInvite, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DenyFriendInvite");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RequestingPlayer, paramsPtr + 4);
@@ -4572,12 +4864,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_AcceptFriendInvite;
     /// <summary>
     /// Function: AcceptFriendInvite
     /// </summary>
     public unsafe virtual bool AcceptFriendInvite(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.FUniqueNetId RequestingPlayer)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AcceptFriendInvite", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AcceptFriendInvite, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AcceptFriendInvite");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RequestingPlayer, paramsPtr + 4);
@@ -4592,12 +4885,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_ClearAddFriendByNameCompleteDelegate;
     /// <summary>
     /// Function: ClearAddFriendByNameCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearAddFriendByNameCompleteDelegate(byte LocalUserNum, System.IntPtr FriendDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearAddFriendByNameCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearAddFriendByNameCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearAddFriendByNameCompleteDelegate");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FriendDelegate, paramsPtr + 4);
@@ -4605,12 +4899,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddAddFriendByNameCompleteDelegate;
     /// <summary>
     /// Function: AddAddFriendByNameCompleteDelegate
     /// </summary>
     public unsafe virtual void AddAddFriendByNameCompleteDelegate(byte LocalUserNum, System.IntPtr FriendDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddAddFriendByNameCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddAddFriendByNameCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddAddFriendByNameCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FriendDelegate, paramsPtr + 4);
@@ -4618,24 +4913,26 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnAddFriendByNameComplete;
     /// <summary>
     /// Function: OnAddFriendByNameComplete
     /// </summary>
     public unsafe virtual void OnAddFriendByNameComplete(bool bWasSuccessful)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnAddFriendByNameComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnAddFriendByNameComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnAddFriendByNameComplete");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddFriendByName;
     /// <summary>
     /// Function: AddFriendByName
     /// </summary>
     public unsafe virtual bool AddFriendByName(byte LocalUserNum, BmSDK.FString FriendName, BmSDK.FString Message = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFriendByName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddFriendByName, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFriendByName");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FriendName, paramsPtr + 4);
@@ -4651,12 +4948,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 36);
     }
 
+    private static BmSDK.Function __fn_AddFriend;
     /// <summary>
     /// Function: AddFriend
     /// </summary>
     public unsafe virtual bool AddFriend(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.FUniqueNetId NewFriend, BmSDK.FString Message = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFriend", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddFriend, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFriend");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewFriend, paramsPtr + 4);
@@ -4672,60 +4970,65 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_GetKeyboardInputResults;
     /// <summary>
     /// Function: GetKeyboardInputResults
     /// </summary>
     public unsafe virtual BmSDK.FString GetKeyboardInputResults(out byte bWasCanceled)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetKeyboardInputResults", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetKeyboardInputResults, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetKeyboardInputResults");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         bWasCanceled = BmSDK.Framework.MarshalUtil.ToManaged<byte>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_ClearKeyboardInputDoneDelegate;
     /// <summary>
     /// Function: ClearKeyboardInputDoneDelegate
     /// </summary>
     public unsafe virtual void ClearKeyboardInputDoneDelegate(System.IntPtr InputDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearKeyboardInputDoneDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearKeyboardInputDoneDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearKeyboardInputDoneDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InputDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddKeyboardInputDoneDelegate;
     /// <summary>
     /// Function: AddKeyboardInputDoneDelegate
     /// </summary>
     public unsafe virtual void AddKeyboardInputDoneDelegate(System.IntPtr InputDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddKeyboardInputDoneDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddKeyboardInputDoneDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddKeyboardInputDoneDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InputDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnKeyboardInputComplete;
     /// <summary>
     /// Function: OnKeyboardInputComplete
     /// </summary>
     public unsafe virtual void OnKeyboardInputComplete(bool bWasSuccessful)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnKeyboardInputComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnKeyboardInputComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnKeyboardInputComplete");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShowKeyboardUI;
     /// <summary>
     /// Function: ShowKeyboardUI
     /// </summary>
     public unsafe virtual bool ShowKeyboardUI(byte LocalUserNum, BmSDK.FString TitleText, BmSDK.FString DescriptionText, bool bIsPassword = default, bool bShouldValidate = default, BmSDK.FString DefaultText = default, int MaxResultLength = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowKeyboardUI", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowKeyboardUI, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowKeyboardUI");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TitleText, paramsPtr + 4);
@@ -4745,12 +5048,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 64);
     }
 
+    private static BmSDK.Function __fn_SetOnlineStatus;
     /// <summary>
     /// Function: SetOnlineStatus
     /// </summary>
     public unsafe virtual void SetOnlineStatus(byte LocalUserNum, int StatusId, out BmSDK.TArray<BmSDK.Engine.Settings.FLocalizedStringSetting> LocalizedStringSettings, out BmSDK.TArray<BmSDK.Engine.Settings.FSettingsProperty> Properties)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SetOnlineStatus", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetOnlineStatus, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SetOnlineStatus");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StatusId, paramsPtr + 4);
@@ -4767,12 +5071,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_GetFriendsList;
     /// <summary>
     /// Function: GetFriendsList
     /// </summary>
     public unsafe virtual BmSDK.Engine.OnlineSubsystem.EOnlineEnumerationReadState GetFriendsList(byte LocalUserNum, out BmSDK.TArray<BmSDK.Engine.OnlineSubsystem.FOnlineFriend> Friends, int Count = default, int StartingAt = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetFriendsList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFriendsList, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetFriendsList");
         byte* paramsPtr = stackalloc byte[29];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Count, paramsPtr + 20);
@@ -4789,12 +5094,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineSubsystem.EOnlineEnumerationReadState>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_ClearReadFriendsCompleteDelegate;
     /// <summary>
     /// Function: ClearReadFriendsCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearReadFriendsCompleteDelegate(byte LocalUserNum, System.IntPtr ReadFriendsCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadFriendsCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearReadFriendsCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadFriendsCompleteDelegate");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadFriendsCompleteDelegate, paramsPtr + 4);
@@ -4802,12 +5108,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddReadFriendsCompleteDelegate;
     /// <summary>
     /// Function: AddReadFriendsCompleteDelegate
     /// </summary>
     public unsafe virtual void AddReadFriendsCompleteDelegate(byte LocalUserNum, System.IntPtr ReadFriendsCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadFriendsCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddReadFriendsCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadFriendsCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadFriendsCompleteDelegate, paramsPtr + 4);
@@ -4815,24 +5122,26 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnReadFriendsComplete;
     /// <summary>
     /// Function: OnReadFriendsComplete
     /// </summary>
     public unsafe virtual void OnReadFriendsComplete(bool bWasSuccessful)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadFriendsComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReadFriendsComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadFriendsComplete");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ReadFriendsList;
     /// <summary>
     /// Function: ReadFriendsList
     /// </summary>
     public unsafe virtual bool ReadFriendsList(byte LocalUserNum, int Count = default, int StartingAt = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadFriendsList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadFriendsList, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadFriendsList");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Count, paramsPtr + 4);
@@ -4848,12 +5157,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_ClearWritePlayerStorageCompleteDelegate;
     /// <summary>
     /// Function: ClearWritePlayerStorageCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearWritePlayerStorageCompleteDelegate(byte LocalUserNum, System.IntPtr WritePlayerStorageCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearWritePlayerStorageCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearWritePlayerStorageCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearWritePlayerStorageCompleteDelegate");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WritePlayerStorageCompleteDelegate, paramsPtr + 4);
@@ -4861,12 +5171,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddWritePlayerStorageCompleteDelegate;
     /// <summary>
     /// Function: AddWritePlayerStorageCompleteDelegate
     /// </summary>
     public unsafe virtual void AddWritePlayerStorageCompleteDelegate(byte LocalUserNum, System.IntPtr WritePlayerStorageCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddWritePlayerStorageCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddWritePlayerStorageCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddWritePlayerStorageCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WritePlayerStorageCompleteDelegate, paramsPtr + 4);
@@ -4874,12 +5185,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnWritePlayerStorageComplete;
     /// <summary>
     /// Function: OnWritePlayerStorageComplete
     /// </summary>
     public unsafe virtual void OnWritePlayerStorageComplete(byte LocalUserNum, bool bWasSuccessful)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnWritePlayerStorageComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnWritePlayerStorageComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnWritePlayerStorageComplete");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 4);
@@ -4887,12 +5199,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_WritePlayerStorage;
     /// <summary>
     /// Function: WritePlayerStorage
     /// </summary>
     public unsafe virtual bool WritePlayerStorage(byte LocalUserNum, BmSDK.Engine.OnlinePlayerStorage PlayerStorage, int DeviceID = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WritePlayerStorage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WritePlayerStorage, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WritePlayerStorage");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerStorage, paramsPtr + 4);
@@ -4901,24 +5214,26 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_GetPlayerStorage;
     /// <summary>
     /// Function: GetPlayerStorage
     /// </summary>
     public unsafe virtual BmSDK.Engine.OnlinePlayerStorage GetPlayerStorage(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetPlayerStorage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPlayerStorage, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetPlayerStorage");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlinePlayerStorage>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_ClearReadPlayerStorageForNetIdCompleteDelegate;
     /// <summary>
     /// Function: ClearReadPlayerStorageForNetIdCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearReadPlayerStorageForNetIdCompleteDelegate(BmSDK.Engine.OnlineSubsystem.FUniqueNetId NetId, System.IntPtr ReadPlayerStorageForNetIdCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadPlayerStorageForNetIdCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearReadPlayerStorageForNetIdCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadPlayerStorageForNetIdCompleteDelegate");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NetId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadPlayerStorageForNetIdCompleteDelegate, paramsPtr + 8);
@@ -4926,12 +5241,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddReadPlayerStorageForNetIdCompleteDelegate;
     /// <summary>
     /// Function: AddReadPlayerStorageForNetIdCompleteDelegate
     /// </summary>
     public unsafe virtual void AddReadPlayerStorageForNetIdCompleteDelegate(BmSDK.Engine.OnlineSubsystem.FUniqueNetId NetId, System.IntPtr ReadPlayerStorageForNetIdCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadPlayerStorageForNetIdCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddReadPlayerStorageForNetIdCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadPlayerStorageForNetIdCompleteDelegate");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NetId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadPlayerStorageForNetIdCompleteDelegate, paramsPtr + 8);
@@ -4939,12 +5255,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnReadPlayerStorageForNetIdComplete;
     /// <summary>
     /// Function: OnReadPlayerStorageForNetIdComplete
     /// </summary>
     public unsafe virtual void OnReadPlayerStorageForNetIdComplete(BmSDK.Engine.OnlineSubsystem.FUniqueNetId NetId, bool bWasSuccessful)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadPlayerStorageForNetIdComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReadPlayerStorageForNetIdComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadPlayerStorageForNetIdComplete");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NetId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 8);
@@ -4952,12 +5269,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ReadPlayerStorageForNetId;
     /// <summary>
     /// Function: ReadPlayerStorageForNetId
     /// </summary>
     public unsafe virtual bool ReadPlayerStorageForNetId(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.FUniqueNetId NetId, BmSDK.Engine.OnlinePlayerStorage PlayerStorage)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadPlayerStorageForNetId", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadPlayerStorageForNetId, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadPlayerStorageForNetId");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NetId, paramsPtr + 4);
@@ -4966,12 +5284,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_ClearReadPlayerStorageCompleteDelegate;
     /// <summary>
     /// Function: ClearReadPlayerStorageCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearReadPlayerStorageCompleteDelegate(byte LocalUserNum, System.IntPtr ReadPlayerStorageCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadPlayerStorageCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearReadPlayerStorageCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadPlayerStorageCompleteDelegate");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadPlayerStorageCompleteDelegate, paramsPtr + 4);
@@ -4979,12 +5298,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddReadPlayerStorageCompleteDelegate;
     /// <summary>
     /// Function: AddReadPlayerStorageCompleteDelegate
     /// </summary>
     public unsafe virtual void AddReadPlayerStorageCompleteDelegate(byte LocalUserNum, System.IntPtr ReadPlayerStorageCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadPlayerStorageCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddReadPlayerStorageCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadPlayerStorageCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadPlayerStorageCompleteDelegate, paramsPtr + 4);
@@ -4992,12 +5312,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnReadPlayerStorageComplete;
     /// <summary>
     /// Function: OnReadPlayerStorageComplete
     /// </summary>
     public unsafe virtual void OnReadPlayerStorageComplete(byte LocalUserNum, bool bWasSuccessful)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadPlayerStorageComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReadPlayerStorageComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadPlayerStorageComplete");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 4);
@@ -5005,12 +5326,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ReadPlayerStorage;
     /// <summary>
     /// Function: ReadPlayerStorage
     /// </summary>
     public unsafe virtual bool ReadPlayerStorage(byte LocalUserNum, BmSDK.Engine.OnlinePlayerStorage PlayerStorage, int DeviceID = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadPlayerStorage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadPlayerStorage, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadPlayerStorage");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerStorage, paramsPtr + 4);
@@ -5019,12 +5341,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_GetFriendJoinURL;
     /// <summary>
     /// Function: GetFriendJoinURL
     /// </summary>
     public unsafe virtual bool GetFriendJoinURL(BmSDK.Engine.OnlineSubsystem.FUniqueNetId FriendUID, out BmSDK.FString ServerURL, out BmSDK.FString ServerUID)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetFriendJoinURL", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFriendJoinURL, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetFriendJoinURL");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FriendUID, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -5040,12 +5363,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 40);
     }
 
+    private static BmSDK.Function __fn_GetCommandlineJoinURL;
     /// <summary>
     /// Function: GetCommandlineJoinURL
     /// </summary>
     public unsafe virtual bool GetCommandlineJoinURL(bool bMarkAsJoined, out BmSDK.FString ServerURL, out BmSDK.FString ServerUID)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCommandlineJoinURL", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCommandlineJoinURL, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCommandlineJoinURL");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bMarkAsJoined, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -5061,12 +5385,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 36);
     }
 
+    private static BmSDK.Function __fn_Int64ToUniqueNetId;
     /// <summary>
     /// Function: Int64ToUniqueNetId
     /// </summary>
     public unsafe virtual bool Int64ToUniqueNetId(BmSDK.FString UIDString, out BmSDK.Engine.OnlineSubsystem.FUniqueNetId OutUID)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.Int64ToUniqueNetId", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Int64ToUniqueNetId, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.Int64ToUniqueNetId");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UIDString, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -5081,12 +5406,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_UniqueNetIdToInt64;
     /// <summary>
     /// Function: UniqueNetIdToInt64
     /// </summary>
     public unsafe virtual BmSDK.FString UniqueNetIdToInt64(out BmSDK.Engine.OnlineSubsystem.FUniqueNetId Uid)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UniqueNetIdToInt64", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UniqueNetIdToInt64, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UniqueNetIdToInt64");
         byte* paramsPtr = stackalloc byte[24];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -5100,12 +5426,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_ShowProfileUI;
     /// <summary>
     /// Function: ShowProfileUI
     /// </summary>
     public unsafe virtual bool ShowProfileUI(byte LocalUserNum, BmSDK.FString SubURL = default, BmSDK.Engine.OnlineSubsystem.FUniqueNetId PlayerUID = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowProfileUI", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowProfileUI, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowProfileUI");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SubURL, paramsPtr + 4);
@@ -5121,12 +5448,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_UniqueNetIdToPlayerName;
     /// <summary>
     /// Function: UniqueNetIdToPlayerName
     /// </summary>
     public unsafe virtual BmSDK.FString UniqueNetIdToPlayerName(out BmSDK.Engine.OnlineSubsystem.FUniqueNetId Uid)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UniqueNetIdToPlayerName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UniqueNetIdToPlayerName, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UniqueNetIdToPlayerName");
         byte* paramsPtr = stackalloc byte[24];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -5140,12 +5468,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetSteamClanData;
     /// <summary>
     /// Function: GetSteamClanData
     /// </summary>
     public unsafe virtual void GetSteamClanData(out BmSDK.TArray<BmSDK.OnlineSubsystemSteamworks._OnlineSubsystemSteamworks.FSteamPlayerClanData> Results)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetSteamClanData", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSteamClanData, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetSteamClanData");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -5159,48 +5488,52 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ClearGetNumberOfCurrentPlayersCompleteDelegate;
     /// <summary>
     /// Function: ClearGetNumberOfCurrentPlayersCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearGetNumberOfCurrentPlayersCompleteDelegate(System.IntPtr GetNumberOfCurrentPlayersCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearGetNumberOfCurrentPlayersCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearGetNumberOfCurrentPlayersCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearGetNumberOfCurrentPlayersCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GetNumberOfCurrentPlayersCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddGetNumberOfCurrentPlayersCompleteDelegate;
     /// <summary>
     /// Function: AddGetNumberOfCurrentPlayersCompleteDelegate
     /// </summary>
     public unsafe virtual void AddGetNumberOfCurrentPlayersCompleteDelegate(System.IntPtr GetNumberOfCurrentPlayersCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddGetNumberOfCurrentPlayersCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddGetNumberOfCurrentPlayersCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddGetNumberOfCurrentPlayersCompleteDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GetNumberOfCurrentPlayersCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnGetNumberOfCurrentPlayersComplete;
     /// <summary>
     /// Function: OnGetNumberOfCurrentPlayersComplete
     /// </summary>
     public unsafe virtual void OnGetNumberOfCurrentPlayersComplete(int TotalPlayers)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnGetNumberOfCurrentPlayersComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnGetNumberOfCurrentPlayersComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnGetNumberOfCurrentPlayersComplete");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TotalPlayers, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetNumberOfCurrentPlayers;
     /// <summary>
     /// Function: GetNumberOfCurrentPlayers
     /// </summary>
     public unsafe virtual bool GetNumberOfCurrentPlayers()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetNumberOfCurrentPlayers", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNumberOfCurrentPlayers, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetNumberOfCurrentPlayers");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -5213,12 +5546,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ClearWriteProfileSettingsCompleteDelegate;
     /// <summary>
     /// Function: ClearWriteProfileSettingsCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearWriteProfileSettingsCompleteDelegate(byte LocalUserNum, System.IntPtr WriteProfileSettingsCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearWriteProfileSettingsCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearWriteProfileSettingsCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearWriteProfileSettingsCompleteDelegate");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WriteProfileSettingsCompleteDelegate, paramsPtr + 4);
@@ -5226,12 +5560,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddWriteProfileSettingsCompleteDelegate;
     /// <summary>
     /// Function: AddWriteProfileSettingsCompleteDelegate
     /// </summary>
     public unsafe virtual void AddWriteProfileSettingsCompleteDelegate(byte LocalUserNum, System.IntPtr WriteProfileSettingsCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddWriteProfileSettingsCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddWriteProfileSettingsCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddWriteProfileSettingsCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WriteProfileSettingsCompleteDelegate, paramsPtr + 4);
@@ -5239,12 +5574,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnWriteProfileSettingsComplete;
     /// <summary>
     /// Function: OnWriteProfileSettingsComplete
     /// </summary>
     public unsafe virtual void OnWriteProfileSettingsComplete(byte LocalUserNum, bool bWasSuccessful)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnWriteProfileSettingsComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnWriteProfileSettingsComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnWriteProfileSettingsComplete");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 4);
@@ -5252,12 +5588,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_WriteProfileSettings;
     /// <summary>
     /// Function: WriteProfileSettings
     /// </summary>
     public unsafe virtual bool WriteProfileSettings(byte LocalUserNum, BmSDK.Engine.OnlineProfileSettings ProfileSettings)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteProfileSettings", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WriteProfileSettings, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteProfileSettings");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProfileSettings, paramsPtr + 4);
@@ -5272,24 +5609,26 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_GetProfileSettings;
     /// <summary>
     /// Function: GetProfileSettings
     /// </summary>
     public unsafe virtual BmSDK.Engine.OnlineProfileSettings GetProfileSettings(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetProfileSettings", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetProfileSettings, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetProfileSettings");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineProfileSettings>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_ClearReadProfileSettingsCompleteDelegate;
     /// <summary>
     /// Function: ClearReadProfileSettingsCompleteDelegate
     /// </summary>
     public unsafe virtual void ClearReadProfileSettingsCompleteDelegate(byte LocalUserNum, System.IntPtr ReadProfileSettingsCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadProfileSettingsCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearReadProfileSettingsCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadProfileSettingsCompleteDelegate");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadProfileSettingsCompleteDelegate, paramsPtr + 4);
@@ -5297,12 +5636,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddReadProfileSettingsCompleteDelegate;
     /// <summary>
     /// Function: AddReadProfileSettingsCompleteDelegate
     /// </summary>
     public unsafe virtual void AddReadProfileSettingsCompleteDelegate(byte LocalUserNum, System.IntPtr ReadProfileSettingsCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadProfileSettingsCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddReadProfileSettingsCompleteDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadProfileSettingsCompleteDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReadProfileSettingsCompleteDelegate, paramsPtr + 4);
@@ -5310,12 +5650,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnReadProfileSettingsComplete;
     /// <summary>
     /// Function: OnReadProfileSettingsComplete
     /// </summary>
     public unsafe virtual void OnReadProfileSettingsComplete(byte LocalUserNum, bool bWasSuccessful)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadProfileSettingsComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnReadProfileSettingsComplete, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadProfileSettingsComplete");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 4);
@@ -5323,12 +5664,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ReadProfileSettings;
     /// <summary>
     /// Function: ReadProfileSettings
     /// </summary>
     public unsafe virtual bool ReadProfileSettings(byte LocalUserNum, BmSDK.Engine.OnlineProfileSettings ProfileSettings)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadProfileSettings", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadProfileSettings, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadProfileSettings");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProfileSettings, paramsPtr + 4);
@@ -5343,12 +5685,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_ClearFriendsChangeDelegate;
     /// <summary>
     /// Function: ClearFriendsChangeDelegate
     /// </summary>
     public unsafe virtual void ClearFriendsChangeDelegate(byte LocalUserNum, System.IntPtr FriendsDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearFriendsChangeDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearFriendsChangeDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearFriendsChangeDelegate");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FriendsDelegate, paramsPtr + 4);
@@ -5356,12 +5699,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddFriendsChangeDelegate;
     /// <summary>
     /// Function: AddFriendsChangeDelegate
     /// </summary>
     public unsafe virtual void AddFriendsChangeDelegate(byte LocalUserNum, System.IntPtr FriendsDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFriendsChangeDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddFriendsChangeDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFriendsChangeDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FriendsDelegate, paramsPtr + 4);
@@ -5369,60 +5713,65 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ClearMutingChangeDelegate;
     /// <summary>
     /// Function: ClearMutingChangeDelegate
     /// </summary>
     public unsafe virtual void ClearMutingChangeDelegate(System.IntPtr MutingDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearMutingChangeDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearMutingChangeDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearMutingChangeDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MutingDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddMutingChangeDelegate;
     /// <summary>
     /// Function: AddMutingChangeDelegate
     /// </summary>
     public unsafe virtual void AddMutingChangeDelegate(System.IntPtr MutingDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddMutingChangeDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddMutingChangeDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddMutingChangeDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MutingDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ClearLoginCancelledDelegate;
     /// <summary>
     /// Function: ClearLoginCancelledDelegate
     /// </summary>
     public unsafe virtual void ClearLoginCancelledDelegate(System.IntPtr CancelledDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLoginCancelledDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearLoginCancelledDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLoginCancelledDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CancelledDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddLoginCancelledDelegate;
     /// <summary>
     /// Function: AddLoginCancelledDelegate
     /// </summary>
     public unsafe virtual void AddLoginCancelledDelegate(System.IntPtr CancelledDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLoginCancelledDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddLoginCancelledDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLoginCancelledDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CancelledDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ClearLoginStatusChangeDelegate;
     /// <summary>
     /// Function: ClearLoginStatusChangeDelegate
     /// </summary>
     public unsafe virtual void ClearLoginStatusChangeDelegate(System.IntPtr LoginStatusDelegate, byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLoginStatusChangeDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearLoginStatusChangeDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLoginStatusChangeDelegate");
         byte* paramsPtr = stackalloc byte[17];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LoginStatusDelegate, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 16);
@@ -5430,12 +5779,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddLoginStatusChangeDelegate;
     /// <summary>
     /// Function: AddLoginStatusChangeDelegate
     /// </summary>
     public unsafe virtual void AddLoginStatusChangeDelegate(System.IntPtr LoginStatusDelegate, byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLoginStatusChangeDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddLoginStatusChangeDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLoginStatusChangeDelegate");
         byte* paramsPtr = stackalloc byte[17];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LoginStatusDelegate, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 16);
@@ -5443,12 +5793,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnLoginStatusChange;
     /// <summary>
     /// Function: OnLoginStatusChange
     /// </summary>
     public unsafe virtual void OnLoginStatusChange(BmSDK.Engine.OnlineSubsystem.ELoginStatus NewStatus, BmSDK.Engine.OnlineSubsystem.FUniqueNetId NewId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLoginStatusChange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnLoginStatusChange, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLoginStatusChange");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewStatus, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewId, paramsPtr + 4);
@@ -5456,36 +5807,39 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_ClearLoginChangeDelegate;
     /// <summary>
     /// Function: ClearLoginChangeDelegate
     /// </summary>
     public unsafe virtual void ClearLoginChangeDelegate(System.IntPtr LoginDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLoginChangeDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearLoginChangeDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLoginChangeDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LoginDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddLoginChangeDelegate;
     /// <summary>
     /// Function: AddLoginChangeDelegate
     /// </summary>
     public unsafe virtual void AddLoginChangeDelegate(System.IntPtr LoginDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLoginChangeDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddLoginChangeDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLoginChangeDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LoginDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShowFriendsUI;
     /// <summary>
     /// Function: ShowFriendsUI
     /// </summary>
     public unsafe virtual bool ShowFriendsUI(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowFriendsUI", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowFriendsUI, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowFriendsUI");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -5499,12 +5853,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_IsMuted;
     /// <summary>
     /// Function: IsMuted
     /// </summary>
     public unsafe virtual bool IsMuted(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.FUniqueNetId PlayerID)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsMuted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsMuted, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsMuted");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerID, paramsPtr + 4);
@@ -5512,12 +5867,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_AreAnyFriends;
     /// <summary>
     /// Function: AreAnyFriends
     /// </summary>
     public unsafe virtual bool AreAnyFriends(byte LocalUserNum, out BmSDK.TArray<BmSDK.Engine.OnlineSubsystem.FFriendsQuery> Query)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AreAnyFriends", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AreAnyFriends, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AreAnyFriends");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -5532,12 +5888,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_IsFriend;
     /// <summary>
     /// Function: IsFriend
     /// </summary>
     public unsafe virtual bool IsFriend(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.FUniqueNetId PlayerID)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsFriend", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsFriend, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsFriend");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerID, paramsPtr + 4);
@@ -5552,60 +5909,65 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_CanShowPresenceInformation;
     /// <summary>
     /// Function: CanShowPresenceInformation
     /// </summary>
     public unsafe virtual BmSDK.Engine.OnlineSubsystem.EFeaturePrivilegeLevel CanShowPresenceInformation(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanShowPresenceInformation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanShowPresenceInformation, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanShowPresenceInformation");
         byte* paramsPtr = stackalloc byte[2];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineSubsystem.EFeaturePrivilegeLevel>(paramsPtr + 1);
     }
 
+    private static BmSDK.Function __fn_CanViewPlayerProfiles;
     /// <summary>
     /// Function: CanViewPlayerProfiles
     /// </summary>
     public unsafe virtual BmSDK.Engine.OnlineSubsystem.EFeaturePrivilegeLevel CanViewPlayerProfiles(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanViewPlayerProfiles", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanViewPlayerProfiles, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanViewPlayerProfiles");
         byte* paramsPtr = stackalloc byte[2];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineSubsystem.EFeaturePrivilegeLevel>(paramsPtr + 1);
     }
 
+    private static BmSDK.Function __fn_CanPurchaseContent;
     /// <summary>
     /// Function: CanPurchaseContent
     /// </summary>
     public unsafe virtual BmSDK.Engine.OnlineSubsystem.EFeaturePrivilegeLevel CanPurchaseContent(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanPurchaseContent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanPurchaseContent, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanPurchaseContent");
         byte* paramsPtr = stackalloc byte[2];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineSubsystem.EFeaturePrivilegeLevel>(paramsPtr + 1);
     }
 
+    private static BmSDK.Function __fn_CanDownloadUserContent;
     /// <summary>
     /// Function: CanDownloadUserContent
     /// </summary>
     public unsafe virtual BmSDK.Engine.OnlineSubsystem.EFeaturePrivilegeLevel CanDownloadUserContent(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanDownloadUserContent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanDownloadUserContent, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanDownloadUserContent");
         byte* paramsPtr = stackalloc byte[2];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineSubsystem.EFeaturePrivilegeLevel>(paramsPtr + 1);
     }
 
+    private static BmSDK.Function __fn_CanCommunicate;
     /// <summary>
     /// Function: CanCommunicate
     /// </summary>
     public unsafe virtual BmSDK.Engine.OnlineSubsystem.EFeaturePrivilegeLevel CanCommunicate(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanCommunicate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanCommunicate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanCommunicate");
         byte* paramsPtr = stackalloc byte[2];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -5619,12 +5981,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineSubsystem.EFeaturePrivilegeLevel>(paramsPtr + 1);
     }
 
+    private static BmSDK.Function __fn_CanPlayOnline;
     /// <summary>
     /// Function: CanPlayOnline
     /// </summary>
     public unsafe virtual BmSDK.Engine.OnlineSubsystem.EFeaturePrivilegeLevel CanPlayOnline(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanPlayOnline", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanPlayOnline, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanPlayOnline");
         byte* paramsPtr = stackalloc byte[2];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -5638,72 +6001,78 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineSubsystem.EFeaturePrivilegeLevel>(paramsPtr + 1);
     }
 
+    private static BmSDK.Function __fn_IsOnlineAccount;
     /// <summary>
     /// Function: IsOnlineAccount
     /// </summary>
     public unsafe virtual bool IsOnlineAccount(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsOnlineAccount", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsOnlineAccount, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsOnlineAccount");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_IsLocalLogin;
     /// <summary>
     /// Function: IsLocalLogin
     /// </summary>
     public unsafe virtual bool IsLocalLogin(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsLocalLogin", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsLocalLogin, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsLocalLogin");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_IsGuestLogin;
     /// <summary>
     /// Function: IsGuestLogin
     /// </summary>
     public unsafe virtual bool IsGuestLogin(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsGuestLogin", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsGuestLogin, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsGuestLogin");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetPlayerDisplayName;
     /// <summary>
     /// Function: GetPlayerDisplayName
     /// </summary>
     public unsafe virtual BmSDK.FString GetPlayerDisplayName(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetPlayerDisplayName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPlayerDisplayName, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetPlayerDisplayName");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetPlayerNickname;
     /// <summary>
     /// Function: GetPlayerNickname
     /// </summary>
     public unsafe virtual BmSDK.FString GetPlayerNickname(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetPlayerNickname", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPlayerNickname, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetPlayerNickname");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetUniquePlayerId;
     /// <summary>
     /// Function: GetUniquePlayerId
     /// </summary>
     public unsafe virtual bool GetUniquePlayerId(byte LocalUserNum, out BmSDK.Engine.OnlineSubsystem.FUniqueNetId PlayerID)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetUniquePlayerId", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetUniquePlayerId, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetUniquePlayerId");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -5711,12 +6080,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_GetLoginStatus;
     /// <summary>
     /// Function: GetLoginStatus
     /// </summary>
     public unsafe virtual BmSDK.Engine.OnlineSubsystem.ELoginStatus GetLoginStatus(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetLoginStatus", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLoginStatus, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetLoginStatus");
         byte* paramsPtr = stackalloc byte[2];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -5730,12 +6100,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineSubsystem.ELoginStatus>(paramsPtr + 1);
     }
 
+    private static BmSDK.Function __fn_ClearLogoutCompletedDelegate;
     /// <summary>
     /// Function: ClearLogoutCompletedDelegate
     /// </summary>
     public unsafe virtual void ClearLogoutCompletedDelegate(byte LocalUserNum, System.IntPtr LogoutDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLogoutCompletedDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearLogoutCompletedDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLogoutCompletedDelegate");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LogoutDelegate, paramsPtr + 4);
@@ -5743,12 +6114,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddLogoutCompletedDelegate;
     /// <summary>
     /// Function: AddLogoutCompletedDelegate
     /// </summary>
     public unsafe virtual void AddLogoutCompletedDelegate(byte LocalUserNum, System.IntPtr LogoutDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLogoutCompletedDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddLogoutCompletedDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLogoutCompletedDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LogoutDelegate, paramsPtr + 4);
@@ -5756,24 +6128,26 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnLogoutCompleted;
     /// <summary>
     /// Function: OnLogoutCompleted
     /// </summary>
     public unsafe virtual void OnLogoutCompleted(bool bWasSuccessful)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLogoutCompleted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnLogoutCompleted, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLogoutCompleted");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Logout;
     /// <summary>
     /// Function: Logout
     /// </summary>
     public unsafe virtual bool Logout(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.Logout", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Logout, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.Logout");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -5787,12 +6161,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_ClearLoginFailedDelegate;
     /// <summary>
     /// Function: ClearLoginFailedDelegate
     /// </summary>
     public unsafe virtual void ClearLoginFailedDelegate(byte LocalUserNum, System.IntPtr LoginFailedDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLoginFailedDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearLoginFailedDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLoginFailedDelegate");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LoginFailedDelegate, paramsPtr + 4);
@@ -5800,12 +6175,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AddLoginFailedDelegate;
     /// <summary>
     /// Function: AddLoginFailedDelegate
     /// </summary>
     public unsafe virtual void AddLoginFailedDelegate(byte LocalUserNum, System.IntPtr LoginFailedDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLoginFailedDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddLoginFailedDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLoginFailedDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LoginFailedDelegate, paramsPtr + 4);
@@ -5813,12 +6189,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_OnLoginFailed;
     /// <summary>
     /// Function: OnLoginFailed
     /// </summary>
     public unsafe virtual void OnLoginFailed(byte LocalUserNum, BmSDK.Engine.OnlineSubsystem.EOnlineServerConnectionStatus ErrorCode)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLoginFailed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnLoginFailed, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLoginFailed");
         byte* paramsPtr = stackalloc byte[2];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ErrorCode, paramsPtr + 1);
@@ -5826,12 +6203,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_AutoLogin;
     /// <summary>
     /// Function: AutoLogin
     /// </summary>
     public unsafe virtual bool AutoLogin()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AutoLogin", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AutoLogin, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AutoLogin");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -5844,12 +6222,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Login;
     /// <summary>
     /// Function: Login
     /// </summary>
     public unsafe virtual bool Login(byte LocalUserNum, BmSDK.FString LoginName, BmSDK.FString Password, bool bWantsLocalOnly = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.Login", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Login, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.Login");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LoginName, paramsPtr + 4);
@@ -5866,12 +6245,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 40);
     }
 
+    private static BmSDK.Function __fn_ShowLoginUI;
     /// <summary>
     /// Function: ShowLoginUI
     /// </summary>
     public unsafe virtual bool ShowLoginUI(bool bShowOnlineOnly = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowLoginUI", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowLoginUI, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowLoginUI");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bShowOnlineOnly, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -5885,103 +6265,112 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_OnFriendsChange;
     /// <summary>
     /// Function: OnFriendsChange
     /// </summary>
     public unsafe virtual void OnFriendsChange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnFriendsChange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnFriendsChange, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnFriendsChange");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnMutingChange;
     /// <summary>
     /// Function: OnMutingChange
     /// </summary>
     public unsafe virtual void OnMutingChange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnMutingChange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnMutingChange, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnMutingChange");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnLoginCancelled;
     /// <summary>
     /// Function: OnLoginCancelled
     /// </summary>
     public unsafe virtual void OnLoginCancelled()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLoginCancelled", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnLoginCancelled, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLoginCancelled");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnLoginChange;
     /// <summary>
     /// Function: OnLoginChange
     /// </summary>
     public unsafe virtual void OnLoginChange(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLoginChange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnLoginChange, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLoginChange");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetLocale;
     /// <summary>
     /// Function: GetLocale
     /// </summary>
     public unsafe virtual int GetLocale()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetLocale", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLocale, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetLocale");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ClearStorageDeviceChangeDelegate;
     /// <summary>
     /// Function: ClearStorageDeviceChangeDelegate
     /// </summary>
     public unsafe virtual void ClearStorageDeviceChangeDelegate(System.IntPtr StorageDeviceChangeDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearStorageDeviceChangeDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearStorageDeviceChangeDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearStorageDeviceChangeDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StorageDeviceChangeDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddStorageDeviceChangeDelegate;
     /// <summary>
     /// Function: AddStorageDeviceChangeDelegate
     /// </summary>
     public unsafe virtual void AddStorageDeviceChangeDelegate(System.IntPtr StorageDeviceChangeDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddStorageDeviceChangeDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddStorageDeviceChangeDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddStorageDeviceChangeDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StorageDeviceChangeDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnStorageDeviceChange;
     /// <summary>
     /// Function: OnStorageDeviceChange
     /// </summary>
     public unsafe virtual void OnStorageDeviceChange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnStorageDeviceChange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnStorageDeviceChange, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnStorageDeviceChange");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetNATType;
     /// <summary>
     /// Function: GetNATType
     /// </summary>
     public unsafe virtual BmSDK.Engine.OnlineSubsystem.ENATType GetNATType()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetNATType", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNATType, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetNATType");
         byte* paramsPtr = stackalloc byte[1];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -5994,48 +6383,52 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineSubsystem.ENATType>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ClearConnectionStatusChangeDelegate;
     /// <summary>
     /// Function: ClearConnectionStatusChangeDelegate
     /// </summary>
     public unsafe virtual void ClearConnectionStatusChangeDelegate(System.IntPtr ConnectionStatusDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearConnectionStatusChangeDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearConnectionStatusChangeDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearConnectionStatusChangeDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ConnectionStatusDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddConnectionStatusChangeDelegate;
     /// <summary>
     /// Function: AddConnectionStatusChangeDelegate
     /// </summary>
     public unsafe virtual void AddConnectionStatusChangeDelegate(System.IntPtr ConnectionStatusDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddConnectionStatusChangeDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddConnectionStatusChangeDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddConnectionStatusChangeDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ConnectionStatusDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnConnectionStatusChange;
     /// <summary>
     /// Function: OnConnectionStatusChange
     /// </summary>
     public unsafe virtual void OnConnectionStatusChange(BmSDK.Engine.OnlineSubsystem.EOnlineServerConnectionStatus ConnectionStatus)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnConnectionStatusChange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnConnectionStatusChange, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnConnectionStatusChange");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ConnectionStatus, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsControllerConnected;
     /// <summary>
     /// Function: IsControllerConnected
     /// </summary>
     public unsafe virtual bool IsControllerConnected(int ControllerId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsControllerConnected", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsControllerConnected, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsControllerConnected");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerId, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -6049,36 +6442,39 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_ClearControllerChangeDelegate;
     /// <summary>
     /// Function: ClearControllerChangeDelegate
     /// </summary>
     public unsafe virtual void ClearControllerChangeDelegate(System.IntPtr ControllerChangeDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearControllerChangeDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearControllerChangeDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearControllerChangeDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerChangeDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddControllerChangeDelegate;
     /// <summary>
     /// Function: AddControllerChangeDelegate
     /// </summary>
     public unsafe virtual void AddControllerChangeDelegate(System.IntPtr ControllerChangeDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddControllerChangeDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddControllerChangeDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddControllerChangeDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerChangeDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnControllerChange;
     /// <summary>
     /// Function: OnControllerChange
     /// </summary>
     public unsafe virtual void OnControllerChange(int ControllerId, bool bIsConnected)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnControllerChange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnControllerChange, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnControllerChange");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIsConnected, paramsPtr + 4);
@@ -6086,12 +6482,13 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_SetNetworkNotificationPosition;
     /// <summary>
     /// Function: SetNetworkNotificationPosition
     /// </summary>
     public unsafe virtual void SetNetworkNotificationPosition(BmSDK.Engine.OnlineSubsystem.ENetworkNotificationPosition NewPos)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SetNetworkNotificationPosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetNetworkNotificationPosition, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SetNetworkNotificationPosition");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPos, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -6105,95 +6502,103 @@ public partial class _OnlineSubsystemSteamworks : BmSDK.IpDrv.OnlineSubsystemCom
         return;
     }
 
+    private static BmSDK.Function __fn_GetNetworkNotificationPosition;
     /// <summary>
     /// Function: GetNetworkNotificationPosition
     /// </summary>
     public unsafe virtual BmSDK.Engine.OnlineSubsystem.ENetworkNotificationPosition GetNetworkNotificationPosition()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetNetworkNotificationPosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNetworkNotificationPosition, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetNetworkNotificationPosition");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineSubsystem.ENetworkNotificationPosition>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ClearExternalUIChangeDelegate;
     /// <summary>
     /// Function: ClearExternalUIChangeDelegate
     /// </summary>
     public unsafe virtual void ClearExternalUIChangeDelegate(System.IntPtr ExternalUIDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearExternalUIChangeDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearExternalUIChangeDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearExternalUIChangeDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExternalUIDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddExternalUIChangeDelegate;
     /// <summary>
     /// Function: AddExternalUIChangeDelegate
     /// </summary>
     public unsafe virtual void AddExternalUIChangeDelegate(System.IntPtr ExternalUIDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddExternalUIChangeDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddExternalUIChangeDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddExternalUIChangeDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExternalUIDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnExternalUIChange;
     /// <summary>
     /// Function: OnExternalUIChange
     /// </summary>
     public unsafe virtual void OnExternalUIChange(bool bIsOpening)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnExternalUIChange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnExternalUIChange, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnExternalUIChange");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIsOpening, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ClearLinkStatusChangeDelegate;
     /// <summary>
     /// Function: ClearLinkStatusChangeDelegate
     /// </summary>
     public unsafe virtual void ClearLinkStatusChangeDelegate(System.IntPtr LinkStatusDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLinkStatusChangeDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearLinkStatusChangeDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLinkStatusChangeDelegate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkStatusDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddLinkStatusChangeDelegate;
     /// <summary>
     /// Function: AddLinkStatusChangeDelegate
     /// </summary>
     public unsafe virtual void AddLinkStatusChangeDelegate(System.IntPtr LinkStatusDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLinkStatusChangeDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddLinkStatusChangeDelegate, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLinkStatusChangeDelegate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkStatusDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnLinkStatusChange;
     /// <summary>
     /// Function: OnLinkStatusChange
     /// </summary>
     public unsafe virtual void OnLinkStatusChange(bool bIsConnected)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLinkStatusChange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnLinkStatusChange, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLinkStatusChange");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIsConnected, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HasLinkConnection;
     /// <summary>
     /// Function: HasLinkConnection
     /// </summary>
     public unsafe virtual bool HasLinkConnection()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.HasLinkConnection", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasLinkConnection, "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.HasLinkConnection");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

@@ -78,12 +78,13 @@ public partial class RDestructibleProp_Tree : BmSDK.BmGame.RDestructibleProp, Bm
         where TComponent : class, Framework.IScriptComponent<RDestructibleProp_Tree>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_TakeDamageFromWeapon;
     /// <summary>
     /// Function: TakeDamageFromWeapon
     /// </summary>
     public unsafe override BmSDK.Engine.Actor.EWeaponDamageResult TakeDamageFromWeapon(int DamageAmount, BmSDK.Engine.Controller EventInstigator, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitNormal, System.Numerics.Vector3 Momentum, BmSDK.Class DamageType, BmSDK.Engine.Actor.FTraceHitInfo HitInfo = default, BmSDK.Engine.Actor DamageCauser = default, bool bHeadShot = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDestructibleProp_Tree.TakeDamageFromWeapon", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TakeDamageFromWeapon, "BmGame.RDestructibleProp_Tree.TakeDamageFromWeapon");
         byte* paramsPtr = stackalloc byte[109];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageAmount, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventInstigator, paramsPtr + 4);
@@ -98,12 +99,13 @@ public partial class RDestructibleProp_Tree : BmSDK.BmGame.RDestructibleProp, Bm
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor.EWeaponDamageResult>(paramsPtr + 108);
     }
 
+    private static BmSDK.Function __fn_TakeDamageFromChainGun;
     /// <summary>
     /// Function: TakeDamageFromChainGun
     /// </summary>
     public unsafe virtual void TakeDamageFromChainGun(int DamageAmount, BmSDK.Engine.Controller EventInstigator, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitNormal, System.Numerics.Vector3 Momentum, BmSDK.Class DamageType, BmSDK.Engine.Actor.FTraceHitInfo HitInfo = default, BmSDK.Engine.Actor DamageCauser = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDestructibleProp_Tree.TakeDamageFromChainGun", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TakeDamageFromChainGun, "BmGame.RDestructibleProp_Tree.TakeDamageFromChainGun");
         byte* paramsPtr = stackalloc byte[104];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageAmount, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventInstigator, paramsPtr + 4);

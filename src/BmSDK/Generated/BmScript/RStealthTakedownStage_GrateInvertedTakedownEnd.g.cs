@@ -78,67 +78,73 @@ public partial class RStealthTakedownStage_GrateInvertedTakedownEnd : BmSDK.BmGa
         where TComponent : class, Framework.IScriptComponent<RStealthTakedownStage_GrateInvertedTakedownEnd>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GrappleStopSound;
     /// <summary>
     /// Function: GrappleStopSound
     /// </summary>
     public unsafe virtual void GrappleStopSound()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.GrappleStopSound", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GrappleStopSound, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.GrappleStopSound");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GrappleStartSound;
     /// <summary>
     /// Function: GrappleStartSound
     /// </summary>
     public unsafe virtual void GrappleStartSound()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.GrappleStartSound", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GrappleStartSound, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.GrappleStartSound");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishGrapple;
     /// <summary>
     /// Function: FinishGrapple
     /// </summary>
     public unsafe virtual void FinishGrapple()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.FinishGrapple", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishGrapple, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.FinishGrapple");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetFinishState;
     /// <summary>
     /// Function: GetFinishState
     /// </summary>
     public unsafe override BmSDK.FName GetFinishState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.GetFinishState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFinishState, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.GetFinishState");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_AttackerDamaged;
     /// <summary>
     /// Function: AttackerDamaged
     /// </summary>
     public unsafe override void AttackerDamaged()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.AttackerDamaged", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttackerDamaged, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.AttackerDamaged");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetReferencePosition;
     /// <summary>
     /// Function: GetReferencePosition
     /// </summary>
     public unsafe override void GetReferencePosition(out System.Numerics.Vector3 ReferencePosition, out BmSDK.Rotator ReferenceRotation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.GetReferencePosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetReferencePosition, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.GetReferencePosition");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ReferencePosition = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
@@ -146,35 +152,38 @@ public partial class RStealthTakedownStage_GrateInvertedTakedownEnd : BmSDK.BmGa
         return;
     }
 
+    private static BmSDK.Function __fn_ResetCameraBehindBatman;
     /// <summary>
     /// Function: ResetCameraBehindBatman
     /// </summary>
     public unsafe override bool ResetCameraBehindBatman(out BmSDK.Rotator out_ResetRotation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.ResetCameraBehindBatman", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetCameraBehindBatman, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.ResetCameraBehindBatman");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         out_ResetRotation = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_Begin;
     /// <summary>
     /// Function: Begin
     /// </summary>
     public unsafe override void Begin()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.Begin", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Begin, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.Begin");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HideMove;
     /// <summary>
     /// Function: HideMove
     /// </summary>
     public unsafe virtual void HideMove(BmSDK.BmGame.RHidePoint NewHidePoint, float TravelTime, BmSDK.BmGame.RPawnPlayer Pawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.HideMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideMove, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.HideMove");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewHidePoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TravelTime, paramsPtr + 8);
@@ -183,47 +192,51 @@ public partial class RStealthTakedownStage_GrateInvertedTakedownEnd : BmSDK.BmGa
         return;
     }
 
+    private static BmSDK.Function __fn_End;
     /// <summary>
     /// Function: End
     /// </summary>
     public unsafe override void End(bool bLastStage = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.End", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_End, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.End");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bLastStage, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishAttackVictim;
     /// <summary>
     /// Function: FinishAttackVictim
     /// </summary>
     public unsafe override bool FinishAttackVictim(int iVictimNumber)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.FinishAttackVictim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishAttackVictim, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.FinishAttackVictim");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(iVictimNumber, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetWritheAnim;
     /// <summary>
     /// Function: GetWritheAnim
     /// </summary>
     public unsafe override BmSDK.FName GetWritheAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.GetWritheAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWritheAnim, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.GetWritheAnim");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ServerCreateRope;
     /// <summary>
     /// Function: ServerCreateRope
     /// </summary>
     public unsafe virtual void ServerCreateRope()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.ServerCreateRope", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ServerCreateRope, "BmScript.RStealthTakedownStage_GrateInvertedTakedownEnd.ServerCreateRope");
         byte* paramsPtr = stackalloc byte[168];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

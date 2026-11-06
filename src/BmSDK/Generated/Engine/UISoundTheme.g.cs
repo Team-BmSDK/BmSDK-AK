@@ -78,12 +78,13 @@ public partial class UISoundTheme : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<UISoundTheme>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ProcessSoundEvent;
     /// <summary>
     /// Function: ProcessSoundEvent
     /// </summary>
     public unsafe virtual void ProcessSoundEvent(BmSDK.FName SoundEventName, BmSDK.Engine.PlayerController SoundOwner = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UISoundTheme.ProcessSoundEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProcessSoundEvent, "Engine.UISoundTheme.ProcessSoundEvent");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SoundEventName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SoundOwner, paramsPtr + 8);

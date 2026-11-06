@@ -78,34 +78,37 @@ public partial class RBMBehaviour_BatClawedMultiWeapon : BmSDK.BmGame.RBMBehavio
         where TComponent : class, Framework.IScriptComponent<RBMBehaviour_BatClawedMultiWeapon>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UpdateHitThugs;
     /// <summary>
     /// Function: UpdateHitThugs
     /// </summary>
     public unsafe virtual void UpdateHitThugs()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_BatClawedMultiWeapon.UpdateHitThugs", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateHitThugs, "BmGame.RBMBehaviour_BatClawedMultiWeapon.UpdateHitThugs");
         byte* paramsPtr = stackalloc byte[260];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_BumpedIntoPlayer;
     /// <summary>
     /// Function: BumpedIntoPlayer
     /// </summary>
     public unsafe override void BumpedIntoPlayer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_BatClawedMultiWeapon.BumpedIntoPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BumpedIntoPlayer, "BmGame.RBMBehaviour_BatClawedMultiWeapon.BumpedIntoPlayer");
         byte* paramsPtr = stackalloc byte[248];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PushOverWithImpulse;
     /// <summary>
     /// Function: PushOverWithImpulse
     /// </summary>
     public unsafe override void PushOverWithImpulse(System.Numerics.Vector3 PushImpulse, BmSDK.BmGame.RPawnCombat Attacker)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_BatClawedMultiWeapon.PushOverWithImpulse", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PushOverWithImpulse, "BmGame.RBMBehaviour_BatClawedMultiWeapon.PushOverWithImpulse");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PushImpulse, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Attacker, paramsPtr + 12);

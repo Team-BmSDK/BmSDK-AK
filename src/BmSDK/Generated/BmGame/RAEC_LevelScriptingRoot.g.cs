@@ -78,23 +78,25 @@ public partial class RAEC_LevelScriptingRoot : BmSDK.BmGame.RAlertEventCoordinat
         where TComponent : class, Framework.IScriptComponent<RAEC_LevelScriptingRoot>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsActive;
     /// <summary>
     /// Function: IsActive
     /// </summary>
     public unsafe override bool IsActive()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_LevelScriptingRoot.IsActive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsActive, "BmGame.RAEC_LevelScriptingRoot.IsActive");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_OnAssign;
     /// <summary>
     /// Function: OnAssign
     /// </summary>
     public unsafe override void OnAssign(BmSDK.BmGame.RBMAIController NewCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_LevelScriptingRoot.OnAssign", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnAssign, "BmGame.RAEC_LevelScriptingRoot.OnAssign");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

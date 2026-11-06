@@ -78,12 +78,13 @@ public partial class DecalComponent : BmSDK.Engine.PrimitiveComponent, BmSDK.IGa
         where TComponent : class, Framework.IScriptComponent<DecalComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsWaitingForResetToDefaultsToComplete;
     /// <summary>
     /// Function: IsWaitingForResetToDefaultsToComplete
     /// </summary>
     public unsafe virtual bool IsWaitingForResetToDefaultsToComplete()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DecalComponent.IsWaitingForResetToDefaultsToComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsWaitingForResetToDefaultsToComplete, "Engine.DecalComponent.IsWaitingForResetToDefaultsToComplete");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class DecalComponent : BmSDK.Engine.PrimitiveComponent, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDecalMaterial;
     /// <summary>
     /// Function: GetDecalMaterial
     /// </summary>
     public unsafe virtual BmSDK.Engine.MaterialInterface GetDecalMaterial()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DecalComponent.GetDecalMaterial", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDecalMaterial, "Engine.DecalComponent.GetDecalMaterial");
         byte* paramsPtr = stackalloc byte[8];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -114,12 +116,13 @@ public partial class DecalComponent : BmSDK.Engine.PrimitiveComponent, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.MaterialInterface>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetDecalMaterial;
     /// <summary>
     /// Function: SetDecalMaterial
     /// </summary>
     public unsafe virtual void SetDecalMaterial(BmSDK.Engine.MaterialInterface NewDecalMaterial)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DecalComponent.SetDecalMaterial", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDecalMaterial, "Engine.DecalComponent.SetDecalMaterial");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewDecalMaterial, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -133,12 +136,13 @@ public partial class DecalComponent : BmSDK.Engine.PrimitiveComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_ResetToDefaults;
     /// <summary>
     /// Function: ResetToDefaults
     /// </summary>
     public unsafe virtual void ResetToDefaults()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DecalComponent.ResetToDefaults", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetToDefaults, "Engine.DecalComponent.ResetToDefaults");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

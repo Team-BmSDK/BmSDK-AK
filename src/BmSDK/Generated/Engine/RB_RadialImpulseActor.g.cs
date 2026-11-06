@@ -78,35 +78,38 @@ public partial class RB_RadialImpulseActor : BmSDK.Engine.RigidBodyBase, BmSDK.I
         where TComponent : class, Framework.IScriptComponent<RB_RadialImpulseActor>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ReplicatedEvent;
     /// <summary>
     /// Function: ReplicatedEvent
     /// </summary>
     public unsafe override void ReplicatedEvent(BmSDK.FName VarName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RB_RadialImpulseActor.ReplicatedEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReplicatedEvent, "Engine.RB_RadialImpulseActor.ReplicatedEvent");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VarName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FireImpulse;
     /// <summary>
     /// Function: FireImpulse
     /// </summary>
     public unsafe virtual void FireImpulse()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RB_RadialImpulseActor.FireImpulse", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireImpulse, "Engine.RB_RadialImpulseActor.FireImpulse");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnToggle;
     /// <summary>
     /// Function: OnToggle
     /// </summary>
     public unsafe virtual void OnToggle(BmSDK.Engine.SeqAct_Toggle inAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RB_RadialImpulseActor.OnToggle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggle, "Engine.RB_RadialImpulseActor.OnToggle");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(inAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

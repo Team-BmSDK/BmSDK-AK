@@ -78,12 +78,13 @@ public partial class FacebookIntegration : BmSDK.Engine.PlatformInterfaceBase, B
         where TComponent : class, Framework.IScriptComponent<FacebookIntegration>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Disconnect;
     /// <summary>
     /// Function: Disconnect
     /// </summary>
     public unsafe virtual void Disconnect()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FacebookIntegration.Disconnect", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Disconnect, "Engine.FacebookIntegration.Disconnect");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class FacebookIntegration : BmSDK.Engine.PlatformInterfaceBase, B
         return;
     }
 
+    private static BmSDK.Function __fn_FacebookDialog;
     /// <summary>
     /// Function: FacebookDialog
     /// </summary>
     public unsafe virtual void FacebookDialog(BmSDK.FString Action, BmSDK.TArray<BmSDK.FString> ParamKeysAndValues)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FacebookIntegration.FacebookDialog", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FacebookDialog, "Engine.FacebookIntegration.FacebookDialog");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParamKeysAndValues, paramsPtr + 16);
@@ -116,12 +118,13 @@ public partial class FacebookIntegration : BmSDK.Engine.PlatformInterfaceBase, B
         return;
     }
 
+    private static BmSDK.Function __fn_FacebookRequest;
     /// <summary>
     /// Function: FacebookRequest
     /// </summary>
     public unsafe virtual void FacebookRequest(BmSDK.FString GraphRequest)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FacebookIntegration.FacebookRequest", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FacebookRequest, "Engine.FacebookIntegration.FacebookRequest");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GraphRequest, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -135,12 +138,13 @@ public partial class FacebookIntegration : BmSDK.Engine.PlatformInterfaceBase, B
         return;
     }
 
+    private static BmSDK.Function __fn_IsAuthorized;
     /// <summary>
     /// Function: IsAuthorized
     /// </summary>
     public unsafe virtual bool IsAuthorized()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FacebookIntegration.IsAuthorized", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAuthorized, "Engine.FacebookIntegration.IsAuthorized");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -153,12 +157,13 @@ public partial class FacebookIntegration : BmSDK.Engine.PlatformInterfaceBase, B
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Authorize;
     /// <summary>
     /// Function: Authorize
     /// </summary>
     public unsafe virtual bool Authorize()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FacebookIntegration.Authorize", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Authorize, "Engine.FacebookIntegration.Authorize");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -171,12 +176,13 @@ public partial class FacebookIntegration : BmSDK.Engine.PlatformInterfaceBase, B
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe virtual bool Init()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FacebookIntegration.Init", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "Engine.FacebookIntegration.Init");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

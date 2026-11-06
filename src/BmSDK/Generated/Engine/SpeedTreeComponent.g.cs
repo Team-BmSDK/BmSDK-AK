@@ -78,12 +78,13 @@ public partial class SpeedTreeComponent : BmSDK.Engine.PrimitiveComponent, BmSDK
         where TComponent : class, Framework.IScriptComponent<SpeedTreeComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetMaterial;
     /// <summary>
     /// Function: SetMaterial
     /// </summary>
     public unsafe virtual void SetMaterial(BmSDK.Engine.SpeedTreeComponent.ESpeedTreeMeshType MeshType, BmSDK.Engine.MaterialInterface Material)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SpeedTreeComponent.SetMaterial", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMaterial, "Engine.SpeedTreeComponent.SetMaterial");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MeshType, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Material, paramsPtr + 4);
@@ -98,12 +99,13 @@ public partial class SpeedTreeComponent : BmSDK.Engine.PrimitiveComponent, BmSDK
         return;
     }
 
+    private static BmSDK.Function __fn_GetMaterial;
     /// <summary>
     /// Function: GetMaterial
     /// </summary>
     public unsafe virtual BmSDK.Engine.MaterialInterface GetMaterial(BmSDK.Engine.SpeedTreeComponent.ESpeedTreeMeshType MeshType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SpeedTreeComponent.GetMaterial", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMaterial, "Engine.SpeedTreeComponent.GetMaterial");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MeshType, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

@@ -78,24 +78,26 @@ public partial class RHidePoint_Grate : BmSDK.BmGame.RHidePoint_GrateBase, BmSDK
         where TComponent : class, Framework.IScriptComponent<RHidePoint_Grate>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_MovePawnTo;
     /// <summary>
     /// Function: MovePawnTo
     /// </summary>
     public unsafe override void MovePawnTo(BmSDK.Engine.Pawn PawnToMove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHidePoint_Grate.MovePawnTo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MovePawnTo, "BmScript.RHidePoint_Grate.MovePawnTo");
         byte* paramsPtr = stackalloc byte[192];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PawnToMove, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FindTargetAboveGrate;
     /// <summary>
     /// Function: FindTargetAboveGrate
     /// </summary>
     public unsafe override BmSDK.BmGame.RPawnVillain FindTargetAboveGrate(BmSDK.BmGame.RPlayerController CheckingController)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHidePoint_Grate.FindTargetAboveGrate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindTargetAboveGrate, "BmScript.RHidePoint_Grate.FindTargetAboveGrate");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckingController, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

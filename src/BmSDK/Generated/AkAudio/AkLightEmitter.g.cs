@@ -78,12 +78,13 @@ public partial class AkLightEmitter : BmSDK.AkAudio.AkEmitter, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<AkLightEmitter>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_HandleUnlink;
     /// <summary>
     /// Function: HandleUnlink
     /// </summary>
     public unsafe virtual bool HandleUnlink(BmSDK.Engine.Actor Target)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkLightEmitter.HandleUnlink", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandleUnlink, "AkAudio.AkLightEmitter.HandleUnlink");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -97,12 +98,13 @@ public partial class AkLightEmitter : BmSDK.AkAudio.AkEmitter, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_HandleLink;
     /// <summary>
     /// Function: HandleLink
     /// </summary>
     public unsafe virtual bool HandleLink(BmSDK.Engine.Actor Target)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkLightEmitter.HandleLink", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandleLink, "AkAudio.AkLightEmitter.HandleLink");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -116,24 +118,26 @@ public partial class AkLightEmitter : BmSDK.AkAudio.AkEmitter, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_UnlinkToActor;
     /// <summary>
     /// Function: UnlinkToActor
     /// </summary>
     public unsafe override bool UnlinkToActor(BmSDK.Engine.Actor LinkTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkLightEmitter.UnlinkToActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnlinkToActor, "AkAudio.AkLightEmitter.UnlinkToActor");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkTarget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_LinkToActor;
     /// <summary>
     /// Function: LinkToActor
     /// </summary>
     public unsafe override bool LinkToActor(BmSDK.Engine.Actor LinkTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkLightEmitter.LinkToActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LinkToActor, "AkAudio.AkLightEmitter.LinkToActor");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkTarget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

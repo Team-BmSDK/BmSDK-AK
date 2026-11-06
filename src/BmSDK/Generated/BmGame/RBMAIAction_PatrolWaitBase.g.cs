@@ -73,34 +73,37 @@ public partial class RBMAIAction_PatrolWaitBase : BmSDK.BmGame.RBMAIAction, BmSD
         where TComponent : class, Framework.IScriptComponent<RBMAIAction_PatrolWaitBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PlayShortOverlayAnim;
     /// <summary>
     /// Function: PlayShortOverlayAnim
     /// </summary>
     public unsafe virtual void PlayShortOverlayAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PatrolWaitBase.PlayShortOverlayAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayShortOverlayAnim, "BmGame.RBMAIAction_PatrolWaitBase.PlayShortOverlayAnim");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayLongOverlayAnim;
     /// <summary>
     /// Function: PlayLongOverlayAnim
     /// </summary>
     public unsafe virtual void PlayLongOverlayAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PatrolWaitBase.PlayLongOverlayAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayLongOverlayAnim, "BmGame.RBMAIAction_PatrolWaitBase.PlayLongOverlayAnim");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetWaitTime;
     /// <summary>
     /// Function: SetWaitTime
     /// </summary>
     public unsafe virtual void SetWaitTime(float MinTime = default, float Range = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PatrolWaitBase.SetWaitTime", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetWaitTime, "BmGame.RBMAIAction_PatrolWaitBase.SetWaitTime");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Range, paramsPtr + 4);
@@ -108,12 +111,13 @@ public partial class RBMAIAction_PatrolWaitBase : BmSDK.BmGame.RBMAIAction, BmSD
         return;
     }
 
+    private static BmSDK.Function __fn_SetAimAtTime;
     /// <summary>
     /// Function: SetAimAtTime
     /// </summary>
     public unsafe virtual void SetAimAtTime(float MinTime = default, float Range = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PatrolWaitBase.SetAimAtTime", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAimAtTime, "BmGame.RBMAIAction_PatrolWaitBase.SetAimAtTime");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Range, paramsPtr + 4);
@@ -121,24 +125,26 @@ public partial class RBMAIAction_PatrolWaitBase : BmSDK.BmGame.RBMAIAction, BmSD
         return;
     }
 
+    private static BmSDK.Function __fn_ActionTick;
     /// <summary>
     /// Function: ActionTick
     /// </summary>
     public unsafe override BmSDK.BmGame.RBMAIAction.ActionTickResult ActionTick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PatrolWaitBase.ActionTick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActionTick, "BmGame.RBMAIAction_PatrolWaitBase.ActionTick");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMAIAction.ActionTickResult>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_SetAimTargets;
     /// <summary>
     /// Function: SetAimTargets
     /// </summary>
     public unsafe virtual void SetAimTargets(BmSDK.TArray<BmSDK.Engine.Actor> NewAimTargets, bool bNewSetAimOnce, bool bNewCanDoLongOverlay)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PatrolWaitBase.SetAimTargets", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAimTargets, "BmGame.RBMAIAction_PatrolWaitBase.SetAimTargets");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAimTargets, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewSetAimOnce, paramsPtr + 16);

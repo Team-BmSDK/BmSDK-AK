@@ -78,12 +78,13 @@ public partial class REvadeOverrideVolume : BmSDK.Engine.Volume, BmSDK.IGameObje
         where TComponent : class, Framework.IScriptComponent<REvadeOverrideVolume>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OverrideEvade;
     /// <summary>
     /// Function: OverrideEvade
     /// </summary>
     public unsafe virtual bool OverrideEvade(BmSDK.BmGame.RPlayerController CheckingPC, System.Numerics.Vector3 Direction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.REvadeOverrideVolume.OverrideEvade", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverrideEvade, "BmGame.REvadeOverrideVolume.OverrideEvade");
         byte* paramsPtr = stackalloc byte[160];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckingPC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Direction, paramsPtr + 8);

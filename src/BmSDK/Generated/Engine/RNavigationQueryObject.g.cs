@@ -78,12 +78,13 @@ public partial class RNavigationQueryObject : BmSDK.GameObject, BmSDK.IGameObjec
         where TComponent : class, Framework.IScriptComponent<RNavigationQueryObject>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_HandleInvalidatedState;
     /// <summary>
     /// Function: HandleInvalidatedState
     /// </summary>
     public unsafe virtual void HandleInvalidatedState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RNavigationQueryObject.HandleInvalidatedState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandleInvalidatedState, "Engine.RNavigationQueryObject.HandleInvalidatedState");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class RNavigationQueryObject : BmSDK.GameObject, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_UnregisterWithNavMeshWorld;
     /// <summary>
     /// Function: UnregisterWithNavMeshWorld
     /// </summary>
     public unsafe virtual void UnregisterWithNavMeshWorld()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RNavigationQueryObject.UnregisterWithNavMeshWorld", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnregisterWithNavMeshWorld, "Engine.RNavigationQueryObject.UnregisterWithNavMeshWorld");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -114,12 +116,13 @@ public partial class RNavigationQueryObject : BmSDK.GameObject, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_RegisterWithNavMeshWorld;
     /// <summary>
     /// Function: RegisterWithNavMeshWorld
     /// </summary>
     public unsafe virtual void RegisterWithNavMeshWorld()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RNavigationQueryObject.RegisterWithNavMeshWorld", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterWithNavMeshWorld, "Engine.RNavigationQueryObject.RegisterWithNavMeshWorld");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

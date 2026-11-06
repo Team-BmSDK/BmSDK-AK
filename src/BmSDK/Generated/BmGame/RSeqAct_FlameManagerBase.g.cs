@@ -73,23 +73,25 @@ public partial class RSeqAct_FlameManagerBase : BmSDK.Engine.SeqAct_Latent, BmSD
         where TComponent : class, Framework.IScriptComponent<RSeqAct_FlameManagerBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_FlameManagerBase.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmGame.RSeqAct_FlameManagerBase.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SuppressFireInArea;
     /// <summary>
     /// Function: SuppressFireInArea
     /// </summary>
     public unsafe virtual void SuppressFireInArea(System.Numerics.Vector3 area_centre, float area_radius)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_FlameManagerBase.SuppressFireInArea", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SuppressFireInArea, "BmGame.RSeqAct_FlameManagerBase.SuppressFireInArea");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(area_centre, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(area_radius, paramsPtr + 12);
@@ -97,12 +99,13 @@ public partial class RSeqAct_FlameManagerBase : BmSDK.Engine.SeqAct_Latent, BmSD
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnFlame;
     /// <summary>
     /// Function: SpawnFlame
     /// </summary>
     public unsafe virtual BmSDK.Engine.Actor SpawnFlame(System.Numerics.Vector3 FlameLocation, bool onWater = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_FlameManagerBase.SpawnFlame", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnFlame, "BmGame.RSeqAct_FlameManagerBase.SpawnFlame");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FlameLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(onWater, paramsPtr + 12);
@@ -110,12 +113,13 @@ public partial class RSeqAct_FlameManagerBase : BmSDK.Engine.SeqAct_Latent, BmSD
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_HandleFlameStrike;
     /// <summary>
     /// Function: HandleFlameStrike
     /// </summary>
     public unsafe virtual void HandleFlameStrike(System.Numerics.Vector3 HitLocation, BmSDK.Engine.Actor HitActor, bool onWater = default, bool bTestForHitBatman = default, float hurt_bm_range = default, float FlameImpactDamage = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_FlameManagerBase.HandleFlameStrike", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandleFlameStrike, "BmGame.RSeqAct_FlameManagerBase.HandleFlameStrike");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitActor, paramsPtr + 12);
@@ -127,12 +131,13 @@ public partial class RSeqAct_FlameManagerBase : BmSDK.Engine.SeqAct_Latent, BmSD
         return;
     }
 
+    private static BmSDK.Function __fn_CreateFirestorm;
     /// <summary>
     /// Function: CreateFirestorm
     /// </summary>
     public unsafe virtual void CreateFirestorm(System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitNormal, float Radius)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_FlameManagerBase.CreateFirestorm", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateFirestorm, "BmGame.RSeqAct_FlameManagerBase.CreateFirestorm");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 12);
@@ -141,12 +146,13 @@ public partial class RSeqAct_FlameManagerBase : BmSDK.Engine.SeqAct_Latent, BmSD
         return;
     }
 
+    private static BmSDK.Function __fn_RegisterWithPlayerController;
     /// <summary>
     /// Function: RegisterWithPlayerController
     /// </summary>
     public unsafe virtual void RegisterWithPlayerController(bool DoRegister)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_FlameManagerBase.RegisterWithPlayerController", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterWithPlayerController, "BmGame.RSeqAct_FlameManagerBase.RegisterWithPlayerController");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DoRegister, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

@@ -73,23 +73,25 @@ public partial class ForceFieldShape : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<ForceFieldShape>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetDrawComponent;
     /// <summary>
     /// Function: GetDrawComponent
     /// </summary>
     public unsafe virtual BmSDK.Engine.PrimitiveComponent GetDrawComponent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ForceFieldShape.GetDrawComponent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDrawComponent, "Engine.ForceFieldShape.GetDrawComponent");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.PrimitiveComponent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_FillByCylinder;
     /// <summary>
     /// Function: FillByCylinder
     /// </summary>
     public unsafe virtual void FillByCylinder(float BottomRadius, float TopRadius, float Height, float HeightOffset)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ForceFieldShape.FillByCylinder", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FillByCylinder, "Engine.ForceFieldShape.FillByCylinder");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BottomRadius, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TopRadius, paramsPtr + 4);
@@ -99,12 +101,13 @@ public partial class ForceFieldShape : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_FillByCapsule;
     /// <summary>
     /// Function: FillByCapsule
     /// </summary>
     public unsafe virtual void FillByCapsule(float Height, float Radius)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ForceFieldShape.FillByCapsule", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FillByCapsule, "Engine.ForceFieldShape.FillByCapsule");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Height, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Radius, paramsPtr + 4);
@@ -112,24 +115,26 @@ public partial class ForceFieldShape : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_FillByBox;
     /// <summary>
     /// Function: FillByBox
     /// </summary>
     public unsafe virtual void FillByBox(System.Numerics.Vector3 Dimension)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ForceFieldShape.FillByBox", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FillByBox, "Engine.ForceFieldShape.FillByBox");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Dimension, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FillBySphere;
     /// <summary>
     /// Function: FillBySphere
     /// </summary>
     public unsafe virtual void FillBySphere(float Radius)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ForceFieldShape.FillBySphere", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FillBySphere, "Engine.ForceFieldShape.FillBySphere");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Radius, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

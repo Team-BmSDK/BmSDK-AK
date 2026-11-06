@@ -78,151 +78,164 @@ public partial class RLevelTransitionDoorBunkerNativeBase : BmSDK.BmGame.RLevelT
         where TComponent : class, Framework.IScriptComponent<RLevelTransitionDoorBunkerNativeBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_AttemptingToUseButDisabledByPassenger;
     /// <summary>
     /// Function: AttemptingToUseButDisabledByPassenger
     /// </summary>
     public unsafe virtual void AttemptingToUseButDisabledByPassenger()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelTransitionDoorBunkerNativeBase.AttemptingToUseButDisabledByPassenger", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttemptingToUseButDisabledByPassenger, "BmGame.RLevelTransitionDoorBunkerNativeBase.AttemptingToUseButDisabledByPassenger");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AttemptingToUseWhenCombatLocked;
     /// <summary>
     /// Function: AttemptingToUseWhenCombatLocked
     /// </summary>
     public unsafe virtual void AttemptingToUseWhenCombatLocked()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelTransitionDoorBunkerNativeBase.AttemptingToUseWhenCombatLocked", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttemptingToUseWhenCombatLocked, "BmGame.RLevelTransitionDoorBunkerNativeBase.AttemptingToUseWhenCombatLocked");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AllowedToOpenIfNotAlreadyOpen;
     /// <summary>
     /// Function: AllowedToOpenIfNotAlreadyOpen
     /// </summary>
     public unsafe virtual bool AllowedToOpenIfNotAlreadyOpen(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelTransitionDoorBunkerNativeBase.AllowedToOpenIfNotAlreadyOpen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowedToOpenIfNotAlreadyOpen, "BmGame.RLevelTransitionDoorBunkerNativeBase.AllowedToOpenIfNotAlreadyOpen");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_AllowedToBeOpen;
     /// <summary>
     /// Function: AllowedToBeOpen
     /// </summary>
     public unsafe virtual bool AllowedToBeOpen(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelTransitionDoorBunkerNativeBase.AllowedToBeOpen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowedToBeOpen, "BmGame.RLevelTransitionDoorBunkerNativeBase.AllowedToBeOpen");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_DisabledByPassenger;
     /// <summary>
     /// Function: DisabledByPassenger
     /// </summary>
     public unsafe virtual bool DisabledByPassenger(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelTransitionDoorBunkerNativeBase.DisabledByPassenger", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisabledByPassenger, "BmGame.RLevelTransitionDoorBunkerNativeBase.DisabledByPassenger");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_IsLookingAt;
     /// <summary>
     /// Function: IsLookingAt
     /// </summary>
     public unsafe virtual bool IsLookingAt(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelTransitionDoorBunkerNativeBase.IsLookingAt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsLookingAt, "BmGame.RLevelTransitionDoorBunkerNativeBase.IsLookingAt");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_PassedThroughDoor;
     /// <summary>
     /// Function: PassedThroughDoor
     /// </summary>
     public unsafe virtual void PassedThroughDoor(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelTransitionDoorBunkerNativeBase.PassedThroughDoor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PassedThroughDoor, "BmGame.RLevelTransitionDoorBunkerNativeBase.PassedThroughDoor");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishedClosingDoor;
     /// <summary>
     /// Function: FinishedClosingDoor
     /// </summary>
     public unsafe virtual void FinishedClosingDoor()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelTransitionDoorBunkerNativeBase.FinishedClosingDoor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishedClosingDoor, "BmGame.RLevelTransitionDoorBunkerNativeBase.FinishedClosingDoor");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AttemptingToUseWhenSideStoriesDisabled;
     /// <summary>
     /// Function: AttemptingToUseWhenSideStoriesDisabled
     /// </summary>
     public unsafe virtual void AttemptingToUseWhenSideStoriesDisabled()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelTransitionDoorBunkerNativeBase.AttemptingToUseWhenSideStoriesDisabled", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttemptingToUseWhenSideStoriesDisabled, "BmGame.RLevelTransitionDoorBunkerNativeBase.AttemptingToUseWhenSideStoriesDisabled");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UsedWhenLocked;
     /// <summary>
     /// Function: UsedWhenLocked
     /// </summary>
     public unsafe virtual bool UsedWhenLocked()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelTransitionDoorBunkerNativeBase.UsedWhenLocked", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UsedWhenLocked, "BmGame.RLevelTransitionDoorBunkerNativeBase.UsedWhenLocked");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_AttemptToCloseDoor;
     /// <summary>
     /// Function: AttemptToCloseDoor
     /// </summary>
     public unsafe virtual bool AttemptToCloseDoor(bool Instantly = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelTransitionDoorBunkerNativeBase.AttemptToCloseDoor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttemptToCloseDoor, "BmGame.RLevelTransitionDoorBunkerNativeBase.AttemptToCloseDoor");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Instantly, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_AttemptToOpenDoor;
     /// <summary>
     /// Function: AttemptToOpenDoor
     /// </summary>
     public unsafe virtual void AttemptToOpenDoor(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelTransitionDoorBunkerNativeBase.AttemptToOpenDoor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttemptToOpenDoor, "BmGame.RLevelTransitionDoorBunkerNativeBase.AttemptToOpenDoor");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsInActivationRange;
     /// <summary>
     /// Function: IsInActivationRange
     /// </summary>
     public unsafe virtual bool IsInActivationRange(System.Numerics.Vector3 pos, float Range)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelTransitionDoorBunkerNativeBase.IsInActivationRange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInActivationRange, "BmGame.RLevelTransitionDoorBunkerNativeBase.IsInActivationRange");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(pos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Range, paramsPtr + 12);
@@ -237,12 +250,13 @@ public partial class RLevelTransitionDoorBunkerNativeBase : BmSDK.BmGame.RLevelT
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_DoorIsAnimating;
     /// <summary>
     /// Function: DoorIsAnimating
     /// </summary>
     public unsafe virtual bool DoorIsAnimating()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelTransitionDoorBunkerNativeBase.DoorIsAnimating", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoorIsAnimating, "BmGame.RLevelTransitionDoorBunkerNativeBase.DoorIsAnimating");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -255,12 +269,13 @@ public partial class RLevelTransitionDoorBunkerNativeBase : BmSDK.BmGame.RLevelT
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsPlayerPassingThrough;
     /// <summary>
     /// Function: IsPlayerPassingThrough
     /// </summary>
     public unsafe override bool IsPlayerPassingThrough(System.Numerics.Vector3 PlayerLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelTransitionDoorBunkerNativeBase.IsPlayerPassingThrough", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPlayerPassingThrough, "BmGame.RLevelTransitionDoorBunkerNativeBase.IsPlayerPassingThrough");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerLocation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

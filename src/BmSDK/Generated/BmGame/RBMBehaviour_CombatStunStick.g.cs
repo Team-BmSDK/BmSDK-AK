@@ -78,12 +78,13 @@ public partial class RBMBehaviour_CombatStunStick : BmSDK.BmGame.RBMBehaviour_Co
         where TComponent : class, Framework.IScriptComponent<RBMBehaviour_CombatStunStick>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetForceToGiveToPawn;
     /// <summary>
     /// Function: GetForceToGiveToPawn
     /// </summary>
     public unsafe override System.Numerics.Vector3 GetForceToGiveToPawn(BmSDK.BmGame.RPawnCombat ForceReceiver, float MaxForce, float MinRange = default, float MaxRange = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CombatStunStick.GetForceToGiveToPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetForceToGiveToPawn, "BmGame.RBMBehaviour_CombatStunStick.GetForceToGiveToPawn");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ForceReceiver, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxForce, paramsPtr + 8);
@@ -100,102 +101,111 @@ public partial class RBMBehaviour_CombatStunStick : BmSDK.BmGame.RBMBehaviour_Co
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_GetMovementSpeed;
     /// <summary>
     /// Function: GetMovementSpeed
     /// </summary>
     public unsafe override BmSDK.Engine.RAutomaticTransitions.EMovementSpeed GetMovementSpeed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CombatStunStick.GetMovementSpeed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMovementSpeed, "BmGame.RBMBehaviour_CombatStunStick.GetMovementSpeed");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.RAutomaticTransitions.EMovementSpeed>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanPlayIdleOverlay;
     /// <summary>
     /// Function: CanPlayIdleOverlay
     /// </summary>
     public unsafe override bool CanPlayIdleOverlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CombatStunStick.CanPlayIdleOverlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanPlayIdleOverlay, "BmGame.RBMBehaviour_CombatStunStick.CanPlayIdleOverlay");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetCurrentWeaponStance;
     /// <summary>
     /// Function: GetCurrentWeaponStance
     /// </summary>
     public unsafe override BmSDK.FName GetCurrentWeaponStance()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CombatStunStick.GetCurrentWeaponStance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCurrentWeaponStance, "BmGame.RBMBehaviour_CombatStunStick.GetCurrentWeaponStance");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetAttackPriority;
     /// <summary>
     /// Function: GetAttackPriority
     /// </summary>
     public unsafe override int GetAttackPriority(bool bForceAttack)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CombatStunStick.GetAttackPriority", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAttackPriority, "BmGame.RBMBehaviour_CombatStunStick.GetAttackPriority");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForceAttack, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_CanStartAttacking;
     /// <summary>
     /// Function: CanStartAttacking
     /// </summary>
     public unsafe override bool CanStartAttacking()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CombatStunStick.CanStartAttacking", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanStartAttacking, "BmGame.RBMBehaviour_CombatStunStick.CanStartAttacking");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Redirected;
     /// <summary>
     /// Function: Redirected
     /// </summary>
     public unsafe override void Redirected()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CombatStunStick.Redirected", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Redirected, "BmGame.RBMBehaviour_CombatStunStick.Redirected");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RepelledAttacker;
     /// <summary>
     /// Function: RepelledAttacker
     /// </summary>
     public unsafe override void RepelledAttacker(BmSDK.BmGame.RPawnCombat Attacker)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CombatStunStick.RepelledAttacker", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RepelledAttacker, "BmGame.RBMBehaviour_CombatStunStick.RepelledAttacker");
         byte* paramsPtr = stackalloc byte[256];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Attacker, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanRepel;
     /// <summary>
     /// Function: CanRepel
     /// </summary>
     public unsafe override bool CanRepel()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CombatStunStick.CanRepel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanRepel, "BmGame.RBMBehaviour_CombatStunStick.CanRepel");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ShouldUseEnvironment;
     /// <summary>
     /// Function: ShouldUseEnvironment
     /// </summary>
     public unsafe override bool ShouldUseEnvironment(float DeltaTime, bool bForceCheck)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CombatStunStick.ShouldUseEnvironment", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldUseEnvironment, "BmGame.RBMBehaviour_CombatStunStick.ShouldUseEnvironment");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForceCheck, paramsPtr + 4);
@@ -203,12 +213,13 @@ public partial class RBMBehaviour_CombatStunStick : BmSDK.BmGame.RBMBehaviour_Co
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CombatStunStick.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMBehaviour_CombatStunStick.OnActivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

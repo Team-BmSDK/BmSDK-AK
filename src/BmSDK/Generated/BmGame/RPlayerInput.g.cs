@@ -78,12 +78,13 @@ public partial class RPlayerInput : BmSDK.Engine.PlayerInput, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RPlayerInput>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetModifierGuardForIndex;
     /// <summary>
     /// Function: SetModifierGuardForIndex
     /// </summary>
     public unsafe virtual void SetModifierGuardForIndex(int BindIndex, bool bInIgnoreCtrl, bool bInIgnoreShift, bool bInIgnoreAlt)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerInput.SetModifierGuardForIndex", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetModifierGuardForIndex, "BmGame.RPlayerInput.SetModifierGuardForIndex");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BindIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bInIgnoreCtrl, paramsPtr + 4);
@@ -93,36 +94,39 @@ public partial class RPlayerInput : BmSDK.Engine.PlayerInput, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetModifierGuards;
     /// <summary>
     /// Function: SetModifierGuards
     /// </summary>
     public unsafe virtual void SetModifierGuards(BmSDK.FName BindName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerInput.SetModifierGuards", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetModifierGuards, "BmGame.RPlayerInput.SetModifierGuards");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BindName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RemoveBindModifierKey;
     /// <summary>
     /// Function: RemoveBindModifierKey
     /// </summary>
     public unsafe virtual void RemoveBindModifierKey(BmSDK.FName BindName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerInput.RemoveBindModifierKey", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveBindModifierKey, "BmGame.RPlayerInput.RemoveBindModifierKey");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BindName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RemoveBind;
     /// <summary>
     /// Function: RemoveBind
     /// </summary>
     public unsafe virtual void RemoveBind(BmSDK.FName BindName, bool bIgnoreModifierKeys = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerInput.RemoveBind", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveBind, "BmGame.RPlayerInput.RemoveBind");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BindName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIgnoreModifierKeys, paramsPtr + 8);
@@ -130,12 +134,13 @@ public partial class RPlayerInput : BmSDK.Engine.PlayerInput, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetBindWithOptionalSave;
     /// <summary>
     /// Function: SetBindWithOptionalSave
     /// </summary>
     public unsafe virtual int SetBindWithOptionalSave(BmSDK.FName BindName, BmSDK.FString Command, bool bShouldSaveConfig = default, int InbCtrl = default, int InbShift = default, int InbAlt = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerInput.SetBindWithOptionalSave", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBindWithOptionalSave, "BmGame.RPlayerInput.SetBindWithOptionalSave");
         byte* paramsPtr = stackalloc byte[88];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BindName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Command, paramsPtr + 8);
@@ -147,12 +152,13 @@ public partial class RPlayerInput : BmSDK.Engine.PlayerInput, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 40);
     }
 
+    private static BmSDK.Function __fn_SetBindByAbility;
     /// <summary>
     /// Function: SetBindByAbility
     /// </summary>
     public unsafe virtual int SetBindByAbility(int AbilityId, BmSDK.FName KeyName, int InId, int InbCtrl = default, int InbShift = default, int InbAlt = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerInput.SetBindByAbility", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBindByAbility, "BmGame.RPlayerInput.SetBindByAbility");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AbilityId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(KeyName, paramsPtr + 4);
@@ -164,101 +170,110 @@ public partial class RPlayerInput : BmSDK.Engine.PlayerInput, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_SetControlType;
     /// <summary>
     /// Function: SetControlType
     /// </summary>
     public unsafe virtual void SetControlType(int Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerInput.SetControlType", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetControlType, "BmGame.RPlayerInput.SetControlType");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InitInputSystem;
     /// <summary>
     /// Function: InitInputSystem
     /// </summary>
     public unsafe override void InitInputSystem()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerInput.InitInputSystem", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitInputSystem, "BmGame.RPlayerInput.InitInputSystem");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_BeginDestroy;
     /// <summary>
     /// Function: BeginDestroy
     /// </summary>
     public unsafe virtual void BeginDestroy()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerInput.BeginDestroy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BeginDestroy, "BmGame.RPlayerInput.BeginDestroy");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_LeftAimMode;
     /// <summary>
     /// Function: LeftAimMode
     /// </summary>
     public unsafe virtual void LeftAimMode()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerInput.LeftAimMode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LeftAimMode, "BmGame.RPlayerInput.LeftAimMode");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EnteredAimMode;
     /// <summary>
     /// Function: EnteredAimMode
     /// </summary>
     public unsafe virtual void EnteredAimMode()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerInput.EnteredAimMode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnteredAimMode, "BmGame.RPlayerInput.EnteredAimMode");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SpinControllerx10;
     /// <summary>
     /// Function: SpinControllerx10
     /// </summary>
     public unsafe virtual void SpinControllerx10()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerInput.SpinControllerx10", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpinControllerx10, "BmGame.RPlayerInput.SpinControllerx10");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SpinController;
     /// <summary>
     /// Function: SpinController
     /// </summary>
     public unsafe virtual void SpinController()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerInput.SpinController", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpinController, "BmGame.RPlayerInput.SpinController");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InvertCapeGlide;
     /// <summary>
     /// Function: InvertCapeGlide
     /// </summary>
     public unsafe virtual bool InvertCapeGlide()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerInput.InvertCapeGlide", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InvertCapeGlide, "BmGame.RPlayerInput.InvertCapeGlide");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsMouseButtonPressed;
     /// <summary>
     /// Function: IsMouseButtonPressed
     /// </summary>
     public unsafe virtual bool IsMouseButtonPressed(bool CheckRightButton = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerInput.IsMouseButtonPressed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsMouseButtonPressed, "BmGame.RPlayerInput.IsMouseButtonPressed");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckRightButton, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -272,12 +287,13 @@ public partial class RPlayerInput : BmSDK.Engine.PlayerInput, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_FastPlayerInput;
     /// <summary>
     /// Function: FastPlayerInput
     /// </summary>
     public unsafe virtual void FastPlayerInput(float DeltaTime, bool bMoveInputIgnored, bool bLookInputIgnored)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerInput.FastPlayerInput", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FastPlayerInput, "BmGame.RPlayerInput.FastPlayerInput");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bMoveInputIgnored, paramsPtr + 4);
@@ -293,23 +309,25 @@ public partial class RPlayerInput : BmSDK.Engine.PlayerInput, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_InvertJoystick;
     /// <summary>
     /// Function: InvertJoystick
     /// </summary>
     public unsafe virtual bool InvertJoystick()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerInput.InvertJoystick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InvertJoystick, "BmGame.RPlayerInput.InvertJoystick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_MouseInput;
     /// <summary>
     /// Function: MouseInput
     /// </summary>
     public unsafe virtual void MouseInput(float DeltaTime, float FOVScale)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerInput.MouseInput", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MouseInput, "BmGame.RPlayerInput.MouseInput");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FOVScale, paramsPtr + 4);
@@ -317,70 +335,76 @@ public partial class RPlayerInput : BmSDK.Engine.PlayerInput, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn__PlayerInput;
     /// <summary>
     /// Function: PlayerInput
     /// </summary>
     public unsafe override void _PlayerInput(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerInput.PlayerInput", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn__PlayerInput, "BmGame.RPlayerInput.PlayerInput");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetDrivingControls;
     /// <summary>
     /// Function: SetDrivingControls
     /// </summary>
     public unsafe virtual void SetDrivingControls(bool bBattleModeToggle)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerInput.SetDrivingControls", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDrivingControls, "BmGame.RPlayerInput.SetDrivingControls");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bBattleModeToggle, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SwapThumbSticks;
     /// <summary>
     /// Function: SwapThumbSticks
     /// </summary>
     public unsafe virtual void SwapThumbSticks()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerInput.SwapThumbSticks", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SwapThumbSticks, "BmGame.RPlayerInput.SwapThumbSticks");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ScaleSpeed;
     /// <summary>
     /// Function: ScaleSpeed
     /// </summary>
     public unsafe virtual void ScaleSpeed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerInput.ScaleSpeed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ScaleSpeed, "BmGame.RPlayerInput.ScaleSpeed");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreProcessInput;
     /// <summary>
     /// Function: PreProcessInput
     /// </summary>
     public unsafe override void PreProcessInput(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerInput.PreProcessInput", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreProcessInput, "BmGame.RPlayerInput.PreProcessInput");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_MaxMagnitude;
     /// <summary>
     /// Function: MaxMagnitude
     /// </summary>
     public unsafe virtual float MaxMagnitude(float A, float B)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerInput.MaxMagnitude", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MaxMagnitude, "BmGame.RPlayerInput.MaxMagnitude");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(A, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(B, paramsPtr + 4);

@@ -78,102 +78,111 @@ public partial class RAEC_Attack_GuardPerimWatch : BmSDK.BmGame.RAlertEventCoord
         where TComponent : class, Framework.IScriptComponent<RAEC_Attack_GuardPerimWatch>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnBeginShutdown;
     /// <summary>
     /// Function: OnBeginShutdown
     /// </summary>
     public unsafe override void OnBeginShutdown()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_GuardPerimWatch.OnBeginShutdown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnBeginShutdown, "BmGame.RAEC_Attack_GuardPerimWatch.OnBeginShutdown");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NoOtherPerimWatchIsActive;
     /// <summary>
     /// Function: NoOtherPerimWatchIsActive
     /// </summary>
     public unsafe virtual bool NoOtherPerimWatchIsActive()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_GuardPerimWatch.NoOtherPerimWatchIsActive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NoOtherPerimWatchIsActive, "BmGame.RAEC_Attack_GuardPerimWatch.NoOtherPerimWatchIsActive");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_OwnedPawnHasBeenRenderedRecently;
     /// <summary>
     /// Function: OwnedPawnHasBeenRenderedRecently
     /// </summary>
     public unsafe virtual bool OwnedPawnHasBeenRenderedRecently()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_GuardPerimWatch.OwnedPawnHasBeenRenderedRecently", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OwnedPawnHasBeenRenderedRecently, "BmGame.RAEC_Attack_GuardPerimWatch.OwnedPawnHasBeenRenderedRecently");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_AllAttackersAreInGuardVolumes;
     /// <summary>
     /// Function: AllAttackersAreInGuardVolumes
     /// </summary>
     public unsafe virtual bool AllAttackersAreInGuardVolumes()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_GuardPerimWatch.AllAttackersAreInGuardVolumes", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllAttackersAreInGuardVolumes, "BmGame.RAEC_Attack_GuardPerimWatch.AllAttackersAreInGuardVolumes");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_AttackersActiveOutsideofThisGuardVol;
     /// <summary>
     /// Function: AttackersActiveOutsideofThisGuardVol
     /// </summary>
     public unsafe virtual bool AttackersActiveOutsideofThisGuardVol()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_GuardPerimWatch.AttackersActiveOutsideofThisGuardVol", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttackersActiveOutsideofThisGuardVol, "BmGame.RAEC_Attack_GuardPerimWatch.AttackersActiveOutsideofThisGuardVol");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_FellowGuardIsShooting;
     /// <summary>
     /// Function: FellowGuardIsShooting
     /// </summary>
     public unsafe virtual bool FellowGuardIsShooting()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_GuardPerimWatch.FellowGuardIsShooting", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FellowGuardIsShooting, "BmGame.RAEC_Attack_GuardPerimWatch.FellowGuardIsShooting");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PlayStopatPerimBark;
     /// <summary>
     /// Function: PlayStopatPerimBark
     /// </summary>
     public unsafe virtual void PlayStopatPerimBark(BmSDK.BmGame.RPawnVillain MainSpeaker)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_GuardPerimWatch.PlayStopatPerimBark", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayStopatPerimBark, "BmGame.RAEC_Attack_GuardPerimWatch.PlayStopatPerimBark");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MainSpeaker, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TryJoinBark;
     /// <summary>
     /// Function: TryJoinBark
     /// </summary>
     public unsafe virtual void TryJoinBark(BmSDK.BmGame.RBMAIController NewCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_GuardPerimWatch.TryJoinBark", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TryJoinBark, "BmGame.RAEC_Attack_GuardPerimWatch.TryJoinBark");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AssignStandAndAimPos;
     /// <summary>
     /// Function: AssignStandAndAimPos
     /// </summary>
     public unsafe virtual void AssignStandAndAimPos(BmSDK.BmGame.RBMAIController NewCon, System.Numerics.Vector3 StandPos, System.Numerics.Vector3 AimPos)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_GuardPerimWatch.AssignStandAndAimPos", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AssignStandAndAimPos, "BmGame.RAEC_Attack_GuardPerimWatch.AssignStandAndAimPos");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCon, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StandPos, paramsPtr + 8);
@@ -182,12 +191,13 @@ public partial class RAEC_Attack_GuardPerimWatch : BmSDK.BmGame.RAlertEventCoord
         return;
     }
 
+    private static BmSDK.Function __fn_AssignPointToTryApproach;
     /// <summary>
     /// Function: AssignPointToTryApproach
     /// </summary>
     public unsafe virtual void AssignPointToTryApproach(BmSDK.BmGame.RBMAIController NewCon, System.Numerics.Vector3 ApproachPos)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_GuardPerimWatch.AssignPointToTryApproach", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AssignPointToTryApproach, "BmGame.RAEC_Attack_GuardPerimWatch.AssignPointToTryApproach");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCon, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ApproachPos, paramsPtr + 8);
@@ -195,12 +205,13 @@ public partial class RAEC_Attack_GuardPerimWatch : BmSDK.BmGame.RAlertEventCoord
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_GuardPerimWatch.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RAEC_Attack_GuardPerimWatch.Tick");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

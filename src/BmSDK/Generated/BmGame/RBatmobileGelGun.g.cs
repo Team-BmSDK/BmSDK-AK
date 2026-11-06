@@ -78,12 +78,13 @@ public partial class RBatmobileGelGun : BmSDK.BmGame.RVehicleWeapon, BmSDK.IGame
         where TComponent : class, Framework.IScriptComponent<RBatmobileGelGun>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_FireWeapon;
     /// <summary>
     /// Function: FireWeapon
     /// </summary>
     public unsafe override bool FireWeapon()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileGelGun.FireWeapon", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireWeapon, "BmGame.RBatmobileGelGun.FireWeapon");
         byte* paramsPtr = stackalloc byte[372];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

@@ -78,24 +78,26 @@ public partial class RSeqAct_SetHelicopterPointOfInterestActive : BmSDK.Engine.S
         where TComponent : class, Framework.IScriptComponent<RSeqAct_SetHelicopterPointOfInterestActive>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetPointsActive;
     /// <summary>
     /// Function: SetPointsActive
     /// </summary>
     public unsafe virtual void SetPointsActive(bool _active)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_SetHelicopterPointOfInterestActive.SetPointsActive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetPointsActive, "BmScript.RSeqAct_SetHelicopterPointOfInterestActive.SetPointsActive");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_active, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_SetHelicopterPointOfInterestActive.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmScript.RSeqAct_SetHelicopterPointOfInterestActive.Activated");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

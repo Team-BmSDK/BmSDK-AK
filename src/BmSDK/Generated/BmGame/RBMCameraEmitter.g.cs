@@ -73,12 +73,13 @@ public partial class RBMCameraEmitter : BmSDK.Engine.REmitter, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RBMCameraEmitter>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UpdateLocation;
     /// <summary>
     /// Function: UpdateLocation
     /// </summary>
     public unsafe virtual void UpdateLocation(out System.Numerics.Vector3 CamLoc, out BmSDK.Rotator CamRot, float CamFOVDeg)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCameraEmitter.UpdateLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateLocation, "BmGame.RBMCameraEmitter.UpdateLocation");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CamFOVDeg, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
@@ -94,35 +95,38 @@ public partial class RBMCameraEmitter : BmSDK.Engine.REmitter, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_RegisterCamera;
     /// <summary>
     /// Function: RegisterCamera
     /// </summary>
     public unsafe virtual void RegisterCamera(BmSDK.BmGame.R3rdPersonCamera inCam)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCameraEmitter.RegisterCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterCamera, "BmGame.RBMCameraEmitter.RegisterCamera");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(inCam, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCameraEmitter.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmGame.RBMCameraEmitter.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCameraEmitter.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RBMCameraEmitter.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

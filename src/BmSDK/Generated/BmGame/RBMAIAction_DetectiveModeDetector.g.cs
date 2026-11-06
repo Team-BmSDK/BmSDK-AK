@@ -78,136 +78,148 @@ public partial class RBMAIAction_DetectiveModeDetector : BmSDK.BmGame.RBMAIActio
         where TComponent : class, Framework.IScriptComponent<RBMAIAction_DetectiveModeDetector>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsInRightBehindMeTransition;
     /// <summary>
     /// Function: IsInRightBehindMeTransition
     /// </summary>
     public unsafe virtual bool IsInRightBehindMeTransition()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_DetectiveModeDetector.IsInRightBehindMeTransition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInRightBehindMeTransition, "BmGame.RBMAIAction_DetectiveModeDetector.IsInRightBehindMeTransition");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_HandlesGlance;
     /// <summary>
     /// Function: HandlesGlance
     /// </summary>
     public unsafe override bool HandlesGlance()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_DetectiveModeDetector.HandlesGlance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandlesGlance, "BmGame.RBMAIAction_DetectiveModeDetector.HandlesGlance");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ActionTick;
     /// <summary>
     /// Function: ActionTick
     /// </summary>
     public unsafe override BmSDK.BmGame.RBMAIAction.ActionTickResult ActionTick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_DetectiveModeDetector.ActionTick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActionTick, "BmGame.RBMAIAction_DetectiveModeDetector.ActionTick");
         byte* paramsPtr = stackalloc byte[5];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMAIAction.ActionTickResult>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_DoIntroBark;
     /// <summary>
     /// Function: DoIntroBark
     /// </summary>
     public unsafe virtual void DoIntroBark()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_DetectiveModeDetector.DoIntroBark", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoIntroBark, "BmGame.RBMAIAction_DetectiveModeDetector.DoIntroBark");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DetectionStarted;
     /// <summary>
     /// Function: DetectionStarted
     /// </summary>
     public unsafe virtual void DetectionStarted()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_DetectiveModeDetector.DetectionStarted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DetectionStarted, "BmGame.RBMAIAction_DetectiveModeDetector.DetectionStarted");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TryRestartDetection;
     /// <summary>
     /// Function: TryRestartDetection
     /// </summary>
     public unsafe virtual void TryRestartDetection()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_DetectiveModeDetector.TryRestartDetection", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TryRestartDetection, "BmGame.RBMAIAction_DetectiveModeDetector.TryRestartDetection");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StopDetection;
     /// <summary>
     /// Function: StopDetection
     /// </summary>
     public unsafe virtual void StopDetection(bool bDetectiveModeOn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_DetectiveModeDetector.StopDetection", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopDetection, "BmGame.RBMAIAction_DetectiveModeDetector.StopDetection");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDetectiveModeOn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerInAnim;
     /// <summary>
     /// Function: TriggerInAnim
     /// </summary>
     public unsafe virtual void TriggerInAnim(bool bRestarting)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_DetectiveModeDetector.TriggerInAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerInAnim, "BmGame.RBMAIAction_DetectiveModeDetector.TriggerInAnim");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bRestarting, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnDeactivate;
     /// <summary>
     /// Function: OnDeactivate
     /// </summary>
     public unsafe override void OnDeactivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_DetectiveModeDetector.OnDeactivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeactivate, "BmGame.RBMAIAction_DetectiveModeDetector.OnDeactivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_DetectiveModeDetector.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMAIAction_DetectiveModeDetector.OnActivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FreeBarkLock;
     /// <summary>
     /// Function: FreeBarkLock
     /// </summary>
     public unsafe virtual void FreeBarkLock()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_DetectiveModeDetector.FreeBarkLock", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FreeBarkLock, "BmGame.RBMAIAction_DetectiveModeDetector.FreeBarkLock");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetBarkLock;
     /// <summary>
     /// Function: SetBarkLock
     /// </summary>
     public unsafe virtual void SetBarkLock()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_DetectiveModeDetector.SetBarkLock", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBarkLock, "BmGame.RBMAIAction_DetectiveModeDetector.SetBarkLock");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

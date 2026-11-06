@@ -78,12 +78,13 @@ public partial class RCheckpointBlockadeBase : BmSDK.Engine.RStaticClimbableActo
         where TComponent : class, Framework.IScriptComponent<RCheckpointBlockadeBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsStaticForFloorCorrection;
     /// <summary>
     /// Function: IsStaticForFloorCorrection
     /// </summary>
     public unsafe override bool IsStaticForFloorCorrection()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCheckpointBlockadeBase.IsStaticForFloorCorrection", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsStaticForFloorCorrection, "BmGame.RCheckpointBlockadeBase.IsStaticForFloorCorrection");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class RCheckpointBlockadeBase : BmSDK.Engine.RStaticClimbableActo
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_TriggerSound;
     /// <summary>
     /// Function: TriggerSound
     /// </summary>
     public unsafe virtual void TriggerSound(BmSDK.Engine.AkEvent UpDownEvent)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCheckpointBlockadeBase.TriggerSound", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerSound, "BmGame.RCheckpointBlockadeBase.TriggerSound");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UpDownEvent, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -115,12 +117,13 @@ public partial class RCheckpointBlockadeBase : BmSDK.Engine.RStaticClimbableActo
         return;
     }
 
+    private static BmSDK.Function __fn_CleanupSound;
     /// <summary>
     /// Function: CleanupSound
     /// </summary>
     public unsafe virtual void CleanupSound()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCheckpointBlockadeBase.CleanupSound", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CleanupSound, "BmGame.RCheckpointBlockadeBase.CleanupSound");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -133,12 +136,13 @@ public partial class RCheckpointBlockadeBase : BmSDK.Engine.RStaticClimbableActo
         return;
     }
 
+    private static BmSDK.Function __fn_SetupSound;
     /// <summary>
     /// Function: SetupSound
     /// </summary>
     public unsafe virtual void SetupSound()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCheckpointBlockadeBase.SetupSound", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupSound, "BmGame.RCheckpointBlockadeBase.SetupSound");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -151,69 +155,75 @@ public partial class RCheckpointBlockadeBase : BmSDK.Engine.RStaticClimbableActo
         return;
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCheckpointBlockadeBase.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmGame.RCheckpointBlockadeBase.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCheckpointBlockadeBase.PreStreamOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmGame.RCheckpointBlockadeBase.PreStreamOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HitByBatmobile;
     /// <summary>
     /// Function: HitByBatmobile
     /// </summary>
     public unsafe virtual void HitByBatmobile(float Speed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCheckpointBlockadeBase.HitByBatmobile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitByBatmobile, "BmGame.RCheckpointBlockadeBase.HitByBatmobile");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speed, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetBarrierState;
     /// <summary>
     /// Function: SetBarrierState
     /// </summary>
     public unsafe virtual void SetBarrierState(bool bNewVal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCheckpointBlockadeBase.SetBarrierState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBarrierState, "BmGame.RCheckpointBlockadeBase.SetBarrierState");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewVal, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCheckpointBlockadeBase.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RCheckpointBlockadeBase.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ForceObstaclePolysOn;
     /// <summary>
     /// Function: ForceObstaclePolysOn
     /// </summary>
     public unsafe virtual void ForceObstaclePolysOn()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCheckpointBlockadeBase.ForceObstaclePolysOn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForceObstaclePolysOn, "BmGame.RCheckpointBlockadeBase.ForceObstaclePolysOn");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -226,12 +236,13 @@ public partial class RCheckpointBlockadeBase : BmSDK.Engine.RStaticClimbableActo
         return;
     }
 
+    private static BmSDK.Function __fn_ForceObstaclePolysOff;
     /// <summary>
     /// Function: ForceObstaclePolysOff
     /// </summary>
     public unsafe virtual void ForceObstaclePolysOff()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCheckpointBlockadeBase.ForceObstaclePolysOff", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForceObstaclePolysOff, "BmGame.RCheckpointBlockadeBase.ForceObstaclePolysOff");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -244,12 +255,13 @@ public partial class RCheckpointBlockadeBase : BmSDK.Engine.RStaticClimbableActo
         return;
     }
 
+    private static BmSDK.Function __fn_ClearNavMeshEdgeCosts;
     /// <summary>
     /// Function: ClearNavMeshEdgeCosts
     /// </summary>
     public unsafe virtual void ClearNavMeshEdgeCosts()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCheckpointBlockadeBase.ClearNavMeshEdgeCosts", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearNavMeshEdgeCosts, "BmGame.RCheckpointBlockadeBase.ClearNavMeshEdgeCosts");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -262,12 +274,13 @@ public partial class RCheckpointBlockadeBase : BmSDK.Engine.RStaticClimbableActo
         return;
     }
 
+    private static BmSDK.Function __fn_SetNavMeshEdgeCosts;
     /// <summary>
     /// Function: SetNavMeshEdgeCosts
     /// </summary>
     public unsafe virtual void SetNavMeshEdgeCosts()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCheckpointBlockadeBase.SetNavMeshEdgeCosts", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetNavMeshEdgeCosts, "BmGame.RCheckpointBlockadeBase.SetNavMeshEdgeCosts");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -280,12 +293,13 @@ public partial class RCheckpointBlockadeBase : BmSDK.Engine.RStaticClimbableActo
         return;
     }
 
+    private static BmSDK.Function __fn_EnableObstaclePolysFromLoadedPylons;
     /// <summary>
     /// Function: EnableObstaclePolysFromLoadedPylons
     /// </summary>
     public unsafe virtual void EnableObstaclePolysFromLoadedPylons()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCheckpointBlockadeBase.EnableObstaclePolysFromLoadedPylons", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnableObstaclePolysFromLoadedPylons, "BmGame.RCheckpointBlockadeBase.EnableObstaclePolysFromLoadedPylons");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -298,12 +312,13 @@ public partial class RCheckpointBlockadeBase : BmSDK.Engine.RStaticClimbableActo
         return;
     }
 
+    private static BmSDK.Function __fn_RemoveObstaclePolysFromLoadedPylons;
     /// <summary>
     /// Function: RemoveObstaclePolysFromLoadedPylons
     /// </summary>
     public unsafe virtual void RemoveObstaclePolysFromLoadedPylons()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCheckpointBlockadeBase.RemoveObstaclePolysFromLoadedPylons", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveObstaclePolysFromLoadedPylons, "BmGame.RCheckpointBlockadeBase.RemoveObstaclePolysFromLoadedPylons");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

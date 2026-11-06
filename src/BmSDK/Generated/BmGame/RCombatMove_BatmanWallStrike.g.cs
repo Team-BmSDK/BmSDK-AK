@@ -78,12 +78,13 @@ public partial class RCombatMove_BatmanWallStrike : BmSDK.BmGame.RCombatMove_Bat
         where TComponent : class, Framework.IScriptComponent<RCombatMove_BatmanWallStrike>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PlayedQueuedStrikeAnimSimulated;
     /// <summary>
     /// Function: PlayedQueuedStrikeAnimSimulated
     /// </summary>
     public unsafe override void PlayedQueuedStrikeAnimSimulated(BmSDK.BmGame.RAnimUtil_PosePlayer.FTransitionId QueuedAnimID, float TimeLeftOver)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_BatmanWallStrike.PlayedQueuedStrikeAnimSimulated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayedQueuedStrikeAnimSimulated, "BmGame.RCombatMove_BatmanWallStrike.PlayedQueuedStrikeAnimSimulated");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(QueuedAnimID, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TimeLeftOver, paramsPtr + 4);
@@ -91,12 +92,13 @@ public partial class RCombatMove_BatmanWallStrike : BmSDK.BmGame.RCombatMove_Bat
         return;
     }
 
+    private static BmSDK.Function __fn_PlayedQueuedStrikeAnim;
     /// <summary>
     /// Function: PlayedQueuedStrikeAnim
     /// </summary>
     public unsafe override void PlayedQueuedStrikeAnim(BmSDK.BmGame.RAnimUtil_PosePlayer.FTransitionId QueuedAnimID, float TimeLeftOver)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_BatmanWallStrike.PlayedQueuedStrikeAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayedQueuedStrikeAnim, "BmGame.RCombatMove_BatmanWallStrike.PlayedQueuedStrikeAnim");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(QueuedAnimID, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TimeLeftOver, paramsPtr + 4);
@@ -104,67 +106,73 @@ public partial class RCombatMove_BatmanWallStrike : BmSDK.BmGame.RCombatMove_Bat
         return;
     }
 
+    private static BmSDK.Function __fn_GotoFirstStateSimulated;
     /// <summary>
     /// Function: GotoFirstStateSimulated
     /// </summary>
     public unsafe virtual void GotoFirstStateSimulated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_BatmanWallStrike.GotoFirstStateSimulated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GotoFirstStateSimulated, "BmGame.RCombatMove_BatmanWallStrike.GotoFirstStateSimulated");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GotoFirstState;
     /// <summary>
     /// Function: GotoFirstState
     /// </summary>
     public unsafe override void GotoFirstState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_BatmanWallStrike.GotoFirstState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GotoFirstState, "BmGame.RCombatMove_BatmanWallStrike.GotoFirstState");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TryToFindTarget;
     /// <summary>
     /// Function: TryToFindTarget
     /// </summary>
     public unsafe override void TryToFindTarget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_BatmanWallStrike.TryToFindTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TryToFindTarget, "BmGame.RCombatMove_BatmanWallStrike.TryToFindTarget");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetNoTargetDir;
     /// <summary>
     /// Function: SetNoTargetDir
     /// </summary>
     public unsafe override void SetNoTargetDir()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_BatmanWallStrike.SetNoTargetDir", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetNoTargetDir, "BmGame.RCombatMove_BatmanWallStrike.SetNoTargetDir");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RegisterHit;
     /// <summary>
     /// Function: RegisterHit
     /// </summary>
     public unsafe virtual void RegisterHit()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_BatmanWallStrike.RegisterHit", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterHit, "BmGame.RCombatMove_BatmanWallStrike.RegisterHit");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ProcessDamageResult;
     /// <summary>
     /// Function: ProcessDamageResult
     /// </summary>
     public unsafe override void ProcessDamageResult(BmSDK.BmGame.RPawnCombat.DamageResult DmgResult, BmSDK.BmGame.RPawnCombat DamageReceiver)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_BatmanWallStrike.ProcessDamageResult", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProcessDamageResult, "BmGame.RCombatMove_BatmanWallStrike.ProcessDamageResult");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DmgResult, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageReceiver, paramsPtr + 4);
@@ -172,23 +180,25 @@ public partial class RCombatMove_BatmanWallStrike : BmSDK.BmGame.RCombatMove_Bat
         return;
     }
 
+    private static BmSDK.Function __fn_GetDamagePower;
     /// <summary>
     /// Function: GetDamagePower
     /// </summary>
     public unsafe override float GetDamagePower()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_BatmanWallStrike.GetDamagePower", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDamagePower, "BmGame.RCombatMove_BatmanWallStrike.GetDamagePower");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetComboIncrease;
     /// <summary>
     /// Function: GetComboIncrease
     /// </summary>
     public unsafe override void GetComboIncrease(out int ComboIncrease, out int SpecialMoveCountIncrease)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_BatmanWallStrike.GetComboIncrease", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetComboIncrease, "BmGame.RCombatMove_BatmanWallStrike.GetComboIncrease");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ComboIncrease = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);

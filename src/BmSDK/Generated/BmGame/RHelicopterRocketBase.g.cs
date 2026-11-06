@@ -73,12 +73,13 @@ public partial class RHelicopterRocketBase : BmSDK.Engine.DynamicSMActor, BmSDK.
         where TComponent : class, Framework.IScriptComponent<RHelicopterRocketBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_HitLevel;
     /// <summary>
     /// Function: HitLevel
     /// </summary>
     public unsafe virtual void HitLevel(System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHelicopterRocketBase.HitLevel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitLevel, "BmGame.RHelicopterRocketBase.HitLevel");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 12);

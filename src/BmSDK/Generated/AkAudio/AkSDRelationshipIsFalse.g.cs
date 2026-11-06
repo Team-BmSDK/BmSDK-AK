@@ -78,12 +78,13 @@ public partial class AkSDRelationshipIsFalse : BmSDK.AkAudio.AkSDRelationship, B
         where TComponent : class, Framework.IScriptComponent<AkSDRelationshipIsFalse>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Evaluate;
     /// <summary>
     /// Function: Evaluate
     /// </summary>
     public unsafe override float Evaluate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkSDRelationshipIsFalse.Evaluate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Evaluate, "AkAudio.AkSDRelationshipIsFalse.Evaluate");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

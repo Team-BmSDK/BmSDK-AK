@@ -78,68 +78,74 @@ public partial class RJokerSwapMesh : BmSDK.BmGame.RJokerSwappableBase, BmSDK.IG
         where TComponent : class, Framework.IScriptComponent<RJokerSwapMesh>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ApplyJokerOverrideMaterials;
     /// <summary>
     /// Function: ApplyJokerOverrideMaterials
     /// </summary>
     public unsafe virtual void ApplyJokerOverrideMaterials()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerSwapMesh.ApplyJokerOverrideMaterials", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyJokerOverrideMaterials, "BmGame.RJokerSwapMesh.ApplyJokerOverrideMaterials");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ApplyOriginalMeshMaterials;
     /// <summary>
     /// Function: ApplyOriginalMeshMaterials
     /// </summary>
     public unsafe virtual void ApplyOriginalMeshMaterials()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerSwapMesh.ApplyOriginalMeshMaterials", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyOriginalMeshMaterials, "BmGame.RJokerSwapMesh.ApplyOriginalMeshMaterials");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StoreOriginalMeshMaterials;
     /// <summary>
     /// Function: StoreOriginalMeshMaterials
     /// </summary>
     public unsafe virtual void StoreOriginalMeshMaterials()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerSwapMesh.StoreOriginalMeshMaterials", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StoreOriginalMeshMaterials, "BmGame.RJokerSwapMesh.StoreOriginalMeshMaterials");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreBeginPlay;
     /// <summary>
     /// Function: PreBeginPlay
     /// </summary>
     public unsafe override void PreBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerSwapMesh.PreBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreBeginPlay, "BmGame.RJokerSwapMesh.PreBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SwapToOriginalVersion;
     /// <summary>
     /// Function: SwapToOriginalVersion
     /// </summary>
     public unsafe override void SwapToOriginalVersion(bool bForce = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerSwapMesh.SwapToOriginalVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SwapToOriginalVersion, "BmGame.RJokerSwapMesh.SwapToOriginalVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForce, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SwapToJokerVersion;
     /// <summary>
     /// Function: SwapToJokerVersion
     /// </summary>
     public unsafe override void SwapToJokerVersion(bool bForce = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerSwapMesh.SwapToJokerVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SwapToJokerVersion, "BmGame.RJokerSwapMesh.SwapToJokerVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForce, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

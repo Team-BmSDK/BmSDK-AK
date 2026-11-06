@@ -78,12 +78,13 @@ public partial class RHidePoint_GrateBase : BmSDK.BmGame.RHidePoint, BmSDK.IGame
         where TComponent : class, Framework.IScriptComponent<RHidePoint_GrateBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CheckSpaceToClimbOut;
     /// <summary>
     /// Function: CheckSpaceToClimbOut
     /// </summary>
     public unsafe virtual bool CheckSpaceToClimbOut(out BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator Loc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.CheckSpaceToClimbOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckSpaceToClimbOut, "BmGame.RHidePoint_GrateBase.CheckSpaceToClimbOut");
         byte* paramsPtr = stackalloc byte[136];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -97,59 +98,64 @@ public partial class RHidePoint_GrateBase : BmSDK.BmGame.RHidePoint, BmSDK.IGame
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 132);
     }
 
+    private static BmSDK.Function __fn_IsPlayerPerformingDropDownThroughGrateMove;
     /// <summary>
     /// Function: IsPlayerPerformingDropDownThroughGrateMove
     /// </summary>
     public unsafe virtual bool IsPlayerPerformingDropDownThroughGrateMove(BmSDK.BmGame.RPawnPlayer Player)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.IsPlayerPerformingDropDownThroughGrateMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPlayerPerformingDropDownThroughGrateMove, "BmGame.RHidePoint_GrateBase.IsPlayerPerformingDropDownThroughGrateMove");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_FindTargetAboveGrate;
     /// <summary>
     /// Function: FindTargetAboveGrate
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RPawnVillain FindTargetAboveGrate(BmSDK.BmGame.RPlayerController CheckingController)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.FindTargetAboveGrate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindTargetAboveGrate, "BmGame.RHidePoint_GrateBase.FindTargetAboveGrate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckingController, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_FindBestSpotForRope;
     /// <summary>
     /// Function: FindBestSpotForRope
     /// </summary>
     public unsafe virtual bool FindBestSpotForRope()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.FindBestSpotForRope", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindBestSpotForRope, "BmGame.RHidePoint_GrateBase.FindBestSpotForRope");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_AllowLongRangeInteraction;
     /// <summary>
     /// Function: AllowLongRangeInteraction
     /// </summary>
     public unsafe virtual bool AllowLongRangeInteraction(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.AllowLongRangeInteraction", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowLongRangeInteraction, "BmGame.RHidePoint_GrateBase.AllowLongRangeInteraction");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CheckSpace;
     /// <summary>
     /// Function: CheckSpace
     /// </summary>
     public unsafe virtual bool CheckSpace(System.Numerics.Vector3 CheckEnd, System.Numerics.Vector3 CheckStart, System.Numerics.Vector3 Extent, bool bDebugDraw)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.CheckSpace", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckSpace, "BmGame.RHidePoint_GrateBase.CheckSpace");
         byte* paramsPtr = stackalloc byte[76];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckEnd, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckStart, paramsPtr + 12);
@@ -159,220 +165,239 @@ public partial class RHidePoint_GrateBase : BmSDK.BmGame.RHidePoint, BmSDK.IGame
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 40);
     }
 
+    private static BmSDK.Function __fn_OnToggle;
     /// <summary>
     /// Function: OnToggle
     /// </summary>
     public unsafe override void OnToggle(BmSDK.Engine.SeqAct_Toggle Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.OnToggle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggle, "BmGame.RHidePoint_GrateBase.OnToggle");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RHidePoint_GrateBase.Tick");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OverridesRun;
     /// <summary>
     /// Function: OverridesRun
     /// </summary>
     public unsafe virtual float OverridesRun(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.OverridesRun", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverridesRun, "BmGame.RHidePoint_GrateBase.OverridesRun");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CanReachItem;
     /// <summary>
     /// Function: CanReachItem
     /// </summary>
     public unsafe virtual bool CanReachItem(BmSDK.Engine.Pawn CheckingPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.CanReachItem", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanReachItem, "BmGame.RHidePoint_GrateBase.CanReachItem");
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckingPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetRange;
     /// <summary>
     /// Function: GetRange
     /// </summary>
     public unsafe virtual float GetRange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.GetRange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRange, "BmGame.RHidePoint_GrateBase.GetRange");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetPriority;
     /// <summary>
     /// Function: GetPriority
     /// </summary>
     public unsafe virtual float GetPriority()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.GetPriority", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPriority, "BmGame.RHidePoint_GrateBase.GetPriority");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_OverridePreviousLines;
     /// <summary>
     /// Function: OverridePreviousLines
     /// </summary>
     public unsafe virtual bool OverridePreviousLines()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.OverridePreviousLines", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverridePreviousLines, "BmGame.RHidePoint_GrateBase.OverridePreviousLines");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetInteractButton;
     /// <summary>
     /// Function: GetInteractButton
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RInteractInterface.EInteractableItemFaceButton GetInteractButton(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.GetInteractButton", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetInteractButton, "BmGame.RHidePoint_GrateBase.GetInteractButton");
         byte* paramsPtr = stackalloc byte[9];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RInteractInterface.EInteractableItemFaceButton>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetPrompt;
     /// <summary>
     /// Function: GetPrompt
     /// </summary>
     public unsafe virtual BmSDK.FString GetPrompt(BmSDK.Engine.PlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.GetPrompt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPrompt, "BmGame.RHidePoint_GrateBase.GetPrompt");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetUpperPrompt;
     /// <summary>
     /// Function: GetUpperPrompt
     /// </summary>
     public unsafe virtual BmSDK.FString GetUpperPrompt()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.GetUpperPrompt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetUpperPrompt, "BmGame.RHidePoint_GrateBase.GetUpperPrompt");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_MustBeCrouched;
     /// <summary>
     /// Function: MustBeCrouched
     /// </summary>
     public unsafe virtual bool MustBeCrouched(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.MustBeCrouched", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MustBeCrouched, "BmGame.RHidePoint_GrateBase.MustBeCrouched");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_IsButtonPrompt;
     /// <summary>
     /// Function: IsButtonPrompt
     /// </summary>
     public unsafe virtual bool IsButtonPrompt()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.IsButtonPrompt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsButtonPrompt, "BmGame.RHidePoint_GrateBase.IsButtonPrompt");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsActive;
     /// <summary>
     /// Function: IsActive
     /// </summary>
     public unsafe virtual bool IsActive(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.IsActive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsActive, "BmGame.RHidePoint_GrateBase.IsActive");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetFOVDegrees;
     /// <summary>
     /// Function: GetFOVDegrees
     /// </summary>
     public unsafe virtual float GetFOVDegrees(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.GetFOVDegrees", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFOVDegrees, "BmGame.RHidePoint_GrateBase.GetFOVDegrees");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetHeightRange;
     /// <summary>
     /// Function: GetHeightRange
     /// </summary>
     public unsafe virtual float GetHeightRange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.GetHeightRange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHeightRange, "BmGame.RHidePoint_GrateBase.GetHeightRange");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetLocationOffset;
     /// <summary>
     /// Function: GetLocationOffset
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetLocationOffset()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.GetLocationOffset", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLocationOffset, "BmGame.RHidePoint_GrateBase.GetLocationOffset");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_LockedDisplayTimer;
     /// <summary>
     /// Function: LockedDisplayTimer
     /// </summary>
     public unsafe virtual void LockedDisplayTimer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.LockedDisplayTimer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LockedDisplayTimer, "BmGame.RHidePoint_GrateBase.LockedDisplayTimer");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Interact;
     /// <summary>
     /// Function: Interact
     /// </summary>
     public unsafe virtual void Interact(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.Interact", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Interact, "BmGame.RHidePoint_GrateBase.Interact");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerSpecialMove;
     /// <summary>
     /// Function: TriggerSpecialMove
     /// </summary>
     public unsafe virtual void TriggerSpecialMove(BmSDK.BmGame.RPlayerController PC, BmSDK.FName GrateAnim = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.TriggerSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerSpecialMove, "BmGame.RHidePoint_GrateBase.TriggerSpecialMove");
         byte* paramsPtr = stackalloc byte[184];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GrateAnim, paramsPtr + 8);
@@ -380,12 +405,13 @@ public partial class RHidePoint_GrateBase : BmSDK.BmGame.RHidePoint, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_SetInThermalMode;
     /// <summary>
     /// Function: SetInThermalMode
     /// </summary>
     public unsafe override void SetInThermalMode(bool On, bool bForceOff)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.SetInThermalMode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetInThermalMode, "BmGame.RHidePoint_GrateBase.SetInThermalMode");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(On, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForceOff, paramsPtr + 4);
@@ -393,12 +419,13 @@ public partial class RHidePoint_GrateBase : BmSDK.BmGame.RHidePoint, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_GetFinalGrateRotAndTrans;
     /// <summary>
     /// Function: GetFinalGrateRotAndTrans
     /// </summary>
     public unsafe virtual void GetFinalGrateRotAndTrans(out BmSDK.Rotator GrateRot, out System.Numerics.Vector3 GrateTrans)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.GetFinalGrateRotAndTrans", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFinalGrateRotAndTrans, "BmGame.RHidePoint_GrateBase.GetFinalGrateRotAndTrans");
         byte* paramsPtr = stackalloc byte[24];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -413,12 +440,13 @@ public partial class RHidePoint_GrateBase : BmSDK.BmGame.RHidePoint, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateCapeCollision;
     /// <summary>
     /// Function: UpdateCapeCollision
     /// </summary>
     public unsafe virtual void UpdateCapeCollision()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.UpdateCapeCollision", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateCapeCollision, "BmGame.RHidePoint_GrateBase.UpdateCapeCollision");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -431,12 +459,13 @@ public partial class RHidePoint_GrateBase : BmSDK.BmGame.RHidePoint, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_GetBestGrateRotation;
     /// <summary>
     /// Function: GetBestGrateRotation
     /// </summary>
     public unsafe virtual BmSDK.Rotator GetBestGrateRotation(System.Numerics.Vector3 PlayerPosition, BmSDK.Rotator PlayerRotation, float YawOffset = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.GetBestGrateRotation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBestGrateRotation, "BmGame.RHidePoint_GrateBase.GetBestGrateRotation");
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerPosition, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerRotation, paramsPtr + 12);
@@ -445,12 +474,13 @@ public partial class RHidePoint_GrateBase : BmSDK.BmGame.RHidePoint, BmSDK.IGame
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_CheckTargetLocation;
     /// <summary>
     /// Function: CheckTargetLocation
     /// </summary>
     public unsafe virtual bool CheckTargetLocation(BmSDK.BmGame.RPlayerController PC, System.Numerics.Vector3 Dir, bool bCheckDown, bool bDebugDraw = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.CheckTargetLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckTargetLocation, "BmGame.RHidePoint_GrateBase.CheckTargetLocation");
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Dir, paramsPtr + 8);
@@ -460,12 +490,13 @@ public partial class RHidePoint_GrateBase : BmSDK.BmGame.RHidePoint, BmSDK.IGame
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_CheckStartLocation;
     /// <summary>
     /// Function: CheckStartLocation
     /// </summary>
     public unsafe virtual bool CheckStartLocation(BmSDK.BmGame.RPlayerController PC, System.Numerics.Vector3 Dir, bool bCheckDown, bool bDebugDraw = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.CheckStartLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckStartLocation, "BmGame.RHidePoint_GrateBase.CheckStartLocation");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Dir, paramsPtr + 8);
@@ -475,35 +506,38 @@ public partial class RHidePoint_GrateBase : BmSDK.BmGame.RHidePoint, BmSDK.IGame
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_EndTimedCapeCollisionDisable;
     /// <summary>
     /// Function: EndTimedCapeCollisionDisable
     /// </summary>
     public unsafe virtual void EndTimedCapeCollisionDisable()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.EndTimedCapeCollisionDisable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EndTimedCapeCollisionDisable, "BmGame.RHidePoint_GrateBase.EndTimedCapeCollisionDisable");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_BeginTimedCapeCollisionDisable;
     /// <summary>
     /// Function: BeginTimedCapeCollisionDisable
     /// </summary>
     public unsafe virtual void BeginTimedCapeCollisionDisable(float disabledTimer)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.BeginTimedCapeCollisionDisable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BeginTimedCapeCollisionDisable, "BmGame.RHidePoint_GrateBase.BeginTimedCapeCollisionDisable");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(disabledTimer, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetDisableCapeCollision;
     /// <summary>
     /// Function: SetDisableCapeCollision
     /// </summary>
     public unsafe virtual void SetDisableCapeCollision(bool bDisabled)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.SetDisableCapeCollision", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDisableCapeCollision, "BmGame.RHidePoint_GrateBase.SetDisableCapeCollision");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDisabled, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -517,12 +551,13 @@ public partial class RHidePoint_GrateBase : BmSDK.BmGame.RHidePoint, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_PlayGrateAnim;
     /// <summary>
     /// Function: PlayGrateAnim
     /// </summary>
     public unsafe virtual void PlayGrateAnim(BmSDK.FName GrateAnim, BmSDK.Rotator GrateRotation = default, float Rate = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.PlayGrateAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayGrateAnim, "BmGame.RHidePoint_GrateBase.PlayGrateAnim");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GrateAnim, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GrateRotation, paramsPtr + 8);
@@ -531,58 +566,63 @@ public partial class RHidePoint_GrateBase : BmSDK.BmGame.RHidePoint, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_SetHighlighted;
     /// <summary>
     /// Function: SetHighlighted
     /// </summary>
     public unsafe virtual void SetHighlighted(bool bHighlight)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.SetHighlighted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHighlighted, "BmGame.RHidePoint_GrateBase.SetHighlighted");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bHighlight, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetLinkedHidePointsHighlight;
     /// <summary>
     /// Function: SetLinkedHidePointsHighlight
     /// </summary>
     public unsafe override void SetLinkedHidePointsHighlight(bool bHighlight)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.SetLinkedHidePointsHighlight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetLinkedHidePointsHighlight, "BmGame.RHidePoint_GrateBase.SetLinkedHidePointsHighlight");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bHighlight, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RHidePoint_GrateBase.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsValidVantageMineTarget;
     /// <summary>
     /// Function: IsValidVantageMineTarget
     /// </summary>
     public unsafe override bool IsValidVantageMineTarget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.IsValidVantageMineTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsValidVantageMineTarget, "BmGame.RHidePoint_GrateBase.IsValidVantageMineTarget");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_WillSmashIfShot;
     /// <summary>
     /// Function: WillSmashIfShot
     /// </summary>
     public unsafe override bool WillSmashIfShot()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePoint_GrateBase.WillSmashIfShot", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WillSmashIfShot, "BmGame.RHidePoint_GrateBase.WillSmashIfShot");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

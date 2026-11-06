@@ -78,35 +78,38 @@ public partial class RRiotObjectBase : BmSDK.Engine.KAsset, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RRiotObjectBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CrackCommanderScreen;
     /// <summary>
     /// Function: CrackCommanderScreen
     /// </summary>
     public unsafe virtual void CrackCommanderScreen()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRiotObjectBase.CrackCommanderScreen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CrackCommanderScreen, "BmGame.RRiotObjectBase.CrackCommanderScreen");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayAnimOnMesh;
     /// <summary>
     /// Function: PlayAnimOnMesh
     /// </summary>
     public unsafe virtual void PlayAnimOnMesh(BmSDK.BmGame.RAnimNotify_PickupProp MeshNotify)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRiotObjectBase.PlayAnimOnMesh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayAnimOnMesh, "BmGame.RRiotObjectBase.PlayAnimOnMesh");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MeshNotify, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DoKismetAttachment;
     /// <summary>
     /// Function: DoKismetAttachment
     /// </summary>
     public unsafe override void DoKismetAttachment(BmSDK.Engine.Actor Attachment, BmSDK.Engine.SeqAct_AttachToActor Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRiotObjectBase.DoKismetAttachment", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoKismetAttachment, "BmGame.RRiotObjectBase.DoKismetAttachment");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Attachment, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 8);
@@ -114,36 +117,39 @@ public partial class RRiotObjectBase : BmSDK.Engine.KAsset, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_DropObject;
     /// <summary>
     /// Function: DropObject
     /// </summary>
     public unsafe virtual void DropObject(BmSDK.BmGame.RAnimNotify_PickupProp DropNotify)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRiotObjectBase.DropObject", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DropObject, "BmGame.RRiotObjectBase.DropObject");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DropNotify, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AttachToPawn;
     /// <summary>
     /// Function: AttachToPawn
     /// </summary>
     public unsafe virtual void AttachToPawn(BmSDK.Engine.Pawn HoldingPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRiotObjectBase.AttachToPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttachToPawn, "BmGame.RRiotObjectBase.AttachToPawn");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HoldingPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ManualSetupStatic;
     /// <summary>
     /// Function: ManualSetupStatic
     /// </summary>
     public unsafe virtual void ManualSetupStatic(bool bLeft, BmSDK.Engine.StaticMesh StaMesh)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRiotObjectBase.ManualSetupStatic", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ManualSetupStatic, "BmGame.RRiotObjectBase.ManualSetupStatic");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bLeft, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StaMesh, paramsPtr + 4);
@@ -151,12 +157,13 @@ public partial class RRiotObjectBase : BmSDK.Engine.KAsset, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ManualSetupSkeletal;
     /// <summary>
     /// Function: ManualSetupSkeletal
     /// </summary>
     public unsafe virtual void ManualSetupSkeletal(bool bLeft, BmSDK.Engine.SkeletalMesh SkelMesh, BmSDK.Engine.PhysicsAsset PhysAss)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRiotObjectBase.ManualSetupSkeletal", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ManualSetupSkeletal, "BmGame.RRiotObjectBase.ManualSetupSkeletal");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bLeft, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SkelMesh, paramsPtr + 4);
@@ -165,58 +172,63 @@ public partial class RRiotObjectBase : BmSDK.Engine.KAsset, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetPickup;
     /// <summary>
     /// Function: SetPickup
     /// </summary>
     public unsafe virtual void SetPickup(BmSDK.BmGame.RAnimNotify_PickupProp PickType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRiotObjectBase.SetPickup", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetPickup, "BmGame.RRiotObjectBase.SetPickup");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PickType, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StopAllFx;
     /// <summary>
     /// Function: StopAllFx
     /// </summary>
     public unsafe virtual void StopAllFx()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRiotObjectBase.StopAllFx", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopAllFx, "BmGame.RRiotObjectBase.StopAllFx");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_canDestroy;
     /// <summary>
     /// Function: canDestroy
     /// </summary>
     public unsafe virtual bool canDestroy()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRiotObjectBase.canDestroy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_canDestroy, "BmGame.RRiotObjectBase.canDestroy");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRiotObjectBase.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RRiotObjectBase.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRiotObjectBase.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RRiotObjectBase.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

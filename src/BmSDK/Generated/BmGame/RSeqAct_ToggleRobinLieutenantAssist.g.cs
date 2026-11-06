@@ -78,24 +78,26 @@ public partial class RSeqAct_ToggleRobinLieutenantAssist : BmSDK.Engine.Sequence
         where TComponent : class, Framework.IScriptComponent<RSeqAct_ToggleRobinLieutenantAssist>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Grapple;
     /// <summary>
     /// Function: Grapple
     /// </summary>
     public unsafe virtual void Grapple(bool bUseSpecialMove = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_ToggleRobinLieutenantAssist.Grapple", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Grapple, "BmGame.RSeqAct_ToggleRobinLieutenantAssist.Grapple");
         byte* paramsPtr = stackalloc byte[160];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bUseSpecialMove, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_ToggleRobinLieutenantAssist.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmGame.RSeqAct_ToggleRobinLieutenantAssist.Activated");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

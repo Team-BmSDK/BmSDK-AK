@@ -78,24 +78,26 @@ public partial class RRopeBase : BmSDK.Engine.Actor, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RRopeBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SpawnCutRopeFX;
     /// <summary>
     /// Function: SpawnCutRopeFX
     /// </summary>
     public unsafe virtual void SpawnCutRopeFX(System.Numerics.Vector3 CutPos)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRopeBase.SpawnCutRopeFX", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnCutRopeFX, "BmGame.RRopeBase.SpawnCutRopeFX");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CutPos, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TakeDamage;
     /// <summary>
     /// Function: TakeDamage
     /// </summary>
     public unsafe override void TakeDamage(int DamageAmount, BmSDK.Engine.Controller EventInstigator, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 Momentum, BmSDK.Class DamageType, BmSDK.Engine.Actor.FTraceHitInfo HitInfo = default, BmSDK.Engine.Actor DamageCauser = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRopeBase.TakeDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TakeDamage, "BmGame.RRopeBase.TakeDamage");
         byte* paramsPtr = stackalloc byte[97];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageAmount, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventInstigator, paramsPtr + 4);
@@ -108,56 +110,61 @@ public partial class RRopeBase : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetBatarangSpeedBoost;
     /// <summary>
     /// Function: GetBatarangSpeedBoost
     /// </summary>
     public unsafe virtual float GetBatarangSpeedBoost()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRopeBase.GetBatarangSpeedBoost", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBatarangSpeedBoost, "BmGame.RRopeBase.GetBatarangSpeedBoost");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ForceHitAtEndOfFlight;
     /// <summary>
     /// Function: ForceHitAtEndOfFlight
     /// </summary>
     public unsafe virtual bool ForceHitAtEndOfFlight()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRopeBase.ForceHitAtEndOfFlight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForceHitAtEndOfFlight, "BmGame.RRopeBase.ForceHitAtEndOfFlight");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetBatarangPriority;
     /// <summary>
     /// Function: GetBatarangPriority
     /// </summary>
     public unsafe virtual float GetBatarangPriority()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRopeBase.GetBatarangPriority", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBatarangPriority, "BmGame.RRopeBase.GetBatarangPriority");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsBatarangable;
     /// <summary>
     /// Function: IsBatarangable
     /// </summary>
     public unsafe virtual bool IsBatarangable()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRopeBase.IsBatarangable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsBatarangable, "BmGame.RRopeBase.IsBatarangable");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetBatarangTargetPosition;
     /// <summary>
     /// Function: GetBatarangTargetPosition
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetBatarangTargetPosition(System.Numerics.Vector3 AimLocation, System.Numerics.Vector3 AimDirection, bool bDuringTargetPhase = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRopeBase.GetBatarangTargetPosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBatarangTargetPosition, "BmGame.RRopeBase.GetBatarangTargetPosition");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AimLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AimDirection, paramsPtr + 12);
@@ -166,59 +173,64 @@ public partial class RRopeBase : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_UnlinkToActor;
     /// <summary>
     /// Function: UnlinkToActor
     /// </summary>
     public unsafe override bool UnlinkToActor(BmSDK.Engine.Actor LinkTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRopeBase.UnlinkToActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnlinkToActor, "BmGame.RRopeBase.UnlinkToActor");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkTarget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_LinkToActor;
     /// <summary>
     /// Function: LinkToActor
     /// </summary>
     public unsafe override bool LinkToActor(BmSDK.Engine.Actor LinkTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRopeBase.LinkToActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LinkToActor, "BmGame.RRopeBase.LinkToActor");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkTarget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRopeBase.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RRopeBase.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnDestroy;
     /// <summary>
     /// Function: OnDestroy
     /// </summary>
     public unsafe override void OnDestroy(BmSDK.Engine.SeqAct_Destroy Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRopeBase.OnDestroy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDestroy, "BmGame.RRopeBase.OnDestroy");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_JoinRope;
     /// <summary>
     /// Function: JoinRope
     /// </summary>
     public unsafe virtual void JoinRope(BmSDK.BmGame.RRopeBase OtherRope, BmSDK.BmGame.RRopeComponentBase.ERopeEndType ThisRopeJoinEnd, BmSDK.BmGame.RRopeComponentBase.ERopeEndType OtherRopeJoinEnd)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRopeBase.JoinRope", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_JoinRope, "BmGame.RRopeBase.JoinRope");
         byte* paramsPtr = stackalloc byte[10];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherRope, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThisRopeJoinEnd, paramsPtr + 8);
@@ -234,12 +246,13 @@ public partial class RRopeBase : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SplitRope;
     /// <summary>
     /// Function: SplitRope
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RRopeBase SplitRope(float SplitPos, BmSDK.BmGame.RRopeComponentBase.ERopeEndType MeasurementRopeEnd, out BmSDK.BmGame.RRopeComponentBase.ERopeEndType ThisSplitEnd)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRopeBase.SplitRope", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SplitRope, "BmGame.RRopeBase.SplitRope");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SplitPos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MeasurementRopeEnd, paramsPtr + 4);
@@ -255,12 +268,13 @@ public partial class RRopeBase : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRopeBase>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_AlignRagdollYaw;
     /// <summary>
     /// Function: AlignRagdollYaw
     /// </summary>
     public unsafe virtual void AlignRagdollYaw(System.Numerics.Vector3 FwdDir, float Torque, BmSDK.Engine.SkeletalMeshComponent Ragdoll)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRopeBase.AlignRagdollYaw", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AlignRagdollYaw, "BmGame.RRopeBase.AlignRagdollYaw");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FwdDir, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Torque, paramsPtr + 12);
@@ -276,12 +290,13 @@ public partial class RRopeBase : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ConstrainRagdollToBoxXY;
     /// <summary>
     /// Function: ConstrainRagdollToBoxXY
     /// </summary>
     public unsafe virtual void ConstrainRagdollToBoxXY(System.Numerics.Vector3 BoxPos, System.Numerics.Vector3 BoxDir, float BoxRadius, BmSDK.Engine.SkeletalMeshComponent Ragdoll)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRopeBase.ConstrainRagdollToBoxXY", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ConstrainRagdollToBoxXY, "BmGame.RRopeBase.ConstrainRagdollToBoxXY");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoxPos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoxDir, paramsPtr + 12);

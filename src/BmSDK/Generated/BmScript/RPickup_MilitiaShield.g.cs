@@ -78,67 +78,73 @@ public partial class RPickup_MilitiaShield : BmSDK.BmGame.RPickup_MilitiaShieldB
         where TComponent : class, Framework.IScriptComponent<RPickup_MilitiaShield>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_BreakMe;
     /// <summary>
     /// Function: BreakMe
     /// </summary>
     public unsafe virtual void BreakMe()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPickup_MilitiaShield.BreakMe", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BreakMe, "BmScript.RPickup_MilitiaShield.BreakMe");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EarlyDestroy;
     /// <summary>
     /// Function: EarlyDestroy
     /// </summary>
     public unsafe virtual bool EarlyDestroy()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPickup_MilitiaShield.EarlyDestroy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EarlyDestroy, "BmScript.RPickup_MilitiaShield.EarlyDestroy");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_InitialFlagCheckHack;
     /// <summary>
     /// Function: InitialFlagCheckHack
     /// </summary>
     public unsafe virtual void InitialFlagCheckHack()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPickup_MilitiaShield.InitialFlagCheckHack", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitialFlagCheckHack, "BmScript.RPickup_MilitiaShield.InitialFlagCheckHack");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InitialFlagCheck;
     /// <summary>
     /// Function: InitialFlagCheck
     /// </summary>
     public unsafe virtual void InitialFlagCheck()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPickup_MilitiaShield.InitialFlagCheck", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitialFlagCheck, "BmScript.RPickup_MilitiaShield.InitialFlagCheck");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPickup_MilitiaShield.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmScript.RPickup_MilitiaShield.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TakeDamage;
     /// <summary>
     /// Function: TakeDamage
     /// </summary>
     public unsafe override void TakeDamage(int Damage, BmSDK.Engine.Controller InstigatedBy, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 Momentum, BmSDK.Class DamageType, BmSDK.Engine.Actor.FTraceHitInfo HitInfo = default, BmSDK.Engine.Actor DamageCauser = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPickup_MilitiaShield.TakeDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TakeDamage, "BmScript.RPickup_MilitiaShield.TakeDamage");
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Damage, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InstigatedBy, paramsPtr + 4);

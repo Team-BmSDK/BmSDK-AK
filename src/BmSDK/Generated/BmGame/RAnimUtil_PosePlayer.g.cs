@@ -82,12 +82,13 @@ public partial class RAnimUtil_PosePlayer : BmSDK.GameObject, BmSDK.IGameObject
         set { BmSDK.Framework.MarshalUtil.ToUnmanaged(value, Ptr + 84); }
     }
 
+    private static BmSDK.Function __fn_DummyOnPlayedQueuedTransition;
     /// <summary>
     /// Function: DummyOnPlayedQueuedTransition
     /// </summary>
     public unsafe virtual void DummyOnPlayedQueuedTransition(BmSDK.BmGame.RAnimUtil_PosePlayer.FTransitionId Id, float TimeLeftOver)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAnimUtil_PosePlayer.DummyOnPlayedQueuedTransition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DummyOnPlayedQueuedTransition, "BmGame.RAnimUtil_PosePlayer.DummyOnPlayedQueuedTransition");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Id, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TimeLeftOver, paramsPtr + 4);

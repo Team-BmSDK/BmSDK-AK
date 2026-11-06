@@ -78,12 +78,13 @@ public partial class RBMCombatThrownObject_CleaverDeflectRight : BmSDK.BmScript.
         where TComponent : class, Framework.IScriptComponent<RBMCombatThrownObject_CleaverDeflectRight>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetDeflectLoc;
     /// <summary>
     /// Function: GetDeflectLoc
     /// </summary>
     public unsafe override System.Numerics.Vector3 GetDeflectLoc(BmSDK.BmGame.RPawnPlayerCombat Batman)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatThrownObject_CleaverDeflectRight.GetDeflectLoc", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDeflectLoc, "BmScript.RBMCombatThrownObject_CleaverDeflectRight.GetDeflectLoc");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Batman, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

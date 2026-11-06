@@ -78,23 +78,25 @@ public partial class RSeqEvent_CrimeSceneCompleted : BmSDK.Engine.SequenceEvent,
         where TComponent : class, Framework.IScriptComponent<RSeqEvent_CrimeSceneCompleted>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqEvent_CrimeSceneCompleted.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmGame.RSeqEvent_CrimeSceneCompleted.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_EvidenceTotalChanged;
     /// <summary>
     /// Function: EvidenceTotalChanged
     /// </summary>
     public unsafe virtual void EvidenceTotalChanged(int TotalCollected, int TotalInCrimeScene)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqEvent_CrimeSceneCompleted.EvidenceTotalChanged", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EvidenceTotalChanged, "BmGame.RSeqEvent_CrimeSceneCompleted.EvidenceTotalChanged");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TotalCollected, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TotalInCrimeScene, paramsPtr + 4);

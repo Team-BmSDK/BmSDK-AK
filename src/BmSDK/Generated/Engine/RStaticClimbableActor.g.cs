@@ -73,12 +73,13 @@ public partial class RStaticClimbableActor : BmSDK.Engine.Actor, BmSDK.IGameObje
         where TComponent : class, Framework.IScriptComponent<RStaticClimbableActor>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DisableShimmy;
     /// <summary>
     /// Function: DisableShimmy
     /// </summary>
     public unsafe virtual void DisableShimmy()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RStaticClimbableActor.DisableShimmy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisableShimmy, "Engine.RStaticClimbableActor.DisableShimmy");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -91,12 +92,13 @@ public partial class RStaticClimbableActor : BmSDK.Engine.Actor, BmSDK.IGameObje
         return;
     }
 
+    private static BmSDK.Function __fn_EnableRailings;
     /// <summary>
     /// Function: EnableRailings
     /// </summary>
     public unsafe virtual void EnableRailings()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RStaticClimbableActor.EnableRailings", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnableRailings, "Engine.RStaticClimbableActor.EnableRailings");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -109,12 +111,13 @@ public partial class RStaticClimbableActor : BmSDK.Engine.Actor, BmSDK.IGameObje
         return;
     }
 
+    private static BmSDK.Function __fn_SetBatmanCanClimb;
     /// <summary>
     /// Function: SetBatmanCanClimb
     /// </summary>
     public unsafe override void SetBatmanCanClimb(bool bCanClimb)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RStaticClimbableActor.SetBatmanCanClimb", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBatmanCanClimb, "Engine.RStaticClimbableActor.SetBatmanCanClimb");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bCanClimb, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

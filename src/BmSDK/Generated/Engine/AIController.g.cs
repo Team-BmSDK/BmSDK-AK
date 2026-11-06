@@ -78,12 +78,13 @@ public partial class AIController : BmSDK.Engine.Controller, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<AIController>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CanFireWeapon;
     /// <summary>
     /// Function: CanFireWeapon
     /// </summary>
     public unsafe virtual bool CanFireWeapon(BmSDK.Engine.Weapon Wpn, byte FireModeNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AIController.CanFireWeapon", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanFireWeapon, "Engine.AIController.CanFireWeapon");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Wpn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FireModeNum, paramsPtr + 8);
@@ -91,12 +92,13 @@ public partial class AIController : BmSDK.Engine.Controller, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_NotifyWeaponFinishedFiring;
     /// <summary>
     /// Function: NotifyWeaponFinishedFiring
     /// </summary>
     public unsafe virtual void NotifyWeaponFinishedFiring(BmSDK.Engine.Weapon W, byte FireMode)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AIController.NotifyWeaponFinishedFiring", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyWeaponFinishedFiring, "Engine.AIController.NotifyWeaponFinishedFiring");
         byte* paramsPtr = stackalloc byte[9];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(W, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FireMode, paramsPtr + 8);
@@ -104,12 +106,13 @@ public partial class AIController : BmSDK.Engine.Controller, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyWeaponFired;
     /// <summary>
     /// Function: NotifyWeaponFired
     /// </summary>
     public unsafe virtual void NotifyWeaponFired(BmSDK.Engine.Weapon W, byte FireMode)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AIController.NotifyWeaponFired", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyWeaponFired, "Engine.AIController.NotifyWeaponFired");
         byte* paramsPtr = stackalloc byte[9];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(W, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FireMode, paramsPtr + 8);
@@ -117,12 +120,13 @@ public partial class AIController : BmSDK.Engine.Controller, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetPlayerViewPoint;
     /// <summary>
     /// Function: GetPlayerViewPoint
     /// </summary>
     public unsafe override void GetPlayerViewPoint(out System.Numerics.Vector3 out_Location, out BmSDK.Rotator out_Rotation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AIController.GetPlayerViewPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPlayerViewPoint, "Engine.AIController.GetPlayerViewPoint");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         out_Location = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
@@ -130,24 +134,26 @@ public partial class AIController : BmSDK.Engine.Controller, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetTeam;
     /// <summary>
     /// Function: SetTeam
     /// </summary>
     public unsafe virtual void SetTeam(int inTeamIdx)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AIController.SetTeam", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetTeam, "Engine.AIController.SetTeam");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(inTeamIdx, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DisplayDebug;
     /// <summary>
     /// Function: DisplayDebug
     /// </summary>
     public unsafe override void DisplayDebug(BmSDK.Engine.HUD HUD, out float out_YL, out float out_YPos)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AIController.DisplayDebug", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisplayDebug, "Engine.AIController.DisplayDebug");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HUD, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -156,12 +162,13 @@ public partial class AIController : BmSDK.Engine.Controller, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_Reset;
     /// <summary>
     /// Function: Reset
     /// </summary>
     public unsafe override void Reset()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AIController.Reset", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Reset, "Engine.AIController.Reset");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

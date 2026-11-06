@@ -78,12 +78,13 @@ public partial class AlertInstance : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<AlertInstance>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UpdateAlert;
     /// <summary>
     /// Function: UpdateAlert
     /// </summary>
     public unsafe virtual void UpdateAlert(System.Numerics.Vector3 NewLocation, float BackDateTime = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.AlertInstance.UpdateAlert", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateAlert, "BmGame.AlertInstance.UpdateAlert");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BackDateTime, paramsPtr + 12);
@@ -91,12 +92,13 @@ public partial class AlertInstance : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetAlertLocation;
     /// <summary>
     /// Function: GetAlertLocation
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetAlertLocation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.AlertInstance.GetAlertLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAlertLocation, "BmGame.AlertInstance.GetAlertLocation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);

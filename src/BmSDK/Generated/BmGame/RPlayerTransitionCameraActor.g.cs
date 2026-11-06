@@ -78,12 +78,13 @@ public partial class RPlayerTransitionCameraActor : BmSDK.BmGame.RCameraActor, B
         where TComponent : class, Framework.IScriptComponent<RPlayerTransitionCameraActor>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UpdateFollowCamPos;
     /// <summary>
     /// Function: UpdateFollowCamPos
     /// </summary>
     public unsafe virtual void UpdateFollowCamPos(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerTransitionCameraActor.UpdateFollowCamPos", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateFollowCamPos, "BmGame.RPlayerTransitionCameraActor.UpdateFollowCamPos");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -97,12 +98,13 @@ public partial class RPlayerTransitionCameraActor : BmSDK.BmGame.RCameraActor, B
         return;
     }
 
+    private static BmSDK.Function __fn_FollowPlayer;
     /// <summary>
     /// Function: FollowPlayer
     /// </summary>
     public unsafe virtual void FollowPlayer(BmSDK.Engine.Pawn PlayerToFollow, System.Numerics.Vector3 CameraMin = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerTransitionCameraActor.FollowPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FollowPlayer, "BmGame.RPlayerTransitionCameraActor.FollowPlayer");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerToFollow, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CameraMin, paramsPtr + 8);
@@ -110,46 +112,50 @@ public partial class RPlayerTransitionCameraActor : BmSDK.BmGame.RCameraActor, B
         return;
     }
 
+    private static BmSDK.Function __fn_FollowSplineRoute;
     /// <summary>
     /// Function: FollowSplineRoute
     /// </summary>
     public unsafe virtual void FollowSplineRoute(bool bJustInterpolateRotation = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerTransitionCameraActor.FollowSplineRoute", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FollowSplineRoute, "BmGame.RPlayerTransitionCameraActor.FollowSplineRoute");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bJustInterpolateRotation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerTransitionCameraActor.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RPlayerTransitionCameraActor.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetTransitionCollisionFilter;
     /// <summary>
     /// Function: GetTransitionCollisionFilter
     /// </summary>
     public unsafe virtual BmSDK.Component.ECollisionFilter GetTransitionCollisionFilter()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerTransitionCameraActor.GetTransitionCollisionFilter", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTransitionCollisionFilter, "BmGame.RPlayerTransitionCameraActor.GetTransitionCollisionFilter");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Component.ECollisionFilter>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PlanRouteToCustomCamera;
     /// <summary>
     /// Function: PlanRouteToCustomCamera
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RPlayerTransitionCameraActor.ECameraRouteType PlanRouteToCustomCamera(BmSDK.Engine.Actor CusCam)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerTransitionCameraActor.PlanRouteToCustomCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlanRouteToCustomCamera, "BmGame.RPlayerTransitionCameraActor.PlanRouteToCustomCamera");
         byte* paramsPtr = stackalloc byte[9];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CusCam, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -163,12 +169,13 @@ public partial class RPlayerTransitionCameraActor : BmSDK.BmGame.RCameraActor, B
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPlayerTransitionCameraActor.ECameraRouteType>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_EvaluatePathSpline;
     /// <summary>
     /// Function: EvaluatePathSpline
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 EvaluatePathSpline(float SplineTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerTransitionCameraActor.EvaluatePathSpline", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EvaluatePathSpline, "BmGame.RPlayerTransitionCameraActor.EvaluatePathSpline");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SplineTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -182,12 +189,13 @@ public partial class RPlayerTransitionCameraActor : BmSDK.BmGame.RCameraActor, B
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_PlanRouteToPlayer;
     /// <summary>
     /// Function: PlanRouteToPlayer
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RPlayerTransitionCameraActor.ECameraRouteType PlanRouteToPlayer(bool bInVehicleTransition = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerTransitionCameraActor.PlanRouteToPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlanRouteToPlayer, "BmGame.RPlayerTransitionCameraActor.PlanRouteToPlayer");
         byte* paramsPtr = stackalloc byte[5];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bInVehicleTransition, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -201,12 +209,13 @@ public partial class RPlayerTransitionCameraActor : BmSDK.BmGame.RCameraActor, B
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPlayerTransitionCameraActor.ECameraRouteType>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_PlanRoute;
     /// <summary>
     /// Function: PlanRoute
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RPlayerTransitionCameraActor.ECameraRouteType PlanRoute(System.Numerics.Vector3 Loc, BmSDK.Rotator EndRot)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerTransitionCameraActor.PlanRoute", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlanRoute, "BmGame.RPlayerTransitionCameraActor.PlanRoute");
         byte* paramsPtr = stackalloc byte[25];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EndRot, paramsPtr + 12);
@@ -221,12 +230,13 @@ public partial class RPlayerTransitionCameraActor : BmSDK.BmGame.RCameraActor, B
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPlayerTransitionCameraActor.ECameraRouteType>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_PlanRouteMain;
     /// <summary>
     /// Function: PlanRouteMain
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RPlayerTransitionCameraActor.ECameraRouteType PlanRouteMain(System.Numerics.Vector3 Loc, BmSDK.Rotator EndRot)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerTransitionCameraActor.PlanRouteMain", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlanRouteMain, "BmGame.RPlayerTransitionCameraActor.PlanRouteMain");
         byte* paramsPtr = stackalloc byte[25];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EndRot, paramsPtr + 12);

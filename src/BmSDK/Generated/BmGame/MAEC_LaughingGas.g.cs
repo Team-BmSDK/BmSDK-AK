@@ -78,36 +78,39 @@ public partial class MAEC_LaughingGas : BmSDK.BmGame.RAEC_Smoke, BmSDK.IGameObje
         where TComponent : class, Framework.IScriptComponent<MAEC_LaughingGas>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_AddSmokeSpotter;
     /// <summary>
     /// Function: AddSmokeSpotter
     /// </summary>
     public unsafe override bool AddSmokeSpotter(BmSDK.BmGame.RBMAIController C)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_LaughingGas.AddSmokeSpotter", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddSmokeSpotter, "BmGame.MAEC_LaughingGas.AddSmokeSpotter");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(C, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_InitOutsideThugs;
     /// <summary>
     /// Function: InitOutsideThugs
     /// </summary>
     public unsafe override void InitOutsideThugs(bool bIsExtinguisher)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_LaughingGas.InitOutsideThugs", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitOutsideThugs, "BmGame.MAEC_LaughingGas.InitOutsideThugs");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIsExtinguisher, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetSmokeScreen;
     /// <summary>
     /// Function: SetSmokeScreen
     /// </summary>
     public unsafe override void SetSmokeScreen(BmSDK.BmGame.RSmokeScreen NewSmokeScreen)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_LaughingGas.SetSmokeScreen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSmokeScreen, "BmGame.MAEC_LaughingGas.SetSmokeScreen");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewSmokeScreen, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

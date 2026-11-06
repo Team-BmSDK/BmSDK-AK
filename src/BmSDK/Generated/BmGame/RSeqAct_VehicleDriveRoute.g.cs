@@ -78,23 +78,25 @@ public partial class RSeqAct_VehicleDriveRoute : BmSDK.BmGame.RSeqAct_VehicleSel
         where TComponent : class, Framework.IScriptComponent<RSeqAct_VehicleDriveRoute>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnArrived;
     /// <summary>
     /// Function: OnArrived
     /// </summary>
     public unsafe override void OnArrived()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_VehicleDriveRoute.OnArrived", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnArrived, "BmGame.RSeqAct_VehicleDriveRoute.OnArrived");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_VehicleDriveRoute.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmGame.RSeqAct_VehicleDriveRoute.Activated");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

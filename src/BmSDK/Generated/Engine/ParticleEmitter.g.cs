@@ -73,12 +73,13 @@ public partial class ParticleEmitter : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<ParticleEmitter>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetMaxLifespan;
     /// <summary>
     /// Function: GetMaxLifespan
     /// </summary>
     public unsafe virtual float GetMaxLifespan(float InComponentDelay)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ParticleEmitter.GetMaxLifespan", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMaxLifespan, "Engine.ParticleEmitter.GetMaxLifespan");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InComponentDelay, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

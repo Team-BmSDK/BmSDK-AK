@@ -78,12 +78,13 @@ public partial class RSeqAct_IntThresholdChecker : BmSDK.Engine.SequenceAction, 
         where TComponent : class, Framework.IScriptComponent<RSeqAct_IntThresholdChecker>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsValueInThreshold;
     /// <summary>
     /// Function: IsValueInThreshold
     /// </summary>
     public unsafe virtual bool IsValueInThreshold(int Value, int ThresholdIdx)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_IntThresholdChecker.IsValueInThreshold", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsValueInThreshold, "BmGame.RSeqAct_IntThresholdChecker.IsValueInThreshold");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThresholdIdx, paramsPtr + 4);
@@ -91,12 +92,13 @@ public partial class RSeqAct_IntThresholdChecker : BmSDK.Engine.SequenceAction, 
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_IntThresholdChecker.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmGame.RSeqAct_IntThresholdChecker.Activated");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

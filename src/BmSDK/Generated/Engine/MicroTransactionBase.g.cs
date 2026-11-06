@@ -78,12 +78,13 @@ public partial class MicroTransactionBase : BmSDK.Engine.PlatformInterfaceBase, 
         where TComponent : class, Framework.IScriptComponent<MicroTransactionBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetProductIndex;
     /// <summary>
     /// Function: GetProductIndex
     /// </summary>
     public unsafe virtual int GetProductIndex(BmSDK.FString Identifier)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.MicroTransactionBase.GetProductIndex", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetProductIndex, "Engine.MicroTransactionBase.GetProductIndex");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Identifier, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -97,12 +98,13 @@ public partial class MicroTransactionBase : BmSDK.Engine.PlatformInterfaceBase, 
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_BeginPurchase;
     /// <summary>
     /// Function: BeginPurchase
     /// </summary>
     public unsafe virtual bool BeginPurchase(int Index)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.MicroTransactionBase.BeginPurchase", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BeginPurchase, "Engine.MicroTransactionBase.BeginPurchase");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Index, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -116,12 +118,13 @@ public partial class MicroTransactionBase : BmSDK.Engine.PlatformInterfaceBase, 
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_IsAllowedToMakePurchases;
     /// <summary>
     /// Function: IsAllowedToMakePurchases
     /// </summary>
     public unsafe virtual bool IsAllowedToMakePurchases()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.MicroTransactionBase.IsAllowedToMakePurchases", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAllowedToMakePurchases, "Engine.MicroTransactionBase.IsAllowedToMakePurchases");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -134,12 +137,13 @@ public partial class MicroTransactionBase : BmSDK.Engine.PlatformInterfaceBase, 
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_QueryForAvailablePurchases;
     /// <summary>
     /// Function: QueryForAvailablePurchases
     /// </summary>
     public unsafe virtual bool QueryForAvailablePurchases()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.MicroTransactionBase.QueryForAvailablePurchases", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_QueryForAvailablePurchases, "Engine.MicroTransactionBase.QueryForAvailablePurchases");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -152,12 +156,13 @@ public partial class MicroTransactionBase : BmSDK.Engine.PlatformInterfaceBase, 
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe virtual void Init()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.MicroTransactionBase.Init", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "Engine.MicroTransactionBase.Init");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

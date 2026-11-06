@@ -73,78 +73,85 @@ public partial class RJammerGadget : BmSDK.BmGame.RInventoryGadget, BmSDK.IGameO
         where TComponent : class, Framework.IScriptComponent<RJammerGadget>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CanThrowGadget;
     /// <summary>
     /// Function: CanThrowGadget
     /// </summary>
     public unsafe override bool CanThrowGadget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.CanThrowGadget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanThrowGadget, "BmGame.RJammerGadget.CanThrowGadget");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_OnLevelChange;
     /// <summary>
     /// Function: OnLevelChange
     /// </summary>
     public unsafe override void OnLevelChange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.OnLevelChange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnLevelChange, "BmGame.RJammerGadget.OnLevelChange");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnRoomChange;
     /// <summary>
     /// Function: OnRoomChange
     /// </summary>
     public unsafe override void OnRoomChange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.OnRoomChange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnRoomChange, "BmGame.RJammerGadget.OnRoomChange");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ReplenishAmmo;
     /// <summary>
     /// Function: ReplenishAmmo
     /// </summary>
     public unsafe virtual void ReplenishAmmo()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.ReplenishAmmo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReplenishAmmo, "BmGame.RJammerGadget.ReplenishAmmo");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DepleteAmmo;
     /// <summary>
     /// Function: DepleteAmmo
     /// </summary>
     public unsafe virtual void DepleteAmmo()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.DepleteAmmo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DepleteAmmo, "BmGame.RJammerGadget.DepleteAmmo");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ReduceAmmo;
     /// <summary>
     /// Function: ReduceAmmo
     /// </summary>
     public unsafe virtual void ReduceAmmo()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.ReduceAmmo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReduceAmmo, "BmGame.RJammerGadget.ReduceAmmo");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetPotentialTargetPositions;
     /// <summary>
     /// Function: GetPotentialTargetPositions
     /// </summary>
     public unsafe override bool GetPotentialTargetPositions(BmSDK.Engine.Actor Target, out System.Numerics.Vector3 InTargetPosition, out BmSDK.TArray<System.Numerics.Vector3> PotentialTargetPositions, out BmSDK.Engine.Actor LineCheckActor)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.GetPotentialTargetPositions", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPotentialTargetPositions, "BmGame.RJammerGadget.GetPotentialTargetPositions");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -154,12 +161,13 @@ public partial class RJammerGadget : BmSDK.BmGame.RInventoryGadget, BmSDK.IGameO
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 44);
     }
 
+    private static BmSDK.Function __fn_CheckAutoTarget;
     /// <summary>
     /// Function: CheckAutoTarget
     /// </summary>
     public unsafe override bool CheckAutoTarget(BmSDK.Engine.Actor Target, out System.Numerics.Vector3 TargetPosition, out float OverridePriority, out float OverrideMaxRange, out byte DoLOSCheck)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.CheckAutoTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckAutoTarget, "BmGame.RJammerGadget.CheckAutoTarget");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -170,12 +178,13 @@ public partial class RJammerGadget : BmSDK.BmGame.RInventoryGadget, BmSDK.IGameO
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_GetThrowFinishPose;
     /// <summary>
     /// Function: GetThrowFinishPose
     /// </summary>
     public unsafe virtual BmSDK.FName GetThrowFinishPose(out BmSDK.BmGame.RInventoryGadget.PlayerWantsToCrouch StanceIsCrouched, out BmSDK.BmGame.RAnimUtil.EMirrorChoice MirroredNess)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.GetThrowFinishPose", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetThrowFinishPose, "BmGame.RJammerGadget.GetThrowFinishPose");
         byte* paramsPtr = stackalloc byte[21];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         StanceIsCrouched = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RInventoryGadget.PlayerWantsToCrouch>(paramsPtr + 0);
@@ -183,23 +192,25 @@ public partial class RJammerGadget : BmSDK.BmGame.RInventoryGadget, BmSDK.IGameO
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_PlayThrowAnim;
     /// <summary>
     /// Function: PlayThrowAnim
     /// </summary>
     public unsafe virtual void PlayThrowAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.PlayThrowAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayThrowAnim, "BmGame.RJammerGadget.PlayThrowAnim");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetFireAnim;
     /// <summary>
     /// Function: GetFireAnim
     /// </summary>
     public unsafe virtual BmSDK.FName GetFireAnim(BmSDK.Rotator ThrowDirection, out BmSDK.BmGame.RPawnPlayerAnim.AimingConfigDesc AimingConfig, bool Mirrored)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.GetFireAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFireAnim, "BmGame.RJammerGadget.GetFireAnim");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThrowDirection, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Mirrored, paramsPtr + 16);
@@ -208,34 +219,37 @@ public partial class RJammerGadget : BmSDK.BmGame.RInventoryGadget, BmSDK.IGameO
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_UpdateAutoTarget;
     /// <summary>
     /// Function: UpdateAutoTarget
     /// </summary>
     public unsafe virtual void UpdateAutoTarget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.UpdateAutoTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateAutoTarget, "BmGame.RJammerGadget.UpdateAutoTarget");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishFiring;
     /// <summary>
     /// Function: FinishFiring
     /// </summary>
     public unsafe virtual void FinishFiring()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.FinishFiring", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishFiring, "BmGame.RJammerGadget.FinishFiring");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetHelpPrompt;
     /// <summary>
     /// Function: GetHelpPrompt
     /// </summary>
     public unsafe override bool GetHelpPrompt(BmSDK.BmGame.RHUDPrompt HelpPrompt, bool bKismetHelpOn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.GetHelpPrompt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHelpPrompt, "BmGame.RJammerGadget.GetHelpPrompt");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HelpPrompt, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bKismetHelpOn, paramsPtr + 8);
@@ -243,23 +257,25 @@ public partial class RJammerGadget : BmSDK.BmGame.RInventoryGadget, BmSDK.IGameO
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_UpdateTargets;
     /// <summary>
     /// Function: UpdateTargets
     /// </summary>
     public unsafe virtual void UpdateTargets()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.UpdateTargets", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateTargets, "BmGame.RJammerGadget.UpdateTargets");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FindJammerAutoTarget;
     /// <summary>
     /// Function: FindJammerAutoTarget
     /// </summary>
     public unsafe virtual BmSDK.Engine.Actor FindJammerAutoTarget(System.Numerics.Vector3 LaunchPosition, BmSDK.Rotator LaunchAngle, float Range, float TargetAngle, out int PositionIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.FindJammerAutoTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindJammerAutoTarget, "BmGame.RJammerGadget.FindJammerAutoTarget");
         byte* paramsPtr = stackalloc byte[96];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LaunchPosition, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LaunchAngle, paramsPtr + 12);
@@ -270,46 +286,50 @@ public partial class RJammerGadget : BmSDK.BmGame.RInventoryGadget, BmSDK.IGameO
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 36);
     }
 
+    private static BmSDK.Function __fn_DrawTargets;
     /// <summary>
     /// Function: DrawTargets
     /// </summary>
     public unsafe virtual void DrawTargets(BmSDK.Engine.Canvas HudCanvas)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.DrawTargets", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DrawTargets, "BmGame.RJammerGadget.DrawTargets");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HudCanvas, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetStoredTargetLocation;
     /// <summary>
     /// Function: GetStoredTargetLocation
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetStoredTargetLocation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.GetStoredTargetLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStoredTargetLocation, "BmGame.RJammerGadget.GetStoredTargetLocation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetFiringAnimationOverlay;
     /// <summary>
     /// Function: GetFiringAnimationOverlay
     /// </summary>
     public unsafe virtual BmSDK.FName GetFiringAnimationOverlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.GetFiringAnimationOverlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFiringAnimationOverlay, "BmGame.RJammerGadget.GetFiringAnimationOverlay");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetGadgetCamera;
     /// <summary>
     /// Function: GetGadgetCamera
     /// </summary>
     public unsafe override BmSDK.FName GetGadgetCamera(bool InSoftCover = default, BmSDK.BmGame.RInventoryGadget.CoverCornerType CornerType = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.GetGadgetCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGadgetCamera, "BmGame.RJammerGadget.GetGadgetCamera");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InSoftCover, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CornerType, paramsPtr + 4);
@@ -317,12 +337,13 @@ public partial class RJammerGadget : BmSDK.BmGame.RInventoryGadget, BmSDK.IGameO
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetChargingPose;
     /// <summary>
     /// Function: GetChargingPose
     /// </summary>
     public unsafe virtual BmSDK.FName GetChargingPose(out BmSDK.BmGame.RInventoryGadget.PlayerWantsToCrouch StanceIsCrouched, out BmSDK.BmGame.RAnimUtil.EMirrorChoice MirroredNess, bool InSoftCover, BmSDK.BmGame.RInventoryGadget.CoverCornerType CornerType, out BmSDK.FName OutCapeState)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.GetChargingPose", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetChargingPose, "BmGame.RJammerGadget.GetChargingPose");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InSoftCover, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CornerType, paramsPtr + 8);
@@ -333,12 +354,13 @@ public partial class RJammerGadget : BmSDK.BmGame.RInventoryGadget, BmSDK.IGameO
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_GetPrimedPose;
     /// <summary>
     /// Function: GetPrimedPose
     /// </summary>
     public unsafe override BmSDK.FName GetPrimedPose(out BmSDK.BmGame.RInventoryGadget.PlayerWantsToCrouch StanceIsCrouched, out BmSDK.BmGame.RAnimUtil.EMirrorChoice MirroredNess, bool InSoftCover, BmSDK.BmGame.RInventoryGadget.CoverCornerType CornerType, out BmSDK.FName OutCapeState, out BmSDK.FName OutCapeTransitionState)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.GetPrimedPose", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPrimedPose, "BmGame.RJammerGadget.GetPrimedPose");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InSoftCover, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CornerType, paramsPtr + 8);
@@ -350,250 +372,272 @@ public partial class RJammerGadget : BmSDK.BmGame.RInventoryGadget, BmSDK.IGameO
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_PlayFireSound;
     /// <summary>
     /// Function: PlayFireSound
     /// </summary>
     public unsafe virtual void PlayFireSound()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.PlayFireSound", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayFireSound, "BmGame.RJammerGadget.PlayFireSound");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SuccessTimer;
     /// <summary>
     /// Function: SuccessTimer
     /// </summary>
     public unsafe virtual void SuccessTimer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.SuccessTimer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SuccessTimer, "BmGame.RJammerGadget.SuccessTimer");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FailedTimer;
     /// <summary>
     /// Function: FailedTimer
     /// </summary>
     public unsafe virtual void FailedTimer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.FailedTimer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FailedTimer, "BmGame.RJammerGadget.FailedTimer");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FireJammerCharge;
     /// <summary>
     /// Function: FireJammerCharge
     /// </summary>
     public unsafe virtual void FireJammerCharge(bool bSecondaryFire)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.FireJammerCharge", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireJammerCharge, "BmGame.RJammerGadget.FireJammerCharge");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSecondaryFire, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FireJammer;
     /// <summary>
     /// Function: FireJammer
     /// </summary>
     public unsafe virtual void FireJammer(bool bSecondaryFire)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.FireJammer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireJammer, "BmGame.RJammerGadget.FireJammer");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSecondaryFire, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EquipResSwapLHand;
     /// <summary>
     /// Function: EquipResSwapLHand
     /// </summary>
     public unsafe virtual void EquipResSwapLHand()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.EquipResSwapLHand", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EquipResSwapLHand, "BmGame.RJammerGadget.EquipResSwapLHand");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AttachToBelt;
     /// <summary>
     /// Function: AttachToBelt
     /// </summary>
     public unsafe override void AttachToBelt()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.AttachToBelt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttachToBelt, "BmGame.RJammerGadget.AttachToBelt");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AttachToHand;
     /// <summary>
     /// Function: AttachToHand
     /// </summary>
     public unsafe override void AttachToHand(BmSDK.FName CustomBone = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.AttachToHand", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttachToHand, "BmGame.RJammerGadget.AttachToHand");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CustomBone, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CheckUpgrades;
     /// <summary>
     /// Function: CheckUpgrades
     /// </summary>
     public unsafe virtual void CheckUpgrades()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.CheckUpgrades", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckUpgrades, "BmGame.RJammerGadget.CheckUpgrades");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerJammer;
     /// <summary>
     /// Function: TriggerJammer
     /// </summary>
     public unsafe virtual void TriggerJammer(bool bSecondaryFire = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.TriggerJammer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerJammer, "BmGame.RJammerGadget.TriggerJammer");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSecondaryFire, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CleanCursors;
     /// <summary>
     /// Function: CleanCursors
     /// </summary>
     public unsafe virtual void CleanCursors(bool bForce = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.CleanCursors", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CleanCursors, "BmGame.RJammerGadget.CleanCursors");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForce, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerSecondary;
     /// <summary>
     /// Function: TriggerSecondary
     /// </summary>
     public unsafe virtual void TriggerSecondary()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.TriggerSecondary", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerSecondary, "BmGame.RJammerGadget.TriggerSecondary");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ChargeSecondary;
     /// <summary>
     /// Function: ChargeSecondary
     /// </summary>
     public unsafe virtual void ChargeSecondary(bool bStartCharging = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.ChargeSecondary", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ChargeSecondary, "BmGame.RJammerGadget.ChargeSecondary");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bStartCharging, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerPrimary;
     /// <summary>
     /// Function: TriggerPrimary
     /// </summary>
     public unsafe virtual void TriggerPrimary()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.TriggerPrimary", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerPrimary, "BmGame.RJammerGadget.TriggerPrimary");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ChargePrimary;
     /// <summary>
     /// Function: ChargePrimary
     /// </summary>
     public unsafe virtual void ChargePrimary(bool bStartCharging = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.ChargePrimary", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ChargePrimary, "BmGame.RJammerGadget.ChargePrimary");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bStartCharging, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetChargeFactor;
     /// <summary>
     /// Function: GetChargeFactor
     /// </summary>
     public unsafe virtual float GetChargeFactor()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.GetChargeFactor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetChargeFactor, "BmGame.RJammerGadget.GetChargeFactor");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsShowingSuccess;
     /// <summary>
     /// Function: IsShowingSuccess
     /// </summary>
     public unsafe virtual bool IsShowingSuccess()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.IsShowingSuccess", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsShowingSuccess, "BmGame.RJammerGadget.IsShowingSuccess");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsCharging;
     /// <summary>
     /// Function: IsCharging
     /// </summary>
     public unsafe override bool IsCharging()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.IsCharging", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsCharging, "BmGame.RJammerGadget.IsCharging");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Discharge;
     /// <summary>
     /// Function: Discharge
     /// </summary>
     public unsafe virtual void Discharge()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.Discharge", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Discharge, "BmGame.RJammerGadget.Discharge");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CancelCharging;
     /// <summary>
     /// Function: CancelCharging
     /// </summary>
     public unsafe virtual void CancelCharging()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.CancelCharging", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelCharging, "BmGame.RJammerGadget.CancelCharging");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CancelSecondary;
     /// <summary>
     /// Function: CancelSecondary
     /// </summary>
     public unsafe virtual void CancelSecondary()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.CancelSecondary", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelSecondary, "BmGame.RJammerGadget.CancelSecondary");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CancelPrimary;
     /// <summary>
     /// Function: CancelPrimary
     /// </summary>
     public unsafe virtual void CancelPrimary()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJammerGadget.CancelPrimary", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelPrimary, "BmGame.RJammerGadget.CancelPrimary");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

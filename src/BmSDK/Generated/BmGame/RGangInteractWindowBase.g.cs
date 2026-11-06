@@ -78,12 +78,13 @@ public partial class RGangInteractWindowBase : BmSDK.BmGame.RGangInteractPointBr
         where TComponent : class, Framework.IScriptComponent<RGangInteractWindowBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CrackObject;
     /// <summary>
     /// Function: CrackObject
     /// </summary>
     public unsafe override void CrackObject(System.Numerics.Vector3 SmashLocation, System.Numerics.Vector3 SmashNormal, System.Numerics.Vector3 SmashSpeed, bool bCanSmash, bool bForceSmash, BmSDK.Engine.Actor SmashActor = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGangInteractWindowBase.CrackObject", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CrackObject, "BmGame.RGangInteractWindowBase.CrackObject");
         byte* paramsPtr = stackalloc byte[116];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SmashLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SmashNormal, paramsPtr + 12);
@@ -95,12 +96,13 @@ public partial class RGangInteractWindowBase : BmSDK.BmGame.RGangInteractPointBr
         return;
     }
 
+    private static BmSDK.Function __fn_HitByMolotov;
     /// <summary>
     /// Function: HitByMolotov
     /// </summary>
     public unsafe override void HitByMolotov(System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitNormal, System.Numerics.Vector3 SmashSpeed, BmSDK.Engine.Actor SmashActor)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGangInteractWindowBase.HitByMolotov", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitByMolotov, "BmGame.RGangInteractWindowBase.HitByMolotov");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 12);
@@ -110,34 +112,37 @@ public partial class RGangInteractWindowBase : BmSDK.BmGame.RGangInteractPointBr
         return;
     }
 
+    private static BmSDK.Function __fn_GetSelectionScore;
     /// <summary>
     /// Function: GetSelectionScore
     /// </summary>
     public unsafe override float GetSelectionScore()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGangInteractWindowBase.GetSelectionScore", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSelectionScore, "BmGame.RGangInteractWindowBase.GetSelectionScore");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGangInteractWindowBase.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RGangInteractWindowBase.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetEntryPointAndRotation;
     /// <summary>
     /// Function: GetEntryPointAndRotation
     /// </summary>
     public unsafe override void GetEntryPointAndRotation(BmSDK.BmGame.RPawnCharacter TestPawn, out System.Numerics.Vector3 Loc, out BmSDK.Rotator Rot, int Index, bool bSecondTry = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGangInteractWindowBase.GetEntryPointAndRotation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetEntryPointAndRotation, "BmGame.RGangInteractWindowBase.GetEntryPointAndRotation");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Index, paramsPtr + 32);
@@ -155,12 +160,13 @@ public partial class RGangInteractWindowBase : BmSDK.BmGame.RGangInteractPointBr
         return;
     }
 
+    private static BmSDK.Function __fn_IsValidForPawn;
     /// <summary>
     /// Function: IsValidForPawn
     /// </summary>
     public unsafe override BmSDK.BmGame.RGangInteractPointBase IsValidForPawn(BmSDK.BmGame.RBMPawnAI TestPawn, bool bSkipSpeedTest = default, bool bSkipAngleCheck = default, bool bSkipVolCheck = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGangInteractWindowBase.IsValidForPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsValidForPawn, "BmGame.RGangInteractWindowBase.IsValidForPawn");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSkipSpeedTest, paramsPtr + 8);

@@ -73,67 +73,73 @@ public partial class LightComponent : BmSDK.Engine.ActorComponent, BmSDK.IGameOb
         where TComponent : class, Framework.IScriptComponent<LightComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnUpdatePropertyLightColor;
     /// <summary>
     /// Function: OnUpdatePropertyLightColor
     /// </summary>
     public unsafe virtual void OnUpdatePropertyLightColor()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LightComponent.OnUpdatePropertyLightColor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnUpdatePropertyLightColor, "Engine.LightComponent.OnUpdatePropertyLightColor");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnUpdatePropertyBrightness;
     /// <summary>
     /// Function: OnUpdatePropertyBrightness
     /// </summary>
     public unsafe virtual void OnUpdatePropertyBrightness()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LightComponent.OnUpdatePropertyBrightness", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnUpdatePropertyBrightness, "Engine.LightComponent.OnUpdatePropertyBrightness");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnUpdatePropertyOcclusionMaskDarkness;
     /// <summary>
     /// Function: OnUpdatePropertyOcclusionMaskDarkness
     /// </summary>
     public unsafe virtual void OnUpdatePropertyOcclusionMaskDarkness()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LightComponent.OnUpdatePropertyOcclusionMaskDarkness", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnUpdatePropertyOcclusionMaskDarkness, "Engine.LightComponent.OnUpdatePropertyOcclusionMaskDarkness");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnUpdatePropertyBloomTint;
     /// <summary>
     /// Function: OnUpdatePropertyBloomTint
     /// </summary>
     public unsafe virtual void OnUpdatePropertyBloomTint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LightComponent.OnUpdatePropertyBloomTint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnUpdatePropertyBloomTint, "Engine.LightComponent.OnUpdatePropertyBloomTint");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnUpdatePropertyBloomScale;
     /// <summary>
     /// Function: OnUpdatePropertyBloomScale
     /// </summary>
     public unsafe virtual void OnUpdatePropertyBloomScale()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LightComponent.OnUpdatePropertyBloomScale", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnUpdatePropertyBloomScale, "Engine.LightComponent.OnUpdatePropertyBloomScale");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetLightEffectorFactor;
     /// <summary>
     /// Function: GetLightEffectorFactor
     /// </summary>
     public unsafe virtual float GetLightEffectorFactor(float WorldTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LightComponent.GetLightEffectorFactor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLightEffectorFactor, "Engine.LightComponent.GetLightEffectorFactor");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WorldTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -147,12 +153,13 @@ public partial class LightComponent : BmSDK.Engine.ActorComponent, BmSDK.IGameOb
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_UpdateLightShaftParameters;
     /// <summary>
     /// Function: UpdateLightShaftParameters
     /// </summary>
     public unsafe virtual void UpdateLightShaftParameters()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LightComponent.UpdateLightShaftParameters", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateLightShaftParameters, "Engine.LightComponent.UpdateLightShaftParameters");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -165,12 +172,13 @@ public partial class LightComponent : BmSDK.Engine.ActorComponent, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateColorAndBrightness;
     /// <summary>
     /// Function: UpdateColorAndBrightness
     /// </summary>
     public unsafe virtual void UpdateColorAndBrightness()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LightComponent.UpdateColorAndBrightness", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateColorAndBrightness, "Engine.LightComponent.UpdateColorAndBrightness");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -183,12 +191,13 @@ public partial class LightComponent : BmSDK.Engine.ActorComponent, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_GetDirection;
     /// <summary>
     /// Function: GetDirection
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetDirection()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LightComponent.GetDirection", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDirection, "Engine.LightComponent.GetDirection");
         byte* paramsPtr = stackalloc byte[12];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -201,12 +210,13 @@ public partial class LightComponent : BmSDK.Engine.ActorComponent, BmSDK.IGameOb
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetOrigin;
     /// <summary>
     /// Function: GetOrigin
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetOrigin()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LightComponent.GetOrigin", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetOrigin, "Engine.LightComponent.GetOrigin");
         byte* paramsPtr = stackalloc byte[12];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -219,12 +229,13 @@ public partial class LightComponent : BmSDK.Engine.ActorComponent, BmSDK.IGameOb
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetLightProperties;
     /// <summary>
     /// Function: SetLightProperties
     /// </summary>
     public unsafe virtual void SetLightProperties(float NewBrightness = default, BmSDK.GameObject.FColor NewLightColor = default, BmSDK.Engine.LightFunction NewLightFunction = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LightComponent.SetLightProperties", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetLightProperties, "Engine.LightComponent.SetLightProperties");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewBrightness, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewLightColor, paramsPtr + 4);
@@ -240,12 +251,13 @@ public partial class LightComponent : BmSDK.Engine.ActorComponent, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_SetEnabled;
     /// <summary>
     /// Function: SetEnabled
     /// </summary>
     public unsafe virtual void SetEnabled(bool bSetEnabled)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LightComponent.SetEnabled", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetEnabled, "Engine.LightComponent.SetEnabled");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSetEnabled, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

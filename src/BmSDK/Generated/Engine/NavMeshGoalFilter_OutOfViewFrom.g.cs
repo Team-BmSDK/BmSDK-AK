@@ -78,12 +78,13 @@ public partial class NavMeshGoalFilter_OutOfViewFrom : BmSDK.Engine.NavMeshGoal_
         where TComponent : class, Framework.IScriptComponent<NavMeshGoalFilter_OutOfViewFrom>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_MustBeHiddenFromThisPoint;
     /// <summary>
     /// Function: MustBeHiddenFromThisPoint
     /// </summary>
     public unsafe static bool MustBeHiddenFromThisPoint(BmSDK.Engine.NavMeshGoal_GenericFilterContainer FilterContainer, System.Numerics.Vector3 InOutOfViewLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavMeshGoalFilter_OutOfViewFrom.MustBeHiddenFromThisPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MustBeHiddenFromThisPoint, "Engine.NavMeshGoalFilter_OutOfViewFrom.MustBeHiddenFromThisPoint");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FilterContainer, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InOutOfViewLocation, paramsPtr + 8);

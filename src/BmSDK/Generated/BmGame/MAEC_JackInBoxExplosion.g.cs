@@ -78,12 +78,13 @@ public partial class MAEC_JackInBoxExplosion : BmSDK.BmGame.RAEC_GelMineExplosio
         where TComponent : class, Framework.IScriptComponent<MAEC_JackInBoxExplosion>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PlayExclaimBark;
     /// <summary>
     /// Function: PlayExclaimBark
     /// </summary>
     public unsafe virtual void PlayExclaimBark(BmSDK.BmGame.RBMAIController BarkC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_JackInBoxExplosion.PlayExclaimBark", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayExclaimBark, "BmGame.MAEC_JackInBoxExplosion.PlayExclaimBark");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BarkC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

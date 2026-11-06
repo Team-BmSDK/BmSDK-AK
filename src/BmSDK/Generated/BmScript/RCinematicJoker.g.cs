@@ -78,12 +78,13 @@ public partial class RCinematicJoker : BmSDK.BmGame.RCinematicCharacter, BmSDK.I
         where TComponent : class, Framework.IScriptComponent<RCinematicJoker>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_BeginAnimControl;
     /// <summary>
     /// Function: BeginAnimControl
     /// </summary>
     public unsafe override void BeginAnimControl(BmSDK.Engine.InterpGroup InInterpGroup, BmSDK.Engine.InterpGroupInst InInterpGroupInst)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCinematicJoker.BeginAnimControl", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BeginAnimControl, "BmScript.RCinematicJoker.BeginAnimControl");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroup, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroupInst, paramsPtr + 8);
@@ -91,23 +92,25 @@ public partial class RCinematicJoker : BmSDK.BmGame.RCinematicCharacter, BmSDK.I
         return;
     }
 
+    private static BmSDK.Function __fn_SetJokerSickState;
     /// <summary>
     /// Function: SetJokerSickState
     /// </summary>
     public unsafe virtual void SetJokerSickState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCinematicJoker.SetJokerSickState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetJokerSickState, "BmScript.RCinematicJoker.SetJokerSickState");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCinematicJoker.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmScript.RCinematicJoker.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

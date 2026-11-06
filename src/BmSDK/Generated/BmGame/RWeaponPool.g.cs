@@ -78,46 +78,50 @@ public partial class RWeaponPool : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RWeaponPool>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ReRegisterPooledWeaponPairedAnimsets;
     /// <summary>
     /// Function: ReRegisterPooledWeaponPairedAnimsets
     /// </summary>
     public unsafe virtual void ReRegisterPooledWeaponPairedAnimsets()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWeaponPool.ReRegisterPooledWeaponPairedAnimsets", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReRegisterPooledWeaponPairedAnimsets, "BmGame.RWeaponPool.ReRegisterPooledWeaponPairedAnimsets");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateWeaponCounts;
     /// <summary>
     /// Function: UpdateWeaponCounts
     /// </summary>
     public unsafe virtual void UpdateWeaponCounts()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWeaponPool.UpdateWeaponCounts", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateWeaponCounts, "BmGame.RWeaponPool.UpdateWeaponCounts");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ReturnWeaponToPool;
     /// <summary>
     /// Function: ReturnWeaponToPool
     /// </summary>
     public unsafe virtual void ReturnWeaponToPool(BmSDK.BmGame.RBMWeapon Weapon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWeaponPool.ReturnWeaponToPool", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReturnWeaponToPool, "BmGame.RWeaponPool.ReturnWeaponToPool");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Weapon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddWeaponToPool;
     /// <summary>
     /// Function: AddWeaponToPool
     /// </summary>
     public unsafe virtual void AddWeaponToPool(BmSDK.BmGame.RBMWeapon NewWeapon, bool bInActive, bool bForce = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWeaponPool.AddWeaponToPool", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddWeaponToPool, "BmGame.RWeaponPool.AddWeaponToPool");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewWeapon, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bInActive, paramsPtr + 8);
@@ -126,70 +130,76 @@ public partial class RWeaponPool : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetWeaponFromPool;
     /// <summary>
     /// Function: GetWeaponFromPool
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RBMWeapon GetWeaponFromPool(BmSDK.BmGame.RBMPawnAI NewOwner)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWeaponPool.GetWeaponFromPool", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWeaponFromPool, "BmGame.RWeaponPool.GetWeaponFromPool");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewOwner, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMWeapon>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetNumPooledWeapons;
     /// <summary>
     /// Function: GetNumPooledWeapons
     /// </summary>
     public unsafe virtual int GetNumPooledWeapons()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWeaponPool.GetNumPooledWeapons", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNumPooledWeapons, "BmGame.RWeaponPool.GetNumPooledWeapons");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SpawnWeapon;
     /// <summary>
     /// Function: SpawnWeapon
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RBMWeapon SpawnWeapon(BmSDK.Class NewWeaponClass)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWeaponPool.SpawnWeapon", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnWeapon, "BmGame.RWeaponPool.SpawnWeapon");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewWeaponClass, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMWeapon>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_SpawnWeaponInPool;
     /// <summary>
     /// Function: SpawnWeaponInPool
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RBMWeapon SpawnWeaponInPool()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWeaponPool.SpawnWeaponInPool", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnWeaponInPool, "BmGame.RWeaponPool.SpawnWeaponInPool");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMWeapon>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_FillPool;
     /// <summary>
     /// Function: FillPool
     /// </summary>
     public unsafe virtual void FillPool(int NumWeapons)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWeaponPool.FillPool", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FillPool, "BmGame.RWeaponPool.FillPool");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NumWeapons, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Initialise;
     /// <summary>
     /// Function: Initialise
     /// </summary>
     public unsafe virtual void Initialise(BmSDK.BmGame.RBMPawnAI Owner, BmSDK.Class NewWeaponClass, int PoolSize)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWeaponPool.Initialise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Initialise, "BmGame.RWeaponPool.Initialise");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Owner, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewWeaponClass, paramsPtr + 8);

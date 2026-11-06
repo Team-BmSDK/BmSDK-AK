@@ -78,24 +78,26 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<NavigationHandle>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DrawBreadCrumbs;
     /// <summary>
     /// Function: DrawBreadCrumbs
     /// </summary>
     public unsafe virtual void DrawBreadCrumbs(bool bPersistent = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.DrawBreadCrumbs", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DrawBreadCrumbs, "Engine.NavigationHandle.DrawBreadCrumbs");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bPersistent, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StaticGetValidatedAnchorPosition;
     /// <summary>
     /// Function: StaticGetValidatedAnchorPosition
     /// </summary>
     public unsafe static bool StaticGetValidatedAnchorPosition(out System.Numerics.Vector3 out_NewAnchorLoc, System.Numerics.Vector3 StartCheckBaseLocation, System.Numerics.Vector3 Extent)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.StaticGetValidatedAnchorPosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StaticGetValidatedAnchorPosition, "Engine.NavigationHandle.StaticGetValidatedAnchorPosition");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartCheckBaseLocation, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Extent, paramsPtr + 24);
@@ -111,12 +113,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 36);
     }
 
+    private static BmSDK.Function __fn_GetValidatedAnchorPosition;
     /// <summary>
     /// Function: GetValidatedAnchorPosition
     /// </summary>
     public unsafe virtual bool GetValidatedAnchorPosition(out System.Numerics.Vector3 out_NewAnchorLoc, System.Numerics.Vector3 OverrideStartLoc = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.GetValidatedAnchorPosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetValidatedAnchorPosition, "Engine.NavigationHandle.GetValidatedAnchorPosition");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverrideStartLoc, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
@@ -131,12 +134,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_PopulatePathfindingParamCache;
     /// <summary>
     /// Function: PopulatePathfindingParamCache
     /// </summary>
     public unsafe virtual bool PopulatePathfindingParamCache()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.PopulatePathfindingParamCache", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PopulatePathfindingParamCache, "Engine.NavigationHandle.PopulatePathfindingParamCache");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -149,12 +153,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_MoveToDesiredHeightAboveMesh;
     /// <summary>
     /// Function: MoveToDesiredHeightAboveMesh
     /// </summary>
     public unsafe static System.Numerics.Vector3 MoveToDesiredHeightAboveMesh(System.Numerics.Vector3 Point, float Height)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.MoveToDesiredHeightAboveMesh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MoveToDesiredHeightAboveMesh, "Engine.NavigationHandle.MoveToDesiredHeightAboveMesh");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Point, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Height, paramsPtr + 12);
@@ -169,12 +174,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_CopyMovePointsFromPathCache;
     /// <summary>
     /// Function: CopyMovePointsFromPathCache
     /// </summary>
     public unsafe virtual void CopyMovePointsFromPathCache(System.Numerics.Vector3 FinalDest, out BmSDK.TArray<System.Numerics.Vector3> out_MovePoints)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.CopyMovePointsFromPathCache", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CopyMovePointsFromPathCache, "Engine.NavigationHandle.CopyMovePointsFromPathCache");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FinalDest, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -189,12 +195,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_CalculatePathDistance;
     /// <summary>
     /// Function: CalculatePathDistance
     /// </summary>
     public unsafe virtual float CalculatePathDistance(System.Numerics.Vector3 FinalDest = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.CalculatePathDistance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculatePathDistance, "Engine.NavigationHandle.CalculatePathDistance");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FinalDest, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -208,12 +215,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_GetFirstMoveLocation;
     /// <summary>
     /// Function: GetFirstMoveLocation
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetFirstMoveLocation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.GetFirstMoveLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFirstMoveLocation, "Engine.NavigationHandle.GetFirstMoveLocation");
         byte* paramsPtr = stackalloc byte[12];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -226,12 +234,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsAnchorInescapable;
     /// <summary>
     /// Function: IsAnchorInescapable
     /// </summary>
     public unsafe virtual bool IsAnchorInescapable()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.IsAnchorInescapable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAnchorInescapable, "Engine.NavigationHandle.IsAnchorInescapable");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -244,12 +253,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_LimitPathCacheDistance;
     /// <summary>
     /// Function: LimitPathCacheDistance
     /// </summary>
     public unsafe virtual void LimitPathCacheDistance(float MaxDist)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.LimitPathCacheDistance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LimitPathCacheDistance, "Engine.NavigationHandle.LimitPathCacheDistance");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxDist, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -263,12 +273,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetValidPositionsForBox;
     /// <summary>
     /// Function: GetValidPositionsForBox
     /// </summary>
     public unsafe static void GetValidPositionsForBox(System.Numerics.Vector3 pos, float Radius, System.Numerics.Vector3 Extent, bool bMustBeReachableFromStartPos, out BmSDK.TArray<System.Numerics.Vector3> out_ValidPositions, int MaxPositions = default, float MinRadius = default, System.Numerics.Vector3 ValidBoxAroundStartPos = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.GetValidPositionsForBox", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetValidPositionsForBox, "Engine.NavigationHandle.GetValidPositionsForBox");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(pos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Radius, paramsPtr + 12);
@@ -289,12 +300,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetAllPolyCentersWithinBounds;
     /// <summary>
     /// Function: GetAllPolyCentersWithinBounds
     /// </summary>
     public unsafe static void GetAllPolyCentersWithinBounds(System.Numerics.Vector3 pos, System.Numerics.Vector3 Extent, out BmSDK.TArray<System.Numerics.Vector3> out_PolyCtrs)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.GetAllPolyCentersWithinBounds", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAllPolyCentersWithinBounds, "Engine.NavigationHandle.GetAllPolyCentersWithinBounds");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(pos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Extent, paramsPtr + 12);
@@ -310,12 +322,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetCurrentEdgeType;
     /// <summary>
     /// Function: GetCurrentEdgeType
     /// </summary>
     public unsafe virtual BmSDK.Engine.Pylon.ENavMeshEdgeType GetCurrentEdgeType()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.GetCurrentEdgeType", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCurrentEdgeType, "Engine.NavigationHandle.GetCurrentEdgeType");
         byte* paramsPtr = stackalloc byte[1];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -328,12 +341,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Pylon.ENavMeshEdgeType>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ClearCurrentEdge;
     /// <summary>
     /// Function: ClearCurrentEdge
     /// </summary>
     public unsafe virtual void ClearCurrentEdge()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.ClearCurrentEdge", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearCurrentEdge, "Engine.NavigationHandle.ClearCurrentEdge");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -346,12 +360,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetCurrentEdgeDebugText;
     /// <summary>
     /// Function: GetCurrentEdgeDebugText
     /// </summary>
     public unsafe virtual BmSDK.FString GetCurrentEdgeDebugText()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.GetCurrentEdgeDebugText", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCurrentEdgeDebugText, "Engine.NavigationHandle.GetCurrentEdgeDebugText");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -364,12 +379,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PrintPathCacheDebugText;
     /// <summary>
     /// Function: PrintPathCacheDebugText
     /// </summary>
     public unsafe virtual void PrintPathCacheDebugText()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.PrintPathCacheDebugText", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PrintPathCacheDebugText, "Engine.NavigationHandle.PrintPathCacheDebugText");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -382,12 +398,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_DrawPathCache;
     /// <summary>
     /// Function: DrawPathCache
     /// </summary>
     public unsafe virtual void DrawPathCache(System.Numerics.Vector3 DrawOffset = default, bool bPersistent = default, BmSDK.GameObject.FColor DrawColor = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.DrawPathCache", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DrawPathCache, "Engine.NavigationHandle.DrawPathCache");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DrawOffset, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bPersistent, paramsPtr + 12);
@@ -403,12 +420,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ActorReachable;
     /// <summary>
     /// Function: ActorReachable
     /// </summary>
     public unsafe virtual bool ActorReachable(BmSDK.Engine.Actor A)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.ActorReachable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActorReachable, "Engine.NavigationHandle.ActorReachable");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(A, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -422,12 +440,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_PointReachable;
     /// <summary>
     /// Function: PointReachable
     /// </summary>
     public unsafe virtual bool PointReachable(System.Numerics.Vector3 Point, System.Numerics.Vector3 OverrideStartPoint = default, bool bAllowHitsInEndCollisionBox = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.PointReachable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PointReachable, "Engine.NavigationHandle.PointReachable");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Point, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverrideStartPoint, paramsPtr + 12);
@@ -443,12 +462,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_PointCheck;
     /// <summary>
     /// Function: PointCheck
     /// </summary>
     public unsafe virtual bool PointCheck(System.Numerics.Vector3 pt, System.Numerics.Vector3 Extent)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.PointCheck", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PointCheck, "Engine.NavigationHandle.PointCheck");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(pt, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Extent, paramsPtr + 12);
@@ -463,12 +483,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_LineCheck;
     /// <summary>
     /// Function: LineCheck
     /// </summary>
     public unsafe static bool LineCheck(System.Numerics.Vector3 Start, System.Numerics.Vector3 End, System.Numerics.Vector3 Extent, out System.Numerics.Vector3 out_HitLocation, out System.Numerics.Vector3 out_HitNormal, bool bGetFirstHit, bool bIgnoreDynamicObstacles)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.LineCheck", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LineCheck, "Engine.NavigationHandle.LineCheck");
         byte* paramsPtr = stackalloc byte[72];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Start, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(End, paramsPtr + 12);
@@ -488,12 +509,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 68);
     }
 
+    private static BmSDK.Function __fn_ObstaclePointCheck;
     /// <summary>
     /// Function: ObstaclePointCheck
     /// </summary>
     public unsafe static bool ObstaclePointCheck(System.Numerics.Vector3 pt, System.Numerics.Vector3 Extent)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.ObstaclePointCheck", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ObstaclePointCheck, "Engine.NavigationHandle.ObstaclePointCheck");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(pt, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Extent, paramsPtr + 12);
@@ -508,12 +530,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_ObstacleLineCheckIgnoreWalkable;
     /// <summary>
     /// Function: ObstacleLineCheckIgnoreWalkable
     /// </summary>
     public unsafe static bool ObstacleLineCheckIgnoreWalkable(System.Numerics.Vector3 Start, System.Numerics.Vector3 End, System.Numerics.Vector3 Extent, out System.Numerics.Vector3 out_HitLoc, out System.Numerics.Vector3 out_HitNorm, bool bFirstHit)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.ObstacleLineCheckIgnoreWalkable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ObstacleLineCheckIgnoreWalkable, "Engine.NavigationHandle.ObstacleLineCheckIgnoreWalkable");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Start, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(End, paramsPtr + 12);
@@ -532,12 +555,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 64);
     }
 
+    private static BmSDK.Function __fn_ObstacleLineCheck;
     /// <summary>
     /// Function: ObstacleLineCheck
     /// </summary>
     public unsafe static bool ObstacleLineCheck(System.Numerics.Vector3 Start, System.Numerics.Vector3 End, System.Numerics.Vector3 Extent, out System.Numerics.Vector3 out_HitLoc, out System.Numerics.Vector3 out_HitNorm, bool bFirstHit)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.ObstacleLineCheck", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ObstacleLineCheck, "Engine.NavigationHandle.ObstacleLineCheck");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Start, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(End, paramsPtr + 12);
@@ -556,12 +580,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 64);
     }
 
+    private static BmSDK.Function __fn_SuggestMovePreparation;
     /// <summary>
     /// Function: SuggestMovePreparation
     /// </summary>
     public unsafe virtual bool SuggestMovePreparation(out System.Numerics.Vector3 MovePt, BmSDK.Engine.Controller C)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.SuggestMovePreparation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SuggestMovePreparation, "Engine.NavigationHandle.SuggestMovePreparation");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(C, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
@@ -576,12 +601,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_FindPath;
     /// <summary>
     /// Function: FindPath
     /// </summary>
     public unsafe virtual bool FindPath(out BmSDK.Engine.Actor out_DestActor, out int out_DestItem, out int PathRequestsUsed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.FindPath", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindPath, "Engine.NavigationHandle.FindPath");
         byte* paramsPtr = stackalloc byte[20];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -597,12 +623,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_ComputeValidFinalDestination;
     /// <summary>
     /// Function: ComputeValidFinalDestination
     /// </summary>
     public unsafe virtual bool ComputeValidFinalDestination(out System.Numerics.Vector3 out_ComputedPosition)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.ComputeValidFinalDestination", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ComputeValidFinalDestination, "Engine.NavigationHandle.ComputeValidFinalDestination");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -616,12 +643,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_SetFinalDestination;
     /// <summary>
     /// Function: SetFinalDestination
     /// </summary>
     public unsafe virtual bool SetFinalDestination(System.Numerics.Vector3 FinalDest)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.SetFinalDestination", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetFinalDestination, "Engine.NavigationHandle.SetFinalDestination");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FinalDest, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -635,12 +663,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_GetNextMoveLocation;
     /// <summary>
     /// Function: GetNextMoveLocation
     /// </summary>
     public unsafe virtual bool GetNextMoveLocation(out System.Numerics.Vector3 out_MoveDest, float ArrivalDistance)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.GetNextMoveLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNextMoveLocation, "Engine.NavigationHandle.GetNextMoveLocation");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ArrivalDistance, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
@@ -655,12 +684,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_GetRoutablePolyPylonFromPos;
     /// <summary>
     /// Function: GetRoutablePolyPylonFromPos
     /// </summary>
     public unsafe static BmSDK.Engine.Pylon GetRoutablePolyPylonFromPos(System.Numerics.Vector3 Position)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.GetRoutablePolyPylonFromPos", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRoutablePolyPylonFromPos, "Engine.NavigationHandle.GetRoutablePolyPylonFromPos");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Position, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -674,12 +704,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Pylon>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_GetPylonFromPos;
     /// <summary>
     /// Function: GetPylonFromPos
     /// </summary>
     public unsafe static BmSDK.Engine.Pylon GetPylonFromPos(System.Numerics.Vector3 Position)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.GetPylonFromPos", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPylonFromPos, "Engine.NavigationHandle.GetPylonFromPos");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Position, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -693,12 +724,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Pylon>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_FindPylon;
     /// <summary>
     /// Function: FindPylon
     /// </summary>
     public unsafe virtual bool FindPylon()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.FindPylon", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindPylon, "Engine.NavigationHandle.FindPylon");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -711,12 +743,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetBestUnfinishedPathPoint;
     /// <summary>
     /// Function: GetBestUnfinishedPathPoint
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetBestUnfinishedPathPoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.GetBestUnfinishedPathPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBestUnfinishedPathPoint, "Engine.NavigationHandle.GetBestUnfinishedPathPoint");
         byte* paramsPtr = stackalloc byte[12];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -729,12 +762,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PathCache_RemoveIndex;
     /// <summary>
     /// Function: PathCache_RemoveIndex
     /// </summary>
     public unsafe virtual bool PathCache_RemoveIndex(int InIdx, int Count = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.PathCache_RemoveIndex", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PathCache_RemoveIndex, "Engine.NavigationHandle.PathCache_RemoveIndex");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InIdx, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Count, paramsPtr + 4);
@@ -749,12 +783,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_PathCache_GetGoalPoint;
     /// <summary>
     /// Function: PathCache_GetGoalPoint
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 PathCache_GetGoalPoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.PathCache_GetGoalPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PathCache_GetGoalPoint, "Engine.NavigationHandle.PathCache_GetGoalPoint");
         byte* paramsPtr = stackalloc byte[12];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -767,12 +802,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PathCache_Empty;
     /// <summary>
     /// Function: PathCache_Empty
     /// </summary>
     public unsafe virtual bool PathCache_Empty()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.PathCache_Empty", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PathCache_Empty, "Engine.NavigationHandle.PathCache_Empty");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -785,47 +821,51 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetPathCacheLength;
     /// <summary>
     /// Function: GetPathCacheLength
     /// </summary>
     public unsafe virtual int GetPathCacheLength()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.GetPathCacheLength", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPathCacheLength, "Engine.NavigationHandle.GetPathCacheLength");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CreatePathGoalEvaluator;
     /// <summary>
     /// Function: CreatePathGoalEvaluator
     /// </summary>
     public unsafe virtual BmSDK.Engine.NavMeshPathGoalEvaluator CreatePathGoalEvaluator(BmSDK.Class GoalEvalClass)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.CreatePathGoalEvaluator", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreatePathGoalEvaluator, "Engine.NavigationHandle.CreatePathGoalEvaluator");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GoalEvalClass, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.NavMeshPathGoalEvaluator>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CreatePathConstraint;
     /// <summary>
     /// Function: CreatePathConstraint
     /// </summary>
     public unsafe virtual BmSDK.Engine.NavMeshPathConstraint CreatePathConstraint(BmSDK.Class ConstraintClass)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.CreatePathConstraint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreatePathConstraint, "Engine.NavigationHandle.CreatePathConstraint");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ConstraintClass, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.NavMeshPathConstraint>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CheckAnchorPylonIntegerity;
     /// <summary>
     /// Function: CheckAnchorPylonIntegerity
     /// </summary>
     public unsafe virtual bool CheckAnchorPylonIntegerity()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.CheckAnchorPylonIntegerity", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckAnchorPylonIntegerity, "Engine.NavigationHandle.CheckAnchorPylonIntegerity");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -838,12 +878,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_DoesPylonAHaveAPathToPylonB;
     /// <summary>
     /// Function: DoesPylonAHaveAPathToPylonB
     /// </summary>
     public unsafe virtual bool DoesPylonAHaveAPathToPylonB(BmSDK.Engine.Pylon A, BmSDK.Engine.Pylon B)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.DoesPylonAHaveAPathToPylonB", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoesPylonAHaveAPathToPylonB, "Engine.NavigationHandle.DoesPylonAHaveAPathToPylonB");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(A, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(B, paramsPtr + 8);
@@ -858,12 +899,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_BuildFromPylonAToPylonB;
     /// <summary>
     /// Function: BuildFromPylonAToPylonB
     /// </summary>
     public unsafe virtual BmSDK.Engine.Pylon BuildFromPylonAToPylonB(BmSDK.Engine.Pylon A, BmSDK.Engine.Pylon B)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.BuildFromPylonAToPylonB", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BuildFromPylonAToPylonB, "Engine.NavigationHandle.BuildFromPylonAToPylonB");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(A, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(B, paramsPtr + 8);
@@ -878,12 +920,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Pylon>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_AddGoalEvaluator;
     /// <summary>
     /// Function: AddGoalEvaluator
     /// </summary>
     public unsafe virtual void AddGoalEvaluator(BmSDK.Engine.NavMeshPathGoalEvaluator Evaluator)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.AddGoalEvaluator", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddGoalEvaluator, "Engine.NavigationHandle.AddGoalEvaluator");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Evaluator, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -897,12 +940,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_AddPathConstraint;
     /// <summary>
     /// Function: AddPathConstraint
     /// </summary>
     public unsafe virtual void AddPathConstraint(BmSDK.Engine.NavMeshPathConstraint Constraint)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.AddPathConstraint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddPathConstraint, "Engine.NavigationHandle.AddPathConstraint");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Constraint, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -916,12 +960,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ClearConstraints;
     /// <summary>
     /// Function: ClearConstraints
     /// </summary>
     public unsafe virtual void ClearConstraints()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.ClearConstraints", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearConstraints, "Engine.NavigationHandle.ClearConstraints");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -934,12 +979,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetNextBreadCrumb;
     /// <summary>
     /// Function: GetNextBreadCrumb
     /// </summary>
     public unsafe virtual bool GetNextBreadCrumb(out System.Numerics.Vector3 out_BreadCrumbLoc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.GetNextBreadCrumb", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNextBreadCrumb, "Engine.NavigationHandle.GetNextBreadCrumb");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -953,12 +999,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_UpdateBreadCrumbs;
     /// <summary>
     /// Function: UpdateBreadCrumbs
     /// </summary>
     public unsafe virtual void UpdateBreadCrumbs(System.Numerics.Vector3 InLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.UpdateBreadCrumbs", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateBreadCrumbs, "Engine.NavigationHandle.UpdateBreadCrumbs");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InLocation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -972,12 +1019,13 @@ public partial class NavigationHandle : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_CopyPathStoreToPathCache;
     /// <summary>
     /// Function: CopyPathStoreToPathCache
     /// </summary>
     public unsafe virtual void CopyPathStoreToPathCache(out BmSDK.Engine.NavigationHandle.FPathStore InStore)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavigationHandle.CopyPathStoreToPathCache", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CopyPathStoreToPathCache, "Engine.NavigationHandle.CopyPathStoreToPathCache");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

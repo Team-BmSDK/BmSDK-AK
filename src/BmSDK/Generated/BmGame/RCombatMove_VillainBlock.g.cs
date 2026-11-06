@@ -78,23 +78,25 @@ public partial class RCombatMove_VillainBlock : BmSDK.BmGame.RCombatMove, BmSDK.
         where TComponent : class, Framework.IScriptComponent<RCombatMove_VillainBlock>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ExitMove;
     /// <summary>
     /// Function: ExitMove
     /// </summary>
     public unsafe override void ExitMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainBlock.ExitMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ExitMove, "BmGame.RCombatMove_VillainBlock.ExitMove");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_BlockAttack;
     /// <summary>
     /// Function: BlockAttack
     /// </summary>
     public unsafe virtual void BlockAttack(BmSDK.BmGame.RPawnCombat NewAttacker, BmSDK.Class dmgType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainBlock.BlockAttack", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BlockAttack, "BmGame.RCombatMove_VillainBlock.BlockAttack");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAttacker, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 8);
@@ -102,34 +104,37 @@ public partial class RCombatMove_VillainBlock : BmSDK.BmGame.RCombatMove, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_BlockedStun;
     /// <summary>
     /// Function: BlockedStun
     /// </summary>
     public unsafe virtual bool BlockedStun()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainBlock.BlockedStun", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BlockedStun, "BmGame.RCombatMove_VillainBlock.BlockedStun");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanPrepareToBlock;
     /// <summary>
     /// Function: CanPrepareToBlock
     /// </summary>
     public unsafe override bool CanPrepareToBlock()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainBlock.CanPrepareToBlock", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanPrepareToBlock, "BmGame.RCombatMove_VillainBlock.CanPrepareToBlock");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Initialise;
     /// <summary>
     /// Function: Initialise
     /// </summary>
     public unsafe override void Initialise()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainBlock.Initialise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Initialise, "BmGame.RCombatMove_VillainBlock.Initialise");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

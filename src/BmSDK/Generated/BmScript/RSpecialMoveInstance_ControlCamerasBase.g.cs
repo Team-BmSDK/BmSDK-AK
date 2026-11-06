@@ -73,12 +73,13 @@ public partial class RSpecialMoveInstance_ControlCamerasBase : BmSDK.BmGame.RSpe
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveInstance_ControlCamerasBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UpdateCamera;
     /// <summary>
     /// Function: UpdateCamera
     /// </summary>
     public unsafe virtual void UpdateCamera(float LocationLerpValue, float RotationLerpValue)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_ControlCamerasBase.UpdateCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateCamera, "BmScript.RSpecialMoveInstance_ControlCamerasBase.UpdateCamera");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocationLerpValue, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RotationLerpValue, paramsPtr + 4);
@@ -86,35 +87,38 @@ public partial class RSpecialMoveInstance_ControlCamerasBase : BmSDK.BmGame.RSpe
         return;
     }
 
+    private static BmSDK.Function __fn_ExitCamera;
     /// <summary>
     /// Function: ExitCamera
     /// </summary>
     public unsafe virtual void ExitCamera()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_ControlCamerasBase.ExitCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ExitCamera, "BmScript.RSpecialMoveInstance_ControlCamerasBase.ExitCamera");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SwitchCamera;
     /// <summary>
     /// Function: SwitchCamera
     /// </summary>
     public unsafe virtual void SwitchCamera(BmSDK.BmGame.RCameraActor NewCamera)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_ControlCamerasBase.SwitchCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SwitchCamera, "BmScript.RSpecialMoveInstance_ControlCamerasBase.SwitchCamera");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCamera, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartCamera;
     /// <summary>
     /// Function: StartCamera
     /// </summary>
     public unsafe virtual void StartCamera(BmSDK.BmGame.RCameraActor BeginCamera, BmSDK.Engine.Actor TrackingActor)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_ControlCamerasBase.StartCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartCamera, "BmScript.RSpecialMoveInstance_ControlCamerasBase.StartCamera");
         byte* paramsPtr = stackalloc byte[33];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BeginCamera, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TrackingActor, paramsPtr + 8);
@@ -122,23 +126,25 @@ public partial class RSpecialMoveInstance_ControlCamerasBase : BmSDK.BmGame.RSpe
         return;
     }
 
+    private static BmSDK.Function __fn_FinishSpecialMove;
     /// <summary>
     /// Function: FinishSpecialMove
     /// </summary>
     public unsafe override void FinishSpecialMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_ControlCamerasBase.FinishSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishSpecialMove, "BmScript.RSpecialMoveInstance_ControlCamerasBase.FinishSpecialMove");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerSpecialMove;
     /// <summary>
     /// Function: TriggerSpecialMove
     /// </summary>
     public unsafe override void TriggerSpecialMove(BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator MoveLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_ControlCamerasBase.TriggerSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerSpecialMove, "BmScript.RSpecialMoveInstance_ControlCamerasBase.TriggerSpecialMove");
         byte* paramsPtr = stackalloc byte[132];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

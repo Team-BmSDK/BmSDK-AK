@@ -78,12 +78,13 @@ public partial class RHudModuleRoomName : BmSDK.BmGame.RHudModule, BmSDK.IGameOb
         where TComponent : class, Framework.IScriptComponent<RHudModuleRoomName>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ShowRoomNamePrivate;
     /// <summary>
     /// Function: ShowRoomNamePrivate
     /// </summary>
     public unsafe virtual void ShowRoomNamePrivate(BmSDK.FString roomName, BmSDK.TArray<BmSDK.FString> RiddleList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleRoomName.ShowRoomNamePrivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowRoomNamePrivate, "BmGame.RHudModuleRoomName.ShowRoomNamePrivate");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(roomName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RiddleList, paramsPtr + 16);
@@ -91,12 +92,13 @@ public partial class RHudModuleRoomName : BmSDK.BmGame.RHudModule, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_ShowRoomName;
     /// <summary>
     /// Function: ShowRoomName
     /// </summary>
     public unsafe virtual void ShowRoomName(BmSDK.FString roomName, BmSDK.TArray<BmSDK.FString> RiddleList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleRoomName.ShowRoomName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowRoomName, "BmGame.RHudModuleRoomName.ShowRoomName");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(roomName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RiddleList, paramsPtr + 16);
@@ -104,46 +106,50 @@ public partial class RHudModuleRoomName : BmSDK.BmGame.RHudModule, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerRoomName;
     /// <summary>
     /// Function: TriggerRoomName
     /// </summary>
     public unsafe virtual void TriggerRoomName(BmSDK.FString roomName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleRoomName.TriggerRoomName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerRoomName, "BmGame.RHudModuleRoomName.TriggerRoomName");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(roomName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InitialiseFlash;
     /// <summary>
     /// Function: InitialiseFlash
     /// </summary>
     public unsafe override void InitialiseFlash()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleRoomName.InitialiseFlash", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitialiseFlash, "BmGame.RHudModuleRoomName.InitialiseFlash");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Close;
     /// <summary>
     /// Function: Close
     /// </summary>
     public unsafe override void Close()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleRoomName.Close", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Close, "BmGame.RHudModuleRoomName.Close");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe override bool Init(BmSDK.BmGame.RPlayerController _RPC, BmSDK.FString _ExtensionName, BmSDK.FString _ExtensionPath)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleRoomName.Init", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmGame.RHudModuleRoomName.Init");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_RPC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_ExtensionName, paramsPtr + 8);

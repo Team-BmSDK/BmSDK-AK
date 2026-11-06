@@ -78,35 +78,38 @@ public partial class RBMWeaponHeavyObjectFireExtinguisher : BmSDK.BmScript.RBMWe
         where TComponent : class, Framework.IScriptComponent<RBMWeaponHeavyObjectFireExtinguisher>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnWeaponDestroy;
     /// <summary>
     /// Function: OnWeaponDestroy
     /// </summary>
     public unsafe override void OnWeaponDestroy(System.Numerics.Vector3 SmashVel)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponHeavyObjectFireExtinguisher.OnWeaponDestroy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnWeaponDestroy, "BmScript.RBMWeaponHeavyObjectFireExtinguisher.OnWeaponDestroy");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SmashVel, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Detonate;
     /// <summary>
     /// Function: Detonate
     /// </summary>
     public unsafe virtual void Detonate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponHeavyObjectFireExtinguisher.Detonate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Detonate, "BmScript.RBMWeaponHeavyObjectFireExtinguisher.Detonate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TakeDamage;
     /// <summary>
     /// Function: TakeDamage
     /// </summary>
     public unsafe override void TakeDamage(int Damage, BmSDK.Engine.Controller InstigatedBy, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 Momentum, BmSDK.Class dmgType, BmSDK.Engine.Actor.FTraceHitInfo HitInfo = default, BmSDK.Engine.Actor DamageCauser = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponHeavyObjectFireExtinguisher.TakeDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TakeDamage, "BmScript.RBMWeaponHeavyObjectFireExtinguisher.TakeDamage");
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Damage, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InstigatedBy, paramsPtr + 4);
@@ -119,68 +122,74 @@ public partial class RBMWeaponHeavyObjectFireExtinguisher : BmSDK.BmScript.RBMWe
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponHeavyObjectFireExtinguisher.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmScript.RBMWeaponHeavyObjectFireExtinguisher.Tick");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetBatarangSpeedBoost;
     /// <summary>
     /// Function: GetBatarangSpeedBoost
     /// </summary>
     public unsafe virtual float GetBatarangSpeedBoost()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponHeavyObjectFireExtinguisher.GetBatarangSpeedBoost", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBatarangSpeedBoost, "BmScript.RBMWeaponHeavyObjectFireExtinguisher.GetBatarangSpeedBoost");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ForceHitAtEndOfFlight;
     /// <summary>
     /// Function: ForceHitAtEndOfFlight
     /// </summary>
     public unsafe virtual bool ForceHitAtEndOfFlight()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponHeavyObjectFireExtinguisher.ForceHitAtEndOfFlight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForceHitAtEndOfFlight, "BmScript.RBMWeaponHeavyObjectFireExtinguisher.ForceHitAtEndOfFlight");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetBatarangPriority;
     /// <summary>
     /// Function: GetBatarangPriority
     /// </summary>
     public unsafe virtual float GetBatarangPriority()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponHeavyObjectFireExtinguisher.GetBatarangPriority", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBatarangPriority, "BmScript.RBMWeaponHeavyObjectFireExtinguisher.GetBatarangPriority");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsBatarangable;
     /// <summary>
     /// Function: IsBatarangable
     /// </summary>
     public unsafe virtual bool IsBatarangable()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponHeavyObjectFireExtinguisher.IsBatarangable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsBatarangable, "BmScript.RBMWeaponHeavyObjectFireExtinguisher.IsBatarangable");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetBatarangTargetPosition;
     /// <summary>
     /// Function: GetBatarangTargetPosition
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetBatarangTargetPosition(System.Numerics.Vector3 AimLocation, System.Numerics.Vector3 AimDirection, bool bDuringTargetPhase = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponHeavyObjectFireExtinguisher.GetBatarangTargetPosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBatarangTargetPosition, "BmScript.RBMWeaponHeavyObjectFireExtinguisher.GetBatarangTargetPosition");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AimLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AimDirection, paramsPtr + 12);

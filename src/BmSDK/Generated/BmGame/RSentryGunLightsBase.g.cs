@@ -78,12 +78,13 @@ public partial class RSentryGunLightsBase : BmSDK.Engine.Actor, BmSDK.IGameObjec
         where TComponent : class, Framework.IScriptComponent<RSentryGunLightsBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetAlphaModifier;
     /// <summary>
     /// Function: SetAlphaModifier
     /// </summary>
     public unsafe virtual void SetAlphaModifier(float newAlphaMod)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSentryGunLightsBase.SetAlphaModifier", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAlphaModifier, "BmGame.RSentryGunLightsBase.SetAlphaModifier");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(newAlphaMod, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -97,12 +98,13 @@ public partial class RSentryGunLightsBase : BmSDK.Engine.Actor, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_SetConeAngleAndRadius;
     /// <summary>
     /// Function: SetConeAngleAndRadius
     /// </summary>
     public unsafe virtual bool SetConeAngleAndRadius(float innerAngle, float outerAngle, float Radius, float shaftBrightnessModifier)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSentryGunLightsBase.SetConeAngleAndRadius", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetConeAngleAndRadius, "BmGame.RSentryGunLightsBase.SetConeAngleAndRadius");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(innerAngle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(outerAngle, paramsPtr + 4);
@@ -119,12 +121,13 @@ public partial class RSentryGunLightsBase : BmSDK.Engine.Actor, BmSDK.IGameObjec
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_SetLightMode;
     /// <summary>
     /// Function: SetLightMode
     /// </summary>
     public unsafe virtual bool SetLightMode(BmSDK.BmGame.RSentryGunLightsBase.eLightMode NewMode)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSentryGunLightsBase.SetLightMode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetLightMode, "BmGame.RSentryGunLightsBase.SetLightMode");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewMode, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -138,12 +141,13 @@ public partial class RSentryGunLightsBase : BmSDK.Engine.Actor, BmSDK.IGameObjec
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetColour;
     /// <summary>
     /// Function: GetColour
     /// </summary>
     public unsafe virtual BmSDK.GameObject.FColor GetColour()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSentryGunLightsBase.GetColour", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetColour, "BmGame.RSentryGunLightsBase.GetColour");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -156,12 +160,13 @@ public partial class RSentryGunLightsBase : BmSDK.Engine.Actor, BmSDK.IGameObjec
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.GameObject.FColor>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSentryGunLightsBase.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RSentryGunLightsBase.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

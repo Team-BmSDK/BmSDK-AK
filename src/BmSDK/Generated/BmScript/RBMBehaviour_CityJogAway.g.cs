@@ -78,59 +78,64 @@ public partial class RBMBehaviour_CityJogAway : BmSDK.BmScript.RBMBehaviour_City
         where TComponent : class, Framework.IScriptComponent<RBMBehaviour_CityJogAway>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SpookedBy;
     /// <summary>
     /// Function: SpookedBy
     /// </summary>
     public unsafe virtual void SpookedBy()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_CityJogAway.SpookedBy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpookedBy, "BmScript.RBMBehaviour_CityJogAway.SpookedBy");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateThreatAndDestroyCheck;
     /// <summary>
     /// Function: UpdateThreatAndDestroyCheck
     /// </summary>
     public unsafe override bool UpdateThreatAndDestroyCheck(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_CityJogAway.UpdateThreatAndDestroyCheck", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateThreatAndDestroyCheck, "BmScript.RBMBehaviour_CityJogAway.UpdateThreatAndDestroyCheck");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_PlayerBumped;
     /// <summary>
     /// Function: PlayerBumped
     /// </summary>
     public unsafe override void PlayerBumped(bool bFriendly)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_CityJogAway.PlayerBumped", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayerBumped, "BmScript.RBMBehaviour_CityJogAway.PlayerBumped");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bFriendly, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HandleNoise;
     /// <summary>
     /// Function: HandleNoise
     /// </summary>
     public unsafe override void HandleNoise(BmSDK.BmGame.RPawnPlayer PlayerInstigator)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_CityJogAway.HandleNoise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandleNoise, "BmScript.RBMBehaviour_CityJogAway.HandleNoise");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerInstigator, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OverrideGetupStances;
     /// <summary>
     /// Function: OverrideGetupStances
     /// </summary>
     public unsafe override bool OverrideGetupStances(out BmSDK.FName MovementStance, out BmSDK.FName WeaponStance)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_CityJogAway.OverrideGetupStances", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverrideGetupStances, "BmScript.RBMBehaviour_CityJogAway.OverrideGetupStances");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         MovementStance = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
@@ -138,46 +143,50 @@ public partial class RBMBehaviour_CityJogAway : BmSDK.BmScript.RBMBehaviour_City
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_PlayFleeReaction;
     /// <summary>
     /// Function: PlayFleeReaction
     /// </summary>
     public unsafe override void PlayFleeReaction()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_CityJogAway.PlayFleeReaction", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayFleeReaction, "BmScript.RBMBehaviour_CityJogAway.PlayFleeReaction");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetRunVariants;
     /// <summary>
     /// Function: SetRunVariants
     /// </summary>
     public unsafe override void SetRunVariants(BmSDK.BmGame.RBMAIAction_RiotRunBase MoveAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_CityJogAway.SetRunVariants", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRunVariants, "BmScript.RBMBehaviour_CityJogAway.SetRunVariants");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetMovementSpeed;
     /// <summary>
     /// Function: SetMovementSpeed
     /// </summary>
     public unsafe override bool SetMovementSpeed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_CityJogAway.SetMovementSpeed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMovementSpeed, "BmScript.RBMBehaviour_CityJogAway.SetMovementSpeed");
         byte* paramsPtr = stackalloc byte[5];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_CityJogAway.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmScript.RBMBehaviour_CityJogAway.OnActivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

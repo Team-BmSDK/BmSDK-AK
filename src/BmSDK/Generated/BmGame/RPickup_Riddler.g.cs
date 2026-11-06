@@ -78,12 +78,13 @@ public partial class RPickup_Riddler : BmSDK.BmGame.RPickupBase, BmSDK.IGameObje
         where TComponent : class, Framework.IScriptComponent<RPickup_Riddler>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GenerateScanEvent;
     /// <summary>
     /// Function: GenerateScanEvent
     /// </summary>
     public unsafe override void GenerateScanEvent(BmSDK.BmGame.RPlayerController RPC, bool Rescanned)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPickup_Riddler.GenerateScanEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GenerateScanEvent, "BmGame.RPickup_Riddler.GenerateScanEvent");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RPC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Rescanned, paramsPtr + 8);
@@ -91,59 +92,64 @@ public partial class RPickup_Riddler : BmSDK.BmGame.RPickupBase, BmSDK.IGameObje
         return;
     }
 
+    private static BmSDK.Function __fn_CanScanAndAddToMap;
     /// <summary>
     /// Function: CanScanAndAddToMap
     /// </summary>
     public unsafe override bool CanScanAndAddToMap()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPickup_Riddler.CanScanAndAddToMap", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanScanAndAddToMap, "BmGame.RPickup_Riddler.CanScanAndAddToMap");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_OnToggleHidden;
     /// <summary>
     /// Function: OnToggleHidden
     /// </summary>
     public unsafe override void OnToggleHidden(BmSDK.Engine.SeqAct_ToggleHidden Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPickup_Riddler.OnToggleHidden", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggleHidden, "BmGame.RPickup_Riddler.OnToggleHidden");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnToggle;
     /// <summary>
     /// Function: OnToggle
     /// </summary>
     public unsafe override void OnToggle(BmSDK.Engine.SeqAct_Toggle Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPickup_Riddler.OnToggle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggle, "BmGame.RPickup_Riddler.OnToggle");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PickedUp;
     /// <summary>
     /// Function: PickedUp
     /// </summary>
     public unsafe override void PickedUp(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPickup_Riddler.PickedUp", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PickedUp, "BmGame.RPickup_Riddler.PickedUp");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HasBeenPickedUp;
     /// <summary>
     /// Function: HasBeenPickedUp
     /// </summary>
     public unsafe override bool HasBeenPickedUp()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPickup_Riddler.HasBeenPickedUp", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasBeenPickedUp, "BmGame.RPickup_Riddler.HasBeenPickedUp");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

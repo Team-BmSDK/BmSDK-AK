@@ -78,23 +78,25 @@ public partial class ForceFieldShapeSphere : BmSDK.Engine.ForceFieldShape, BmSDK
         where TComponent : class, Framework.IScriptComponent<ForceFieldShapeSphere>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetDrawComponent;
     /// <summary>
     /// Function: GetDrawComponent
     /// </summary>
     public unsafe override BmSDK.Engine.PrimitiveComponent GetDrawComponent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ForceFieldShapeSphere.GetDrawComponent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDrawComponent, "Engine.ForceFieldShapeSphere.GetDrawComponent");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.PrimitiveComponent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_FillByCylinder;
     /// <summary>
     /// Function: FillByCylinder
     /// </summary>
     public unsafe override void FillByCylinder(float BottomRadius, float TopRadius, float Height, float HeightOffset)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ForceFieldShapeSphere.FillByCylinder", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FillByCylinder, "Engine.ForceFieldShapeSphere.FillByCylinder");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BottomRadius, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TopRadius, paramsPtr + 4);
@@ -104,12 +106,13 @@ public partial class ForceFieldShapeSphere : BmSDK.Engine.ForceFieldShape, BmSDK
         return;
     }
 
+    private static BmSDK.Function __fn_FillByCapsule;
     /// <summary>
     /// Function: FillByCapsule
     /// </summary>
     public unsafe override void FillByCapsule(float Height, float Radius)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ForceFieldShapeSphere.FillByCapsule", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FillByCapsule, "Engine.ForceFieldShapeSphere.FillByCapsule");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Height, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Radius, paramsPtr + 4);
@@ -117,36 +120,39 @@ public partial class ForceFieldShapeSphere : BmSDK.Engine.ForceFieldShape, BmSDK
         return;
     }
 
+    private static BmSDK.Function __fn_FillByBox;
     /// <summary>
     /// Function: FillByBox
     /// </summary>
     public unsafe override void FillByBox(System.Numerics.Vector3 Extent)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ForceFieldShapeSphere.FillByBox", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FillByBox, "Engine.ForceFieldShapeSphere.FillByBox");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Extent, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FillBySphere;
     /// <summary>
     /// Function: FillBySphere
     /// </summary>
     public unsafe override void FillBySphere(float Radius)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ForceFieldShapeSphere.FillBySphere", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FillBySphere, "Engine.ForceFieldShapeSphere.FillBySphere");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Radius, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetRadius;
     /// <summary>
     /// Function: GetRadius
     /// </summary>
     public unsafe virtual float GetRadius()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ForceFieldShapeSphere.GetRadius", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRadius, "Engine.ForceFieldShapeSphere.GetRadius");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);

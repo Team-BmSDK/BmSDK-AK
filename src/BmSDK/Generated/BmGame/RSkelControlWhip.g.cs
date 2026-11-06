@@ -78,12 +78,13 @@ public partial class RSkelControlWhip : BmSDK.Engine.SkelControlBase, BmSDK.IGam
         where TComponent : class, Framework.IScriptComponent<RSkelControlWhip>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetWhipExtent;
     /// <summary>
     /// Function: GetWhipExtent
     /// </summary>
     public unsafe virtual float GetWhipExtent(BmSDK.Engine.SkeletalMeshComponent SkelComp)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSkelControlWhip.GetWhipExtent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWhipExtent, "BmGame.RSkelControlWhip.GetWhipExtent");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SkelComp, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

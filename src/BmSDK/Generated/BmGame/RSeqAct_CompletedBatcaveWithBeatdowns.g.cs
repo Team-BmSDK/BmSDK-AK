@@ -78,12 +78,13 @@ public partial class RSeqAct_CompletedBatcaveWithBeatdowns : BmSDK.Engine.Sequen
         where TComponent : class, Framework.IScriptComponent<RSeqAct_CompletedBatcaveWithBeatdowns>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_CompletedBatcaveWithBeatdowns.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmGame.RSeqAct_CompletedBatcaveWithBeatdowns.Activated");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

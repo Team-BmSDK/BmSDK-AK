@@ -78,12 +78,13 @@ public partial class MToggleSubroutine : BmSDK.BmGame.MHackSubroutine, BmSDK.IGa
         where TComponent : class, Framework.IScriptComponent<MToggleSubroutine>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Execute;
     /// <summary>
     /// Function: Execute
     /// </summary>
     public unsafe override bool Execute(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MToggleSubroutine.Execute", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Execute, "BmGame.MToggleSubroutine.Execute");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

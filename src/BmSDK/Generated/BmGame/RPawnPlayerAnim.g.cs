@@ -73,35 +73,38 @@ public partial class RPawnPlayerAnim : BmSDK.BmGame.RPawnCombat, BmSDK.IGameObje
         where TComponent : class, Framework.IScriptComponent<RPawnPlayerAnim>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PostFallingPhysicsCallback;
     /// <summary>
     /// Function: PostFallingPhysicsCallback
     /// </summary>
     public unsafe virtual void PostFallingPhysicsCallback()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerAnim.PostFallingPhysicsCallback", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostFallingPhysicsCallback, "BmGame.RPawnPlayerAnim.PostFallingPhysicsCallback");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnTeleport;
     /// <summary>
     /// Function: OnTeleport
     /// </summary>
     public unsafe override void OnTeleport(BmSDK.Engine.SeqAct_Teleport Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerAnim.OnTeleport", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnTeleport, "BmGame.RPawnPlayerAnim.OnTeleport");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetThoughts;
     /// <summary>
     /// Function: GetThoughts
     /// </summary>
     public unsafe override void GetThoughts(out BmSDK.TArray<BmSDK.Engine.Actor.FThought> ThoughtList, BmSDK.FName SubGroup)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerAnim.GetThoughts", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetThoughts, "BmGame.RPawnPlayerAnim.GetThoughts");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SubGroup, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -109,34 +112,37 @@ public partial class RPawnPlayerAnim : BmSDK.BmGame.RPawnCombat, BmSDK.IGameObje
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerAnim.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RPawnPlayerAnim.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CreateUnarmedWeaponConfig;
     /// <summary>
     /// Function: CreateUnarmedWeaponConfig
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RWeaponConfig CreateUnarmedWeaponConfig()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerAnim.CreateUnarmedWeaponConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateUnarmedWeaponConfig, "BmGame.RPawnPlayerAnim.CreateUnarmedWeaponConfig");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RWeaponConfig>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_AddMovementMovesToWeaponConfig;
     /// <summary>
     /// Function: AddMovementMovesToWeaponConfig
     /// </summary>
     public unsafe virtual void AddMovementMovesToWeaponConfig(BmSDK.BmGame.RWeaponConfig WeaponConfig)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerAnim.AddMovementMovesToWeaponConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddMovementMovesToWeaponConfig, "BmGame.RPawnPlayerAnim.AddMovementMovesToWeaponConfig");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WeaponConfig, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

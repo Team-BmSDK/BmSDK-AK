@@ -78,24 +78,26 @@ public partial class RAEC_ExplodedWall_Sub_Investigate : BmSDK.BmGame.RAlertEven
         where TComponent : class, Framework.IScriptComponent<RAEC_ExplodedWall_Sub_Investigate>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_NotifyFinished;
     /// <summary>
     /// Function: NotifyFinished
     /// </summary>
     public unsafe override void NotifyFinished(BmSDK.BmGame.RBMAIAction FinishedAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_ExplodedWall_Sub_Investigate.NotifyFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyFinished, "BmGame.RAEC_ExplodedWall_Sub_Investigate.NotifyFinished");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FinishedAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AssignWall;
     /// <summary>
     /// Function: AssignWall
     /// </summary>
     public unsafe virtual void AssignWall(System.Numerics.Vector3 MovePos, BmSDK.Engine.Actor TargetWall)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_ExplodedWall_Sub_Investigate.AssignWall", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AssignWall, "BmGame.RAEC_ExplodedWall_Sub_Investigate.AssignWall");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MovePos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetWall, paramsPtr + 12);

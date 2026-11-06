@@ -78,23 +78,25 @@ public partial class RBatarangRb_Controllable : BmSDK.BmScript.RBatarang_Control
         where TComponent : class, Framework.IScriptComponent<RBatarangRb_Controllable>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetReversePromptName;
     /// <summary>
     /// Function: GetReversePromptName
     /// </summary>
     public unsafe override BmSDK.FString GetReversePromptName()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBatarangRb_Controllable.GetReversePromptName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetReversePromptName, "BmScript.RBatarangRb_Controllable.GetReversePromptName");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetPromptName;
     /// <summary>
     /// Function: GetPromptName
     /// </summary>
     public unsafe static BmSDK.FName GetPromptName()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBatarangRb_Controllable.GetPromptName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPromptName, "BmScript.RBatarangRb_Controllable.GetPromptName");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);

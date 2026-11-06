@@ -73,46 +73,50 @@ public partial class RTurret_Stagg : BmSDK.BmGame.RTurretBase, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RTurret_Stagg>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CanDamagePlayer;
     /// <summary>
     /// Function: CanDamagePlayer
     /// </summary>
     public unsafe override bool CanDamagePlayer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_Stagg.CanDamagePlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanDamagePlayer, "BmGame.RTurret_Stagg.CanDamagePlayer");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ShouldForceMissedShot;
     /// <summary>
     /// Function: ShouldForceMissedShot
     /// </summary>
     public unsafe virtual bool ShouldForceMissedShot(BmSDK.BmGame.RPawnPlayer TargetPlayer)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_Stagg.ShouldForceMissedShot", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldForceMissedShot, "BmGame.RTurret_Stagg.ShouldForceMissedShot");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetPlayer, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_ClearInvestigateData;
     /// <summary>
     /// Function: ClearInvestigateData
     /// </summary>
     public unsafe override void ClearInvestigateData()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_Stagg.ClearInvestigateData", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearInvestigateData, "BmGame.RTurret_Stagg.ClearInvestigateData");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DoShotFX;
     /// <summary>
     /// Function: DoShotFX
     /// </summary>
     public unsafe override void DoShotFX(System.Numerics.Vector3 TargetLoc, bool bDoImpactFX)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_Stagg.DoShotFX", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoShotFX, "BmGame.RTurret_Stagg.DoShotFX");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDoImpactFX, paramsPtr + 12);
@@ -120,101 +124,110 @@ public partial class RTurret_Stagg : BmSDK.BmGame.RTurretBase, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_StoppedShooting;
     /// <summary>
     /// Function: StoppedShooting
     /// </summary>
     public unsafe override void StoppedShooting()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_Stagg.StoppedShooting", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StoppedShooting, "BmGame.RTurret_Stagg.StoppedShooting");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartedShooting;
     /// <summary>
     /// Function: StartedShooting
     /// </summary>
     public unsafe override void StartedShooting()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_Stagg.StartedShooting", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartedShooting, "BmGame.RTurret_Stagg.StartedShooting");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EnableTurretLights;
     /// <summary>
     /// Function: EnableTurretLights
     /// </summary>
     public unsafe override void EnableTurretLights(bool bEnable)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_Stagg.EnableTurretLights", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnableTurretLights, "BmGame.RTurret_Stagg.EnableTurretLights");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bEnable, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_Stagg.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RTurret_Stagg.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SwitchOffPermanently;
     /// <summary>
     /// Function: SwitchOffPermanently
     /// </summary>
     public unsafe virtual void SwitchOffPermanently()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_Stagg.SwitchOffPermanently", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SwitchOffPermanently, "BmGame.RTurret_Stagg.SwitchOffPermanently");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SwitchOff;
     /// <summary>
     /// Function: SwitchOff
     /// </summary>
     public unsafe override void SwitchOff()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_Stagg.SwitchOff", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SwitchOff, "BmGame.RTurret_Stagg.SwitchOff");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetDamagedx;
     /// <summary>
     /// Function: SetDamagedx
     /// </summary>
     public unsafe override void SetDamagedx()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_Stagg.SetDamagedx", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDamagedx, "BmGame.RTurret_Stagg.SetDamagedx");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DrawAimingDebug;
     /// <summary>
     /// Function: DrawAimingDebug
     /// </summary>
     public unsafe virtual void DrawAimingDebug()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_Stagg.DrawAimingDebug", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DrawAimingDebug, "BmGame.RTurret_Stagg.DrawAimingDebug");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CheckLOSToPlayer;
     /// <summary>
     /// Function: CheckLOSToPlayer
     /// </summary>
     public unsafe virtual bool CheckLOSToPlayer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_Stagg.CheckLOSToPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckLOSToPlayer, "BmGame.RTurret_Stagg.CheckLOSToPlayer");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -227,12 +240,13 @@ public partial class RTurret_Stagg : BmSDK.BmGame.RTurretBase, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanShootAtCurrentTarget;
     /// <summary>
     /// Function: CanShootAtCurrentTarget
     /// </summary>
     public unsafe override bool CanShootAtCurrentTarget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_Stagg.CanShootAtCurrentTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanShootAtCurrentTarget, "BmGame.RTurret_Stagg.CanShootAtCurrentTarget");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -245,12 +259,13 @@ public partial class RTurret_Stagg : BmSDK.BmGame.RTurretBase, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CheckForBMInVolume;
     /// <summary>
     /// Function: CheckForBMInVolume
     /// </summary>
     public unsafe override void CheckForBMInVolume()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_Stagg.CheckForBMInVolume", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckForBMInVolume, "BmGame.RTurret_Stagg.CheckForBMInVolume");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -263,12 +278,13 @@ public partial class RTurret_Stagg : BmSDK.BmGame.RTurretBase, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetLightScale;
     /// <summary>
     /// Function: SetLightScale
     /// </summary>
     public unsafe virtual void SetLightScale()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_Stagg.SetLightScale", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetLightScale, "BmGame.RTurret_Stagg.SetLightScale");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -281,12 +297,13 @@ public partial class RTurret_Stagg : BmSDK.BmGame.RTurretBase, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetRotationRootOrientation;
     /// <summary>
     /// Function: GetRotationRootOrientation
     /// </summary>
     public unsafe override BmSDK.Rotator GetRotationRootOrientation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_Stagg.GetRotationRootOrientation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRotationRootOrientation, "BmGame.RTurret_Stagg.GetRotationRootOrientation");
         byte* paramsPtr = stackalloc byte[12];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -299,12 +316,13 @@ public partial class RTurret_Stagg : BmSDK.BmGame.RTurretBase, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetRotationRootLocation;
     /// <summary>
     /// Function: GetRotationRootLocation
     /// </summary>
     public unsafe override System.Numerics.Vector3 GetRotationRootLocation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_Stagg.GetRotationRootLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRotationRootLocation, "BmGame.RTurret_Stagg.GetRotationRootLocation");
         byte* paramsPtr = stackalloc byte[12];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -317,12 +335,13 @@ public partial class RTurret_Stagg : BmSDK.BmGame.RTurretBase, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetTrackingOrigin;
     /// <summary>
     /// Function: GetTrackingOrigin
     /// </summary>
     public unsafe override System.Numerics.Vector3 GetTrackingOrigin()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_Stagg.GetTrackingOrigin", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTrackingOrigin, "BmGame.RTurret_Stagg.GetTrackingOrigin");
         byte* paramsPtr = stackalloc byte[12];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -335,12 +354,13 @@ public partial class RTurret_Stagg : BmSDK.BmGame.RTurretBase, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetDesiredRotation;
     /// <summary>
     /// Function: SetDesiredRotation
     /// </summary>
     public unsafe override void SetDesiredRotation(BmSDK.Rotator DesiredRot)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTurret_Stagg.SetDesiredRotation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDesiredRotation, "BmGame.RTurret_Stagg.SetDesiredRotation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DesiredRot, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

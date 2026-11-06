@@ -78,12 +78,13 @@ public partial class RInteractionClass : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RInteractionClass>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ContainsActor;
     /// <summary>
     /// Function: ContainsActor
     /// </summary>
     public unsafe virtual bool ContainsActor(BmSDK.Engine.Actor TestActor)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RInteractionClass.ContainsActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ContainsActor, "Engine.RInteractionClass.ContainsActor");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestActor, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

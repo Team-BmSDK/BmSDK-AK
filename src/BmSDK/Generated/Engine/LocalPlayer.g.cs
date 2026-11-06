@@ -78,103 +78,112 @@ public partial class LocalPlayer : BmSDK.Engine.Player, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<LocalPlayer>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Cleanup;
     /// <summary>
     /// Function: Cleanup
     /// </summary>
     public unsafe virtual void Cleanup(bool bExit = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.Cleanup", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Cleanup, "Engine.LocalPlayer.Cleanup");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bExit, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Exit;
     /// <summary>
     /// Function: Exit
     /// </summary>
     public unsafe virtual void Exit()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.Exit", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Exit, "Engine.LocalPlayer.Exit");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyServerConnectionClose;
     /// <summary>
     /// Function: NotifyServerConnectionClose
     /// </summary>
     public unsafe virtual void NotifyServerConnectionClose()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.NotifyServerConnectionClose", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyServerConnectionClose, "Engine.LocalPlayer.NotifyServerConnectionClose");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ViewportClosed;
     /// <summary>
     /// Function: ViewportClosed
     /// </summary>
     public unsafe virtual void ViewportClosed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.ViewportClosed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ViewportClosed, "Engine.LocalPlayer.ViewportClosed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StaticOnServerConnectionClose;
     /// <summary>
     /// Function: StaticOnServerConnectionClose
     /// </summary>
     public unsafe static void StaticOnServerConnectionClose(BmSDK.Engine.Player ServerConnection)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.StaticOnServerConnectionClose", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StaticOnServerConnectionClose, "Engine.LocalPlayer.StaticOnServerConnectionClose");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ServerConnection, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnServerConnectionClose;
     /// <summary>
     /// Function: OnServerConnectionClose
     /// </summary>
     public unsafe virtual void OnServerConnectionClose(BmSDK.Engine.Player ServerConnection)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.OnServerConnectionClose", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnServerConnectionClose, "Engine.LocalPlayer.OnServerConnectionClose");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ServerConnection, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ServerAuthFailure;
     /// <summary>
     /// Function: ServerAuthFailure
     /// </summary>
     public unsafe virtual void ServerAuthFailure()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.ServerAuthFailure", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ServerAuthFailure, "Engine.LocalPlayer.ServerAuthFailure");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ServerAuthTimedOut;
     /// <summary>
     /// Function: ServerAuthTimedOut
     /// </summary>
     public unsafe virtual void ServerAuthTimedOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.ServerAuthTimedOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ServerAuthTimedOut, "Engine.LocalPlayer.ServerAuthTimedOut");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnServerAuthComplete;
     /// <summary>
     /// Function: OnServerAuthComplete
     /// </summary>
     public unsafe virtual void OnServerAuthComplete(bool bSuccess, BmSDK.Engine.OnlineSubsystem.FUniqueNetId ServerUID, BmSDK.Engine.Player ServerConnection, BmSDK.FString ExtraInfo)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.OnServerAuthComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnServerAuthComplete, "Engine.LocalPlayer.OnServerAuthComplete");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSuccess, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ServerUID, paramsPtr + 4);
@@ -184,12 +193,13 @@ public partial class LocalPlayer : BmSDK.Engine.Player, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ProcessServerAuthResponse;
     /// <summary>
     /// Function: ProcessServerAuthResponse
     /// </summary>
     public unsafe virtual void ProcessServerAuthResponse(BmSDK.Engine.OnlineSubsystem.FUniqueNetId ServerUID, int ServerIP, int AuthTicketUID)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.ProcessServerAuthResponse", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProcessServerAuthResponse, "Engine.LocalPlayer.ProcessServerAuthResponse");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ServerUID, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ServerIP, paramsPtr + 8);
@@ -198,24 +208,26 @@ public partial class LocalPlayer : BmSDK.Engine.Player, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ProcessClientAuthEndSessionRequest;
     /// <summary>
     /// Function: ProcessClientAuthEndSessionRequest
     /// </summary>
     public unsafe virtual void ProcessClientAuthEndSessionRequest(BmSDK.Engine.Player ServerConnection)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.ProcessClientAuthEndSessionRequest", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProcessClientAuthEndSessionRequest, "Engine.LocalPlayer.ProcessClientAuthEndSessionRequest");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ServerConnection, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ProcessClientAuthRequest;
     /// <summary>
     /// Function: ProcessClientAuthRequest
     /// </summary>
     public unsafe virtual void ProcessClientAuthRequest(BmSDK.Engine.OnlineSubsystem.FUniqueNetId ServerUID, int ServerIP, int ServerPort, bool bSecure)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.ProcessClientAuthRequest", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProcessClientAuthRequest, "Engine.LocalPlayer.ProcessClientAuthRequest");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ServerUID, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ServerIP, paramsPtr + 8);
@@ -225,45 +237,49 @@ public partial class LocalPlayer : BmSDK.Engine.Player, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyServerConnectionOpen;
     /// <summary>
     /// Function: NotifyServerConnectionOpen
     /// </summary>
     public unsafe virtual void NotifyServerConnectionOpen()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.NotifyServerConnectionOpen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyServerConnectionOpen, "Engine.LocalPlayer.NotifyServerConnectionOpen");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetNickname;
     /// <summary>
     /// Function: GetNickname
     /// </summary>
     public unsafe virtual BmSDK.FString GetNickname()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.GetNickname", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNickname, "Engine.LocalPlayer.GetNickname");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetUniqueNetId;
     /// <summary>
     /// Function: GetUniqueNetId
     /// </summary>
     public unsafe virtual BmSDK.Engine.OnlineSubsystem.FUniqueNetId GetUniqueNetId()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.GetUniqueNetId", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetUniqueNetId, "Engine.LocalPlayer.GetUniqueNetId");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineSubsystem.FUniqueNetId>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Project;
     /// <summary>
     /// Function: Project
     /// </summary>
     public unsafe virtual System.Numerics.Vector2 Project(System.Numerics.Vector3 WorldLoc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.Project", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Project, "Engine.LocalPlayer.Project");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WorldLoc, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -277,12 +293,13 @@ public partial class LocalPlayer : BmSDK.Engine.Player, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector2>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_ProjectMeshBounds;
     /// <summary>
     /// Function: ProjectMeshBounds
     /// </summary>
     public unsafe virtual bool ProjectMeshBounds(BmSDK.Engine.MeshComponent MeshComponent, out System.Numerics.Vector2 Min, out System.Numerics.Vector2 Max)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.ProjectMeshBounds", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProjectMeshBounds, "Engine.LocalPlayer.ProjectMeshBounds");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MeshComponent, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -298,12 +315,13 @@ public partial class LocalPlayer : BmSDK.Engine.Player, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_DeProject;
     /// <summary>
     /// Function: DeProject
     /// </summary>
     public unsafe virtual void DeProject(System.Numerics.Vector2 RelativeScreenPos, out System.Numerics.Vector3 WorldOrigin, out System.Numerics.Vector3 WorldDirection)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.DeProject", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DeProject, "Engine.LocalPlayer.DeProject");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RelativeScreenPos, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -319,12 +337,13 @@ public partial class LocalPlayer : BmSDK.Engine.Player, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_TouchPlayerPostProcessChain;
     /// <summary>
     /// Function: TouchPlayerPostProcessChain
     /// </summary>
     public unsafe virtual void TouchPlayerPostProcessChain()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.TouchPlayerPostProcessChain", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TouchPlayerPostProcessChain, "Engine.LocalPlayer.TouchPlayerPostProcessChain");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -337,12 +356,13 @@ public partial class LocalPlayer : BmSDK.Engine.Player, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetPostProcessChain;
     /// <summary>
     /// Function: GetPostProcessChain
     /// </summary>
     public unsafe virtual BmSDK.Engine.PostProcessChain GetPostProcessChain(int InIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.GetPostProcessChain", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPostProcessChain, "Engine.LocalPlayer.GetPostProcessChain");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InIndex, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -356,12 +376,13 @@ public partial class LocalPlayer : BmSDK.Engine.Player, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.PostProcessChain>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_RemoveAllPostProcessingChains;
     /// <summary>
     /// Function: RemoveAllPostProcessingChains
     /// </summary>
     public unsafe virtual bool RemoveAllPostProcessingChains()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.RemoveAllPostProcessingChains", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveAllPostProcessingChains, "Engine.LocalPlayer.RemoveAllPostProcessingChains");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -374,12 +395,13 @@ public partial class LocalPlayer : BmSDK.Engine.Player, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_RemovePostProcessingChain;
     /// <summary>
     /// Function: RemovePostProcessingChain
     /// </summary>
     public unsafe virtual bool RemovePostProcessingChain(int InIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.RemovePostProcessingChain", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemovePostProcessingChain, "Engine.LocalPlayer.RemovePostProcessingChain");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InIndex, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -393,12 +415,13 @@ public partial class LocalPlayer : BmSDK.Engine.Player, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_InsertPostProcessingChain;
     /// <summary>
     /// Function: InsertPostProcessingChain
     /// </summary>
     public unsafe virtual bool InsertPostProcessingChain(BmSDK.Engine.PostProcessChain InChain, int InIndex, bool bInClone)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.InsertPostProcessingChain", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InsertPostProcessingChain, "Engine.LocalPlayer.InsertPostProcessingChain");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InChain, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InIndex, paramsPtr + 8);
@@ -414,12 +437,13 @@ public partial class LocalPlayer : BmSDK.Engine.Player, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_GetTranslationContext;
     /// <summary>
     /// Function: GetTranslationContext
     /// </summary>
     public unsafe virtual BmSDK.Engine.TranslationContext GetTranslationContext()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.GetTranslationContext", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTranslationContext, "Engine.LocalPlayer.GetTranslationContext");
         byte* paramsPtr = stackalloc byte[8];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -432,24 +456,26 @@ public partial class LocalPlayer : BmSDK.Engine.Player, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.TranslationContext>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetControllerId;
     /// <summary>
     /// Function: SetControllerId
     /// </summary>
     public unsafe virtual void SetControllerId(int NewControllerId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.SetControllerId", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetControllerId, "Engine.LocalPlayer.SetControllerId");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewControllerId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ClearPostProcessSettingsOverride;
     /// <summary>
     /// Function: ClearPostProcessSettingsOverride
     /// </summary>
     public unsafe virtual void ClearPostProcessSettingsOverride(float BlendOutTime = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.ClearPostProcessSettingsOverride", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearPostProcessSettingsOverride, "Engine.LocalPlayer.ClearPostProcessSettingsOverride");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BlendOutTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -463,12 +489,13 @@ public partial class LocalPlayer : BmSDK.Engine.Player, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_OverridePostProcessSettingsCurve;
     /// <summary>
     /// Function: OverridePostProcessSettingsCurve
     /// </summary>
     public unsafe virtual void OverridePostProcessSettingsCurve(BmSDK.Engine.PostProcessVolume.FPostProcessSettings OverrideSettings, out BmSDK.GameObject.FInterpCurveFloat Curve)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.OverridePostProcessSettingsCurve", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverridePostProcessSettingsCurve, "Engine.LocalPlayer.OverridePostProcessSettingsCurve");
         byte* paramsPtr = stackalloc byte[544];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverrideSettings, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -483,12 +510,13 @@ public partial class LocalPlayer : BmSDK.Engine.Player, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_OverridePostProcessSettings;
     /// <summary>
     /// Function: OverridePostProcessSettings
     /// </summary>
     public unsafe virtual void OverridePostProcessSettings(BmSDK.Engine.PostProcessVolume.FPostProcessSettings OverrideSettings, float BlendInTime = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.OverridePostProcessSettings", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverridePostProcessSettings, "Engine.LocalPlayer.OverridePostProcessSettings");
         byte* paramsPtr = stackalloc byte[528];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverrideSettings, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BlendInTime, paramsPtr + 524);
@@ -503,12 +531,13 @@ public partial class LocalPlayer : BmSDK.Engine.Player, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetActorVisibility;
     /// <summary>
     /// Function: GetActorVisibility
     /// </summary>
     public unsafe virtual bool GetActorVisibility(BmSDK.Engine.Actor TestActor)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.GetActorVisibility", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetActorVisibility, "Engine.LocalPlayer.GetActorVisibility");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestActor, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -522,12 +551,13 @@ public partial class LocalPlayer : BmSDK.Engine.Player, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_SendSplitJoin;
     /// <summary>
     /// Function: SendSplitJoin
     /// </summary>
     public unsafe virtual void SendSplitJoin()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.SendSplitJoin", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SendSplitJoin, "Engine.LocalPlayer.SendSplitJoin");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -540,12 +570,13 @@ public partial class LocalPlayer : BmSDK.Engine.Player, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnPlayActor;
     /// <summary>
     /// Function: SpawnPlayActor
     /// </summary>
     public unsafe virtual bool SpawnPlayActor(BmSDK.FString URL, out BmSDK.FString OutError)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LocalPlayer.SpawnPlayActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnPlayActor, "Engine.LocalPlayer.SpawnPlayActor");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(URL, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

@@ -78,58 +78,63 @@ public partial class MHackingGadgetBase : BmSDK.BmGame.RInventoryGadget, BmSDK.I
         where TComponent : class, Framework.IScriptComponent<MHackingGadgetBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CurrentTargetSubroutineChanged;
     /// <summary>
     /// Function: CurrentTargetSubroutineChanged
     /// </summary>
     public unsafe virtual void CurrentTargetSubroutineChanged(bool bSubroutineDisable)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MHackingGadgetBase.CurrentTargetSubroutineChanged", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CurrentTargetSubroutineChanged, "BmGame.MHackingGadgetBase.CurrentTargetSubroutineChanged");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSubroutineDisable, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OmnitronGameSuccesful;
     /// <summary>
     /// Function: OmnitronGameSuccesful
     /// </summary>
     public unsafe virtual void OmnitronGameSuccesful()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MHackingGadgetBase.OmnitronGameSuccesful", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OmnitronGameSuccesful, "BmGame.MHackingGadgetBase.OmnitronGameSuccesful");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_isGadgetActive;
     /// <summary>
     /// Function: isGadgetActive
     /// </summary>
     public unsafe virtual bool isGadgetActive()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MHackingGadgetBase.isGadgetActive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_isGadgetActive, "BmGame.MHackingGadgetBase.isGadgetActive");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ChangeCurrentSubroutine;
     /// <summary>
     /// Function: ChangeCurrentSubroutine
     /// </summary>
     public unsafe virtual void ChangeCurrentSubroutine(bool bGoToNext)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MHackingGadgetBase.ChangeCurrentSubroutine", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ChangeCurrentSubroutine, "BmGame.MHackingGadgetBase.ChangeCurrentSubroutine");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bGoToNext, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetViewInHackingModeOnPrimitiveComponent;
     /// <summary>
     /// Function: SetViewInHackingModeOnPrimitiveComponent
     /// </summary>
     public unsafe virtual void SetViewInHackingModeOnPrimitiveComponent(BmSDK.Engine.PrimitiveComponent TheComponent)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MHackingGadgetBase.SetViewInHackingModeOnPrimitiveComponent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetViewInHackingModeOnPrimitiveComponent, "BmGame.MHackingGadgetBase.SetViewInHackingModeOnPrimitiveComponent");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TheComponent, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -143,93 +148,101 @@ public partial class MHackingGadgetBase : BmSDK.BmGame.RInventoryGadget, BmSDK.I
         return;
     }
 
+    private static BmSDK.Function __fn_ControlThumbPadLightIntensity;
     /// <summary>
     /// Function: ControlThumbPadLightIntensity
     /// </summary>
     public unsafe virtual void ControlThumbPadLightIntensity(float fLightIntensity)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MHackingGadgetBase.ControlThumbPadLightIntensity", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ControlThumbPadLightIntensity, "BmGame.MHackingGadgetBase.ControlThumbPadLightIntensity");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(fLightIntensity, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetThumbStickPositionRight;
     /// <summary>
     /// Function: SetThumbStickPositionRight
     /// </summary>
     public unsafe virtual void SetThumbStickPositionRight(float RightPos)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MHackingGadgetBase.SetThumbStickPositionRight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetThumbStickPositionRight, "BmGame.MHackingGadgetBase.SetThumbStickPositionRight");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RightPos, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetThumbStickPositionLeft;
     /// <summary>
     /// Function: SetThumbStickPositionLeft
     /// </summary>
     public unsafe virtual void SetThumbStickPositionLeft(float LeftPos)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MHackingGadgetBase.SetThumbStickPositionLeft", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetThumbStickPositionLeft, "BmGame.MHackingGadgetBase.SetThumbStickPositionLeft");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LeftPos, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetHolsteredPose;
     /// <summary>
     /// Function: GetHolsteredPose
     /// </summary>
     public unsafe virtual BmSDK.FName GetHolsteredPose(out BmSDK.BmGame.RAnimUtil.EMirrorChoice MirroredNess)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MHackingGadgetBase.GetHolsteredPose", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHolsteredPose, "BmGame.MHackingGadgetBase.GetHolsteredPose");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         MirroredNess = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RAnimUtil.EMirrorChoice>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetHolsteredControllerState;
     /// <summary>
     /// Function: GetHolsteredControllerState
     /// </summary>
     public unsafe virtual BmSDK.FName GetHolsteredControllerState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MHackingGadgetBase.GetHolsteredControllerState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHolsteredControllerState, "BmGame.MHackingGadgetBase.GetHolsteredControllerState");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PowerOffScreen;
     /// <summary>
     /// Function: PowerOffScreen
     /// </summary>
     public unsafe virtual void PowerOffScreen()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MHackingGadgetBase.PowerOffScreen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PowerOffScreen, "BmGame.MHackingGadgetBase.PowerOffScreen");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PowerOnScreen;
     /// <summary>
     /// Function: PowerOnScreen
     /// </summary>
     public unsafe virtual void PowerOnScreen()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MHackingGadgetBase.PowerOnScreen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PowerOnScreen, "BmGame.MHackingGadgetBase.PowerOnScreen");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CancelGadget;
     /// <summary>
     /// Function: CancelGadget
     /// </summary>
     public unsafe override void CancelGadget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MHackingGadgetBase.CancelGadget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelGadget, "BmGame.MHackingGadgetBase.CancelGadget");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

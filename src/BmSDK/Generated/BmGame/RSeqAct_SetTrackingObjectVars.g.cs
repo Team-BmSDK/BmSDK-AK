@@ -78,34 +78,37 @@ public partial class RSeqAct_SetTrackingObjectVars : BmSDK.Engine.SequenceAction
         where TComponent : class, Framework.IScriptComponent<RSeqAct_SetTrackingObjectVars>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SetTrackingObjectVars.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmGame.RSeqAct_SetTrackingObjectVars.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetT;
     /// <summary>
     /// Function: SetT
     /// </summary>
     public unsafe virtual void SetT()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SetTrackingObjectVars.SetT", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetT, "BmGame.RSeqAct_SetTrackingObjectVars.SetT");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CheckDistance;
     /// <summary>
     /// Function: CheckDistance
     /// </summary>
     public unsafe virtual bool CheckDistance(BmSDK.BmGame.RTrackingObjectBase CameraBase)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SetTrackingObjectVars.CheckDistance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckDistance, "BmGame.RSeqAct_SetTrackingObjectVars.CheckDistance");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CameraBase, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

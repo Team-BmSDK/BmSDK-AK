@@ -78,101 +78,110 @@ public partial class RBMBehaviour_FearGasPanic : BmSDK.BmGame.RBMBehaviour, BmSD
         where TComponent : class, Framework.IScriptComponent<RBMBehaviour_FearGasPanic>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CanHitLaserGrid;
     /// <summary>
     /// Function: CanHitLaserGrid
     /// </summary>
     public unsafe override bool CanHitLaserGrid()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_FearGasPanic.CanHitLaserGrid", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanHitLaserGrid, "BmGame.RBMBehaviour_FearGasPanic.CanHitLaserGrid");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_KillCheck;
     /// <summary>
     /// Function: KillCheck
     /// </summary>
     public unsafe virtual bool KillCheck()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_FearGasPanic.KillCheck", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_KillCheck, "BmGame.RBMBehaviour_FearGasPanic.KillCheck");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_OnDeactivate;
     /// <summary>
     /// Function: OnDeactivate
     /// </summary>
     public unsafe override void OnDeactivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_FearGasPanic.OnDeactivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeactivate, "BmGame.RBMBehaviour_FearGasPanic.OnDeactivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ResetRagdoll;
     /// <summary>
     /// Function: ResetRagdoll
     /// </summary>
     public unsafe virtual void ResetRagdoll()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_FearGasPanic.ResetRagdoll", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetRagdoll, "BmGame.RBMBehaviour_FearGasPanic.ResetRagdoll");
         byte* paramsPtr = stackalloc byte[248];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_FearGasPanic.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMBehaviour_FearGasPanic.OnActivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayFearAnimation;
     /// <summary>
     /// Function: PlayFearAnimation
     /// </summary>
     public unsafe virtual void PlayFearAnimation(float StartTime = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_FearGasPanic.PlayFearAnimation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayFearAnimation, "BmGame.RBMBehaviour_FearGasPanic.PlayFearAnimation");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HitAgain;
     /// <summary>
     /// Function: HitAgain
     /// </summary>
     public unsafe virtual void HitAgain()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_FearGasPanic.HitAgain", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitAgain, "BmGame.RBMBehaviour_FearGasPanic.HitAgain");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetTime;
     /// <summary>
     /// Function: GetTime
     /// </summary>
     public unsafe virtual float GetTime()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_FearGasPanic.GetTime", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTime, "BmGame.RBMBehaviour_FearGasPanic.GetTime");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Initialise;
     /// <summary>
     /// Function: Initialise
     /// </summary>
     public unsafe virtual void Initialise(BmSDK.BmGame.RPawnPlayer Instigator, BmSDK.Engine.AnimSet RifleAnimSet)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_FearGasPanic.Initialise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Initialise, "BmGame.RBMBehaviour_FearGasPanic.Initialise");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Instigator, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RifleAnimSet, paramsPtr + 8);

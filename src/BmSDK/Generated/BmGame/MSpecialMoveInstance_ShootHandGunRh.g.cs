@@ -78,12 +78,13 @@ public partial class MSpecialMoveInstance_ShootHandGunRh : BmSDK.BmGame.RSpecial
         where TComponent : class, Framework.IScriptComponent<MSpecialMoveInstance_ShootHandGunRh>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_NotifyTakeDamage;
     /// <summary>
     /// Function: NotifyTakeDamage
     /// </summary>
     public unsafe override void NotifyTakeDamage(int Damage, BmSDK.Class DamageType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MSpecialMoveInstance_ShootHandGunRh.NotifyTakeDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyTakeDamage, "BmGame.MSpecialMoveInstance_ShootHandGunRh.NotifyTakeDamage");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Damage, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageType, paramsPtr + 4);
@@ -91,24 +92,26 @@ public partial class MSpecialMoveInstance_ShootHandGunRh : BmSDK.BmGame.RSpecial
         return;
     }
 
+    private static BmSDK.Function __fn_CanDoCombat;
     /// <summary>
     /// Function: CanDoCombat
     /// </summary>
     public unsafe override bool CanDoCombat(bool CheckForEvade = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MSpecialMoveInstance_ShootHandGunRh.CanDoCombat", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanDoCombat, "BmGame.MSpecialMoveInstance_ShootHandGunRh.CanDoCombat");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckForEvade, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_UpdateSpecialMove;
     /// <summary>
     /// Function: UpdateSpecialMove
     /// </summary>
     public unsafe override bool UpdateSpecialMove(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MSpecialMoveInstance_ShootHandGunRh.UpdateSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateSpecialMove, "BmGame.MSpecialMoveInstance_ShootHandGunRh.UpdateSpecialMove");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

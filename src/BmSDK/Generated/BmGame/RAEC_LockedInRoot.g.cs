@@ -78,12 +78,13 @@ public partial class RAEC_LockedInRoot : BmSDK.BmGame.RAEC_LockedIn_GroupBase, B
         where TComponent : class, Framework.IScriptComponent<RAEC_LockedInRoot>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnAssign;
     /// <summary>
     /// Function: OnAssign
     /// </summary>
     public unsafe override void OnAssign(BmSDK.BmGame.RBMAIController NewCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_LockedInRoot.OnAssign", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnAssign, "BmGame.RAEC_LockedInRoot.OnAssign");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

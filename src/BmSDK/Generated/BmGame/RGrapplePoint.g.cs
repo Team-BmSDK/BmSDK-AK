@@ -78,12 +78,13 @@ public partial class RGrapplePoint : BmSDK.BmGame.RSnapToPositionActor, BmSDK.IG
         where TComponent : class, Framework.IScriptComponent<RGrapplePoint>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DebugDrawClimbLocatorChain;
     /// <summary>
     /// Function: DebugDrawClimbLocatorChain
     /// </summary>
     public unsafe virtual void DebugDrawClimbLocatorChain()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGrapplePoint.DebugDrawClimbLocatorChain", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DebugDrawClimbLocatorChain, "BmGame.RGrapplePoint.DebugDrawClimbLocatorChain");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class RGrapplePoint : BmSDK.BmGame.RSnapToPositionActor, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_GetHighPriorityGrapplePointsInSphere;
     /// <summary>
     /// Function: GetHighPriorityGrapplePointsInSphere
     /// </summary>
     public unsafe static void GetHighPriorityGrapplePointsInSphere(out BmSDK.TArray<BmSDK.BmGame.RGrapplePoint> List, out System.Numerics.Vector3 centre, float Radius)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGrapplePoint.GetHighPriorityGrapplePointsInSphere", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHighPriorityGrapplePointsInSphere, "BmGame.RGrapplePoint.GetHighPriorityGrapplePointsInSphere");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Radius, paramsPtr + 28);
         var oldFlags = funcManaged.FunctionFlags;
@@ -117,12 +119,13 @@ public partial class RGrapplePoint : BmSDK.BmGame.RSnapToPositionActor, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_GetGrappleEndPoints;
     /// <summary>
     /// Function: GetGrappleEndPoints
     /// </summary>
     public unsafe virtual void GetGrappleEndPoints(out System.Numerics.Vector3 OutPointA, out System.Numerics.Vector3 OutPointB)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGrapplePoint.GetGrappleEndPoints", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGrappleEndPoints, "BmGame.RGrapplePoint.GetGrappleEndPoints");
         byte* paramsPtr = stackalloc byte[24];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -137,47 +140,51 @@ public partial class RGrapplePoint : BmSDK.BmGame.RSnapToPositionActor, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_GetCentrePoint;
     /// <summary>
     /// Function: GetCentrePoint
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetCentrePoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGrapplePoint.GetCentrePoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCentrePoint, "BmGame.RGrapplePoint.GetCentrePoint");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UnlinkToActor;
     /// <summary>
     /// Function: UnlinkToActor
     /// </summary>
     public unsafe override bool UnlinkToActor(BmSDK.Engine.Actor LinkTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGrapplePoint.UnlinkToActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnlinkToActor, "BmGame.RGrapplePoint.UnlinkToActor");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkTarget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_OnToggle;
     /// <summary>
     /// Function: OnToggle
     /// </summary>
     public unsafe virtual void OnToggle(BmSDK.Engine.SeqAct_Toggle Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGrapplePoint.OnToggle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggle, "BmGame.RGrapplePoint.OnToggle");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RegisterGrapplePoint;
     /// <summary>
     /// Function: RegisterGrapplePoint
     /// </summary>
     public unsafe virtual void RegisterGrapplePoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGrapplePoint.RegisterGrapplePoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterGrapplePoint, "BmGame.RGrapplePoint.RegisterGrapplePoint");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

@@ -78,113 +78,123 @@ public partial class RChallengeModeStartPoint : BmSDK.BmGame.RChallengeModeStart
         where TComponent : class, Framework.IScriptComponent<RChallengeModeStartPoint>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Music_RemoveCustom;
     /// <summary>
     /// Function: Music_RemoveCustom
     /// </summary>
     public unsafe virtual void Music_RemoveCustom()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.Music_RemoveCustom", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Music_RemoveCustom, "BmScript.RChallengeModeStartPoint.Music_RemoveCustom");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Music_ChallengeFail;
     /// <summary>
     /// Function: Music_ChallengeFail
     /// </summary>
     public unsafe virtual void Music_ChallengeFail()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.Music_ChallengeFail", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Music_ChallengeFail, "BmScript.RChallengeModeStartPoint.Music_ChallengeFail");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Music_ChallengeSuccess;
     /// <summary>
     /// Function: Music_ChallengeSuccess
     /// </summary>
     public unsafe virtual void Music_ChallengeSuccess()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.Music_ChallengeSuccess", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Music_ChallengeSuccess, "BmScript.RChallengeModeStartPoint.Music_ChallengeSuccess");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Music_ResetForChallenge;
     /// <summary>
     /// Function: Music_ResetForChallenge
     /// </summary>
     public unsafe virtual void Music_ResetForChallenge()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.Music_ResetForChallenge", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Music_ResetForChallenge, "BmScript.RChallengeModeStartPoint.Music_ResetForChallenge");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AllowLongRangeInteraction;
     /// <summary>
     /// Function: AllowLongRangeInteraction
     /// </summary>
     public unsafe virtual bool AllowLongRangeInteraction(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.AllowLongRangeInteraction", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowLongRangeInteraction, "BmScript.RChallengeModeStartPoint.AllowLongRangeInteraction");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmScript.RChallengeModeStartPoint.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateChallengeInRGameInfo;
     /// <summary>
     /// Function: UpdateChallengeInRGameInfo
     /// </summary>
     public unsafe virtual void UpdateChallengeInRGameInfo()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.UpdateChallengeInRGameInfo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateChallengeInRGameInfo, "BmScript.RChallengeModeStartPoint.UpdateChallengeInRGameInfo");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnToggle;
     /// <summary>
     /// Function: OnToggle
     /// </summary>
     public unsafe override void OnToggle(BmSDK.Engine.SeqAct_Toggle Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.OnToggle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggle, "BmScript.RChallengeModeStartPoint.OnToggle");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnBackscreen;
     /// <summary>
     /// Function: OnBackscreen
     /// </summary>
     public unsafe virtual void OnBackscreen()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.OnBackscreen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnBackscreen, "BmScript.RChallengeModeStartPoint.OnBackscreen");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnChallengeCompletion;
     /// <summary>
     /// Function: OnChallengeCompletion
     /// </summary>
     public unsafe virtual void OnChallengeCompletion(bool bFailed, BmSDK.FString sCustomMessage)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.OnChallengeCompletion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnChallengeCompletion, "BmScript.RChallengeModeStartPoint.OnChallengeCompletion");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bFailed, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sCustomMessage, paramsPtr + 4);
@@ -192,45 +202,49 @@ public partial class RChallengeModeStartPoint : BmSDK.BmGame.RChallengeModeStart
         return;
     }
 
+    private static BmSDK.Function __fn_TimerChallengeCompletionDelay;
     /// <summary>
     /// Function: TimerChallengeCompletionDelay
     /// </summary>
     public unsafe virtual void TimerChallengeCompletionDelay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.TimerChallengeCompletionDelay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TimerChallengeCompletionDelay, "BmScript.RChallengeModeStartPoint.TimerChallengeCompletionDelay");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TimerEndingChallenge;
     /// <summary>
     /// Function: TimerEndingChallenge
     /// </summary>
     public unsafe virtual void TimerEndingChallenge()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.TimerEndingChallenge", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TimerEndingChallenge, "BmScript.RChallengeModeStartPoint.TimerEndingChallenge");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FadeBackIn;
     /// <summary>
     /// Function: FadeBackIn
     /// </summary>
     public unsafe override void FadeBackIn()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.FadeBackIn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FadeBackIn, "BmScript.RChallengeModeStartPoint.FadeBackIn");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AbortChallenge;
     /// <summary>
     /// Function: AbortChallenge
     /// </summary>
     public unsafe override void AbortChallenge(int nTriggerEvent, bool bPlayAbortedDialog)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.AbortChallenge", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AbortChallenge, "BmScript.RChallengeModeStartPoint.AbortChallenge");
         byte* paramsPtr = stackalloc byte[124];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(nTriggerEvent, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bPlayAbortedDialog, paramsPtr + 4);
@@ -238,12 +252,13 @@ public partial class RChallengeModeStartPoint : BmSDK.BmGame.RChallengeModeStart
         return;
     }
 
+    private static BmSDK.Function __fn_StopSpeechCallback;
     /// <summary>
     /// Function: StopSpeechCallback
     /// </summary>
     public unsafe virtual BmSDK.Engine.AkDialogue.AkDialogueCallbackResult StopSpeechCallback(int speechId, bool interrupted)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.StopSpeechCallback", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopSpeechCallback, "BmScript.RChallengeModeStartPoint.StopSpeechCallback");
         byte* paramsPtr = stackalloc byte[9];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(speechId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(interrupted, paramsPtr + 4);
@@ -251,100 +266,109 @@ public partial class RChallengeModeStartPoint : BmSDK.BmGame.RChallengeModeStart
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AkDialogue.AkDialogueCallbackResult>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_FlushLoading;
     /// <summary>
     /// Function: FlushLoading
     /// </summary>
     public unsafe virtual void FlushLoading()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.FlushLoading", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FlushLoading, "BmScript.RChallengeModeStartPoint.FlushLoading");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AfterFinishedDialogue;
     /// <summary>
     /// Function: AfterFinishedDialogue
     /// </summary>
     public unsafe virtual void AfterFinishedDialogue()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.AfterFinishedDialogue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AfterFinishedDialogue, "BmScript.RChallengeModeStartPoint.AfterFinishedDialogue");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TimerAfterAbortFadeOut;
     /// <summary>
     /// Function: TimerAfterAbortFadeOut
     /// </summary>
     public unsafe virtual void TimerAfterAbortFadeOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.TimerAfterAbortFadeOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TimerAfterAbortFadeOut, "BmScript.RChallengeModeStartPoint.TimerAfterAbortFadeOut");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TimerAfterAbortFadeOutAfterSwitchToGameMaps;
     /// <summary>
     /// Function: TimerAfterAbortFadeOutAfterSwitchToGameMaps
     /// </summary>
     public unsafe virtual void TimerAfterAbortFadeOutAfterSwitchToGameMaps()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.TimerAfterAbortFadeOutAfterSwitchToGameMaps", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TimerAfterAbortFadeOutAfterSwitchToGameMaps, "BmScript.RChallengeModeStartPoint.TimerAfterAbortFadeOutAfterSwitchToGameMaps");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RestartChallenge;
     /// <summary>
     /// Function: RestartChallenge
     /// </summary>
     public unsafe override void RestartChallenge()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.RestartChallenge", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RestartChallenge, "BmScript.RChallengeModeStartPoint.RestartChallenge");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TimerAfterRestartFadeOut;
     /// <summary>
     /// Function: TimerAfterRestartFadeOut
     /// </summary>
     public unsafe virtual void TimerAfterRestartFadeOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.TimerAfterRestartFadeOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TimerAfterRestartFadeOut, "BmScript.RChallengeModeStartPoint.TimerAfterRestartFadeOut");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TimerAfterRestartFadeOutAfterRespawn;
     /// <summary>
     /// Function: TimerAfterRestartFadeOutAfterRespawn
     /// </summary>
     public unsafe virtual void TimerAfterRestartFadeOutAfterRespawn()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.TimerAfterRestartFadeOutAfterRespawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TimerAfterRestartFadeOutAfterRespawn, "BmScript.RChallengeModeStartPoint.TimerAfterRestartFadeOutAfterRespawn");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RespawnPlayer;
     /// <summary>
     /// Function: RespawnPlayer
     /// </summary>
     public unsafe virtual void RespawnPlayer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.RespawnPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RespawnPlayer, "BmScript.RChallengeModeStartPoint.RespawnPlayer");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InitiateScreenMode;
     /// <summary>
     /// Function: InitiateScreenMode
     /// </summary>
     public unsafe override void InitiateScreenMode(BmSDK.BmGame.RChallengeManager.ChallengeScreenModes eMode, bool bAccepted, bool bInGameStart)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.InitiateScreenMode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitiateScreenMode, "BmScript.RChallengeModeStartPoint.InitiateScreenMode");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(eMode, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAccepted, paramsPtr + 4);
@@ -353,286 +377,311 @@ public partial class RChallengeModeStartPoint : BmSDK.BmGame.RChallengeModeStart
         return;
     }
 
+    private static BmSDK.Function __fn_TimerAfterStartFadeOut;
     /// <summary>
     /// Function: TimerAfterStartFadeOut
     /// </summary>
     public unsafe virtual void TimerAfterStartFadeOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.TimerAfterStartFadeOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TimerAfterStartFadeOut, "BmScript.RChallengeModeStartPoint.TimerAfterStartFadeOut");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_MovePlayerHere;
     /// <summary>
     /// Function: MovePlayerHere
     /// </summary>
     public unsafe override void MovePlayerHere()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.MovePlayerHere", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MovePlayerHere, "BmScript.RChallengeModeStartPoint.MovePlayerHere");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerEvent;
     /// <summary>
     /// Function: TriggerEvent
     /// </summary>
     public unsafe override void TriggerEvent(int OutputIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.TriggerEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerEvent, "BmScript.RChallengeModeStartPoint.TriggerEvent");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OutputIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ClearChallengeMiniScreen;
     /// <summary>
     /// Function: ClearChallengeMiniScreen
     /// </summary>
     public unsafe override void ClearChallengeMiniScreen()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.ClearChallengeMiniScreen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearChallengeMiniScreen, "BmScript.RChallengeModeStartPoint.ClearChallengeMiniScreen");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetChallengeMiniScreen;
     /// <summary>
     /// Function: SetChallengeMiniScreen
     /// </summary>
     public unsafe override void SetChallengeMiniScreen()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.SetChallengeMiniScreen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetChallengeMiniScreen, "BmScript.RChallengeModeStartPoint.SetChallengeMiniScreen");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerChallengeAwardPointNotification;
     /// <summary>
     /// Function: TriggerChallengeAwardPointNotification
     /// </summary>
     public unsafe virtual void TriggerChallengeAwardPointNotification()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.TriggerChallengeAwardPointNotification", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerChallengeAwardPointNotification, "BmScript.RChallengeModeStartPoint.TriggerChallengeAwardPointNotification");
         byte* paramsPtr = stackalloc byte[72];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ClearChallengeScreen;
     /// <summary>
     /// Function: ClearChallengeScreen
     /// </summary>
     public unsafe override void ClearChallengeScreen()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.ClearChallengeScreen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearChallengeScreen, "BmScript.RChallengeModeStartPoint.ClearChallengeScreen");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetChallengeScreen;
     /// <summary>
     /// Function: SetChallengeScreen
     /// </summary>
     public unsafe override void SetChallengeScreen(BmSDK.BmGame.RChallengeManager.ChallengeScreenModes selected_mode)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.SetChallengeScreen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetChallengeScreen, "BmScript.RChallengeModeStartPoint.SetChallengeScreen");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(selected_mode, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OverridePreviousLines;
     /// <summary>
     /// Function: OverridePreviousLines
     /// </summary>
     public unsafe virtual bool OverridePreviousLines()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.OverridePreviousLines", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverridePreviousLines, "BmScript.RChallengeModeStartPoint.OverridePreviousLines");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetInteractButton;
     /// <summary>
     /// Function: GetInteractButton
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RInteractInterface.EInteractableItemFaceButton GetInteractButton(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.GetInteractButton", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetInteractButton, "BmScript.RChallengeModeStartPoint.GetInteractButton");
         byte* paramsPtr = stackalloc byte[9];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RInteractInterface.EInteractableItemFaceButton>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetUpperPrompt;
     /// <summary>
     /// Function: GetUpperPrompt
     /// </summary>
     public unsafe virtual BmSDK.FString GetUpperPrompt()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.GetUpperPrompt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetUpperPrompt, "BmScript.RChallengeModeStartPoint.GetUpperPrompt");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_OverridesRun;
     /// <summary>
     /// Function: OverridesRun
     /// </summary>
     public unsafe virtual float OverridesRun(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.OverridesRun", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverridesRun, "BmScript.RChallengeModeStartPoint.OverridesRun");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CanReachItem;
     /// <summary>
     /// Function: CanReachItem
     /// </summary>
     public unsafe virtual bool CanReachItem(BmSDK.Engine.Pawn CheckingPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.CanReachItem", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanReachItem, "BmScript.RChallengeModeStartPoint.CanReachItem");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckingPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetLocationOffset;
     /// <summary>
     /// Function: GetLocationOffset
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetLocationOffset()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.GetLocationOffset", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLocationOffset, "BmScript.RChallengeModeStartPoint.GetLocationOffset");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanUseInCinematicMode;
     /// <summary>
     /// Function: CanUseInCinematicMode
     /// </summary>
     public unsafe virtual bool CanUseInCinematicMode()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.CanUseInCinematicMode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanUseInCinematicMode, "BmScript.RChallengeModeStartPoint.CanUseInCinematicMode");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_MustBeCrouched;
     /// <summary>
     /// Function: MustBeCrouched
     /// </summary>
     public unsafe virtual bool MustBeCrouched(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.MustBeCrouched", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MustBeCrouched, "BmScript.RChallengeModeStartPoint.MustBeCrouched");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_IsButtonPrompt;
     /// <summary>
     /// Function: IsButtonPrompt
     /// </summary>
     public unsafe virtual bool IsButtonPrompt()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.IsButtonPrompt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsButtonPrompt, "BmScript.RChallengeModeStartPoint.IsButtonPrompt");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetPriority;
     /// <summary>
     /// Function: GetPriority
     /// </summary>
     public unsafe virtual float GetPriority()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.GetPriority", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPriority, "BmScript.RChallengeModeStartPoint.GetPriority");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetFOVDegrees;
     /// <summary>
     /// Function: GetFOVDegrees
     /// </summary>
     public unsafe virtual float GetFOVDegrees(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.GetFOVDegrees", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFOVDegrees, "BmScript.RChallengeModeStartPoint.GetFOVDegrees");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetHeightRange;
     /// <summary>
     /// Function: GetHeightRange
     /// </summary>
     public unsafe virtual float GetHeightRange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.GetHeightRange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHeightRange, "BmScript.RChallengeModeStartPoint.GetHeightRange");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetRange;
     /// <summary>
     /// Function: GetRange
     /// </summary>
     public unsafe virtual float GetRange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.GetRange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRange, "BmScript.RChallengeModeStartPoint.GetRange");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Interact;
     /// <summary>
     /// Function: Interact
     /// </summary>
     public unsafe virtual void Interact(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.Interact", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Interact, "BmScript.RChallengeModeStartPoint.Interact");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsActive;
     /// <summary>
     /// Function: IsActive
     /// </summary>
     public unsafe virtual bool IsActive(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.IsActive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsActive, "BmScript.RChallengeModeStartPoint.IsActive");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetPrompt;
     /// <summary>
     /// Function: GetPrompt
     /// </summary>
     public unsafe virtual BmSDK.FString GetPrompt(BmSDK.Engine.PlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.GetPrompt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPrompt, "BmScript.RChallengeModeStartPoint.GetPrompt");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CompleteRestartOrAbort;
     /// <summary>
     /// Function: CompleteRestartOrAbort
     /// </summary>
     public unsafe virtual void CompleteRestartOrAbort()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RChallengeModeStartPoint.CompleteRestartOrAbort", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CompleteRestartOrAbort, "BmScript.RChallengeModeStartPoint.CompleteRestartOrAbort");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

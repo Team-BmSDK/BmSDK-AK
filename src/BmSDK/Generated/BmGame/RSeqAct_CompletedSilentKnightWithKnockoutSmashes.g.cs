@@ -78,12 +78,13 @@ public partial class RSeqAct_CompletedSilentKnightWithKnockoutSmashes : BmSDK.En
         where TComponent : class, Framework.IScriptComponent<RSeqAct_CompletedSilentKnightWithKnockoutSmashes>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_CompletedSilentKnightWithKnockoutSmashes.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmGame.RSeqAct_CompletedSilentKnightWithKnockoutSmashes.Activated");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

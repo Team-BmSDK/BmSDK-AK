@@ -78,34 +78,37 @@ public partial class RCarriableObject_SentryGunBag : BmSDK.BmGame.RCarriableObje
         where TComponent : class, Framework.IScriptComponent<RCarriableObject_SentryGunBag>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_RemoveDisruptorInteraction;
     /// <summary>
     /// Function: RemoveDisruptorInteraction
     /// </summary>
     public unsafe override void RemoveDisruptorInteraction()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCarriableObject_SentryGunBag.RemoveDisruptorInteraction", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveDisruptorInteraction, "BmScript.RCarriableObject_SentryGunBag.RemoveDisruptorInteraction");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetXrayMaterials;
     /// <summary>
     /// Function: SetXrayMaterials
     /// </summary>
     public unsafe virtual void SetXrayMaterials()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCarriableObject_SentryGunBag.SetXrayMaterials", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetXrayMaterials, "BmScript.RCarriableObject_SentryGunBag.SetXrayMaterials");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HitByDisruptorGadgetCharge;
     /// <summary>
     /// Function: HitByDisruptorGadgetCharge
     /// </summary>
     public unsafe override bool HitByDisruptorGadgetCharge()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCarriableObject_SentryGunBag.HitByDisruptorGadgetCharge", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitByDisruptorGadgetCharge, "BmScript.RCarriableObject_SentryGunBag.HitByDisruptorGadgetCharge");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

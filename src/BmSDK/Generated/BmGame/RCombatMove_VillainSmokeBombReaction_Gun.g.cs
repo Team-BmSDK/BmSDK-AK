@@ -78,35 +78,38 @@ public partial class RCombatMove_VillainSmokeBombReaction_Gun : BmSDK.BmGame.RCo
         where TComponent : class, Framework.IScriptComponent<RCombatMove_VillainSmokeBombReaction_Gun>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetCounterInfo;
     /// <summary>
     /// Function: SetCounterInfo
     /// </summary>
     public unsafe override void SetCounterInfo(bool bMirrored)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainSmokeBombReaction_Gun.SetCounterInfo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCounterInfo, "BmGame.RCombatMove_VillainSmokeBombReaction_Gun.SetCounterInfo");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bMirrored, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CombatAnimHitStart;
     /// <summary>
     /// Function: CombatAnimHitStart
     /// </summary>
     public unsafe override void CombatAnimHitStart()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainSmokeBombReaction_Gun.CombatAnimHitStart", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CombatAnimHitStart, "BmGame.RCombatMove_VillainSmokeBombReaction_Gun.CombatAnimHitStart");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShouldMirror;
     /// <summary>
     /// Function: ShouldMirror
     /// </summary>
     public unsafe override bool ShouldMirror()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainSmokeBombReaction_Gun.ShouldMirror", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldMirror, "BmGame.RCombatMove_VillainSmokeBombReaction_Gun.ShouldMirror");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

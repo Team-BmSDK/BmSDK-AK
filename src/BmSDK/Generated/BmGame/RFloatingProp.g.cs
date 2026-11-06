@@ -78,12 +78,13 @@ public partial class RFloatingProp : BmSDK.BmGame.RKActorSpawnable, BmSDK.IGameO
         where TComponent : class, Framework.IScriptComponent<RFloatingProp>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetFloatingAdjustedPropCentreOfMass;
     /// <summary>
     /// Function: GetFloatingAdjustedPropCentreOfMass
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetFloatingAdjustedPropCentreOfMass()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFloatingProp.GetFloatingAdjustedPropCentreOfMass", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFloatingAdjustedPropCentreOfMass, "BmGame.RFloatingProp.GetFloatingAdjustedPropCentreOfMass");
         byte* paramsPtr = stackalloc byte[12];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class RFloatingProp : BmSDK.BmGame.RKActorSpawnable, BmSDK.IGameO
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetFloatingAdjustedPropDensity;
     /// <summary>
     /// Function: GetFloatingAdjustedPropDensity
     /// </summary>
     public unsafe virtual float GetFloatingAdjustedPropDensity()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFloatingProp.GetFloatingAdjustedPropDensity", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFloatingAdjustedPropDensity, "BmGame.RFloatingProp.GetFloatingAdjustedPropDensity");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -114,12 +116,13 @@ public partial class RFloatingProp : BmSDK.BmGame.RKActorSpawnable, BmSDK.IGameO
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetFloatingAdjustedPropMass;
     /// <summary>
     /// Function: GetFloatingAdjustedPropMass
     /// </summary>
     public unsafe virtual float GetFloatingAdjustedPropMass()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFloatingProp.GetFloatingAdjustedPropMass", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFloatingAdjustedPropMass, "BmGame.RFloatingProp.GetFloatingAdjustedPropMass");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -132,12 +135,13 @@ public partial class RFloatingProp : BmSDK.BmGame.RKActorSpawnable, BmSDK.IGameO
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetPropMass;
     /// <summary>
     /// Function: GetPropMass
     /// </summary>
     public unsafe virtual float GetPropMass()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFloatingProp.GetPropMass", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPropMass, "BmGame.RFloatingProp.GetPropMass");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

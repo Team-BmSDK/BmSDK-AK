@@ -73,71 +73,77 @@ public partial class FogVolumeDensityInfo : BmSDK.Engine.Info, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<FogVolumeDensityInfo>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ApplyCheckpointRecord;
     /// <summary>
     /// Function: ApplyCheckpointRecord
     /// </summary>
     public unsafe virtual void ApplyCheckpointRecord(out BmSDK.Engine.FogVolumeDensityInfo.FCheckpointRecord Record)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FogVolumeDensityInfo.ApplyCheckpointRecord", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyCheckpointRecord, "Engine.FogVolumeDensityInfo.ApplyCheckpointRecord");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Record = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.FogVolumeDensityInfo.FCheckpointRecord>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CreateCheckpointRecord;
     /// <summary>
     /// Function: CreateCheckpointRecord
     /// </summary>
     public unsafe virtual void CreateCheckpointRecord(out BmSDK.Engine.FogVolumeDensityInfo.FCheckpointRecord Record)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FogVolumeDensityInfo.CreateCheckpointRecord", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateCheckpointRecord, "Engine.FogVolumeDensityInfo.CreateCheckpointRecord");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Record = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.FogVolumeDensityInfo.FCheckpointRecord>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShouldSaveForCheckpoint;
     /// <summary>
     /// Function: ShouldSaveForCheckpoint
     /// </summary>
     public unsafe virtual bool ShouldSaveForCheckpoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FogVolumeDensityInfo.ShouldSaveForCheckpoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldSaveForCheckpoint, "Engine.FogVolumeDensityInfo.ShouldSaveForCheckpoint");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_OnToggle;
     /// <summary>
     /// Function: OnToggle
     /// </summary>
     public unsafe virtual void OnToggle(BmSDK.Engine.SeqAct_Toggle Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FogVolumeDensityInfo.OnToggle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggle, "Engine.FogVolumeDensityInfo.OnToggle");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ReplicatedEvent;
     /// <summary>
     /// Function: ReplicatedEvent
     /// </summary>
     public unsafe override void ReplicatedEvent(BmSDK.FName VarName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FogVolumeDensityInfo.ReplicatedEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReplicatedEvent, "Engine.FogVolumeDensityInfo.ReplicatedEvent");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VarName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FogVolumeDensityInfo.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "Engine.FogVolumeDensityInfo.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

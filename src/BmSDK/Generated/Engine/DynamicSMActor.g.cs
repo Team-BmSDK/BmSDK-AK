@@ -73,59 +73,64 @@ public partial class DynamicSMActor : BmSDK.Engine.RStaticClimbableActor, BmSDK.
         where TComponent : class, Framework.IScriptComponent<DynamicSMActor>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetLightEnvironmentToNotBeDynamic;
     /// <summary>
     /// Function: SetLightEnvironmentToNotBeDynamic
     /// </summary>
     public unsafe virtual void SetLightEnvironmentToNotBeDynamic()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DynamicSMActor.SetLightEnvironmentToNotBeDynamic", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetLightEnvironmentToNotBeDynamic, "Engine.DynamicSMActor.SetLightEnvironmentToNotBeDynamic");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Detach;
     /// <summary>
     /// Function: Detach
     /// </summary>
     public unsafe override void Detach(BmSDK.Engine.Actor Other)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DynamicSMActor.Detach", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Detach, "Engine.DynamicSMActor.Detach");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Attach;
     /// <summary>
     /// Function: Attach
     /// </summary>
     public unsafe override void Attach(BmSDK.Engine.Actor Other)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DynamicSMActor.Attach", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Attach, "Engine.DynamicSMActor.Attach");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanBasePawn;
     /// <summary>
     /// Function: CanBasePawn
     /// </summary>
     public unsafe override bool CanBasePawn(BmSDK.Engine.Pawn P)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DynamicSMActor.CanBasePawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBasePawn, "Engine.DynamicSMActor.CanBasePawn");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_SetStaticMesh;
     /// <summary>
     /// Function: SetStaticMesh
     /// </summary>
     public unsafe virtual void SetStaticMesh(BmSDK.Engine.StaticMesh NewMesh, System.Numerics.Vector3 NewTranslation = default, BmSDK.Rotator NewRotation = default, System.Numerics.Vector3 NewScale3D = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DynamicSMActor.SetStaticMesh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetStaticMesh, "Engine.DynamicSMActor.SetStaticMesh");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewMesh, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewTranslation, paramsPtr + 8);
@@ -135,60 +140,65 @@ public partial class DynamicSMActor : BmSDK.Engine.RStaticClimbableActor, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_OnSetMaterialInstance;
     /// <summary>
     /// Function: OnSetMaterialInstance
     /// </summary>
     public unsafe virtual void OnSetMaterialInstance(BmSDK.Engine.RSeqAct_SetMaterialInstance Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DynamicSMActor.OnSetMaterialInstance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnSetMaterialInstance, "Engine.DynamicSMActor.OnSetMaterialInstance");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnSetMaterial;
     /// <summary>
     /// Function: OnSetMaterial
     /// </summary>
     public unsafe virtual void OnSetMaterial(BmSDK.Engine.SeqAct_SetMaterial Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DynamicSMActor.OnSetMaterial", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnSetMaterial, "Engine.DynamicSMActor.OnSetMaterial");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnSetMesh;
     /// <summary>
     /// Function: OnSetMesh
     /// </summary>
     public unsafe virtual void OnSetMesh(BmSDK.Engine.SeqAct_SetMesh Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DynamicSMActor.OnSetMesh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnSetMesh, "Engine.DynamicSMActor.OnSetMesh");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ReplicatedEvent;
     /// <summary>
     /// Function: ReplicatedEvent
     /// </summary>
     public unsafe override void ReplicatedEvent(BmSDK.FName VarName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DynamicSMActor.ReplicatedEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReplicatedEvent, "Engine.DynamicSMActor.ReplicatedEvent");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VarName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DynamicSMActor.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "Engine.DynamicSMActor.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

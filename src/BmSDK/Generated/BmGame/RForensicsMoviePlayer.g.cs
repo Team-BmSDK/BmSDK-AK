@@ -78,47 +78,51 @@ public partial class RForensicsMoviePlayer : BmSDK.Engine.ActorComponent, BmSDK.
         where TComponent : class, Framework.IScriptComponent<RForensicsMoviePlayer>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsZooming;
     /// <summary>
     /// Function: IsZooming
     /// </summary>
     public unsafe virtual bool IsZooming()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsMoviePlayer.IsZooming", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsZooming, "BmGame.RForensicsMoviePlayer.IsZooming");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetZoomMultiplication;
     /// <summary>
     /// Function: SetZoomMultiplication
     /// </summary>
     public unsafe virtual void SetZoomMultiplication(int _ZoomMultiplication)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsMoviePlayer.SetZoomMultiplication", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetZoomMultiplication, "BmGame.RForensicsMoviePlayer.SetZoomMultiplication");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_ZoomMultiplication, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ZoomToSection;
     /// <summary>
     /// Function: ZoomToSection
     /// </summary>
     public unsafe virtual void ZoomToSection(int SectionId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsMoviePlayer.ZoomToSection", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ZoomToSection, "BmGame.RForensicsMoviePlayer.ZoomToSection");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SectionId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayerMoveTime;
     /// <summary>
     /// Function: PlayerMoveTime
     /// </summary>
     public unsafe virtual void PlayerMoveTime(float AddTimeSeconds)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsMoviePlayer.PlayerMoveTime", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayerMoveTime, "BmGame.RForensicsMoviePlayer.PlayerMoveTime");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AddTimeSeconds, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -132,12 +136,13 @@ public partial class RForensicsMoviePlayer : BmSDK.Engine.ActorComponent, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_ClosePlayer;
     /// <summary>
     /// Function: ClosePlayer
     /// </summary>
     public unsafe virtual void ClosePlayer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsMoviePlayer.ClosePlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClosePlayer, "BmGame.RForensicsMoviePlayer.ClosePlayer");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -150,12 +155,13 @@ public partial class RForensicsMoviePlayer : BmSDK.Engine.ActorComponent, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_InitPlayer;
     /// <summary>
     /// Function: InitPlayer
     /// </summary>
     public unsafe virtual void InitPlayer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsMoviePlayer.InitPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitPlayer, "BmGame.RForensicsMoviePlayer.InitPlayer");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -168,12 +174,13 @@ public partial class RForensicsMoviePlayer : BmSDK.Engine.ActorComponent, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_GetMovieDuration;
     /// <summary>
     /// Function: GetMovieDuration
     /// </summary>
     public unsafe virtual float GetMovieDuration()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsMoviePlayer.GetMovieDuration", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMovieDuration, "BmGame.RForensicsMoviePlayer.GetMovieDuration");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

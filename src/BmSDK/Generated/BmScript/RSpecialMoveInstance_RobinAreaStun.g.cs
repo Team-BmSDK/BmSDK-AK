@@ -78,23 +78,25 @@ public partial class RSpecialMoveInstance_RobinAreaStun : BmSDK.BmGame.RSpecialM
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveInstance_RobinAreaStun>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_StartArcMovement;
     /// <summary>
     /// Function: StartArcMovement
     /// </summary>
     public unsafe virtual void StartArcMovement()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_RobinAreaStun.StartArcMovement", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartArcMovement, "BmScript.RSpecialMoveInstance_RobinAreaStun.StartArcMovement");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StunNearbyVillains;
     /// <summary>
     /// Function: StunNearbyVillains
     /// </summary>
     public unsafe virtual void StunNearbyVillains(System.Numerics.Vector3 pos, float knockDownRange, float stunRange, float AlertRange, float StunTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_RobinAreaStun.StunNearbyVillains", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StunNearbyVillains, "BmScript.RSpecialMoveInstance_RobinAreaStun.StunNearbyVillains");
         byte* paramsPtr = stackalloc byte[352];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(pos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(knockDownRange, paramsPtr + 12);
@@ -105,24 +107,26 @@ public partial class RSpecialMoveInstance_RobinAreaStun : BmSDK.BmGame.RSpecialM
         return;
     }
 
+    private static BmSDK.Function __fn_PredictEndLocation;
     /// <summary>
     /// Function: PredictEndLocation
     /// </summary>
     public unsafe override bool PredictEndLocation(out System.Numerics.Vector3 EndLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_RobinAreaStun.PredictEndLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PredictEndLocation, "BmScript.RSpecialMoveInstance_RobinAreaStun.PredictEndLocation");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         EndLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_NotifyBump;
     /// <summary>
     /// Function: NotifyBump
     /// </summary>
     public unsafe override void NotifyBump(BmSDK.Engine.Actor Other, System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_RobinAreaStun.NotifyBump", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyBump, "BmScript.RSpecialMoveInstance_RobinAreaStun.NotifyBump");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 8);
@@ -130,69 +134,75 @@ public partial class RSpecialMoveInstance_RobinAreaStun : BmSDK.BmGame.RSpecialM
         return;
     }
 
+    private static BmSDK.Function __fn_DoAreaStun;
     /// <summary>
     /// Function: DoAreaStun
     /// </summary>
     public unsafe virtual void DoAreaStun()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_RobinAreaStun.DoAreaStun", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoAreaStun, "BmScript.RSpecialMoveInstance_RobinAreaStun.DoAreaStun");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CancelSpecialMove;
     /// <summary>
     /// Function: CancelSpecialMove
     /// </summary>
     public unsafe override void CancelSpecialMove(BmSDK.BmGame.RSpecialMoveConfig NextSpecialMove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_RobinAreaStun.CancelSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelSpecialMove, "BmScript.RSpecialMoveInstance_RobinAreaStun.CancelSpecialMove");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NextSpecialMove, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishSpecialMove;
     /// <summary>
     /// Function: FinishSpecialMove
     /// </summary>
     public unsafe override void FinishSpecialMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_RobinAreaStun.FinishSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishSpecialMove, "BmScript.RSpecialMoveInstance_RobinAreaStun.FinishSpecialMove");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateSpecialMove;
     /// <summary>
     /// Function: UpdateSpecialMove
     /// </summary>
     public unsafe override bool UpdateSpecialMove(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_RobinAreaStun.UpdateSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateSpecialMove, "BmScript.RSpecialMoveInstance_RobinAreaStun.UpdateSpecialMove");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_TriggerCameraLookAt;
     /// <summary>
     /// Function: TriggerCameraLookAt
     /// </summary>
     public unsafe virtual void TriggerCameraLookAt()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_RobinAreaStun.TriggerCameraLookAt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerCameraLookAt, "BmScript.RSpecialMoveInstance_RobinAreaStun.TriggerCameraLookAt");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerSpecialMove;
     /// <summary>
     /// Function: TriggerSpecialMove
     /// </summary>
     public unsafe override void TriggerSpecialMove(BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator Loc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_RobinAreaStun.TriggerSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerSpecialMove, "BmScript.RSpecialMoveInstance_RobinAreaStun.TriggerSpecialMove");
         byte* paramsPtr = stackalloc byte[148];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

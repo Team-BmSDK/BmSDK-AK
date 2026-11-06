@@ -78,23 +78,25 @@ public partial class RDamageOverTimeVolume : BmSDK.Engine.Volume, BmSDK.IGameObj
         where TComponent : class, Framework.IScriptComponent<RDamageOverTimeVolume>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DamagePlayers;
     /// <summary>
     /// Function: DamagePlayers
     /// </summary>
     public unsafe virtual void DamagePlayers()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RDamageOverTimeVolume.DamagePlayers", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DamagePlayers, "BmScript.RDamageOverTimeVolume.DamagePlayers");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RDamageOverTimeVolume.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmScript.RDamageOverTimeVolume.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

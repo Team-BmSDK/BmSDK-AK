@@ -78,12 +78,13 @@ public partial class RBulletProofGlassBase : BmSDK.Engine.StaticMeshActor, BmSDK
         where TComponent : class, Framework.IScriptComponent<RBulletProofGlassBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetBoundsForGlass;
     /// <summary>
     /// Function: GetBoundsForGlass
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetBoundsForGlass()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBulletProofGlassBase.GetBoundsForGlass", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBoundsForGlass, "BmGame.RBulletProofGlassBase.GetBoundsForGlass");
         byte* paramsPtr = stackalloc byte[12];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

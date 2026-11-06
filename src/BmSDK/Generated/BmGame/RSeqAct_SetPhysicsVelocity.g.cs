@@ -78,23 +78,25 @@ public partial class RSeqAct_SetPhysicsVelocity : BmSDK.Engine.SequenceAction, B
         where TComponent : class, Framework.IScriptComponent<RSeqAct_SetPhysicsVelocity>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SetPhysicsVelocity.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmGame.RSeqAct_SetPhysicsVelocity.Activated");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetActorVelocity;
     /// <summary>
     /// Function: SetActorVelocity
     /// </summary>
     public unsafe virtual void SetActorVelocity(BmSDK.Engine.PrimitiveComponent PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SetPhysicsVelocity.SetActorVelocity", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetActorVelocity, "BmGame.RSeqAct_SetPhysicsVelocity.SetActorVelocity");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

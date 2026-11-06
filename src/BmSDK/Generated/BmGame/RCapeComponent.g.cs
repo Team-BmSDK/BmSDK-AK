@@ -78,36 +78,39 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         where TComponent : class, Framework.IScriptComponent<RCapeComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CapeSetOwnerNoSee;
     /// <summary>
     /// Function: CapeSetOwnerNoSee
     /// </summary>
     public unsafe virtual void CapeSetOwnerNoSee(bool bNewIsOwnerNoSee)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.CapeSetOwnerNoSee", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CapeSetOwnerNoSee, "BmGame.RCapeComponent.CapeSetOwnerNoSee");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewIsOwnerNoSee, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CapeSetHiddenGame;
     /// <summary>
     /// Function: CapeSetHiddenGame
     /// </summary>
     public unsafe virtual void CapeSetHiddenGame(bool bNewIsHidden)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.CapeSetHiddenGame", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CapeSetHiddenGame, "BmGame.RCapeComponent.CapeSetHiddenGame");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewIsHidden, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RemoveCoreAnimSet;
     /// <summary>
     /// Function: RemoveCoreAnimSet
     /// </summary>
     public unsafe virtual void RemoveCoreAnimSet(BmSDK.Engine.AnimSet TheAnimSet)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.RemoveCoreAnimSet", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveCoreAnimSet, "BmGame.RCapeComponent.RemoveCoreAnimSet");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TheAnimSet, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -121,12 +124,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_AddCoreAnimSet;
     /// <summary>
     /// Function: AddCoreAnimSet
     /// </summary>
     public unsafe virtual void AddCoreAnimSet(BmSDK.Engine.AnimSet TheAnimSet)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.AddCoreAnimSet", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddCoreAnimSet, "BmGame.RCapeComponent.AddCoreAnimSet");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TheAnimSet, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -140,12 +144,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_InternalChangeCapeStateGeneral;
     /// <summary>
     /// Function: InternalChangeCapeStateGeneral
     /// </summary>
     public unsafe virtual bool InternalChangeCapeStateGeneral(BmSDK.BmGame.RPhysUtil.FCapeStateChangeData StateChangeData)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.InternalChangeCapeStateGeneral", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InternalChangeCapeStateGeneral, "BmGame.RCapeComponent.InternalChangeCapeStateGeneral");
         byte* paramsPtr = stackalloc byte[80];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StateChangeData, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -159,12 +164,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 76);
     }
 
+    private static BmSDK.Function __fn_GetAvailableStateNames;
     /// <summary>
     /// Function: GetAvailableStateNames
     /// </summary>
     public unsafe virtual void GetAvailableStateNames(out BmSDK.TArray<BmSDK.FName> OutStateNames, bool bSorted = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.GetAvailableStateNames", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAvailableStateNames, "BmGame.RCapeComponent.GetAvailableStateNames");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSorted, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
@@ -179,12 +185,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_GetIsCinematicMode;
     /// <summary>
     /// Function: GetIsCinematicMode
     /// </summary>
     public unsafe virtual bool GetIsCinematicMode()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.GetIsCinematicMode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetIsCinematicMode, "BmGame.RCapeComponent.GetIsCinematicMode");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -197,12 +204,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetThoughts;
     /// <summary>
     /// Function: GetThoughts
     /// </summary>
     public unsafe virtual void GetThoughts(out BmSDK.TArray<BmSDK.Engine.Actor.FThought> OutThoughts)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.GetThoughts", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetThoughts, "BmGame.RCapeComponent.GetThoughts");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -216,12 +224,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateSkeletalMeshDepthBias;
     /// <summary>
     /// Function: UpdateSkeletalMeshDepthBias
     /// </summary>
     public unsafe virtual void UpdateSkeletalMeshDepthBias()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.UpdateSkeletalMeshDepthBias", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateSkeletalMeshDepthBias, "BmGame.RCapeComponent.UpdateSkeletalMeshDepthBias");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -234,12 +243,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_CalculateAngularVelocity;
     /// <summary>
     /// Function: CalculateAngularVelocity
     /// </summary>
     public unsafe virtual float CalculateAngularVelocity()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.CalculateAngularVelocity", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculateAngularVelocity, "BmGame.RCapeComponent.CalculateAngularVelocity");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -252,12 +262,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CalculateCapeLocalToWorld;
     /// <summary>
     /// Function: CalculateCapeLocalToWorld
     /// </summary>
     public unsafe virtual BmSDK.GameObject.FMatrix CalculateCapeLocalToWorld()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.CalculateCapeLocalToWorld", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculateCapeLocalToWorld, "BmGame.RCapeComponent.CalculateCapeLocalToWorld");
         byte* paramsPtr = stackalloc byte[64];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -270,12 +281,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.GameObject.FMatrix>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CalculateWindProperties;
     /// <summary>
     /// Function: CalculateWindProperties
     /// </summary>
     public unsafe virtual void CalculateWindProperties(out BmSDK.BmGame.RCapeComponent.FCapeWindAudioProperties OutWindProperties)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.CalculateWindProperties", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculateWindProperties, "BmGame.RCapeComponent.CalculateWindProperties");
         byte* paramsPtr = stackalloc byte[8];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -289,12 +301,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_ApplyWind;
     /// <summary>
     /// Function: ApplyWind
     /// </summary>
     public unsafe virtual void ApplyWind(BmSDK.BmGame.RGameInfo.FRWindConfig WindConfig, out BmSDK.BmGame.RGameInfo.FRWindState WindState)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.ApplyWind", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyWind, "BmGame.RCapeComponent.ApplyWind");
         byte* paramsPtr = stackalloc byte[104];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WindConfig, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -309,12 +322,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_AddCinematicAnimSet;
     /// <summary>
     /// Function: AddCinematicAnimSet
     /// </summary>
     public unsafe virtual void AddCinematicAnimSet(BmSDK.Engine.AnimSet NewAnimSet)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.AddCinematicAnimSet", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddCinematicAnimSet, "BmGame.RCapeComponent.AddCinematicAnimSet");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAnimSet, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -328,12 +342,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_SetCapeDebugRenderBone;
     /// <summary>
     /// Function: SetCapeDebugRenderBone
     /// </summary>
     public unsafe virtual void SetCapeDebugRenderBone(int DebugRenderBoneChainIndex, int DebugRenderBoneLinkIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.SetCapeDebugRenderBone", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCapeDebugRenderBone, "BmGame.RCapeComponent.SetCapeDebugRenderBone");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DebugRenderBoneChainIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DebugRenderBoneLinkIndex, paramsPtr + 4);
@@ -348,12 +363,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_DoubleFrameTeleport;
     /// <summary>
     /// Function: DoubleFrameTeleport
     /// </summary>
     public unsafe virtual void DoubleFrameTeleport()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.DoubleFrameTeleport", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoubleFrameTeleport, "BmGame.RCapeComponent.DoubleFrameTeleport");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -366,12 +382,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_OnTeleport;
     /// <summary>
     /// Function: OnTeleport
     /// </summary>
     public unsafe virtual void OnTeleport()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.OnTeleport", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnTeleport, "BmGame.RCapeComponent.OnTeleport");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -384,12 +401,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_ResumeCape;
     /// <summary>
     /// Function: ResumeCape
     /// </summary>
     public unsafe virtual void ResumeCape()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.ResumeCape", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResumeCape, "BmGame.RCapeComponent.ResumeCape");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -402,12 +420,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_PauseCape;
     /// <summary>
     /// Function: PauseCape
     /// </summary>
     public unsafe virtual void PauseCape()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.PauseCape", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PauseCape, "BmGame.RCapeComponent.PauseCape");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -420,12 +439,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_SetMaterialSpeedVariableOverride;
     /// <summary>
     /// Function: SetMaterialSpeedVariableOverride
     /// </summary>
     public unsafe virtual void SetMaterialSpeedVariableOverride(float OverrideValue = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.SetMaterialSpeedVariableOverride", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMaterialSpeedVariableOverride, "BmGame.RCapeComponent.SetMaterialSpeedVariableOverride");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverrideValue, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -439,12 +459,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_SetAutoCapeAnimBlendWeights;
     /// <summary>
     /// Function: SetAutoCapeAnimBlendWeights
     /// </summary>
     public unsafe virtual void SetAutoCapeAnimBlendWeights(bool IsBlendWeightSettingEnabled, float rootWeight = default, float childWeights = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.SetAutoCapeAnimBlendWeights", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAutoCapeAnimBlendWeights, "BmGame.RCapeComponent.SetAutoCapeAnimBlendWeights");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IsBlendWeightSettingEnabled, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(rootWeight, paramsPtr + 4);
@@ -460,12 +481,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_SetAnimTreeNodeBlendValue;
     /// <summary>
     /// Function: SetAnimTreeNodeBlendValue
     /// </summary>
     public unsafe virtual void SetAnimTreeNodeBlendValue(BmSDK.FName setNodeName, float blendValue)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.SetAnimTreeNodeBlendValue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAnimTreeNodeBlendValue, "BmGame.RCapeComponent.SetAnimTreeNodeBlendValue");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(setNodeName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(blendValue, paramsPtr + 8);
@@ -480,12 +502,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_GetAnimTreeNodeBlendValue;
     /// <summary>
     /// Function: GetAnimTreeNodeBlendValue
     /// </summary>
     public unsafe virtual float GetAnimTreeNodeBlendValue(BmSDK.FName getNodeName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.GetAnimTreeNodeBlendValue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAnimTreeNodeBlendValue, "BmGame.RCapeComponent.GetAnimTreeNodeBlendValue");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(getNodeName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -499,12 +522,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetAnimStateTreeNode;
     /// <summary>
     /// Function: GetAnimStateTreeNode
     /// </summary>
     public unsafe virtual BmSDK.Engine.AnimNode GetAnimStateTreeNode(BmSDK.FName CapeStateName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.GetAnimStateTreeNode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAnimStateTreeNode, "BmGame.RCapeComponent.GetAnimStateTreeNode");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CapeStateName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -518,12 +542,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimNode>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetCurrentCapeStateAnimTreeNode;
     /// <summary>
     /// Function: GetCurrentCapeStateAnimTreeNode
     /// </summary>
     public unsafe virtual BmSDK.Engine.AnimNode GetCurrentCapeStateAnimTreeNode()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.GetCurrentCapeStateAnimTreeNode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCurrentCapeStateAnimTreeNode, "BmGame.RCapeComponent.GetCurrentCapeStateAnimTreeNode");
         byte* paramsPtr = stackalloc byte[8];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -536,12 +561,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimNode>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UpdateDamageState;
     /// <summary>
     /// Function: UpdateDamageState
     /// </summary>
     public unsafe virtual void UpdateDamageState(BmSDK.Engine.MaterialInterface NewMat)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.UpdateDamageState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateDamageState, "BmGame.RCapeComponent.UpdateDamageState");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewMat, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -555,12 +581,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_GetIsInCinematicsState;
     /// <summary>
     /// Function: GetIsInCinematicsState
     /// </summary>
     public unsafe virtual bool GetIsInCinematicsState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.GetIsInCinematicsState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetIsInCinematicsState, "BmGame.RCapeComponent.GetIsInCinematicsState");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -573,12 +600,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ForceCapeToAnimPose;
     /// <summary>
     /// Function: ForceCapeToAnimPose
     /// </summary>
     public unsafe virtual void ForceCapeToAnimPose()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.ForceCapeToAnimPose", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForceCapeToAnimPose, "BmGame.RCapeComponent.ForceCapeToAnimPose");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -591,24 +619,26 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_ChangeCapeGeneral;
     /// <summary>
     /// Function: ChangeCapeGeneral
     /// </summary>
     public unsafe virtual void ChangeCapeGeneral(BmSDK.BmGame.RPhysUtil.FCapeChangeData ChangeData)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.ChangeCapeGeneral", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ChangeCapeGeneral, "BmGame.RCapeComponent.ChangeCapeGeneral");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ChangeData, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ChangeCapeStateGeneral;
     /// <summary>
     /// Function: ChangeCapeStateGeneral
     /// </summary>
     public unsafe virtual int ChangeCapeStateGeneral(BmSDK.BmGame.RPhysUtil.FCapeStateChangeData StateChangeData, bool bDebugChange = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.ChangeCapeStateGeneral", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ChangeCapeStateGeneral, "BmGame.RCapeComponent.ChangeCapeStateGeneral");
         byte* paramsPtr = stackalloc byte[88];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StateChangeData, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDebugChange, paramsPtr + 76);
@@ -616,12 +646,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 80);
     }
 
+    private static BmSDK.Function __fn_GetMirroredTypeFromBool;
     /// <summary>
     /// Function: GetMirroredTypeFromBool
     /// </summary>
     public unsafe static BmSDK.BmGame.RPhysUtil.ECapeMirroredType GetMirroredTypeFromBool(bool bMirrored)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.GetMirroredTypeFromBool", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMirroredTypeFromBool, "BmGame.RCapeComponent.GetMirroredTypeFromBool");
         byte* paramsPtr = stackalloc byte[5];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bMirrored, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -635,12 +666,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPhysUtil.ECapeMirroredType>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetIsCurrentCapeStateMirrored;
     /// <summary>
     /// Function: GetIsCurrentCapeStateMirrored
     /// </summary>
     public unsafe virtual bool GetIsCurrentCapeStateMirrored()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.GetIsCurrentCapeStateMirrored", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetIsCurrentCapeStateMirrored, "BmGame.RCapeComponent.GetIsCurrentCapeStateMirrored");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -653,12 +685,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetCinematicCapeStateName;
     /// <summary>
     /// Function: GetCinematicCapeStateName
     /// </summary>
     public unsafe virtual BmSDK.FName GetCinematicCapeStateName()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.GetCinematicCapeStateName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCinematicCapeStateName, "BmGame.RCapeComponent.GetCinematicCapeStateName");
         byte* paramsPtr = stackalloc byte[8];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -671,12 +704,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetCurrentCapeStateName;
     /// <summary>
     /// Function: GetCurrentCapeStateName
     /// </summary>
     public unsafe virtual BmSDK.FName GetCurrentCapeStateName()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.GetCurrentCapeStateName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCurrentCapeStateName, "BmGame.RCapeComponent.GetCurrentCapeStateName");
         byte* paramsPtr = stackalloc byte[8];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -689,12 +723,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_InitUpdate;
     /// <summary>
     /// Function: InitUpdate
     /// </summary>
     public unsafe virtual void InitUpdate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.InitUpdate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitUpdate, "BmGame.RCapeComponent.InitUpdate");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -707,12 +742,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_InitEnable;
     /// <summary>
     /// Function: InitEnable
     /// </summary>
     public unsafe virtual void InitEnable(BmSDK.BmGame.RCapeComponent.EInitterType InitType, bool IsEnableInit)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.InitEnable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitEnable, "BmGame.RCapeComponent.InitEnable");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InitType, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IsEnableInit, paramsPtr + 4);
@@ -727,12 +763,13 @@ public partial class RCapeComponent : BmSDK.Engine.MeshComponent, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_GetIsInitialised;
     /// <summary>
     /// Function: GetIsInitialised
     /// </summary>
     public unsafe virtual bool GetIsInitialised()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCapeComponent.GetIsInitialised", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetIsInitialised, "BmGame.RCapeComponent.GetIsInitialised");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

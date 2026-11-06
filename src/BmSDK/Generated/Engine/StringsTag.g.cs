@@ -78,12 +78,13 @@ public partial class StringsTag : BmSDK.Engine.TranslatorTag, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<StringsTag>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Translate;
     /// <summary>
     /// Function: Translate
     /// </summary>
     public unsafe override BmSDK.FString Translate(BmSDK.FString InArgument)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.StringsTag.Translate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Translate, "Engine.StringsTag.Translate");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InArgument, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

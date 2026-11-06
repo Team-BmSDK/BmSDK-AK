@@ -78,12 +78,13 @@ public partial class RVentNetworkOutLine : BmSDK.Engine.StaticMeshActor, BmSDK.I
         where TComponent : class, Framework.IScriptComponent<RVentNetworkOutLine>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_HighlightTunnelNetwork;
     /// <summary>
     /// Function: HighlightTunnelNetwork
     /// </summary>
     public unsafe virtual void HighlightTunnelNetwork(bool bHighlight)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVentNetworkOutLine.HighlightTunnelNetwork", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HighlightTunnelNetwork, "BmGame.RVentNetworkOutLine.HighlightTunnelNetwork");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bHighlight, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

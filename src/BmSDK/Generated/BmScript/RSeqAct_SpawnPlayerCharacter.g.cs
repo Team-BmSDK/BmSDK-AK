@@ -78,45 +78,49 @@ public partial class RSeqAct_SpawnPlayerCharacter : BmSDK.BmGame.RSeqAct_Spawner
         where TComponent : class, Framework.IScriptComponent<RSeqAct_SpawnPlayerCharacter>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DestroySpawnedActor;
     /// <summary>
     /// Function: DestroySpawnedActor
     /// </summary>
     public unsafe virtual void DestroySpawnedActor()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_SpawnPlayerCharacter.DestroySpawnedActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DestroySpawnedActor, "BmScript.RSeqAct_SpawnPlayerCharacter.DestroySpawnedActor");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnDataLoaded;
     /// <summary>
     /// Function: OnDataLoaded
     /// </summary>
     public unsafe override void OnDataLoaded()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_SpawnPlayerCharacter.OnDataLoaded", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDataLoaded, "BmScript.RSeqAct_SpawnPlayerCharacter.OnDataLoaded");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_SpawnPlayerCharacter.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmScript.RSeqAct_SpawnPlayerCharacter.Activated");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_SpawnPlayerCharacter.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmScript.RSeqAct_SpawnPlayerCharacter.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);

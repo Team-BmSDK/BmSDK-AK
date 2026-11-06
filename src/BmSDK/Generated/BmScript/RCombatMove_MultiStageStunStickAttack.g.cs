@@ -78,12 +78,13 @@ public partial class RCombatMove_MultiStageStunStickAttack : BmSDK.BmScript.RCom
         where TComponent : class, Framework.IScriptComponent<RCombatMove_MultiStageStunStickAttack>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DamageCollisionBetween;
     /// <summary>
     /// Function: DamageCollisionBetween
     /// </summary>
     public unsafe override void DamageCollisionBetween(BmSDK.BmGame.RPawnCombat Pawn1, BmSDK.BmGame.RPawnCombat Pawn2, System.Numerics.Vector3 DamageDir)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_MultiStageStunStickAttack.DamageCollisionBetween", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DamageCollisionBetween, "BmScript.RCombatMove_MultiStageStunStickAttack.DamageCollisionBetween");
         byte* paramsPtr = stackalloc byte[276];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Pawn1, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Pawn2, paramsPtr + 8);
@@ -92,34 +93,37 @@ public partial class RCombatMove_MultiStageStunStickAttack : BmSDK.BmScript.RCom
         return;
     }
 
+    private static BmSDK.Function __fn_CombatAnimHitRight;
     /// <summary>
     /// Function: CombatAnimHitRight
     /// </summary>
     public unsafe virtual void CombatAnimHitRight()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_MultiStageStunStickAttack.CombatAnimHitRight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CombatAnimHitRight, "BmScript.RCombatMove_MultiStageStunStickAttack.CombatAnimHitRight");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CombatAnimHitLeft;
     /// <summary>
     /// Function: CombatAnimHitLeft
     /// </summary>
     public unsafe virtual void CombatAnimHitLeft()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_MultiStageStunStickAttack.CombatAnimHitLeft", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CombatAnimHitLeft, "BmScript.RCombatMove_MultiStageStunStickAttack.CombatAnimHitLeft");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanBeUsed;
     /// <summary>
     /// Function: CanBeUsed
     /// </summary>
     public unsafe static bool CanBeUsed(BmSDK.BmGame.RBMCombatManager CombatManager, BmSDK.BmGame.RPawnCombat User, BmSDK.BmGame.RPawnCombat NewTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_MultiStageStunStickAttack.CanBeUsed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeUsed, "BmScript.RCombatMove_MultiStageStunStickAttack.CanBeUsed");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CombatManager, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(User, paramsPtr + 8);

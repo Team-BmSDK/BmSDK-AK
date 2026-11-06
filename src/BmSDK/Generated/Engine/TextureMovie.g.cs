@@ -78,12 +78,13 @@ public partial class TextureMovie : BmSDK.Engine.Texture, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<TextureMovie>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ResetStream;
     /// <summary>
     /// Function: ResetStream
     /// </summary>
     public unsafe virtual void ResetStream()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.TextureMovie.ResetStream", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetStream, "Engine.TextureMovie.ResetStream");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class TextureMovie : BmSDK.Engine.Texture, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GotoFrame;
     /// <summary>
     /// Function: GotoFrame
     /// </summary>
     public unsafe virtual void GotoFrame(int frameNumber)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.TextureMovie.GotoFrame", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GotoFrame, "Engine.TextureMovie.GotoFrame");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(frameNumber, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -115,12 +117,13 @@ public partial class TextureMovie : BmSDK.Engine.Texture, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetPause;
     /// <summary>
     /// Function: SetPause
     /// </summary>
     public unsafe virtual void SetPause(bool shouldPause)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.TextureMovie.SetPause", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetPause, "Engine.TextureMovie.SetPause");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(shouldPause, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -134,12 +137,13 @@ public partial class TextureMovie : BmSDK.Engine.Texture, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_Stop;
     /// <summary>
     /// Function: Stop
     /// </summary>
     public unsafe virtual void Stop()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.TextureMovie.Stop", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Stop, "Engine.TextureMovie.Stop");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -152,12 +156,13 @@ public partial class TextureMovie : BmSDK.Engine.Texture, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_Pause;
     /// <summary>
     /// Function: Pause
     /// </summary>
     public unsafe virtual void Pause()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.TextureMovie.Pause", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Pause, "Engine.TextureMovie.Pause");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -170,12 +175,13 @@ public partial class TextureMovie : BmSDK.Engine.Texture, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_Play;
     /// <summary>
     /// Function: Play
     /// </summary>
     public unsafe virtual void Play()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.TextureMovie.Play", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Play, "Engine.TextureMovie.Play");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

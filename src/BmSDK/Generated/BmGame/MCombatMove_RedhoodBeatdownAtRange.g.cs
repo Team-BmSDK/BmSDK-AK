@@ -78,35 +78,38 @@ public partial class MCombatMove_RedhoodBeatdownAtRange : BmSDK.BmGame.RCombatMo
         where TComponent : class, Framework.IScriptComponent<MCombatMove_RedhoodBeatdownAtRange>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_StrikeContact;
     /// <summary>
     /// Function: StrikeContact
     /// </summary>
     public unsafe override void StrikeContact(bool bPreStrike)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCombatMove_RedhoodBeatdownAtRange.StrikeContact", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StrikeContact, "BmGame.MCombatMove_RedhoodBeatdownAtRange.StrikeContact");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bPreStrike, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetValidTargetStrikeRange;
     /// <summary>
     /// Function: GetValidTargetStrikeRange
     /// </summary>
     public unsafe override BmSDK.BmGame.RGameInfo.StrikeRange GetValidTargetStrikeRange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCombatMove_RedhoodBeatdownAtRange.GetValidTargetStrikeRange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetValidTargetStrikeRange, "BmGame.MCombatMove_RedhoodBeatdownAtRange.GetValidTargetStrikeRange");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameInfo.StrikeRange>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetDamageInfo;
     /// <summary>
     /// Function: SetDamageInfo
     /// </summary>
     public unsafe override BmSDK.BmGame.RPawnCombat.FDamageInfo SetDamageInfo(BmSDK.BmGame.RPawnCombat DamageReceiver, float DmgAmount)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCombatMove_RedhoodBeatdownAtRange.SetDamageInfo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDamageInfo, "BmGame.MCombatMove_RedhoodBeatdownAtRange.SetDamageInfo");
         byte* paramsPtr = stackalloc byte[508];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageReceiver, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DmgAmount, paramsPtr + 8);
@@ -114,12 +117,13 @@ public partial class MCombatMove_RedhoodBeatdownAtRange : BmSDK.BmGame.RCombatMo
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnCombat.FDamageInfo>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_PlayStrike;
     /// <summary>
     /// Function: PlayStrike
     /// </summary>
     public unsafe override void PlayStrike(bool bQueue, bool bSimulated)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCombatMove_RedhoodBeatdownAtRange.PlayStrike", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayStrike, "BmGame.MCombatMove_RedhoodBeatdownAtRange.PlayStrike");
         byte* paramsPtr = stackalloc byte[308];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bQueue, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSimulated, paramsPtr + 4);

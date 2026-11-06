@@ -78,118 +78,128 @@ public partial class RGuardPoint : BmSDK.Engine.Actor, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RGuardPoint>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_InformLootDroppedOff;
     /// <summary>
     /// Function: InformLootDroppedOff
     /// </summary>
     public unsafe virtual void InformLootDroppedOff(BmSDK.BmGame.RLootSourceBase nextPickupPoint)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGuardPoint.InformLootDroppedOff", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InformLootDroppedOff, "BmGame.RGuardPoint.InformLootDroppedOff");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(nextPickupPoint, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetTagString;
     /// <summary>
     /// Function: GetTagString
     /// </summary>
     public unsafe virtual BmSDK.FString GetTagString()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGuardPoint.GetTagString", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTagString, "BmGame.RGuardPoint.GetTagString");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_OnToggle;
     /// <summary>
     /// Function: OnToggle
     /// </summary>
     public unsafe virtual void OnToggle(BmSDK.Engine.SeqAct_Toggle inAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGuardPoint.OnToggle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggle, "BmGame.RGuardPoint.OnToggle");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(inAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsLockedByController;
     /// <summary>
     /// Function: IsLockedByController
     /// </summary>
     public unsafe virtual bool IsLockedByController(BmSDK.BmGame.RBMAIController TestCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGuardPoint.IsLockedByController", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsLockedByController, "BmGame.RGuardPoint.IsLockedByController");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_IsLockedBy;
     /// <summary>
     /// Function: IsLockedBy
     /// </summary>
     public unsafe virtual bool IsLockedBy(BmSDK.BmGame.RAEC_Search_Sub_Guard TestLockedBy)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGuardPoint.IsLockedBy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsLockedBy, "BmGame.RGuardPoint.IsLockedBy");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestLockedBy, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_IsLocked;
     /// <summary>
     /// Function: IsLocked
     /// </summary>
     public unsafe virtual bool IsLocked()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGuardPoint.IsLocked", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsLocked, "BmGame.RGuardPoint.IsLocked");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UnLock;
     /// <summary>
     /// Function: UnLock
     /// </summary>
     public unsafe virtual void UnLock(BmSDK.BmGame.RAEC_Search_Sub_Guard Unlocker)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGuardPoint.UnLock", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnLock, "BmGame.RGuardPoint.UnLock");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Unlocker, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Steal;
     /// <summary>
     /// Function: Steal
     /// </summary>
     public unsafe virtual void Steal(BmSDK.BmGame.RAEC_Search_Sub_Guard NewLockedBy)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGuardPoint.Steal", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Steal, "BmGame.RGuardPoint.Steal");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewLockedBy, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Lock;
     /// <summary>
     /// Function: Lock
     /// </summary>
     public unsafe virtual void Lock(BmSDK.BmGame.RAEC_Search_Sub_Guard NewLockedBy)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGuardPoint.Lock", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Lock, "BmGame.RGuardPoint.Lock");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewLockedBy, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGuardPoint.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RGuardPoint.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

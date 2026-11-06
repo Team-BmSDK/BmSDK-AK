@@ -78,12 +78,13 @@ public partial class GFxAction_GetVariable : BmSDK.Engine.SequenceAction, BmSDK.
         where TComponent : class, Framework.IScriptComponent<GFxAction_GetVariable>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsValidLevelSequenceObject;
     /// <summary>
     /// Function: IsValidLevelSequenceObject
     /// </summary>
     public unsafe override bool IsValidLevelSequenceObject()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "GFxUI.GFxAction_GetVariable.IsValidLevelSequenceObject", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsValidLevelSequenceObject, "GFxUI.GFxAction_GetVariable.IsValidLevelSequenceObject");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

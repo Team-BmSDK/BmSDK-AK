@@ -78,12 +78,13 @@ public partial class GameMessage : BmSDK.Engine.LocalMessage, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<GameMessage>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetString;
     /// <summary>
     /// Function: GetString
     /// </summary>
     public unsafe static BmSDK.FString GetString(int Switch = default, bool bPRI1HUD = default, BmSDK.Engine.PlayerReplicationInfo RelatedPRI_1 = default, BmSDK.Engine.PlayerReplicationInfo RelatedPRI_2 = default, BmSDK.GameObject OptionalObject = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.GameMessage.GetString", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetString, "Engine.GameMessage.GetString");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Switch, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bPRI1HUD, paramsPtr + 4);

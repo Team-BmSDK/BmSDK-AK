@@ -78,23 +78,25 @@ public partial class RNavMeshPath_ExitPoints : BmSDK.Engine.NavMeshPathConstrain
         where TComponent : class, Framework.IScriptComponent<RNavMeshPath_ExitPoints>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Recycle;
     /// <summary>
     /// Function: Recycle
     /// </summary>
     public unsafe override void Recycle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RNavMeshPath_ExitPoints.Recycle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Recycle, "BmGame.RNavMeshPath_ExitPoints.Recycle");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_BuildExitPointList;
     /// <summary>
     /// Function: BuildExitPointList
     /// </summary>
     public unsafe static void BuildExitPointList(BmSDK.Engine.NavigationHandle NavHandle, BmSDK.BmGame.RExitPoints NewExitPoint)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RNavMeshPath_ExitPoints.BuildExitPointList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BuildExitPointList, "BmGame.RNavMeshPath_ExitPoints.BuildExitPointList");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NavHandle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewExitPoint, paramsPtr + 8);

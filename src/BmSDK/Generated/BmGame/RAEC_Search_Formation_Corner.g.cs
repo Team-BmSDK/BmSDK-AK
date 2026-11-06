@@ -78,48 +78,52 @@ public partial class RAEC_Search_Formation_Corner : BmSDK.BmGame.RAEC_Search_For
         where TComponent : class, Framework.IScriptComponent<RAEC_Search_Formation_Corner>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_InAnimFinished;
     /// <summary>
     /// Function: InAnimFinished
     /// </summary>
     public unsafe virtual void InAnimFinished(BmSDK.BmGame.RAEC_Search_Sub_Corner callingAEC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Formation_Corner.InAnimFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InAnimFinished, "BmGame.RAEC_Search_Formation_Corner.InAnimFinished");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(callingAEC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddFollower;
     /// <summary>
     /// Function: AddFollower
     /// </summary>
     public unsafe override void AddFollower(BmSDK.BmGame.RBMAIController FollowCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Formation_Corner.AddFollower", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddFollower, "BmGame.RAEC_Search_Formation_Corner.AddFollower");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FollowCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetLeader;
     /// <summary>
     /// Function: SetLeader
     /// </summary>
     public unsafe override void SetLeader(BmSDK.BmGame.RBMAIController NewLeader)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Formation_Corner.SetLeader", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetLeader, "BmGame.RAEC_Search_Formation_Corner.SetLeader");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewLeader, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe virtual void Init(BmSDK.BmGame.RBMAIAction_PairedCorner.ePairedCornerAnimType inAnimVariant)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Formation_Corner.Init", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmGame.RAEC_Search_Formation_Corner.Init");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(inAnimVariant, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

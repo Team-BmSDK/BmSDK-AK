@@ -78,82 +78,89 @@ public partial class InterpActor : BmSDK.Engine.DynamicSMActor, BmSDK.IGameObjec
         where TComponent : class, Framework.IScriptComponent<InterpActor>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ApplyCheckpointRecord;
     /// <summary>
     /// Function: ApplyCheckpointRecord
     /// </summary>
     public unsafe virtual void ApplyCheckpointRecord(out BmSDK.Engine.InterpActor.FCheckpointRecord Record)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.InterpActor.ApplyCheckpointRecord", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyCheckpointRecord, "Engine.InterpActor.ApplyCheckpointRecord");
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Record = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.InterpActor.FCheckpointRecord>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CreateCheckpointRecord;
     /// <summary>
     /// Function: CreateCheckpointRecord
     /// </summary>
     public unsafe virtual void CreateCheckpointRecord(out BmSDK.Engine.InterpActor.FCheckpointRecord Record)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.InterpActor.CreateCheckpointRecord", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateCheckpointRecord, "Engine.InterpActor.CreateCheckpointRecord");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Record = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.InterpActor.FCheckpointRecord>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShouldSaveForCheckpoint;
     /// <summary>
     /// Function: ShouldSaveForCheckpoint
     /// </summary>
     public unsafe virtual bool ShouldSaveForCheckpoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.InterpActor.ShouldSaveForCheckpoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldSaveForCheckpoint, "Engine.InterpActor.ShouldSaveForCheckpoint");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ShutDown;
     /// <summary>
     /// Function: ShutDown
     /// </summary>
     public unsafe override void ShutDown()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.InterpActor.ShutDown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShutDown, "Engine.InterpActor.ShutDown");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InterpolationChanged;
     /// <summary>
     /// Function: InterpolationChanged
     /// </summary>
     public unsafe override void InterpolationChanged(BmSDK.Engine.SeqAct_Interp InterpAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.InterpActor.InterpolationChanged", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InterpolationChanged, "Engine.InterpActor.InterpolationChanged");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InterpAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InterpolationFinished;
     /// <summary>
     /// Function: InterpolationFinished
     /// </summary>
     public unsafe override void InterpolationFinished(BmSDK.Engine.SeqAct_Interp InterpAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.InterpActor.InterpolationFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InterpolationFinished, "Engine.InterpActor.InterpolationFinished");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InterpAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InterpolationStarted;
     /// <summary>
     /// Function: InterpolationStarted
     /// </summary>
     public unsafe override void InterpolationStarted(BmSDK.Engine.SeqAct_Interp InterpAction, BmSDK.Engine.InterpGroupInst GroupInst)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.InterpActor.InterpolationStarted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InterpolationStarted, "Engine.InterpActor.InterpolationStarted");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InterpAction, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GroupInst, paramsPtr + 8);
@@ -161,12 +168,13 @@ public partial class InterpActor : BmSDK.Engine.DynamicSMActor, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_SetCrushBatmobile;
     /// <summary>
     /// Function: SetCrushBatmobile
     /// </summary>
     public unsafe virtual void SetCrushBatmobile(bool Crush, bool ReversePlayback)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.InterpActor.SetCrushBatmobile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCrushBatmobile, "Engine.InterpActor.SetCrushBatmobile");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Crush, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReversePlayback, paramsPtr + 4);
@@ -174,81 +182,88 @@ public partial class InterpActor : BmSDK.Engine.DynamicSMActor, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_FinishedOpen;
     /// <summary>
     /// Function: FinishedOpen
     /// </summary>
     public unsafe virtual void FinishedOpen()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.InterpActor.FinishedOpen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishedOpen, "Engine.InterpActor.FinishedOpen");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Restart;
     /// <summary>
     /// Function: Restart
     /// </summary>
     public unsafe virtual void Restart()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.InterpActor.Restart", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Restart, "Engine.InterpActor.Restart");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Detach;
     /// <summary>
     /// Function: Detach
     /// </summary>
     public unsafe override void Detach(BmSDK.Engine.Actor Other)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.InterpActor.Detach", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Detach, "Engine.InterpActor.Detach");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Attach;
     /// <summary>
     /// Function: Attach
     /// </summary>
     public unsafe override void Attach(BmSDK.Engine.Actor Other)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.InterpActor.Attach", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Attach, "Engine.InterpActor.Attach");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RanInto;
     /// <summary>
     /// Function: RanInto
     /// </summary>
     public unsafe override void RanInto(BmSDK.Engine.Actor Other)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.InterpActor.RanInto", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RanInto, "Engine.InterpActor.RanInto");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.InterpActor.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "Engine.InterpActor.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EndMatineeControl;
     /// <summary>
     /// Function: EndMatineeControl
     /// </summary>
     public unsafe override void EndMatineeControl(BmSDK.Engine.InterpGroup InInterpGroup, BmSDK.Engine.InterpGroupInst InInterpGroupInst)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.InterpActor.EndMatineeControl", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EndMatineeControl, "Engine.InterpActor.EndMatineeControl");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroup, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroupInst, paramsPtr + 8);
@@ -256,12 +271,13 @@ public partial class InterpActor : BmSDK.Engine.DynamicSMActor, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_BeginMatineeControl;
     /// <summary>
     /// Function: BeginMatineeControl
     /// </summary>
     public unsafe override void BeginMatineeControl(BmSDK.Engine.InterpGroup InInterpGroup, BmSDK.Engine.InterpGroupInst InInterpGroupInst)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.InterpActor.BeginMatineeControl", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BeginMatineeControl, "Engine.InterpActor.BeginMatineeControl");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroup, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroupInst, paramsPtr + 8);

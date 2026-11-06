@@ -78,12 +78,13 @@ public partial class LightEnvironmentComponent : BmSDK.Engine.ActorComponent, Bm
         where TComponent : class, Framework.IScriptComponent<LightEnvironmentComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsEnabled;
     /// <summary>
     /// Function: IsEnabled
     /// </summary>
     public unsafe virtual bool IsEnabled()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LightEnvironmentComponent.IsEnabled", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsEnabled, "Engine.LightEnvironmentComponent.IsEnabled");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class LightEnvironmentComponent : BmSDK.Engine.ActorComponent, Bm
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetEnabled;
     /// <summary>
     /// Function: SetEnabled
     /// </summary>
     public unsafe virtual void SetEnabled(bool bNewEnabled)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.LightEnvironmentComponent.SetEnabled", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetEnabled, "Engine.LightEnvironmentComponent.SetEnabled");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewEnabled, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

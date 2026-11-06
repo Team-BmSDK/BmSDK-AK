@@ -78,23 +78,25 @@ public partial class NavMeshPath_WithinDistanceEnvelope : BmSDK.Engine.NavMeshPa
         where TComponent : class, Framework.IScriptComponent<NavMeshPath_WithinDistanceEnvelope>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Recycle;
     /// <summary>
     /// Function: Recycle
     /// </summary>
     public unsafe override void Recycle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavMeshPath_WithinDistanceEnvelope.Recycle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Recycle, "Engine.NavMeshPath_WithinDistanceEnvelope.Recycle");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StayWithinEnvelopeToLoc;
     /// <summary>
     /// Function: StayWithinEnvelopeToLoc
     /// </summary>
     public unsafe static bool StayWithinEnvelopeToLoc(BmSDK.Engine.NavigationHandle NavHandle, System.Numerics.Vector3 InEnvelopeTestPoint, float InMaxDistance, float InMinDistance, bool bInSoft = default, float InSoftStartPenalty = default, bool bOnlyTossOutSpecsThatLeave = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavMeshPath_WithinDistanceEnvelope.StayWithinEnvelopeToLoc", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StayWithinEnvelopeToLoc, "Engine.NavMeshPath_WithinDistanceEnvelope.StayWithinEnvelopeToLoc");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NavHandle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InEnvelopeTestPoint, paramsPtr + 8);

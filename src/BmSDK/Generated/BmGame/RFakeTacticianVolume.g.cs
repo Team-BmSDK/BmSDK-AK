@@ -78,12 +78,13 @@ public partial class RFakeTacticianVolume : BmSDK.Engine.Volume, BmSDK.IGameObje
         where TComponent : class, Framework.IScriptComponent<RFakeTacticianVolume>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DebugDrawVolume;
     /// <summary>
     /// Function: DebugDrawVolume
     /// </summary>
     public unsafe virtual void DebugDrawVolume(int Red, int Green, int Blue, bool bDrawPersistent)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFakeTacticianVolume.DebugDrawVolume", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DebugDrawVolume, "BmGame.RFakeTacticianVolume.DebugDrawVolume");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Red, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Green, paramsPtr + 4);

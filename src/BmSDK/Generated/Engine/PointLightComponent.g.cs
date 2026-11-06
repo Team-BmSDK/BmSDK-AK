@@ -78,34 +78,37 @@ public partial class PointLightComponent : BmSDK.Engine.LightComponent, BmSDK.IG
         where TComponent : class, Framework.IScriptComponent<PointLightComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnUpdatePropertyBrightness;
     /// <summary>
     /// Function: OnUpdatePropertyBrightness
     /// </summary>
     public unsafe override void OnUpdatePropertyBrightness()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PointLightComponent.OnUpdatePropertyBrightness", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnUpdatePropertyBrightness, "Engine.PointLightComponent.OnUpdatePropertyBrightness");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnUpdatePropertyLightColor;
     /// <summary>
     /// Function: OnUpdatePropertyLightColor
     /// </summary>
     public unsafe override void OnUpdatePropertyLightColor()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PointLightComponent.OnUpdatePropertyLightColor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnUpdatePropertyLightColor, "Engine.PointLightComponent.OnUpdatePropertyLightColor");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetTranslation;
     /// <summary>
     /// Function: SetTranslation
     /// </summary>
     public unsafe virtual void SetTranslation(System.Numerics.Vector3 NewTranslation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PointLightComponent.SetTranslation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetTranslation, "Engine.PointLightComponent.SetTranslation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewTranslation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

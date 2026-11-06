@@ -78,35 +78,38 @@ public partial class RBMAIAction_GoggleBlind : BmSDK.BmGame.RBMAIAction, BmSDK.I
         where TComponent : class, Framework.IScriptComponent<RBMAIAction_GoggleBlind>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ActionTick;
     /// <summary>
     /// Function: ActionTick
     /// </summary>
     public unsafe override BmSDK.BmGame.RBMAIAction.ActionTickResult ActionTick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_GoggleBlind.ActionTick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActionTick, "BmGame.RBMAIAction_GoggleBlind.ActionTick");
         byte* paramsPtr = stackalloc byte[5];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMAIAction.ActionTickResult>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_StartOutAnim;
     /// <summary>
     /// Function: StartOutAnim
     /// </summary>
     public unsafe virtual void StartOutAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_GoggleBlind.StartOutAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartOutAnim, "BmGame.RBMAIAction_GoggleBlind.StartOutAnim");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartInAnim;
     /// <summary>
     /// Function: StartInAnim
     /// </summary>
     public unsafe virtual void StartInAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_GoggleBlind.StartInAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartInAnim, "BmGame.RBMAIAction_GoggleBlind.StartInAnim");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

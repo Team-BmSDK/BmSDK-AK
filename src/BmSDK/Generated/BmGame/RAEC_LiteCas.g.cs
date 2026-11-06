@@ -78,81 +78,88 @@ public partial class RAEC_LiteCas : BmSDK.BmGame.RAEC_CasualtyBase, BmSDK.IGameO
         where TComponent : class, Framework.IScriptComponent<RAEC_LiteCas>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PostCutNotify;
     /// <summary>
     /// Function: PostCutNotify
     /// </summary>
     public unsafe override void PostCutNotify(System.Numerics.Vector3 ImpactLoc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_LiteCas.PostCutNotify", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostCutNotify, "BmGame.RAEC_LiteCas.PostCutNotify");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ImpactLoc, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyRopeCut;
     /// <summary>
     /// Function: NotifyRopeCut
     /// </summary>
     public unsafe override void NotifyRopeCut(BmSDK.BmGame.RBatarangProjectile Brang)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_LiteCas.NotifyRopeCut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyRopeCut, "BmGame.RAEC_LiteCas.NotifyRopeCut");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Brang, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TryStopKicking;
     /// <summary>
     /// Function: TryStopKicking
     /// </summary>
     public unsafe virtual void TryStopKicking()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_LiteCas.TryStopKicking", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TryStopKicking, "BmGame.RAEC_LiteCas.TryStopKicking");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CasFound;
     /// <summary>
     /// Function: CasFound
     /// </summary>
     public unsafe override void CasFound(BmSDK.BmGame.RBMAIController Spotter)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_LiteCas.CasFound", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CasFound, "BmGame.RAEC_LiteCas.CasFound");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Spotter, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SonicBatarangTakedown;
     /// <summary>
     /// Function: SonicBatarangTakedown
     /// </summary>
     public unsafe override void SonicBatarangTakedown()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_LiteCas.SonicBatarangTakedown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SonicBatarangTakedown, "BmGame.RAEC_LiteCas.SonicBatarangTakedown");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_VillainScreamed;
     /// <summary>
     /// Function: VillainScreamed
     /// </summary>
     public unsafe override void VillainScreamed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_LiteCas.VillainScreamed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_VillainScreamed, "BmGame.RAEC_LiteCas.VillainScreamed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PawnTakenDown;
     /// <summary>
     /// Function: PawnTakenDown
     /// </summary>
     public unsafe override void PawnTakenDown(bool bGlideKicked, bool bDropAttacked, BmSDK.BmGame.RHidePoint inGlideKickOriginHidePoint, System.Numerics.Vector3 GlideKickHidePointPerchPos)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_LiteCas.PawnTakenDown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PawnTakenDown, "BmGame.RAEC_LiteCas.PawnTakenDown");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bGlideKicked, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDropAttacked, paramsPtr + 4);
@@ -162,12 +169,13 @@ public partial class RAEC_LiteCas : BmSDK.BmGame.RAEC_CasualtyBase, BmSDK.IGameO
         return;
     }
 
+    private static BmSDK.Function __fn_GetAIThoughts;
     /// <summary>
     /// Function: GetAIThoughts
     /// </summary>
     public unsafe override void GetAIThoughts(out BmSDK.TArray<BmSDK.Engine.Actor.FThought> ThoughtList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_LiteCas.GetAIThoughts", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAIThoughts, "BmGame.RAEC_LiteCas.GetAIThoughts");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ThoughtList = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.Engine.Actor.FThought>>(paramsPtr + 0);

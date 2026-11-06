@@ -78,24 +78,26 @@ public partial class RPopulationDistrictVolume : BmSDK.Engine.Volume, BmSDK.IGam
         where TComponent : class, Framework.IScriptComponent<RPopulationDistrictVolume>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetDistrictName;
     /// <summary>
     /// Function: SetDistrictName
     /// </summary>
     public unsafe virtual void SetDistrictName(BmSDK.FString NewName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPopulationDistrictVolume.SetDistrictName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDistrictName, "BmGame.RPopulationDistrictVolume.SetDistrictName");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPopulationDistrictVolume.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RPopulationDistrictVolume.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

@@ -78,12 +78,13 @@ public partial class RSpecialMoveInstance_AerialWhipPounceBase : BmSDK.BmGame.RS
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveInstance_AerialWhipPounceBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CalculateReferencePointAndNormal;
     /// <summary>
     /// Function: CalculateReferencePointAndNormal
     /// </summary>
     public unsafe virtual void CalculateReferencePointAndNormal(out BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator Loc, out System.Numerics.Vector3 ReferencePoint, out System.Numerics.Vector3 ReferenceNormal, out System.Numerics.Vector3 WhipTargetPoint)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_AerialWhipPounceBase.CalculateReferencePointAndNormal", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculateReferencePointAndNormal, "BmGame.RSpecialMoveInstance_AerialWhipPounceBase.CalculateReferencePointAndNormal");
         byte* paramsPtr = stackalloc byte[168];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

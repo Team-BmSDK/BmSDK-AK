@@ -78,12 +78,13 @@ public partial class AnimNodePlayCustomAnim : BmSDK.Engine.AnimNodeBlend, BmSDK.
         where TComponent : class, Framework.IScriptComponent<AnimNodePlayCustomAnim>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetRootBoneAxisOption;
     /// <summary>
     /// Function: SetRootBoneAxisOption
     /// </summary>
     public unsafe virtual void SetRootBoneAxisOption(BmSDK.Engine.AnimNodeSequence.ERootBoneAxis AxisX = default, BmSDK.Engine.AnimNodeSequence.ERootBoneAxis AxisY = default, BmSDK.Engine.AnimNodeSequence.ERootBoneAxis AxisZ = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodePlayCustomAnim.SetRootBoneAxisOption", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRootBoneAxisOption, "Engine.AnimNodePlayCustomAnim.SetRootBoneAxisOption");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AxisX, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AxisY, paramsPtr + 1);
@@ -92,47 +93,51 @@ public partial class AnimNodePlayCustomAnim : BmSDK.Engine.AnimNodeBlend, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_GetCustomAnimNodeSeq;
     /// <summary>
     /// Function: GetCustomAnimNodeSeq
     /// </summary>
     public unsafe virtual BmSDK.Engine.AnimNodeSequence GetCustomAnimNodeSeq()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodePlayCustomAnim.GetCustomAnimNodeSeq", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCustomAnimNodeSeq, "Engine.AnimNodePlayCustomAnim.GetCustomAnimNodeSeq");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimNodeSequence>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetActorAnimEndNotification;
     /// <summary>
     /// Function: SetActorAnimEndNotification
     /// </summary>
     public unsafe virtual void SetActorAnimEndNotification(bool bNewStatus)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodePlayCustomAnim.SetActorAnimEndNotification", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetActorAnimEndNotification, "Engine.AnimNodePlayCustomAnim.SetActorAnimEndNotification");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewStatus, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetCustomAnim;
     /// <summary>
     /// Function: SetCustomAnim
     /// </summary>
     public unsafe virtual void SetCustomAnim(BmSDK.FName AnimName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodePlayCustomAnim.SetCustomAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCustomAnim, "Engine.AnimNodePlayCustomAnim.SetCustomAnim");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StopCustomAnim;
     /// <summary>
     /// Function: StopCustomAnim
     /// </summary>
     public unsafe virtual void StopCustomAnim(float BlendOutTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodePlayCustomAnim.StopCustomAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopCustomAnim, "Engine.AnimNodePlayCustomAnim.StopCustomAnim");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BlendOutTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -146,12 +151,13 @@ public partial class AnimNodePlayCustomAnim : BmSDK.Engine.AnimNodeBlend, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_PlayCustomAnimByDuration;
     /// <summary>
     /// Function: PlayCustomAnimByDuration
     /// </summary>
     public unsafe virtual void PlayCustomAnimByDuration(BmSDK.FName AnimName, float Duration, float BlendInTime = default, float BlendOutTime = default, bool bLooping = default, bool bOverride = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodePlayCustomAnim.PlayCustomAnimByDuration", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayCustomAnimByDuration, "Engine.AnimNodePlayCustomAnim.PlayCustomAnimByDuration");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Duration, paramsPtr + 8);
@@ -170,12 +176,13 @@ public partial class AnimNodePlayCustomAnim : BmSDK.Engine.AnimNodeBlend, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_PlayCustomAnim;
     /// <summary>
     /// Function: PlayCustomAnim
     /// </summary>
     public unsafe virtual float PlayCustomAnim(BmSDK.FName AnimName, float Rate, float BlendInTime = default, float BlendOutTime = default, bool bLooping = default, bool bOverride = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodePlayCustomAnim.PlayCustomAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayCustomAnim, "Engine.AnimNodePlayCustomAnim.PlayCustomAnim");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Rate, paramsPtr + 8);

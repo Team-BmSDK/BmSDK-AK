@@ -78,45 +78,49 @@ public partial class RSeqEvent_SetMatineeController : BmSDK.Engine.SequenceEvent
         where TComponent : class, Framework.IScriptComponent<RSeqEvent_SetMatineeController>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqEvent_SetMatineeController.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmGame.RSeqEvent_SetMatineeController.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UpdateLinkToMatinee;
     /// <summary>
     /// Function: UpdateLinkToMatinee
     /// </summary>
     public unsafe virtual void UpdateLinkToMatinee()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqEvent_SetMatineeController.UpdateLinkToMatinee", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateLinkToMatinee, "BmGame.RSeqEvent_SetMatineeController.UpdateLinkToMatinee");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Toggled;
     /// <summary>
     /// Function: Toggled
     /// </summary>
     public unsafe override void Toggled()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqEvent_SetMatineeController.Toggled", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Toggled, "BmGame.RSeqEvent_SetMatineeController.Toggled");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RegisterEvent;
     /// <summary>
     /// Function: RegisterEvent
     /// </summary>
     public unsafe override void RegisterEvent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqEvent_SetMatineeController.RegisterEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterEvent, "BmGame.RSeqEvent_SetMatineeController.RegisterEvent");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

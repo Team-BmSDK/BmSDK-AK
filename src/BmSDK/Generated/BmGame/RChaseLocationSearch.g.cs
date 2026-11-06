@@ -78,12 +78,13 @@ public partial class RChaseLocationSearch : BmSDK.BmGame.RSearchTreeFinder, BmSD
         where TComponent : class, Framework.IScriptComponent<RChaseLocationSearch>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DebugShowChaseProgress;
     /// <summary>
     /// Function: DebugShowChaseProgress
     /// </summary>
     public unsafe virtual void DebugShowChaseProgress(float ChaseStartTime, BmSDK.Engine.Actor TestActor = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RChaseLocationSearch.DebugShowChaseProgress", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DebugShowChaseProgress, "BmGame.RChaseLocationSearch.DebugShowChaseProgress");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ChaseStartTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestActor, paramsPtr + 4);
@@ -91,23 +92,25 @@ public partial class RChaseLocationSearch : BmSDK.BmGame.RSearchTreeFinder, BmSD
         return;
     }
 
+    private static BmSDK.Function __fn_GetThoughtString;
     /// <summary>
     /// Function: GetThoughtString
     /// </summary>
     public unsafe override BmSDK.FString GetThoughtString()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RChaseLocationSearch.GetThoughtString", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetThoughtString, "BmGame.RChaseLocationSearch.GetThoughtString");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_RecursiveGetFirstHidden;
     /// <summary>
     /// Function: RecursiveGetFirstHidden
     /// </summary>
     public unsafe virtual void RecursiveGetFirstHidden(BmSDK.BmGame.RChasePoint TestSub, out BmSDK.TArray<BmSDK.BmGame.RChasePoint> UsableEnds)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RChaseLocationSearch.RecursiveGetFirstHidden", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RecursiveGetFirstHidden, "BmGame.RChaseLocationSearch.RecursiveGetFirstHidden");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestSub, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -115,12 +118,13 @@ public partial class RChaseLocationSearch : BmSDK.BmGame.RSearchTreeFinder, BmSD
         return;
     }
 
+    private static BmSDK.Function __fn_RecursiveGetFurthestVisible;
     /// <summary>
     /// Function: RecursiveGetFurthestVisible
     /// </summary>
     public unsafe virtual void RecursiveGetFurthestVisible(BmSDK.BmGame.RChasePoint TestSub, out BmSDK.TArray<BmSDK.BmGame.RChasePoint> UsableEnds)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RChaseLocationSearch.RecursiveGetFurthestVisible", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RecursiveGetFurthestVisible, "BmGame.RChaseLocationSearch.RecursiveGetFurthestVisible");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestSub, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -128,36 +132,39 @@ public partial class RChaseLocationSearch : BmSDK.BmGame.RSearchTreeFinder, BmSD
         return;
     }
 
+    private static BmSDK.Function __fn_RecursiveClearChecked;
     /// <summary>
     /// Function: RecursiveClearChecked
     /// </summary>
     public unsafe virtual void RecursiveClearChecked(BmSDK.BmGame.RChasePoint StartPoint)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RChaseLocationSearch.RecursiveClearChecked", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RecursiveClearChecked, "BmGame.RChaseLocationSearch.RecursiveClearChecked");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartPoint, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RecursiveMarkIsVisibleFromRoot;
     /// <summary>
     /// Function: RecursiveMarkIsVisibleFromRoot
     /// </summary>
     public unsafe virtual void RecursiveMarkIsVisibleFromRoot(BmSDK.BmGame.RChasePoint TestSub)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RChaseLocationSearch.RecursiveMarkIsVisibleFromRoot", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RecursiveMarkIsVisibleFromRoot, "BmGame.RChaseLocationSearch.RecursiveMarkIsVisibleFromRoot");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestSub, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RecursiveMarkCheckedIfBackwards;
     /// <summary>
     /// Function: RecursiveMarkCheckedIfBackwards
     /// </summary>
     public unsafe virtual bool RecursiveMarkCheckedIfBackwards(BmSDK.BmGame.RChasePoint TestSub, System.Numerics.Vector3 ForwardDir)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RChaseLocationSearch.RecursiveMarkCheckedIfBackwards", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RecursiveMarkCheckedIfBackwards, "BmGame.RChaseLocationSearch.RecursiveMarkCheckedIfBackwards");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestSub, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ForwardDir, paramsPtr + 8);
@@ -165,59 +172,64 @@ public partial class RChaseLocationSearch : BmSDK.BmGame.RSearchTreeFinder, BmSD
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_MarkCheckedIfBackwards;
     /// <summary>
     /// Function: MarkCheckedIfBackwards
     /// </summary>
     public unsafe virtual bool MarkCheckedIfBackwards(System.Numerics.Vector3 ForwardDir)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RChaseLocationSearch.MarkCheckedIfBackwards", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MarkCheckedIfBackwards, "BmGame.RChaseLocationSearch.MarkCheckedIfBackwards");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ForwardDir, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_CleanAndRestart;
     /// <summary>
     /// Function: CleanAndRestart
     /// </summary>
     public unsafe override void CleanAndRestart()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RChaseLocationSearch.CleanAndRestart", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CleanAndRestart, "BmGame.RChaseLocationSearch.CleanAndRestart");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SearchPathsFailed;
     /// <summary>
     /// Function: SearchPathsFailed
     /// </summary>
     public unsafe virtual void SearchPathsFailed(BmSDK.BmGame.RNavigationHandle NavH)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RChaseLocationSearch.SearchPathsFailed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SearchPathsFailed, "BmGame.RChaseLocationSearch.SearchPathsFailed");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NavH, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SearchPathsFound;
     /// <summary>
     /// Function: SearchPathsFound
     /// </summary>
     public unsafe virtual void SearchPathsFound(BmSDK.BmGame.RNavigationHandle NavH)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RChaseLocationSearch.SearchPathsFound", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SearchPathsFound, "BmGame.RChaseLocationSearch.SearchPathsFound");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NavH, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartSearch;
     /// <summary>
     /// Function: StartSearch
     /// </summary>
     public unsafe virtual void StartSearch(System.Numerics.Vector3 ChaseCenter, float ChaseDist, BmSDK.BmGame.RNavigationManager NewNavigationManager, BmSDK.Engine.Actor NewAvoidActor = default, bool bNewDoAntiBacktracking = default, BmSDK.BmGame.RGuardVolume NewGuardVolume = default, BmSDK.Engine.Pawn NewParamProxy = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RChaseLocationSearch.StartSearch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartSearch, "BmGame.RChaseLocationSearch.StartSearch");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ChaseCenter, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ChaseDist, paramsPtr + 12);
@@ -230,12 +242,13 @@ public partial class RChaseLocationSearch : BmSDK.BmGame.RSearchTreeFinder, BmSD
         return;
     }
 
+    private static BmSDK.Function __fn_Cleanup;
     /// <summary>
     /// Function: Cleanup
     /// </summary>
     public unsafe override void Cleanup()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RChaseLocationSearch.Cleanup", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Cleanup, "BmGame.RChaseLocationSearch.Cleanup");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -248,12 +261,13 @@ public partial class RChaseLocationSearch : BmSDK.BmGame.RSearchTreeFinder, BmSD
         return;
     }
 
+    private static BmSDK.Function __fn_HandleInvalidatedState;
     /// <summary>
     /// Function: HandleInvalidatedState
     /// </summary>
     public unsafe override void HandleInvalidatedState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RChaseLocationSearch.HandleInvalidatedState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandleInvalidatedState, "BmGame.RChaseLocationSearch.HandleInvalidatedState");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -266,12 +280,13 @@ public partial class RChaseLocationSearch : BmSDK.BmGame.RSearchTreeFinder, BmSD
         return;
     }
 
+    private static BmSDK.Function __fn_Update;
     /// <summary>
     /// Function: Update
     /// </summary>
     public unsafe virtual void Update()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RChaseLocationSearch.Update", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Update, "BmGame.RChaseLocationSearch.Update");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -284,12 +299,13 @@ public partial class RChaseLocationSearch : BmSDK.BmGame.RSearchTreeFinder, BmSD
         return;
     }
 
+    private static BmSDK.Function __fn_FindNodeFromTreeForPoint;
     /// <summary>
     /// Function: FindNodeFromTreeForPoint
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RChasePoint FindNodeFromTreeForPoint(System.Numerics.Vector3 TestPoint)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RChaseLocationSearch.FindNodeFromTreeForPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindNodeFromTreeForPoint, "BmGame.RChaseLocationSearch.FindNodeFromTreeForPoint");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPoint, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -303,12 +319,13 @@ public partial class RChaseLocationSearch : BmSDK.BmGame.RSearchTreeFinder, BmSD
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RChasePoint>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_GetInternalPolys;
     /// <summary>
     /// Function: GetInternalPolys
     /// </summary>
     public unsafe virtual void GetInternalPolys(out BmSDK.TArray<System.IntPtr> OutPolyList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RChaseLocationSearch.GetInternalPolys", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetInternalPolys, "BmGame.RChaseLocationSearch.GetInternalPolys");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -322,12 +339,13 @@ public partial class RChaseLocationSearch : BmSDK.BmGame.RSearchTreeFinder, BmSD
         return;
     }
 
+    private static BmSDK.Function __fn_FindChaseStart;
     /// <summary>
     /// Function: FindChaseStart
     /// </summary>
     public unsafe virtual bool FindChaseStart(out System.Numerics.Vector3 ChaseStart)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RChaseLocationSearch.FindChaseStart", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindChaseStart, "BmGame.RChaseLocationSearch.FindChaseStart");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -341,36 +359,39 @@ public partial class RChaseLocationSearch : BmSDK.BmGame.RSearchTreeFinder, BmSD
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_ChaseSearchInvalidated;
     /// <summary>
     /// Function: ChaseSearchInvalidated
     /// </summary>
     public unsafe virtual void ChaseSearchInvalidated(BmSDK.BmGame.RChaseLocationSearch ChaseSearch)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RChaseLocationSearch.ChaseSearchInvalidated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ChaseSearchInvalidated, "BmGame.RChaseLocationSearch.ChaseSearchInvalidated");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ChaseSearch, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ChaseSearchFailed;
     /// <summary>
     /// Function: ChaseSearchFailed
     /// </summary>
     public unsafe virtual void ChaseSearchFailed(BmSDK.BmGame.RChaseLocationSearch ChaseSearch)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RChaseLocationSearch.ChaseSearchFailed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ChaseSearchFailed, "BmGame.RChaseLocationSearch.ChaseSearchFailed");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ChaseSearch, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ChaseLocationsFound;
     /// <summary>
     /// Function: ChaseLocationsFound
     /// </summary>
     public unsafe virtual void ChaseLocationsFound(BmSDK.BmGame.RChaseLocationSearch ChaseSearch)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RChaseLocationSearch.ChaseLocationsFound", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ChaseLocationsFound, "BmGame.RChaseLocationSearch.ChaseLocationsFound");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ChaseSearch, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

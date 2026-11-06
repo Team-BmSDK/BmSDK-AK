@@ -78,23 +78,25 @@ public partial class RSeqVar_NamedPawn : BmSDK.Engine.SeqVar_Object, BmSDK.IGame
         where TComponent : class, Framework.IScriptComponent<RSeqVar_NamedPawn>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjectValue;
     /// <summary>
     /// Function: GetObjectValue
     /// </summary>
     public unsafe override BmSDK.GameObject GetObjectValue()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqVar_NamedPawn.GetObjectValue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjectValue, "BmGame.RSeqVar_NamedPawn.GetObjectValue");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.GameObject>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetObjValue;
     /// <summary>
     /// Function: SetObjValue
     /// </summary>
     public unsafe virtual void SetObjValue()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqVar_NamedPawn.SetObjValue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetObjValue, "BmGame.RSeqVar_NamedPawn.SetObjValue");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

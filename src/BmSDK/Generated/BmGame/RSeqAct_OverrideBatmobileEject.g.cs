@@ -78,23 +78,25 @@ public partial class RSeqAct_OverrideBatmobileEject : BmSDK.Engine.SequenceActio
         where TComponent : class, Framework.IScriptComponent<RSeqAct_OverrideBatmobileEject>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_OverrideBatmobileEject.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmGame.RSeqAct_OverrideBatmobileEject.Activated");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EjectToSpot;
     /// <summary>
     /// Function: EjectToSpot
     /// </summary>
     public unsafe virtual void EjectToSpot(BmSDK.BmGame.RVehicleBatmobileBase Batmobile)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_OverrideBatmobileEject.EjectToSpot", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EjectToSpot, "BmGame.RSeqAct_OverrideBatmobileEject.EjectToSpot");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Batmobile, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

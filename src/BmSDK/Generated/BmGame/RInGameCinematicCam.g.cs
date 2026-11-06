@@ -78,23 +78,25 @@ public partial class RInGameCinematicCam : BmSDK.BmGame.RCameraActor, BmSDK.IGam
         where TComponent : class, Framework.IScriptComponent<RInGameCinematicCam>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ClearCinematicCameraCollisionTarget;
     /// <summary>
     /// Function: ClearCinematicCameraCollisionTarget
     /// </summary>
     public unsafe virtual void ClearCinematicCameraCollisionTarget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RInGameCinematicCam.ClearCinematicCameraCollisionTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearCinematicCameraCollisionTarget, "BmGame.RInGameCinematicCam.ClearCinematicCameraCollisionTarget");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetFOV;
     /// <summary>
     /// Function: SetFOV
     /// </summary>
     public unsafe override void SetFOV(float DesiredValue, float TimeToChange)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RInGameCinematicCam.SetFOV", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetFOV, "BmGame.RInGameCinematicCam.SetFOV");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DesiredValue, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TimeToChange, paramsPtr + 4);
@@ -102,12 +104,13 @@ public partial class RInGameCinematicCam : BmSDK.BmGame.RCameraActor, BmSDK.IGam
         return;
     }
 
+    private static BmSDK.Function __fn_LookAround;
     /// <summary>
     /// Function: LookAround
     /// </summary>
     public unsafe virtual void LookAround(float DeltaTime, BmSDK.Rotator LookInput)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RInGameCinematicCam.LookAround", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LookAround, "BmGame.RInGameCinematicCam.LookAround");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LookInput, paramsPtr + 4);
@@ -115,34 +118,37 @@ public partial class RInGameCinematicCam : BmSDK.BmGame.RCameraActor, BmSDK.IGam
         return;
     }
 
+    private static BmSDK.Function __fn_Finished;
     /// <summary>
     /// Function: Finished
     /// </summary>
     public unsafe virtual void Finished()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RInGameCinematicCam.Finished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Finished, "BmGame.RInGameCinematicCam.Finished");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DeferredFinish;
     /// <summary>
     /// Function: DeferredFinish
     /// </summary>
     public unsafe virtual void DeferredFinish()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RInGameCinematicCam.DeferredFinish", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DeferredFinish, "BmGame.RInGameCinematicCam.DeferredFinish");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StaticAnim;
     /// <summary>
     /// Function: StaticAnim
     /// </summary>
     public unsafe virtual bool StaticAnim(BmSDK.FName AnimName, bool bNewMirrored = default, BmSDK.Engine.AnimSet NewCustomAnimSet = default, BmSDK.Engine.Actor CollisionTarget = default, float FOV = default, System.Numerics.Vector3 FallBackTargetOffset = default, float NewBlendTime = default, bool bProportionalMotion = default, BmSDK.Engine.SkeletalMeshComponent NewSlavedToSkelComponent = default, BmSDK.Engine.AnimSequence NewSlavedToAnim = default, bool bForceCullClosePawns = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RInGameCinematicCam.StaticAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StaticAnim, "BmGame.RInGameCinematicCam.StaticAnim");
         byte* paramsPtr = stackalloc byte[76];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewMirrored, paramsPtr + 8);
@@ -159,12 +165,13 @@ public partial class RInGameCinematicCam : BmSDK.BmGame.RCameraActor, BmSDK.IGam
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 72);
     }
 
+    private static BmSDK.Function __fn_PlayAnim;
     /// <summary>
     /// Function: PlayAnim
     /// </summary>
     public unsafe virtual bool PlayAnim(BmSDK.FName AnimName, bool bNewMirrored = default, bool bNewLooping = default, BmSDK.Engine.AnimSet NewCustomAnimSet = default, BmSDK.Engine.Actor CollisionTarget = default, float FOV = default, System.Numerics.Vector3 FallBackTargetOffset = default, bool bHardCut = default, float NewBlendTime = default, float StartTime = default, bool bProportionalMotion = default, BmSDK.Engine.SkeletalMeshComponent NewSlavedToSkelComponent = default, BmSDK.Engine.AnimSequence NewSlavedToAnim = default, bool NewBlendBackToPlayerWhenFinished = default, bool bForceCullClosePawns = default, float fNewDurationScale = default, bool bBlendEvenIfInactive = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RInGameCinematicCam.PlayAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayAnim, "BmGame.RInGameCinematicCam.PlayAnim");
         byte* paramsPtr = stackalloc byte[100];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewMirrored, paramsPtr + 8);
@@ -187,12 +194,13 @@ public partial class RInGameCinematicCam : BmSDK.BmGame.RCameraActor, BmSDK.IGam
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 96);
     }
 
+    private static BmSDK.Function __fn_IsCameraBlockedFromTarget;
     /// <summary>
     /// Function: IsCameraBlockedFromTarget
     /// </summary>
     public unsafe virtual bool IsCameraBlockedFromTarget(out BmSDK.Engine.Actor BlockActor, out float BlockTime, System.Numerics.Vector3 TestTarget, float normalisedTime, bool DrawDebug = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RInGameCinematicCam.IsCameraBlockedFromTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsCameraBlockedFromTarget, "BmGame.RInGameCinematicCam.IsCameraBlockedFromTarget");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestTarget, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(normalisedTime, paramsPtr + 24);
@@ -210,12 +218,13 @@ public partial class RInGameCinematicCam : BmSDK.BmGame.RCameraActor, BmSDK.IGam
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_FindCameraLocationAtTime;
     /// <summary>
     /// Function: FindCameraLocationAtTime
     /// </summary>
     public unsafe virtual bool FindCameraLocationAtTime(out System.Numerics.Vector3 CameraLocation, out BmSDK.Rotator CameraRotation, float normalisedTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RInGameCinematicCam.FindCameraLocationAtTime", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindCameraLocationAtTime, "BmGame.RInGameCinematicCam.FindCameraLocationAtTime");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(normalisedTime, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
@@ -231,12 +240,13 @@ public partial class RInGameCinematicCam : BmSDK.BmGame.RCameraActor, BmSDK.IGam
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_IsAnimationPastBlendOutPoint;
     /// <summary>
     /// Function: IsAnimationPastBlendOutPoint
     /// </summary>
     public unsafe virtual bool IsAnimationPastBlendOutPoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RInGameCinematicCam.IsAnimationPastBlendOutPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAnimationPastBlendOutPoint, "BmGame.RInGameCinematicCam.IsAnimationPastBlendOutPoint");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -249,12 +259,13 @@ public partial class RInGameCinematicCam : BmSDK.BmGame.RCameraActor, BmSDK.IGam
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_AnimStarted;
     /// <summary>
     /// Function: AnimStarted
     /// </summary>
     public unsafe virtual void AnimStarted()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RInGameCinematicCam.AnimStarted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AnimStarted, "BmGame.RInGameCinematicCam.AnimStarted");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -267,12 +278,13 @@ public partial class RInGameCinematicCam : BmSDK.BmGame.RCameraActor, BmSDK.IGam
         return;
     }
 
+    private static BmSDK.Function __fn_CanFindAnimation;
     /// <summary>
     /// Function: CanFindAnimation
     /// </summary>
     public unsafe virtual bool CanFindAnimation(BmSDK.FName AnimName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RInGameCinematicCam.CanFindAnimation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanFindAnimation, "BmGame.RInGameCinematicCam.CanFindAnimation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -286,12 +298,13 @@ public partial class RInGameCinematicCam : BmSDK.BmGame.RCameraActor, BmSDK.IGam
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_UpdateAnimation;
     /// <summary>
     /// Function: UpdateAnimation
     /// </summary>
     public unsafe virtual void UpdateAnimation(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RInGameCinematicCam.UpdateAnimation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateAnimation, "BmGame.RInGameCinematicCam.UpdateAnimation");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -305,12 +318,13 @@ public partial class RInGameCinematicCam : BmSDK.BmGame.RCameraActor, BmSDK.IGam
         return;
     }
 
+    private static BmSDK.Function __fn_GetSequenceLength;
     /// <summary>
     /// Function: GetSequenceLength
     /// </summary>
     public unsafe virtual float GetSequenceLength()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RInGameCinematicCam.GetSequenceLength", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSequenceLength, "BmGame.RInGameCinematicCam.GetSequenceLength");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -323,12 +337,13 @@ public partial class RInGameCinematicCam : BmSDK.BmGame.RCameraActor, BmSDK.IGam
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetTime;
     /// <summary>
     /// Function: SetTime
     /// </summary>
     public unsafe virtual void SetTime(float Realtime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RInGameCinematicCam.SetTime", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetTime, "BmGame.RInGameCinematicCam.SetTime");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Realtime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -342,12 +357,13 @@ public partial class RInGameCinematicCam : BmSDK.BmGame.RCameraActor, BmSDK.IGam
         return;
     }
 
+    private static BmSDK.Function __fn_SetNormalizedTime;
     /// <summary>
     /// Function: SetNormalizedTime
     /// </summary>
     public unsafe virtual void SetNormalizedTime(float NormTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RInGameCinematicCam.SetNormalizedTime", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetNormalizedTime, "BmGame.RInGameCinematicCam.SetNormalizedTime");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NormTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -361,12 +377,13 @@ public partial class RInGameCinematicCam : BmSDK.BmGame.RCameraActor, BmSDK.IGam
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RInGameCinematicCam.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RInGameCinematicCam.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

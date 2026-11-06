@@ -78,34 +78,37 @@ public partial class UIDataProvider_OnlineProfileSettings : BmSDK.Engine.UIDataP
         where TComponent : class, Framework.IScriptComponent<UIDataProvider_OnlineProfileSettings>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnStorageDeviceChange;
     /// <summary>
     /// Function: OnStorageDeviceChange
     /// </summary>
     public unsafe override void OnStorageDeviceChange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataProvider_OnlineProfileSettings.OnStorageDeviceChange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnStorageDeviceChange, "Engine.UIDataProvider_OnlineProfileSettings.OnStorageDeviceChange");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RefreshStorageData;
     /// <summary>
     /// Function: RefreshStorageData
     /// </summary>
     public unsafe override void RefreshStorageData()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataProvider_OnlineProfileSettings.RefreshStorageData", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RefreshStorageData, "Engine.UIDataProvider_OnlineProfileSettings.RefreshStorageData");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ClearReadCompleteDelegate;
     /// <summary>
     /// Function: ClearReadCompleteDelegate
     /// </summary>
     public unsafe override void ClearReadCompleteDelegate(BmSDK.Engine.OnlinePlayerInterface PlayerInterface, byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataProvider_OnlineProfileSettings.ClearReadCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearReadCompleteDelegate, "Engine.UIDataProvider_OnlineProfileSettings.ClearReadCompleteDelegate");
         byte* paramsPtr = stackalloc byte[17];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerInterface, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 16);
@@ -113,12 +116,13 @@ public partial class UIDataProvider_OnlineProfileSettings : BmSDK.Engine.UIDataP
         return;
     }
 
+    private static BmSDK.Function __fn_AddReadCompleteDelegate;
     /// <summary>
     /// Function: AddReadCompleteDelegate
     /// </summary>
     public unsafe override void AddReadCompleteDelegate(BmSDK.Engine.OnlinePlayerInterface PlayerInterface, byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataProvider_OnlineProfileSettings.AddReadCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddReadCompleteDelegate, "Engine.UIDataProvider_OnlineProfileSettings.AddReadCompleteDelegate");
         byte* paramsPtr = stackalloc byte[17];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerInterface, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 16);
@@ -126,12 +130,13 @@ public partial class UIDataProvider_OnlineProfileSettings : BmSDK.Engine.UIDataP
         return;
     }
 
+    private static BmSDK.Function __fn_GetData;
     /// <summary>
     /// Function: GetData
     /// </summary>
     public unsafe override bool GetData(BmSDK.Engine.OnlinePlayerInterface PlayerInterface, byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataProvider_OnlineProfileSettings.GetData", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetData, "Engine.UIDataProvider_OnlineProfileSettings.GetData");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerInterface, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 16);
@@ -139,12 +144,13 @@ public partial class UIDataProvider_OnlineProfileSettings : BmSDK.Engine.UIDataP
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_WriteData;
     /// <summary>
     /// Function: WriteData
     /// </summary>
     public unsafe override bool WriteData(BmSDK.Engine.OnlinePlayerInterface PlayerInterface, byte LocalUserNum, int DeviceID, BmSDK.Engine.OnlinePlayerStorage PlayerStorage)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataProvider_OnlineProfileSettings.WriteData", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WriteData, "Engine.UIDataProvider_OnlineProfileSettings.WriteData");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerInterface, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 16);
@@ -154,12 +160,13 @@ public partial class UIDataProvider_OnlineProfileSettings : BmSDK.Engine.UIDataP
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_ReadData;
     /// <summary>
     /// Function: ReadData
     /// </summary>
     public unsafe override bool ReadData(BmSDK.Engine.OnlinePlayerInterface PlayerInterface, byte LocalUserNum, int DeviceID, BmSDK.Engine.OnlinePlayerStorage PlayerStorage)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataProvider_OnlineProfileSettings.ReadData", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadData, "Engine.UIDataProvider_OnlineProfileSettings.ReadData");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerInterface, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 16);

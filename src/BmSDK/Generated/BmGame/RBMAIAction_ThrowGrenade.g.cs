@@ -78,46 +78,50 @@ public partial class RBMAIAction_ThrowGrenade : BmSDK.BmGame.RBMAIAction, BmSDK.
         where TComponent : class, Framework.IScriptComponent<RBMAIAction_ThrowGrenade>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ActionTick;
     /// <summary>
     /// Function: ActionTick
     /// </summary>
     public unsafe override BmSDK.BmGame.RBMAIAction.ActionTickResult ActionTick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_ThrowGrenade.ActionTick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActionTick, "BmGame.RBMAIAction_ThrowGrenade.ActionTick");
         byte* paramsPtr = stackalloc byte[5];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMAIAction.ActionTickResult>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_SpawnGrenade;
     /// <summary>
     /// Function: SpawnGrenade
     /// </summary>
     public unsafe virtual void SpawnGrenade()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_ThrowGrenade.SpawnGrenade", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnGrenade, "BmGame.RBMAIAction_ThrowGrenade.SpawnGrenade");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GrabGrenade;
     /// <summary>
     /// Function: GrabGrenade
     /// </summary>
     public unsafe virtual void GrabGrenade()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_ThrowGrenade.GrabGrenade", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GrabGrenade, "BmGame.RBMAIAction_ThrowGrenade.GrabGrenade");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartThrowAnim;
     /// <summary>
     /// Function: StartThrowAnim
     /// </summary>
     public unsafe virtual void StartThrowAnim(System.Numerics.Vector3 ThrowStandPoint, BmSDK.Rotator ThrowRotation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_ThrowGrenade.StartThrowAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartThrowAnim, "BmGame.RBMAIAction_ThrowGrenade.StartThrowAnim");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThrowStandPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThrowRotation, paramsPtr + 12);
@@ -125,34 +129,37 @@ public partial class RBMAIAction_ThrowGrenade : BmSDK.BmGame.RBMAIAction, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_OnDeactivate;
     /// <summary>
     /// Function: OnDeactivate
     /// </summary>
     public unsafe override void OnDeactivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_ThrowGrenade.OnDeactivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeactivate, "BmGame.RBMAIAction_ThrowGrenade.OnDeactivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_ThrowGrenade.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMAIAction_ThrowGrenade.OnActivate");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetThrowParams;
     /// <summary>
     /// Function: SetThrowParams
     /// </summary>
     public unsafe virtual void SetThrowParams(System.Numerics.Vector3 NewVel, System.Numerics.Vector3 NewTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_ThrowGrenade.SetThrowParams", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetThrowParams, "BmGame.RBMAIAction_ThrowGrenade.SetThrowParams");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewVel, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewTarget, paramsPtr + 12);

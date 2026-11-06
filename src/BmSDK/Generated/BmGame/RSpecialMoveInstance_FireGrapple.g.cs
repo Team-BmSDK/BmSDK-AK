@@ -78,23 +78,25 @@ public partial class RSpecialMoveInstance_FireGrapple : BmSDK.BmGame.RSpecialMov
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveInstance_FireGrapple>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetExtraBoostFromPrevVelocity;
     /// <summary>
     /// Function: GetExtraBoostFromPrevVelocity
     /// </summary>
     public unsafe virtual void GetExtraBoostFromPrevVelocity()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_FireGrapple.GetExtraBoostFromPrevVelocity", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetExtraBoostFromPrevVelocity, "BmGame.RSpecialMoveInstance_FireGrapple.GetExtraBoostFromPrevVelocity");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetHelpPrompt;
     /// <summary>
     /// Function: GetHelpPrompt
     /// </summary>
     public unsafe override void GetHelpPrompt(BmSDK.BmGame.RHUDPrompt HelpPrompt, bool bKismetHelpOn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_FireGrapple.GetHelpPrompt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHelpPrompt, "BmGame.RSpecialMoveInstance_FireGrapple.GetHelpPrompt");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HelpPrompt, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bKismetHelpOn, paramsPtr + 8);
@@ -102,91 +104,99 @@ public partial class RSpecialMoveInstance_FireGrapple : BmSDK.BmGame.RSpecialMov
         return;
     }
 
+    private static BmSDK.Function __fn_QueueGrapple;
     /// <summary>
     /// Function: QueueGrapple
     /// </summary>
     public unsafe virtual void QueueGrapple(BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator Loc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_FireGrapple.QueueGrapple", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_QueueGrapple, "BmGame.RSpecialMoveInstance_FireGrapple.QueueGrapple");
         byte* paramsPtr = stackalloc byte[132];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AllowMoveTo;
     /// <summary>
     /// Function: AllowMoveTo
     /// </summary>
     public unsafe override bool AllowMoveTo()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_FireGrapple.AllowMoveTo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowMoveTo, "BmGame.RSpecialMoveInstance_FireGrapple.AllowMoveTo");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_NoBoostTimeout;
     /// <summary>
     /// Function: NoBoostTimeout
     /// </summary>
     public unsafe virtual void NoBoostTimeout()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_FireGrapple.NoBoostTimeout", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NoBoostTimeout, "BmGame.RSpecialMoveInstance_FireGrapple.NoBoostTimeout");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HandleAction;
     /// <summary>
     /// Function: HandleAction
     /// </summary>
     public unsafe override void HandleAction(BmSDK.FName actionName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_FireGrapple.HandleAction", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandleAction, "BmGame.RSpecialMoveInstance_FireGrapple.HandleAction");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(actionName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerFailedEvent;
     /// <summary>
     /// Function: TriggerFailedEvent
     /// </summary>
     public unsafe virtual void TriggerFailedEvent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_FireGrapple.TriggerFailedEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerFailedEvent, "BmGame.RSpecialMoveInstance_FireGrapple.TriggerFailedEvent");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishSpecialMove;
     /// <summary>
     /// Function: FinishSpecialMove
     /// </summary>
     public unsafe override void FinishSpecialMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_FireGrapple.FinishSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishSpecialMove, "BmGame.RSpecialMoveInstance_FireGrapple.FinishSpecialMove");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Launch;
     /// <summary>
     /// Function: Launch
     /// </summary>
     public unsafe virtual void Launch()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_FireGrapple.Launch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Launch, "BmGame.RSpecialMoveInstance_FireGrapple.Launch");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartQueuedMovementAnim;
     /// <summary>
     /// Function: StartQueuedMovementAnim
     /// </summary>
     public unsafe virtual void StartQueuedMovementAnim(BmSDK.BmGame.RAnimUtil_PosePlayer.FTransitionId Id, float TimeLeftOver)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_FireGrapple.StartQueuedMovementAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartQueuedMovementAnim, "BmGame.RSpecialMoveInstance_FireGrapple.StartQueuedMovementAnim");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Id, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TimeLeftOver, paramsPtr + 4);
@@ -194,80 +204,87 @@ public partial class RSpecialMoveInstance_FireGrapple : BmSDK.BmGame.RSpecialMov
         return;
     }
 
+    private static BmSDK.Function __fn_SwitchToGrapplePose;
     /// <summary>
     /// Function: SwitchToGrapplePose
     /// </summary>
     public unsafe virtual void SwitchToGrapplePose()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_FireGrapple.SwitchToGrapplePose", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SwitchToGrapplePose, "BmGame.RSpecialMoveInstance_FireGrapple.SwitchToGrapplePose");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FailGrapple;
     /// <summary>
     /// Function: FailGrapple
     /// </summary>
     public unsafe virtual void FailGrapple()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_FireGrapple.FailGrapple", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FailGrapple, "BmGame.RSpecialMoveInstance_FireGrapple.FailGrapple");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CancelSpecialMove;
     /// <summary>
     /// Function: CancelSpecialMove
     /// </summary>
     public unsafe override void CancelSpecialMove(BmSDK.BmGame.RSpecialMoveConfig NextSpecialMove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_FireGrapple.CancelSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelSpecialMove, "BmGame.RSpecialMoveInstance_FireGrapple.CancelSpecialMove");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NextSpecialMove, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AllowChainGrapple;
     /// <summary>
     /// Function: AllowChainGrapple
     /// </summary>
     public unsafe virtual void AllowChainGrapple()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_FireGrapple.AllowChainGrapple", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowChainGrapple, "BmGame.RSpecialMoveInstance_FireGrapple.AllowChainGrapple");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateSpecialMove;
     /// <summary>
     /// Function: UpdateSpecialMove
     /// </summary>
     public unsafe override bool UpdateSpecialMove(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_FireGrapple.UpdateSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateSpecialMove, "BmGame.RSpecialMoveInstance_FireGrapple.UpdateSpecialMove");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_CalculatePlayerGrappleWeights;
     /// <summary>
     /// Function: CalculatePlayerGrappleWeights
     /// </summary>
     public unsafe virtual void CalculatePlayerGrappleWeights()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_FireGrapple.CalculatePlayerGrappleWeights", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculatePlayerGrappleWeights, "BmGame.RSpecialMoveInstance_FireGrapple.CalculatePlayerGrappleWeights");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerSpecialMove;
     /// <summary>
     /// Function: TriggerSpecialMove
     /// </summary>
     public unsafe override void TriggerSpecialMove(BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator MoveLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_FireGrapple.TriggerSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerSpecialMove, "BmGame.RSpecialMoveInstance_FireGrapple.TriggerSpecialMove");
         byte* paramsPtr = stackalloc byte[264];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

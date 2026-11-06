@@ -78,91 +78,99 @@ public partial class RSeqAct_HelpText : BmSDK.Engine.SequenceAction, BmSDK.IGame
         where TComponent : class, Framework.IScriptComponent<RSeqAct_HelpText>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_HelpText.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmGame.RSeqAct_HelpText.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Deactivated;
     /// <summary>
     /// Function: Deactivated
     /// </summary>
     public unsafe override void Deactivated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_HelpText.Deactivated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Deactivated, "BmGame.RSeqAct_HelpText.Deactivated");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanUseGrapple;
     /// <summary>
     /// Function: CanUseGrapple
     /// </summary>
     public unsafe virtual bool CanUseGrapple()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_HelpText.CanUseGrapple", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanUseGrapple, "BmGame.RSeqAct_HelpText.CanUseGrapple");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Update;
     /// <summary>
     /// Function: Update
     /// </summary>
     public unsafe virtual bool Update(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_HelpText.Update", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Update, "BmGame.RSeqAct_HelpText.Update");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_HelpTextTurnedOff;
     /// <summary>
     /// Function: HelpTextTurnedOff
     /// </summary>
     public unsafe virtual void HelpTextTurnedOff()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_HelpText.HelpTextTurnedOff", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HelpTextTurnedOff, "BmGame.RSeqAct_HelpText.HelpTextTurnedOff");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_HelpText.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmGame.RSeqAct_HelpText.Activated");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ForceMapScreen;
     /// <summary>
     /// Function: ForceMapScreen
     /// </summary>
     public unsafe virtual void ForceMapScreen(BmSDK.BmGame.RPlayerController.MapKeyType Mode)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_HelpText.ForceMapScreen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForceMapScreen, "BmGame.RSeqAct_HelpText.ForceMapScreen");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Mode, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RegisterGadgetRequired;
     /// <summary>
     /// Function: RegisterGadgetRequired
     /// </summary>
     public unsafe virtual void RegisterGadgetRequired(BmSDK.BmGame.RGameInfo.EGameAction Action, BmSDK.BmGame.RGameInfo.EGameAction GadgetAction, BmSDK.FName GadgetClass)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_HelpText.RegisterGadgetRequired", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterGadgetRequired, "BmGame.RSeqAct_HelpText.RegisterGadgetRequired");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GadgetAction, paramsPtr + 1);
@@ -171,36 +179,39 @@ public partial class RSeqAct_HelpText : BmSDK.Engine.SequenceAction, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_GetLine;
     /// <summary>
     /// Function: GetLine
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RHUDPrompt.FHelpLine GetLine(int lineIdx)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_HelpText.GetLine", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLine, "BmGame.RSeqAct_HelpText.GetLine");
         byte* paramsPtr = stackalloc byte[144];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(lineIdx, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RHUDPrompt.FHelpLine>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_CanShowGadgetPrompt;
     /// <summary>
     /// Function: CanShowGadgetPrompt
     /// </summary>
     public unsafe virtual bool CanShowGadgetPrompt(BmSDK.BmGame.RInventoryGadget CurrentGadget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_HelpText.CanShowGadgetPrompt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanShowGadgetPrompt, "BmGame.RSeqAct_HelpText.CanShowGadgetPrompt");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CurrentGadget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_ActionPerformed;
     /// <summary>
     /// Function: ActionPerformed
     /// </summary>
     public unsafe virtual void ActionPerformed(BmSDK.BmGame.RGameInfo.EGameAction Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_HelpText.ActionPerformed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActionPerformed, "BmGame.RSeqAct_HelpText.ActionPerformed");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

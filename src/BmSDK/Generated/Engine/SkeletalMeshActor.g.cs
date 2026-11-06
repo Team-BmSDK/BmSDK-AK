@@ -78,83 +78,90 @@ public partial class SkeletalMeshActor : BmSDK.Engine.Actor, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<SkeletalMeshActor>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CreateForceField;
     /// <summary>
     /// Function: CreateForceField
     /// </summary>
     public unsafe override bool CreateForceField(BmSDK.Engine.AnimNotify_ForceField AnimNotifyData)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.CreateForceField", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateForceField, "Engine.SkeletalMeshActor.CreateForceField");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimNotifyData, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_SkelMeshActorOnParticleSystemFinished;
     /// <summary>
     /// Function: SkelMeshActorOnParticleSystemFinished
     /// </summary>
     public unsafe virtual void SkelMeshActorOnParticleSystemFinished(BmSDK.Engine.ParticleSystemComponent PSC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.SkelMeshActorOnParticleSystemFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SkelMeshActorOnParticleSystemFinished, "Engine.SkeletalMeshActor.SkelMeshActorOnParticleSystemFinished");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PSC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayParticleEffect;
     /// <summary>
     /// Function: PlayParticleEffect
     /// </summary>
     public unsafe override bool PlayParticleEffect(BmSDK.Engine.AnimNotify_PlayParticleEffect AnimNotifyData)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.PlayParticleEffect", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayParticleEffect, "Engine.SkeletalMeshActor.PlayParticleEffect");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimNotifyData, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_ApplyCheckpointRecord;
     /// <summary>
     /// Function: ApplyCheckpointRecord
     /// </summary>
     public unsafe virtual void ApplyCheckpointRecord(out BmSDK.Engine.SkeletalMeshActor.FCheckpointRecord Record)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.ApplyCheckpointRecord", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyCheckpointRecord, "Engine.SkeletalMeshActor.ApplyCheckpointRecord");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Record = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.SkeletalMeshActor.FCheckpointRecord>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CreateCheckpointRecord;
     /// <summary>
     /// Function: CreateCheckpointRecord
     /// </summary>
     public unsafe virtual void CreateCheckpointRecord(out BmSDK.Engine.SkeletalMeshActor.FCheckpointRecord Record)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.CreateCheckpointRecord", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateCheckpointRecord, "Engine.SkeletalMeshActor.CreateCheckpointRecord");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Record = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.SkeletalMeshActor.FCheckpointRecord>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShouldSaveForCheckpoint;
     /// <summary>
     /// Function: ShouldSaveForCheckpoint
     /// </summary>
     public unsafe virtual bool ShouldSaveForCheckpoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.ShouldSaveForCheckpoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldSaveForCheckpoint, "Engine.SkeletalMeshActor.ShouldSaveForCheckpoint");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_TakeDamage;
     /// <summary>
     /// Function: TakeDamage
     /// </summary>
     public unsafe override void TakeDamage(int Damage, BmSDK.Engine.Controller EventInstigator, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 Momentum, BmSDK.Class DamageType, BmSDK.Engine.Actor.FTraceHitInfo HitInfo = default, BmSDK.Engine.Actor DamageCauser = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.TakeDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TakeDamage, "Engine.SkeletalMeshActor.TakeDamage");
         byte* paramsPtr = stackalloc byte[104];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Damage, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventInstigator, paramsPtr + 4);
@@ -167,12 +174,13 @@ public partial class SkeletalMeshActor : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_DoKismetAttachment;
     /// <summary>
     /// Function: DoKismetAttachment
     /// </summary>
     public unsafe override void DoKismetAttachment(BmSDK.Engine.Actor Attachment, BmSDK.Engine.SeqAct_AttachToActor Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.DoKismetAttachment", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoKismetAttachment, "Engine.SkeletalMeshActor.DoKismetAttachment");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Attachment, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 8);
@@ -180,116 +188,126 @@ public partial class SkeletalMeshActor : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ShutDown;
     /// <summary>
     /// Function: ShutDown
     /// </summary>
     public unsafe override void ShutDown()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.ShutDown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShutDown, "Engine.SkeletalMeshActor.ShutDown");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnSetMaterialInstance;
     /// <summary>
     /// Function: OnSetMaterialInstance
     /// </summary>
     public unsafe virtual void OnSetMaterialInstance(BmSDK.Engine.RSeqAct_SetMaterialInstance Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.OnSetMaterialInstance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnSetMaterialInstance, "Engine.SkeletalMeshActor.OnSetMaterialInstance");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnSetSkelControlTarget;
     /// <summary>
     /// Function: OnSetSkelControlTarget
     /// </summary>
     public unsafe virtual void OnSetSkelControlTarget(BmSDK.Engine.SeqAct_SetSkelControlTarget Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.OnSetSkelControlTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnSetSkelControlTarget, "Engine.SkeletalMeshActor.OnSetSkelControlTarget");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnUpdatePhysBonesFromAnim;
     /// <summary>
     /// Function: OnUpdatePhysBonesFromAnim
     /// </summary>
     public unsafe virtual void OnUpdatePhysBonesFromAnim(BmSDK.Engine.SeqAct_UpdatePhysBonesFromAnim Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.OnUpdatePhysBonesFromAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnUpdatePhysBonesFromAnim, "Engine.SkeletalMeshActor.OnUpdatePhysBonesFromAnim");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnSetMesh;
     /// <summary>
     /// Function: OnSetMesh
     /// </summary>
     public unsafe virtual void OnSetMesh(BmSDK.Engine.SeqAct_SetMesh Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.OnSetMesh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnSetMesh, "Engine.SkeletalMeshActor.OnSetMesh");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsActorPlayingFaceFXAnim;
     /// <summary>
     /// Function: IsActorPlayingFaceFXAnim
     /// </summary>
     public unsafe override bool IsActorPlayingFaceFXAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.IsActorPlayingFaceFXAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsActorPlayingFaceFXAnim, "Engine.SkeletalMeshActor.IsActorPlayingFaceFXAnim");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetActorFaceFXAsset;
     /// <summary>
     /// Function: GetActorFaceFXAsset
     /// </summary>
     public unsafe override BmSDK.Engine.FaceFXAsset GetActorFaceFXAsset()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.GetActorFaceFXAsset", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetActorFaceFXAsset, "Engine.SkeletalMeshActor.GetActorFaceFXAsset");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.FaceFXAsset>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_OnPlayFaceFXAnim;
     /// <summary>
     /// Function: OnPlayFaceFXAnim
     /// </summary>
     public unsafe virtual void OnPlayFaceFXAnim(BmSDK.Engine.SeqAct_PlayFaceFXAnim inAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.OnPlayFaceFXAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnPlayFaceFXAnim, "Engine.SkeletalMeshActor.OnPlayFaceFXAnim");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(inAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StopActorFaceFXAnim;
     /// <summary>
     /// Function: StopActorFaceFXAnim
     /// </summary>
     public unsafe override void StopActorFaceFXAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.StopActorFaceFXAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopActorFaceFXAnim, "Engine.SkeletalMeshActor.StopActorFaceFXAnim");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayActorFaceFXAnim;
     /// <summary>
     /// Function: PlayActorFaceFXAnim
     /// </summary>
     public unsafe override bool PlayActorFaceFXAnim(BmSDK.Engine.FaceFXAnimSet AnimSet, BmSDK.FString GroupName, BmSDK.FString SeqName, BmSDK.Engine.SoundCue SoundCueToPlay)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.PlayActorFaceFXAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayActorFaceFXAnim, "Engine.SkeletalMeshActor.PlayActorFaceFXAnim");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimSet, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GroupName, paramsPtr + 8);
@@ -299,12 +317,13 @@ public partial class SkeletalMeshActor : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 48);
     }
 
+    private static BmSDK.Function __fn_MAT_FinishAnimControl;
     /// <summary>
     /// Function: MAT_FinishAnimControl
     /// </summary>
     public unsafe virtual void MAT_FinishAnimControl(BmSDK.Engine.InterpGroup InInterpGroup)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.MAT_FinishAnimControl", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MAT_FinishAnimControl, "Engine.SkeletalMeshActor.MAT_FinishAnimControl");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroup, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -318,12 +337,13 @@ public partial class SkeletalMeshActor : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_FinishAnimControl;
     /// <summary>
     /// Function: FinishAnimControl
     /// </summary>
     public unsafe override void FinishAnimControl(BmSDK.Engine.InterpGroup InInterpGroup, BmSDK.Engine.InterpGroupInst InInterpGroupInst)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.FinishAnimControl", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishAnimControl, "Engine.SkeletalMeshActor.FinishAnimControl");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroup, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroupInst, paramsPtr + 8);
@@ -331,12 +351,13 @@ public partial class SkeletalMeshActor : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetAnimPosition;
     /// <summary>
     /// Function: SetAnimPosition
     /// </summary>
     public unsafe override void SetAnimPosition(BmSDK.Engine.InterpGroupInst InterpGroupInst, BmSDK.FName SlotName, int ChannelIndex, BmSDK.FName InAnimSeqName, float InPosition, bool bFireNotifies, bool bLooping, bool bEnableRootMotion)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.SetAnimPosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAnimPosition, "Engine.SkeletalMeshActor.SetAnimPosition");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InterpGroupInst, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SlotName, paramsPtr + 8);
@@ -350,12 +371,13 @@ public partial class SkeletalMeshActor : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_MAT_BeginAnimControl;
     /// <summary>
     /// Function: MAT_BeginAnimControl
     /// </summary>
     public unsafe virtual void MAT_BeginAnimControl(BmSDK.Engine.InterpGroup InInterpGroup)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.MAT_BeginAnimControl", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MAT_BeginAnimControl, "Engine.SkeletalMeshActor.MAT_BeginAnimControl");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroup, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -369,12 +391,13 @@ public partial class SkeletalMeshActor : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_BeginAnimControl;
     /// <summary>
     /// Function: BeginAnimControl
     /// </summary>
     public unsafe override void BeginAnimControl(BmSDK.Engine.InterpGroup InInterpGroup, BmSDK.Engine.InterpGroupInst InInterpGroupInst)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.BeginAnimControl", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BeginAnimControl, "Engine.SkeletalMeshActor.BeginAnimControl");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroup, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroupInst, paramsPtr + 8);
@@ -382,36 +405,39 @@ public partial class SkeletalMeshActor : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_OnSetMaterial;
     /// <summary>
     /// Function: OnSetMaterial
     /// </summary>
     public unsafe virtual void OnSetMaterial(BmSDK.Engine.SeqAct_SetMaterial Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.OnSetMaterial", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnSetMaterial, "Engine.SkeletalMeshActor.OnSetMaterial");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnToggle;
     /// <summary>
     /// Function: OnToggle
     /// </summary>
     public unsafe virtual void OnToggle(BmSDK.Engine.SeqAct_Toggle Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.OnToggle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggle, "Engine.SkeletalMeshActor.OnToggle");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateAnimSetList;
     /// <summary>
     /// Function: UpdateAnimSetList
     /// </summary>
     public unsafe virtual void UpdateAnimSetList()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.UpdateAnimSetList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateAnimSetList, "Engine.SkeletalMeshActor.UpdateAnimSetList");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -424,34 +450,37 @@ public partial class SkeletalMeshActor : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "Engine.SkeletalMeshActor.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "Engine.SkeletalMeshActor.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetPhysicalCollisionProperties;
     /// <summary>
     /// Function: SetPhysicalCollisionProperties
     /// </summary>
     public unsafe virtual void SetPhysicalCollisionProperties()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkeletalMeshActor.SetPhysicalCollisionProperties", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetPhysicalCollisionProperties, "Engine.SkeletalMeshActor.SetPhysicalCollisionProperties");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

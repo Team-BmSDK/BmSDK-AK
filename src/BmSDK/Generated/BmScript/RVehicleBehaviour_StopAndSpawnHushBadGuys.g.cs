@@ -78,12 +78,13 @@ public partial class RVehicleBehaviour_StopAndSpawnHushBadGuys : BmSDK.BmGame.RV
         where TComponent : class, Framework.IScriptComponent<RVehicleBehaviour_StopAndSpawnHushBadGuys>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RVehicleBehaviour_StopAndSpawnHushBadGuys.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmScript.RVehicleBehaviour_StopAndSpawnHushBadGuys.Tick");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

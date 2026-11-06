@@ -73,12 +73,13 @@ public partial class AkMixManager : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<AkMixManager>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_RemoveMixTemplate;
     /// <summary>
     /// Function: RemoveMixTemplate
     /// </summary>
     public unsafe static void RemoveMixTemplate(BmSDK.Engine.AkMixTemplate MixTemplate, bool forceRemove = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkMixManager.RemoveMixTemplate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveMixTemplate, "Engine.AkMixManager.RemoveMixTemplate");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MixTemplate, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(forceRemove, paramsPtr + 8);
@@ -93,12 +94,13 @@ public partial class AkMixManager : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_AddMixTemplate;
     /// <summary>
     /// Function: AddMixTemplate
     /// </summary>
     public unsafe static void AddMixTemplate(BmSDK.Engine.AkMixTemplate MixTemplate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkMixManager.AddMixTemplate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddMixTemplate, "Engine.AkMixManager.AddMixTemplate");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MixTemplate, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

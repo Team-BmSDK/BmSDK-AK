@@ -78,12 +78,13 @@ public partial class RBMWeaponKnife : BmSDK.BmScript.RBMWeaponKnifeBase, BmSDK.I
         where TComponent : class, Framework.IScriptComponent<RBMWeaponKnife>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetFearTakedownReactionAnimset;
     /// <summary>
     /// Function: GetFearTakedownReactionAnimset
     /// </summary>
     public unsafe override BmSDK.Engine.AnimSet GetFearTakedownReactionAnimset()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponKnife.GetFearTakedownReactionAnimset", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFearTakedownReactionAnimset, "BmScript.RBMWeaponKnife.GetFearTakedownReactionAnimset");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSet>(paramsPtr + 0);

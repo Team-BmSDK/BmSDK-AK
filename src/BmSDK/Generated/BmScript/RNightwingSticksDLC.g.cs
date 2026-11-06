@@ -78,12 +78,13 @@ public partial class RNightwingSticksDLC : BmSDK.BmScript.RNightwingSticks, BmSD
         where TComponent : class, Framework.IScriptComponent<RNightwingSticksDLC>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetGadgetCamera;
     /// <summary>
     /// Function: GetGadgetCamera
     /// </summary>
     public unsafe override BmSDK.FName GetGadgetCamera(bool InSoftCover = default, BmSDK.BmGame.RInventoryGadget.CoverCornerType CornerType = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RNightwingSticksDLC.GetGadgetCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGadgetCamera, "BmScript.RNightwingSticksDLC.GetGadgetCamera");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InSoftCover, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CornerType, paramsPtr + 4);
@@ -91,57 +92,62 @@ public partial class RNightwingSticksDLC : BmSDK.BmScript.RNightwingSticks, BmSD
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_UpdateLaunchSpeculative;
     /// <summary>
     /// Function: UpdateLaunchSpeculative
     /// </summary>
     public unsafe override void UpdateLaunchSpeculative()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RNightwingSticksDLC.UpdateLaunchSpeculative", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateLaunchSpeculative, "BmScript.RNightwingSticksDLC.UpdateLaunchSpeculative");
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateLaunch;
     /// <summary>
     /// Function: UpdateLaunch
     /// </summary>
     public unsafe override void UpdateLaunch()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RNightwingSticksDLC.UpdateLaunch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateLaunch, "BmScript.RNightwingSticksDLC.UpdateLaunch");
         byte* paramsPtr = stackalloc byte[96];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CheckLocForClearance;
     /// <summary>
     /// Function: CheckLocForClearance
     /// </summary>
     public unsafe virtual bool CheckLocForClearance(System.Numerics.Vector3 Loc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RNightwingSticksDLC.CheckLocForClearance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckLocForClearance, "BmScript.RNightwingSticksDLC.CheckLocForClearance");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_FireElectromagneticBlast;
     /// <summary>
     /// Function: FireElectromagneticBlast
     /// </summary>
     public unsafe override void FireElectromagneticBlast()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RNightwingSticksDLC.FireElectromagneticBlast", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireElectromagneticBlast, "BmScript.RNightwingSticksDLC.FireElectromagneticBlast");
         byte* paramsPtr = stackalloc byte[164];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateTargetParticle;
     /// <summary>
     /// Function: UpdateTargetParticle
     /// </summary>
     public unsafe override void UpdateTargetParticle(bool Visible)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RNightwingSticksDLC.UpdateTargetParticle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateTargetParticle, "BmScript.RNightwingSticksDLC.UpdateTargetParticle");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Visible, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

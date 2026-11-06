@@ -78,23 +78,25 @@ public partial class RFreezeClusterGrenadeProjectileBm : BmSDK.BmGame.RFreezeClu
         where TComponent : class, Framework.IScriptComponent<RFreezeClusterGrenadeProjectileBm>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DestroyProjectile;
     /// <summary>
     /// Function: DestroyProjectile
     /// </summary>
     public unsafe override void DestroyProjectile()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFreezeClusterGrenadeProjectileBm.DestroyProjectile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DestroyProjectile, "BmScript.RFreezeClusterGrenadeProjectileBm.DestroyProjectile");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Detonate;
     /// <summary>
     /// Function: Detonate
     /// </summary>
     public unsafe override void Detonate(bool noGroundParticles = default, bool ProximityDetonate = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFreezeClusterGrenadeProjectileBm.Detonate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Detonate, "BmScript.RFreezeClusterGrenadeProjectileBm.Detonate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(noGroundParticles, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProximityDetonate, paramsPtr + 4);
@@ -102,12 +104,13 @@ public partial class RFreezeClusterGrenadeProjectileBm : BmSDK.BmGame.RFreezeClu
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnSmallIceSphere;
     /// <summary>
     /// Function: SpawnSmallIceSphere
     /// </summary>
     public unsafe override BmSDK.Engine.Actor SpawnSmallIceSphere(System.Numerics.Vector3 SpawnLocation, BmSDK.Rotator SpawnRotation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFreezeClusterGrenadeProjectileBm.SpawnSmallIceSphere", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnSmallIceSphere, "BmScript.RFreezeClusterGrenadeProjectileBm.SpawnSmallIceSphere");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnRotation, paramsPtr + 12);

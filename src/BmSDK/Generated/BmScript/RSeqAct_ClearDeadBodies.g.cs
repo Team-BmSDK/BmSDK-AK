@@ -78,35 +78,38 @@ public partial class RSeqAct_ClearDeadBodies : BmSDK.Engine.SeqAct_Latent, BmSDK
         where TComponent : class, Framework.IScriptComponent<RSeqAct_ClearDeadBodies>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_ClearDeadBodies.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmScript.RSeqAct_ClearDeadBodies.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Update;
     /// <summary>
     /// Function: Update
     /// </summary>
     public unsafe override bool Update(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_ClearDeadBodies.Update", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Update, "BmScript.RSeqAct_ClearDeadBodies.Update");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_ClearBodies;
     /// <summary>
     /// Function: ClearBodies
     /// </summary>
     public unsafe virtual void ClearBodies(int numDead, int numClear)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_ClearDeadBodies.ClearBodies", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearBodies, "BmScript.RSeqAct_ClearDeadBodies.ClearBodies");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(numDead, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(numClear, paramsPtr + 4);
@@ -114,12 +117,13 @@ public partial class RSeqAct_ClearDeadBodies : BmSDK.Engine.SeqAct_Latent, BmSDK
         return;
     }
 
+    private static BmSDK.Function __fn_IsOffScreen;
     /// <summary>
     /// Function: IsOffScreen
     /// </summary>
     public unsafe virtual bool IsOffScreen(BmSDK.Engine.Actor Pawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_ClearDeadBodies.IsOffScreen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsOffScreen, "BmScript.RSeqAct_ClearDeadBodies.IsOffScreen");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Pawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

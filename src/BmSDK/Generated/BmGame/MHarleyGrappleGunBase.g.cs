@@ -73,35 +73,38 @@ public partial class MHarleyGrappleGunBase : BmSDK.BmGame.RGrappleGun, BmSDK.IGa
         where TComponent : class, Framework.IScriptComponent<MHarleyGrappleGunBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_TriggerPounce;
     /// <summary>
     /// Function: TriggerPounce
     /// </summary>
     public unsafe virtual bool TriggerPounce(bool bTryQueuedGrapple = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MHarleyGrappleGunBase.TriggerPounce", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerPounce, "BmGame.MHarleyGrappleGunBase.TriggerPounce");
         byte* paramsPtr = stackalloc byte[248];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bTryQueuedGrapple, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_TriggerGrateThrough;
     /// <summary>
     /// Function: TriggerGrateThrough
     /// </summary>
     public unsafe virtual void TriggerGrateThrough()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MHarleyGrappleGunBase.TriggerGrateThrough", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerGrateThrough, "BmGame.MHarleyGrappleGunBase.TriggerGrateThrough");
         byte* paramsPtr = stackalloc byte[140];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Grapple;
     /// <summary>
     /// Function: Grapple
     /// </summary>
     public unsafe override bool Grapple(BmSDK.BmGame.RSpecialMoveConfig OverrideGrappleMove = default, bool bForceSucced = default, bool bTryQueuedGrapple = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MHarleyGrappleGunBase.Grapple", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Grapple, "BmGame.MHarleyGrappleGunBase.Grapple");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverrideGrappleMove, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForceSucced, paramsPtr + 8);

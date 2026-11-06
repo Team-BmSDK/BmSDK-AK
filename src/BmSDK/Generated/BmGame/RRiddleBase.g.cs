@@ -78,12 +78,13 @@ public partial class RRiddleBase : BmSDK.Engine.Actor, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RRiddleBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CheckVisibility;
     /// <summary>
     /// Function: CheckVisibility
     /// </summary>
     public unsafe virtual bool CheckVisibility(BmSDK.GameObject.FTPOV CameraPOV, out BmSDK.BmGame.RGameInfo.FVisibilityResult ReasonItFailed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRiddleBase.CheckVisibility", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckVisibility, "BmGame.RRiddleBase.CheckVisibility");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CameraPOV, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -91,12 +92,13 @@ public partial class RRiddleBase : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 48);
     }
 
+    private static BmSDK.Function __fn_GenerateScanEvent;
     /// <summary>
     /// Function: GenerateScanEvent
     /// </summary>
     public unsafe virtual void GenerateScanEvent(BmSDK.BmGame.RPlayerController RPC, int OutputIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRiddleBase.GenerateScanEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GenerateScanEvent, "BmGame.RRiddleBase.GenerateScanEvent");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RPC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OutputIndex, paramsPtr + 8);
@@ -104,92 +106,100 @@ public partial class RRiddleBase : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_TakePhoto;
     /// <summary>
     /// Function: TakePhoto
     /// </summary>
     public unsafe virtual void TakePhoto(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRiddleBase.TakePhoto", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TakePhoto, "BmGame.RRiddleBase.TakePhoto");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetPickedUpName;
     /// <summary>
     /// Function: GetPickedUpName
     /// </summary>
     public unsafe virtual BmSDK.FString GetPickedUpName()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRiddleBase.GetPickedUpName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPickedUpName, "BmGame.RRiddleBase.GetPickedUpName");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetMapVisibleName;
     /// <summary>
     /// Function: GetMapVisibleName
     /// </summary>
     public unsafe virtual BmSDK.FString GetMapVisibleName()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRiddleBase.GetMapVisibleName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMapVisibleName, "BmGame.RRiddleBase.GetMapVisibleName");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetLevelName;
     /// <summary>
     /// Function: GetLevelName
     /// </summary>
     public unsafe virtual BmSDK.FString GetLevelName()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRiddleBase.GetLevelName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLevelName, "BmGame.RRiddleBase.GetLevelName");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRiddleBase.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RRiddleBase.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RiddleReScanned;
     /// <summary>
     /// Function: RiddleReScanned
     /// </summary>
     public unsafe virtual void RiddleReScanned(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRiddleBase.RiddleReScanned", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RiddleReScanned, "BmGame.RRiddleBase.RiddleReScanned");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RiddleFound;
     /// <summary>
     /// Function: RiddleFound
     /// </summary>
     public unsafe virtual void RiddleFound(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRiddleBase.RiddleFound", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RiddleFound, "BmGame.RRiddleBase.RiddleFound");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetObjectName;
     /// <summary>
     /// Function: GetObjectName
     /// </summary>
     public unsafe virtual BmSDK.FString GetObjectName()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRiddleBase.GetObjectName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjectName, "BmGame.RRiddleBase.GetObjectName");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);

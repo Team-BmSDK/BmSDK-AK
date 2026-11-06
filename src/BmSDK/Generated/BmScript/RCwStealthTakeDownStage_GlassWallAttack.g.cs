@@ -78,12 +78,13 @@ public partial class RCwStealthTakeDownStage_GlassWallAttack : BmSDK.BmGame.RSte
         where TComponent : class, Framework.IScriptComponent<RCwStealthTakeDownStage_GlassWallAttack>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OverrideChosenAnim;
     /// <summary>
     /// Function: OverrideChosenAnim
     /// </summary>
     public unsafe override void OverrideChosenAnim(out int Anim)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCwStealthTakeDownStage_GlassWallAttack.OverrideChosenAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverrideChosenAnim, "BmScript.RCwStealthTakeDownStage_GlassWallAttack.OverrideChosenAnim");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Anim = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);

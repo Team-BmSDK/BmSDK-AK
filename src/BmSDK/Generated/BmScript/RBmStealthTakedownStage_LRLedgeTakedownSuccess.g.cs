@@ -78,12 +78,13 @@ public partial class RBmStealthTakedownStage_LRLedgeTakedownSuccess : BmSDK.BmGa
         where TComponent : class, Framework.IScriptComponent<RBmStealthTakedownStage_LRLedgeTakedownSuccess>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GotoStageEx;
     /// <summary>
     /// Function: GotoStageEx
     /// </summary>
     public unsafe override void GotoStageEx(BmSDK.BmGame.RGameInfo.EStealthTakeDownStages NextStageClass, bool bClientRequest = default, BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator EscapeLoc = default, bool bEscapeTakedown = default, bool bNextStageIsFearTakedown = default, bool bNextStageIsKnockoutSmash = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBmStealthTakedownStage_LRLedgeTakedownSuccess.GotoStageEx", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GotoStageEx, "BmScript.RBmStealthTakedownStage_LRLedgeTakedownSuccess.GotoStageEx");
         byte* paramsPtr = stackalloc byte[152];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NextStageClass, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bClientRequest, paramsPtr + 4);

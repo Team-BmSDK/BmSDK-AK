@@ -78,23 +78,25 @@ public partial class RPollenStaticMeshActor : BmSDK.Engine.DynamicSMActor, BmSDK
         where TComponent : class, Framework.IScriptComponent<RPollenStaticMeshActor>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CreateResources;
     /// <summary>
     /// Function: CreateResources
     /// </summary>
     public unsafe virtual void CreateResources()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RPollenStaticMeshActor.CreateResources", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateResources, "Engine.RPollenStaticMeshActor.CreateResources");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RPollenStaticMeshActor.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "Engine.RPollenStaticMeshActor.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

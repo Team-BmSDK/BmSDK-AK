@@ -78,56 +78,61 @@ public partial class RSeqAct_StartGauntletMovie : BmSDK.BmGame.RSeqAct_StartGaun
         where TComponent : class, Framework.IScriptComponent<RSeqAct_StartGauntletMovie>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_StartGauntletMovie.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmScript.RSeqAct_StartGauntletMovie.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ResolvePortraitNames;
     /// <summary>
     /// Function: ResolvePortraitNames
     /// </summary>
     public unsafe virtual BmSDK.FString ResolvePortraitNames()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_StartGauntletMovie.ResolvePortraitNames", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResolvePortraitNames, "BmScript.RSeqAct_StartGauntletMovie.ResolvePortraitNames");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_StartGauntletMovie.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmScript.RSeqAct_StartGauntletMovie.Activated");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EndMovie;
     /// <summary>
     /// Function: EndMovie
     /// </summary>
     public unsafe virtual void EndMovie()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_StartGauntletMovie.EndMovie", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EndMovie, "BmScript.RSeqAct_StartGauntletMovie.EndMovie");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartMovie;
     /// <summary>
     /// Function: StartMovie
     /// </summary>
     public unsafe virtual void StartMovie(bool bAutoPause)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_StartGauntletMovie.StartMovie", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartMovie, "BmScript.RSeqAct_StartGauntletMovie.StartMovie");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAutoPause, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

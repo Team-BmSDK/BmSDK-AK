@@ -78,35 +78,38 @@ public partial class RBMBehaviour_CityRunAwayBase : BmSDK.BmGame.RBMBehaviour_Ga
         where TComponent : class, Framework.IScriptComponent<RBMBehaviour_CityRunAwayBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DebugBatmobileCollision;
     /// <summary>
     /// Function: DebugBatmobileCollision
     /// </summary>
     public unsafe virtual void DebugBatmobileCollision(BmSDK.BmGame.RVehicleBatmobileBase Bmbl)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.DebugBatmobileCollision", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DebugBatmobileCollision, "BmGame.RBMBehaviour_CityRunAwayBase.DebugBatmobileCollision");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Bmbl, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RiotSuppressorShouldKO;
     /// <summary>
     /// Function: RiotSuppressorShouldKO
     /// </summary>
     public unsafe override bool RiotSuppressorShouldKO()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.RiotSuppressorShouldKO", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RiotSuppressorShouldKO, "BmGame.RBMBehaviour_CityRunAwayBase.RiotSuppressorShouldKO");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_AwareOfPlayer;
     /// <summary>
     /// Function: AwareOfPlayer
     /// </summary>
     public unsafe override bool AwareOfPlayer(BmSDK.Engine.Actor Player, BmSDK.Class dmgType = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.AwareOfPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AwareOfPlayer, "BmGame.RBMBehaviour_CityRunAwayBase.AwareOfPlayer");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 8);
@@ -114,69 +117,75 @@ public partial class RBMBehaviour_CityRunAwayBase : BmSDK.BmGame.RBMBehaviour_Ga
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_IsFacingAvoidActor;
     /// <summary>
     /// Function: IsFacingAvoidActor
     /// </summary>
     public unsafe virtual bool IsFacingAvoidActor()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.IsFacingAvoidActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsFacingAvoidActor, "BmGame.RBMBehaviour_CityRunAwayBase.IsFacingAvoidActor");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_DrawRunAwayPathDebug;
     /// <summary>
     /// Function: DrawRunAwayPathDebug
     /// </summary>
     public unsafe virtual void DrawRunAwayPathDebug()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.DrawRunAwayPathDebug", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DrawRunAwayPathDebug, "BmGame.RBMBehaviour_CityRunAwayBase.DrawRunAwayPathDebug");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShouldStopRunning;
     /// <summary>
     /// Function: ShouldStopRunning
     /// </summary>
     public unsafe virtual bool ShouldStopRunning(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.ShouldStopRunning", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldStopRunning, "BmGame.RBMBehaviour_CityRunAwayBase.ShouldStopRunning");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_TrimLinksBasedOnLocation;
     /// <summary>
     /// Function: TrimLinksBasedOnLocation
     /// </summary>
     public unsafe virtual bool TrimLinksBasedOnLocation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.TrimLinksBasedOnLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TrimLinksBasedOnLocation, "BmGame.RBMBehaviour_CityRunAwayBase.TrimLinksBasedOnLocation");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsInLink;
     /// <summary>
     /// Function: IsInLink
     /// </summary>
     public unsafe virtual bool IsInLink(int LinkId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.IsInLink", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInLink, "BmGame.RBMBehaviour_CityRunAwayBase.IsInLink");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_OverrideGetupStances;
     /// <summary>
     /// Function: OverrideGetupStances
     /// </summary>
     public unsafe override bool OverrideGetupStances(out BmSDK.FName MovementStance, out BmSDK.FName WeaponStance)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.OverrideGetupStances", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverrideGetupStances, "BmGame.RBMBehaviour_CityRunAwayBase.OverrideGetupStances");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         MovementStance = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
@@ -184,12 +193,13 @@ public partial class RBMBehaviour_CityRunAwayBase : BmSDK.BmGame.RBMBehaviour_Ga
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_StartNextMoveToAction;
     /// <summary>
     /// Function: StartNextMoveToAction
     /// </summary>
     public unsafe virtual bool StartNextMoveToAction(bool bReachedPoint = default, bool bFindNextPoint = default, bool bDirectMove = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.StartNextMoveToAction", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartNextMoveToAction, "BmGame.RBMBehaviour_CityRunAwayBase.StartNextMoveToAction");
         byte* paramsPtr = stackalloc byte[76];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bReachedPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bFindNextPoint, paramsPtr + 4);
@@ -198,47 +208,51 @@ public partial class RBMBehaviour_CityRunAwayBase : BmSDK.BmGame.RBMBehaviour_Ga
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_RemoveCloseLocationsFromList;
     /// <summary>
     /// Function: RemoveCloseLocationsFromList
     /// </summary>
     public unsafe virtual void RemoveCloseLocationsFromList(out BmSDK.TArray<System.Numerics.Vector3> LocationList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.RemoveCloseLocationsFromList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveCloseLocationsFromList, "BmGame.RBMBehaviour_CityRunAwayBase.RemoveCloseLocationsFromList");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         LocationList = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<System.Numerics.Vector3>>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SnapPointToNavMesh;
     /// <summary>
     /// Function: SnapPointToNavMesh
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 SnapPointToNavMesh(System.Numerics.Vector3 SnapPoint)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.SnapPointToNavMesh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SnapPointToNavMesh, "BmGame.RBMBehaviour_CityRunAwayBase.SnapPointToNavMesh");
         byte* paramsPtr = stackalloc byte[72];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SnapPoint, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_CalculateGoalPos;
     /// <summary>
     /// Function: CalculateGoalPos
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 CalculateGoalPos()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.CalculateGoalPos", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculateGoalPos, "BmGame.RBMBehaviour_CityRunAwayBase.CalculateGoalPos");
         byte* paramsPtr = stackalloc byte[204];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetNextRunAwayPoint;
     /// <summary>
     /// Function: GetNextRunAwayPoint
     /// </summary>
     public unsafe virtual bool GetNextRunAwayPoint(bool bReachedPoint = default, bool bForceReevaluate = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.GetNextRunAwayPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNextRunAwayPoint, "BmGame.RBMBehaviour_CityRunAwayBase.GetNextRunAwayPoint");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bReachedPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForceReevaluate, paramsPtr + 4);
@@ -246,23 +260,25 @@ public partial class RBMBehaviour_CityRunAwayBase : BmSDK.BmGame.RBMBehaviour_Ga
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_SetCurrentLinkFromNetwork;
     /// <summary>
     /// Function: SetCurrentLinkFromNetwork
     /// </summary>
     public unsafe virtual bool SetCurrentLinkFromNetwork()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.SetCurrentLinkFromNetwork", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCurrentLinkFromNetwork, "BmGame.RBMBehaviour_CityRunAwayBase.SetCurrentLinkFromNetwork");
         byte* paramsPtr = stackalloc byte[72];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetRunAwayScoreForPoint;
     /// <summary>
     /// Function: GetRunAwayScoreForPoint
     /// </summary>
     public unsafe virtual float GetRunAwayScoreForPoint(int TestRoadPointIndex, out BmSDK.TArray<System.Numerics.Vector3> ThreatDirections)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.GetRunAwayScoreForPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRunAwayScoreForPoint, "BmGame.RBMBehaviour_CityRunAwayBase.GetRunAwayScoreForPoint");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestRoadPointIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -270,56 +286,61 @@ public partial class RBMBehaviour_CityRunAwayBase : BmSDK.BmGame.RBMBehaviour_Ga
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_ChooseNextRoadLink;
     /// <summary>
     /// Function: ChooseNextRoadLink
     /// </summary>
     public unsafe virtual void ChooseNextRoadLink()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.ChooseNextRoadLink", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ChooseNextRoadLink, "BmGame.RBMBehaviour_CityRunAwayBase.ChooseNextRoadLink");
         byte* paramsPtr = stackalloc byte[216];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsVillainInPositionToPlayFleeBark;
     /// <summary>
     /// Function: IsVillainInPositionToPlayFleeBark
     /// </summary>
     public unsafe virtual bool IsVillainInPositionToPlayFleeBark()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.IsVillainInPositionToPlayFleeBark", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsVillainInPositionToPlayFleeBark, "BmGame.RBMBehaviour_CityRunAwayBase.IsVillainInPositionToPlayFleeBark");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PlayFleeReaction;
     /// <summary>
     /// Function: PlayFleeReaction
     /// </summary>
     public unsafe virtual void PlayFleeReaction()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.PlayFleeReaction", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayFleeReaction, "BmGame.RBMBehaviour_CityRunAwayBase.PlayFleeReaction");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetMoveLocation;
     /// <summary>
     /// Function: GetMoveLocation
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetMoveLocation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.GetMoveLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMoveLocation, "BmGame.RBMBehaviour_CityRunAwayBase.GetMoveLocation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetEvadeVehicleType;
     /// <summary>
     /// Function: GetEvadeVehicleType
     /// </summary>
     public unsafe override BmSDK.BmGame.RGameInfo.EEvadeVehicleType GetEvadeVehicleType(BmSDK.Engine.Actor V, float VehicleSpeed, bool bZap)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.GetEvadeVehicleType", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetEvadeVehicleType, "BmGame.RBMBehaviour_CityRunAwayBase.GetEvadeVehicleType");
         byte* paramsPtr = stackalloc byte[17];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(V, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VehicleSpeed, paramsPtr + 8);
@@ -328,125 +349,136 @@ public partial class RBMBehaviour_CityRunAwayBase : BmSDK.BmGame.RBMBehaviour_Ga
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameInfo.EEvadeVehicleType>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_UpdateThreatAndDestroyCheck;
     /// <summary>
     /// Function: UpdateThreatAndDestroyCheck
     /// </summary>
     public unsafe virtual bool UpdateThreatAndDestroyCheck(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.UpdateThreatAndDestroyCheck", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateThreatAndDestroyCheck, "BmGame.RBMBehaviour_CityRunAwayBase.UpdateThreatAndDestroyCheck");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_OnEndInterrupt;
     /// <summary>
     /// Function: OnEndInterrupt
     /// </summary>
     public unsafe override void OnEndInterrupt()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.OnEndInterrupt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnEndInterrupt, "BmGame.RBMBehaviour_CityRunAwayBase.OnEndInterrupt");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnBeginInterrupt;
     /// <summary>
     /// Function: OnBeginInterrupt
     /// </summary>
     public unsafe override void OnBeginInterrupt()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.OnBeginInterrupt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnBeginInterrupt, "BmGame.RBMBehaviour_CityRunAwayBase.OnBeginInterrupt");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ForceIntoCombat;
     /// <summary>
     /// Function: ForceIntoCombat
     /// </summary>
     public unsafe virtual void ForceIntoCombat()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.ForceIntoCombat", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForceIntoCombat, "BmGame.RBMBehaviour_CityRunAwayBase.ForceIntoCombat");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ForceNearbyThugsIntoCombat;
     /// <summary>
     /// Function: ForceNearbyThugsIntoCombat
     /// </summary>
     public unsafe virtual void ForceNearbyThugsIntoCombat()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.ForceNearbyThugsIntoCombat", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForceNearbyThugsIntoCombat, "BmGame.RBMBehaviour_CityRunAwayBase.ForceNearbyThugsIntoCombat");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShouldForceIntoCombat;
     /// <summary>
     /// Function: ShouldForceIntoCombat
     /// </summary>
     public unsafe virtual bool ShouldForceIntoCombat()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.ShouldForceIntoCombat", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldForceIntoCombat, "BmGame.RBMBehaviour_CityRunAwayBase.ShouldForceIntoCombat");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetMovementSpeed;
     /// <summary>
     /// Function: SetMovementSpeed
     /// </summary>
     public unsafe virtual bool SetMovementSpeed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.SetMovementSpeed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMovementSpeed, "BmGame.RBMBehaviour_CityRunAwayBase.SetMovementSpeed");
         byte* paramsPtr = stackalloc byte[5];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_TickIsDisabledStateChanged;
     /// <summary>
     /// Function: TickIsDisabledStateChanged
     /// </summary>
     public unsafe override void TickIsDisabledStateChanged(bool bTickIsDisabled)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.TickIsDisabledStateChanged", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TickIsDisabledStateChanged, "BmGame.RBMBehaviour_CityRunAwayBase.TickIsDisabledStateChanged");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bTickIsDisabled, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetRunVariants;
     /// <summary>
     /// Function: SetRunVariants
     /// </summary>
     public unsafe virtual void SetRunVariants(BmSDK.BmGame.RBMAIAction_RiotRunBase MoveAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.SetRunVariants", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRunVariants, "BmGame.RBMBehaviour_CityRunAwayBase.SetRunVariants");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnDeactivate;
     /// <summary>
     /// Function: OnDeactivate
     /// </summary>
     public unsafe override void OnDeactivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.OnDeactivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeactivate, "BmGame.RBMBehaviour_CityRunAwayBase.OnDeactivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_CityRunAwayBase.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMBehaviour_CityRunAwayBase.OnActivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

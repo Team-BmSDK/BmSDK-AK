@@ -73,12 +73,13 @@ public partial class ParticleEventManager : BmSDK.Engine.Actor, BmSDK.IGameObjec
         where TComponent : class, Framework.IScriptComponent<ParticleEventManager>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_HandleParticleModuleEventSendToGame;
     /// <summary>
     /// Function: HandleParticleModuleEventSendToGame
     /// </summary>
     public unsafe virtual void HandleParticleModuleEventSendToGame(BmSDK.Engine.ParticleModuleEventSendToGame InEvent, out System.Numerics.Vector3 InCollideDirection, out System.Numerics.Vector3 InHitLocation, out System.Numerics.Vector3 InHitNormal, out BmSDK.FName InBoneName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ParticleEventManager.HandleParticleModuleEventSendToGame", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandleParticleModuleEventSendToGame, "Engine.ParticleEventManager.HandleParticleModuleEventSendToGame");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InEvent, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

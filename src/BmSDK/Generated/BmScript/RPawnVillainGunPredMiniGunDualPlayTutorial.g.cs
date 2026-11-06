@@ -78,24 +78,26 @@ public partial class RPawnVillainGunPredMiniGunDualPlayTutorial : BmSDK.BmScript
         where TComponent : class, Framework.IScriptComponent<RPawnVillainGunPredMiniGunDualPlayTutorial>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CanBeHitInCombat;
     /// <summary>
     /// Function: CanBeHitInCombat
     /// </summary>
     public unsafe override bool CanBeHitInCombat(BmSDK.BmGame.RDamageType DamageType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainGunPredMiniGunDualPlayTutorial.CanBeHitInCombat", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeHitInCombat, "BmScript.RPawnVillainGunPredMiniGunDualPlayTutorial.CanBeHitInCombat");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageType, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_ShouldMiss;
     /// <summary>
     /// Function: ShouldMiss
     /// </summary>
     public unsafe override bool ShouldMiss(float TestDistSq, BmSDK.Engine.Actor TrackedTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainGunPredMiniGunDualPlayTutorial.ShouldMiss", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldMiss, "BmScript.RPawnVillainGunPredMiniGunDualPlayTutorial.ShouldMiss");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestDistSq, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TrackedTarget, paramsPtr + 4);
@@ -103,12 +105,13 @@ public partial class RPawnVillainGunPredMiniGunDualPlayTutorial : BmSDK.BmScript
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_ActionStanceUpdated;
     /// <summary>
     /// Function: ActionStanceUpdated
     /// </summary>
     public unsafe override void ActionStanceUpdated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainGunPredMiniGunDualPlayTutorial.ActionStanceUpdated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActionStanceUpdated, "BmScript.RPawnVillainGunPredMiniGunDualPlayTutorial.ActionStanceUpdated");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

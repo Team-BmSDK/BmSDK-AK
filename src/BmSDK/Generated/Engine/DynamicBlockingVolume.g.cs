@@ -78,36 +78,39 @@ public partial class DynamicBlockingVolume : BmSDK.Engine.BlockingVolume, BmSDK.
         where TComponent : class, Framework.IScriptComponent<DynamicBlockingVolume>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ApplyCheckpointRecord;
     /// <summary>
     /// Function: ApplyCheckpointRecord
     /// </summary>
     public unsafe virtual void ApplyCheckpointRecord(out BmSDK.Engine.DynamicBlockingVolume.FCheckpointRecord Record)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DynamicBlockingVolume.ApplyCheckpointRecord", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyCheckpointRecord, "Engine.DynamicBlockingVolume.ApplyCheckpointRecord");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Record = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.DynamicBlockingVolume.FCheckpointRecord>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CreateCheckpointRecord;
     /// <summary>
     /// Function: CreateCheckpointRecord
     /// </summary>
     public unsafe virtual void CreateCheckpointRecord(out BmSDK.Engine.DynamicBlockingVolume.FCheckpointRecord Record)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DynamicBlockingVolume.CreateCheckpointRecord", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateCheckpointRecord, "Engine.DynamicBlockingVolume.CreateCheckpointRecord");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Record = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.DynamicBlockingVolume.FCheckpointRecord>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DynamicBlockingVolume.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "Engine.DynamicBlockingVolume.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

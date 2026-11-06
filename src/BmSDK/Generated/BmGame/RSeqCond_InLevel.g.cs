@@ -78,23 +78,25 @@ public partial class RSeqCond_InLevel : BmSDK.Engine.SequenceCondition, BmSDK.IG
         where TComponent : class, Framework.IScriptComponent<RSeqCond_InLevel>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqCond_InLevel.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmGame.RSeqCond_InLevel.Activated");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsInLevel;
     /// <summary>
     /// Function: IsInLevel
     /// </summary>
     public unsafe virtual bool IsInLevel(BmSDK.FName Level)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqCond_InLevel.IsInLevel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInLevel, "BmGame.RSeqCond_InLevel.IsInLevel");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Level, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

@@ -73,12 +73,13 @@ public partial class HttpResponseInterface : BmSDK.Engine.HttpBaseInterface, BmS
         where TComponent : class, Framework.IScriptComponent<HttpResponseInterface>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetContentAsString;
     /// <summary>
     /// Function: GetContentAsString
     /// </summary>
     public unsafe virtual BmSDK.FString GetContentAsString()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.HttpResponseInterface.GetContentAsString", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetContentAsString, "Engine.HttpResponseInterface.GetContentAsString");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -91,12 +92,13 @@ public partial class HttpResponseInterface : BmSDK.Engine.HttpBaseInterface, BmS
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetResponseCode;
     /// <summary>
     /// Function: GetResponseCode
     /// </summary>
     public unsafe virtual int GetResponseCode()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.HttpResponseInterface.GetResponseCode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetResponseCode, "Engine.HttpResponseInterface.GetResponseCode");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

@@ -78,12 +78,13 @@ public partial class SceneCapture2DComponent : BmSDK.Engine.SceneCaptureComponen
         where TComponent : class, Framework.IScriptComponent<SceneCapture2DComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetView;
     /// <summary>
     /// Function: SetView
     /// </summary>
     public unsafe virtual void SetView(System.Numerics.Vector3 NewLocation, BmSDK.Rotator NewRotation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SceneCapture2DComponent.SetView", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetView, "Engine.SceneCapture2DComponent.SetView");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewRotation, paramsPtr + 12);
@@ -98,12 +99,13 @@ public partial class SceneCapture2DComponent : BmSDK.Engine.SceneCaptureComponen
         return;
     }
 
+    private static BmSDK.Function __fn_SetCaptureParameters;
     /// <summary>
     /// Function: SetCaptureParameters
     /// </summary>
     public unsafe virtual void SetCaptureParameters(BmSDK.Engine.TextureRenderTarget2D NewTextureTarget = default, float NewFOV = default, float NewNearPlane = default, float NewFarPlane = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SceneCapture2DComponent.SetCaptureParameters", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCaptureParameters, "Engine.SceneCapture2DComponent.SetCaptureParameters");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewTextureTarget, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewFOV, paramsPtr + 8);

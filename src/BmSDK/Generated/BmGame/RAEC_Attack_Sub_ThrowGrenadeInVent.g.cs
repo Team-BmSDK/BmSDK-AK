@@ -78,12 +78,13 @@ public partial class RAEC_Attack_Sub_ThrowGrenadeInVent : BmSDK.BmGame.RAlertEve
         where TComponent : class, Framework.IScriptComponent<RAEC_Attack_Sub_ThrowGrenadeInVent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_AssignVent;
     /// <summary>
     /// Function: AssignVent
     /// </summary>
     public unsafe virtual void AssignVent(System.Numerics.Vector3 NewStandPoint, BmSDK.BmGame.RTunnelFunnel NewVentGrenadeTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Sub_ThrowGrenadeInVent.AssignVent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AssignVent, "BmGame.RAEC_Attack_Sub_ThrowGrenadeInVent.AssignVent");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewStandPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewVentGrenadeTarget, paramsPtr + 12);
@@ -91,12 +92,13 @@ public partial class RAEC_Attack_Sub_ThrowGrenadeInVent : BmSDK.BmGame.RAlertEve
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyEvent;
     /// <summary>
     /// Function: NotifyEvent
     /// </summary>
     public unsafe override void NotifyEvent(BmSDK.BmGame.RBMAIAction EventAction, BmSDK.FString EventType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Sub_ThrowGrenadeInVent.NotifyEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyEvent, "BmGame.RAEC_Attack_Sub_ThrowGrenadeInVent.NotifyEvent");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventAction, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventType, paramsPtr + 8);
@@ -104,24 +106,26 @@ public partial class RAEC_Attack_Sub_ThrowGrenadeInVent : BmSDK.BmGame.RAlertEve
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyFailed;
     /// <summary>
     /// Function: NotifyFailed
     /// </summary>
     public unsafe override void NotifyFailed(BmSDK.BmGame.RBMAIAction FinishedAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Sub_ThrowGrenadeInVent.NotifyFailed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyFailed, "BmGame.RAEC_Attack_Sub_ThrowGrenadeInVent.NotifyFailed");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FinishedAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyFinished;
     /// <summary>
     /// Function: NotifyFinished
     /// </summary>
     public unsafe override void NotifyFinished(BmSDK.BmGame.RBMAIAction FinishedAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Sub_ThrowGrenadeInVent.NotifyFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyFinished, "BmGame.RAEC_Attack_Sub_ThrowGrenadeInVent.NotifyFinished");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FinishedAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

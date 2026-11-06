@@ -73,102 +73,111 @@ public partial class RJokerSwappableBase : BmSDK.Engine.StaticMeshActor, BmSDK.I
         where TComponent : class, Framework.IScriptComponent<RJokerSwappableBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerSwappableBase.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmGame.RJokerSwappableBase.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerSwappableBase.PreStreamOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmGame.RJokerSwappableBase.PreStreamOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreBeginPlay;
     /// <summary>
     /// Function: PreBeginPlay
     /// </summary>
     public unsafe override void PreBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerSwappableBase.PreBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreBeginPlay, "BmGame.RJokerSwappableBase.PreBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UnForce;
     /// <summary>
     /// Function: UnForce
     /// </summary>
     public unsafe virtual void UnForce()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerSwappableBase.UnForce", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnForce, "BmGame.RJokerSwappableBase.UnForce");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SwapToOriginalVersion;
     /// <summary>
     /// Function: SwapToOriginalVersion
     /// </summary>
     public unsafe virtual void SwapToOriginalVersion(bool bForce = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerSwappableBase.SwapToOriginalVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SwapToOriginalVersion, "BmGame.RJokerSwappableBase.SwapToOriginalVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForce, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SwapToJokerVersion;
     /// <summary>
     /// Function: SwapToJokerVersion
     /// </summary>
     public unsafe virtual void SwapToJokerVersion(bool bForce = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerSwappableBase.SwapToJokerVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SwapToJokerVersion, "BmGame.RJokerSwappableBase.SwapToJokerVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForce, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Swap;
     /// <summary>
     /// Function: Swap
     /// </summary>
     public unsafe virtual void Swap()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerSwappableBase.Swap", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Swap, "BmGame.RJokerSwappableBase.Swap");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UnswapsAutomatically;
     /// <summary>
     /// Function: UnswapsAutomatically
     /// </summary>
     public unsafe virtual bool UnswapsAutomatically()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerSwappableBase.UnswapsAutomatically", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnswapsAutomatically, "BmGame.RJokerSwappableBase.UnswapsAutomatically");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanSwapOffscreen;
     /// <summary>
     /// Function: CanSwapOffscreen
     /// </summary>
     public unsafe virtual bool CanSwapOffscreen()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerSwappableBase.CanSwapOffscreen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanSwapOffscreen, "BmGame.RJokerSwappableBase.CanSwapOffscreen");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

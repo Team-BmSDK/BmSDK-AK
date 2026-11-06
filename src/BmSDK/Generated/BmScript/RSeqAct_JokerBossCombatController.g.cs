@@ -78,81 +78,88 @@ public partial class RSeqAct_JokerBossCombatController : BmSDK.BmGame.RSeqAct_Co
         where TComponent : class, Framework.IScriptComponent<RSeqAct_JokerBossCombatController>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_JokerBossCombatController.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmScript.RSeqAct_JokerBossCombatController.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Update;
     /// <summary>
     /// Function: Update
     /// </summary>
     public unsafe override bool Update(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_JokerBossCombatController.Update", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Update, "BmScript.RSeqAct_JokerBossCombatController.Update");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_ClearUpJokers;
     /// <summary>
     /// Function: ClearUpJokers
     /// </summary>
     public unsafe virtual void ClearUpJokers(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_JokerBossCombatController.ClearUpJokers", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearUpJokers, "BmScript.RSeqAct_JokerBossCombatController.ClearUpJokers");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateFight;
     /// <summary>
     /// Function: UpdateFight
     /// </summary>
     public unsafe virtual void UpdateFight(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_JokerBossCombatController.UpdateFight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateFight, "BmScript.RSeqAct_JokerBossCombatController.UpdateFight");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnJoker;
     /// <summary>
     /// Function: SpawnJoker
     /// </summary>
     public unsafe virtual bool SpawnJoker()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_JokerBossCombatController.SpawnJoker", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnJoker, "BmScript.RSeqAct_JokerBossCombatController.SpawnJoker");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetNewSpawnPoint;
     /// <summary>
     /// Function: GetNewSpawnPoint
     /// </summary>
     public unsafe virtual BmSDK.BmScript.RJokerCombatSpawnPoint GetNewSpawnPoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_JokerBossCombatController.GetNewSpawnPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNewSpawnPoint, "BmScript.RSeqAct_JokerBossCombatController.GetNewSpawnPoint");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmScript.RJokerCombatSpawnPoint>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_JokerDied;
     /// <summary>
     /// Function: JokerDied
     /// </summary>
     public unsafe virtual void JokerDied(BmSDK.BmScript.RPawnBossJokerCombat DeadJoker, bool bFromFatal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_JokerBossCombatController.JokerDied", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_JokerDied, "BmScript.RSeqAct_JokerBossCombatController.JokerDied");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeadJoker, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bFromFatal, paramsPtr + 8);
@@ -160,24 +167,26 @@ public partial class RSeqAct_JokerBossCombatController : BmSDK.BmGame.RSeqAct_Co
         return;
     }
 
+    private static BmSDK.Function __fn_FatalTakedown;
     /// <summary>
     /// Function: FatalTakedown
     /// </summary>
     public unsafe virtual void FatalTakedown(BmSDK.BmScript.RPawnBossJokerCombat DeadJoker)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_JokerBossCombatController.FatalTakedown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FatalTakedown, "BmScript.RSeqAct_JokerBossCombatController.FatalTakedown");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeadJoker, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_JokerBossCombatController.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmScript.RSeqAct_JokerBossCombatController.Activated");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

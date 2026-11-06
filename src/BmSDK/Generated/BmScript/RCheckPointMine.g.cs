@@ -78,135 +78,147 @@ public partial class RCheckPointMine : BmSDK.BmGame.RCheckPointMineBase, BmSDK.I
         where TComponent : class, Framework.IScriptComponent<RCheckPointMine>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SuppressDetectiveModeVisibilityThroughWalls;
     /// <summary>
     /// Function: SuppressDetectiveModeVisibilityThroughWalls
     /// </summary>
     public unsafe virtual void SuppressDetectiveModeVisibilityThroughWalls(bool bSuppress)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCheckPointMine.SuppressDetectiveModeVisibilityThroughWalls", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SuppressDetectiveModeVisibilityThroughWalls, "BmScript.RCheckPointMine.SuppressDetectiveModeVisibilityThroughWalls");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSuppress, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UnregisterDMThroughWallsSuppressable;
     /// <summary>
     /// Function: UnregisterDMThroughWallsSuppressable
     /// </summary>
     public unsafe virtual void UnregisterDMThroughWallsSuppressable()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCheckPointMine.UnregisterDMThroughWallsSuppressable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnregisterDMThroughWallsSuppressable, "BmScript.RCheckPointMine.UnregisterDMThroughWallsSuppressable");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RegisterDMThroughWallsSuppressable;
     /// <summary>
     /// Function: RegisterDMThroughWallsSuppressable
     /// </summary>
     public unsafe virtual void RegisterDMThroughWallsSuppressable()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCheckPointMine.RegisterDMThroughWallsSuppressable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterDMThroughWallsSuppressable, "BmScript.RCheckPointMine.RegisterDMThroughWallsSuppressable");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShouldBeInNeutralState;
     /// <summary>
     /// Function: ShouldBeInNeutralState
     /// </summary>
     public unsafe virtual bool ShouldBeInNeutralState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCheckPointMine.ShouldBeInNeutralState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldBeInNeutralState, "BmScript.RCheckPointMine.ShouldBeInNeutralState");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ShouldBeInPoweredDownState;
     /// <summary>
     /// Function: ShouldBeInPoweredDownState
     /// </summary>
     public unsafe virtual bool ShouldBeInPoweredDownState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCheckPointMine.ShouldBeInPoweredDownState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldBeInPoweredDownState, "BmScript.RCheckPointMine.ShouldBeInPoweredDownState");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetHostileRange;
     /// <summary>
     /// Function: GetHostileRange
     /// </summary>
     public unsafe virtual float GetHostileRange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCheckPointMine.GetHostileRange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHostileRange, "BmScript.RCheckPointMine.GetHostileRange");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetFriendlyRange;
     /// <summary>
     /// Function: GetFriendlyRange
     /// </summary>
     public unsafe virtual float GetFriendlyRange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCheckPointMine.GetFriendlyRange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFriendlyRange, "BmScript.RCheckPointMine.GetFriendlyRange");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDisruptorTargetMesh;
     /// <summary>
     /// Function: GetDisruptorTargetMesh
     /// </summary>
     public unsafe override BmSDK.Engine.MeshComponent GetDisruptorTargetMesh()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCheckPointMine.GetDisruptorTargetMesh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDisruptorTargetMesh, "BmScript.RCheckPointMine.GetDisruptorTargetMesh");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.MeshComponent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetXrayHighlight;
     /// <summary>
     /// Function: SetXrayHighlight
     /// </summary>
     public unsafe virtual void SetXrayHighlight(bool bEnabled)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCheckPointMine.SetXrayHighlight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetXrayHighlight, "BmScript.RCheckPointMine.SetXrayHighlight");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bEnabled, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetDamagedFlagName;
     /// <summary>
     /// Function: GetDamagedFlagName
     /// </summary>
     public unsafe virtual BmSDK.FString GetDamagedFlagName()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCheckPointMine.GetDamagedFlagName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDamagedFlagName, "BmScript.RCheckPointMine.GetDamagedFlagName");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsDamagedFlagSet;
     /// <summary>
     /// Function: IsDamagedFlagSet
     /// </summary>
     public unsafe virtual bool IsDamagedFlagSet()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCheckPointMine.IsDamagedFlagSet", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsDamagedFlagSet, "BmScript.RCheckPointMine.IsDamagedFlagSet");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UpdateFXState;
     /// <summary>
     /// Function: UpdateFXState
     /// </summary>
     public unsafe virtual void UpdateFXState(bool bInCar, bool bInDetectiveMode, bool bNeutralMode)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCheckPointMine.UpdateFXState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateFXState, "BmScript.RCheckPointMine.UpdateFXState");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bInCar, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bInDetectiveMode, paramsPtr + 4);
@@ -215,70 +227,76 @@ public partial class RCheckPointMine : BmSDK.BmGame.RCheckPointMineBase, BmSDK.I
         return;
     }
 
+    private static BmSDK.Function __fn_IsReloading;
     /// <summary>
     /// Function: IsReloading
     /// </summary>
     public unsafe virtual bool IsReloading()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCheckPointMine.IsReloading", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsReloading, "BmScript.RCheckPointMine.IsReloading");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_TriggerReload;
     /// <summary>
     /// Function: TriggerReload
     /// </summary>
     public unsafe virtual void TriggerReload()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCheckPointMine.TriggerReload", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerReload, "BmScript.RCheckPointMine.TriggerReload");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateReloading;
     /// <summary>
     /// Function: UpdateReloading
     /// </summary>
     public unsafe virtual void UpdateReloading(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCheckPointMine.UpdateReloading", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateReloading, "BmScript.RCheckPointMine.UpdateReloading");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerNPCVehicleAttack;
     /// <summary>
     /// Function: TriggerNPCVehicleAttack
     /// </summary>
     public unsafe virtual void TriggerNPCVehicleAttack(BmSDK.BmGame.RVehicle Vehicle)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCheckPointMine.TriggerNPCVehicleAttack", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerNPCVehicleAttack, "BmScript.RCheckPointMine.TriggerNPCVehicleAttack");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Vehicle, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerBMBLAttack;
     /// <summary>
     /// Function: TriggerBMBLAttack
     /// </summary>
     public unsafe virtual void TriggerBMBLAttack(BmSDK.BmGame.RVehicleBatmobileBase Bmbl)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCheckPointMine.TriggerBMBLAttack", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerBMBLAttack, "BmScript.RCheckPointMine.TriggerBMBLAttack");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Bmbl, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetDamagedState;
     /// <summary>
     /// Function: SetDamagedState
     /// </summary>
     public unsafe virtual void SetDamagedState(bool bDamagedState, bool bSilent = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCheckPointMine.SetDamagedState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDamagedState, "BmScript.RCheckPointMine.SetDamagedState");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDamagedState, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSilent, paramsPtr + 4);
@@ -286,12 +304,13 @@ public partial class RCheckPointMine : BmSDK.BmGame.RCheckPointMineBase, BmSDK.I
         return;
     }
 
+    private static BmSDK.Function __fn_TakeDamage;
     /// <summary>
     /// Function: TakeDamage
     /// </summary>
     public unsafe override void TakeDamage(int DamageAmount, BmSDK.Engine.Controller EventInstigator, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 Momentum, BmSDK.Class DamageType, BmSDK.Engine.Actor.FTraceHitInfo HitInfo = default, BmSDK.Engine.Actor DamageCauser = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCheckPointMine.TakeDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TakeDamage, "BmScript.RCheckPointMine.TakeDamage");
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageAmount, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventInstigator, paramsPtr + 4);
@@ -304,34 +323,37 @@ public partial class RCheckPointMine : BmSDK.BmGame.RCheckPointMineBase, BmSDK.I
         return;
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCheckPointMine.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmScript.RCheckPointMine.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCheckPointMine.PreStreamOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmScript.RCheckPointMine.PreStreamOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCheckPointMine.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmScript.RCheckPointMine.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

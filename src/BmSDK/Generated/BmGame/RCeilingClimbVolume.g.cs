@@ -78,47 +78,51 @@ public partial class RCeilingClimbVolume : BmSDK.Engine.Volume, BmSDK.IGameObjec
         where TComponent : class, Framework.IScriptComponent<RCeilingClimbVolume>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnToggle;
     /// <summary>
     /// Function: OnToggle
     /// </summary>
     public unsafe override void OnToggle(BmSDK.Engine.SeqAct_Toggle Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCeilingClimbVolume.OnToggle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggle, "BmGame.RCeilingClimbVolume.OnToggle");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCeilingClimbVolume.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RCeilingClimbVolume.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UnlinkToActor;
     /// <summary>
     /// Function: UnlinkToActor
     /// </summary>
     public unsafe override bool UnlinkToActor(BmSDK.Engine.Actor LinkTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCeilingClimbVolume.UnlinkToActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnlinkToActor, "BmGame.RCeilingClimbVolume.UnlinkToActor");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkTarget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_IsWallClimbVolume;
     /// <summary>
     /// Function: IsWallClimbVolume
     /// </summary>
     public unsafe virtual bool IsWallClimbVolume()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCeilingClimbVolume.IsWallClimbVolume", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsWallClimbVolume, "BmGame.RCeilingClimbVolume.IsWallClimbVolume");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -131,12 +135,13 @@ public partial class RCeilingClimbVolume : BmSDK.Engine.Volume, BmSDK.IGameObjec
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsCeilingClimbVolume;
     /// <summary>
     /// Function: IsCeilingClimbVolume
     /// </summary>
     public unsafe virtual bool IsCeilingClimbVolume()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCeilingClimbVolume.IsCeilingClimbVolume", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsCeilingClimbVolume, "BmGame.RCeilingClimbVolume.IsCeilingClimbVolume");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -149,12 +154,13 @@ public partial class RCeilingClimbVolume : BmSDK.Engine.Volume, BmSDK.IGameObjec
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_DebugDrawVolume;
     /// <summary>
     /// Function: DebugDrawVolume
     /// </summary>
     public unsafe virtual void DebugDrawVolume(bool bDrawPersistent = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCeilingClimbVolume.DebugDrawVolume", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DebugDrawVolume, "BmGame.RCeilingClimbVolume.DebugDrawVolume");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDrawPersistent, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -168,12 +174,13 @@ public partial class RCeilingClimbVolume : BmSDK.Engine.Volume, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_FlagGrapplePoints;
     /// <summary>
     /// Function: FlagGrapplePoints
     /// </summary>
     public unsafe virtual void FlagGrapplePoints()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCeilingClimbVolume.FlagGrapplePoints", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FlagGrapplePoints, "BmGame.RCeilingClimbVolume.FlagGrapplePoints");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

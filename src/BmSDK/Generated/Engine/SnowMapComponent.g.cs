@@ -78,12 +78,13 @@ public partial class SnowMapComponent : BmSDK.Engine.ActorComponent, BmSDK.IGame
         where TComponent : class, Framework.IScriptComponent<SnowMapComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetHidden;
     /// <summary>
     /// Function: SetHidden
     /// </summary>
     public unsafe virtual void SetHidden(bool bInHidden)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SnowMapComponent.SetHidden", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHidden, "Engine.SnowMapComponent.SetHidden");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bInHidden, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

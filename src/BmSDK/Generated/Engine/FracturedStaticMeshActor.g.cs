@@ -78,12 +78,13 @@ public partial class FracturedStaticMeshActor : BmSDK.Engine.RStaticClimbableAct
         where TComponent : class, Framework.IScriptComponent<FracturedStaticMeshActor>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_NotifyHitByExplosion;
     /// <summary>
     /// Function: NotifyHitByExplosion
     /// </summary>
     public unsafe virtual void NotifyHitByExplosion(BmSDK.Engine.Controller InstigatorController, float DamageAmount, BmSDK.Class dmgType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.NotifyHitByExplosion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyHitByExplosion, "Engine.FracturedStaticMeshActor.NotifyHitByExplosion");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InstigatorController, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageAmount, paramsPtr + 8);
@@ -92,45 +93,49 @@ public partial class FracturedStaticMeshActor : BmSDK.Engine.RStaticClimbableAct
         return;
     }
 
+    private static BmSDK.Function __fn_SetLoseChunkReplacementMaterial;
     /// <summary>
     /// Function: SetLoseChunkReplacementMaterial
     /// </summary>
     public unsafe virtual void SetLoseChunkReplacementMaterial()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.SetLoseChunkReplacementMaterial", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetLoseChunkReplacementMaterial, "Engine.FracturedStaticMeshActor.SetLoseChunkReplacementMaterial");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HideFragmentsToMaximizeMemoryUsage;
     /// <summary>
     /// Function: HideFragmentsToMaximizeMemoryUsage
     /// </summary>
     public unsafe virtual void HideFragmentsToMaximizeMemoryUsage()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.HideFragmentsToMaximizeMemoryUsage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideFragmentsToMaximizeMemoryUsage, "Engine.FracturedStaticMeshActor.HideFragmentsToMaximizeMemoryUsage");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HideOneFragment;
     /// <summary>
     /// Function: HideOneFragment
     /// </summary>
     public unsafe virtual void HideOneFragment()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.HideOneFragment", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideOneFragment, "Engine.FracturedStaticMeshActor.HideOneFragment");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ResetVisibility;
     /// <summary>
     /// Function: ResetVisibility
     /// </summary>
     public unsafe virtual void ResetVisibility()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.ResetVisibility", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetVisibility, "Engine.FracturedStaticMeshActor.ResetVisibility");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -143,12 +148,13 @@ public partial class FracturedStaticMeshActor : BmSDK.Engine.RStaticClimbableAct
         return;
     }
 
+    private static BmSDK.Function __fn_OrigBreakOffPartsInRadius;
     /// <summary>
     /// Function: OrigBreakOffPartsInRadius
     /// </summary>
     public unsafe virtual void OrigBreakOffPartsInRadius(System.Numerics.Vector3 Origin, float Radius, float RBStrength, bool bWantPhysChunksAndParticles)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.OrigBreakOffPartsInRadius", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OrigBreakOffPartsInRadius, "Engine.FracturedStaticMeshActor.OrigBreakOffPartsInRadius");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Origin, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Radius, paramsPtr + 12);
@@ -165,12 +171,13 @@ public partial class FracturedStaticMeshActor : BmSDK.Engine.RStaticClimbableAct
         return;
     }
 
+    private static BmSDK.Function __fn_RepairAllParts;
     /// <summary>
     /// Function: RepairAllParts
     /// </summary>
     public unsafe virtual void RepairAllParts()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.RepairAllParts", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RepairAllParts, "Engine.FracturedStaticMeshActor.RepairAllParts");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -183,12 +190,13 @@ public partial class FracturedStaticMeshActor : BmSDK.Engine.RStaticClimbableAct
         return;
     }
 
+    private static BmSDK.Function __fn_BreakOffAllParts;
     /// <summary>
     /// Function: BreakOffAllParts
     /// </summary>
     public unsafe virtual void BreakOffAllParts(System.Numerics.Vector3 ExplodeVelocity, bool bIncludeSupportChunks, bool bWantPhysChunksAndParticles, BmSDK.Engine.Actor BreakInstigator, int ChunkSize = default, bool bAllowDamagedEventFiring = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.BreakOffAllParts", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BreakOffAllParts, "Engine.FracturedStaticMeshActor.BreakOffAllParts");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExplodeVelocity, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIncludeSupportChunks, paramsPtr + 12);
@@ -207,12 +215,13 @@ public partial class FracturedStaticMeshActor : BmSDK.Engine.RStaticClimbableAct
         return;
     }
 
+    private static BmSDK.Function __fn_BreakOffPartsInRadiusConstantVel;
     /// <summary>
     /// Function: BreakOffPartsInRadiusConstantVel
     /// </summary>
     public unsafe virtual void BreakOffPartsInRadiusConstantVel(System.Numerics.Vector3 Origin, float Radius, System.Numerics.Vector3 LinearVel, System.Numerics.Vector3 AngularVel, bool bWantPhysChunksAndParticles, BmSDK.Engine.Actor BreakInstigator, bool bAllowDamagedEventFiring = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.BreakOffPartsInRadiusConstantVel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BreakOffPartsInRadiusConstantVel, "Engine.FracturedStaticMeshActor.BreakOffPartsInRadiusConstantVel");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Origin, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Radius, paramsPtr + 12);
@@ -232,12 +241,13 @@ public partial class FracturedStaticMeshActor : BmSDK.Engine.RStaticClimbableAct
         return;
     }
 
+    private static BmSDK.Function __fn_BreakOffPartsInRadius;
     /// <summary>
     /// Function: BreakOffPartsInRadius
     /// </summary>
     public unsafe virtual void BreakOffPartsInRadius(System.Numerics.Vector3 Origin, float Radius, float RBStrength, bool bWantPhysChunksAndParticles, BmSDK.Engine.Actor BreakInstigator, bool bAllowDamagedEventFiring = default, System.Numerics.Vector3 BlastOriginOffset = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.BreakOffPartsInRadius", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BreakOffPartsInRadius, "Engine.FracturedStaticMeshActor.BreakOffPartsInRadius");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Origin, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Radius, paramsPtr + 12);
@@ -257,12 +267,13 @@ public partial class FracturedStaticMeshActor : BmSDK.Engine.RStaticClimbableAct
         return;
     }
 
+    private static BmSDK.Function __fn_BreakOffParts;
     /// <summary>
     /// Function: BreakOffParts
     /// </summary>
     public unsafe virtual void BreakOffParts(BmSDK.TArray<int> PartIndices, bool bWantPhysChunksAndParticles, System.Numerics.Vector3 PartVel, System.Numerics.Vector3 PartAngVel, BmSDK.Engine.Actor BreakInstigator, int NumPartsSpawnedThisFrame = default, bool bAllowDamagedEventFiring = default, bool bSupressStateSaving = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.BreakOffParts", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BreakOffParts, "Engine.FracturedStaticMeshActor.BreakOffParts");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PartIndices, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWantPhysChunksAndParticles, paramsPtr + 16);
@@ -283,12 +294,13 @@ public partial class FracturedStaticMeshActor : BmSDK.Engine.RStaticClimbableAct
         return;
     }
 
+    private static BmSDK.Function __fn_BreakOffPart;
     /// <summary>
     /// Function: BreakOffPart
     /// </summary>
     public unsafe virtual void BreakOffPart(int PartIndex, bool bWantPhysChunksAndParticles, System.Numerics.Vector3 PartVel, System.Numerics.Vector3 PartAngVel, BmSDK.Engine.Actor BreakInstigator, int NumPartsSpawnedThisFrame = default, bool bAllowDamagedEventFiring = default, bool bSupressStateSaving = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.BreakOffPart", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BreakOffPart, "Engine.FracturedStaticMeshActor.BreakOffPart");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PartIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWantPhysChunksAndParticles, paramsPtr + 4);
@@ -309,12 +321,13 @@ public partial class FracturedStaticMeshActor : BmSDK.Engine.RStaticClimbableAct
         return;
     }
 
+    private static BmSDK.Function __fn_LocalBreakOffParts;
     /// <summary>
     /// Function: LocalBreakOffParts
     /// </summary>
     public unsafe virtual void LocalBreakOffParts(BmSDK.Engine.FracturedStaticMeshActor.FBreakOffPartsData BreakData, BmSDK.Engine.Actor BreakInstigator)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.LocalBreakOffParts", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LocalBreakOffParts, "Engine.FracturedStaticMeshActor.LocalBreakOffParts");
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BreakData, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BreakInstigator, paramsPtr + 84);
@@ -329,12 +342,13 @@ public partial class FracturedStaticMeshActor : BmSDK.Engine.RStaticClimbableAct
         return;
     }
 
+    private static BmSDK.Function __fn_FindPartsInDirection;
     /// <summary>
     /// Function: FindPartsInDirection
     /// </summary>
     public unsafe virtual void FindPartsInDirection(System.Numerics.Vector3 Direction, int NumParts, bool bOnlyDestroyableParts, out BmSDK.TArray<int> OutPartIndices)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.FindPartsInDirection", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindPartsInDirection, "Engine.FracturedStaticMeshActor.FindPartsInDirection");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Direction, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NumParts, paramsPtr + 12);
@@ -351,24 +365,26 @@ public partial class FracturedStaticMeshActor : BmSDK.Engine.RStaticClimbableAct
         return;
     }
 
+    private static BmSDK.Function __fn_Explode;
     /// <summary>
     /// Function: Explode
     /// </summary>
     public unsafe virtual void Explode(BmSDK.Engine.Actor BreakInstigator)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.Explode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Explode, "Engine.FracturedStaticMeshActor.Explode");
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BreakInstigator, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TakeDamage;
     /// <summary>
     /// Function: TakeDamage
     /// </summary>
     public unsafe override void TakeDamage(int Damage, BmSDK.Engine.Controller EventInstigator, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 Momentum, BmSDK.Class DamageType, BmSDK.Engine.Actor.FTraceHitInfo HitInfo = default, BmSDK.Engine.Actor DamageCauser = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.TakeDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TakeDamage, "Engine.FracturedStaticMeshActor.TakeDamage");
         byte* paramsPtr = stackalloc byte[292];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Damage, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventInstigator, paramsPtr + 4);
@@ -381,12 +397,13 @@ public partial class FracturedStaticMeshActor : BmSDK.Engine.RStaticClimbableAct
         return;
     }
 
+    private static BmSDK.Function __fn_RemoveDecals;
     /// <summary>
     /// Function: RemoveDecals
     /// </summary>
     public unsafe virtual void RemoveDecals(int IndexToRemoveDecalsFrom)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.RemoveDecals", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveDecals, "Engine.FracturedStaticMeshActor.RemoveDecals");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IndexToRemoveDecalsFrom, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -400,12 +417,13 @@ public partial class FracturedStaticMeshActor : BmSDK.Engine.RStaticClimbableAct
         return;
     }
 
+    private static BmSDK.Function __fn_FractureEffectIsRelevant;
     /// <summary>
     /// Function: FractureEffectIsRelevant
     /// </summary>
     public unsafe virtual bool FractureEffectIsRelevant(bool bForceDedicated, BmSDK.Engine.Pawn EffectInstigator, out byte bWantPhysChunksAndParticles)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.FractureEffectIsRelevant", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FractureEffectIsRelevant, "Engine.FracturedStaticMeshActor.FractureEffectIsRelevant");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForceDedicated, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EffectInstigator, paramsPtr + 4);
@@ -414,35 +432,38 @@ public partial class FracturedStaticMeshActor : BmSDK.Engine.RStaticClimbableAct
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_OnDamaged;
     /// <summary>
     /// Function: OnDamaged
     /// </summary>
     public unsafe virtual void OnDamaged()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.OnDamaged", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDamaged, "Engine.FracturedStaticMeshActor.OnDamaged");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsFracturedByDamageType;
     /// <summary>
     /// Function: IsFracturedByDamageType
     /// </summary>
     public unsafe virtual bool IsFracturedByDamageType(BmSDK.Class dmgType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.IsFracturedByDamageType", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsFracturedByDamageType, "Engine.FracturedStaticMeshActor.IsFracturedByDamageType");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_SpawnDeferredParts;
     /// <summary>
     /// Function: SpawnDeferredParts
     /// </summary>
     public unsafe virtual bool SpawnDeferredParts()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.SpawnDeferredParts", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnDeferredParts, "Engine.FracturedStaticMeshActor.SpawnDeferredParts");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -455,12 +476,13 @@ public partial class FracturedStaticMeshActor : BmSDK.Engine.RStaticClimbableAct
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_BreakOffIsolatedIslandsFromComponent;
     /// <summary>
     /// Function: BreakOffIsolatedIslandsFromComponent
     /// </summary>
     public unsafe virtual void BreakOffIsolatedIslandsFromComponent(BmSDK.Engine.FracturedStaticMeshComponent Component, out BmSDK.TArray<byte> FragmentVis, BmSDK.TArray<int> IgnoreFrags, System.Numerics.Vector3 ChunkDir, BmSDK.TArray<BmSDK.Engine.FracturedStaticMeshPart> DisableCollWithPart, bool bWantPhysChunks, bool bAllowDamagedEventFiring = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.BreakOffIsolatedIslandsFromComponent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BreakOffIsolatedIslandsFromComponent, "Engine.FracturedStaticMeshActor.BreakOffIsolatedIslandsFromComponent");
         byte* paramsPtr = stackalloc byte[76];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Component, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IgnoreFrags, paramsPtr + 24);
@@ -480,12 +502,13 @@ public partial class FracturedStaticMeshActor : BmSDK.Engine.RStaticClimbableAct
         return;
     }
 
+    private static BmSDK.Function __fn_BreakOffIsolatedIslands;
     /// <summary>
     /// Function: BreakOffIsolatedIslands
     /// </summary>
     public unsafe virtual void BreakOffIsolatedIslands(out BmSDK.TArray<byte> FragmentVis, BmSDK.TArray<int> IgnoreFrags, System.Numerics.Vector3 ChunkDir, BmSDK.TArray<BmSDK.Engine.FracturedStaticMeshPart> DisableCollWithPart, bool bWantPhysChunks, bool bAllowDamagedEventFiring = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.BreakOffIsolatedIslands", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BreakOffIsolatedIslands, "Engine.FracturedStaticMeshActor.BreakOffIsolatedIslands");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IgnoreFrags, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ChunkDir, paramsPtr + 32);
@@ -504,47 +527,51 @@ public partial class FracturedStaticMeshActor : BmSDK.Engine.RStaticClimbableAct
         return;
     }
 
+    private static BmSDK.Function __fn_ApplyCheckpointRecord;
     /// <summary>
     /// Function: ApplyCheckpointRecord
     /// </summary>
     public unsafe virtual void ApplyCheckpointRecord(out BmSDK.Engine.FracturedStaticMeshActor.FCheckpointRecord Record)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.ApplyCheckpointRecord", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyCheckpointRecord, "Engine.FracturedStaticMeshActor.ApplyCheckpointRecord");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Record = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.FracturedStaticMeshActor.FCheckpointRecord>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CreateCheckpointRecord;
     /// <summary>
     /// Function: CreateCheckpointRecord
     /// </summary>
     public unsafe virtual void CreateCheckpointRecord(out BmSDK.Engine.FracturedStaticMeshActor.FCheckpointRecord Record)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.CreateCheckpointRecord", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateCheckpointRecord, "Engine.FracturedStaticMeshActor.CreateCheckpointRecord");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Record = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.FracturedStaticMeshActor.FCheckpointRecord>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShouldSaveForCheckpoint;
     /// <summary>
     /// Function: ShouldSaveForCheckpoint
     /// </summary>
     public unsafe virtual bool ShouldSaveForCheckpoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.ShouldSaveForCheckpoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldSaveForCheckpoint, "Engine.FracturedStaticMeshActor.ShouldSaveForCheckpoint");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ResetHealth;
     /// <summary>
     /// Function: ResetHealth
     /// </summary>
     public unsafe virtual void ResetHealth()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.ResetHealth", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetHealth, "Engine.FracturedStaticMeshActor.ResetHealth");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -557,12 +584,13 @@ public partial class FracturedStaticMeshActor : BmSDK.Engine.RStaticClimbableAct
         return;
     }
 
+    private static BmSDK.Function __fn_FindMeshFractureSounds;
     /// <summary>
     /// Function: FindMeshFractureSounds
     /// </summary>
     public unsafe virtual void FindMeshFractureSounds(out BmSDK.Engine.AkEvent ExpFracSound, out BmSDK.Engine.AkEvent ChkFractureSound, out int NumChunksForExp)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.FindMeshFractureSounds", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindMeshFractureSounds, "Engine.FracturedStaticMeshActor.FindMeshFractureSounds");
         byte* paramsPtr = stackalloc byte[20];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -578,23 +606,25 @@ public partial class FracturedStaticMeshActor : BmSDK.Engine.RStaticClimbableAct
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "Engine.FracturedStaticMeshActor.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnPartMulti;
     /// <summary>
     /// Function: SpawnPartMulti
     /// </summary>
     public unsafe virtual BmSDK.Engine.FracturedStaticMeshPart SpawnPartMulti(BmSDK.TArray<int> ChunkIndices, System.Numerics.Vector3 InitialVel, System.Numerics.Vector3 InitialAngVel, float RelativeScale, bool bExplosion)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.SpawnPartMulti", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnPartMulti, "Engine.FracturedStaticMeshActor.SpawnPartMulti");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ChunkIndices, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InitialVel, paramsPtr + 16);
@@ -612,12 +642,13 @@ public partial class FracturedStaticMeshActor : BmSDK.Engine.RStaticClimbableAct
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.FracturedStaticMeshPart>(paramsPtr + 48);
     }
 
+    private static BmSDK.Function __fn_SpawnPart;
     /// <summary>
     /// Function: SpawnPart
     /// </summary>
     public unsafe virtual BmSDK.Engine.FracturedStaticMeshPart SpawnPart(int ChunkIndex, System.Numerics.Vector3 InitialVel, System.Numerics.Vector3 InitialAngVel, float RelativeScale, bool bExplosion)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FracturedStaticMeshActor.SpawnPart", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnPart, "Engine.FracturedStaticMeshActor.SpawnPart");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ChunkIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InitialVel, paramsPtr + 4);

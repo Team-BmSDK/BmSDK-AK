@@ -78,24 +78,26 @@ public partial class RDeadBody : BmSDK.Engine.Actor, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RDeadBody>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnToggleHidden;
     /// <summary>
     /// Function: OnToggleHidden
     /// </summary>
     public unsafe override void OnToggleHidden(BmSDK.Engine.SeqAct_ToggleHidden Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadBody.OnToggleHidden", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggleHidden, "BmGame.RDeadBody.OnToggleHidden");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InitMeshes;
     /// <summary>
     /// Function: InitMeshes
     /// </summary>
     public unsafe virtual void InitMeshes()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadBody.InitMeshes", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitMeshes, "BmGame.RDeadBody.InitMeshes");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -108,34 +110,37 @@ public partial class RDeadBody : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadBody.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RDeadBody.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateHeartSpeed;
     /// <summary>
     /// Function: UpdateHeartSpeed
     /// </summary>
     public unsafe virtual void UpdateHeartSpeed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadBody.UpdateHeartSpeed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateHeartSpeed, "BmGame.RDeadBody.UpdateHeartSpeed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DoKismetAttachment;
     /// <summary>
     /// Function: DoKismetAttachment
     /// </summary>
     public unsafe override void DoKismetAttachment(BmSDK.Engine.Actor Attachment, BmSDK.Engine.SeqAct_AttachToActor Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadBody.DoKismetAttachment", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoKismetAttachment, "BmGame.RDeadBody.DoKismetAttachment");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Attachment, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 8);
@@ -143,56 +148,61 @@ public partial class RDeadBody : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetMICs;
     /// <summary>
     /// Function: GetMICs
     /// </summary>
     public unsafe virtual void GetMICs()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadBody.GetMICs", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMICs, "BmGame.RDeadBody.GetMICs");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetPPVal;
     /// <summary>
     /// Function: GetPPVal
     /// </summary>
     public unsafe virtual int GetPPVal()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadBody.GetPPVal", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPPVal, "BmGame.RDeadBody.GetPPVal");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetRotation;
     /// <summary>
     /// Function: GetRotation
     /// </summary>
     public unsafe virtual BmSDK.Rotator GetRotation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadBody.GetRotation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRotation, "BmGame.RDeadBody.GetRotation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetLocation;
     /// <summary>
     /// Function: GetLocation
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetLocation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadBody.GetLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLocation, "BmGame.RDeadBody.GetLocation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_show;
     /// <summary>
     /// Function: show
     /// </summary>
     public unsafe virtual void show(float _show, int ShowMode = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadBody.show", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_show, "BmGame.RDeadBody.show");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_show, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ShowMode, paramsPtr + 4);
@@ -200,12 +210,13 @@ public partial class RDeadBody : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_CreateTransparentSkeletalMesh;
     /// <summary>
     /// Function: CreateTransparentSkeletalMesh
     /// </summary>
     public unsafe virtual BmSDK.Engine.SkeletalMeshComponent CreateTransparentSkeletalMesh(BmSDK.Engine.SkeletalMesh SkeletalMesh, BmSDK.Engine.SkeletalMeshComponent ParentAnimComponent, BmSDK.Engine.MaterialInterface OverrideMaterial = default, bool AllowOcclusion = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDeadBody.CreateTransparentSkeletalMesh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateTransparentSkeletalMesh, "BmGame.RDeadBody.CreateTransparentSkeletalMesh");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SkeletalMesh, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParentAnimComponent, paramsPtr + 8);

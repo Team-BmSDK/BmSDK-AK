@@ -78,23 +78,25 @@ public partial class REnvironmentCheckTicker : BmSDK.Engine.ActorComponent, BmSD
         where TComponent : class, Framework.IScriptComponent<REnvironmentCheckTicker>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ClearEnvironmentFeatures;
     /// <summary>
     /// Function: ClearEnvironmentFeatures
     /// </summary>
     public unsafe virtual void ClearEnvironmentFeatures()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.REnvironmentCheckTicker.ClearEnvironmentFeatures", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearEnvironmentFeatures, "BmGame.REnvironmentCheckTicker.ClearEnvironmentFeatures");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FrontBarrierIsEdge;
     /// <summary>
     /// Function: FrontBarrierIsEdge
     /// </summary>
     public unsafe virtual bool FrontBarrierIsEdge()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.REnvironmentCheckTicker.FrontBarrierIsEdge", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FrontBarrierIsEdge, "BmGame.REnvironmentCheckTicker.FrontBarrierIsEdge");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -107,12 +109,13 @@ public partial class REnvironmentCheckTicker : BmSDK.Engine.ActorComponent, BmSD
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UpdateShimmyEnv;
     /// <summary>
     /// Function: UpdateShimmyEnv
     /// </summary>
     public unsafe virtual void UpdateShimmyEnv(float CollisionHeight, float CollisionRadius, float DeltaTime, bool bForClimbingDown = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.REnvironmentCheckTicker.UpdateShimmyEnv", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateShimmyEnv, "BmGame.REnvironmentCheckTicker.UpdateShimmyEnv");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CollisionHeight, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CollisionRadius, paramsPtr + 4);
@@ -129,12 +132,13 @@ public partial class REnvironmentCheckTicker : BmSDK.Engine.ActorComponent, BmSD
         return;
     }
 
+    private static BmSDK.Function __fn_CheckSurroundingEnvironment;
     /// <summary>
     /// Function: CheckSurroundingEnvironment
     /// </summary>
     public unsafe virtual void CheckSurroundingEnvironment(float CollisionHeight, float CollisionRadius, float DeltaTime, BmSDK.Engine.PrimitiveComponent HintPrimitive = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.REnvironmentCheckTicker.CheckSurroundingEnvironment", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckSurroundingEnvironment, "BmGame.REnvironmentCheckTicker.CheckSurroundingEnvironment");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CollisionHeight, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CollisionRadius, paramsPtr + 4);

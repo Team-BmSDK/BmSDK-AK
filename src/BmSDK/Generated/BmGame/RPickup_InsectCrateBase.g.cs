@@ -78,12 +78,13 @@ public partial class RPickup_InsectCrateBase : BmSDK.BmGame.RHarpoonTriggerBase,
         where TComponent : class, Framework.IScriptComponent<RPickup_InsectCrateBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetAudioSpatial;
     /// <summary>
     /// Function: GetAudioSpatial
     /// </summary>
     public unsafe override void GetAudioSpatial(out System.Numerics.Vector3 sndPosition, out BmSDK.Rotator sndOrientation, BmSDK.GameObject caller = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPickup_InsectCrateBase.GetAudioSpatial", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAudioSpatial, "BmGame.RPickup_InsectCrateBase.GetAudioSpatial");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(caller, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
@@ -99,166 +100,181 @@ public partial class RPickup_InsectCrateBase : BmSDK.BmGame.RHarpoonTriggerBase,
         return;
     }
 
+    private static BmSDK.Function __fn_GetOverworldHintRange;
     /// <summary>
     /// Function: GetOverworldHintRange
     /// </summary>
     public unsafe virtual int GetOverworldHintRange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPickup_InsectCrateBase.GetOverworldHintRange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetOverworldHintRange, "BmGame.RPickup_InsectCrateBase.GetOverworldHintRange");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetSatnavToRoadAtSameHeight;
     /// <summary>
     /// Function: GetSatnavToRoadAtSameHeight
     /// </summary>
     public unsafe virtual bool GetSatnavToRoadAtSameHeight()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPickup_InsectCrateBase.GetSatnavToRoadAtSameHeight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSatnavToRoadAtSameHeight, "BmGame.RPickup_InsectCrateBase.GetSatnavToRoadAtSameHeight");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetSatnavToRoadBelow;
     /// <summary>
     /// Function: GetSatnavToRoadBelow
     /// </summary>
     public unsafe virtual bool GetSatnavToRoadBelow()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPickup_InsectCrateBase.GetSatnavToRoadBelow", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSatnavToRoadBelow, "BmGame.RPickup_InsectCrateBase.GetSatnavToRoadBelow");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetCustomFlag;
     /// <summary>
     /// Function: GetCustomFlag
     /// </summary>
     public unsafe virtual BmSDK.FString GetCustomFlag()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPickup_InsectCrateBase.GetCustomFlag", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCustomFlag, "BmGame.RPickup_InsectCrateBase.GetCustomFlag");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetUnlockedChapter;
     /// <summary>
     /// Function: GetUnlockedChapter
     /// </summary>
     public unsafe virtual int GetUnlockedChapter()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPickup_InsectCrateBase.GetUnlockedChapter", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetUnlockedChapter, "BmGame.RPickup_InsectCrateBase.GetUnlockedChapter");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetMapIconFloatUpAdjustment;
     /// <summary>
     /// Function: GetMapIconFloatUpAdjustment
     /// </summary>
     public unsafe virtual int GetMapIconFloatUpAdjustment()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPickup_InsectCrateBase.GetMapIconFloatUpAdjustment", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMapIconFloatUpAdjustment, "BmGame.RPickup_InsectCrateBase.GetMapIconFloatUpAdjustment");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UseSecretLocation;
     /// <summary>
     /// Function: UseSecretLocation
     /// </summary>
     public unsafe virtual bool UseSecretLocation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPickup_InsectCrateBase.UseSecretLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UseSecretLocation, "BmGame.RPickup_InsectCrateBase.UseSecretLocation");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetSecretLocationZ;
     /// <summary>
     /// Function: GetSecretLocationZ
     /// </summary>
     public unsafe virtual int GetSecretLocationZ()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPickup_InsectCrateBase.GetSecretLocationZ", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSecretLocationZ, "BmGame.RPickup_InsectCrateBase.GetSecretLocationZ");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetSecretLocationY;
     /// <summary>
     /// Function: GetSecretLocationY
     /// </summary>
     public unsafe virtual int GetSecretLocationY()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPickup_InsectCrateBase.GetSecretLocationY", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSecretLocationY, "BmGame.RPickup_InsectCrateBase.GetSecretLocationY");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetSecretLocationX;
     /// <summary>
     /// Function: GetSecretLocationX
     /// </summary>
     public unsafe virtual int GetSecretLocationX()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPickup_InsectCrateBase.GetSecretLocationX", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSecretLocationX, "BmGame.RPickup_InsectCrateBase.GetSecretLocationX");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetSecretZone;
     /// <summary>
     /// Function: GetSecretZone
     /// </summary>
     public unsafe virtual byte GetSecretZone()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPickup_InsectCrateBase.GetSecretZone", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSecretZone, "BmGame.RPickup_InsectCrateBase.GetSecretZone");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<byte>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetSecretPickupIndex;
     /// <summary>
     /// Function: GetSecretPickupIndex
     /// </summary>
     public unsafe virtual int GetSecretPickupIndex()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPickup_InsectCrateBase.GetSecretPickupIndex", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSecretPickupIndex, "BmGame.RPickup_InsectCrateBase.GetSecretPickupIndex");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetSecretSubType;
     /// <summary>
     /// Function: GetSecretSubType
     /// </summary>
     public unsafe virtual BmSDK.FString GetSecretSubType()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPickup_InsectCrateBase.GetSecretSubType", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSecretSubType, "BmGame.RPickup_InsectCrateBase.GetSecretSubType");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetSecretName;
     /// <summary>
     /// Function: GetSecretName
     /// </summary>
     public unsafe virtual BmSDK.FString GetSecretName()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPickup_InsectCrateBase.GetSecretName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSecretName, "BmGame.RPickup_InsectCrateBase.GetSecretName");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsValidSecret;
     /// <summary>
     /// Function: IsValidSecret
     /// </summary>
     public unsafe virtual bool IsValidSecret()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPickup_InsectCrateBase.IsValidSecret", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsValidSecret, "BmGame.RPickup_InsectCrateBase.IsValidSecret");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

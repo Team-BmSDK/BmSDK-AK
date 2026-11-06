@@ -78,24 +78,26 @@ public partial class RAIBrain_PredLite : BmSDK.BmGame.RAIBrain_Pred, BmSDK.IGame
         where TComponent : class, Framework.IScriptComponent<RAIBrain_PredLite>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetSearchlightCowerAEC;
     /// <summary>
     /// Function: SetSearchlightCowerAEC
     /// </summary>
     public unsafe virtual void SetSearchlightCowerAEC(BmSDK.BmGame.RAEC_SearchlightCower NewVal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAIBrain_PredLite.SetSearchlightCowerAEC", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSearchlightCowerAEC, "BmGame.RAIBrain_PredLite.SetSearchlightCowerAEC");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewVal, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HasMidPriorityEvent;
     /// <summary>
     /// Function: HasMidPriorityEvent
     /// </summary>
     public unsafe override bool HasMidPriorityEvent(out BmSDK.FName NewName, out BmSDK.BmGame.RAlertEventCoordinatorBase NewAEC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAIBrain_PredLite.HasMidPriorityEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasMidPriorityEvent, "BmGame.RAIBrain_PredLite.HasMidPriorityEvent");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NewName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
@@ -103,12 +105,13 @@ public partial class RAIBrain_PredLite : BmSDK.BmGame.RAIBrain_Pred, BmSDK.IGame
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_SetBasicState;
     /// <summary>
     /// Function: SetBasicState
     /// </summary>
     public unsafe override void SetBasicState(out BmSDK.FName NewName, out BmSDK.BmGame.RAlertEventCoordinatorBase NewAEC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAIBrain_PredLite.SetBasicState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBasicState, "BmGame.RAIBrain_PredLite.SetBasicState");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NewName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);

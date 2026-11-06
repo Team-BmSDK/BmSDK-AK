@@ -78,56 +78,61 @@ public partial class RBMBehaviour_FreezeBlastHitLieutenant : BmSDK.BmGame.RBMBeh
         where TComponent : class, Framework.IScriptComponent<RBMBehaviour_FreezeBlastHitLieutenant>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_LieutenantHit;
     /// <summary>
     /// Function: LieutenantHit
     /// </summary>
     public unsafe virtual void LieutenantHit()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_FreezeBlastHitLieutenant.LieutenantHit", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LieutenantHit, "BmScript.RBMBehaviour_FreezeBlastHitLieutenant.LieutenantHit");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_BreakTorso;
     /// <summary>
     /// Function: BreakTorso
     /// </summary>
     public unsafe virtual void BreakTorso()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_FreezeBlastHitLieutenant.BreakTorso", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BreakTorso, "BmScript.RBMBehaviour_FreezeBlastHitLieutenant.BreakTorso");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_BreakRight;
     /// <summary>
     /// Function: BreakRight
     /// </summary>
     public unsafe virtual void BreakRight()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_FreezeBlastHitLieutenant.BreakRight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BreakRight, "BmScript.RBMBehaviour_FreezeBlastHitLieutenant.BreakRight");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_BreakLeft;
     /// <summary>
     /// Function: BreakLeft
     /// </summary>
     public unsafe virtual void BreakLeft()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_FreezeBlastHitLieutenant.BreakLeft", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BreakLeft, "BmScript.RBMBehaviour_FreezeBlastHitLieutenant.BreakLeft");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Initialise;
     /// <summary>
     /// Function: Initialise
     /// </summary>
     public unsafe override void Initialise(BmSDK.BmGame.RPawnPlayer Instigator, System.Numerics.Vector3 HitNorm, bool bInstantFreeze = default, BmSDK.BmGame.RFreezeSprayProjectile Proj = default, bool bShouldAlwaysRagdoll = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_FreezeBlastHitLieutenant.Initialise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Initialise, "BmScript.RBMBehaviour_FreezeBlastHitLieutenant.Initialise");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Instigator, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNorm, paramsPtr + 8);

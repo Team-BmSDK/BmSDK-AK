@@ -78,48 +78,52 @@ public partial class RBMWeaponRiflePredThug : BmSDK.BmGame.RBMWeaponRiflePredBas
         where TComponent : class, Framework.IScriptComponent<RBMWeaponRiflePredThug>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetCustomEyeLocation;
     /// <summary>
     /// Function: GetCustomEyeLocation
     /// </summary>
     public unsafe virtual void GetCustomEyeLocation(out System.Numerics.Vector3 EyeLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMWeaponRiflePredThug.GetCustomEyeLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCustomEyeLocation, "BmGame.RBMWeaponRiflePredThug.GetCustomEyeLocation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         EyeLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_WideBeam;
     /// <summary>
     /// Function: WideBeam
     /// </summary>
     public unsafe virtual void WideBeam(float BlendSpeed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMWeaponRiflePredThug.WideBeam", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WideBeam, "BmGame.RBMWeaponRiflePredThug.WideBeam");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BlendSpeed, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NarrowBeam;
     /// <summary>
     /// Function: NarrowBeam
     /// </summary>
     public unsafe virtual void NarrowBeam(float BlendSpeed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMWeaponRiflePredThug.NarrowBeam", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NarrowBeam, "BmGame.RBMWeaponRiflePredThug.NarrowBeam");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BlendSpeed, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CreateBasicGunWeaponConfig;
     /// <summary>
     /// Function: CreateBasicGunWeaponConfig
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RWeaponConfig CreateBasicGunWeaponConfig(BmSDK.GameObject NewOwner, BmSDK.Engine.AnimSet AnimSet1, BmSDK.Engine.AnimSet AnimSet2, BmSDK.Engine.AnimSet AnimSet3 = default, BmSDK.Engine.AnimSet AnimSet4 = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMWeaponRiflePredThug.CreateBasicGunWeaponConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateBasicGunWeaponConfig, "BmGame.RBMWeaponRiflePredThug.CreateBasicGunWeaponConfig");
         byte* paramsPtr = stackalloc byte[8208];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewOwner, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimSet1, paramsPtr + 8);

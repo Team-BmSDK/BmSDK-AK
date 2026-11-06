@@ -78,114 +78,124 @@ public partial class MGFxWidgetOverlayScreenWBIDOptions : BmSDK.BmScript.MGFxWid
         where TComponent : class, Framework.IScriptComponent<MGFxWidgetOverlayScreenWBIDOptions>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_NavDown;
     /// <summary>
     /// Function: NavDown
     /// </summary>
     public unsafe override void NavDown()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MGFxWidgetOverlayScreenWBIDOptions.NavDown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NavDown, "BmScript.MGFxWidgetOverlayScreenWBIDOptions.NavDown");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NavUp;
     /// <summary>
     /// Function: NavUp
     /// </summary>
     public unsafe override void NavUp()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MGFxWidgetOverlayScreenWBIDOptions.NavUp", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NavUp, "BmScript.MGFxWidgetOverlayScreenWBIDOptions.NavUp");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NavRight;
     /// <summary>
     /// Function: NavRight
     /// </summary>
     public unsafe override void NavRight()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MGFxWidgetOverlayScreenWBIDOptions.NavRight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NavRight, "BmScript.MGFxWidgetOverlayScreenWBIDOptions.NavRight");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NavLeft;
     /// <summary>
     /// Function: NavLeft
     /// </summary>
     public unsafe override void NavLeft()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MGFxWidgetOverlayScreenWBIDOptions.NavLeft", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NavLeft, "BmScript.MGFxWidgetOverlayScreenWBIDOptions.NavLeft");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnMouseRollOut;
     /// <summary>
     /// Function: OnMouseRollOut
     /// </summary>
     public unsafe override void OnMouseRollOut(int btnIdx)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MGFxWidgetOverlayScreenWBIDOptions.OnMouseRollOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnMouseRollOut, "BmScript.MGFxWidgetOverlayScreenWBIDOptions.OnMouseRollOut");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(btnIdx, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnMouseRollOver;
     /// <summary>
     /// Function: OnMouseRollOver
     /// </summary>
     public unsafe override void OnMouseRollOver(int btnIdx)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MGFxWidgetOverlayScreenWBIDOptions.OnMouseRollOver", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnMouseRollOver, "BmScript.MGFxWidgetOverlayScreenWBIDOptions.OnMouseRollOver");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(btnIdx, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnPressB;
     /// <summary>
     /// Function: OnPressB
     /// </summary>
     public unsafe override void OnPressB()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MGFxWidgetOverlayScreenWBIDOptions.OnPressB", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnPressB, "BmScript.MGFxWidgetOverlayScreenWBIDOptions.OnPressB");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnPressA;
     /// <summary>
     /// Function: OnPressA
     /// </summary>
     public unsafe override void OnPressA()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MGFxWidgetOverlayScreenWBIDOptions.OnPressA", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnPressA, "BmScript.MGFxWidgetOverlayScreenWBIDOptions.OnPressA");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetFocussed;
     /// <summary>
     /// Function: SetFocussed
     /// </summary>
     public unsafe virtual void SetFocussed(int Id)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MGFxWidgetOverlayScreenWBIDOptions.SetFocussed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetFocussed, "BmScript.MGFxWidgetOverlayScreenWBIDOptions.SetFocussed");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Id, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetButtonLabel;
     /// <summary>
     /// Function: SetButtonLabel
     /// </summary>
     public unsafe virtual void SetButtonLabel(int Id, BmSDK.FString Label)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MGFxWidgetOverlayScreenWBIDOptions.SetButtonLabel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetButtonLabel, "BmScript.MGFxWidgetOverlayScreenWBIDOptions.SetButtonLabel");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Id, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Label, paramsPtr + 4);
@@ -193,12 +203,13 @@ public partial class MGFxWidgetOverlayScreenWBIDOptions : BmSDK.BmScript.MGFxWid
         return;
     }
 
+    private static BmSDK.Function __fn_WidgetInitialized;
     /// <summary>
     /// Function: WidgetInitialized
     /// </summary>
     public unsafe override bool WidgetInitialized(BmSDK.FName WidgetName, BmSDK.FName WidgetPath, BmSDK.GFxUI.GFxObject Widget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MGFxWidgetOverlayScreenWBIDOptions.WidgetInitialized", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WidgetInitialized, "BmScript.MGFxWidgetOverlayScreenWBIDOptions.WidgetInitialized");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WidgetName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WidgetPath, paramsPtr + 8);
@@ -207,12 +218,13 @@ public partial class MGFxWidgetOverlayScreenWBIDOptions : BmSDK.BmScript.MGFxWid
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe override void Init()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MGFxWidgetOverlayScreenWBIDOptions.Init", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmScript.MGFxWidgetOverlayScreenWBIDOptions.Init");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

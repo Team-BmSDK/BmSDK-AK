@@ -73,34 +73,37 @@ public partial class MJackInBoxBase : BmSDK.BmGame.RInventoryGadget, BmSDK.IGame
         where TComponent : class, Framework.IScriptComponent<MJackInBoxBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmGame.MJackInBoxBase.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsFiringDetonator;
     /// <summary>
     /// Function: IsFiringDetonator
     /// </summary>
     public unsafe virtual bool IsFiringDetonator()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.IsFiringDetonator", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsFiringDetonator, "BmGame.MJackInBoxBase.IsFiringDetonator");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetInXrayMode;
     /// <summary>
     /// Function: SetInXrayMode
     /// </summary>
     public unsafe override void SetInXrayMode(bool bXrayOn, bool bForce)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.SetInXrayMode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetInXrayMode, "BmGame.MJackInBoxBase.SetInXrayMode");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bXrayOn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForce, paramsPtr + 4);
@@ -108,236 +111,257 @@ public partial class MJackInBoxBase : BmSDK.BmGame.RInventoryGadget, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_AllowAimAt;
     /// <summary>
     /// Function: AllowAimAt
     /// </summary>
     public unsafe override bool AllowAimAt()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.AllowAimAt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowAimAt, "BmGame.MJackInBoxBase.AllowAimAt");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_TrapPlaced;
     /// <summary>
     /// Function: TrapPlaced
     /// </summary>
     public unsafe virtual void TrapPlaced()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.TrapPlaced", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TrapPlaced, "BmGame.MJackInBoxBase.TrapPlaced");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanThrowGadget;
     /// <summary>
     /// Function: CanThrowGadget
     /// </summary>
     public unsafe override bool CanThrowGadget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.CanThrowGadget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanThrowGadget, "BmGame.MJackInBoxBase.CanThrowGadget");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_DetonatorPressed;
     /// <summary>
     /// Function: DetonatorPressed
     /// </summary>
     public unsafe virtual void DetonatorPressed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.DetonatorPressed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DetonatorPressed, "BmGame.MJackInBoxBase.DetonatorPressed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayDetonatorAnim;
     /// <summary>
     /// Function: PlayDetonatorAnim
     /// </summary>
     public unsafe virtual bool PlayDetonatorAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.PlayDetonatorAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayDetonatorAnim, "BmGame.MJackInBoxBase.PlayDetonatorAnim");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UnequipSelf;
     /// <summary>
     /// Function: UnequipSelf
     /// </summary>
     public unsafe override bool UnequipSelf()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.UnequipSelf", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnequipSelf, "BmGame.MJackInBoxBase.UnequipSelf");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_DestroyTrapWithoutDetonation;
     /// <summary>
     /// Function: DestroyTrapWithoutDetonation
     /// </summary>
     public unsafe virtual void DestroyTrapWithoutDetonation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.DestroyTrapWithoutDetonation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DestroyTrapWithoutDetonation, "BmGame.MJackInBoxBase.DestroyTrapWithoutDetonation");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Detonate;
     /// <summary>
     /// Function: Detonate
     /// </summary>
     public unsafe virtual void Detonate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.Detonate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Detonate, "BmGame.MJackInBoxBase.Detonate");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DestroyAllProjectiles;
     /// <summary>
     /// Function: DestroyAllProjectiles
     /// </summary>
     public unsafe virtual void DestroyAllProjectiles()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.DestroyAllProjectiles", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DestroyAllProjectiles, "BmGame.MJackInBoxBase.DestroyAllProjectiles");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanIOnlyDetonate;
     /// <summary>
     /// Function: CanIOnlyDetonate
     /// </summary>
     public unsafe virtual bool CanIOnlyDetonate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.CanIOnlyDetonate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanIOnlyDetonate, "BmGame.MJackInBoxBase.CanIOnlyDetonate");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_FireGadgetCombat;
     /// <summary>
     /// Function: FireGadgetCombat
     /// </summary>
     public unsafe override bool FireGadgetCombat()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.FireGadgetCombat", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireGadgetCombat, "BmGame.MJackInBoxBase.FireGadgetCombat");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PlaceTrap;
     /// <summary>
     /// Function: PlaceTrap
     /// </summary>
     public unsafe virtual void PlaceTrap(bool quickFire)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.PlaceTrap", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlaceTrap, "BmGame.MJackInBoxBase.PlaceTrap");
         byte* paramsPtr = stackalloc byte[352];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(quickFire, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateHudTouchingEnemies;
     /// <summary>
     /// Function: UpdateHudTouchingEnemies
     /// </summary>
     public unsafe virtual void UpdateHudTouchingEnemies()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.UpdateHudTouchingEnemies", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateHudTouchingEnemies, "BmGame.MJackInBoxBase.UpdateHudTouchingEnemies");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.MJackInBoxBase.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateTargetUI;
     /// <summary>
     /// Function: UpdateTargetUI
     /// </summary>
     public unsafe virtual void UpdateTargetUI()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.UpdateTargetUI", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateTargetUI, "BmGame.MJackInBoxBase.UpdateTargetUI");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanDisableTick;
     /// <summary>
     /// Function: CanDisableTick
     /// </summary>
     public unsafe override bool CanDisableTick()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.CanDisableTick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanDisableTick, "BmGame.MJackInBoxBase.CanDisableTick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_AttachToHand;
     /// <summary>
     /// Function: AttachToHand
     /// </summary>
     public unsafe override void AttachToHand(BmSDK.FName CustomBone = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.AttachToHand", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttachToHand, "BmGame.MJackInBoxBase.AttachToHand");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CustomBone, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DetachJackInBox;
     /// <summary>
     /// Function: DetachJackInBox
     /// </summary>
     public unsafe virtual void DetachJackInBox()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.DetachJackInBox", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DetachJackInBox, "BmGame.MJackInBoxBase.DetachJackInBox");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AttachJackInBox;
     /// <summary>
     /// Function: AttachJackInBox
     /// </summary>
     public unsafe virtual void AttachJackInBox()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.AttachJackInBox", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttachJackInBox, "BmGame.MJackInBoxBase.AttachJackInBox");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayJackInBoxExplosionReaction;
     /// <summary>
     /// Function: PlayJackInBoxExplosionReaction
     /// </summary>
     public unsafe virtual void PlayJackInBoxExplosionReaction(System.Numerics.Vector3 ExplosionLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.PlayJackInBoxExplosionReaction", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayJackInBoxExplosionReaction, "BmGame.MJackInBoxBase.PlayJackInBoxExplosionReaction");
         byte* paramsPtr = stackalloc byte[176];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExplosionLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayAnimation;
     /// <summary>
     /// Function: PlayAnimation
     /// </summary>
     public unsafe virtual void PlayAnimation(BmSDK.Engine.SkeletalMeshComponent SkeletalMesh, BmSDK.FName AnimName, float Rate = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.PlayAnimation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayAnimation, "BmGame.MJackInBoxBase.PlayAnimation");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SkeletalMesh, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 8);
@@ -346,12 +370,13 @@ public partial class MJackInBoxBase : BmSDK.BmGame.RInventoryGadget, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_IsPlayingAnimation;
     /// <summary>
     /// Function: IsPlayingAnimation
     /// </summary>
     public unsafe virtual bool IsPlayingAnimation(BmSDK.Engine.SkeletalMeshComponent SkeletalMesh, BmSDK.FName AnimName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.IsPlayingAnimation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPlayingAnimation, "BmGame.MJackInBoxBase.IsPlayingAnimation");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SkeletalMesh, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 8);
@@ -359,12 +384,13 @@ public partial class MJackInBoxBase : BmSDK.BmGame.RInventoryGadget, BmSDK.IGame
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_CheckAutoTarget;
     /// <summary>
     /// Function: CheckAutoTarget
     /// </summary>
     public unsafe override bool CheckAutoTarget(BmSDK.Engine.Actor Target, out System.Numerics.Vector3 TargetPosition, out float OverridePriority, out float OverrideMaxRange, out byte DoLOSCheck)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.CheckAutoTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckAutoTarget, "BmGame.MJackInBoxBase.CheckAutoTarget");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -375,12 +401,13 @@ public partial class MJackInBoxBase : BmSDK.BmGame.RInventoryGadget, BmSDK.IGame
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_DrawTargets;
     /// <summary>
     /// Function: DrawTargets
     /// </summary>
     public unsafe virtual void DrawTargets(BmSDK.Engine.HUD H, bool quickGelOnly = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.DrawTargets", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DrawTargets, "BmGame.MJackInBoxBase.DrawTargets");
         byte* paramsPtr = stackalloc byte[76];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(H, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(quickGelOnly, paramsPtr + 8);
@@ -388,34 +415,37 @@ public partial class MJackInBoxBase : BmSDK.BmGame.RInventoryGadget, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.MJackInBoxBase.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetCurrentDetonateTarget;
     /// <summary>
     /// Function: GetCurrentDetonateTarget
     /// </summary>
     public unsafe virtual BmSDK.Engine.Actor GetCurrentDetonateTarget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.GetCurrentDetonateTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCurrentDetonateTarget, "BmGame.MJackInBoxBase.GetCurrentDetonateTarget");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UpdateTouchingEnemies;
     /// <summary>
     /// Function: UpdateTouchingEnemies
     /// </summary>
     public unsafe virtual bool UpdateTouchingEnemies(out BmSDK.TArray<BmSDK.Engine.Actor> NumTouchingEnemies)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.UpdateTouchingEnemies", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateTouchingEnemies, "BmGame.MJackInBoxBase.UpdateTouchingEnemies");
         byte* paramsPtr = stackalloc byte[20];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -429,12 +459,13 @@ public partial class MJackInBoxBase : BmSDK.BmGame.RInventoryGadget, BmSDK.IGame
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_ComplexTrace;
     /// <summary>
     /// Function: ComplexTrace
     /// </summary>
     public unsafe virtual BmSDK.Engine.Actor ComplexTrace(BmSDK.Engine.Actor MyOwner, out System.Numerics.Vector3 HitLocation, out System.Numerics.Vector3 HitNormal, System.Numerics.Vector3 Extent, System.Numerics.Vector3 End, System.Numerics.Vector3 Start)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MJackInBoxBase.ComplexTrace", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ComplexTrace, "BmGame.MJackInBoxBase.ComplexTrace");
         byte* paramsPtr = stackalloc byte[76];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MyOwner, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Extent, paramsPtr + 32);

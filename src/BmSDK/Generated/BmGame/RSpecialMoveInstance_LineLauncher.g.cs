@@ -78,57 +78,62 @@ public partial class RSpecialMoveInstance_LineLauncher : BmSDK.BmGame.RSpecialMo
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveInstance_LineLauncher>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UpdateZipLineControlPoint;
     /// <summary>
     /// Function: UpdateZipLineControlPoint
     /// </summary>
     public unsafe virtual void UpdateZipLineControlPoint(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.UpdateZipLineControlPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateZipLineControlPoint, "BmGame.RSpecialMoveInstance_LineLauncher.UpdateZipLineControlPoint");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ZipLineAttach;
     /// <summary>
     /// Function: ZipLineAttach
     /// </summary>
     public unsafe virtual void ZipLineAttach()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.ZipLineAttach", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ZipLineAttach, "BmGame.RSpecialMoveInstance_LineLauncher.ZipLineAttach");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SwitchedPlayers;
     /// <summary>
     /// Function: SwitchedPlayers
     /// </summary>
     public unsafe virtual void SwitchedPlayers()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.SwitchedPlayers", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SwitchedPlayers, "BmGame.RSpecialMoveInstance_LineLauncher.SwitchedPlayers");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsInteruptable;
     /// <summary>
     /// Function: IsInteruptable
     /// </summary>
     public unsafe override bool IsInteruptable()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.IsInteruptable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInteruptable, "BmGame.RSpecialMoveInstance_LineLauncher.IsInteruptable");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CheckSpaceForTightRope;
     /// <summary>
     /// Function: CheckSpaceForTightRope
     /// </summary>
     public unsafe virtual bool CheckSpaceForTightRope(float ForwardTravelTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.CheckSpaceForTightRope", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckSpaceForTightRope, "BmGame.RSpecialMoveInstance_LineLauncher.CheckSpaceForTightRope");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ForwardTravelTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -142,12 +147,13 @@ public partial class RSpecialMoveInstance_LineLauncher : BmSDK.BmGame.RSpecialMo
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_CheckForRailingComingUp;
     /// <summary>
     /// Function: CheckForRailingComingUp
     /// </summary>
     public unsafe virtual void CheckForRailingComingUp()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.CheckForRailingComingUp", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckForRailingComingUp, "BmGame.RSpecialMoveInstance_LineLauncher.CheckForRailingComingUp");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -160,34 +166,37 @@ public partial class RSpecialMoveInstance_LineLauncher : BmSDK.BmGame.RSpecialMo
         return;
     }
 
+    private static BmSDK.Function __fn_StartLineLaunching;
     /// <summary>
     /// Function: StartLineLaunching
     /// </summary>
     public unsafe virtual void StartLineLaunching()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.StartLineLaunching", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartLineLaunching, "BmGame.RSpecialMoveInstance_LineLauncher.StartLineLaunching");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AttackFinished;
     /// <summary>
     /// Function: AttackFinished
     /// </summary>
     public unsafe virtual void AttackFinished()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.AttackFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttackFinished, "BmGame.RSpecialMoveInstance_LineLauncher.AttackFinished");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyBump;
     /// <summary>
     /// Function: NotifyBump
     /// </summary>
     public unsafe override void NotifyBump(BmSDK.Engine.Actor Other, System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.NotifyBump", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyBump, "BmGame.RSpecialMoveInstance_LineLauncher.NotifyBump");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 8);
@@ -195,146 +204,159 @@ public partial class RSpecialMoveInstance_LineLauncher : BmSDK.BmGame.RSpecialMo
         return;
     }
 
+    private static BmSDK.Function __fn_LineLauncherGrabHostage;
     /// <summary>
     /// Function: LineLauncherGrabHostage
     /// </summary>
     public unsafe virtual void LineLauncherGrabHostage()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.LineLauncherGrabHostage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LineLauncherGrabHostage, "BmGame.RSpecialMoveInstance_LineLauncher.LineLauncherGrabHostage");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_LineLauncherGrabVictim;
     /// <summary>
     /// Function: LineLauncherGrabVictim
     /// </summary>
     public unsafe virtual void LineLauncherGrabVictim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.LineLauncherGrabVictim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LineLauncherGrabVictim, "BmGame.RSpecialMoveInstance_LineLauncher.LineLauncherGrabVictim");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_KickAnimTimer;
     /// <summary>
     /// Function: KickAnimTimer
     /// </summary>
     public unsafe virtual void KickAnimTimer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.KickAnimTimer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_KickAnimTimer, "BmGame.RSpecialMoveInstance_LineLauncher.KickAnimTimer");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CheckKickedThroughWindow;
     /// <summary>
     /// Function: CheckKickedThroughWindow
     /// </summary>
     public unsafe virtual void CheckKickedThroughWindow()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.CheckKickedThroughWindow", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckKickedThroughWindow, "BmGame.RSpecialMoveInstance_LineLauncher.CheckKickedThroughWindow");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_LineLauncherAttack;
     /// <summary>
     /// Function: LineLauncherAttack
     /// </summary>
     public unsafe virtual void LineLauncherAttack()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.LineLauncherAttack", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LineLauncherAttack, "BmGame.RSpecialMoveInstance_LineLauncher.LineLauncherAttack");
         byte* paramsPtr = stackalloc byte[308];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_BackToPlayerCamera;
     /// <summary>
     /// Function: BackToPlayerCamera
     /// </summary>
     public unsafe virtual void BackToPlayerCamera()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.BackToPlayerCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BackToPlayerCamera, "BmGame.RSpecialMoveInstance_LineLauncher.BackToPlayerCamera");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishSpecialMove;
     /// <summary>
     /// Function: FinishSpecialMove
     /// </summary>
     public unsafe override void FinishSpecialMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.FinishSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishSpecialMove, "BmGame.RSpecialMoveInstance_LineLauncher.FinishSpecialMove");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CancelSpecialMove;
     /// <summary>
     /// Function: CancelSpecialMove
     /// </summary>
     public unsafe override void CancelSpecialMove(BmSDK.BmGame.RSpecialMoveConfig NextSpecialMove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.CancelSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelSpecialMove, "BmGame.RSpecialMoveInstance_LineLauncher.CancelSpecialMove");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NextSpecialMove, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DropHostage;
     /// <summary>
     /// Function: DropHostage
     /// </summary>
     public unsafe virtual void DropHostage()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.DropHostage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DropHostage, "BmGame.RSpecialMoveInstance_LineLauncher.DropHostage");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DropVillain;
     /// <summary>
     /// Function: DropVillain
     /// </summary>
     public unsafe virtual void DropVillain()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.DropVillain", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DropVillain, "BmGame.RSpecialMoveInstance_LineLauncher.DropVillain");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishGrabbedVillain;
     /// <summary>
     /// Function: FinishGrabbedVillain
     /// </summary>
     public unsafe virtual void FinishGrabbedVillain(BmSDK.BmGame.RSpecialMoveInstance_LineLauncher.LineLauncherTakedownFinish Move = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.FinishGrabbedVillain", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishGrabbedVillain, "BmGame.RSpecialMoveInstance_LineLauncher.FinishGrabbedVillain");
         byte* paramsPtr = stackalloc byte[252];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Move, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TurnOffRopes;
     /// <summary>
     /// Function: TurnOffRopes
     /// </summary>
     public unsafe virtual void TurnOffRopes()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.TurnOffRopes", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TurnOffRopes, "BmGame.RSpecialMoveInstance_LineLauncher.TurnOffRopes");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetTakedownTarget;
     /// <summary>
     /// Function: GetTakedownTarget
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RPawnVillain GetTakedownTarget(float DropTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.GetTakedownTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTakedownTarget, "BmGame.RSpecialMoveInstance_LineLauncher.GetTakedownTarget");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DropTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -348,12 +370,13 @@ public partial class RSpecialMoveInstance_LineLauncher : BmSDK.BmGame.RSpecialMo
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetGrabTarget;
     /// <summary>
     /// Function: GetGrabTarget
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RBMPawnAI GetGrabTarget(float GrabTime, float MinOffsetForGrab, float MaxSpeed, float LineLauncherAccel, bool bOnlyGrabHostage, out BmSDK.BmGame.RSpecialMoveInstance_LineLauncher.LineLauncherGrabType GrabType, out BmSDK.BmGame.RBMPawnAI _PotentialGrabTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.GetGrabTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGrabTarget, "BmGame.RSpecialMoveInstance_LineLauncher.GetGrabTarget");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GrabTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinOffsetForGrab, paramsPtr + 4);
@@ -373,12 +396,13 @@ public partial class RSpecialMoveInstance_LineLauncher : BmSDK.BmGame.RSpecialMo
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMPawnAI>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_GetKickTarget;
     /// <summary>
     /// Function: GetKickTarget
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RPawnVillain GetKickTarget(float KickTime, float LeftKickTime, float RightKickTime, float MinOffsetForFwdKick, float MaxSpeed, float LineLauncherAccel, out BmSDK.BmGame.RSpecialMoveInstance_LineLauncher.LineLauncherKickDirection KickDir)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.GetKickTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetKickTarget, "BmGame.RSpecialMoveInstance_LineLauncher.GetKickTarget");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(KickTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LeftKickTime, paramsPtr + 4);
@@ -398,12 +422,13 @@ public partial class RSpecialMoveInstance_LineLauncher : BmSDK.BmGame.RSpecialMo
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_ShouldIDoLandAnim;
     /// <summary>
     /// Function: ShouldIDoLandAnim
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RSpecialMoveInstance_LineLauncher.LineLauncherDismountType ShouldIDoLandAnim(out BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator Locator, float MinLandHeight, float MaxLandHeight)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.ShouldIDoLandAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldIDoLandAnim, "BmGame.RSpecialMoveInstance_LineLauncher.ShouldIDoLandAnim");
         byte* paramsPtr = stackalloc byte[141];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinLandHeight, paramsPtr + 132);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxLandHeight, paramsPtr + 136);
@@ -419,12 +444,13 @@ public partial class RSpecialMoveInstance_LineLauncher : BmSDK.BmGame.RSpecialMo
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RSpecialMoveInstance_LineLauncher.LineLauncherDismountType>(paramsPtr + 140);
     }
 
+    private static BmSDK.Function __fn_LineLauncherMovement;
     /// <summary>
     /// Function: LineLauncherMovement
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RSpecialMoveInstance_LineLauncher.LineLauncherMovementResult LineLauncherMovement(float DeltaTime, float HorizontalSpeed, float VerticalAccel, float MaxVerticalSpeed, float WallLookAheadTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.LineLauncherMovement", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LineLauncherMovement, "BmGame.RSpecialMoveInstance_LineLauncher.LineLauncherMovement");
         byte* paramsPtr = stackalloc byte[21];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HorizontalSpeed, paramsPtr + 4);
@@ -442,23 +468,25 @@ public partial class RSpecialMoveInstance_LineLauncher : BmSDK.BmGame.RSpecialMo
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RSpecialMoveInstance_LineLauncher.LineLauncherMovementResult>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_JumpOffLineLauncher;
     /// <summary>
     /// Function: JumpOffLineLauncher
     /// </summary>
     public unsafe virtual void JumpOffLineLauncher()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.JumpOffLineLauncher", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_JumpOffLineLauncher, "BmGame.RSpecialMoveInstance_LineLauncher.JumpOffLineLauncher");
         byte* paramsPtr = stackalloc byte[168];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetGrabbedTargetReference;
     /// <summary>
     /// Function: GetGrabbedTargetReference
     /// </summary>
     public unsafe virtual void GetGrabbedTargetReference(out System.Numerics.Vector3 RefLocation, out BmSDK.Rotator RefRotation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.GetGrabbedTargetReference", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGrabbedTargetReference, "BmGame.RSpecialMoveInstance_LineLauncher.GetGrabbedTargetReference");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         RefLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
@@ -466,159 +494,173 @@ public partial class RSpecialMoveInstance_LineLauncher : BmSDK.BmGame.RSpecialMo
         return;
     }
 
+    private static BmSDK.Function __fn_CheckForPawnHits;
     /// <summary>
     /// Function: CheckForPawnHits
     /// </summary>
     public unsafe virtual void CheckForPawnHits()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.CheckForPawnHits", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckForPawnHits, "BmGame.RSpecialMoveInstance_LineLauncher.CheckForPawnHits");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_BumpVillain;
     /// <summary>
     /// Function: BumpVillain
     /// </summary>
     public unsafe virtual void BumpVillain(BmSDK.BmGame.RPawnVillain Villain)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.BumpVillain", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BumpVillain, "BmGame.RSpecialMoveInstance_LineLauncher.BumpVillain");
         byte* paramsPtr = stackalloc byte[268];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Villain, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DoRescueLanding;
     /// <summary>
     /// Function: DoRescueLanding
     /// </summary>
     public unsafe virtual void DoRescueLanding()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.DoRescueLanding", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoRescueLanding, "BmGame.RSpecialMoveInstance_LineLauncher.DoRescueLanding");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CheckForRescueVolume;
     /// <summary>
     /// Function: CheckForRescueVolume
     /// </summary>
     public unsafe virtual void CheckForRescueVolume()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.CheckForRescueVolume", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckForRescueVolume, "BmGame.RSpecialMoveInstance_LineLauncher.CheckForRescueVolume");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SwitchHands;
     /// <summary>
     /// Function: SwitchHands
     /// </summary>
     public unsafe virtual void SwitchHands()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.SwitchHands", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SwitchHands, "BmGame.RSpecialMoveInstance_LineLauncher.SwitchHands");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GrabHostage;
     /// <summary>
     /// Function: GrabHostage
     /// </summary>
     public unsafe virtual void GrabHostage()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.GrabHostage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GrabHostage, "BmGame.RSpecialMoveInstance_LineLauncher.GrabHostage");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnLineLancherWire;
     /// <summary>
     /// Function: SpawnLineLancherWire
     /// </summary>
     public unsafe virtual void SpawnLineLancherWire()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.SpawnLineLancherWire", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnLineLancherWire, "BmGame.RSpecialMoveInstance_LineLauncher.SpawnLineLancherWire");
         byte* paramsPtr = stackalloc byte[144];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerTightRope;
     /// <summary>
     /// Function: TriggerTightRope
     /// </summary>
     public unsafe virtual void TriggerTightRope()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.TriggerTightRope", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerTightRope, "BmGame.RSpecialMoveInstance_LineLauncher.TriggerTightRope");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RemoteEvent;
     /// <summary>
     /// Function: RemoteEvent
     /// </summary>
     public unsafe override void RemoteEvent(BmSDK.FName EventName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.RemoteEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoteEvent, "BmGame.RSpecialMoveInstance_LineLauncher.RemoteEvent");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanTakeDownTarget;
     /// <summary>
     /// Function: CanTakeDownTarget
     /// </summary>
     public unsafe virtual bool CanTakeDownTarget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.CanTakeDownTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanTakeDownTarget, "BmGame.RSpecialMoveInstance_LineLauncher.CanTakeDownTarget");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_HandleAction;
     /// <summary>
     /// Function: HandleAction
     /// </summary>
     public unsafe override void HandleAction(BmSDK.FName actionName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.HandleAction", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandleAction, "BmGame.RSpecialMoveInstance_LineLauncher.HandleAction");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(actionName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StopAiming;
     /// <summary>
     /// Function: StopAiming
     /// </summary>
     public unsafe virtual void StopAiming(float SlowMoFadeOutTime = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.StopAiming", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopAiming, "BmGame.RSpecialMoveInstance_LineLauncher.StopAiming");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SlowMoFadeOutTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartAiming;
     /// <summary>
     /// Function: StartAiming
     /// </summary>
     public unsafe virtual void StartAiming()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.StartAiming", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartAiming, "BmGame.RSpecialMoveInstance_LineLauncher.StartAiming");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerSpecialMove;
     /// <summary>
     /// Function: TriggerSpecialMove
     /// </summary>
     public unsafe override void TriggerSpecialMove(BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator Loc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_LineLauncher.TriggerSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerSpecialMove, "BmGame.RSpecialMoveInstance_LineLauncher.TriggerSpecialMove");
         byte* paramsPtr = stackalloc byte[156];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

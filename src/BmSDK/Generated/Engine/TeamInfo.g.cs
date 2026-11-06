@@ -78,12 +78,13 @@ public partial class TeamInfo : BmSDK.Engine.ReplicationInfo, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<TeamInfo>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetTeamNum;
     /// <summary>
     /// Function: GetTeamNum
     /// </summary>
     public unsafe override byte GetTeamNum()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.TeamInfo.GetTeamNum", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTeamNum, "Engine.TeamInfo.GetTeamNum");
         byte* paramsPtr = stackalloc byte[1];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,58 +97,63 @@ public partial class TeamInfo : BmSDK.Engine.ReplicationInfo, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<byte>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetHumanReadableName;
     /// <summary>
     /// Function: GetHumanReadableName
     /// </summary>
     public unsafe override BmSDK.FString GetHumanReadableName()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.TeamInfo.GetHumanReadableName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHumanReadableName, "Engine.TeamInfo.GetHumanReadableName");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_RemoveFromTeam;
     /// <summary>
     /// Function: RemoveFromTeam
     /// </summary>
     public unsafe virtual void RemoveFromTeam(BmSDK.Engine.Controller Other)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.TeamInfo.RemoveFromTeam", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveFromTeam, "Engine.TeamInfo.RemoveFromTeam");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddToTeam;
     /// <summary>
     /// Function: AddToTeam
     /// </summary>
     public unsafe virtual bool AddToTeam(BmSDK.Engine.Controller Other)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.TeamInfo.AddToTeam", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddToTeam, "Engine.TeamInfo.AddToTeam");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.TeamInfo.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "Engine.TeamInfo.Destroyed");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ReplicatedEvent;
     /// <summary>
     /// Function: ReplicatedEvent
     /// </summary>
     public unsafe override void ReplicatedEvent(BmSDK.FName VarName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.TeamInfo.ReplicatedEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReplicatedEvent, "Engine.TeamInfo.ReplicatedEvent");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VarName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

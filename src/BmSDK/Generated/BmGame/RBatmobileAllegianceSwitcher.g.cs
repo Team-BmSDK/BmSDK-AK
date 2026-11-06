@@ -78,34 +78,37 @@ public partial class RBatmobileAllegianceSwitcher : BmSDK.BmGame.RVehicleWeapon,
         where TComponent : class, Framework.IScriptComponent<RBatmobileAllegianceSwitcher>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ReadyToFire;
     /// <summary>
     /// Function: ReadyToFire
     /// </summary>
     public unsafe override bool ReadyToFire()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileAllegianceSwitcher.ReadyToFire", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadyToFire, "BmGame.RBatmobileAllegianceSwitcher.ReadyToFire");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_FireAllegianceSwitch;
     /// <summary>
     /// Function: FireAllegianceSwitch
     /// </summary>
     public unsafe virtual void FireAllegianceSwitch()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileAllegianceSwitcher.FireAllegianceSwitch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireAllegianceSwitch, "BmGame.RBatmobileAllegianceSwitcher.FireAllegianceSwitch");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CheckAutoTarget;
     /// <summary>
     /// Function: CheckAutoTarget
     /// </summary>
     public unsafe override bool CheckAutoTarget(BmSDK.Engine.Actor Target, out System.Numerics.Vector3 TargetPosition, out float OverridePriority, out float OverrideMaxRange, out byte DoLOSCheck)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileAllegianceSwitcher.CheckAutoTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckAutoTarget, "BmGame.RBatmobileAllegianceSwitcher.CheckAutoTarget");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -116,12 +119,13 @@ public partial class RBatmobileAllegianceSwitcher : BmSDK.BmGame.RVehicleWeapon,
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_FireWeapon;
     /// <summary>
     /// Function: FireWeapon
     /// </summary>
     public unsafe override bool FireWeapon()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileAllegianceSwitcher.FireWeapon", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireWeapon, "BmGame.RBatmobileAllegianceSwitcher.FireWeapon");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

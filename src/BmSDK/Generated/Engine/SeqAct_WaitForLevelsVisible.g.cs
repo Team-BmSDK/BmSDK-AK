@@ -78,23 +78,25 @@ public partial class SeqAct_WaitForLevelsVisible : BmSDK.Engine.SeqAct_Latent, B
         where TComponent : class, Framework.IScriptComponent<SeqAct_WaitForLevelsVisible>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SeqAct_WaitForLevelsVisible.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "Engine.SeqAct_WaitForLevelsVisible.Activated");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CheckLevelsVisible;
     /// <summary>
     /// Function: CheckLevelsVisible
     /// </summary>
     public unsafe virtual bool CheckLevelsVisible()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SeqAct_WaitForLevelsVisible.CheckLevelsVisible", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckLevelsVisible, "Engine.SeqAct_WaitForLevelsVisible.CheckLevelsVisible");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

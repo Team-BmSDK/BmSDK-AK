@@ -78,23 +78,25 @@ public partial class MCombatMove_RedhoodCounterBlackMask : BmSDK.BmGame.RCombatM
         where TComponent : class, Framework.IScriptComponent<MCombatMove_RedhoodCounterBlackMask>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_NearThugEvade;
     /// <summary>
     /// Function: NearThugEvade
     /// </summary>
     public unsafe virtual void NearThugEvade()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCombatMove_RedhoodCounterBlackMask.NearThugEvade", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NearThugEvade, "BmGame.MCombatMove_RedhoodCounterBlackMask.NearThugEvade");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CheckVillainInTheWay;
     /// <summary>
     /// Function: CheckVillainInTheWay
     /// </summary>
     public unsafe virtual bool CheckVillainInTheWay(BmSDK.Engine.Actor BlackMask, BmSDK.BmGame.RPawnVillain Thug, BmSDK.Engine.Actor Redhood)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCombatMove_RedhoodCounterBlackMask.CheckVillainInTheWay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckVillainInTheWay, "BmGame.MCombatMove_RedhoodCounterBlackMask.CheckVillainInTheWay");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BlackMask, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Thug, paramsPtr + 8);
@@ -103,68 +105,74 @@ public partial class MCombatMove_RedhoodCounterBlackMask : BmSDK.BmGame.RCombatM
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_ExitMove;
     /// <summary>
     /// Function: ExitMove
     /// </summary>
     public unsafe override void ExitMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCombatMove_RedhoodCounterBlackMask.ExitMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ExitMove, "BmGame.MCombatMove_RedhoodCounterBlackMask.ExitMove");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DamagePawn;
     /// <summary>
     /// Function: DamagePawn
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RPawnCombat.DamageResult DamagePawn(BmSDK.BmGame.RPawnCombat DamageReceiver)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCombatMove_RedhoodCounterBlackMask.DamagePawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DamagePawn, "BmGame.MCombatMove_RedhoodCounterBlackMask.DamagePawn");
         byte* paramsPtr = stackalloc byte[260];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageReceiver, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnCombat.DamageResult>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_DamageTarget;
     /// <summary>
     /// Function: DamageTarget
     /// </summary>
     public unsafe override void DamageTarget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCombatMove_RedhoodCounterBlackMask.DamageTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DamageTarget, "BmGame.MCombatMove_RedhoodCounterBlackMask.DamageTarget");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FakeDamageTaken;
     /// <summary>
     /// Function: FakeDamageTaken
     /// </summary>
     public unsafe virtual void FakeDamageTaken()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCombatMove_RedhoodCounterBlackMask.FakeDamageTaken", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FakeDamageTaken, "BmGame.MCombatMove_RedhoodCounterBlackMask.FakeDamageTaken");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanQuikFireLT;
     /// <summary>
     /// Function: CanQuikFireLT
     /// </summary>
     public unsafe virtual void CanQuikFireLT()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCombatMove_RedhoodCounterBlackMask.CanQuikFireLT", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanQuikFireLT, "BmGame.MCombatMove_RedhoodCounterBlackMask.CanQuikFireLT");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetHelpPrompt;
     /// <summary>
     /// Function: GetHelpPrompt
     /// </summary>
     public unsafe override bool GetHelpPrompt(BmSDK.BmGame.RHUDPrompt HelpPrompt, bool bKismetHelpOn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCombatMove_RedhoodCounterBlackMask.GetHelpPrompt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHelpPrompt, "BmGame.MCombatMove_RedhoodCounterBlackMask.GetHelpPrompt");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HelpPrompt, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bKismetHelpOn, paramsPtr + 8);
@@ -172,67 +180,73 @@ public partial class MCombatMove_RedhoodCounterBlackMask : BmSDK.BmGame.RCombatM
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_StartCustomFinalBlowCam;
     /// <summary>
     /// Function: StartCustomFinalBlowCam
     /// </summary>
     public unsafe virtual void StartCustomFinalBlowCam()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCombatMove_RedhoodCounterBlackMask.StartCustomFinalBlowCam", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartCustomFinalBlowCam, "BmGame.MCombatMove_RedhoodCounterBlackMask.StartCustomFinalBlowCam");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DisableSlomo;
     /// <summary>
     /// Function: DisableSlomo
     /// </summary>
     public unsafe virtual void DisableSlomo()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCombatMove_RedhoodCounterBlackMask.DisableSlomo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisableSlomo, "BmGame.MCombatMove_RedhoodCounterBlackMask.DisableSlomo");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanPerformTakedownWithStun;
     /// <summary>
     /// Function: CanPerformTakedownWithStun
     /// </summary>
     public unsafe override bool CanPerformTakedownWithStun()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCombatMove_RedhoodCounterBlackMask.CanPerformTakedownWithStun", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanPerformTakedownWithStun, "BmGame.MCombatMove_RedhoodCounterBlackMask.CanPerformTakedownWithStun");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_EnableSlomo;
     /// <summary>
     /// Function: EnableSlomo
     /// </summary>
     public unsafe virtual void EnableSlomo()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCombatMove_RedhoodCounterBlackMask.EnableSlomo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnableSlomo, "BmGame.MCombatMove_RedhoodCounterBlackMask.EnableSlomo");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsAttacking;
     /// <summary>
     /// Function: IsAttacking
     /// </summary>
     public unsafe override bool IsAttacking()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCombatMove_RedhoodCounterBlackMask.IsAttacking", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAttacking, "BmGame.MCombatMove_RedhoodCounterBlackMask.IsAttacking");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanReceiveAttackFromPawn;
     /// <summary>
     /// Function: CanReceiveAttackFromPawn
     /// </summary>
     public unsafe override bool CanReceiveAttackFromPawn(BmSDK.BmGame.RPawnCombat TestPawn, BmSDK.BmGame.RPawnCombat NewAttacker)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCombatMove_RedhoodCounterBlackMask.CanReceiveAttackFromPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanReceiveAttackFromPawn, "BmGame.MCombatMove_RedhoodCounterBlackMask.CanReceiveAttackFromPawn");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAttacker, paramsPtr + 8);
@@ -240,12 +254,13 @@ public partial class MCombatMove_RedhoodCounterBlackMask : BmSDK.BmGame.RCombatM
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_Initialise;
     /// <summary>
     /// Function: Initialise
     /// </summary>
     public unsafe override void Initialise()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCombatMove_RedhoodCounterBlackMask.Initialise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Initialise, "BmGame.MCombatMove_RedhoodCounterBlackMask.Initialise");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

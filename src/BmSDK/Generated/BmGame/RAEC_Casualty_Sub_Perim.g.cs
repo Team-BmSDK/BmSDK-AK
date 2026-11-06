@@ -78,34 +78,37 @@ public partial class RAEC_Casualty_Sub_Perim : BmSDK.BmGame.RAlertEventCoordinat
         where TComponent : class, Framework.IScriptComponent<RAEC_Casualty_Sub_Perim>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CanReassign;
     /// <summary>
     /// Function: CanReassign
     /// </summary>
     public unsafe virtual bool CanReassign()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Casualty_Sub_Perim.CanReassign", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanReassign, "BmGame.RAEC_Casualty_Sub_Perim.CanReassign");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsAtPerimeter;
     /// <summary>
     /// Function: IsAtPerimeter
     /// </summary>
     public unsafe virtual bool IsAtPerimeter()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Casualty_Sub_Perim.IsAtPerimeter", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAtPerimeter, "BmGame.RAEC_Casualty_Sub_Perim.IsAtPerimeter");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ReAssign;
     /// <summary>
     /// Function: ReAssign
     /// </summary>
     public unsafe virtual void ReAssign(System.Numerics.Vector3 NewPoint, BmSDK.TArray<System.Numerics.Vector3> WatchPoint)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Casualty_Sub_Perim.ReAssign", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReAssign, "BmGame.RAEC_Casualty_Sub_Perim.ReAssign");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WatchPoint, paramsPtr + 12);
@@ -113,12 +116,13 @@ public partial class RAEC_Casualty_Sub_Perim : BmSDK.BmGame.RAlertEventCoordinat
         return;
     }
 
+    private static BmSDK.Function __fn_AssignPosition;
     /// <summary>
     /// Function: AssignPosition
     /// </summary>
     public unsafe virtual void AssignPosition(System.Numerics.Vector3 NewCentre, System.Numerics.Vector3 PeekAimPos, System.Numerics.Vector3 NewStandPos, BmSDK.TArray<System.Numerics.Vector3> WatchPoint)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Casualty_Sub_Perim.AssignPosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AssignPosition, "BmGame.RAEC_Casualty_Sub_Perim.AssignPosition");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCentre, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PeekAimPos, paramsPtr + 12);
@@ -128,12 +132,13 @@ public partial class RAEC_Casualty_Sub_Perim : BmSDK.BmGame.RAlertEventCoordinat
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyEvent;
     /// <summary>
     /// Function: NotifyEvent
     /// </summary>
     public unsafe override void NotifyEvent(BmSDK.BmGame.RBMAIAction EventAction, BmSDK.FString EventType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Casualty_Sub_Perim.NotifyEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyEvent, "BmGame.RAEC_Casualty_Sub_Perim.NotifyEvent");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventAction, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventType, paramsPtr + 8);
@@ -141,48 +146,52 @@ public partial class RAEC_Casualty_Sub_Perim : BmSDK.BmGame.RAlertEventCoordinat
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyFailed;
     /// <summary>
     /// Function: NotifyFailed
     /// </summary>
     public unsafe override void NotifyFailed(BmSDK.BmGame.RBMAIAction FinishedAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Casualty_Sub_Perim.NotifyFailed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyFailed, "BmGame.RAEC_Casualty_Sub_Perim.NotifyFailed");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FinishedAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyFinished;
     /// <summary>
     /// Function: NotifyFinished
     /// </summary>
     public unsafe override void NotifyFinished(BmSDK.BmGame.RBMAIAction FinishedAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Casualty_Sub_Perim.NotifyFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyFinished, "BmGame.RAEC_Casualty_Sub_Perim.NotifyFinished");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FinishedAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetAIThoughts;
     /// <summary>
     /// Function: GetAIThoughts
     /// </summary>
     public unsafe override void GetAIThoughts(out BmSDK.TArray<BmSDK.Engine.Actor.FThought> ThoughtList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Casualty_Sub_Perim.GetAIThoughts", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAIThoughts, "BmGame.RAEC_Casualty_Sub_Perim.GetAIThoughts");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ThoughtList = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.Engine.Actor.FThought>>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Casualty_Sub_Perim.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RAEC_Casualty_Sub_Perim.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

@@ -78,91 +78,99 @@ public partial class RSeqAct_Objective : BmSDK.Engine.SequenceAction, BmSDK.IGam
         where TComponent : class, Framework.IScriptComponent<RSeqAct_Objective>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_Objective.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmGame.RSeqAct_Objective.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_Objective.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmGame.RSeqAct_Objective.Activated");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ActivateObjectiveMarker;
     /// <summary>
     /// Function: ActivateObjectiveMarker
     /// </summary>
     public unsafe virtual void ActivateObjectiveMarker()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_Objective.ActivateObjectiveMarker", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActivateObjectiveMarker, "BmGame.RSeqAct_Objective.ActivateObjectiveMarker");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddSubObjective;
     /// <summary>
     /// Function: AddSubObjective
     /// </summary>
     public unsafe virtual void AddSubObjective(bool bRealAdd)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_Objective.AddSubObjective", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddSubObjective, "BmGame.RSeqAct_Objective.AddSubObjective");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bRealAdd, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddMainObjective;
     /// <summary>
     /// Function: AddMainObjective
     /// </summary>
     public unsafe virtual void AddMainObjective(bool bRealAdd)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_Objective.AddMainObjective", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddMainObjective, "BmGame.RSeqAct_Objective.AddMainObjective");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bRealAdd, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetSubObjectiveName;
     /// <summary>
     /// Function: GetSubObjectiveName
     /// </summary>
     public unsafe virtual BmSDK.FString GetSubObjectiveName()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_Objective.GetSubObjectiveName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSubObjectiveName, "BmGame.RSeqAct_Objective.GetSubObjectiveName");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetObjectiveName;
     /// <summary>
     /// Function: GetObjectiveName
     /// </summary>
     public unsafe virtual BmSDK.FString GetObjectiveName()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_Objective.GetObjectiveName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjectiveName, "BmGame.RSeqAct_Objective.GetObjectiveName");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_AddMessage;
     /// <summary>
     /// Function: AddMessage
     /// </summary>
     public unsafe virtual void AddMessage(BmSDK.FString Title, BmSDK.FString Desc, bool bIsAdd, bool bIsComplete)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_Objective.AddMessage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddMessage, "BmGame.RSeqAct_Objective.AddMessage");
         byte* paramsPtr = stackalloc byte[84];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Title, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Desc, paramsPtr + 16);

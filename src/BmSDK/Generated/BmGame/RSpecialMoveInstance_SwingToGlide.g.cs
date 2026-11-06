@@ -78,34 +78,37 @@ public partial class RSpecialMoveInstance_SwingToGlide : BmSDK.BmGame.RSpecialMo
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveInstance_SwingToGlide>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_TriggerSwingCamera;
     /// <summary>
     /// Function: TriggerSwingCamera
     /// </summary>
     public unsafe override void TriggerSwingCamera()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_SwingToGlide.TriggerSwingCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerSwingCamera, "BmGame.RSpecialMoveInstance_SwingToGlide.TriggerSwingCamera");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ApplyLandingCapeState;
     /// <summary>
     /// Function: ApplyLandingCapeState
     /// </summary>
     public unsafe override void ApplyLandingCapeState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_SwingToGlide.ApplyLandingCapeState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyLandingCapeState, "BmGame.RSpecialMoveInstance_SwingToGlide.ApplyLandingCapeState");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishSpecialMove;
     /// <summary>
     /// Function: FinishSpecialMove
     /// </summary>
     public unsafe override void FinishSpecialMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_SwingToGlide.FinishSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishSpecialMove, "BmGame.RSpecialMoveInstance_SwingToGlide.FinishSpecialMove");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

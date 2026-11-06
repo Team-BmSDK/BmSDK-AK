@@ -73,12 +73,13 @@ public partial class RSeqAct_MatineeSequenceSkipperBase : BmSDK.Engine.SequenceA
         where TComponent : class, Framework.IScriptComponent<RSeqAct_MatineeSequenceSkipperBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ForwardMatineeToPosition;
     /// <summary>
     /// Function: ForwardMatineeToPosition
     /// </summary>
     public unsafe virtual void ForwardMatineeToPosition(BmSDK.Engine.SeqAct_Interp Matinee, float NewPosition)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_MatineeSequenceSkipperBase.ForwardMatineeToPosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForwardMatineeToPosition, "BmGame.RSeqAct_MatineeSequenceSkipperBase.ForwardMatineeToPosition");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Matinee, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPosition, paramsPtr + 8);

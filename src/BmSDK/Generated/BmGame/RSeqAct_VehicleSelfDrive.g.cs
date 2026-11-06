@@ -73,12 +73,13 @@ public partial class RSeqAct_VehicleSelfDrive : BmSDK.Engine.SequenceAction, BmS
         where TComponent : class, Framework.IScriptComponent<RSeqAct_VehicleSelfDrive>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnArrived;
     /// <summary>
     /// Function: OnArrived
     /// </summary>
     public unsafe virtual void OnArrived()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_VehicleSelfDrive.OnArrived", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnArrived, "BmGame.RSeqAct_VehicleSelfDrive.OnArrived");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

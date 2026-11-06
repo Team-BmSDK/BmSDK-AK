@@ -73,23 +73,25 @@ public partial class RSeqAct_SpawnerBase : BmSDK.Engine.SequenceAction, BmSDK.IG
         where TComponent : class, Framework.IScriptComponent<RSeqAct_SpawnerBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnDataLoaded;
     /// <summary>
     /// Function: OnDataLoaded
     /// </summary>
     public unsafe virtual void OnDataLoaded()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SpawnerBase.OnDataLoaded", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDataLoaded, "BmGame.RSeqAct_SpawnerBase.OnDataLoaded");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetCharacterData;
     /// <summary>
     /// Function: SetCharacterData
     /// </summary>
     public unsafe virtual void SetCharacterData(out int Slot, BmSDK.FName PlayableCharacterName, BmSDK.BmGame.RAddContentPlayerCharacter PlayableCharacter, BmSDK.BmGame.RAddContentPlayerCharacterMesh CharacterMesh)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SpawnerBase.SetCharacterData", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCharacterData, "BmGame.RSeqAct_SpawnerBase.SetCharacterData");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayableCharacterName, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayableCharacter, paramsPtr + 12);
@@ -106,12 +108,13 @@ public partial class RSeqAct_SpawnerBase : BmSDK.Engine.SequenceAction, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_StoreObjVar;
     /// <summary>
     /// Function: StoreObjVar
     /// </summary>
     public unsafe virtual void StoreObjVar(BmSDK.FString Ident, int Index, BmSDK.GameObject Obj)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SpawnerBase.StoreObjVar", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StoreObjVar, "BmGame.RSeqAct_SpawnerBase.StoreObjVar");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Ident, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Index, paramsPtr + 16);

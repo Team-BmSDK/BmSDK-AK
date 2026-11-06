@@ -78,12 +78,13 @@ public partial class RStealthTakeDownStage_LedgeAttackCw : BmSDK.BmGame.RStealth
         where TComponent : class, Framework.IScriptComponent<RStealthTakeDownStage_LedgeAttackCw>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetFinishState;
     /// <summary>
     /// Function: GetFinishState
     /// </summary>
     public unsafe override BmSDK.FName GetFinishState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RStealthTakeDownStage_LedgeAttackCw.GetFinishState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFinishState, "BmScript.RStealthTakeDownStage_LedgeAttackCw.GetFinishState");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);

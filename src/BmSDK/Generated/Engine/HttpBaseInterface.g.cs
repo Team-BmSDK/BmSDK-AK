@@ -73,12 +73,13 @@ public partial class HttpBaseInterface : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<HttpBaseInterface>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetContent;
     /// <summary>
     /// Function: GetContent
     /// </summary>
     public unsafe virtual void GetContent(out BmSDK.TArray<byte> Content)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.HttpBaseInterface.GetContent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetContent, "Engine.HttpBaseInterface.GetContent");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -92,12 +93,13 @@ public partial class HttpBaseInterface : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetURL;
     /// <summary>
     /// Function: GetURL
     /// </summary>
     public unsafe virtual BmSDK.FString GetURL()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.HttpBaseInterface.GetURL", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetURL, "Engine.HttpBaseInterface.GetURL");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -110,12 +112,13 @@ public partial class HttpBaseInterface : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetContentLength;
     /// <summary>
     /// Function: GetContentLength
     /// </summary>
     public unsafe virtual int GetContentLength()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.HttpBaseInterface.GetContentLength", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetContentLength, "Engine.HttpBaseInterface.GetContentLength");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -128,12 +131,13 @@ public partial class HttpBaseInterface : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetContentType;
     /// <summary>
     /// Function: GetContentType
     /// </summary>
     public unsafe virtual BmSDK.FString GetContentType()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.HttpBaseInterface.GetContentType", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetContentType, "Engine.HttpBaseInterface.GetContentType");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -146,12 +150,13 @@ public partial class HttpBaseInterface : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetURLParameter;
     /// <summary>
     /// Function: GetURLParameter
     /// </summary>
     public unsafe virtual BmSDK.FString GetURLParameter(BmSDK.FString ParameterName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.HttpBaseInterface.GetURLParameter", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetURLParameter, "Engine.HttpBaseInterface.GetURLParameter");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -165,12 +170,13 @@ public partial class HttpBaseInterface : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_GetHeaders;
     /// <summary>
     /// Function: GetHeaders
     /// </summary>
     public unsafe virtual BmSDK.TArray<BmSDK.FString> GetHeaders()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.HttpBaseInterface.GetHeaders", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHeaders, "Engine.HttpBaseInterface.GetHeaders");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -183,12 +189,13 @@ public partial class HttpBaseInterface : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetHeader;
     /// <summary>
     /// Function: GetHeader
     /// </summary>
     public unsafe virtual BmSDK.FString GetHeader(BmSDK.FString HeaderName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.HttpBaseInterface.GetHeader", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHeader, "Engine.HttpBaseInterface.GetHeader");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HeaderName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

@@ -78,12 +78,13 @@ public partial class Texture2D : BmSDK.Engine.Texture, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<Texture2D>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Create;
     /// <summary>
     /// Function: Create
     /// </summary>
     public unsafe static BmSDK.Engine.Texture2D Create(int InSizeX, int InSizeY, BmSDK.Engine.Texture.EPixelFormat InFormat = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Texture2D.Create", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Create, "Engine.Texture2D.Create");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InSizeX, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InSizeY, paramsPtr + 4);
@@ -99,12 +100,13 @@ public partial class Texture2D : BmSDK.Engine.Texture, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Texture2D>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_SetPrestreamMipLevels;
     /// <summary>
     /// Function: SetPrestreamMipLevels
     /// </summary>
     public unsafe virtual void SetPrestreamMipLevels(float ForceDuration, bool FullMips, bool HighPriority, bool GentleLastRenderTimeHint)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Texture2D.SetPrestreamMipLevels", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetPrestreamMipLevels, "Engine.Texture2D.SetPrestreamMipLevels");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ForceDuration, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FullMips, paramsPtr + 4);
@@ -121,12 +123,13 @@ public partial class Texture2D : BmSDK.Engine.Texture, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetForceMipLevelsToBeResident;
     /// <summary>
     /// Function: SetForceMipLevelsToBeResident
     /// </summary>
     public unsafe virtual void SetForceMipLevelsToBeResident(float Seconds, int CinematicTextureGroups = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Texture2D.SetForceMipLevelsToBeResident", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetForceMipLevelsToBeResident, "Engine.Texture2D.SetForceMipLevelsToBeResident");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Seconds, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CinematicTextureGroups, paramsPtr + 4);

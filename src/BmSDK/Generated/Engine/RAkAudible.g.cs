@@ -78,12 +78,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RAkAudible>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetSuppressLoops;
     /// <summary>
     /// Function: SetSuppressLoops
     /// </summary>
     public unsafe virtual void SetSuppressLoops(BmSDK.Engine.AkPredicate suppressCheck)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.SetSuppressLoops", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSuppressLoops, "Engine.RAkAudible.SetSuppressLoops");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(suppressCheck, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -97,12 +98,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetAlwaysPlayLoops;
     /// <summary>
     /// Function: SetAlwaysPlayLoops
     /// </summary>
     public unsafe virtual void SetAlwaysPlayLoops(bool alwaysPlayLoops)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.SetAlwaysPlayLoops", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAlwaysPlayLoops, "Engine.RAkAudible.SetAlwaysPlayLoops");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(alwaysPlayLoops, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -116,12 +118,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetAutoKillOnDelete;
     /// <summary>
     /// Function: SetAutoKillOnDelete
     /// </summary>
     public unsafe virtual void SetAutoKillOnDelete(bool killOnDelete)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.SetAutoKillOnDelete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAutoKillOnDelete, "Engine.RAkAudible.SetAutoKillOnDelete");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(killOnDelete, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -135,12 +138,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetAutoDestroyWhenDead;
     /// <summary>
     /// Function: SetAutoDestroyWhenDead
     /// </summary>
     public unsafe virtual void SetAutoDestroyWhenDead(bool autoDestroy)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.SetAutoDestroyWhenDead", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAutoDestroyWhenDead, "Engine.RAkAudible.SetAutoDestroyWhenDead");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(autoDestroy, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -154,12 +158,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetAutoDestroyWhenHidden;
     /// <summary>
     /// Function: SetAutoDestroyWhenHidden
     /// </summary>
     public unsafe virtual void SetAutoDestroyWhenHidden(bool autoDestroy)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.SetAutoDestroyWhenHidden", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAutoDestroyWhenHidden, "Engine.RAkAudible.SetAutoDestroyWhenHidden");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(autoDestroy, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -173,12 +178,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetNeverAutoDestroy;
     /// <summary>
     /// Function: SetNeverAutoDestroy
     /// </summary>
     public unsafe virtual void SetNeverAutoDestroy(bool neverAutoDestroy)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.SetNeverAutoDestroy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetNeverAutoDestroy, "Engine.RAkAudible.SetNeverAutoDestroy");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(neverAutoDestroy, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -192,12 +198,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_DisableSecondaryOutput;
     /// <summary>
     /// Function: DisableSecondaryOutput
     /// </summary>
     public unsafe virtual void DisableSecondaryOutput()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.DisableSecondaryOutput", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisableSecondaryOutput, "Engine.RAkAudible.DisableSecondaryOutput");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -210,12 +217,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_EnableSecondaryOutput;
     /// <summary>
     /// Function: EnableSecondaryOutput
     /// </summary>
     public unsafe virtual void EnableSecondaryOutput(bool setViaAux = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.EnableSecondaryOutput", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnableSecondaryOutput, "Engine.RAkAudible.EnableSecondaryOutput");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(setViaAux, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -229,12 +237,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_UnlinkFromListenerEvironments;
     /// <summary>
     /// Function: UnlinkFromListenerEvironments
     /// </summary>
     public unsafe virtual void UnlinkFromListenerEvironments()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.UnlinkFromListenerEvironments", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnlinkFromListenerEvironments, "Engine.RAkAudible.UnlinkFromListenerEvironments");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -247,12 +256,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_LinkToListenerEnvironments;
     /// <summary>
     /// Function: LinkToListenerEnvironments
     /// </summary>
     public unsafe virtual void LinkToListenerEnvironments()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.LinkToListenerEnvironments", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LinkToListenerEnvironments, "Engine.RAkAudible.LinkToListenerEnvironments");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -265,12 +275,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_DisableObstructionOcclusion;
     /// <summary>
     /// Function: DisableObstructionOcclusion
     /// </summary>
     public unsafe virtual void DisableObstructionOcclusion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.DisableObstructionOcclusion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisableObstructionOcclusion, "Engine.RAkAudible.DisableObstructionOcclusion");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -283,12 +294,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_EnableObstructionOcclusion;
     /// <summary>
     /// Function: EnableObstructionOcclusion
     /// </summary>
     public unsafe virtual void EnableObstructionOcclusion(bool setViaParam = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.EnableObstructionOcclusion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnableObstructionOcclusion, "Engine.RAkAudible.EnableObstructionOcclusion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(setViaParam, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -302,12 +314,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetSourceAudibilityRadius;
     /// <summary>
     /// Function: GetSourceAudibilityRadius
     /// </summary>
     public unsafe virtual float GetSourceAudibilityRadius()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.GetSourceAudibilityRadius", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSourceAudibilityRadius, "Engine.RAkAudible.GetSourceAudibilityRadius");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -320,12 +333,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetSourceLinearVelocity;
     /// <summary>
     /// Function: GetSourceLinearVelocity
     /// </summary>
     public unsafe virtual float GetSourceLinearVelocity()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.GetSourceLinearVelocity", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSourceLinearVelocity, "Engine.RAkAudible.GetSourceLinearVelocity");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -338,12 +352,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetSourceDistanceToListener;
     /// <summary>
     /// Function: GetSourceDistanceToListener
     /// </summary>
     public unsafe virtual float GetSourceDistanceToListener()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.GetSourceDistanceToListener", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSourceDistanceToListener, "Engine.RAkAudible.GetSourceDistanceToListener");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -356,12 +371,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetSourceSpatialSocket;
     /// <summary>
     /// Function: SetSourceSpatialSocket
     /// </summary>
     public unsafe virtual void SetSourceSpatialSocket(BmSDK.FName SocketName, bool autoUpdateSpatial = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.SetSourceSpatialSocket", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSourceSpatialSocket, "Engine.RAkAudible.SetSourceSpatialSocket");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SocketName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(autoUpdateSpatial, paramsPtr + 8);
@@ -376,12 +392,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetSourceSpatialBeam;
     /// <summary>
     /// Function: SetSourceSpatialBeam
     /// </summary>
     public unsafe virtual void SetSourceSpatialBeam(System.Numerics.Vector3 beamStartPoint, System.Numerics.Vector3 beamEndPoint, BmSDK.Rotator Orientation = default, bool autoUpdateSpatial = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.SetSourceSpatialBeam", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSourceSpatialBeam, "Engine.RAkAudible.SetSourceSpatialBeam");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(beamStartPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(beamEndPoint, paramsPtr + 12);
@@ -398,12 +415,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetSourceSpatialRay;
     /// <summary>
     /// Function: SetSourceSpatialRay
     /// </summary>
     public unsafe virtual void SetSourceSpatialRay(System.Numerics.Vector3 rayOrigin, BmSDK.Rotator rayOrientation, bool autoUpdateSpatial = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.SetSourceSpatialRay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSourceSpatialRay, "Engine.RAkAudible.SetSourceSpatialRay");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(rayOrigin, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(rayOrientation, paramsPtr + 12);
@@ -419,12 +437,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetDialogueSourceSpatial;
     /// <summary>
     /// Function: SetDialogueSourceSpatial
     /// </summary>
     public unsafe virtual void SetDialogueSourceSpatial(System.Numerics.Vector3 dlgPosition, BmSDK.Rotator dlgOrientation = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.SetDialogueSourceSpatial", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDialogueSourceSpatial, "Engine.RAkAudible.SetDialogueSourceSpatial");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dlgPosition, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dlgOrientation, paramsPtr + 12);
@@ -439,12 +458,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetSourceSpatial;
     /// <summary>
     /// Function: SetSourceSpatial
     /// </summary>
     public unsafe virtual void SetSourceSpatial(System.Numerics.Vector3 sndPosition, BmSDK.Rotator sndOrientation = default, bool autoUpdateSpatial = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.SetSourceSpatial", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSourceSpatial, "Engine.RAkAudible.SetSourceSpatial");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sndPosition, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sndOrientation, paramsPtr + 12);
@@ -460,12 +480,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetSourceSwitch;
     /// <summary>
     /// Function: SetSourceSwitch
     /// </summary>
     public unsafe virtual void SetSourceSwitch(BmSDK.Engine.AkSwitchName SwitchName, bool storeSwitch = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.SetSourceSwitch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSourceSwitch, "Engine.RAkAudible.SetSourceSwitch");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SwitchName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(storeSwitch, paramsPtr + 8);
@@ -480,12 +501,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetSourceParameter;
     /// <summary>
     /// Function: SetSourceParameter
     /// </summary>
     public unsafe virtual void SetSourceParameter(BmSDK.Engine.AkParameterName ParamName, float ParamValue, bool storeParam = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.SetSourceParameter", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSourceParameter, "Engine.RAkAudible.SetSourceParameter");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParamName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParamValue, paramsPtr + 8);
@@ -501,12 +523,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_HasLoopingAudioEvent;
     /// <summary>
     /// Function: HasLoopingAudioEvent
     /// </summary>
     public unsafe virtual bool HasLoopingAudioEvent(BmSDK.Engine.AkEvent AudioEvent)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.HasLoopingAudioEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasLoopingAudioEvent, "Engine.RAkAudible.HasLoopingAudioEvent");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AudioEvent, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -520,12 +543,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_RemoveAllLoopingAudioEvents;
     /// <summary>
     /// Function: RemoveAllLoopingAudioEvents
     /// </summary>
     public unsafe virtual void RemoveAllLoopingAudioEvents()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.RemoveAllLoopingAudioEvents", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveAllLoopingAudioEvents, "Engine.RAkAudible.RemoveAllLoopingAudioEvents");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -538,12 +562,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_RemoveLoopingAudioEvent;
     /// <summary>
     /// Function: RemoveLoopingAudioEvent
     /// </summary>
     public unsafe virtual void RemoveLoopingAudioEvent(BmSDK.Engine.AkEvent AudioEvent)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.RemoveLoopingAudioEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveLoopingAudioEvent, "Engine.RAkAudible.RemoveLoopingAudioEvent");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AudioEvent, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -557,12 +582,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_AddLoopingAudioEvent;
     /// <summary>
     /// Function: AddLoopingAudioEvent
     /// </summary>
     public unsafe virtual void AddLoopingAudioEvent(BmSDK.Engine.AkEvent AudioEvent)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.AddLoopingAudioEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddLoopingAudioEvent, "Engine.RAkAudible.AddLoopingAudioEvent");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AudioEvent, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -576,12 +602,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_DropAllSounds;
     /// <summary>
     /// Function: DropAllSounds
     /// </summary>
     public unsafe virtual void DropAllSounds()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.DropAllSounds", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DropAllSounds, "Engine.RAkAudible.DropAllSounds");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -594,12 +621,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_KillAllSounds;
     /// <summary>
     /// Function: KillAllSounds
     /// </summary>
     public unsafe virtual void KillAllSounds()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.KillAllSounds", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_KillAllSounds, "Engine.RAkAudible.KillAllSounds");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -612,12 +640,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_StopAudioEvent;
     /// <summary>
     /// Function: StopAudioEvent
     /// </summary>
     public unsafe virtual void StopAudioEvent(out BmSDK.Engine.AkWwise.FAkSoundHandle SoundHandle)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.StopAudioEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopAudioEvent, "Engine.RAkAudible.StopAudioEvent");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -631,12 +660,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_StartAuxEvent;
     /// <summary>
     /// Function: StartAuxEvent
     /// </summary>
     public unsafe virtual bool StartAuxEvent(BmSDK.Engine.AkEvent AudioEvent, System.Numerics.Vector3 Position, System.IntPtr SoundCallbackDelegate = default, int SoundCallbackFlags = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.StartAuxEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartAuxEvent, "Engine.RAkAudible.StartAuxEvent");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AudioEvent, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Position, paramsPtr + 8);
@@ -653,12 +683,13 @@ public partial class RAkAudible : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 40);
     }
 
+    private static BmSDK.Function __fn_StartAudioEvent;
     /// <summary>
     /// Function: StartAudioEvent
     /// </summary>
     public unsafe virtual BmSDK.Engine.AkWwise.FAkSoundHandle StartAudioEvent(BmSDK.Engine.AkEvent AudioEvent, System.IntPtr SoundCallbackDelegate = default, int SoundCallbackFlags = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RAkAudible.StartAudioEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartAudioEvent, "Engine.RAkAudible.StartAudioEvent");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AudioEvent, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SoundCallbackDelegate, paramsPtr + 8);

@@ -78,45 +78,49 @@ public partial class RBMWeaponRifle_BagCarrier : BmSDK.BmScript.RBMWeaponRiflePr
         where TComponent : class, Framework.IScriptComponent<RBMWeaponRifle_BagCarrier>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetPowerCellWeaponConfig;
     /// <summary>
     /// Function: GetPowerCellWeaponConfig
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RWeaponConfig GetPowerCellWeaponConfig()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponRifle_BagCarrier.GetPowerCellWeaponConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPowerCellWeaponConfig, "BmScript.RBMWeaponRifle_BagCarrier.GetPowerCellWeaponConfig");
         byte* paramsPtr = stackalloc byte[864];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RWeaponConfig>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetHardDriveWeaponConfig;
     /// <summary>
     /// Function: GetHardDriveWeaponConfig
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RWeaponConfig GetHardDriveWeaponConfig()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponRifle_BagCarrier.GetHardDriveWeaponConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHardDriveWeaponConfig, "BmScript.RBMWeaponRifle_BagCarrier.GetHardDriveWeaponConfig");
         byte* paramsPtr = stackalloc byte[864];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RWeaponConfig>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetBankExtraWeaponConfig;
     /// <summary>
     /// Function: GetBankExtraWeaponConfig
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RWeaponConfig GetBankExtraWeaponConfig()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponRifle_BagCarrier.GetBankExtraWeaponConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBankExtraWeaponConfig, "BmScript.RBMWeaponRifle_BagCarrier.GetBankExtraWeaponConfig");
         byte* paramsPtr = stackalloc byte[3704];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RWeaponConfig>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CreateWeaponConfig;
     /// <summary>
     /// Function: CreateWeaponConfig
     /// </summary>
     public unsafe override BmSDK.BmGame.RWeaponConfig CreateWeaponConfig(BmSDK.GameObject NewOwner)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponRifle_BagCarrier.CreateWeaponConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateWeaponConfig, "BmScript.RBMWeaponRifle_BagCarrier.CreateWeaponConfig");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewOwner, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

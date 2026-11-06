@@ -78,12 +78,13 @@ public partial class RAEC_HideFromBatmobile_Solo : BmSDK.BmGame.RAlertEventCoord
         where TComponent : class, Framework.IScriptComponent<RAEC_HideFromBatmobile_Solo>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetHideAnimOffset;
     /// <summary>
     /// Function: GetHideAnimOffset
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetHideAnimOffset(BmSDK.BmGame.RPredHideFromBatmobilePoint NewPoint, BmSDK.Class HideType, out float MeetingPointTravelDist)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_HideFromBatmobile_Solo.GetHideAnimOffset", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHideAnimOffset, "BmGame.RAEC_HideFromBatmobile_Solo.GetHideAnimOffset");
         byte* paramsPtr = stackalloc byte[112];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HideType, paramsPtr + 8);
@@ -92,12 +93,13 @@ public partial class RAEC_HideFromBatmobile_Solo : BmSDK.BmGame.RAlertEventCoord
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_SetHidePoint;
     /// <summary>
     /// Function: SetHidePoint
     /// </summary>
     public unsafe virtual void SetHidePoint(BmSDK.BmGame.RPredHideFromBatmobilePoint NewPoint)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_HideFromBatmobile_Solo.SetHidePoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHidePoint, "BmGame.RAEC_HideFromBatmobile_Solo.SetHidePoint");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPoint, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

@@ -78,48 +78,52 @@ public partial class RAEC_EnvironmentStartle : BmSDK.BmGame.RAlertEventCoordinat
         where TComponent : class, Framework.IScriptComponent<RAEC_EnvironmentStartle>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PostStartleStarted;
     /// <summary>
     /// Function: PostStartleStarted
     /// </summary>
     public unsafe virtual void PostStartleStarted(BmSDK.BmGame.RBMAIController StartleCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_EnvironmentStartle.PostStartleStarted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostStartleStarted, "BmGame.RAEC_EnvironmentStartle.PostStartleStarted");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartleCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartleStarted;
     /// <summary>
     /// Function: StartleStarted
     /// </summary>
     public unsafe virtual void StartleStarted(BmSDK.BmGame.RBMAIController StartleCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_EnvironmentStartle.StartleStarted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartleStarted, "BmGame.RAEC_EnvironmentStartle.StartleStarted");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartleCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishTopLevelAEC;
     /// <summary>
     /// Function: FinishTopLevelAEC
     /// </summary>
     public unsafe override void FinishTopLevelAEC(BmSDK.BmGame.RBMAIController StolenCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_EnvironmentStartle.FinishTopLevelAEC", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishTopLevelAEC, "BmGame.RAEC_EnvironmentStartle.FinishTopLevelAEC");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StolenCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnAssign;
     /// <summary>
     /// Function: OnAssign
     /// </summary>
     public unsafe override void OnAssign(BmSDK.BmGame.RBMAIController NewCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_EnvironmentStartle.OnAssign", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnAssign, "BmGame.RAEC_EnvironmentStartle.OnAssign");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

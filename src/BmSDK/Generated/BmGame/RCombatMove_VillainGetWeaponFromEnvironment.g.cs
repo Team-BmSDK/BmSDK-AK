@@ -78,57 +78,62 @@ public partial class RCombatMove_VillainGetWeaponFromEnvironment : BmSDK.BmGame.
         where TComponent : class, Framework.IScriptComponent<RCombatMove_VillainGetWeaponFromEnvironment>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ExitMove;
     /// <summary>
     /// Function: ExitMove
     /// </summary>
     public unsafe override void ExitMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainGetWeaponFromEnvironment.ExitMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ExitMove, "BmGame.RCombatMove_VillainGetWeaponFromEnvironment.ExitMove");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetCombatThoughts;
     /// <summary>
     /// Function: GetCombatThoughts
     /// </summary>
     public unsafe override void GetCombatThoughts(out BmSDK.TArray<BmSDK.Engine.Actor.FThought> ThoughtList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainGetWeaponFromEnvironment.GetCombatThoughts", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCombatThoughts, "BmGame.RCombatMove_VillainGetWeaponFromEnvironment.GetCombatThoughts");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ThoughtList = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.Engine.Actor.FThought>>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_WeaponRemoved;
     /// <summary>
     /// Function: WeaponRemoved
     /// </summary>
     public unsafe virtual void WeaponRemoved()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainGetWeaponFromEnvironment.WeaponRemoved", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WeaponRemoved, "BmGame.RCombatMove_VillainGetWeaponFromEnvironment.WeaponRemoved");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_WeaponRemovalFX;
     /// <summary>
     /// Function: WeaponRemovalFX
     /// </summary>
     public unsafe virtual void WeaponRemovalFX()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainGetWeaponFromEnvironment.WeaponRemovalFX", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WeaponRemovalFX, "BmGame.RCombatMove_VillainGetWeaponFromEnvironment.WeaponRemovalFX");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_WeaponSwitchCallback;
     /// <summary>
     /// Function: WeaponSwitchCallback
     /// </summary>
     public unsafe override BmSDK.BmGame.RGameRI.WeaponSwitchCallbackResult WeaponSwitchCallback(BmSDK.Engine.Inventory NewWeapon, BmSDK.Engine.Inventory OldWeapon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainGetWeaponFromEnvironment.WeaponSwitchCallback", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WeaponSwitchCallback, "BmGame.RCombatMove_VillainGetWeaponFromEnvironment.WeaponSwitchCallback");
         byte* paramsPtr = stackalloc byte[17];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewWeapon, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OldWeapon, paramsPtr + 8);
@@ -136,12 +141,13 @@ public partial class RCombatMove_VillainGetWeaponFromEnvironment : BmSDK.BmGame.
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameRI.WeaponSwitchCallbackResult>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_Initialise;
     /// <summary>
     /// Function: Initialise
     /// </summary>
     public unsafe override void Initialise()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainGetWeaponFromEnvironment.Initialise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Initialise, "BmGame.RCombatMove_VillainGetWeaponFromEnvironment.Initialise");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

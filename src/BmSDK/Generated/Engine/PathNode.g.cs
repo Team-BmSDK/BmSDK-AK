@@ -78,12 +78,13 @@ public partial class PathNode : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<PathNode>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetDebugAbbrev;
     /// <summary>
     /// Function: GetDebugAbbrev
     /// </summary>
     public unsafe override BmSDK.FString GetDebugAbbrev()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PathNode.GetDebugAbbrev", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDebugAbbrev, "Engine.PathNode.GetDebugAbbrev");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);

@@ -78,12 +78,13 @@ public partial class RBMBehaviour_JokerSingingBase : BmSDK.BmGame.RBMBehaviour, 
         where TComponent : class, Framework.IScriptComponent<RBMBehaviour_JokerSingingBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetSongTime;
     /// <summary>
     /// Function: GetSongTime
     /// </summary>
     public unsafe virtual float GetSongTime(float songLength)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_JokerSingingBase.GetSongTime", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSongTime, "BmGame.RBMBehaviour_JokerSingingBase.GetSongTime");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(songLength, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

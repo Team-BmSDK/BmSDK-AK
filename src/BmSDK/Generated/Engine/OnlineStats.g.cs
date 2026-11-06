@@ -73,12 +73,13 @@ public partial class OnlineStats : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<OnlineStats>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetViewName;
     /// <summary>
     /// Function: GetViewName
     /// </summary>
     public unsafe virtual BmSDK.FName GetViewName(int ViewId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.OnlineStats.GetViewName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetViewName, "Engine.OnlineStats.GetViewName");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ViewId, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -92,12 +93,13 @@ public partial class OnlineStats : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetViewId;
     /// <summary>
     /// Function: GetViewId
     /// </summary>
     public unsafe virtual bool GetViewId(BmSDK.FName ViewName, out int ViewId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.OnlineStats.GetViewId", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetViewId, "Engine.OnlineStats.GetViewId");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ViewName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

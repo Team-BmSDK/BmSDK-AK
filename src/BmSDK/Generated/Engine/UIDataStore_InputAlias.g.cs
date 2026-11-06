@@ -78,12 +78,13 @@ public partial class UIDataStore_InputAlias : BmSDK.Engine.UIDataStore_StringBas
         where TComponent : class, Framework.IScriptComponent<UIDataStore_InputAlias>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_HasAliasMappingForPlatform;
     /// <summary>
     /// Function: HasAliasMappingForPlatform
     /// </summary>
     public unsafe virtual bool HasAliasMappingForPlatform(BmSDK.FName DesiredAlias, BmSDK.Engine.UIRoot.EInputPlatformType DesiredPlatform)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataStore_InputAlias.HasAliasMappingForPlatform", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasAliasMappingForPlatform, "Engine.UIDataStore_InputAlias.HasAliasMappingForPlatform");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DesiredAlias, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DesiredPlatform, paramsPtr + 8);
@@ -98,12 +99,13 @@ public partial class UIDataStore_InputAlias : BmSDK.Engine.UIDataStore_StringBas
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_FindInputAliasIndex;
     /// <summary>
     /// Function: FindInputAliasIndex
     /// </summary>
     public unsafe virtual int FindInputAliasIndex(BmSDK.FName DesiredAlias)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataStore_InputAlias.FindInputAliasIndex", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindInputAliasIndex, "Engine.UIDataStore_InputAlias.FindInputAliasIndex");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DesiredAlias, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -117,12 +119,13 @@ public partial class UIDataStore_InputAlias : BmSDK.Engine.UIDataStore_StringBas
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetAliasInputKeyDataByIndex;
     /// <summary>
     /// Function: GetAliasInputKeyDataByIndex
     /// </summary>
     public unsafe virtual bool GetAliasInputKeyDataByIndex(out BmSDK.Engine.UIRoot.FRawInputKeyEventData out_InputKeyData, int AliasIndex, BmSDK.Engine.UIRoot.EInputPlatformType OverridePlatform = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataStore_InputAlias.GetAliasInputKeyDataByIndex", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAliasInputKeyDataByIndex, "Engine.UIDataStore_InputAlias.GetAliasInputKeyDataByIndex");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AliasIndex, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverridePlatform, paramsPtr + 16);
@@ -138,12 +141,13 @@ public partial class UIDataStore_InputAlias : BmSDK.Engine.UIDataStore_StringBas
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_GetAliasInputKeyData;
     /// <summary>
     /// Function: GetAliasInputKeyData
     /// </summary>
     public unsafe virtual bool GetAliasInputKeyData(out BmSDK.Engine.UIRoot.FRawInputKeyEventData out_InputKeyData, BmSDK.FName DesiredAlias, BmSDK.Engine.UIRoot.EInputPlatformType OverridePlatform = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataStore_InputAlias.GetAliasInputKeyData", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAliasInputKeyData, "Engine.UIDataStore_InputAlias.GetAliasInputKeyData");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DesiredAlias, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverridePlatform, paramsPtr + 20);
@@ -159,12 +163,13 @@ public partial class UIDataStore_InputAlias : BmSDK.Engine.UIDataStore_StringBas
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_GetAliasInputKeyNameByIndex;
     /// <summary>
     /// Function: GetAliasInputKeyNameByIndex
     /// </summary>
     public unsafe virtual BmSDK.FName GetAliasInputKeyNameByIndex(int AliasIndex, BmSDK.Engine.UIRoot.EInputPlatformType OverridePlatform = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataStore_InputAlias.GetAliasInputKeyNameByIndex", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAliasInputKeyNameByIndex, "Engine.UIDataStore_InputAlias.GetAliasInputKeyNameByIndex");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AliasIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverridePlatform, paramsPtr + 4);
@@ -179,12 +184,13 @@ public partial class UIDataStore_InputAlias : BmSDK.Engine.UIDataStore_StringBas
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetAliasInputKeyName;
     /// <summary>
     /// Function: GetAliasInputKeyName
     /// </summary>
     public unsafe virtual BmSDK.FName GetAliasInputKeyName(BmSDK.FName DesiredAlias, BmSDK.Engine.UIRoot.EInputPlatformType OverridePlatform = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataStore_InputAlias.GetAliasInputKeyName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAliasInputKeyName, "Engine.UIDataStore_InputAlias.GetAliasInputKeyName");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DesiredAlias, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverridePlatform, paramsPtr + 8);
@@ -199,12 +205,13 @@ public partial class UIDataStore_InputAlias : BmSDK.Engine.UIDataStore_StringBas
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_GetAliasFontMarkupByIndex;
     /// <summary>
     /// Function: GetAliasFontMarkupByIndex
     /// </summary>
     public unsafe virtual BmSDK.FString GetAliasFontMarkupByIndex(int AliasIndex, BmSDK.Engine.UIRoot.EInputPlatformType OverridePlatform = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataStore_InputAlias.GetAliasFontMarkupByIndex", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAliasFontMarkupByIndex, "Engine.UIDataStore_InputAlias.GetAliasFontMarkupByIndex");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AliasIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverridePlatform, paramsPtr + 4);
@@ -219,12 +226,13 @@ public partial class UIDataStore_InputAlias : BmSDK.Engine.UIDataStore_StringBas
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetAliasFontMarkup;
     /// <summary>
     /// Function: GetAliasFontMarkup
     /// </summary>
     public unsafe virtual BmSDK.FString GetAliasFontMarkup(BmSDK.FName DesiredAlias, BmSDK.Engine.UIRoot.EInputPlatformType OverridePlatform = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataStore_InputAlias.GetAliasFontMarkup", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAliasFontMarkup, "Engine.UIDataStore_InputAlias.GetAliasFontMarkup");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DesiredAlias, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverridePlatform, paramsPtr + 8);

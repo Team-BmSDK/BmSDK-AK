@@ -78,90 +78,98 @@ public partial class RBMAIAction_ReviveCasualty : BmSDK.BmGame.RBMAIAction, BmSD
         where TComponent : class, Framework.IScriptComponent<RBMAIAction_ReviveCasualty>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_HasAtLeastOneThugNearby;
     /// <summary>
     /// Function: HasAtLeastOneThugNearby
     /// </summary>
     public unsafe virtual bool HasAtLeastOneThugNearby()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_ReviveCasualty.HasAtLeastOneThugNearby", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasAtLeastOneThugNearby, "BmGame.RBMAIAction_ReviveCasualty.HasAtLeastOneThugNearby");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GoToAtCasualtyState;
     /// <summary>
     /// Function: GoToAtCasualtyState
     /// </summary>
     public unsafe virtual void GoToAtCasualtyState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_ReviveCasualty.GoToAtCasualtyState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GoToAtCasualtyState, "BmGame.RBMAIAction_ReviveCasualty.GoToAtCasualtyState");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnDeactivate;
     /// <summary>
     /// Function: OnDeactivate
     /// </summary>
     public unsafe override void OnDeactivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_ReviveCasualty.OnDeactivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeactivate, "BmGame.RBMAIAction_ReviveCasualty.OnDeactivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_ReviveCasualty.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMAIAction_ReviveCasualty.OnActivate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayCasualtyRecoverLine;
     /// <summary>
     /// Function: PlayCasualtyRecoverLine
     /// </summary>
     public unsafe virtual void PlayCasualtyRecoverLine()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_ReviveCasualty.PlayCasualtyRecoverLine", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayCasualtyRecoverLine, "BmGame.RBMAIAction_ReviveCasualty.PlayCasualtyRecoverLine");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayMedicDiagnoseLine;
     /// <summary>
     /// Function: PlayMedicDiagnoseLine
     /// </summary>
     public unsafe virtual void PlayMedicDiagnoseLine()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_ReviveCasualty.PlayMedicDiagnoseLine", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayMedicDiagnoseLine, "BmGame.RBMAIAction_ReviveCasualty.PlayMedicDiagnoseLine");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetCasualty;
     /// <summary>
     /// Function: SetCasualty
     /// </summary>
     public unsafe virtual void SetCasualty(BmSDK.BmGame.RPawnVillain NewCas)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_ReviveCasualty.SetCasualty", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCasualty, "BmGame.RBMAIAction_ReviveCasualty.SetCasualty");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCas, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetAnimName;
     /// <summary>
     /// Function: GetAnimName
     /// </summary>
     public unsafe virtual BmSDK.FName GetAnimName(BmSDK.BmGame.RBMAIAction_ReviveCasualty.eReviveAnimType Type)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_ReviveCasualty.GetAnimName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAnimName, "BmGame.RBMAIAction_ReviveCasualty.GetAnimName");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Type, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

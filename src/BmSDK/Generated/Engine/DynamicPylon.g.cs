@@ -78,34 +78,37 @@ public partial class DynamicPylon : BmSDK.Engine.Pylon, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<DynamicPylon>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_StoppedMoving;
     /// <summary>
     /// Function: StoppedMoving
     /// </summary>
     public unsafe virtual void StoppedMoving()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DynamicPylon.StoppedMoving", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StoppedMoving, "Engine.DynamicPylon.StoppedMoving");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartedMoving;
     /// <summary>
     /// Function: StartedMoving
     /// </summary>
     public unsafe virtual void StartedMoving()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DynamicPylon.StartedMoving", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartedMoving, "Engine.DynamicPylon.StartedMoving");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FlushDynamicEdges;
     /// <summary>
     /// Function: FlushDynamicEdges
     /// </summary>
     public unsafe override void FlushDynamicEdges()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DynamicPylon.FlushDynamicEdges", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FlushDynamicEdges, "Engine.DynamicPylon.FlushDynamicEdges");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -118,12 +121,13 @@ public partial class DynamicPylon : BmSDK.Engine.Pylon, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_RebuildDynamicEdges;
     /// <summary>
     /// Function: RebuildDynamicEdges
     /// </summary>
     public unsafe virtual void RebuildDynamicEdges()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DynamicPylon.RebuildDynamicEdges", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RebuildDynamicEdges, "Engine.DynamicPylon.RebuildDynamicEdges");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -136,12 +140,13 @@ public partial class DynamicPylon : BmSDK.Engine.Pylon, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DynamicPylon.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "Engine.DynamicPylon.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

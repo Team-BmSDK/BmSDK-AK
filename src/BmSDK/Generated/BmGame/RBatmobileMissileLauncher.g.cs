@@ -78,12 +78,13 @@ public partial class RBatmobileMissileLauncher : BmSDK.BmGame.RVehicleWeapon, Bm
         where TComponent : class, Framework.IScriptComponent<RBatmobileMissileLauncher>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ProjectileHitActor;
     /// <summary>
     /// Function: ProjectileHitActor
     /// </summary>
     public unsafe override void ProjectileHitActor(BmSDK.Engine.Actor Target, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitVelocity, int Damage)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileMissileLauncher.ProjectileHitActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProjectileHitActor, "BmGame.RBatmobileMissileLauncher.ProjectileHitActor");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 8);
@@ -93,68 +94,74 @@ public partial class RBatmobileMissileLauncher : BmSDK.BmGame.RVehicleWeapon, Bm
         return;
     }
 
+    private static BmSDK.Function __fn_ReadyToFire;
     /// <summary>
     /// Function: ReadyToFire
     /// </summary>
     public unsafe override bool ReadyToFire()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileMissileLauncher.ReadyToFire", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadyToFire, "BmGame.RBatmobileMissileLauncher.ReadyToFire");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ResetCoolDown;
     /// <summary>
     /// Function: ResetCoolDown
     /// </summary>
     public unsafe override void ResetCoolDown()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileMissileLauncher.ResetCoolDown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetCoolDown, "BmGame.RBatmobileMissileLauncher.ResetCoolDown");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetDisplayedRechargeTime;
     /// <summary>
     /// Function: GetDisplayedRechargeTime
     /// </summary>
     public unsafe override float GetDisplayedRechargeTime()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileMissileLauncher.GetDisplayedRechargeTime", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDisplayedRechargeTime, "BmGame.RBatmobileMissileLauncher.GetDisplayedRechargeTime");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_DrawTargetsHUD;
     /// <summary>
     /// Function: DrawTargetsHUD
     /// </summary>
     public unsafe virtual void DrawTargetsHUD()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileMissileLauncher.DrawTargetsHUD", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DrawTargetsHUD, "BmGame.RBatmobileMissileLauncher.DrawTargetsHUD");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetTargetPosition;
     /// <summary>
     /// Function: GetTargetPosition
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetTargetPosition(BmSDK.Engine.Actor TargetActor)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileMissileLauncher.GetTargetPosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTargetPosition, "BmGame.RBatmobileMissileLauncher.GetTargetPosition");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetActor, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CheckAutoTarget;
     /// <summary>
     /// Function: CheckAutoTarget
     /// </summary>
     public unsafe override bool CheckAutoTarget(BmSDK.Engine.Actor Target, out System.Numerics.Vector3 TargetPosition, out float OverridePriority, out float OverrideMaxRange, out byte DoLOSCheck)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileMissileLauncher.CheckAutoTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckAutoTarget, "BmGame.RBatmobileMissileLauncher.CheckAutoTarget");
         byte* paramsPtr = stackalloc byte[76];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -165,123 +172,134 @@ public partial class RBatmobileMissileLauncher : BmSDK.BmGame.RVehicleWeapon, Bm
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_WeaponCooldownTimer;
     /// <summary>
     /// Function: WeaponCooldownTimer
     /// </summary>
     public unsafe virtual void WeaponCooldownTimer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileMissileLauncher.WeaponCooldownTimer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WeaponCooldownTimer, "BmGame.RBatmobileMissileLauncher.WeaponCooldownTimer");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AllowUnhideBone;
     /// <summary>
     /// Function: AllowUnhideBone
     /// </summary>
     public unsafe override bool AllowUnhideBone(int WeaponBoneIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileMissileLauncher.AllowUnhideBone", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowUnhideBone, "BmGame.RBatmobileMissileLauncher.AllowUnhideBone");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WeaponBoneIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_PlayMissileRumble;
     /// <summary>
     /// Function: PlayMissileRumble
     /// </summary>
     public unsafe virtual void PlayMissileRumble()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileMissileLauncher.PlayMissileRumble", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayMissileRumble, "BmGame.RBatmobileMissileLauncher.PlayMissileRumble");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ClearLastTargets;
     /// <summary>
     /// Function: ClearLastTargets
     /// </summary>
     public unsafe virtual void ClearLastTargets()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileMissileLauncher.ClearLastTargets", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearLastTargets, "BmGame.RBatmobileMissileLauncher.ClearLastTargets");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishedFiring;
     /// <summary>
     /// Function: FinishedFiring
     /// </summary>
     public unsafe virtual void FinishedFiring()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileMissileLauncher.FinishedFiring", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishedFiring, "BmGame.RBatmobileMissileLauncher.FinishedFiring");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FireAtTarget;
     /// <summary>
     /// Function: FireAtTarget
     /// </summary>
     public unsafe virtual void FireAtTarget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileMissileLauncher.FireAtTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireAtTarget, "BmGame.RBatmobileMissileLauncher.FireAtTarget");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TargetNewMissile;
     /// <summary>
     /// Function: TargetNewMissile
     /// </summary>
     public unsafe virtual bool TargetNewMissile()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileMissileLauncher.TargetNewMissile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TargetNewMissile, "BmGame.RBatmobileMissileLauncher.TargetNewMissile");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsFiring;
     /// <summary>
     /// Function: IsFiring
     /// </summary>
     public unsafe override bool IsFiring()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileMissileLauncher.IsFiring", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsFiring, "BmGame.RBatmobileMissileLauncher.IsFiring");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_FireMissilesNow;
     /// <summary>
     /// Function: FireMissilesNow
     /// </summary>
     public unsafe virtual void FireMissilesNow()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileMissileLauncher.FireMissilesNow", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireMissilesNow, "BmGame.RBatmobileMissileLauncher.FireMissilesNow");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RegisterGameAction;
     /// <summary>
     /// Function: RegisterGameAction
     /// </summary>
     public unsafe override void RegisterGameAction()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileMissileLauncher.RegisterGameAction", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterGameAction, "BmGame.RBatmobileMissileLauncher.RegisterGameAction");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsHeavyWeaponValid;
     /// <summary>
     /// Function: IsHeavyWeaponValid
     /// </summary>
     public unsafe override bool IsHeavyWeaponValid()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileMissileLauncher.IsHeavyWeaponValid", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsHeavyWeaponValid, "BmGame.RBatmobileMissileLauncher.IsHeavyWeaponValid");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

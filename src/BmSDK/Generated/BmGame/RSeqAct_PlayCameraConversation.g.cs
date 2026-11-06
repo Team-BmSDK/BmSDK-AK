@@ -78,23 +78,25 @@ public partial class RSeqAct_PlayCameraConversation : BmSDK.BmGame.RSeqAct_PlayS
         where TComponent : class, Framework.IScriptComponent<RSeqAct_PlayCameraConversation>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayCameraConversation.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmGame.RSeqAct_PlayCameraConversation.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_AdvanceAnim;
     /// <summary>
     /// Function: AdvanceAnim
     /// </summary>
     public unsafe virtual void AdvanceAnim(BmSDK.BmGame.RSeqAct_PlayCameraConversation.FPawnAndTransition AnimInfo, float advanceAmount)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayCameraConversation.AdvanceAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AdvanceAnim, "BmGame.RSeqAct_PlayCameraConversation.AdvanceAnim");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimInfo, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(advanceAmount, paramsPtr + 20);
@@ -102,137 +104,149 @@ public partial class RSeqAct_PlayCameraConversation : BmSDK.BmGame.RSeqAct_PlayS
         return;
     }
 
+    private static BmSDK.Function __fn_GetRealTimeUntilNextDialogueNotifyInAnim;
     /// <summary>
     /// Function: GetRealTimeUntilNextDialogueNotifyInAnim
     /// </summary>
     public unsafe virtual float GetRealTimeUntilNextDialogueNotifyInAnim(BmSDK.BmGame.RSeqAct_PlayCameraConversation.FPawnAndTransition AnimInfo)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayCameraConversation.GetRealTimeUntilNextDialogueNotifyInAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRealTimeUntilNextDialogueNotifyInAnim, "BmGame.RSeqAct_PlayCameraConversation.GetRealTimeUntilNextDialogueNotifyInAnim");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimInfo, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_SkipToNextLine;
     /// <summary>
     /// Function: SkipToNextLine
     /// </summary>
     public unsafe virtual void SkipToNextLine()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayCameraConversation.SkipToNextLine", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SkipToNextLine, "BmGame.RSeqAct_PlayCameraConversation.SkipToNextLine");
         byte* paramsPtr = stackalloc byte[80];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TryTriggerCameraMatineeForCurrentLine;
     /// <summary>
     /// Function: TryTriggerCameraMatineeForCurrentLine
     /// </summary>
     public unsafe virtual void TryTriggerCameraMatineeForCurrentLine()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayCameraConversation.TryTriggerCameraMatineeForCurrentLine", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TryTriggerCameraMatineeForCurrentLine, "BmGame.RSeqAct_PlayCameraConversation.TryTriggerCameraMatineeForCurrentLine");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetCustomCameraIndexForCurrentLine;
     /// <summary>
     /// Function: GetCustomCameraIndexForCurrentLine
     /// </summary>
     public unsafe virtual int GetCustomCameraIndexForCurrentLine()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayCameraConversation.GetCustomCameraIndexForCurrentLine", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCustomCameraIndexForCurrentLine, "BmGame.RSeqAct_PlayCameraConversation.GetCustomCameraIndexForCurrentLine");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_MakePawnsFaceCurrentSpeaker;
     /// <summary>
     /// Function: MakePawnsFaceCurrentSpeaker
     /// </summary>
     public unsafe virtual void MakePawnsFaceCurrentSpeaker()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayCameraConversation.MakePawnsFaceCurrentSpeaker", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MakePawnsFaceCurrentSpeaker, "BmGame.RSeqAct_PlayCameraConversation.MakePawnsFaceCurrentSpeaker");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StopCharacterTransitions;
     /// <summary>
     /// Function: StopCharacterTransitions
     /// </summary>
     public unsafe virtual void StopCharacterTransitions()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayCameraConversation.StopCharacterTransitions", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopCharacterTransitions, "BmGame.RSeqAct_PlayCameraConversation.StopCharacterTransitions");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayCharacterAnim;
     /// <summary>
     /// Function: PlayCharacterAnim
     /// </summary>
     public unsafe virtual void PlayCharacterAnim(BmSDK.BmGame.RSeqAct_PlayCameraConversation.FCharacterAnim AnimData)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayCameraConversation.PlayCharacterAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayCharacterAnim, "BmGame.RSeqAct_PlayCameraConversation.PlayCharacterAnim");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimData, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CheckForCharacterAnims;
     /// <summary>
     /// Function: CheckForCharacterAnims
     /// </summary>
     public unsafe virtual void CheckForCharacterAnims()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayCameraConversation.CheckForCharacterAnims", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckForCharacterAnims, "BmGame.RSeqAct_PlayCameraConversation.CheckForCharacterAnims");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Update;
     /// <summary>
     /// Function: Update
     /// </summary>
     public unsafe override bool Update(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayCameraConversation.Update", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Update, "BmGame.RSeqAct_PlayCameraConversation.Update");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_PlaceSpeakers;
     /// <summary>
     /// Function: PlaceSpeakers
     /// </summary>
     public unsafe virtual void PlaceSpeakers()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayCameraConversation.PlaceSpeakers", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlaceSpeakers, "BmGame.RSeqAct_PlayCameraConversation.PlaceSpeakers");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlaceBatman;
     /// <summary>
     /// Function: PlaceBatman
     /// </summary>
     public unsafe virtual void PlaceBatman(System.Numerics.Vector3 BadGuyLoc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayCameraConversation.PlaceBatman", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlaceBatman, "BmGame.RSeqAct_PlayCameraConversation.PlaceBatman");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BadGuyLoc, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetIdleStandPosition;
     /// <summary>
     /// Function: GetIdleStandPosition
     /// </summary>
     public unsafe virtual void GetIdleStandPosition(out System.Numerics.Vector3 StandPos, out BmSDK.Rotator wantedViewDir, System.Numerics.Vector3 BadGuyLoc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayCameraConversation.GetIdleStandPosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetIdleStandPosition, "BmGame.RSeqAct_PlayCameraConversation.GetIdleStandPosition");
         byte* paramsPtr = stackalloc byte[72];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BadGuyLoc, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -241,34 +255,37 @@ public partial class RSeqAct_PlayCameraConversation : BmSDK.BmGame.RSeqAct_PlayS
         return;
     }
 
+    private static BmSDK.Function __fn_PlaceNPCs;
     /// <summary>
     /// Function: PlaceNPCs
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 PlaceNPCs()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayCameraConversation.PlaceNPCs", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlaceNPCs, "BmGame.RSeqAct_PlayCameraConversation.PlaceNPCs");
         byte* paramsPtr = stackalloc byte[76];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_InitialiseVariables;
     /// <summary>
     /// Function: InitialiseVariables
     /// </summary>
     public unsafe override void InitialiseVariables()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayCameraConversation.InitialiseVariables", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitialiseVariables, "BmGame.RSeqAct_PlayCameraConversation.InitialiseVariables");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_LineStarted;
     /// <summary>
     /// Function: LineStarted
     /// </summary>
     public unsafe override bool LineStarted(BmSDK.GameObject Speaker, BmSDK.Engine.AkDialogueLine Line)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayCameraConversation.LineStarted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LineStarted, "BmGame.RSeqAct_PlayCameraConversation.LineStarted");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speaker, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Line, paramsPtr + 8);
@@ -276,35 +293,38 @@ public partial class RSeqAct_PlayCameraConversation : BmSDK.BmGame.RSeqAct_PlayS
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_SpeechStopped;
     /// <summary>
     /// Function: SpeechStopped
     /// </summary>
     public unsafe override void SpeechStopped(bool bInterrupted)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayCameraConversation.SpeechStopped", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpeechStopped, "BmGame.RSeqAct_PlayCameraConversation.SpeechStopped");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bInterrupted, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SpeechStarted;
     /// <summary>
     /// Function: SpeechStarted
     /// </summary>
     public unsafe override void SpeechStarted()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayCameraConversation.SpeechStarted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpeechStarted, "BmGame.RSeqAct_PlayCameraConversation.SpeechStarted");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetCharacterForVoice;
     /// <summary>
     /// Function: GetCharacterForVoice
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RPawnCharacter GetCharacterForVoice(BmSDK.Engine.AkDialogueVoice Voice)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayCameraConversation.GetCharacterForVoice", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCharacterForVoice, "BmGame.RSeqAct_PlayCameraConversation.GetCharacterForVoice");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Voice, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -318,12 +338,13 @@ public partial class RSeqAct_PlayCameraConversation : BmSDK.BmGame.RSeqAct_PlayS
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnCharacter>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_StartSpeechNative;
     /// <summary>
     /// Function: StartSpeechNative
     /// </summary>
     public unsafe override bool StartSpeechNative()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayCameraConversation.StartSpeechNative", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartSpeechNative, "BmGame.RSeqAct_PlayCameraConversation.StartSpeechNative");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -336,12 +357,13 @@ public partial class RSeqAct_PlayCameraConversation : BmSDK.BmGame.RSeqAct_PlayS
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_MarkDirty;
     /// <summary>
     /// Function: MarkDirty
     /// </summary>
     public unsafe virtual void MarkDirty()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayCameraConversation.MarkDirty", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MarkDirty, "BmGame.RSeqAct_PlayCameraConversation.MarkDirty");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

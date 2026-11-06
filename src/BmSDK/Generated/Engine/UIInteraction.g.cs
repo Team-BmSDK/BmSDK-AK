@@ -78,81 +78,88 @@ public partial class UIInteraction : BmSDK.Engine.Interaction, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<UIInteraction>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_NotifyGameSessionEnded;
     /// <summary>
     /// Function: NotifyGameSessionEnded
     /// </summary>
     public unsafe override void NotifyGameSessionEnded()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIInteraction.NotifyGameSessionEnded", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyGameSessionEnded, "Engine.UIInteraction.NotifyGameSessionEnded");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetNATType;
     /// <summary>
     /// Function: GetNATType
     /// </summary>
     public unsafe static BmSDK.Engine.OnlineSubsystem.ENATType GetNATType()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIInteraction.GetNATType", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNATType, "Engine.UIInteraction.GetNATType");
         byte* paramsPtr = stackalloc byte[29];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineSubsystem.ENATType>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetConnectedGamepadCount;
     /// <summary>
     /// Function: GetConnectedGamepadCount
     /// </summary>
     public unsafe static int GetConnectedGamepadCount(BmSDK.TArray<bool> ControllerConnectionStatusOverrides = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIInteraction.GetConnectedGamepadCount", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetConnectedGamepadCount, "Engine.UIInteraction.GetConnectedGamepadCount");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerConnectionStatusOverrides, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_IsGamepadConnected;
     /// <summary>
     /// Function: IsGamepadConnected
     /// </summary>
     public unsafe static bool IsGamepadConnected(int ControllerId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIInteraction.IsGamepadConnected", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsGamepadConnected, "Engine.UIInteraction.IsGamepadConnected");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetNumGuestsLoggedIn;
     /// <summary>
     /// Function: GetNumGuestsLoggedIn
     /// </summary>
     public unsafe static int GetNumGuestsLoggedIn()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIInteraction.GetNumGuestsLoggedIn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNumGuestsLoggedIn, "Engine.UIInteraction.GetNumGuestsLoggedIn");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetLoggedInPlayerCount;
     /// <summary>
     /// Function: GetLoggedInPlayerCount
     /// </summary>
     public unsafe static int GetLoggedInPlayerCount(bool bRequireOnlineLogin = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIInteraction.GetLoggedInPlayerCount", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLoggedInPlayerCount, "Engine.UIInteraction.GetLoggedInPlayerCount");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bRequireOnlineLogin, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_IsLoggedIn;
     /// <summary>
     /// Function: IsLoggedIn
     /// </summary>
     public unsafe static bool IsLoggedIn(int ControllerId, bool bRequireOnlineLogin = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIInteraction.IsLoggedIn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsLoggedIn, "Engine.UIInteraction.IsLoggedIn");
         byte* paramsPtr = stackalloc byte[17];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bRequireOnlineLogin, paramsPtr + 4);
@@ -160,46 +167,50 @@ public partial class UIInteraction : BmSDK.Engine.Interaction, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_HasLinkConnection;
     /// <summary>
     /// Function: HasLinkConnection
     /// </summary>
     public unsafe static bool HasLinkConnection()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIInteraction.HasLinkConnection", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasLinkConnection, "Engine.UIInteraction.HasLinkConnection");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetLowestLoginStatusOfControllers;
     /// <summary>
     /// Function: GetLowestLoginStatusOfControllers
     /// </summary>
     public unsafe virtual BmSDK.Engine.OnlineSubsystem.ELoginStatus GetLowestLoginStatusOfControllers()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIInteraction.GetLowestLoginStatusOfControllers", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLowestLoginStatusOfControllers, "Engine.UIInteraction.GetLowestLoginStatusOfControllers");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineSubsystem.ELoginStatus>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetLoginStatus;
     /// <summary>
     /// Function: GetLoginStatus
     /// </summary>
     public unsafe static BmSDK.Engine.OnlineSubsystem.ELoginStatus GetLoginStatus(int ControllerId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIInteraction.GetLoginStatus", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLoginStatus, "Engine.UIInteraction.GetLoginStatus");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineSubsystem.ELoginStatus>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_NotifyPlayerRemoved;
     /// <summary>
     /// Function: NotifyPlayerRemoved
     /// </summary>
     public unsafe override void NotifyPlayerRemoved(int PlayerIndex, BmSDK.Engine.LocalPlayer RemovedPlayer)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIInteraction.NotifyPlayerRemoved", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyPlayerRemoved, "Engine.UIInteraction.NotifyPlayerRemoved");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RemovedPlayer, paramsPtr + 4);
@@ -207,12 +218,13 @@ public partial class UIInteraction : BmSDK.Engine.Interaction, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyPlayerAdded;
     /// <summary>
     /// Function: NotifyPlayerAdded
     /// </summary>
     public unsafe override void NotifyPlayerAdded(int PlayerIndex, BmSDK.Engine.LocalPlayer AddedPlayer)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIInteraction.NotifyPlayerAdded", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyPlayerAdded, "Engine.UIInteraction.NotifyPlayerAdded");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AddedPlayer, paramsPtr + 4);
@@ -220,24 +232,26 @@ public partial class UIInteraction : BmSDK.Engine.Interaction, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetLocalPlayer;
     /// <summary>
     /// Function: GetLocalPlayer
     /// </summary>
     public unsafe static BmSDK.Engine.LocalPlayer GetLocalPlayer(int PlayerIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIInteraction.GetLocalPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLocalPlayer, "Engine.UIInteraction.GetLocalPlayer");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.LocalPlayer>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetDataStoreClient;
     /// <summary>
     /// Function: GetDataStoreClient
     /// </summary>
     public unsafe static BmSDK.Engine.DataStoreClient GetDataStoreClient()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIInteraction.GetDataStoreClient", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDataStoreClient, "Engine.UIInteraction.GetDataStoreClient");
         byte* paramsPtr = stackalloc byte[8];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -250,12 +264,13 @@ public partial class UIInteraction : BmSDK.Engine.Interaction, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.DataStoreClient>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetPlayerControllerId;
     /// <summary>
     /// Function: GetPlayerControllerId
     /// </summary>
     public unsafe static int GetPlayerControllerId(int PlayerIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIInteraction.GetPlayerControllerId", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPlayerControllerId, "Engine.UIInteraction.GetPlayerControllerId");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerIndex, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -269,12 +284,13 @@ public partial class UIInteraction : BmSDK.Engine.Interaction, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetPlayerIndex;
     /// <summary>
     /// Function: GetPlayerIndex
     /// </summary>
     public unsafe static int GetPlayerIndex(int ControllerId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIInteraction.GetPlayerIndex", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPlayerIndex, "Engine.UIInteraction.GetPlayerIndex");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerId, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -288,12 +304,13 @@ public partial class UIInteraction : BmSDK.Engine.Interaction, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetPlayerCount;
     /// <summary>
     /// Function: GetPlayerCount
     /// </summary>
     public unsafe static int GetPlayerCount()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIInteraction.GetPlayerCount", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPlayerCount, "Engine.UIInteraction.GetPlayerCount");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

@@ -78,45 +78,49 @@ public partial class RSeqAct_PlayNPCDialogue : BmSDK.BmGame.RSeqAct_PlaySpeechBa
         where TComponent : class, Framework.IScriptComponent<RSeqAct_PlayNPCDialogue>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayNPCDialogue.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmGame.RSeqAct_PlayNPCDialogue.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_StopLookAts;
     /// <summary>
     /// Function: StopLookAts
     /// </summary>
     public unsafe virtual void StopLookAts()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayNPCDialogue.StopLookAts", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopLookAts, "BmGame.RSeqAct_PlayNPCDialogue.StopLookAts");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_MakePawnsFaceCurrentSpeaker;
     /// <summary>
     /// Function: MakePawnsFaceCurrentSpeaker
     /// </summary>
     public unsafe virtual void MakePawnsFaceCurrentSpeaker()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayNPCDialogue.MakePawnsFaceCurrentSpeaker", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MakePawnsFaceCurrentSpeaker, "BmGame.RSeqAct_PlayNPCDialogue.MakePawnsFaceCurrentSpeaker");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_LineStopped;
     /// <summary>
     /// Function: LineStopped
     /// </summary>
     public unsafe override void LineStopped(BmSDK.GameObject Speaker, bool bInterrupted)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayNPCDialogue.LineStopped", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LineStopped, "BmGame.RSeqAct_PlayNPCDialogue.LineStopped");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speaker, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bInterrupted, paramsPtr + 8);
@@ -124,12 +128,13 @@ public partial class RSeqAct_PlayNPCDialogue : BmSDK.BmGame.RSeqAct_PlaySpeechBa
         return;
     }
 
+    private static BmSDK.Function __fn_LineStarted;
     /// <summary>
     /// Function: LineStarted
     /// </summary>
     public unsafe override bool LineStarted(BmSDK.GameObject Speaker, BmSDK.Engine.AkDialogueLine Line)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayNPCDialogue.LineStarted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LineStarted, "BmGame.RSeqAct_PlayNPCDialogue.LineStarted");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speaker, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Line, paramsPtr + 8);
@@ -137,35 +142,38 @@ public partial class RSeqAct_PlayNPCDialogue : BmSDK.BmGame.RSeqAct_PlaySpeechBa
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_SpeechStopped;
     /// <summary>
     /// Function: SpeechStopped
     /// </summary>
     public unsafe override void SpeechStopped(bool bInterrupted)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayNPCDialogue.SpeechStopped", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpeechStopped, "BmGame.RSeqAct_PlayNPCDialogue.SpeechStopped");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bInterrupted, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnStopSpeechTriggered;
     /// <summary>
     /// Function: OnStopSpeechTriggered
     /// </summary>
     public unsafe override void OnStopSpeechTriggered()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayNPCDialogue.OnStopSpeechTriggered", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnStopSpeechTriggered, "BmGame.RSeqAct_PlayNPCDialogue.OnStopSpeechTriggered");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartSpeechNative;
     /// <summary>
     /// Function: StartSpeechNative
     /// </summary>
     public unsafe override bool StartSpeechNative()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayNPCDialogue.StartSpeechNative", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartSpeechNative, "BmGame.RSeqAct_PlayNPCDialogue.StartSpeechNative");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -178,12 +186,13 @@ public partial class RSeqAct_PlayNPCDialogue : BmSDK.BmGame.RSeqAct_PlaySpeechBa
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_BlockedByCineMode;
     /// <summary>
     /// Function: BlockedByCineMode
     /// </summary>
     public unsafe override bool BlockedByCineMode()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_PlayNPCDialogue.BlockedByCineMode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BlockedByCineMode, "BmGame.RSeqAct_PlayNPCDialogue.BlockedByCineMode");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

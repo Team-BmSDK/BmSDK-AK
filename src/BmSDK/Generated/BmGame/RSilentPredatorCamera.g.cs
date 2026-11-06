@@ -78,12 +78,13 @@ public partial class RSilentPredatorCamera : BmSDK.BmGame.RCameraActor, BmSDK.IG
         where TComponent : class, Framework.IScriptComponent<RSilentPredatorCamera>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_LookAround;
     /// <summary>
     /// Function: LookAround
     /// </summary>
     public unsafe virtual void LookAround(float DeltaTime, BmSDK.Rotator LookInput)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSilentPredatorCamera.LookAround", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LookAround, "BmGame.RSilentPredatorCamera.LookAround");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LookInput, paramsPtr + 4);
@@ -98,23 +99,25 @@ public partial class RSilentPredatorCamera : BmSDK.BmGame.RCameraActor, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_CancelCamera;
     /// <summary>
     /// Function: CancelCamera
     /// </summary>
     public unsafe virtual void CancelCamera()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSilentPredatorCamera.CancelCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelCamera, "BmGame.RSilentPredatorCamera.CancelCamera");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OutOfPredatorView;
     /// <summary>
     /// Function: OutOfPredatorView
     /// </summary>
     public unsafe virtual bool OutOfPredatorView()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSilentPredatorCamera.OutOfPredatorView", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OutOfPredatorView, "BmGame.RSilentPredatorCamera.OutOfPredatorView");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -127,12 +130,13 @@ public partial class RSilentPredatorCamera : BmSDK.BmGame.RCameraActor, BmSDK.IG
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UpdateHeartBeat;
     /// <summary>
     /// Function: UpdateHeartBeat
     /// </summary>
     public unsafe virtual void UpdateHeartBeat(float DeltaTime, int FearLevel)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSilentPredatorCamera.UpdateHeartBeat", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateHeartBeat, "BmGame.RSilentPredatorCamera.UpdateHeartBeat");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FearLevel, paramsPtr + 4);
@@ -140,35 +144,38 @@ public partial class RSilentPredatorCamera : BmSDK.BmGame.RCameraActor, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSilentPredatorCamera.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RSilentPredatorCamera.Tick");
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Stop;
     /// <summary>
     /// Function: Stop
     /// </summary>
     public unsafe virtual void Stop()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSilentPredatorCamera.Stop", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Stop, "BmGame.RSilentPredatorCamera.Stop");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Initialise;
     /// <summary>
     /// Function: Initialise
     /// </summary>
     public unsafe virtual void Initialise(BmSDK.Engine.Actor Target)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSilentPredatorCamera.Initialise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Initialise, "BmGame.RSilentPredatorCamera.Initialise");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

@@ -78,12 +78,13 @@ public partial class RBarkCharacterDefInstance : BmSDK.GameObject, BmSDK.IGameOb
         where TComponent : class, Framework.IScriptComponent<RBarkCharacterDefInstance>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetFilenameFromBarkSetName;
     /// <summary>
     /// Function: GetFilenameFromBarkSetName
     /// </summary>
     public unsafe virtual void GetFilenameFromBarkSetName(out BmSDK.BmGame.RBarkCharacterDefInstance.FBarkSetName ThisName, out BmSDK.FString OutString)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBarkCharacterDefInstance.GetFilenameFromBarkSetName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFilenameFromBarkSetName, "BmGame.RBarkCharacterDefInstance.GetFilenameFromBarkSetName");
         byte* paramsPtr = stackalloc byte[48];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -98,12 +99,13 @@ public partial class RBarkCharacterDefInstance : BmSDK.GameObject, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateDynamicSetList;
     /// <summary>
     /// Function: UpdateDynamicSetList
     /// </summary>
     public unsafe virtual void UpdateDynamicSetList(BmSDK.TArray<BmSDK.FString> SuffixList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBarkCharacterDefInstance.UpdateDynamicSetList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateDynamicSetList, "BmGame.RBarkCharacterDefInstance.UpdateDynamicSetList");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SuffixList, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

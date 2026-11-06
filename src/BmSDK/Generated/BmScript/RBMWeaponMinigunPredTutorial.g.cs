@@ -78,12 +78,13 @@ public partial class RBMWeaponMinigunPredTutorial : BmSDK.BmScript.RBMWeaponMini
         where TComponent : class, Framework.IScriptComponent<RBMWeaponMinigunPredTutorial>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetDamage;
     /// <summary>
     /// Function: GetDamage
     /// </summary>
     public unsafe override float GetDamage(BmSDK.Engine.Actor Target)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponMinigunPredTutorial.GetDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDamage, "BmScript.RBMWeaponMinigunPredTutorial.GetDamage");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

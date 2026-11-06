@@ -78,34 +78,37 @@ public partial class RSeqAct_MakeBatmanLookAtItems : BmSDK.Engine.SequenceAction
         where TComponent : class, Framework.IScriptComponent<RSeqAct_MakeBatmanLookAtItems>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_MakeBatmanLookAtItems.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmGame.RSeqAct_MakeBatmanLookAtItems.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Clear;
     /// <summary>
     /// Function: Clear
     /// </summary>
     public unsafe virtual void Clear()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_MakeBatmanLookAtItems.Clear", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Clear, "BmGame.RSeqAct_MakeBatmanLookAtItems.Clear");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Set;
     /// <summary>
     /// Function: Set
     /// </summary>
     public unsafe virtual void Set()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_MakeBatmanLookAtItems.Set", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Set, "BmGame.RSeqAct_MakeBatmanLookAtItems.Set");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

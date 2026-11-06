@@ -78,12 +78,13 @@ public partial class RPawnPlayerNightwing : BmSDK.BmGame.RPawnPlayerNightwingBas
         where TComponent : class, Framework.IScriptComponent<RPawnPlayerNightwing>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetSentryGunAniminfo;
     /// <summary>
     /// Function: GetSentryGunAniminfo
     /// </summary>
     public unsafe override void GetSentryGunAniminfo(out BmSDK.Engine.AnimSet sentryGunAnimSet, out BmSDK.BmGame.RSpecialMoveConfig PlayerMove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.GetSentryGunAniminfo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSentryGunAniminfo, "BmScript.RPawnPlayerNightwing.GetSentryGunAniminfo");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         sentryGunAnimSet = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSet>(paramsPtr + 0);
@@ -91,36 +92,39 @@ public partial class RPawnPlayerNightwing : BmSDK.BmGame.RPawnPlayerNightwingBas
         return;
     }
 
+    private static BmSDK.Function __fn_GetSuperStunAnimSet;
     /// <summary>
     /// Function: GetSuperStunAnimSet
     /// </summary>
     public unsafe override BmSDK.Engine.AnimSet GetSuperStunAnimSet(bool bHasWeapon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.GetSuperStunAnimSet", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSuperStunAnimSet, "BmScript.RPawnPlayerNightwing.GetSuperStunAnimSet");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bHasWeapon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSet>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_SpawnBatclawRedirect;
     /// <summary>
     /// Function: SpawnBatclawRedirect
     /// </summary>
     public unsafe override void SpawnBatclawRedirect(BmSDK.BmGame.RPawnCombat TargetPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.SpawnBatclawRedirect", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnBatclawRedirect, "BmScript.RPawnPlayerNightwing.SpawnBatclawRedirect");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetStrikeTrailPS;
     /// <summary>
     /// Function: GetStrikeTrailPS
     /// </summary>
     public unsafe override BmSDK.Engine.ParticleSystem GetStrikeTrailPS(BmSDK.Class StrikeDmgType, bool bIsSuperStrike, int ComboLevel)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.GetStrikeTrailPS", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeTrailPS, "BmScript.RPawnPlayerNightwing.GetStrikeTrailPS");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StrikeDmgType, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIsSuperStrike, paramsPtr + 8);
@@ -129,23 +133,25 @@ public partial class RPawnPlayerNightwing : BmSDK.BmGame.RPawnPlayerNightwingBas
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.ParticleSystem>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_GetBetweenHandsPosition;
     /// <summary>
     /// Function: GetBetweenHandsPosition
     /// </summary>
     public unsafe override System.Numerics.Vector3 GetBetweenHandsPosition()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.GetBetweenHandsPosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBetweenHandsPosition, "BmScript.RPawnPlayerNightwing.GetBetweenHandsPosition");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetFailedPairedAnimMoveAnimset;
     /// <summary>
     /// Function: GetFailedPairedAnimMoveAnimset
     /// </summary>
     public unsafe override void GetFailedPairedAnimMoveAnimset(out BmSDK.Engine.AnimSet MyAnimset, BmSDK.BmGame.RPawnCombat OtherPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.GetFailedPairedAnimMoveAnimset", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFailedPairedAnimMoveAnimset, "BmScript.RPawnPlayerNightwing.GetFailedPairedAnimMoveAnimset");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherPawn, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -153,67 +159,73 @@ public partial class RPawnPlayerNightwing : BmSDK.BmGame.RPawnPlayerNightwingBas
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateBetweenSticksBeam;
     /// <summary>
     /// Function: UpdateBetweenSticksBeam
     /// </summary>
     public unsafe virtual void UpdateBetweenSticksBeam()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.UpdateBetweenSticksBeam", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateBetweenSticksBeam, "BmScript.RPawnPlayerNightwing.UpdateBetweenSticksBeam");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HideBeamBetweenSticks;
     /// <summary>
     /// Function: HideBeamBetweenSticks
     /// </summary>
     public unsafe virtual void HideBeamBetweenSticks()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.HideBeamBetweenSticks", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideBeamBetweenSticks, "BmScript.RPawnPlayerNightwing.HideBeamBetweenSticks");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShowBeamBetweenSticks;
     /// <summary>
     /// Function: ShowBeamBetweenSticks
     /// </summary>
     public unsafe virtual void ShowBeamBetweenSticks()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.ShowBeamBetweenSticks", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowBeamBetweenSticks, "BmScript.RPawnPlayerNightwing.ShowBeamBetweenSticks");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetUnlockedMeleeArmourLevel;
     /// <summary>
     /// Function: GetUnlockedMeleeArmourLevel
     /// </summary>
     public unsafe override int GetUnlockedMeleeArmourLevel()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.GetUnlockedMeleeArmourLevel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetUnlockedMeleeArmourLevel, "BmScript.RPawnPlayerNightwing.GetUnlockedMeleeArmourLevel");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetUnlockedBallisticArmourLevel;
     /// <summary>
     /// Function: GetUnlockedBallisticArmourLevel
     /// </summary>
     public unsafe override int GetUnlockedBallisticArmourLevel()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.GetUnlockedBallisticArmourLevel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetUnlockedBallisticArmourLevel, "BmScript.RPawnPlayerNightwing.GetUnlockedBallisticArmourLevel");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PlaySound_Impact;
     /// <summary>
     /// Function: PlaySound_Impact
     /// </summary>
     public unsafe override void PlaySound_Impact(BmSDK.BmGame.RPawnCombat Villain, bool bIsStrike, bool bFinishingBlow, bool bIsHeadImpact, bool bIsPunch, bool bIsStrong, bool bIsBlocked, bool bCanEmote = default, bool bIsQuick = default, bool bPlayerAttacked = default, bool bForceEmote = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.PlaySound_Impact", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlaySound_Impact, "BmScript.RPawnPlayerNightwing.PlaySound_Impact");
         byte* paramsPtr = stackalloc byte[72];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Villain, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIsStrike, paramsPtr + 8);
@@ -230,79 +242,86 @@ public partial class RPawnPlayerNightwing : BmSDK.BmGame.RPawnPlayerNightwingBas
         return;
     }
 
+    private static BmSDK.Function __fn_GetVenomHitReactionAnimSet;
     /// <summary>
     /// Function: GetVenomHitReactionAnimSet
     /// </summary>
     public unsafe virtual BmSDK.Engine.AnimSet GetVenomHitReactionAnimSet()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.GetVenomHitReactionAnimSet", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVenomHitReactionAnimSet, "BmScript.RPawnPlayerNightwing.GetVenomHitReactionAnimSet");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSet>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetStrikeMovementStance;
     /// <summary>
     /// Function: GetStrikeMovementStance
     /// </summary>
     public unsafe override BmSDK.FName GetStrikeMovementStance()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.GetStrikeMovementStance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeMovementStance, "BmScript.RPawnPlayerNightwing.GetStrikeMovementStance");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetCinematicModeMovementStance;
     /// <summary>
     /// Function: GetCinematicModeMovementStance
     /// </summary>
     public unsafe override BmSDK.FName GetCinematicModeMovementStance()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.GetCinematicModeMovementStance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCinematicModeMovementStance, "BmScript.RPawnPlayerNightwing.GetCinematicModeMovementStance");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetWalkingModeMovementStance;
     /// <summary>
     /// Function: GetWalkingModeMovementStance
     /// </summary>
     public unsafe override BmSDK.FName GetWalkingModeMovementStance()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.GetWalkingModeMovementStance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWalkingModeMovementStance, "BmScript.RPawnPlayerNightwing.GetWalkingModeMovementStance");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_NofifyBeginStateBatarangPrimed;
     /// <summary>
     /// Function: NofifyBeginStateBatarangPrimed
     /// </summary>
     public unsafe override void NofifyBeginStateBatarangPrimed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.NofifyBeginStateBatarangPrimed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NofifyBeginStateBatarangPrimed, "BmScript.RPawnPlayerNightwing.NofifyBeginStateBatarangPrimed");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyGadgetEquip;
     /// <summary>
     /// Function: NotifyGadgetEquip
     /// </summary>
     public unsafe override void NotifyGadgetEquip(bool equip)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.NotifyGadgetEquip", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyGadgetEquip, "BmScript.RPawnPlayerNightwing.NotifyGadgetEquip");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(equip, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnSuperBatclawSlam;
     /// <summary>
     /// Function: SpawnSuperBatclawSlam
     /// </summary>
     public unsafe override void SpawnSuperBatclawSlam(BmSDK.BmGame.RPawnCombat TargetPawn, BmSDK.Class dmgType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.SpawnSuperBatclawSlam", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnSuperBatclawSlam, "BmScript.RPawnPlayerNightwing.SpawnSuperBatclawSlam");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 8);
@@ -310,12 +329,13 @@ public partial class RPawnPlayerNightwing : BmSDK.BmGame.RPawnPlayerNightwingBas
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnBatclawSlam;
     /// <summary>
     /// Function: SpawnBatclawSlam
     /// </summary>
     public unsafe override void SpawnBatclawSlam(BmSDK.BmGame.RPawnCombat TargetPawn, BmSDK.Class dmgType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.SpawnBatclawSlam", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnBatclawSlam, "BmScript.RPawnPlayerNightwing.SpawnBatclawSlam");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 8);
@@ -323,12 +343,13 @@ public partial class RPawnPlayerNightwing : BmSDK.BmGame.RPawnPlayerNightwingBas
         return;
     }
 
+    private static BmSDK.Function __fn_Died;
     /// <summary>
     /// Function: Died
     /// </summary>
     public unsafe override bool Died(BmSDK.Engine.Controller Killer, BmSDK.Class DamageType, System.Numerics.Vector3 HitLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.Died", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Died, "BmScript.RPawnPlayerNightwing.Died");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Killer, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageType, paramsPtr + 8);
@@ -337,123 +358,134 @@ public partial class RPawnPlayerNightwing : BmSDK.BmGame.RPawnPlayerNightwingBas
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_GetAfterCombatAnim;
     /// <summary>
     /// Function: GetAfterCombatAnim
     /// </summary>
     public unsafe override BmSDK.FName GetAfterCombatAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.GetAfterCombatAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAfterCombatAnim, "BmScript.RPawnPlayerNightwing.GetAfterCombatAnim");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetBeforeAndAfterCombatAnimset;
     /// <summary>
     /// Function: GetBeforeAndAfterCombatAnimset
     /// </summary>
     public unsafe override BmSDK.Engine.AnimSet GetBeforeAndAfterCombatAnimset()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.GetBeforeAndAfterCombatAnimset", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBeforeAndAfterCombatAnimset, "BmScript.RPawnPlayerNightwing.GetBeforeAndAfterCombatAnimset");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSet>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PounceOnThug;
     /// <summary>
     /// Function: PounceOnThug
     /// </summary>
     public unsafe override void PounceOnThug(BmSDK.BmGame.RPawnVillain Target)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.PounceOnThug", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PounceOnThug, "BmScript.RPawnPlayerNightwing.PounceOnThug");
         byte* paramsPtr = stackalloc byte[140];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HopOffVantagePoint;
     /// <summary>
     /// Function: HopOffVantagePoint
     /// </summary>
     public unsafe override void HopOffVantagePoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.HopOffVantagePoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HopOffVantagePoint, "BmScript.RPawnPlayerNightwing.HopOffVantagePoint");
         byte* paramsPtr = stackalloc byte[224];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HideWeaponRight;
     /// <summary>
     /// Function: HideWeaponRight
     /// </summary>
     public unsafe virtual void HideWeaponRight()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.HideWeaponRight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideWeaponRight, "BmScript.RPawnPlayerNightwing.HideWeaponRight");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShowWeaponRightSmall;
     /// <summary>
     /// Function: ShowWeaponRightSmall
     /// </summary>
     public unsafe virtual void ShowWeaponRightSmall()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.ShowWeaponRightSmall", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowWeaponRightSmall, "BmScript.RPawnPlayerNightwing.ShowWeaponRightSmall");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShowWeaponRight;
     /// <summary>
     /// Function: ShowWeaponRight
     /// </summary>
     public unsafe virtual void ShowWeaponRight()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.ShowWeaponRight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowWeaponRight, "BmScript.RPawnPlayerNightwing.ShowWeaponRight");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HideWeaponLeft;
     /// <summary>
     /// Function: HideWeaponLeft
     /// </summary>
     public unsafe virtual void HideWeaponLeft()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.HideWeaponLeft", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideWeaponLeft, "BmScript.RPawnPlayerNightwing.HideWeaponLeft");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShowWeaponLeftSmall;
     /// <summary>
     /// Function: ShowWeaponLeftSmall
     /// </summary>
     public unsafe virtual void ShowWeaponLeftSmall()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.ShowWeaponLeftSmall", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowWeaponLeftSmall, "BmScript.RPawnPlayerNightwing.ShowWeaponLeftSmall");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShowWeaponLeft;
     /// <summary>
     /// Function: ShowWeaponLeft
     /// </summary>
     public unsafe virtual void ShowWeaponLeft()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.ShowWeaponLeft", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowWeaponLeft, "BmScript.RPawnPlayerNightwing.ShowWeaponLeft");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayStickAnimRight;
     /// <summary>
     /// Function: PlayStickAnimRight
     /// </summary>
     public unsafe virtual void PlayStickAnimRight(BmSDK.FName AnimName, float Speed = default, float StartTime = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.PlayStickAnimRight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayStickAnimRight, "BmScript.RPawnPlayerNightwing.PlayStickAnimRight");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speed, paramsPtr + 8);
@@ -462,12 +494,13 @@ public partial class RPawnPlayerNightwing : BmSDK.BmGame.RPawnPlayerNightwingBas
         return;
     }
 
+    private static BmSDK.Function __fn_PlayStickAnimLeft;
     /// <summary>
     /// Function: PlayStickAnimLeft
     /// </summary>
     public unsafe virtual void PlayStickAnimLeft(BmSDK.FName AnimName, float Speed = default, float StartTime = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.PlayStickAnimLeft", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayStickAnimLeft, "BmScript.RPawnPlayerNightwing.PlayStickAnimLeft");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speed, paramsPtr + 8);
@@ -476,314 +509,342 @@ public partial class RPawnPlayerNightwing : BmSDK.BmGame.RPawnPlayerNightwingBas
         return;
     }
 
+    private static BmSDK.Function __fn_PlayStowSticksAnim;
     /// <summary>
     /// Function: PlayStowSticksAnim
     /// </summary>
     public unsafe virtual bool PlayStowSticksAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.PlayStowSticksAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayStowSticksAnim, "BmScript.RPawnPlayerNightwing.PlayStowSticksAnim");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_HideWeaponsHack;
     /// <summary>
     /// Function: HideWeaponsHack
     /// </summary>
     public unsafe override void HideWeaponsHack()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.HideWeaponsHack", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideWeaponsHack, "BmScript.RPawnPlayerNightwing.HideWeaponsHack");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HideWeapons;
     /// <summary>
     /// Function: HideWeapons
     /// </summary>
     public unsafe virtual void HideWeapons()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.HideWeapons", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideWeapons, "BmScript.RPawnPlayerNightwing.HideWeapons");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HideWeaponsWithFlourish;
     /// <summary>
     /// Function: HideWeaponsWithFlourish
     /// </summary>
     public unsafe virtual void HideWeaponsWithFlourish()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.HideWeaponsWithFlourish", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideWeaponsWithFlourish, "BmScript.RPawnPlayerNightwing.HideWeaponsWithFlourish");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShowWeaponsSmall;
     /// <summary>
     /// Function: ShowWeaponsSmall
     /// </summary>
     public unsafe virtual void ShowWeaponsSmall()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.ShowWeaponsSmall", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowWeaponsSmall, "BmScript.RPawnPlayerNightwing.ShowWeaponsSmall");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShowWeapons;
     /// <summary>
     /// Function: ShowWeapons
     /// </summary>
     public unsafe virtual void ShowWeapons()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.ShowWeapons", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowWeapons, "BmScript.RPawnPlayerNightwing.ShowWeapons");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShrinkWeapons;
     /// <summary>
     /// Function: ShrinkWeapons
     /// </summary>
     public unsafe virtual void ShrinkWeapons()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.ShrinkWeapons", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShrinkWeapons, "BmScript.RPawnPlayerNightwing.ShrinkWeapons");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GrowWeapons;
     /// <summary>
     /// Function: GrowWeapons
     /// </summary>
     public unsafe virtual void GrowWeapons()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.GrowWeapons", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GrowWeapons, "BmScript.RPawnPlayerNightwing.GrowWeapons");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StrikeStanceReversed;
     /// <summary>
     /// Function: StrikeStanceReversed
     /// </summary>
     public unsafe virtual void StrikeStanceReversed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.StrikeStanceReversed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StrikeStanceReversed, "BmScript.RPawnPlayerNightwing.StrikeStanceReversed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DisablePostCombatStance;
     /// <summary>
     /// Function: DisablePostCombatStance
     /// </summary>
     public unsafe virtual void DisablePostCombatStance()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.DisablePostCombatStance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisablePostCombatStance, "BmScript.RPawnPlayerNightwing.DisablePostCombatStance");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DeInitAttackMoveWeaponsFromCancelSpecialMove;
     /// <summary>
     /// Function: DeInitAttackMoveWeaponsFromCancelSpecialMove
     /// </summary>
     public unsafe override void DeInitAttackMoveWeaponsFromCancelSpecialMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.DeInitAttackMoveWeaponsFromCancelSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DeInitAttackMoveWeaponsFromCancelSpecialMove, "BmScript.RPawnPlayerNightwing.DeInitAttackMoveWeaponsFromCancelSpecialMove");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DeInitAttackMoveWeaponsFromFinishSpecialMove;
     /// <summary>
     /// Function: DeInitAttackMoveWeaponsFromFinishSpecialMove
     /// </summary>
     public unsafe override void DeInitAttackMoveWeaponsFromFinishSpecialMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.DeInitAttackMoveWeaponsFromFinishSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DeInitAttackMoveWeaponsFromFinishSpecialMove, "BmScript.RPawnPlayerNightwing.DeInitAttackMoveWeaponsFromFinishSpecialMove");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DeInitAttackMoveWeapons;
     /// <summary>
     /// Function: DeInitAttackMoveWeapons
     /// </summary>
     public unsafe override void DeInitAttackMoveWeapons()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.DeInitAttackMoveWeapons", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DeInitAttackMoveWeapons, "BmScript.RPawnPlayerNightwing.DeInitAttackMoveWeapons");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InitAttackMoveWeapons;
     /// <summary>
     /// Function: InitAttackMoveWeapons
     /// </summary>
     public unsafe override void InitAttackMoveWeapons(bool bMirrored)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.InitAttackMoveWeapons", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitAttackMoveWeapons, "BmScript.RPawnPlayerNightwing.InitAttackMoveWeapons");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bMirrored, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShowWeaponsForPenguinCacheC5;
     /// <summary>
     /// Function: ShowWeaponsForPenguinCacheC5
     /// </summary>
     public unsafe virtual void ShowWeaponsForPenguinCacheC5()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.ShowWeaponsForPenguinCacheC5", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowWeaponsForPenguinCacheC5, "BmScript.RPawnPlayerNightwing.ShowWeaponsForPenguinCacheC5");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HideWeaponsForPenguinCacheC5;
     /// <summary>
     /// Function: HideWeaponsForPenguinCacheC5
     /// </summary>
     public unsafe virtual void HideWeaponsForPenguinCacheC5()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.HideWeaponsForPenguinCacheC5", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideWeaponsForPenguinCacheC5, "BmScript.RPawnPlayerNightwing.HideWeaponsForPenguinCacheC5");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HideWeaponsForWeaponGrab;
     /// <summary>
     /// Function: HideWeaponsForWeaponGrab
     /// </summary>
     public unsafe override void HideWeaponsForWeaponGrab()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.HideWeaponsForWeaponGrab", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideWeaponsForWeaponGrab, "BmScript.RPawnPlayerNightwing.HideWeaponsForWeaponGrab");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OverrideChangeRunningModeStance;
     /// <summary>
     /// Function: OverrideChangeRunningModeStance
     /// </summary>
     public unsafe override bool OverrideChangeRunningModeStance()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.OverrideChangeRunningModeStance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverrideChangeRunningModeStance, "BmScript.RPawnPlayerNightwing.OverrideChangeRunningModeStance");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_OverrideChangeWalkingModeStance;
     /// <summary>
     /// Function: OverrideChangeWalkingModeStance
     /// </summary>
     public unsafe override bool OverrideChangeWalkingModeStance()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.OverrideChangeWalkingModeStance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverrideChangeWalkingModeStance, "BmScript.RPawnPlayerNightwing.OverrideChangeWalkingModeStance");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PlayRicochetCatchAnim;
     /// <summary>
     /// Function: PlayRicochetCatchAnim
     /// </summary>
     public unsafe virtual void PlayRicochetCatchAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.PlayRicochetCatchAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayRicochetCatchAnim, "BmScript.RPawnPlayerNightwing.PlayRicochetCatchAnim");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnCatchRicochetStick;
     /// <summary>
     /// Function: OnCatchRicochetStick
     /// </summary>
     public unsafe virtual void OnCatchRicochetStick()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.OnCatchRicochetStick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnCatchRicochetStick, "BmScript.RPawnPlayerNightwing.OnCatchRicochetStick");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CombatMoveInitialised;
     /// <summary>
     /// Function: CombatMoveInitialised
     /// </summary>
     public unsafe override void CombatMoveInitialised(BmSDK.BmGame.RCombatMove NewMove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.CombatMoveInitialised", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CombatMoveInitialised, "BmScript.RPawnPlayerNightwing.CombatMoveInitialised");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewMove, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnThrowRicochetStick;
     /// <summary>
     /// Function: OnThrowRicochetStick
     /// </summary>
     public unsafe virtual void OnThrowRicochetStick()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.OnThrowRicochetStick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnThrowRicochetStick, "BmScript.RPawnPlayerNightwing.OnThrowRicochetStick");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddDefaultInventory;
     /// <summary>
     /// Function: AddDefaultInventory
     /// </summary>
     public unsafe override void AddDefaultInventory()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.AddDefaultInventory", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddDefaultInventory, "BmScript.RPawnPlayerNightwing.AddDefaultInventory");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddNightwingMovesToWeaponConfig;
     /// <summary>
     /// Function: AddNightwingMovesToWeaponConfig
     /// </summary>
     public unsafe virtual void AddNightwingMovesToWeaponConfig(BmSDK.BmGame.RWeaponConfig WeaponConfig)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.AddNightwingMovesToWeaponConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddNightwingMovesToWeaponConfig, "BmScript.RPawnPlayerNightwing.AddNightwingMovesToWeaponConfig");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WeaponConfig, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddMovementMovesToWeaponConfig;
     /// <summary>
     /// Function: AddMovementMovesToWeaponConfig
     /// </summary>
     public unsafe override void AddMovementMovesToWeaponConfig(BmSDK.BmGame.RWeaponConfig WeaponConfig)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.AddMovementMovesToWeaponConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddMovementMovesToWeaponConfig, "BmScript.RPawnPlayerNightwing.AddMovementMovesToWeaponConfig");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WeaponConfig, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DrawHUD;
     /// <summary>
     /// Function: DrawHUD
     /// </summary>
     public unsafe override void DrawHUD(BmSDK.Engine.HUD H)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.DrawHUD", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DrawHUD, "BmScript.RPawnPlayerNightwing.DrawHUD");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(H, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DrawScreenBar;
     /// <summary>
     /// Function: DrawScreenBar
     /// </summary>
     public unsafe virtual void DrawScreenBar(BmSDK.Engine.Canvas HudCanvas, float centre_x, float centre_y, float proportion_width, float proportion_height, float proportion_border, float proportion_fill, float col_r, float col_g, float col_b, float col_a)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.DrawScreenBar", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DrawScreenBar, "BmScript.RPawnPlayerNightwing.DrawScreenBar");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HudCanvas, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(centre_x, paramsPtr + 8);
@@ -800,12 +861,13 @@ public partial class RPawnPlayerNightwing : BmSDK.BmGame.RPawnPlayerNightwingBas
         return;
     }
 
+    private static BmSDK.Function __fn_DrawScreenRect;
     /// <summary>
     /// Function: DrawScreenRect
     /// </summary>
     public unsafe virtual void DrawScreenRect(BmSDK.Engine.Canvas HudCanvas, float topleft_x, float topleft_y, float width_x, float width_y, float col_r, float col_g, float col_b, float col_a)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.DrawScreenRect", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DrawScreenRect, "BmScript.RPawnPlayerNightwing.DrawScreenRect");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HudCanvas, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(topleft_x, paramsPtr + 8);
@@ -820,35 +882,38 @@ public partial class RPawnPlayerNightwing : BmSDK.BmGame.RPawnPlayerNightwingBas
         return;
     }
 
+    private static BmSDK.Function __fn_FillProximityScannerArray;
     /// <summary>
     /// Function: FillProximityScannerArray
     /// </summary>
     public unsafe virtual void FillProximityScannerArray()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.FillProximityScannerArray", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FillProximityScannerArray, "BmScript.RPawnPlayerNightwing.FillProximityScannerArray");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TickProximityScanner;
     /// <summary>
     /// Function: TickProximityScanner
     /// </summary>
     public unsafe virtual void TickProximityScanner(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.TickProximityScanner", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TickProximityScanner, "BmScript.RPawnPlayerNightwing.TickProximityScanner");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetInXrayMode;
     /// <summary>
     /// Function: SetInXrayMode
     /// </summary>
     public unsafe override void SetInXrayMode(bool On, bool bForceOff)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.SetInXrayMode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetInXrayMode, "BmScript.RPawnPlayerNightwing.SetInXrayMode");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(On, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForceOff, paramsPtr + 4);
@@ -856,103 +921,112 @@ public partial class RPawnPlayerNightwing : BmSDK.BmGame.RPawnPlayerNightwingBas
         return;
     }
 
+    private static BmSDK.Function __fn_TakeFallingDamage;
     /// <summary>
     /// Function: TakeFallingDamage
     /// </summary>
     public unsafe override void TakeFallingDamage()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.TakeFallingDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TakeFallingDamage, "BmScript.RPawnPlayerNightwing.TakeFallingDamage");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetOwnerNoSee;
     /// <summary>
     /// Function: SetOwnerNoSee
     /// </summary>
     public unsafe override void SetOwnerNoSee(bool bNewOwnerNoSee)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.SetOwnerNoSee", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetOwnerNoSee, "BmScript.RPawnPlayerNightwing.SetOwnerNoSee");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewOwnerNoSee, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CombatMoveFinished;
     /// <summary>
     /// Function: CombatMoveFinished
     /// </summary>
     public unsafe override void CombatMoveFinished(BmSDK.BmGame.RCombatMove FinishedMove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.CombatMoveFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CombatMoveFinished, "BmScript.RPawnPlayerNightwing.CombatMoveFinished");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FinishedMove, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmScript.RPawnPlayerNightwing.Tick");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsStowingMoveWeapon;
     /// <summary>
     /// Function: IsStowingMoveWeapon
     /// </summary>
     public unsafe override bool IsStowingMoveWeapon()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.IsStowingMoveWeapon", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsStowingMoveWeapon, "BmScript.RPawnPlayerNightwing.IsStowingMoveWeapon");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_OnBeginStateSpecialMove;
     /// <summary>
     /// Function: OnBeginStateSpecialMove
     /// </summary>
     public unsafe override void OnBeginStateSpecialMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.OnBeginStateSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnBeginStateSpecialMove, "BmScript.RPawnPlayerNightwing.OnBeginStateSpecialMove");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetupPlayerSpecificCombatAnimsets;
     /// <summary>
     /// Function: SetupPlayerSpecificCombatAnimsets
     /// </summary>
     public unsafe override void SetupPlayerSpecificCombatAnimsets()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.SetupPlayerSpecificCombatAnimsets", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupPlayerSpecificCombatAnimsets, "BmScript.RPawnPlayerNightwing.SetupPlayerSpecificCombatAnimsets");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetPipeCombatAnimset;
     /// <summary>
     /// Function: GetPipeCombatAnimset
     /// </summary>
     public unsafe override BmSDK.Engine.AnimSet GetPipeCombatAnimset()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.GetPipeCombatAnimset", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPipeCombatAnimset, "BmScript.RPawnPlayerNightwing.GetPipeCombatAnimset");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSet>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerNightwing.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmScript.RPawnPlayerNightwing.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

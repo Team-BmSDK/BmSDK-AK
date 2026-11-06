@@ -73,34 +73,37 @@ public partial class RBMWeaponSniperBase : BmSDK.BmGame.RBMWeaponRanged, BmSDK.I
         where TComponent : class, Framework.IScriptComponent<RBMWeaponSniperBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetRECHitReactionAnimName;
     /// <summary>
     /// Function: GetRECHitReactionAnimName
     /// </summary>
     public unsafe override BmSDK.FName GetRECHitReactionAnimName()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMWeaponSniperBase.GetRECHitReactionAnimName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRECHitReactionAnimName, "BmGame.RBMWeaponSniperBase.GetRECHitReactionAnimName");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetSniperAimingConfig;
     /// <summary>
     /// Function: GetSniperAimingConfig
     /// </summary>
     public unsafe static BmSDK.Engine.RAimingConfig GetSniperAimingConfig()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMWeaponSniperBase.GetSniperAimingConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSniperAimingConfig, "BmGame.RBMWeaponSniperBase.GetSniperAimingConfig");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.RAimingConfig>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetLookFromLocation;
     /// <summary>
     /// Function: GetLookFromLocation
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetLookFromLocation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMWeaponSniperBase.GetLookFromLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLookFromLocation, "BmGame.RBMWeaponSniperBase.GetLookFromLocation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);

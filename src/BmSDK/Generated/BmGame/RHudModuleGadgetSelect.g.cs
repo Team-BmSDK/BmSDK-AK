@@ -78,47 +78,51 @@ public partial class RHudModuleGadgetSelect : BmSDK.BmGame.RHudModule, BmSDK.IGa
         where TComponent : class, Framework.IScriptComponent<RHudModuleGadgetSelect>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SelectGadget;
     /// <summary>
     /// Function: SelectGadget
     /// </summary>
     public unsafe virtual void SelectGadget(BmSDK.FString gadget_name)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleGadgetSelect.SelectGadget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SelectGadget, "BmGame.RHudModuleGadgetSelect.SelectGadget");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(gadget_name, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SelectGadgetByIndex;
     /// <summary>
     /// Function: SelectGadgetByIndex
     /// </summary>
     public unsafe virtual void SelectGadgetByIndex(int gadget_index)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleGadgetSelect.SelectGadgetByIndex", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SelectGadgetByIndex, "BmGame.RHudModuleGadgetSelect.SelectGadgetByIndex");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(gadget_index, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostSetupGadgets;
     /// <summary>
     /// Function: PostSetupGadgets
     /// </summary>
     public unsafe virtual void PostSetupGadgets()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleGadgetSelect.PostSetupGadgets", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostSetupGadgets, "BmGame.RHudModuleGadgetSelect.PostSetupGadgets");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetupGadget;
     /// <summary>
     /// Function: SetupGadget
     /// </summary>
     public unsafe virtual void SetupGadget(int gadget_index, BmSDK.FString gadget_name, int max_ammo, int current_ammo, int recharge_level)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleGadgetSelect.SetupGadget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupGadget, "BmGame.RHudModuleGadgetSelect.SetupGadget");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(gadget_index, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(gadget_name, paramsPtr + 4);
@@ -129,24 +133,26 @@ public partial class RHudModuleGadgetSelect : BmSDK.BmGame.RHudModule, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_FadeOutGadgetCharge;
     /// <summary>
     /// Function: FadeOutGadgetCharge
     /// </summary>
     public unsafe virtual void FadeOutGadgetCharge(int Id)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleGadgetSelect.FadeOutGadgetCharge", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FadeOutGadgetCharge, "BmGame.RHudModuleGadgetSelect.FadeOutGadgetCharge");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Id, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetGadgetParam;
     /// <summary>
     /// Function: SetGadgetParam
     /// </summary>
     public unsafe virtual void SetGadgetParam(int Id, int Recharge, int Quantity)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleGadgetSelect.SetGadgetParam", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetGadgetParam, "BmGame.RHudModuleGadgetSelect.SetGadgetParam");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Id, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Recharge, paramsPtr + 4);
@@ -155,24 +161,26 @@ public partial class RHudModuleGadgetSelect : BmSDK.BmGame.RHudModule, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetGadgetIconName;
     /// <summary>
     /// Function: SetGadgetIconName
     /// </summary>
     public unsafe virtual void SetGadgetIconName(BmSDK.FString _GadgetIconName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleGadgetSelect.SetGadgetIconName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetGadgetIconName, "BmGame.RHudModuleGadgetSelect.SetGadgetIconName");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_GadgetIconName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetVisualState;
     /// <summary>
     /// Function: SetVisualState
     /// </summary>
     public unsafe virtual void SetVisualState(bool IsOnscreen, bool IsDeployed, int Gadget_OutOfSixteen)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleGadgetSelect.SetVisualState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetVisualState, "BmGame.RHudModuleGadgetSelect.SetVisualState");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IsOnscreen, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IsDeployed, paramsPtr + 4);
@@ -181,12 +189,13 @@ public partial class RHudModuleGadgetSelect : BmSDK.BmGame.RHudModule, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_ShowRequiredGadget;
     /// <summary>
     /// Function: ShowRequiredGadget
     /// </summary>
     public unsafe virtual void ShowRequiredGadget(int RequiredGadget_OutOfSixteen, bool _bHighlightOn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleGadgetSelect.ShowRequiredGadget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowRequiredGadget, "BmGame.RHudModuleGadgetSelect.ShowRequiredGadget");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RequiredGadget_OutOfSixteen, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_bHighlightOn, paramsPtr + 4);
@@ -194,35 +203,38 @@ public partial class RHudModuleGadgetSelect : BmSDK.BmGame.RHudModule, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_ShowFailedGadget;
     /// <summary>
     /// Function: ShowFailedGadget
     /// </summary>
     public unsafe virtual void ShowFailedGadget(int FailedGadget_OutOfSixteen)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleGadgetSelect.ShowFailedGadget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowFailedGadget, "BmGame.RHudModuleGadgetSelect.ShowFailedGadget");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FailedGadget_OutOfSixteen, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DetonateExplosiveGel;
     /// <summary>
     /// Function: DetonateExplosiveGel
     /// </summary>
     public unsafe virtual void DetonateExplosiveGel()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleGadgetSelect.DetonateExplosiveGel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DetonateExplosiveGel, "BmGame.RHudModuleGadgetSelect.DetonateExplosiveGel");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShowExplosiveGelCount;
     /// <summary>
     /// Function: ShowExplosiveGelCount
     /// </summary>
     public unsafe virtual void ShowExplosiveGelCount(int NumVictims, bool WillKnockdown)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleGadgetSelect.ShowExplosiveGelCount", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowExplosiveGelCount, "BmGame.RHudModuleGadgetSelect.ShowExplosiveGelCount");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NumVictims, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WillKnockdown, paramsPtr + 4);
@@ -230,69 +242,75 @@ public partial class RHudModuleGadgetSelect : BmSDK.BmGame.RHudModule, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SendGadgets;
     /// <summary>
     /// Function: SendGadgets
     /// </summary>
     public unsafe virtual void SendGadgets()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleGadgetSelect.SendGadgets", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SendGadgets, "BmGame.RHudModuleGadgetSelect.SendGadgets");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ConvertGadgetIndexTwelveToSixteen;
     /// <summary>
     /// Function: ConvertGadgetIndexTwelveToSixteen
     /// </summary>
     public unsafe virtual int ConvertGadgetIndexTwelveToSixteen(int value_out_of_twelve)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleGadgetSelect.ConvertGadgetIndexTwelveToSixteen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ConvertGadgetIndexTwelveToSixteen, "BmGame.RHudModuleGadgetSelect.ConvertGadgetIndexTwelveToSixteen");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(value_out_of_twelve, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_SendBlankGadget;
     /// <summary>
     /// Function: SendBlankGadget
     /// </summary>
     public unsafe virtual void SendBlankGadget(int gadgetIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleGadgetSelect.SendBlankGadget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SendBlankGadget, "BmGame.RHudModuleGadgetSelect.SendBlankGadget");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(gadgetIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InitialiseFlash;
     /// <summary>
     /// Function: InitialiseFlash
     /// </summary>
     public unsafe override void InitialiseFlash()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleGadgetSelect.InitialiseFlash", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitialiseFlash, "BmGame.RHudModuleGadgetSelect.InitialiseFlash");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Close;
     /// <summary>
     /// Function: Close
     /// </summary>
     public unsafe override void Close()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleGadgetSelect.Close", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Close, "BmGame.RHudModuleGadgetSelect.Close");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe override bool Init(BmSDK.BmGame.RPlayerController _RPC, BmSDK.FString _ExtensionName, BmSDK.FString _ExtensionPath)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleGadgetSelect.Init", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmGame.RHudModuleGadgetSelect.Init");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_RPC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_ExtensionName, paramsPtr + 8);

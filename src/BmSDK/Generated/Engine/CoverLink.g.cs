@@ -78,23 +78,25 @@ public partial class CoverLink : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<CoverLink>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetDebugAbbrev;
     /// <summary>
     /// Function: GetDebugAbbrev
     /// </summary>
     public unsafe override BmSDK.FString GetDebugAbbrev()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.CoverLink.GetDebugAbbrev", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDebugAbbrev, "Engine.CoverLink.GetDebugAbbrev");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetLocationDescription;
     /// <summary>
     /// Function: GetLocationDescription
     /// </summary>
     public unsafe virtual BmSDK.Engine.CoverLink.ECoverLocationDescription GetLocationDescription(int SlotIdx)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.CoverLink.GetLocationDescription", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLocationDescription, "Engine.CoverLink.GetLocationDescription");
         byte* paramsPtr = stackalloc byte[5];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SlotIdx, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -108,24 +110,26 @@ public partial class CoverLink : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.CoverLink.ECoverLocationDescription>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetDebugString;
     /// <summary>
     /// Function: GetDebugString
     /// </summary>
     public unsafe virtual BmSDK.FString GetDebugString(int SlotIdx)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.CoverLink.GetDebugString", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDebugString, "Engine.CoverLink.GetDebugString");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SlotIdx, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_AddCoverSlot;
     /// <summary>
     /// Function: AddCoverSlot
     /// </summary>
     public unsafe virtual int AddCoverSlot(System.Numerics.Vector3 SlotLocation, BmSDK.Rotator SlotRotation, int SlotIdx = default, bool bForceSlotUpdate = default, BmSDK.Engine.Scout Scout = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.CoverLink.AddCoverSlot", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddCoverSlot, "Engine.CoverLink.AddCoverSlot");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SlotLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SlotRotation, paramsPtr + 12);
@@ -143,12 +147,13 @@ public partial class CoverLink : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 40);
     }
 
+    private static BmSDK.Function __fn_BreakFracturedMeshes;
     /// <summary>
     /// Function: BreakFracturedMeshes
     /// </summary>
     public unsafe virtual void BreakFracturedMeshes(System.Numerics.Vector3 Origin, float Radius, float RBStrength, BmSDK.Class DamageType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.CoverLink.BreakFracturedMeshes", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BreakFracturedMeshes, "Engine.CoverLink.BreakFracturedMeshes");
         byte* paramsPtr = stackalloc byte[37];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Origin, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Radius, paramsPtr + 12);
@@ -158,12 +163,13 @@ public partial class CoverLink : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetSwatTurnTarget;
     /// <summary>
     /// Function: GetSwatTurnTarget
     /// </summary>
     public unsafe virtual bool GetSwatTurnTarget(int SlotIdx, int Direction, out BmSDK.Engine.CoverLink.FCoverInfo out_Info)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.CoverLink.GetSwatTurnTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSwatTurnTarget, "Engine.CoverLink.GetSwatTurnTarget");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SlotIdx, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Direction, paramsPtr + 4);
@@ -179,23 +185,25 @@ public partial class CoverLink : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_ShutDown;
     /// <summary>
     /// Function: ShutDown
     /// </summary>
     public unsafe override void ShutDown()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.CoverLink.ShutDown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShutDown, "Engine.CoverLink.ShutDown");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsEnabled;
     /// <summary>
     /// Function: IsEnabled
     /// </summary>
     public unsafe virtual bool IsEnabled()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.CoverLink.IsEnabled", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsEnabled, "Engine.CoverLink.IsEnabled");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -208,12 +216,13 @@ public partial class CoverLink : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_AutoAdjustSlot;
     /// <summary>
     /// Function: AutoAdjustSlot
     /// </summary>
     public unsafe virtual bool AutoAdjustSlot(int SlotIdx, bool bOnlyCheckLeans)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.CoverLink.AutoAdjustSlot", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AutoAdjustSlot, "Engine.CoverLink.AutoAdjustSlot");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SlotIdx, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bOnlyCheckLeans, paramsPtr + 4);
@@ -228,12 +237,13 @@ public partial class CoverLink : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_IsRightEdgeSlot;
     /// <summary>
     /// Function: IsRightEdgeSlot
     /// </summary>
     public unsafe virtual bool IsRightEdgeSlot(int SlotIdx, bool bIgnoreLeans)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.CoverLink.IsRightEdgeSlot", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsRightEdgeSlot, "Engine.CoverLink.IsRightEdgeSlot");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SlotIdx, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIgnoreLeans, paramsPtr + 4);
@@ -248,12 +258,13 @@ public partial class CoverLink : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_IsLeftEdgeSlot;
     /// <summary>
     /// Function: IsLeftEdgeSlot
     /// </summary>
     public unsafe virtual bool IsLeftEdgeSlot(int SlotIdx, bool bIgnoreLeans)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.CoverLink.IsLeftEdgeSlot", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsLeftEdgeSlot, "Engine.CoverLink.IsLeftEdgeSlot");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SlotIdx, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIgnoreLeans, paramsPtr + 4);
@@ -268,12 +279,13 @@ public partial class CoverLink : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_IsEdgeSlot;
     /// <summary>
     /// Function: IsEdgeSlot
     /// </summary>
     public unsafe virtual bool IsEdgeSlot(int SlotIdx, bool bIgnoreLeans = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.CoverLink.IsEdgeSlot", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsEdgeSlot, "Engine.CoverLink.IsEdgeSlot");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SlotIdx, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIgnoreLeans, paramsPtr + 4);
@@ -288,12 +300,13 @@ public partial class CoverLink : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_FindSlots;
     /// <summary>
     /// Function: FindSlots
     /// </summary>
     public unsafe virtual bool FindSlots(System.Numerics.Vector3 CheckLocation, float MaxDistance, out int LeftSlotIdx, out int RightSlotIdx)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.CoverLink.FindSlots", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindSlots, "Engine.CoverLink.FindSlots");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxDistance, paramsPtr + 12);
@@ -310,24 +323,26 @@ public partial class CoverLink : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_IsStationarySlot;
     /// <summary>
     /// Function: IsStationarySlot
     /// </summary>
     public unsafe virtual bool IsStationarySlot(int SlotIdx)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.CoverLink.IsStationarySlot", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsStationarySlot, "Engine.CoverLink.IsStationarySlot");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SlotIdx, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_IsValidClaimBetween;
     /// <summary>
     /// Function: IsValidClaimBetween
     /// </summary>
     public unsafe virtual bool IsValidClaimBetween(BmSDK.Engine.Pawn ChkClaim, int StartSlotIdx, int EndSlotIdx, bool bSkipTeamCheck = default, bool bSkipOverlapCheck = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.CoverLink.IsValidClaimBetween", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsValidClaimBetween, "Engine.CoverLink.IsValidClaimBetween");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ChkClaim, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartSlotIdx, paramsPtr + 8);
@@ -345,12 +360,13 @@ public partial class CoverLink : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_IsValidClaim;
     /// <summary>
     /// Function: IsValidClaim
     /// </summary>
     public unsafe virtual bool IsValidClaim(BmSDK.Engine.Pawn ChkClaim, int SlotIdx, bool bSkipTeamCheck = default, bool bSkipOverlapCheck = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.CoverLink.IsValidClaim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsValidClaim, "Engine.CoverLink.IsValidClaim");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ChkClaim, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SlotIdx, paramsPtr + 8);
@@ -367,12 +383,13 @@ public partial class CoverLink : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_GetSlotViewPoint;
     /// <summary>
     /// Function: GetSlotViewPoint
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetSlotViewPoint(int SlotIdx, BmSDK.Engine.CoverLink.ECoverType Type = default, BmSDK.Engine.CoverLink.ECoverAction Action = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.CoverLink.GetSlotViewPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSlotViewPoint, "Engine.CoverLink.GetSlotViewPoint");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SlotIdx, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Type, paramsPtr + 4);
@@ -388,12 +405,13 @@ public partial class CoverLink : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetSlotRotation;
     /// <summary>
     /// Function: GetSlotRotation
     /// </summary>
     public unsafe virtual BmSDK.Rotator GetSlotRotation(int SlotIdx, bool bForceUseOffset = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.CoverLink.GetSlotRotation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSlotRotation, "Engine.CoverLink.GetSlotRotation");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SlotIdx, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForceUseOffset, paramsPtr + 4);
@@ -408,12 +426,13 @@ public partial class CoverLink : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetSlotLocation;
     /// <summary>
     /// Function: GetSlotLocation
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetSlotLocation(int SlotIdx, bool bForceUseOffset = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.CoverLink.GetSlotLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSlotLocation, "Engine.CoverLink.GetSlotLocation");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SlotIdx, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForceUseOffset, paramsPtr + 4);
@@ -428,12 +447,13 @@ public partial class CoverLink : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_UnPackFireLinkInteractionInfo;
     /// <summary>
     /// Function: UnPackFireLinkInteractionInfo
     /// </summary>
     public unsafe static void UnPackFireLinkInteractionInfo(byte PackedByte, out BmSDK.Engine.CoverLink.ECoverType SrcType, out BmSDK.Engine.CoverLink.ECoverAction SrcAction, out BmSDK.Engine.CoverLink.ECoverType DestType, out BmSDK.Engine.CoverLink.ECoverAction DestAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.CoverLink.UnPackFireLinkInteractionInfo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnPackFireLinkInteractionInfo, "Engine.CoverLink.UnPackFireLinkInteractionInfo");
         byte* paramsPtr = stackalloc byte[5];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PackedByte, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -451,12 +471,13 @@ public partial class CoverLink : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_PackFireLinkInteractionInfo;
     /// <summary>
     /// Function: PackFireLinkInteractionInfo
     /// </summary>
     public unsafe static byte PackFireLinkInteractionInfo(BmSDK.Engine.CoverLink.ECoverType SrcType, BmSDK.Engine.CoverLink.ECoverAction SrcAction, BmSDK.Engine.CoverLink.ECoverType DestType, BmSDK.Engine.CoverLink.ECoverAction DestAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.CoverLink.PackFireLinkInteractionInfo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PackFireLinkInteractionInfo, "Engine.CoverLink.PackFireLinkInteractionInfo");
         byte* paramsPtr = stackalloc byte[5];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SrcType, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SrcAction, paramsPtr + 1);
@@ -473,12 +494,13 @@ public partial class CoverLink : BmSDK.Engine.NavigationPoint, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<byte>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetFireLinkTargetCoverInfo;
     /// <summary>
     /// Function: GetFireLinkTargetCoverInfo
     /// </summary>
     public unsafe virtual bool GetFireLinkTargetCoverInfo(int SlotIdx, int FireLinkIdx, out BmSDK.Engine.CoverLink.FCoverInfo out_Info, BmSDK.Engine.CoverLink.EFireLinkID ArrayID = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.CoverLink.GetFireLinkTargetCoverInfo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFireLinkTargetCoverInfo, "Engine.CoverLink.GetFireLinkTargetCoverInfo");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SlotIdx, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FireLinkIdx, paramsPtr + 4);

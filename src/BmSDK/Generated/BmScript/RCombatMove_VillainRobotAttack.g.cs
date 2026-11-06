@@ -78,12 +78,13 @@ public partial class RCombatMove_VillainRobotAttack : BmSDK.BmGame.RCombatMove_V
         where TComponent : class, Framework.IScriptComponent<RCombatMove_VillainRobotAttack>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CanCounterStart;
     /// <summary>
     /// Function: CanCounterStart
     /// </summary>
     public unsafe override void CanCounterStart()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_VillainRobotAttack.CanCounterStart", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanCounterStart, "BmScript.RCombatMove_VillainRobotAttack.CanCounterStart");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

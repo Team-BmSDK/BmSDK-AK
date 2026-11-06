@@ -78,45 +78,49 @@ public partial class RPawnPlayerCatwoman_Riddler : BmSDK.BmScript.RPawnPlayerCat
         where TComponent : class, Framework.IScriptComponent<RPawnPlayerCatwoman_Riddler>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CatCollarExplode;
     /// <summary>
     /// Function: CatCollarExplode
     /// </summary>
     public unsafe virtual void CatCollarExplode()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerCatwoman_Riddler.CatCollarExplode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CatCollarExplode, "BmScript.RPawnPlayerCatwoman_Riddler.CatCollarExplode");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateCatCollar;
     /// <summary>
     /// Function: UpdateCatCollar
     /// </summary>
     public unsafe virtual void UpdateCatCollar()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerCatwoman_Riddler.UpdateCatCollar", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateCatCollar, "BmScript.RPawnPlayerCatwoman_Riddler.UpdateCatCollar");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UnPossessed;
     /// <summary>
     /// Function: UnPossessed
     /// </summary>
     public unsafe override void UnPossessed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerCatwoman_Riddler.UnPossessed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnPossessed, "BmScript.RPawnPlayerCatwoman_Riddler.UnPossessed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PossessedBy;
     /// <summary>
     /// Function: PossessedBy
     /// </summary>
     public unsafe override void PossessedBy(BmSDK.Engine.Controller C, bool bVehicleTransition)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerCatwoman_Riddler.PossessedBy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PossessedBy, "BmScript.RPawnPlayerCatwoman_Riddler.PossessedBy");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(C, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bVehicleTransition, paramsPtr + 8);
@@ -124,45 +128,49 @@ public partial class RPawnPlayerCatwoman_Riddler : BmSDK.BmScript.RPawnPlayerCat
         return;
     }
 
+    private static BmSDK.Function __fn_AddDefaultInventory;
     /// <summary>
     /// Function: AddDefaultInventory
     /// </summary>
     public unsafe override void AddDefaultInventory()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerCatwoman_Riddler.AddDefaultInventory", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddDefaultInventory, "BmScript.RPawnPlayerCatwoman_Riddler.AddDefaultInventory");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetNoCollarOverlays;
     /// <summary>
     /// Function: SetNoCollarOverlays
     /// </summary>
     public unsafe virtual void SetNoCollarOverlays()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerCatwoman_Riddler.SetNoCollarOverlays", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetNoCollarOverlays, "BmScript.RPawnPlayerCatwoman_Riddler.SetNoCollarOverlays");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RemoveCollar;
     /// <summary>
     /// Function: RemoveCollar
     /// </summary>
     public unsafe virtual void RemoveCollar()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerCatwoman_Riddler.RemoveCollar", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveCollar, "BmScript.RPawnPlayerCatwoman_Riddler.RemoveCollar");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerCatwoman_Riddler.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmScript.RPawnPlayerCatwoman_Riddler.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

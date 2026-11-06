@@ -78,12 +78,13 @@ public partial class RBMBehaviour_Conversation : BmSDK.BmGame.RBMBehaviour_Contr
         where TComponent : class, Framework.IScriptComponent<RBMBehaviour_Conversation>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CanCheckFalling;
     /// <summary>
     /// Function: CanCheckFalling
     /// </summary>
     public unsafe override bool CanCheckFalling()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_Conversation.CanCheckFalling", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanCheckFalling, "BmGame.RBMBehaviour_Conversation.CanCheckFalling");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,46 +97,50 @@ public partial class RBMBehaviour_Conversation : BmSDK.BmGame.RBMBehaviour_Contr
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_Conversation.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RBMBehaviour_Conversation.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnDeactivate;
     /// <summary>
     /// Function: OnDeactivate
     /// </summary>
     public unsafe override void OnDeactivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_Conversation.OnDeactivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeactivate, "BmGame.RBMBehaviour_Conversation.OnDeactivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TellBehavioursOfTalkRequest;
     /// <summary>
     /// Function: TellBehavioursOfTalkRequest
     /// </summary>
     public unsafe virtual void TellBehavioursOfTalkRequest()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_Conversation.TellBehavioursOfTalkRequest", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TellBehavioursOfTalkRequest, "BmGame.RBMBehaviour_Conversation.TellBehavioursOfTalkRequest");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SnapForFirstFrame;
     /// <summary>
     /// Function: SnapForFirstFrame
     /// </summary>
     public unsafe virtual void SnapForFirstFrame(out System.Numerics.Vector3 Loc, out BmSDK.Rotator Rot, bool bForceLoc, System.Numerics.Vector3 BatsPos)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_Conversation.SnapForFirstFrame", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SnapForFirstFrame, "BmGame.RBMBehaviour_Conversation.SnapForFirstFrame");
         byte* paramsPtr = stackalloc byte[84];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForceLoc, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BatsPos, paramsPtr + 28);
@@ -145,12 +150,13 @@ public partial class RBMBehaviour_Conversation : BmSDK.BmGame.RBMBehaviour_Contr
         return;
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_Conversation.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMBehaviour_Conversation.OnActivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

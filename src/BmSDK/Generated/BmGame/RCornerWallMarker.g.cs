@@ -78,36 +78,39 @@ public partial class RCornerWallMarker : BmSDK.BmGame.RCornerWallMarkerBase, BmS
         where TComponent : class, Framework.IScriptComponent<RCornerWallMarker>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetAmbushDir;
     /// <summary>
     /// Function: GetAmbushDir
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RCornerPointBase.AmbushDir GetAmbushDir(BmSDK.BmGame.RCornerWallMarker AmbushEnd)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCornerWallMarker.GetAmbushDir", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAmbushDir, "BmGame.RCornerWallMarker.GetAmbushDir");
         byte* paramsPtr = stackalloc byte[9];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AmbushEnd, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RCornerPointBase.AmbushDir>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_UnLock;
     /// <summary>
     /// Function: UnLock
     /// </summary>
     public unsafe virtual void UnLock(BmSDK.BmGame.RBMAIController Unlocker)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCornerWallMarker.UnLock", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnLock, "BmGame.RCornerWallMarker.UnLock");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Unlocker, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Lock;
     /// <summary>
     /// Function: Lock
     /// </summary>
     public unsafe virtual void Lock(BmSDK.BmGame.RBMAIController NewLockee)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCornerWallMarker.Lock", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Lock, "BmGame.RCornerWallMarker.Lock");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewLockee, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

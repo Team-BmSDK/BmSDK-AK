@@ -78,35 +78,38 @@ public partial class RBMWeaponJokerfiedBatman : BmSDK.BmGame.RBMWeapon, BmSDK.IG
         where TComponent : class, Framework.IScriptComponent<RBMWeaponJokerfiedBatman>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CreateWeaponConfig;
     /// <summary>
     /// Function: CreateWeaponConfig
     /// </summary>
     public unsafe override BmSDK.BmGame.RWeaponConfig CreateWeaponConfig(BmSDK.GameObject NewOwner)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponJokerfiedBatman.CreateWeaponConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateWeaponConfig, "BmScript.RBMWeaponJokerfiedBatman.CreateWeaponConfig");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewOwner, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RWeaponConfig>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_ItemRemovedFromInvManager;
     /// <summary>
     /// Function: ItemRemovedFromInvManager
     /// </summary>
     public unsafe override void ItemRemovedFromInvManager()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponJokerfiedBatman.ItemRemovedFromInvManager", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ItemRemovedFromInvManager, "BmScript.RBMWeaponJokerfiedBatman.ItemRemovedFromInvManager");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GivenTo;
     /// <summary>
     /// Function: GivenTo
     /// </summary>
     public unsafe override void GivenTo(BmSDK.Engine.Pawn thisPawn, bool bDoNotActivate = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponJokerfiedBatman.GivenTo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GivenTo, "BmScript.RBMWeaponJokerfiedBatman.GivenTo");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(thisPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDoNotActivate, paramsPtr + 8);
@@ -114,12 +117,13 @@ public partial class RBMWeaponJokerfiedBatman : BmSDK.BmGame.RBMWeapon, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponJokerfiedBatman.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmScript.RBMWeaponJokerfiedBatman.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

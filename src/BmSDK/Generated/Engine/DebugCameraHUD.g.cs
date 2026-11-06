@@ -78,23 +78,25 @@ public partial class DebugCameraHUD : BmSDK.Engine.HUD, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<DebugCameraHUD>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PostRender;
     /// <summary>
     /// Function: PostRender
     /// </summary>
     public unsafe override void PostRender()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DebugCameraHUD.PostRender", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostRender, "Engine.DebugCameraHUD.PostRender");
         byte* paramsPtr = stackalloc byte[160];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DisplayMaterials;
     /// <summary>
     /// Function: DisplayMaterials
     /// </summary>
     public unsafe virtual bool DisplayMaterials(float X, out float Y, float DY, BmSDK.Engine.MeshComponent MeshComp)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DebugCameraHUD.DisplayMaterials", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisplayMaterials, "Engine.DebugCameraHUD.DisplayMaterials");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(X, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DY, paramsPtr + 8);
@@ -104,12 +106,13 @@ public partial class DebugCameraHUD : BmSDK.Engine.HUD, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DebugCameraHUD.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "Engine.DebugCameraHUD.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

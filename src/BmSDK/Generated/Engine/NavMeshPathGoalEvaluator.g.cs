@@ -78,23 +78,25 @@ public partial class NavMeshPathGoalEvaluator : BmSDK.GameObject, BmSDK.IGameObj
         where TComponent : class, Framework.IScriptComponent<NavMeshPathGoalEvaluator>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetDumpString;
     /// <summary>
     /// Function: GetDumpString
     /// </summary>
     public unsafe virtual BmSDK.FString GetDumpString()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavMeshPathGoalEvaluator.GetDumpString", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDumpString, "Engine.NavMeshPathGoalEvaluator.GetDumpString");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Recycle;
     /// <summary>
     /// Function: Recycle
     /// </summary>
     public unsafe virtual void Recycle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavMeshPathGoalEvaluator.Recycle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Recycle, "Engine.NavMeshPathGoalEvaluator.Recycle");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

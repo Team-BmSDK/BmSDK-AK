@@ -73,12 +73,13 @@ public partial class RVehicleWalkerBase : BmSDK.BmGame.RVehicleNPC, BmSDK.IGameO
         where TComponent : class, Framework.IScriptComponent<RVehicleWalkerBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UpdateFallingLocation;
     /// <summary>
     /// Function: UpdateFallingLocation
     /// </summary>
     public unsafe virtual void UpdateFallingLocation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleWalkerBase.UpdateFallingLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateFallingLocation, "BmGame.RVehicleWalkerBase.UpdateFallingLocation");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -91,12 +92,13 @@ public partial class RVehicleWalkerBase : BmSDK.BmGame.RVehicleNPC, BmSDK.IGameO
         return;
     }
 
+    private static BmSDK.Function __fn_TryToDodgeHeavyCannon;
     /// <summary>
     /// Function: TryToDodgeHeavyCannon
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 TryToDodgeHeavyCannon(System.Numerics.Vector3 WeaponOrigin, System.Numerics.Vector3 FireDirection)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleWalkerBase.TryToDodgeHeavyCannon", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TryToDodgeHeavyCannon, "BmGame.RVehicleWalkerBase.TryToDodgeHeavyCannon");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WeaponOrigin, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FireDirection, paramsPtr + 12);
@@ -111,12 +113,13 @@ public partial class RVehicleWalkerBase : BmSDK.BmGame.RVehicleNPC, BmSDK.IGameO
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_SelfDrive;
     /// <summary>
     /// Function: SelfDrive
     /// </summary>
     public unsafe override bool SelfDrive(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleWalkerBase.SelfDrive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SelfDrive, "BmGame.RVehicleWalkerBase.SelfDrive");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

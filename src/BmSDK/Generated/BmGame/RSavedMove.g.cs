@@ -78,12 +78,13 @@ public partial class RSavedMove : BmSDK.Engine.SavedMove, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RSavedMove>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetFlags;
     /// <summary>
     /// Function: SetFlags
     /// </summary>
     public unsafe static BmSDK.Engine.Actor.EDoubleClickDir SetFlags(byte Flags, BmSDK.Engine.PlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSavedMove.SetFlags", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetFlags, "BmGame.RSavedMove.SetFlags");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Flags, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 4);
@@ -91,35 +92,38 @@ public partial class RSavedMove : BmSDK.Engine.SavedMove, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor.EDoubleClickDir>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_CompressedFlags;
     /// <summary>
     /// Function: CompressedFlags
     /// </summary>
     public unsafe override byte CompressedFlags()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSavedMove.CompressedFlags", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CompressedFlags, "BmGame.RSavedMove.CompressedFlags");
         byte* paramsPtr = stackalloc byte[2];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<byte>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsImportantMove;
     /// <summary>
     /// Function: IsImportantMove
     /// </summary>
     public unsafe override bool IsImportantMove(System.Numerics.Vector3 CompareAccel)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSavedMove.IsImportantMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsImportantMove, "BmGame.RSavedMove.IsImportantMove");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CompareAccel, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_CanCombineWith;
     /// <summary>
     /// Function: CanCombineWith
     /// </summary>
     public unsafe override bool CanCombineWith(BmSDK.Engine.SavedMove NewMove, BmSDK.Engine.Pawn inPawn, float MaxDelta)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSavedMove.CanCombineWith", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanCombineWith, "BmGame.RSavedMove.CanCombineWith");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewMove, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(inPawn, paramsPtr + 8);

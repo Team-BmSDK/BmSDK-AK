@@ -78,46 +78,50 @@ public partial class RBMAIAction_PeekIntoTunnel : BmSDK.BmGame.RBMAIAction, BmSD
         where TComponent : class, Framework.IScriptComponent<RBMAIAction_PeekIntoTunnel>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ActionTick;
     /// <summary>
     /// Function: ActionTick
     /// </summary>
     public unsafe override BmSDK.BmGame.RBMAIAction.ActionTickResult ActionTick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PeekIntoTunnel.ActionTick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActionTick, "BmGame.RBMAIAction_PeekIntoTunnel.ActionTick");
         byte* paramsPtr = stackalloc byte[5];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMAIAction.ActionTickResult>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_PeekIntoTunnel;
     /// <summary>
     /// Function: PeekIntoTunnel
     /// </summary>
     public unsafe virtual void PeekIntoTunnel()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PeekIntoTunnel.PeekIntoTunnel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PeekIntoTunnel, "BmGame.RBMAIAction_PeekIntoTunnel.PeekIntoTunnel");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartGestureAnim;
     /// <summary>
     /// Function: StartGestureAnim
     /// </summary>
     public unsafe virtual void StartGestureAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PeekIntoTunnel.StartGestureAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartGestureAnim, "BmGame.RBMAIAction_PeekIntoTunnel.StartGestureAnim");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetTunnelLookAnimOffset;
     /// <summary>
     /// Function: GetTunnelLookAnimOffset
     /// </summary>
     public unsafe static System.Numerics.Vector3 GetTunnelLookAnimOffset(BmSDK.BmGame.RPawnVillainGunPredBase TestPawn, BmSDK.BmGame.RTunnelFunnel TestTF, out float MeetingPointTravelDist)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PeekIntoTunnel.GetTunnelLookAnimOffset", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTunnelLookAnimOffset, "BmGame.RBMAIAction_PeekIntoTunnel.GetTunnelLookAnimOffset");
         byte* paramsPtr = stackalloc byte[124];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestTF, paramsPtr + 8);
@@ -126,12 +130,13 @@ public partial class RBMAIAction_PeekIntoTunnel : BmSDK.BmGame.RBMAIAction, BmSD
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_GetInAnimFor;
     /// <summary>
     /// Function: GetInAnimFor
     /// </summary>
     public unsafe static BmSDK.BmGame.RAnimConfig.FCustomAnimConfig GetInAnimFor(BmSDK.BmGame.RPawnVillainGunPredBase TestPawn, BmSDK.BmGame.RTunnelFunnel TestTF)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PeekIntoTunnel.GetInAnimFor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetInAnimFor, "BmGame.RBMAIAction_PeekIntoTunnel.GetInAnimFor");
         byte* paramsPtr = stackalloc byte[128];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestTF, paramsPtr + 8);
@@ -139,12 +144,13 @@ public partial class RBMAIAction_PeekIntoTunnel : BmSDK.BmGame.RBMAIAction, BmSD
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RAnimConfig.FCustomAnimConfig>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PeekIntoTunnel.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMAIAction_PeekIntoTunnel.OnActivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

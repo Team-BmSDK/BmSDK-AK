@@ -78,12 +78,13 @@ public partial class RPawnVillainGunPredAsset : BmSDK.BmGame.RPawnVillainGunPred
         where TComponent : class, Framework.IScriptComponent<RPawnVillainGunPredAsset>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_InitialisePlayerSpecificAnimsets;
     /// <summary>
     /// Function: InitialisePlayerSpecificAnimsets
     /// </summary>
     public unsafe override void InitialisePlayerSpecificAnimsets(BmSDK.BmGame.RPawnPlayerCombat NewPlayer, int PlayerIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainGunPredAsset.InitialisePlayerSpecificAnimsets", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitialisePlayerSpecificAnimsets, "BmScript.RPawnVillainGunPredAsset.InitialisePlayerSpecificAnimsets");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPlayer, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerIndex, paramsPtr + 8);
@@ -91,12 +92,13 @@ public partial class RPawnVillainGunPredAsset : BmSDK.BmGame.RPawnVillainGunPred
         return;
     }
 
+    private static BmSDK.Function __fn_AddPawnProps;
     /// <summary>
     /// Function: AddPawnProps
     /// </summary>
     public unsafe override void AddPawnProps()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainGunPredAsset.AddPawnProps", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddPawnProps, "BmScript.RPawnVillainGunPredAsset.AddPawnProps");
         byte* paramsPtr = stackalloc byte[184];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

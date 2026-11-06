@@ -73,12 +73,13 @@ public partial class RSeqAct_CombatSpawnerBase : BmSDK.Engine.SeqAct_Latent, BmS
         where TComponent : class, Framework.IScriptComponent<RSeqAct_CombatSpawnerBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SpawnPawn;
     /// <summary>
     /// Function: SpawnPawn
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RPawn SpawnPawn(BmSDK.Class NewPawnClass, BmSDK.BmGame.RCharacterDefine CharacterDefine, BmSDK.Class CharacterType, BmSDK.Class NewWeaponClass, BmSDK.Engine.Actor NewSpawnPoint, BmSDK.Engine.Actor OwnerActor)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_CombatSpawnerBase.SpawnPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnPawn, "BmGame.RSeqAct_CombatSpawnerBase.SpawnPawn");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPawnClass, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CharacterDefine, paramsPtr + 8);

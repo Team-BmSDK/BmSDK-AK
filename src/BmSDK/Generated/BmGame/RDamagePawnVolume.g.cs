@@ -78,137 +78,149 @@ public partial class RDamagePawnVolume : BmSDK.Engine.Volume, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RDamagePawnVolume>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DamagePawn;
     /// <summary>
     /// Function: DamagePawn
     /// </summary>
     public unsafe virtual void DamagePawn(BmSDK.BmGame.RPawnCombat PawnToDamage)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDamagePawnVolume.DamagePawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DamagePawn, "BmGame.RDamagePawnVolume.DamagePawn");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PawnToDamage, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShouldDoDamage;
     /// <summary>
     /// Function: ShouldDoDamage
     /// </summary>
     public unsafe virtual bool ShouldDoDamage()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDamagePawnVolume.ShouldDoDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldDoDamage, "BmGame.RDamagePawnVolume.ShouldDoDamage");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_DamageActors;
     /// <summary>
     /// Function: DamageActors
     /// </summary>
     public unsafe virtual void DamageActors()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDamagePawnVolume.DamageActors", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DamageActors, "BmGame.RDamagePawnVolume.DamageActors");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShouldCheckPawn;
     /// <summary>
     /// Function: ShouldCheckPawn
     /// </summary>
     public unsafe virtual bool ShouldCheckPawn(BmSDK.BmGame.RPawnCharacter TestPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDamagePawnVolume.ShouldCheckPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldCheckPawn, "BmGame.RDamagePawnVolume.ShouldCheckPawn");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_IsPawnRelevantType;
     /// <summary>
     /// Function: IsPawnRelevantType
     /// </summary>
     public unsafe virtual bool IsPawnRelevantType(BmSDK.BmGame.RPawnCharacter TestPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDamagePawnVolume.IsPawnRelevantType", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPawnRelevantType, "BmGame.RDamagePawnVolume.IsPawnRelevantType");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_StartDamagingActors;
     /// <summary>
     /// Function: StartDamagingActors
     /// </summary>
     public unsafe virtual void StartDamagingActors()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDamagePawnVolume.StartDamagingActors", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartDamagingActors, "BmGame.RDamagePawnVolume.StartDamagingActors");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ToggleOff;
     /// <summary>
     /// Function: ToggleOff
     /// </summary>
     public unsafe virtual void ToggleOff()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDamagePawnVolume.ToggleOff", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ToggleOff, "BmGame.RDamagePawnVolume.ToggleOff");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ToggleOn;
     /// <summary>
     /// Function: ToggleOn
     /// </summary>
     public unsafe virtual void ToggleOn()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDamagePawnVolume.ToggleOn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ToggleOn, "BmGame.RDamagePawnVolume.ToggleOn");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnToggle;
     /// <summary>
     /// Function: OnToggle
     /// </summary>
     public unsafe override void OnToggle(BmSDK.Engine.SeqAct_Toggle inAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDamagePawnVolume.OnToggle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggle, "BmGame.RDamagePawnVolume.OnToggle");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(inAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TurnOff;
     /// <summary>
     /// Function: TurnOff
     /// </summary>
     public unsafe virtual void TurnOff()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDamagePawnVolume.TurnOff", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TurnOff, "BmGame.RDamagePawnVolume.TurnOff");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TurnOn;
     /// <summary>
     /// Function: TurnOn
     /// </summary>
     public unsafe virtual void TurnOn()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDamagePawnVolume.TurnOn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TurnOn, "BmGame.RDamagePawnVolume.TurnOn");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDamagePawnVolume.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RDamagePawnVolume.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

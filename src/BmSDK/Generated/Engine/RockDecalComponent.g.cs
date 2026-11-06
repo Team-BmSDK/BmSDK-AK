@@ -78,12 +78,13 @@ public partial class RockDecalComponent : BmSDK.Engine.PrimitiveComponent, BmSDK
         where TComponent : class, Framework.IScriptComponent<RockDecalComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetDecalMaterial;
     /// <summary>
     /// Function: GetDecalMaterial
     /// </summary>
     public unsafe virtual BmSDK.Engine.MaterialInterface GetDecalMaterial()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RockDecalComponent.GetDecalMaterial", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDecalMaterial, "Engine.RockDecalComponent.GetDecalMaterial");
         byte* paramsPtr = stackalloc byte[8];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class RockDecalComponent : BmSDK.Engine.PrimitiveComponent, BmSDK
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.MaterialInterface>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetDecalMaterial;
     /// <summary>
     /// Function: SetDecalMaterial
     /// </summary>
     public unsafe virtual void SetDecalMaterial(BmSDK.Engine.MaterialInterface NewDecalMaterial)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RockDecalComponent.SetDecalMaterial", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDecalMaterial, "Engine.RockDecalComponent.SetDecalMaterial");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewDecalMaterial, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

@@ -78,12 +78,13 @@ public partial class RNavMeshPath_AvoidPlayers : BmSDK.Engine.NavMeshPathConstra
         where TComponent : class, Framework.IScriptComponent<RNavMeshPath_AvoidPlayers>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_AvoidPlayers;
     /// <summary>
     /// Function: AvoidPlayers
     /// </summary>
     public unsafe static bool AvoidPlayers(BmSDK.BmGame.RNavigationHandle NavHandle, float NewAvoidStrength = default, float NewAvoidRadius = default, float NewFailThreshold = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RNavMeshPath_AvoidPlayers.AvoidPlayers", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AvoidPlayers, "BmGame.RNavMeshPath_AvoidPlayers.AvoidPlayers");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NavHandle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAvoidStrength, paramsPtr + 8);
@@ -93,12 +94,13 @@ public partial class RNavMeshPath_AvoidPlayers : BmSDK.Engine.NavMeshPathConstra
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_SetPlayerLocations;
     /// <summary>
     /// Function: SetPlayerLocations
     /// </summary>
     public unsafe virtual void SetPlayerLocations(BmSDK.BmGame.RNavigationHandle NavHandle)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RNavMeshPath_AvoidPlayers.SetPlayerLocations", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetPlayerLocations, "BmGame.RNavMeshPath_AvoidPlayers.SetPlayerLocations");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NavHandle, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

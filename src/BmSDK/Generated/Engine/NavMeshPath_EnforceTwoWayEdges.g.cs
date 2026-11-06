@@ -78,12 +78,13 @@ public partial class NavMeshPath_EnforceTwoWayEdges : BmSDK.Engine.NavMeshPathCo
         where TComponent : class, Framework.IScriptComponent<NavMeshPath_EnforceTwoWayEdges>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_EnforceTwoWayEdges;
     /// <summary>
     /// Function: EnforceTwoWayEdges
     /// </summary>
     public unsafe static bool EnforceTwoWayEdges(BmSDK.Engine.NavigationHandle NavHandle)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavMeshPath_EnforceTwoWayEdges.EnforceTwoWayEdges", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnforceTwoWayEdges, "Engine.NavMeshPath_EnforceTwoWayEdges.EnforceTwoWayEdges");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NavHandle, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

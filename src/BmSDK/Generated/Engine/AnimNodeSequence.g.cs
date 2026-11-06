@@ -78,12 +78,13 @@ public partial class AnimNodeSequence : BmSDK.Engine.AnimNode, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<AnimNodeSequence>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetRootBoneRotationOption;
     /// <summary>
     /// Function: SetRootBoneRotationOption
     /// </summary>
     public unsafe virtual void SetRootBoneRotationOption(BmSDK.Engine.AnimNodeSequence.ERootRotationOption AxisX = default, BmSDK.Engine.AnimNodeSequence.ERootRotationOption AxisY = default, BmSDK.Engine.AnimNodeSequence.ERootRotationOption AxisZ = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodeSequence.SetRootBoneRotationOption", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRootBoneRotationOption, "Engine.AnimNodeSequence.SetRootBoneRotationOption");
         byte* paramsPtr = stackalloc byte[3];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AxisX, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AxisY, paramsPtr + 1);
@@ -99,12 +100,13 @@ public partial class AnimNodeSequence : BmSDK.Engine.AnimNode, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetRootBoneAxisOption;
     /// <summary>
     /// Function: SetRootBoneAxisOption
     /// </summary>
     public unsafe virtual void SetRootBoneAxisOption(BmSDK.Engine.AnimNodeSequence.ERootBoneAxis AxisX = default, BmSDK.Engine.AnimNodeSequence.ERootBoneAxis AxisY = default, BmSDK.Engine.AnimNodeSequence.ERootBoneAxis AxisZ = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodeSequence.SetRootBoneAxisOption", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRootBoneAxisOption, "Engine.AnimNodeSequence.SetRootBoneAxisOption");
         byte* paramsPtr = stackalloc byte[3];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AxisX, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AxisY, paramsPtr + 1);
@@ -120,12 +122,13 @@ public partial class AnimNodeSequence : BmSDK.Engine.AnimNode, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetTimeLeft;
     /// <summary>
     /// Function: GetTimeLeft
     /// </summary>
     public unsafe virtual float GetTimeLeft()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodeSequence.GetTimeLeft", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTimeLeft, "Engine.AnimNodeSequence.GetTimeLeft");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -138,12 +141,13 @@ public partial class AnimNodeSequence : BmSDK.Engine.AnimNode, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetAnimPlaybackLength;
     /// <summary>
     /// Function: GetAnimPlaybackLength
     /// </summary>
     public unsafe virtual float GetAnimPlaybackLength()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodeSequence.GetAnimPlaybackLength", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAnimPlaybackLength, "Engine.AnimNodeSequence.GetAnimPlaybackLength");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -156,12 +160,13 @@ public partial class AnimNodeSequence : BmSDK.Engine.AnimNode, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetGlobalPlayRate;
     /// <summary>
     /// Function: GetGlobalPlayRate
     /// </summary>
     public unsafe virtual float GetGlobalPlayRate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodeSequence.GetGlobalPlayRate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGlobalPlayRate, "Engine.AnimNodeSequence.GetGlobalPlayRate");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -174,12 +179,13 @@ public partial class AnimNodeSequence : BmSDK.Engine.AnimNode, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetGroupRelativePosition;
     /// <summary>
     /// Function: GetGroupRelativePosition
     /// </summary>
     public unsafe virtual float GetGroupRelativePosition()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodeSequence.GetGroupRelativePosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGroupRelativePosition, "Engine.AnimNodeSequence.GetGroupRelativePosition");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -192,12 +198,13 @@ public partial class AnimNodeSequence : BmSDK.Engine.AnimNode, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_FindGroupPosition;
     /// <summary>
     /// Function: FindGroupPosition
     /// </summary>
     public unsafe virtual float FindGroupPosition(float GroupRelativePosition)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodeSequence.FindGroupPosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindGroupPosition, "Engine.AnimNodeSequence.FindGroupPosition");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GroupRelativePosition, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -211,12 +218,13 @@ public partial class AnimNodeSequence : BmSDK.Engine.AnimNode, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_FindGroupRelativePosition;
     /// <summary>
     /// Function: FindGroupRelativePosition
     /// </summary>
     public unsafe virtual float FindGroupRelativePosition(float GroupRelativePosition)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodeSequence.FindGroupRelativePosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindGroupRelativePosition, "Engine.AnimNodeSequence.FindGroupRelativePosition");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GroupRelativePosition, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -230,12 +238,13 @@ public partial class AnimNodeSequence : BmSDK.Engine.AnimNode, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetNormalizedPosition;
     /// <summary>
     /// Function: GetNormalizedPosition
     /// </summary>
     public unsafe virtual float GetNormalizedPosition()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodeSequence.GetNormalizedPosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNormalizedPosition, "Engine.AnimNodeSequence.GetNormalizedPosition");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -248,12 +257,13 @@ public partial class AnimNodeSequence : BmSDK.Engine.AnimNode, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetPosition;
     /// <summary>
     /// Function: SetPosition
     /// </summary>
     public unsafe virtual void SetPosition(float NewTime, bool bFireNotifies)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodeSequence.SetPosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetPosition, "Engine.AnimNodeSequence.SetPosition");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bFireNotifies, paramsPtr + 4);
@@ -268,12 +278,13 @@ public partial class AnimNodeSequence : BmSDK.Engine.AnimNode, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ReplayAnim;
     /// <summary>
     /// Function: ReplayAnim
     /// </summary>
     public unsafe override void ReplayAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodeSequence.ReplayAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReplayAnim, "Engine.AnimNodeSequence.ReplayAnim");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -286,12 +297,13 @@ public partial class AnimNodeSequence : BmSDK.Engine.AnimNode, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_StopAnim;
     /// <summary>
     /// Function: StopAnim
     /// </summary>
     public unsafe override void StopAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodeSequence.StopAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopAnim, "Engine.AnimNodeSequence.StopAnim");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -304,12 +316,13 @@ public partial class AnimNodeSequence : BmSDK.Engine.AnimNode, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_PlayAnim;
     /// <summary>
     /// Function: PlayAnim
     /// </summary>
     public unsafe override void PlayAnim(bool bLoop = default, float InRate = default, float StartTime = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodeSequence.PlayAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayAnim, "Engine.AnimNodeSequence.PlayAnim");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bLoop, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InRate, paramsPtr + 4);
@@ -325,12 +338,13 @@ public partial class AnimNodeSequence : BmSDK.Engine.AnimNode, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetAnim;
     /// <summary>
     /// Function: SetAnim
     /// </summary>
     public unsafe virtual void SetAnim(BmSDK.FName Sequence)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodeSequence.SetAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAnim, "Engine.AnimNodeSequence.SetAnim");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Sequence, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

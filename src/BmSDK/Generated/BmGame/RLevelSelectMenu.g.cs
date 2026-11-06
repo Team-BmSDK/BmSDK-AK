@@ -78,12 +78,13 @@ public partial class RLevelSelectMenu : BmSDK.BmGame.RDynamicMenu, BmSDK.IGameOb
         where TComponent : class, Framework.IScriptComponent<RLevelSelectMenu>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DumpMenusSubForQA;
     /// <summary>
     /// Function: DumpMenusSubForQA
     /// </summary>
     public unsafe virtual void DumpMenusSubForQA(BmSDK.TArray<BmSDK.BmGame.RLevelSelectMenu.FLevelDef> LevelDefs, BmSDK.FString ChapterName, int KeyboardShortcut)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.DumpMenusSubForQA", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DumpMenusSubForQA, "BmGame.RLevelSelectMenu.DumpMenusSubForQA");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LevelDefs, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ChapterName, paramsPtr + 16);
@@ -92,12 +93,13 @@ public partial class RLevelSelectMenu : BmSDK.BmGame.RDynamicMenu, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_DumpMenusForQA;
     /// <summary>
     /// Function: DumpMenusForQA
     /// </summary>
     public unsafe virtual void DumpMenusForQA(bool VS, out BmSDK.TArray<BmSDK.BmGame.RSaveGameManager.FRSaveGameSummaryInfo> StartPoints)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.DumpMenusForQA", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DumpMenusForQA, "BmGame.RLevelSelectMenu.DumpMenusForQA");
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VS, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -105,56 +107,61 @@ public partial class RLevelSelectMenu : BmSDK.BmGame.RDynamicMenu, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_DoMenuItems;
     /// <summary>
     /// Function: DoMenuItems
     /// </summary>
     public unsafe override void DoMenuItems()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.DoMenuItems", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoMenuItems, "BmGame.RLevelSelectMenu.DoMenuItems");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinalItems;
     /// <summary>
     /// Function: FinalItems
     /// </summary>
     public unsafe virtual void FinalItems()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.FinalItems", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinalItems, "BmGame.RLevelSelectMenu.FinalItems");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DoCharacterSelect;
     /// <summary>
     /// Function: DoCharacterSelect
     /// </summary>
     public unsafe virtual void DoCharacterSelect()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.DoCharacterSelect", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoCharacterSelect, "BmGame.RLevelSelectMenu.DoCharacterSelect");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayFromStartItem;
     /// <summary>
     /// Function: PlayFromStartItem
     /// </summary>
     public unsafe virtual void PlayFromStartItem()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.PlayFromStartItem", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayFromStartItem, "BmGame.RLevelSelectMenu.PlayFromStartItem");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DoStartPointsMenu;
     /// <summary>
     /// Function: DoStartPointsMenu
     /// </summary>
     public unsafe virtual void DoStartPointsMenu(BmSDK.FString SaveType, out BmSDK.TArray<BmSDK.BmGame.RSaveGameManager.FRSaveGameSummaryInfo> StartPoints, BmSDK.FString Title = default, int ShortcutNumber = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.DoStartPointsMenu", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoStartPointsMenu, "BmGame.RLevelSelectMenu.DoStartPointsMenu");
         byte* paramsPtr = stackalloc byte[156];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SaveType, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Title, paramsPtr + 32);
@@ -164,12 +171,13 @@ public partial class RLevelSelectMenu : BmSDK.BmGame.RDynamicMenu, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_DoStartPointsMenuTitle;
     /// <summary>
     /// Function: DoStartPointsMenuTitle
     /// </summary>
     public unsafe virtual void DoStartPointsMenuTitle(BmSDK.FString Title, int ShortcutNumber)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.DoStartPointsMenuTitle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoStartPointsMenuTitle, "BmGame.RLevelSelectMenu.DoStartPointsMenuTitle");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Title, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ShortcutNumber, paramsPtr + 16);
@@ -177,23 +185,25 @@ public partial class RLevelSelectMenu : BmSDK.BmGame.RDynamicMenu, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_DoSaveGameMenu;
     /// <summary>
     /// Function: DoSaveGameMenu
     /// </summary>
     public unsafe virtual void DoSaveGameMenu()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.DoSaveGameMenu", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoSaveGameMenu, "BmGame.RLevelSelectMenu.DoSaveGameMenu");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DoLevelsMenu;
     /// <summary>
     /// Function: DoLevelsMenu
     /// </summary>
     public unsafe virtual void DoLevelsMenu(BmSDK.TArray<BmSDK.BmGame.RLevelSelectMenu.FLevelDef> LevelDefs, BmSDK.FString ChapterName, int KeyboardShortcut, BmSDK.FString AddLevels = default, BmSDK.FString AddParams = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.DoLevelsMenu", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoLevelsMenu, "BmGame.RLevelSelectMenu.DoLevelsMenu");
         byte* paramsPtr = stackalloc byte[76];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LevelDefs, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ChapterName, paramsPtr + 16);
@@ -204,24 +214,26 @@ public partial class RLevelSelectMenu : BmSDK.BmGame.RDynamicMenu, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_LoadLevel;
     /// <summary>
     /// Function: LoadLevel
     /// </summary>
     public unsafe virtual void LoadLevel(BmSDK.FString Level)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.LoadLevel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LoadLevel, "BmGame.RLevelSelectMenu.LoadLevel");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Level, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_LoadLevelDef;
     /// <summary>
     /// Function: LoadLevelDef
     /// </summary>
     public unsafe virtual void LoadLevelDef(BmSDK.BmGame.RLevelSelectMenu.FLevelDef L, BmSDK.FString ExtraParams = default, BmSDK.FString AddLevels = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.LoadLevelDef", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LoadLevelDef, "BmGame.RLevelSelectMenu.LoadLevelDef");
         byte* paramsPtr = stackalloc byte[156];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(L, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExtraParams, paramsPtr + 108);
@@ -230,24 +242,26 @@ public partial class RLevelSelectMenu : BmSDK.BmGame.RDynamicMenu, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_LoadSaveGame;
     /// <summary>
     /// Function: LoadSaveGame
     /// </summary>
     public unsafe virtual void LoadSaveGame(BmSDK.FString SaveName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.LoadSaveGame", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LoadSaveGame, "BmGame.RLevelSelectMenu.LoadSaveGame");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SaveName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DoMenu;
     /// <summary>
     /// Function: DoMenu
     /// </summary>
     public unsafe override bool DoMenu(BmSDK.Engine.Canvas C, float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.DoMenu", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoMenu, "BmGame.RLevelSelectMenu.DoMenu");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(C, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 8);
@@ -255,24 +269,26 @@ public partial class RLevelSelectMenu : BmSDK.BmGame.RDynamicMenu, BmSDK.IGameOb
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_CheckRequiredChunksAreReady;
     /// <summary>
     /// Function: CheckRequiredChunksAreReady
     /// </summary>
     public unsafe virtual bool CheckRequiredChunksAreReady(int RequiredChunk)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.CheckRequiredChunksAreReady", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckRequiredChunksAreReady, "BmGame.RLevelSelectMenu.CheckRequiredChunksAreReady");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RequiredChunk, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_OnEnumerateUserFilesComplete;
     /// <summary>
     /// Function: OnEnumerateUserFilesComplete
     /// </summary>
     public unsafe virtual void OnEnumerateUserFilesComplete(bool bWasSuccessful, BmSDK.FString UserId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.OnEnumerateUserFilesComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnEnumerateUserFilesComplete, "BmGame.RLevelSelectMenu.OnEnumerateUserFilesComplete");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UserId, paramsPtr + 4);
@@ -280,78 +296,85 @@ public partial class RLevelSelectMenu : BmSDK.BmGame.RDynamicMenu, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_StartRealSavesQuery;
     /// <summary>
     /// Function: StartRealSavesQuery
     /// </summary>
     public unsafe virtual void StartRealSavesQuery()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.StartRealSavesQuery", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartRealSavesQuery, "BmGame.RLevelSelectMenu.StartRealSavesQuery");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EnableMenu;
     /// <summary>
     /// Function: EnableMenu
     /// </summary>
     public unsafe virtual void EnableMenu()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.EnableMenu", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnableMenu, "BmGame.RLevelSelectMenu.EnableMenu");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AutoStartLevel;
     /// <summary>
     /// Function: AutoStartLevel
     /// </summary>
     public unsafe virtual void AutoStartLevel()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.AutoStartLevel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AutoStartLevel, "BmGame.RLevelSelectMenu.AutoStartLevel");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RLevelSelectMenu.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StoreCurrentSelection;
     /// <summary>
     /// Function: StoreCurrentSelection
     /// </summary>
     public unsafe virtual void StoreCurrentSelection()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.StoreCurrentSelection", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StoreCurrentSelection, "BmGame.RLevelSelectMenu.StoreCurrentSelection");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnMenuOpened;
     /// <summary>
     /// Function: OnMenuOpened
     /// </summary>
     public unsafe override void OnMenuOpened()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.OnMenuOpened", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnMenuOpened, "BmGame.RLevelSelectMenu.OnMenuOpened");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EnableHydraToBypassOnlineSubsystem;
     /// <summary>
     /// Function: EnableHydraToBypassOnlineSubsystem
     /// </summary>
     public unsafe virtual void EnableHydraToBypassOnlineSubsystem()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.EnableHydraToBypassOnlineSubsystem", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnableHydraToBypassOnlineSubsystem, "BmGame.RLevelSelectMenu.EnableHydraToBypassOnlineSubsystem");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -364,12 +387,13 @@ public partial class RLevelSelectMenu : BmSDK.BmGame.RDynamicMenu, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_TakeOptionsCopy;
     /// <summary>
     /// Function: TakeOptionsCopy
     /// </summary>
     public unsafe virtual void TakeOptionsCopy()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.TakeOptionsCopy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TakeOptionsCopy, "BmGame.RLevelSelectMenu.TakeOptionsCopy");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -382,12 +406,13 @@ public partial class RLevelSelectMenu : BmSDK.BmGame.RDynamicMenu, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_InvalidateMemorySave;
     /// <summary>
     /// Function: InvalidateMemorySave
     /// </summary>
     public unsafe virtual void InvalidateMemorySave()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.InvalidateMemorySave", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InvalidateMemorySave, "BmGame.RLevelSelectMenu.InvalidateMemorySave");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -400,12 +425,13 @@ public partial class RLevelSelectMenu : BmSDK.BmGame.RDynamicMenu, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_KillAllSounds;
     /// <summary>
     /// Function: KillAllSounds
     /// </summary>
     public unsafe virtual void KillAllSounds()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.KillAllSounds", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_KillAllSounds, "BmGame.RLevelSelectMenu.KillAllSounds");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -418,12 +444,13 @@ public partial class RLevelSelectMenu : BmSDK.BmGame.RDynamicMenu, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_DoMoviesMenu;
     /// <summary>
     /// Function: DoMoviesMenu
     /// </summary>
     public unsafe virtual void DoMoviesMenu()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.DoMoviesMenu", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoMoviesMenu, "BmGame.RLevelSelectMenu.DoMoviesMenu");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -436,12 +463,13 @@ public partial class RLevelSelectMenu : BmSDK.BmGame.RDynamicMenu, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_DoAllLevelsMenu;
     /// <summary>
     /// Function: DoAllLevelsMenu
     /// </summary>
     public unsafe virtual void DoAllLevelsMenu()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.DoAllLevelsMenu", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoAllLevelsMenu, "BmGame.RLevelSelectMenu.DoAllLevelsMenu");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -454,12 +482,13 @@ public partial class RLevelSelectMenu : BmSDK.BmGame.RDynamicMenu, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_FlushOpenHandles;
     /// <summary>
     /// Function: FlushOpenHandles
     /// </summary>
     public unsafe virtual void FlushOpenHandles()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelSelectMenu.FlushOpenHandles", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FlushOpenHandles, "BmGame.RLevelSelectMenu.FlushOpenHandles");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

@@ -78,45 +78,49 @@ public partial class RBMCombatPoint_GunCrate : BmSDK.BmScript.RBMCombatPoint_Gun
         where TComponent : class, Framework.IScriptComponent<RBMCombatPoint_GunCrate>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetDisruptorTargetMesh;
     /// <summary>
     /// Function: GetDisruptorTargetMesh
     /// </summary>
     public unsafe override BmSDK.Engine.MeshComponent GetDisruptorTargetMesh()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_GunCrate.GetDisruptorTargetMesh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDisruptorTargetMesh, "BmScript.RBMCombatPoint_GunCrate.GetDisruptorTargetMesh");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.MeshComponent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_GunCrate.PreStreamOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmScript.RBMCombatPoint_GunCrate.PreStreamOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_GunCrate.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmScript.RBMCombatPoint_GunCrate.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UsedByPawn;
     /// <summary>
     /// Function: UsedByPawn
     /// </summary>
     public unsafe override void UsedByPawn(BmSDK.BmGame.RPawnCombat NewUser, BmSDK.Engine.Actor NewTarget = default, bool bUsedDuringTaunt = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_GunCrate.UsedByPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UsedByPawn, "BmScript.RBMCombatPoint_GunCrate.UsedByPawn");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewUser, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewTarget, paramsPtr + 8);
@@ -125,68 +129,74 @@ public partial class RBMCombatPoint_GunCrate : BmSDK.BmScript.RBMCombatPoint_Gun
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateLight;
     /// <summary>
     /// Function: UpdateLight
     /// </summary>
     public unsafe virtual void UpdateLight(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_GunCrate.UpdateLight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateLight, "BmScript.RBMCombatPoint_GunCrate.UpdateLight");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AlarmOff;
     /// <summary>
     /// Function: AlarmOff
     /// </summary>
     public unsafe override void AlarmOff()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_GunCrate.AlarmOff", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AlarmOff, "BmScript.RBMCombatPoint_GunCrate.AlarmOff");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AlarmOn;
     /// <summary>
     /// Function: AlarmOn
     /// </summary>
     public unsafe override void AlarmOn()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_GunCrate.AlarmOn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AlarmOn, "BmScript.RBMCombatPoint_GunCrate.AlarmOn");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HideGun;
     /// <summary>
     /// Function: HideGun
     /// </summary>
     public unsafe override void HideGun()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_GunCrate.HideGun", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideGun, "BmScript.RBMCombatPoint_GunCrate.HideGun");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SwapGun;
     /// <summary>
     /// Function: SwapGun
     /// </summary>
     public unsafe override void SwapGun()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_GunCrate.SwapGun", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SwapGun, "BmScript.RBMCombatPoint_GunCrate.SwapGun");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanBeUsedByPawn;
     /// <summary>
     /// Function: CanBeUsedByPawn
     /// </summary>
     public unsafe override bool CanBeUsedByPawn(BmSDK.BmGame.RPawnCombat NewUser, BmSDK.Engine.Actor NewTarget, bool bTaunting)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_GunCrate.CanBeUsedByPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeUsedByPawn, "BmScript.RBMCombatPoint_GunCrate.CanBeUsedByPawn");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewUser, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewTarget, paramsPtr + 8);
@@ -195,92 +205,100 @@ public partial class RBMCombatPoint_GunCrate : BmSDK.BmScript.RBMCombatPoint_Gun
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_JamExplosionTimer;
     /// <summary>
     /// Function: JamExplosionTimer
     /// </summary>
     public unsafe virtual void JamExplosionTimer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_GunCrate.JamExplosionTimer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_JamExplosionTimer, "BmScript.RBMCombatPoint_GunCrate.JamExplosionTimer");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnJammedExplosion;
     /// <summary>
     /// Function: SpawnJammedExplosion
     /// </summary>
     public unsafe virtual void SpawnJammedExplosion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_GunCrate.SpawnJammedExplosion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnJammedExplosion, "BmScript.RBMCombatPoint_GunCrate.SpawnJammedExplosion");
         byte* paramsPtr = stackalloc byte[264];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GrabGunSpawnJammedExplosion;
     /// <summary>
     /// Function: GrabGunSpawnJammedExplosion
     /// </summary>
     public unsafe virtual void GrabGunSpawnJammedExplosion(BmSDK.BmGame.RPawnVillain GunGrabber)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_GunCrate.GrabGunSpawnJammedExplosion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GrabGunSpawnJammedExplosion, "BmScript.RBMCombatPoint_GunCrate.GrabGunSpawnJammedExplosion");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GunGrabber, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RemoveDoor;
     /// <summary>
     /// Function: RemoveDoor
     /// </summary>
     public unsafe override void RemoveDoor(BmSDK.BmGame.RPawnVillain DoorRemover)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_GunCrate.RemoveDoor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveDoor, "BmScript.RBMCombatPoint_GunCrate.RemoveDoor");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DoorRemover, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_GunCrate.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmScript.RBMCombatPoint_GunCrate.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetMoveToPoint;
     /// <summary>
     /// Function: GetMoveToPoint
     /// </summary>
     public unsafe override System.Numerics.Vector3 GetMoveToPoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_GunCrate.GetMoveToPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMoveToPoint, "BmScript.RBMCombatPoint_GunCrate.GetMoveToPoint");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetAnimRefPoint;
     /// <summary>
     /// Function: GetAnimRefPoint
     /// </summary>
     public unsafe override System.Numerics.Vector3 GetAnimRefPoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_GunCrate.GetAnimRefPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAnimRefPoint, "BmScript.RBMCombatPoint_GunCrate.GetAnimRefPoint");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_GunCrate.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmScript.RBMCombatPoint_GunCrate.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

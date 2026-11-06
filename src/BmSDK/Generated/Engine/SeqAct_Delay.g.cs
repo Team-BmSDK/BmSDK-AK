@@ -78,12 +78,13 @@ public partial class SeqAct_Delay : BmSDK.Engine.SeqAct_Latent, BmSDK.IGameObjec
         where TComponent : class, Framework.IScriptComponent<SeqAct_Delay>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ResetDelayActive;
     /// <summary>
     /// Function: ResetDelayActive
     /// </summary>
     public unsafe virtual void ResetDelayActive()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SeqAct_Delay.ResetDelayActive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetDelayActive, "Engine.SeqAct_Delay.ResetDelayActive");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class SeqAct_Delay : BmSDK.Engine.SeqAct_Latent, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_Reset;
     /// <summary>
     /// Function: Reset
     /// </summary>
     public unsafe override void Reset()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SeqAct_Delay.Reset", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Reset, "Engine.SeqAct_Delay.Reset");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

@@ -78,23 +78,25 @@ public partial class RSpecialMoveInstance_PlaceActor : BmSDK.BmGame.RSpecialMove
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveInstance_PlaceActor>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PlaceActor;
     /// <summary>
     /// Function: PlaceActor
     /// </summary>
     public unsafe virtual void PlaceActor()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_PlaceActor.PlaceActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlaceActor, "BmGame.RSpecialMoveInstance_PlaceActor.PlaceActor");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetSpawnedOwner;
     /// <summary>
     /// Function: GetSpawnedOwner
     /// </summary>
     public unsafe virtual BmSDK.Engine.Actor GetSpawnedOwner()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_PlaceActor.GetSpawnedOwner", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSpawnedOwner, "BmGame.RSpecialMoveInstance_PlaceActor.GetSpawnedOwner");
         byte* paramsPtr = stackalloc byte[8];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

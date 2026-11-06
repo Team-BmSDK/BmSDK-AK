@@ -78,57 +78,62 @@ public partial class RBMPawnSpawnerController : BmSDK.Engine.SeqAct_Latent, BmSD
         where TComponent : class, Framework.IScriptComponent<RBMPawnSpawnerController>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMPawnSpawnerController.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmGame.RBMPawnSpawnerController.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetMaintainCurrent;
     /// <summary>
     /// Function: SetMaintainCurrent
     /// </summary>
     public unsafe virtual void SetMaintainCurrent(bool bNewValue)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMPawnSpawnerController.SetMaintainCurrent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMaintainCurrent, "BmGame.RBMPawnSpawnerController.SetMaintainCurrent");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewValue, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Deactivated;
     /// <summary>
     /// Function: Deactivated
     /// </summary>
     public unsafe override void Deactivated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMPawnSpawnerController.Deactivated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Deactivated, "BmGame.RBMPawnSpawnerController.Deactivated");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMPawnSpawnerController.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmGame.RBMPawnSpawnerController.Activated");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetPawnSpawner;
     /// <summary>
     /// Function: GetPawnSpawner
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RBmPawnSpawner GetPawnSpawner(int Index)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMPawnSpawnerController.GetPawnSpawner", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPawnSpawner, "BmGame.RBMPawnSpawnerController.GetPawnSpawner");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Index, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -142,12 +147,13 @@ public partial class RBMPawnSpawnerController : BmSDK.Engine.SeqAct_Latent, BmSD
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBmPawnSpawner>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetNumberActive;
     /// <summary>
     /// Function: GetNumberActive
     /// </summary>
     public unsafe virtual int GetNumberActive(int Index)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMPawnSpawnerController.GetNumberActive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNumberActive, "BmGame.RBMPawnSpawnerController.GetNumberActive");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Index, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -161,12 +167,13 @@ public partial class RBMPawnSpawnerController : BmSDK.Engine.SeqAct_Latent, BmSD
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_ActiveNumberAltered;
     /// <summary>
     /// Function: ActiveNumberAltered
     /// </summary>
     public unsafe virtual void ActiveNumberAltered(int Index, int NewNumber)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMPawnSpawnerController.ActiveNumberAltered", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActiveNumberAltered, "BmGame.RBMPawnSpawnerController.ActiveNumberAltered");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Index, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewNumber, paramsPtr + 4);

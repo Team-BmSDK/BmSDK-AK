@@ -78,12 +78,13 @@ public partial class RPhysicsTriggerVolume : BmSDK.Engine.Volume, BmSDK.IGameObj
         where TComponent : class, Framework.IScriptComponent<RPhysicsTriggerVolume>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetActive;
     /// <summary>
     /// Function: SetActive
     /// </summary>
     public unsafe virtual void SetActive(bool bNewActive)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPhysicsTriggerVolume.SetActive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetActive, "BmGame.RPhysicsTriggerVolume.SetActive");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewActive, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -97,12 +98,13 @@ public partial class RPhysicsTriggerVolume : BmSDK.Engine.Volume, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_OnToggle;
     /// <summary>
     /// Function: OnToggle
     /// </summary>
     public unsafe override void OnToggle(BmSDK.Engine.SeqAct_Toggle inAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPhysicsTriggerVolume.OnToggle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggle, "BmGame.RPhysicsTriggerVolume.OnToggle");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(inAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

@@ -78,12 +78,13 @@ public partial class HttpRequestWindows : BmSDK.Engine.HttpRequestInterface, BmS
         where TComponent : class, Framework.IScriptComponent<HttpRequestWindows>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ProcessRequest;
     /// <summary>
     /// Function: ProcessRequest
     /// </summary>
     public unsafe override bool ProcessRequest()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.HttpRequestWindows.ProcessRequest", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProcessRequest, "WinDrv.HttpRequestWindows.ProcessRequest");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class HttpRequestWindows : BmSDK.Engine.HttpRequestInterface, BmS
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetHeader;
     /// <summary>
     /// Function: SetHeader
     /// </summary>
     public unsafe override BmSDK.Engine.HttpRequestInterface SetHeader(BmSDK.FString HeaderName, BmSDK.FString HeaderValue)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.HttpRequestWindows.SetHeader", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHeader, "WinDrv.HttpRequestWindows.SetHeader");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HeaderName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HeaderValue, paramsPtr + 16);
@@ -116,12 +118,13 @@ public partial class HttpRequestWindows : BmSDK.Engine.HttpRequestInterface, BmS
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.HttpRequestInterface>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_SetContentAsString;
     /// <summary>
     /// Function: SetContentAsString
     /// </summary>
     public unsafe override BmSDK.Engine.HttpRequestInterface SetContentAsString(BmSDK.FString ContentString)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.HttpRequestWindows.SetContentAsString", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetContentAsString, "WinDrv.HttpRequestWindows.SetContentAsString");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ContentString, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -135,12 +138,13 @@ public partial class HttpRequestWindows : BmSDK.Engine.HttpRequestInterface, BmS
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.HttpRequestInterface>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_SetContent;
     /// <summary>
     /// Function: SetContent
     /// </summary>
     public unsafe override BmSDK.Engine.HttpRequestInterface SetContent(out BmSDK.TArray<byte> ContentPayload)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.HttpRequestWindows.SetContent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetContent, "WinDrv.HttpRequestWindows.SetContent");
         byte* paramsPtr = stackalloc byte[24];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -154,12 +158,13 @@ public partial class HttpRequestWindows : BmSDK.Engine.HttpRequestInterface, BmS
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.HttpRequestInterface>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_SetURL;
     /// <summary>
     /// Function: SetURL
     /// </summary>
     public unsafe override BmSDK.Engine.HttpRequestInterface SetURL(BmSDK.FString URL)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.HttpRequestWindows.SetURL", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetURL, "WinDrv.HttpRequestWindows.SetURL");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(URL, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -173,12 +178,13 @@ public partial class HttpRequestWindows : BmSDK.Engine.HttpRequestInterface, BmS
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.HttpRequestInterface>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_SetVerb;
     /// <summary>
     /// Function: SetVerb
     /// </summary>
     public unsafe override BmSDK.Engine.HttpRequestInterface SetVerb(BmSDK.FString Verb)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.HttpRequestWindows.SetVerb", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetVerb, "WinDrv.HttpRequestWindows.SetVerb");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Verb, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -192,12 +198,13 @@ public partial class HttpRequestWindows : BmSDK.Engine.HttpRequestInterface, BmS
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.HttpRequestInterface>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_GetVerb;
     /// <summary>
     /// Function: GetVerb
     /// </summary>
     public unsafe override BmSDK.FString GetVerb()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.HttpRequestWindows.GetVerb", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVerb, "WinDrv.HttpRequestWindows.GetVerb");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -210,12 +217,13 @@ public partial class HttpRequestWindows : BmSDK.Engine.HttpRequestInterface, BmS
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetContent;
     /// <summary>
     /// Function: GetContent
     /// </summary>
     public unsafe override void GetContent(out BmSDK.TArray<byte> Content)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.HttpRequestWindows.GetContent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetContent, "WinDrv.HttpRequestWindows.GetContent");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -229,12 +237,13 @@ public partial class HttpRequestWindows : BmSDK.Engine.HttpRequestInterface, BmS
         return;
     }
 
+    private static BmSDK.Function __fn_GetURL;
     /// <summary>
     /// Function: GetURL
     /// </summary>
     public unsafe override BmSDK.FString GetURL()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.HttpRequestWindows.GetURL", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetURL, "WinDrv.HttpRequestWindows.GetURL");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -247,12 +256,13 @@ public partial class HttpRequestWindows : BmSDK.Engine.HttpRequestInterface, BmS
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetContentLength;
     /// <summary>
     /// Function: GetContentLength
     /// </summary>
     public unsafe override int GetContentLength()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.HttpRequestWindows.GetContentLength", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetContentLength, "WinDrv.HttpRequestWindows.GetContentLength");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -265,12 +275,13 @@ public partial class HttpRequestWindows : BmSDK.Engine.HttpRequestInterface, BmS
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetContentType;
     /// <summary>
     /// Function: GetContentType
     /// </summary>
     public unsafe override BmSDK.FString GetContentType()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.HttpRequestWindows.GetContentType", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetContentType, "WinDrv.HttpRequestWindows.GetContentType");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -283,12 +294,13 @@ public partial class HttpRequestWindows : BmSDK.Engine.HttpRequestInterface, BmS
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetURLParameter;
     /// <summary>
     /// Function: GetURLParameter
     /// </summary>
     public unsafe override BmSDK.FString GetURLParameter(BmSDK.FString ParameterName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.HttpRequestWindows.GetURLParameter", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetURLParameter, "WinDrv.HttpRequestWindows.GetURLParameter");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -302,12 +314,13 @@ public partial class HttpRequestWindows : BmSDK.Engine.HttpRequestInterface, BmS
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_GetHeaders;
     /// <summary>
     /// Function: GetHeaders
     /// </summary>
     public unsafe override BmSDK.TArray<BmSDK.FString> GetHeaders()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.HttpRequestWindows.GetHeaders", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHeaders, "WinDrv.HttpRequestWindows.GetHeaders");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -320,12 +333,13 @@ public partial class HttpRequestWindows : BmSDK.Engine.HttpRequestInterface, BmS
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetHeader;
     /// <summary>
     /// Function: GetHeader
     /// </summary>
     public unsafe override BmSDK.FString GetHeader(BmSDK.FString HeaderName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.HttpRequestWindows.GetHeader", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHeader, "WinDrv.HttpRequestWindows.GetHeader");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HeaderName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

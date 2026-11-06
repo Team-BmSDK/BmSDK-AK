@@ -78,46 +78,50 @@ public partial class RBMAIAction_OpenBankDoor : BmSDK.BmGame.RBMAIAction, BmSDK.
         where TComponent : class, Framework.IScriptComponent<RBMAIAction_OpenBankDoor>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_AttachExplosiveToPanel;
     /// <summary>
     /// Function: AttachExplosiveToPanel
     /// </summary>
     public unsafe virtual void AttachExplosiveToPanel()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_OpenBankDoor.AttachExplosiveToPanel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttachExplosiveToPanel, "BmGame.RBMAIAction_OpenBankDoor.AttachExplosiveToPanel");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AttachExplosiveToHand;
     /// <summary>
     /// Function: AttachExplosiveToHand
     /// </summary>
     public unsafe virtual void AttachExplosiveToHand()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_OpenBankDoor.AttachExplosiveToHand", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttachExplosiveToHand, "BmGame.RBMAIAction_OpenBankDoor.AttachExplosiveToHand");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetDoor;
     /// <summary>
     /// Function: SetDoor
     /// </summary>
     public unsafe virtual void SetDoor(BmSDK.BmGame.RBankDoorBase Door)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_OpenBankDoor.SetDoor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDoor, "BmGame.RBMAIAction_OpenBankDoor.SetDoor");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Door, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_OpenBankDoor.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMAIAction_OpenBankDoor.OnActivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

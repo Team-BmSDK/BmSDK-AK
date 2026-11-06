@@ -78,12 +78,13 @@ public partial class RFlapsAssetInstance : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RFlapsAssetInstance>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_WakeUp;
     /// <summary>
     /// Function: WakeUp
     /// </summary>
     public unsafe virtual void WakeUp()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RFlapsAssetInstance.WakeUp", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WakeUp, "Engine.RFlapsAssetInstance.WakeUp");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class RFlapsAssetInstance : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_PutToSleep;
     /// <summary>
     /// Function: PutToSleep
     /// </summary>
     public unsafe virtual void PutToSleep(bool bDeepSleep)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RFlapsAssetInstance.PutToSleep", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PutToSleep, "Engine.RFlapsAssetInstance.PutToSleep");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDeepSleep, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

@@ -78,12 +78,13 @@ public partial class AkCurve : BmSDK.Engine.AkHash, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<AkCurve>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Map;
     /// <summary>
     /// Function: Map
     /// </summary>
     public unsafe virtual float Map(float Input)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkCurve.Map", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Map, "Engine.AkCurve.Map");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Input, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

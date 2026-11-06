@@ -78,12 +78,13 @@ public partial class ApexDynamicGridActor : BmSDK.Engine.ApexFieldSamplerActor, 
         where TComponent : class, Framework.IScriptComponent<ApexDynamicGridActor>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PostRenderFor;
     /// <summary>
     /// Function: PostRenderFor
     /// </summary>
     public unsafe override void PostRenderFor(BmSDK.Engine.PlayerController PC, BmSDK.Engine.Canvas Canvas, System.Numerics.Vector3 CameraPosition, System.Numerics.Vector3 CameraDir)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ApexDynamicGridActor.PostRenderFor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostRenderFor, "Engine.ApexDynamicGridActor.PostRenderFor");
         byte* paramsPtr = stackalloc byte[72];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Canvas, paramsPtr + 8);
@@ -93,24 +94,26 @@ public partial class ApexDynamicGridActor : BmSDK.Engine.ApexFieldSamplerActor, 
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ApexDynamicGridActor.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "Engine.ApexDynamicGridActor.Tick");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FetchStats;
     /// <summary>
     /// Function: FetchStats
     /// </summary>
     public unsafe virtual void FetchStats(out int DGfirstLine, out int DGnumLines, out BmSDK.FString DGstr)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ApexDynamicGridActor.FetchStats", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FetchStats, "Engine.ApexDynamicGridActor.FetchStats");
         byte* paramsPtr = stackalloc byte[24];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

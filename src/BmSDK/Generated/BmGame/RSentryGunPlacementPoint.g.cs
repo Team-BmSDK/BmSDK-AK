@@ -78,60 +78,65 @@ public partial class RSentryGunPlacementPoint : BmSDK.BmGame.RLootDestinationBas
         where TComponent : class, Framework.IScriptComponent<RSentryGunPlacementPoint>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsNearAnAssignedSentryGun;
     /// <summary>
     /// Function: IsNearAnAssignedSentryGun
     /// </summary>
     public unsafe virtual bool IsNearAnAssignedSentryGun(BmSDK.BmGame.RBMRoomAIState RoomState)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSentryGunPlacementPoint.IsNearAnAssignedSentryGun", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsNearAnAssignedSentryGun, "BmGame.RSentryGunPlacementPoint.IsNearAnAssignedSentryGun");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RoomState, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_TrySpawnGun;
     /// <summary>
     /// Function: TrySpawnGun
     /// </summary>
     public unsafe virtual void TrySpawnGun(BmSDK.BmGame.RPawnVillain pawnDroppingOff)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSentryGunPlacementPoint.TrySpawnGun", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TrySpawnGun, "BmGame.RSentryGunPlacementPoint.TrySpawnGun");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(pawnDroppingOff, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnDropOff;
     /// <summary>
     /// Function: OnDropOff
     /// </summary>
     public unsafe override bool OnDropOff(BmSDK.BmGame.RPawnVillain pawnDroppingOff)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSentryGunPlacementPoint.OnDropOff", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDropOff, "BmGame.RSentryGunPlacementPoint.OnDropOff");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(pawnDroppingOff, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_TryStateChange;
     /// <summary>
     /// Function: TryStateChange
     /// </summary>
     public unsafe override void TryStateChange(BmSDK.BmGame.RPawnVillain pawnDroppingOff)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSentryGunPlacementPoint.TryStateChange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TryStateChange, "BmGame.RSentryGunPlacementPoint.TryStateChange");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(pawnDroppingOff, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSentryGunPlacementPoint.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RSentryGunPlacementPoint.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

@@ -78,57 +78,62 @@ public partial class R2DCombatCamera : BmSDK.BmGame.RCameraActor, BmSDK.IGameObj
         where TComponent : class, Framework.IScriptComponent<R2DCombatCamera>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.R2DCombatCamera.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.R2DCombatCamera.Tick");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetLookAtLocation;
     /// <summary>
     /// Function: GetLookAtLocation
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetLookAtLocation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.R2DCombatCamera.GetLookAtLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLookAtLocation, "BmGame.R2DCombatCamera.GetLookAtLocation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetLookFromLocation;
     /// <summary>
     /// Function: GetLookFromLocation
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetLookFromLocation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.R2DCombatCamera.GetLookFromLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLookFromLocation, "BmGame.R2DCombatCamera.GetLookFromLocation");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_StopCamera;
     /// <summary>
     /// Function: StopCamera
     /// </summary>
     public unsafe virtual void StopCamera()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.R2DCombatCamera.StopCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopCamera, "BmGame.R2DCombatCamera.StopCamera");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartCamera;
     /// <summary>
     /// Function: StartCamera
     /// </summary>
     public unsafe virtual void StartCamera(BmSDK.BmGame.RPawnPlayer NewPlayerPawn, BmSDK.BmGame.RPawnVillain NewVillainPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.R2DCombatCamera.StartCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartCamera, "BmGame.R2DCombatCamera.StartCamera");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPlayerPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewVillainPawn, paramsPtr + 8);

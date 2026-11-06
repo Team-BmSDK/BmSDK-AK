@@ -78,12 +78,13 @@ public partial class RApexStaticDestructibleComponent : BmSDK.Engine.ApexStaticD
         where TComponent : class, Framework.IScriptComponent<RApexStaticDestructibleComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetSocketWorldLocationAndRotation;
     /// <summary>
     /// Function: GetSocketWorldLocationAndRotation
     /// </summary>
     public unsafe virtual bool GetSocketWorldLocationAndRotation(BmSDK.FName InSocketName, out System.Numerics.Vector3 OutLocation, out BmSDK.Rotator OutRotation, int Space)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RApexStaticDestructibleComponent.GetSocketWorldLocationAndRotation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSocketWorldLocationAndRotation, "BmGame.RApexStaticDestructibleComponent.GetSocketWorldLocationAndRotation");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InSocketName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Space, paramsPtr + 32);
@@ -100,12 +101,13 @@ public partial class RApexStaticDestructibleComponent : BmSDK.Engine.ApexStaticD
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 36);
     }
 
+    private static BmSDK.Function __fn_CalculateStaticCollisionBoundingBox;
     /// <summary>
     /// Function: CalculateStaticCollisionBoundingBox
     /// </summary>
     public unsafe virtual void CalculateStaticCollisionBoundingBox(out BmSDK.GameObject.FMatrix OutBoundsTransform, out System.Numerics.Vector3 OutBoundsHalfExtents)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RApexStaticDestructibleComponent.CalculateStaticCollisionBoundingBox", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculateStaticCollisionBoundingBox, "BmGame.RApexStaticDestructibleComponent.CalculateStaticCollisionBoundingBox");
         byte* paramsPtr = stackalloc byte[76];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -120,12 +122,13 @@ public partial class RApexStaticDestructibleComponent : BmSDK.Engine.ApexStaticD
         return;
     }
 
+    private static BmSDK.Function __fn_LoadDamageStateFromSaveGame;
     /// <summary>
     /// Function: LoadDamageStateFromSaveGame
     /// </summary>
     public unsafe virtual void LoadDamageStateFromSaveGame()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RApexStaticDestructibleComponent.LoadDamageStateFromSaveGame", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LoadDamageStateFromSaveGame, "BmGame.RApexStaticDestructibleComponent.LoadDamageStateFromSaveGame");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

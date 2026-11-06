@@ -78,34 +78,37 @@ public partial class MCrowdSpawner_CrowTrail : BmSDK.BmGame.RCrowdSpawner, BmSDK
         where TComponent : class, Framework.IScriptComponent<MCrowdSpawner_CrowTrail>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SpawnAgent;
     /// <summary>
     /// Function: SpawnAgent
     /// </summary>
     public unsafe override BmSDK.BmGame.RCrowdAgent SpawnAgent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCrowdSpawner_CrowTrail.SpawnAgent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnAgent, "BmGame.MCrowdSpawner_CrowTrail.SpawnAgent");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RCrowdAgent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetSpawnLocationVariation;
     /// <summary>
     /// Function: GetSpawnLocationVariation
     /// </summary>
     public unsafe override System.Numerics.Vector3 GetSpawnLocationVariation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCrowdSpawner_CrowTrail.GetSpawnLocationVariation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSpawnLocationVariation, "BmGame.MCrowdSpawner_CrowTrail.GetSpawnLocationVariation");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SpawnCrowd;
     /// <summary>
     /// Function: SpawnCrowd
     /// </summary>
     public unsafe override void SpawnCrowd(int NumToSpawn, int NewFlockID = default, BmSDK.BmGame.RCrowdSequence NewCrowdSequence = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCrowdSpawner_CrowTrail.SpawnCrowd", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnCrowd, "BmGame.MCrowdSpawner_CrowTrail.SpawnCrowd");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NumToSpawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewFlockID, paramsPtr + 4);

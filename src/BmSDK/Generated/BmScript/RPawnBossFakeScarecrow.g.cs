@@ -78,12 +78,13 @@ public partial class RPawnBossFakeScarecrow : BmSDK.BmGame.RPawnVillainThug, BmS
         where TComponent : class, Framework.IScriptComponent<RPawnBossFakeScarecrow>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_InitialisePlayerSpecificAnimsets;
     /// <summary>
     /// Function: InitialisePlayerSpecificAnimsets
     /// </summary>
     public unsafe override void InitialisePlayerSpecificAnimsets(BmSDK.BmGame.RPawnPlayerCombat NewPlayer, int PlayerIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnBossFakeScarecrow.InitialisePlayerSpecificAnimsets", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitialisePlayerSpecificAnimsets, "BmScript.RPawnBossFakeScarecrow.InitialisePlayerSpecificAnimsets");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPlayer, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerIndex, paramsPtr + 8);
@@ -91,79 +92,86 @@ public partial class RPawnBossFakeScarecrow : BmSDK.BmGame.RPawnVillainThug, BmS
         return;
     }
 
+    private static BmSDK.Function __fn_HoldCameraOnMeAfterStrike;
     /// <summary>
     /// Function: HoldCameraOnMeAfterStrike
     /// </summary>
     public unsafe override bool HoldCameraOnMeAfterStrike()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnBossFakeScarecrow.HoldCameraOnMeAfterStrike", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HoldCameraOnMeAfterStrike, "BmScript.RPawnBossFakeScarecrow.HoldCameraOnMeAfterStrike");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetHealth;
     /// <summary>
     /// Function: SetHealth
     /// </summary>
     public unsafe override void SetHealth()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnBossFakeScarecrow.SetHealth", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHealth, "BmScript.RPawnBossFakeScarecrow.SetHealth");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StandUpRequest;
     /// <summary>
     /// Function: StandUpRequest
     /// </summary>
     public unsafe virtual void StandUpRequest()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnBossFakeScarecrow.StandUpRequest", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StandUpRequest, "BmScript.RPawnBossFakeScarecrow.StandUpRequest");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_LastOneStanding;
     /// <summary>
     /// Function: LastOneStanding
     /// </summary>
     public unsafe virtual void LastOneStanding()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnBossFakeScarecrow.LastOneStanding", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LastOneStanding, "BmScript.RPawnBossFakeScarecrow.LastOneStanding");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanDoFinalBlow;
     /// <summary>
     /// Function: CanDoFinalBlow
     /// </summary>
     public unsafe override bool CanDoFinalBlow()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnBossFakeScarecrow.CanDoFinalBlow", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanDoFinalBlow, "BmScript.RPawnBossFakeScarecrow.CanDoFinalBlow");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_DamagedBy;
     /// <summary>
     /// Function: DamagedBy
     /// </summary>
     public unsafe override BmSDK.BmGame.RPawnCombat.DamageResult DamagedBy(BmSDK.BmGame.RPawnCombat.FDamageInfo DmgInfo)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnBossFakeScarecrow.DamagedBy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DamagedBy, "BmScript.RPawnBossFakeScarecrow.DamagedBy");
         byte* paramsPtr = stackalloc byte[250];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DmgInfo, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnCombat.DamageResult>(paramsPtr + 248);
     }
 
+    private static BmSDK.Function __fn_TakeDamage;
     /// <summary>
     /// Function: TakeDamage
     /// </summary>
     public unsafe override void TakeDamage(int Damage, BmSDK.Engine.Controller InstigatedBy, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 Momentum, BmSDK.Class DamageType, BmSDK.Engine.Actor.FTraceHitInfo HitInfo = default, BmSDK.Engine.Actor DamageCauser = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnBossFakeScarecrow.TakeDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TakeDamage, "BmScript.RPawnBossFakeScarecrow.TakeDamage");
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Damage, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InstigatedBy, paramsPtr + 4);
@@ -176,149 +184,162 @@ public partial class RPawnBossFakeScarecrow : BmSDK.BmGame.RPawnVillainThug, BmS
         return;
     }
 
+    private static BmSDK.Function __fn_GetBlockBreakerStunTime;
     /// <summary>
     /// Function: GetBlockBreakerStunTime
     /// </summary>
     public unsafe override float GetBlockBreakerStunTime(BmSDK.BmGame.RPawnCombat.FDamageInfo DmgInfo)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnBossFakeScarecrow.GetBlockBreakerStunTime", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBlockBreakerStunTime, "BmScript.RPawnBossFakeScarecrow.GetBlockBreakerStunTime");
         byte* paramsPtr = stackalloc byte[252];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DmgInfo, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 248);
     }
 
+    private static BmSDK.Function __fn_GetCameraLookAtPriority;
     /// <summary>
     /// Function: GetCameraLookAtPriority
     /// </summary>
     public unsafe override float GetCameraLookAtPriority()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnBossFakeScarecrow.GetCameraLookAtPriority", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCameraLookAtPriority, "BmScript.RPawnBossFakeScarecrow.GetCameraLookAtPriority");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_AllowGetUpHit;
     /// <summary>
     /// Function: AllowGetUpHit
     /// </summary>
     public unsafe virtual void AllowGetUpHit()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnBossFakeScarecrow.AllowGetUpHit", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowGetUpHit, "BmScript.RPawnBossFakeScarecrow.AllowGetUpHit");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnBossFakeScarecrow.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmScript.RPawnBossFakeScarecrow.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetRagdollClass;
     /// <summary>
     /// Function: GetRagdollClass
     /// </summary>
     public unsafe override BmSDK.Class GetRagdollClass()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnBossFakeScarecrow.GetRagdollClass", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRagdollClass, "BmScript.RPawnBossFakeScarecrow.GetRagdollClass");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Class>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_EndThrowCameraAlign;
     /// <summary>
     /// Function: EndThrowCameraAlign
     /// </summary>
     public unsafe virtual void EndThrowCameraAlign()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnBossFakeScarecrow.EndThrowCameraAlign", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EndThrowCameraAlign, "BmScript.RPawnBossFakeScarecrow.EndThrowCameraAlign");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanSpeakIncapacitated;
     /// <summary>
     /// Function: CanSpeakIncapacitated
     /// </summary>
     public unsafe override bool CanSpeakIncapacitated(BmSDK.Engine.AkDialogueSpeech Speech)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnBossFakeScarecrow.CanSpeakIncapacitated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanSpeakIncapacitated, "BmScript.RPawnBossFakeScarecrow.CanSpeakIncapacitated");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speech, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_OverridePickupThugDirection;
     /// <summary>
     /// Function: OverridePickupThugDirection
     /// </summary>
     public unsafe override int OverridePickupThugDirection(int SuggestedDir)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnBossFakeScarecrow.OverridePickupThugDirection", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverridePickupThugDirection, "BmScript.RPawnBossFakeScarecrow.OverridePickupThugDirection");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SuggestedDir, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_IsBarkPreventedByStunnedRagdoll;
     /// <summary>
     /// Function: IsBarkPreventedByStunnedRagdoll
     /// </summary>
     public unsafe override bool IsBarkPreventedByStunnedRagdoll()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnBossFakeScarecrow.IsBarkPreventedByStunnedRagdoll", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsBarkPreventedByStunnedRagdoll, "BmScript.RPawnBossFakeScarecrow.IsBarkPreventedByStunnedRagdoll");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_MakeBatmanNormal;
     /// <summary>
     /// Function: MakeBatmanNormal
     /// </summary>
     public unsafe virtual void MakeBatmanNormal()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnBossFakeScarecrow.MakeBatmanNormal", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MakeBatmanNormal, "BmScript.RPawnBossFakeScarecrow.MakeBatmanNormal");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_MakeBatmanJokerfied;
     /// <summary>
     /// Function: MakeBatmanJokerfied
     /// </summary>
     public unsafe virtual void MakeBatmanJokerfied()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnBossFakeScarecrow.MakeBatmanJokerfied", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MakeBatmanJokerfied, "BmScript.RPawnBossFakeScarecrow.MakeBatmanJokerfied");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsActive;
     /// <summary>
     /// Function: IsActive
     /// </summary>
     public unsafe override bool IsActive(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnBossFakeScarecrow.IsActive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsActive, "BmScript.RPawnBossFakeScarecrow.IsActive");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_Interact;
     /// <summary>
     /// Function: Interact
     /// </summary>
     public unsafe override void Interact(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnBossFakeScarecrow.Interact", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Interact, "BmScript.RPawnBossFakeScarecrow.Interact");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

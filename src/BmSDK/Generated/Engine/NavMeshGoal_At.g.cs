@@ -78,23 +78,25 @@ public partial class NavMeshGoal_At : BmSDK.Engine.NavMeshPathGoalEvaluator, BmS
         where TComponent : class, Framework.IScriptComponent<NavMeshGoal_At>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Recycle;
     /// <summary>
     /// Function: Recycle
     /// </summary>
     public unsafe override void Recycle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavMeshGoal_At.Recycle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Recycle, "Engine.NavMeshGoal_At.Recycle");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AtLocation;
     /// <summary>
     /// Function: AtLocation
     /// </summary>
     public unsafe static bool AtLocation(BmSDK.Engine.NavigationHandle NavHandle, System.Numerics.Vector3 GoalLocation, float Dist = default, bool bReturnPartial = default, bool bInWeightPartialByDist = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavMeshGoal_At.AtLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AtLocation, "Engine.NavMeshGoal_At.AtLocation");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NavHandle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GoalLocation, paramsPtr + 8);
@@ -105,12 +107,13 @@ public partial class NavMeshGoal_At : BmSDK.Engine.NavMeshPathGoalEvaluator, BmS
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_AtActor;
     /// <summary>
     /// Function: AtActor
     /// </summary>
     public unsafe static bool AtActor(BmSDK.Engine.NavigationHandle NavHandle, BmSDK.Engine.Actor GoalActor, float Dist = default, bool bReturnPartial = default, bool bInWeightPartialByDist = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavMeshGoal_At.AtActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AtActor, "Engine.NavMeshGoal_At.AtActor");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NavHandle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GoalActor, paramsPtr + 8);
@@ -121,12 +124,13 @@ public partial class NavMeshGoal_At : BmSDK.Engine.NavMeshPathGoalEvaluator, BmS
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_RecycleNative;
     /// <summary>
     /// Function: RecycleNative
     /// </summary>
     public unsafe virtual void RecycleNative()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavMeshGoal_At.RecycleNative", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RecycleNative, "Engine.NavMeshGoal_At.RecycleNative");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

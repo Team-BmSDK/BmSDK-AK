@@ -73,12 +73,13 @@ public partial class MPawnVillainBlackMaskBase : BmSDK.BmGame.RPawnVillainThug, 
         where TComponent : class, Framework.IScriptComponent<MPawnVillainBlackMaskBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsInLOSHack;
     /// <summary>
     /// Function: IsInLOSHack
     /// </summary>
     public unsafe virtual bool IsInLOSHack(System.Numerics.Vector3 EndLocation, out System.Numerics.Vector3 HitLocation, out System.Numerics.Vector3 MuzzleLoc, out BmSDK.Rotator MuzzleRot)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnVillainBlackMaskBase.IsInLOSHack", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInLOSHack, "BmGame.MPawnVillainBlackMaskBase.IsInLOSHack");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EndLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -88,23 +89,25 @@ public partial class MPawnVillainBlackMaskBase : BmSDK.BmGame.RPawnVillainThug, 
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 48);
     }
 
+    private static BmSDK.Function __fn_IsDoingRangeAttack;
     /// <summary>
     /// Function: IsDoingRangeAttack
     /// </summary>
     public unsafe virtual bool IsDoingRangeAttack()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnVillainBlackMaskBase.IsDoingRangeAttack", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsDoingRangeAttack, "BmGame.MPawnVillainBlackMaskBase.IsDoingRangeAttack");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_BlackMaskHideGun;
     /// <summary>
     /// Function: BlackMaskHideGun
     /// </summary>
     public unsafe virtual void BlackMaskHideGun()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnVillainBlackMaskBase.BlackMaskHideGun", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BlackMaskHideGun, "BmGame.MPawnVillainBlackMaskBase.BlackMaskHideGun");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

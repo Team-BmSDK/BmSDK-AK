@@ -78,12 +78,13 @@ public partial class Player : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<Player>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SwitchController;
     /// <summary>
     /// Function: SwitchController
     /// </summary>
     public unsafe virtual void SwitchController(BmSDK.Engine.PlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Player.SwitchController", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SwitchController, "Engine.Player.SwitchController");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

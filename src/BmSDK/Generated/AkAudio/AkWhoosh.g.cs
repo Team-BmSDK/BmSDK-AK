@@ -78,12 +78,13 @@ public partial class AkWhoosh : BmSDK.Engine.AkActor, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<AkWhoosh>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DisableWhoosh;
     /// <summary>
     /// Function: DisableWhoosh
     /// </summary>
     public unsafe virtual void DisableWhoosh()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkWhoosh.DisableWhoosh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisableWhoosh, "AkAudio.AkWhoosh.DisableWhoosh");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class AkWhoosh : BmSDK.Engine.AkActor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_EnableWhoosh;
     /// <summary>
     /// Function: EnableWhoosh
     /// </summary>
     public unsafe virtual void EnableWhoosh()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkWhoosh.EnableWhoosh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnableWhoosh, "AkAudio.AkWhoosh.EnableWhoosh");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -114,12 +116,13 @@ public partial class AkWhoosh : BmSDK.Engine.AkActor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_OnToggle;
     /// <summary>
     /// Function: OnToggle
     /// </summary>
     public unsafe virtual void OnToggle(BmSDK.Engine.SeqAct_Toggle ToggleAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkWhoosh.OnToggle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggle, "AkAudio.AkWhoosh.OnToggle");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ToggleAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

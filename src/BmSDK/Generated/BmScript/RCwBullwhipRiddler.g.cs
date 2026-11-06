@@ -78,12 +78,13 @@ public partial class RCwBullwhipRiddler : BmSDK.BmScript.RCwBullwhip, BmSDK.IGam
         where TComponent : class, Framework.IScriptComponent<RCwBullwhipRiddler>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetGadgetClassNameForHUD;
     /// <summary>
     /// Function: GetGadgetClassNameForHUD
     /// </summary>
     public unsafe override BmSDK.FName GetGadgetClassNameForHUD()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCwBullwhipRiddler.GetGadgetClassNameForHUD", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGadgetClassNameForHUD, "BmScript.RCwBullwhipRiddler.GetGadgetClassNameForHUD");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);

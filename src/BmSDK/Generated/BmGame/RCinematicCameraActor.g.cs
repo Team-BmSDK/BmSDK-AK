@@ -78,12 +78,13 @@ public partial class RCinematicCameraActor : BmSDK.BmGame.RAnimatedCameraActor, 
         where TComponent : class, Framework.IScriptComponent<RCinematicCameraActor>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ApplyCameraModifiers;
     /// <summary>
     /// Function: ApplyCameraModifiers
     /// </summary>
     public unsafe override void ApplyCameraModifiers(float DeltaTime, out BmSDK.GameObject.FTPOV OutPOV)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCinematicCameraActor.ApplyCameraModifiers", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyCameraModifiers, "BmGame.RCinematicCameraActor.ApplyCameraModifiers");
         byte* paramsPtr = stackalloc byte[96];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -91,35 +92,38 @@ public partial class RCinematicCameraActor : BmSDK.BmGame.RAnimatedCameraActor, 
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCinematicCameraActor.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RCinematicCameraActor.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NotBeingUsed;
     /// <summary>
     /// Function: NotBeingUsed
     /// </summary>
     public unsafe virtual bool NotBeingUsed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCinematicCameraActor.NotBeingUsed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotBeingUsed, "BmGame.RCinematicCameraActor.NotBeingUsed");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_BeginAnimControl;
     /// <summary>
     /// Function: BeginAnimControl
     /// </summary>
     public unsafe override void BeginAnimControl(BmSDK.Engine.InterpGroup InInterpGroup, BmSDK.Engine.InterpGroupInst InInterpGroupInst)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCinematicCameraActor.BeginAnimControl", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BeginAnimControl, "BmGame.RCinematicCameraActor.BeginAnimControl");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroup, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroupInst, paramsPtr + 8);
@@ -127,12 +131,13 @@ public partial class RCinematicCameraActor : BmSDK.BmGame.RAnimatedCameraActor, 
         return;
     }
 
+    private static BmSDK.Function __fn_EndMatineeControl;
     /// <summary>
     /// Function: EndMatineeControl
     /// </summary>
     public unsafe override void EndMatineeControl(BmSDK.Engine.InterpGroup InInterpGroup, BmSDK.Engine.InterpGroupInst InInterpGroupInst)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCinematicCameraActor.EndMatineeControl", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EndMatineeControl, "BmGame.RCinematicCameraActor.EndMatineeControl");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroup, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroupInst, paramsPtr + 8);
@@ -140,12 +145,13 @@ public partial class RCinematicCameraActor : BmSDK.BmGame.RAnimatedCameraActor, 
         return;
     }
 
+    private static BmSDK.Function __fn_BeginMatineeControl;
     /// <summary>
     /// Function: BeginMatineeControl
     /// </summary>
     public unsafe override void BeginMatineeControl(BmSDK.Engine.InterpGroup InInterpGroup, BmSDK.Engine.InterpGroupInst InInterpGroupInst)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCinematicCameraActor.BeginMatineeControl", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BeginMatineeControl, "BmGame.RCinematicCameraActor.BeginMatineeControl");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroup, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroupInst, paramsPtr + 8);

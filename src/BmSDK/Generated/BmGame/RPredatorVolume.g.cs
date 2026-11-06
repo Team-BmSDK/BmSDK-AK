@@ -78,46 +78,50 @@ public partial class RPredatorVolume : BmSDK.Engine.Volume, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RPredatorVolume>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetEntryExitAnimSet;
     /// <summary>
     /// Function: GetEntryExitAnimSet
     /// </summary>
     public unsafe virtual BmSDK.Engine.AnimSet GetEntryExitAnimSet()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorVolume.GetEntryExitAnimSet", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetEntryExitAnimSet, "BmGame.RPredatorVolume.GetEntryExitAnimSet");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSet>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetVaultExplosivesAnimSet;
     /// <summary>
     /// Function: GetVaultExplosivesAnimSet
     /// </summary>
     public unsafe virtual BmSDK.Engine.AnimSet GetVaultExplosivesAnimSet()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorVolume.GetVaultExplosivesAnimSet", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVaultExplosivesAnimSet, "BmGame.RPredatorVolume.GetVaultExplosivesAnimSet");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSet>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetNoisyPred;
     /// <summary>
     /// Function: SetNoisyPred
     /// </summary>
     public unsafe virtual void SetNoisyPred(bool newNoisyPred)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorVolume.SetNoisyPred", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetNoisyPred, "BmGame.RPredatorVolume.SetNoisyPred");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(newNoisyPred, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RegisterGrate;
     /// <summary>
     /// Function: RegisterGrate
     /// </summary>
     public unsafe virtual void RegisterGrate(BmSDK.BmGame.RTunnelGrateBase Grate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorVolume.RegisterGrate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterGrate, "BmGame.RPredatorVolume.RegisterGrate");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Grate, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -131,23 +135,25 @@ public partial class RPredatorVolume : BmSDK.Engine.Volume, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetPylons;
     /// <summary>
     /// Function: GetPylons
     /// </summary>
     public unsafe virtual BmSDK.TArray<BmSDK.Engine.Pylon> GetPylons()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorVolume.GetPylons", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPylons, "BmGame.RPredatorVolume.GetPylons");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.Engine.Pylon>>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetPylonListStart;
     /// <summary>
     /// Function: GetPylonListStart
     /// </summary>
     public unsafe virtual BmSDK.Engine.Pylon GetPylonListStart()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorVolume.GetPylonListStart", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPylonListStart, "BmGame.RPredatorVolume.GetPylonListStart");
         byte* paramsPtr = stackalloc byte[8];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -160,24 +166,26 @@ public partial class RPredatorVolume : BmSDK.Engine.Volume, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Pylon>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UnTouch;
     /// <summary>
     /// Function: UnTouch
     /// </summary>
     public unsafe override void UnTouch(BmSDK.Engine.Actor Other)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorVolume.UnTouch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnTouch, "BmGame.RPredatorVolume.UnTouch");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Touch;
     /// <summary>
     /// Function: Touch
     /// </summary>
     public unsafe override void Touch(BmSDK.Engine.Actor Other, BmSDK.Engine.PrimitiveComponent OtherComp, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorVolume.Touch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Touch, "BmGame.RPredatorVolume.Touch");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherComp, paramsPtr + 8);
@@ -187,56 +195,61 @@ public partial class RPredatorVolume : BmSDK.Engine.Volume, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_IsInChallengeLayer;
     /// <summary>
     /// Function: IsInChallengeLayer
     /// </summary>
     public unsafe virtual bool IsInChallengeLayer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorVolume.IsInChallengeLayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInChallengeLayer, "BmGame.RPredatorVolume.IsInChallengeLayer");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorVolume.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmGame.RPredatorVolume.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorVolume.PreStreamOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmGame.RPredatorVolume.PreStreamOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorVolume.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RPredatorVolume.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreBeginPlay;
     /// <summary>
     /// Function: PreBeginPlay
     /// </summary>
     public unsafe override void PreBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorVolume.PreBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreBeginPlay, "BmGame.RPredatorVolume.PreBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

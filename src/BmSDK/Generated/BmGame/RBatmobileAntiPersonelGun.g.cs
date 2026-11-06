@@ -78,24 +78,26 @@ public partial class RBatmobileAntiPersonelGun : BmSDK.BmGame.RVehicleWeapon, Bm
         where TComponent : class, Framework.IScriptComponent<RBatmobileAntiPersonelGun>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DrawTargetsHUD;
     /// <summary>
     /// Function: DrawTargetsHUD
     /// </summary>
     public unsafe virtual void DrawTargetsHUD(BmSDK.Engine.HUD H)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileAntiPersonelGun.DrawTargetsHUD", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DrawTargetsHUD, "BmGame.RBatmobileAntiPersonelGun.DrawTargetsHUD");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(H, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CheckAutoTarget;
     /// <summary>
     /// Function: CheckAutoTarget
     /// </summary>
     public unsafe override bool CheckAutoTarget(BmSDK.Engine.Actor Target, out System.Numerics.Vector3 TargetPosition, out float OverridePriority, out float OverrideMaxRange, out byte DoLOSCheck)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileAntiPersonelGun.CheckAutoTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckAutoTarget, "BmGame.RBatmobileAntiPersonelGun.CheckAutoTarget");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -106,12 +108,13 @@ public partial class RBatmobileAntiPersonelGun : BmSDK.BmGame.RVehicleWeapon, Bm
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_IsHeavyWeaponValid;
     /// <summary>
     /// Function: IsHeavyWeaponValid
     /// </summary>
     public unsafe override bool IsHeavyWeaponValid()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileAntiPersonelGun.IsHeavyWeaponValid", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsHeavyWeaponValid, "BmGame.RBatmobileAntiPersonelGun.IsHeavyWeaponValid");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

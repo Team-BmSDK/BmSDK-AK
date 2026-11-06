@@ -73,12 +73,13 @@ public partial class ParticleModuleEventSendToGame : BmSDK.GameObject, BmSDK.IGa
         where TComponent : class, Framework.IScriptComponent<ParticleModuleEventSendToGame>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DoEvent;
     /// <summary>
     /// Function: DoEvent
     /// </summary>
     public unsafe virtual void DoEvent(out System.Numerics.Vector3 InCollideDirection, out System.Numerics.Vector3 InHitLocation, out System.Numerics.Vector3 InHitNormal, out BmSDK.FName InBoneName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ParticleModuleEventSendToGame.DoEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoEvent, "Engine.ParticleModuleEventSendToGame.DoEvent");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         InCollideDirection = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);

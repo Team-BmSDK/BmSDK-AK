@@ -78,23 +78,25 @@ public partial class RHudModuleDetectiveMode : BmSDK.BmGame.RHudModule, BmSDK.IG
         where TComponent : class, Framework.IScriptComponent<RHudModuleDetectiveMode>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_HideScannerDetail;
     /// <summary>
     /// Function: HideScannerDetail
     /// </summary>
     public unsafe virtual void HideScannerDetail()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDetectiveMode.HideScannerDetail", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideScannerDetail, "BmGame.RHudModuleDetectiveMode.HideScannerDetail");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetScannerDetailPrivate;
     /// <summary>
     /// Function: SetScannerDetailPrivate
     /// </summary>
     public unsafe virtual void SetScannerDetailPrivate(BmSDK.FString swfmovie_name, bool bScanned)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDetectiveMode.SetScannerDetailPrivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetScannerDetailPrivate, "BmGame.RHudModuleDetectiveMode.SetScannerDetailPrivate");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(swfmovie_name, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bScanned, paramsPtr + 16);
@@ -102,12 +104,13 @@ public partial class RHudModuleDetectiveMode : BmSDK.BmGame.RHudModule, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_SetScannerDetail;
     /// <summary>
     /// Function: SetScannerDetail
     /// </summary>
     public unsafe virtual void SetScannerDetail(float location_x, float location_y, float location_depth, BmSDK.BmGame.RPhysicalEvidenceBase CSE)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDetectiveMode.SetScannerDetail", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetScannerDetail, "BmGame.RHudModuleDetectiveMode.SetScannerDetail");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(location_x, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(location_y, paramsPtr + 4);
@@ -117,23 +120,25 @@ public partial class RHudModuleDetectiveMode : BmSDK.BmGame.RHudModule, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_HideEvidenceDetail;
     /// <summary>
     /// Function: HideEvidenceDetail
     /// </summary>
     public unsafe virtual void HideEvidenceDetail()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDetectiveMode.HideEvidenceDetail", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideEvidenceDetail, "BmGame.RHudModuleDetectiveMode.HideEvidenceDetail");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetEvidenceDetailPrivate;
     /// <summary>
     /// Function: SetEvidenceDetailPrivate
     /// </summary>
     public unsafe virtual void SetEvidenceDetailPrivate(float location_x, float location_y, float location_depth, BmSDK.FString swfmovie_name, bool bScanned)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDetectiveMode.SetEvidenceDetailPrivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetEvidenceDetailPrivate, "BmGame.RHudModuleDetectiveMode.SetEvidenceDetailPrivate");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(location_x, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(location_y, paramsPtr + 4);
@@ -144,12 +149,13 @@ public partial class RHudModuleDetectiveMode : BmSDK.BmGame.RHudModule, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_SetEvidenceDetail;
     /// <summary>
     /// Function: SetEvidenceDetail
     /// </summary>
     public unsafe virtual void SetEvidenceDetail(float location_x, float location_y, float location_depth, BmSDK.BmGame.RPhysicalEvidenceBase CSE)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDetectiveMode.SetEvidenceDetail", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetEvidenceDetail, "BmGame.RHudModuleDetectiveMode.SetEvidenceDetail");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(location_x, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(location_y, paramsPtr + 4);
@@ -159,35 +165,38 @@ public partial class RHudModuleDetectiveMode : BmSDK.BmGame.RHudModule, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateCachedEvidence;
     /// <summary>
     /// Function: UpdateCachedEvidence
     /// </summary>
     public unsafe virtual void UpdateCachedEvidence(BmSDK.GFxUI.SwfMovie NewEvidence)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDetectiveMode.UpdateCachedEvidence", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateCachedEvidence, "BmGame.RHudModuleDetectiveMode.UpdateCachedEvidence");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewEvidence, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HideInfoText;
     /// <summary>
     /// Function: HideInfoText
     /// </summary>
     public unsafe virtual void HideInfoText()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDetectiveMode.HideInfoText", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideInfoText, "BmGame.RHudModuleDetectiveMode.HideInfoText");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetInfoText;
     /// <summary>
     /// Function: SetInfoText
     /// </summary>
     public unsafe virtual void SetInfoText(float location_x, float location_y, float location_depth, BmSDK.FString Heading, BmSDK.FString Description, bool Warning)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDetectiveMode.SetInfoText", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetInfoText, "BmGame.RHudModuleDetectiveMode.SetInfoText");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(location_x, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(location_y, paramsPtr + 4);
@@ -199,23 +208,25 @@ public partial class RHudModuleDetectiveMode : BmSDK.BmGame.RHudModule, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_HideNPCDetail;
     /// <summary>
     /// Function: HideNPCDetail
     /// </summary>
     public unsafe virtual void HideNPCDetail()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDetectiveMode.HideNPCDetail", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideNPCDetail, "BmGame.RHudModuleDetectiveMode.HideNPCDetail");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetNPCDetail;
     /// <summary>
     /// Function: SetNPCDetail
     /// </summary>
     public unsafe virtual void SetNPCDetail(float location_x, float location_y, float location_depth, int physical_state_enum, int weapon_enum, int extra_info_enum, bool is_armoured, BmSDK.FString optional_name)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDetectiveMode.SetNPCDetail", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetNPCDetail, "BmGame.RHudModuleDetectiveMode.SetNPCDetail");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(location_x, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(location_y, paramsPtr + 4);
@@ -229,35 +240,38 @@ public partial class RHudModuleDetectiveMode : BmSDK.BmGame.RHudModule, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_HideSmokePercentage;
     /// <summary>
     /// Function: HideSmokePercentage
     /// </summary>
     public unsafe virtual void HideSmokePercentage()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDetectiveMode.HideSmokePercentage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideSmokePercentage, "BmGame.RHudModuleDetectiveMode.HideSmokePercentage");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetSmokePercentage;
     /// <summary>
     /// Function: SetSmokePercentage
     /// </summary>
     public unsafe virtual void SetSmokePercentage(int SmokePercentage)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDetectiveMode.SetSmokePercentage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSmokePercentage, "BmGame.RHudModuleDetectiveMode.SetSmokePercentage");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SmokePercentage, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetNPCCountString;
     /// <summary>
     /// Function: SetNPCCountString
     /// </summary>
     public unsafe virtual void SetNPCCountString(int total, BmSDK.FString Str)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDetectiveMode.SetNPCCountString", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetNPCCountString, "BmGame.RHudModuleDetectiveMode.SetNPCCountString");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(total, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Str, paramsPtr + 4);
@@ -265,12 +279,13 @@ public partial class RHudModuleDetectiveMode : BmSDK.BmGame.RHudModule, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateNPCCounts;
     /// <summary>
     /// Function: UpdateNPCCounts
     /// </summary>
     public unsafe virtual void UpdateNPCCounts(int Armed, int UnArmed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDetectiveMode.UpdateNPCCounts", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateNPCCounts, "BmGame.RHudModuleDetectiveMode.UpdateNPCCounts");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Armed, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UnArmed, paramsPtr + 4);
@@ -278,92 +293,100 @@ public partial class RHudModuleDetectiveMode : BmSDK.BmGame.RHudModule, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_CloseCurrentDetail;
     /// <summary>
     /// Function: CloseCurrentDetail
     /// </summary>
     public unsafe virtual void CloseCurrentDetail()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDetectiveMode.CloseCurrentDetail", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CloseCurrentDetail, "BmGame.RHudModuleDetectiveMode.CloseCurrentDetail");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ClearDetailIfMatches;
     /// <summary>
     /// Function: ClearDetailIfMatches
     /// </summary>
     public unsafe virtual void ClearDetailIfMatches(BmSDK.BmGame.RHudModuleDetectiveMode.DetailDisplayType _TestDetailType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDetectiveMode.ClearDetailIfMatches", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearDetailIfMatches, "BmGame.RHudModuleDetectiveMode.ClearDetailIfMatches");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_TestDetailType, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetCurrentDetail;
     /// <summary>
     /// Function: SetCurrentDetail
     /// </summary>
     public unsafe virtual void SetCurrentDetail(BmSDK.BmGame.RHudModuleDetectiveMode.DetailDisplayType _CurrentDetailType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDetectiveMode.SetCurrentDetail", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCurrentDetail, "BmGame.RHudModuleDetectiveMode.SetCurrentDetail");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_CurrentDetailType, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Detective_InfoBoxOpenSound;
     /// <summary>
     /// Function: Detective_InfoBoxOpenSound
     /// </summary>
     public unsafe virtual void Detective_InfoBoxOpenSound()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDetectiveMode.Detective_InfoBoxOpenSound", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Detective_InfoBoxOpenSound, "BmGame.RHudModuleDetectiveMode.Detective_InfoBoxOpenSound");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetVisible;
     /// <summary>
     /// Function: SetVisible
     /// </summary>
     public unsafe override void SetVisible(bool is_visible)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDetectiveMode.SetVisible", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetVisible, "BmGame.RHudModuleDetectiveMode.SetVisible");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(is_visible, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Close;
     /// <summary>
     /// Function: Close
     /// </summary>
     public unsafe override void Close()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDetectiveMode.Close", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Close, "BmGame.RHudModuleDetectiveMode.Close");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InitialiseFlash;
     /// <summary>
     /// Function: InitialiseFlash
     /// </summary>
     public unsafe override void InitialiseFlash()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDetectiveMode.InitialiseFlash", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitialiseFlash, "BmGame.RHudModuleDetectiveMode.InitialiseFlash");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe override bool Init(BmSDK.BmGame.RPlayerController _RPC, BmSDK.FString _ExtensionName, BmSDK.FString _ExtensionPath)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDetectiveMode.Init", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmGame.RHudModuleDetectiveMode.Init");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_RPC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_ExtensionName, paramsPtr + 8);

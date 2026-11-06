@@ -78,36 +78,39 @@ public partial class RRobinStickyBombDLC : BmSDK.BmScript.RRobinStickyBomb, BmSD
         where TComponent : class, Framework.IScriptComponent<RRobinStickyBombDLC>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_TriggerStunnedThugKOedBySnapFlashEvents;
     /// <summary>
     /// Function: TriggerStunnedThugKOedBySnapFlashEvents
     /// </summary>
     public unsafe virtual void TriggerStunnedThugKOedBySnapFlashEvents(BmSDK.BmGame.RPawnVillain Victim)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRobinStickyBombDLC.TriggerStunnedThugKOedBySnapFlashEvents", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerStunnedThugKOedBySnapFlashEvents, "BmScript.RRobinStickyBombDLC.TriggerStunnedThugKOedBySnapFlashEvents");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Victim, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerMedicKOedBySnapFlashEvents;
     /// <summary>
     /// Function: TriggerMedicKOedBySnapFlashEvents
     /// </summary>
     public unsafe virtual void TriggerMedicKOedBySnapFlashEvents(BmSDK.BmGame.RPawnVillain Victim)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRobinStickyBombDLC.TriggerMedicKOedBySnapFlashEvents", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerMedicKOedBySnapFlashEvents, "BmScript.RRobinStickyBombDLC.TriggerMedicKOedBySnapFlashEvents");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Victim, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ExplodeBomb;
     /// <summary>
     /// Function: ExplodeBomb
     /// </summary>
     public unsafe override void ExplodeBomb(BmSDK.Engine.MeshComponent Bomb, BmSDK.BmGame.RPawnVillain bombWasOnDownedEnemy)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRobinStickyBombDLC.ExplodeBomb", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ExplodeBomb, "BmScript.RRobinStickyBombDLC.ExplodeBomb");
         byte* paramsPtr = stackalloc byte[352];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Bomb, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bombWasOnDownedEnemy, paramsPtr + 8);
@@ -115,35 +118,38 @@ public partial class RRobinStickyBombDLC : BmSDK.BmScript.RRobinStickyBomb, BmSD
         return;
     }
 
+    private static BmSDK.Function __fn_DetonateAll;
     /// <summary>
     /// Function: DetonateAll
     /// </summary>
     public unsafe override void DetonateAll()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRobinStickyBombDLC.DetonateAll", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DetonateAll, "BmScript.RRobinStickyBombDLC.DetonateAll");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_VillainWasDestroyedWithStickyBombAttached;
     /// <summary>
     /// Function: VillainWasDestroyedWithStickyBombAttached
     /// </summary>
     public unsafe override void VillainWasDestroyedWithStickyBombAttached(BmSDK.Engine.MeshComponent Bomb)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRobinStickyBombDLC.VillainWasDestroyedWithStickyBombAttached", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_VillainWasDestroyedWithStickyBombAttached, "BmScript.RRobinStickyBombDLC.VillainWasDestroyedWithStickyBombAttached");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Bomb, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetGadgetCamera;
     /// <summary>
     /// Function: GetGadgetCamera
     /// </summary>
     public unsafe override BmSDK.FName GetGadgetCamera(bool InSoftCover = default, BmSDK.BmGame.RInventoryGadget.CoverCornerType CornerType = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRobinStickyBombDLC.GetGadgetCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGadgetCamera, "BmScript.RRobinStickyBombDLC.GetGadgetCamera");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InSoftCover, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CornerType, paramsPtr + 4);
@@ -151,12 +157,13 @@ public partial class RRobinStickyBombDLC : BmSDK.BmScript.RRobinStickyBomb, BmSD
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_IsValidStickyBombTarget;
     /// <summary>
     /// Function: IsValidStickyBombTarget
     /// </summary>
     public unsafe override bool IsValidStickyBombTarget(BmSDK.BmGame.RPawnVillain Villain)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRobinStickyBombDLC.IsValidStickyBombTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsValidStickyBombTarget, "BmScript.RRobinStickyBombDLC.IsValidStickyBombTarget");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Villain, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

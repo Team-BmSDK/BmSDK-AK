@@ -78,12 +78,13 @@ public partial class RB_Spring : BmSDK.Engine.ActorComponent, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RB_Spring>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Clear;
     /// <summary>
     /// Function: Clear
     /// </summary>
     public unsafe virtual void Clear()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RB_Spring.Clear", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Clear, "Engine.RB_Spring.Clear");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class RB_Spring : BmSDK.Engine.ActorComponent, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetComponents;
     /// <summary>
     /// Function: SetComponents
     /// </summary>
     public unsafe virtual void SetComponents(BmSDK.Engine.PrimitiveComponent InComponent1, BmSDK.FName InBoneName1, System.Numerics.Vector3 Position1, BmSDK.Engine.PrimitiveComponent InComponent2, BmSDK.FName InBoneName2, System.Numerics.Vector3 Position2)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RB_Spring.SetComponents", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetComponents, "Engine.RB_Spring.SetComponents");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InComponent1, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InBoneName1, paramsPtr + 8);

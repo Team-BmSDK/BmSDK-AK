@@ -73,12 +73,13 @@ public partial class RCombatEvent : BmSDK.Engine.SequenceEvent, BmSDK.IGameObjec
         where TComponent : class, Framework.IScriptComponent<RCombatEvent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_RegisterEvent;
     /// <summary>
     /// Function: RegisterEvent
     /// </summary>
     public unsafe override void RegisterEvent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatEvent.RegisterEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterEvent, "BmGame.RCombatEvent.RegisterEvent");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

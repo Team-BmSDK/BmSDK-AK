@@ -78,45 +78,49 @@ public partial class RCombatMove_BatmanHit : BmSDK.BmGame.RCombatMove, BmSDK.IGa
         where TComponent : class, Framework.IScriptComponent<RCombatMove_BatmanHit>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ExitMove;
     /// <summary>
     /// Function: ExitMove
     /// </summary>
     public unsafe override void ExitMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_BatmanHit.ExitMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ExitMove, "BmGame.RCombatMove_BatmanHit.ExitMove");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_QueueCounterAttempt;
     /// <summary>
     /// Function: QueueCounterAttempt
     /// </summary>
     public unsafe virtual void QueueCounterAttempt()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_BatmanHit.QueueCounterAttempt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_QueueCounterAttempt, "BmGame.RCombatMove_BatmanHit.QueueCounterAttempt");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanUseGrapple;
     /// <summary>
     /// Function: CanUseGrapple
     /// </summary>
     public unsafe override bool CanUseGrapple()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_BatmanHit.CanUseGrapple", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanUseGrapple, "BmGame.RCombatMove_BatmanHit.CanUseGrapple");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetHitReactionBombExplosion;
     /// <summary>
     /// Function: GetHitReactionBombExplosion
     /// </summary>
     public unsafe virtual void GetHitReactionBombExplosion(out BmSDK.FName AnimName, out System.Numerics.Vector3 AnimHeading, out BmSDK.FName CapeStateOverride)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_BatmanHit.GetHitReactionBombExplosion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHitReactionBombExplosion, "BmGame.RCombatMove_BatmanHit.GetHitReactionBombExplosion");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         AnimName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
@@ -125,12 +129,13 @@ public partial class RCombatMove_BatmanHit : BmSDK.BmGame.RCombatMove, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_GetHitReactionBomb;
     /// <summary>
     /// Function: GetHitReactionBomb
     /// </summary>
     public unsafe virtual void GetHitReactionBomb(out BmSDK.FName AnimName, out System.Numerics.Vector3 AnimHeading, out BmSDK.FName CapeStateOverride)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_BatmanHit.GetHitReactionBomb", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHitReactionBomb, "BmGame.RCombatMove_BatmanHit.GetHitReactionBomb");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         AnimName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
@@ -139,12 +144,13 @@ public partial class RCombatMove_BatmanHit : BmSDK.BmGame.RCombatMove, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_GetHitReactionFromDmgInfo;
     /// <summary>
     /// Function: GetHitReactionFromDmgInfo
     /// </summary>
     public unsafe virtual void GetHitReactionFromDmgInfo(out BmSDK.FName NewAnim, out BmSDK.Engine.AnimSet NewAnimSet, out System.Numerics.Vector3 NewHeading, out BmSDK.FName NewCapeStateOverride)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_BatmanHit.GetHitReactionFromDmgInfo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHitReactionFromDmgInfo, "BmGame.RCombatMove_BatmanHit.GetHitReactionFromDmgInfo");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NewAnim = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
@@ -154,12 +160,13 @@ public partial class RCombatMove_BatmanHit : BmSDK.BmGame.RCombatMove, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_GetHeavyHitReaction;
     /// <summary>
     /// Function: GetHeavyHitReaction
     /// </summary>
     public unsafe virtual void GetHeavyHitReaction(out BmSDK.FName AnimName, out BmSDK.Engine.AnimSet NewAnimSet, out System.Numerics.Vector3 AnimHeading, out BmSDK.FName CapeStateOverride)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_BatmanHit.GetHeavyHitReaction", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHeavyHitReaction, "BmGame.RCombatMove_BatmanHit.GetHeavyHitReaction");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         AnimName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
@@ -169,12 +176,13 @@ public partial class RCombatMove_BatmanHit : BmSDK.BmGame.RCombatMove, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_GetHitReactionBrick;
     /// <summary>
     /// Function: GetHitReactionBrick
     /// </summary>
     public unsafe virtual void GetHitReactionBrick(out BmSDK.FName AnimName, out System.Numerics.Vector3 AnimHeading, out BmSDK.FName CapeStateOverride)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_BatmanHit.GetHitReactionBrick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHitReactionBrick, "BmGame.RCombatMove_BatmanHit.GetHitReactionBrick");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         AnimName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
@@ -183,12 +191,13 @@ public partial class RCombatMove_BatmanHit : BmSDK.BmGame.RCombatMove, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_GetHitReactionJokerfied;
     /// <summary>
     /// Function: GetHitReactionJokerfied
     /// </summary>
     public unsafe virtual void GetHitReactionJokerfied(out BmSDK.FName AnimName, out System.Numerics.Vector3 AnimHeading, out BmSDK.FName CapeStateOverride)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_BatmanHit.GetHitReactionJokerfied", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHitReactionJokerfied, "BmGame.RCombatMove_BatmanHit.GetHitReactionJokerfied");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         AnimName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
@@ -197,12 +206,13 @@ public partial class RCombatMove_BatmanHit : BmSDK.BmGame.RCombatMove, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_GetHitReaction;
     /// <summary>
     /// Function: GetHitReaction
     /// </summary>
     public unsafe virtual void GetHitReaction(out BmSDK.FName AnimName, out System.Numerics.Vector3 AnimHeading, out BmSDK.FName CapeStateOverride)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_BatmanHit.GetHitReaction", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHitReaction, "BmGame.RCombatMove_BatmanHit.GetHitReaction");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         AnimName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
@@ -211,12 +221,13 @@ public partial class RCombatMove_BatmanHit : BmSDK.BmGame.RCombatMove, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_IsPawnVulnerableToPawn;
     /// <summary>
     /// Function: IsPawnVulnerableToPawn
     /// </summary>
     public unsafe override bool IsPawnVulnerableToPawn(BmSDK.BmGame.RPawnCombat Defender, BmSDK.BmGame.RPawnCombat Attacker)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_BatmanHit.IsPawnVulnerableToPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPawnVulnerableToPawn, "BmGame.RCombatMove_BatmanHit.IsPawnVulnerableToPawn");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Defender, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Attacker, paramsPtr + 8);
@@ -224,12 +235,13 @@ public partial class RCombatMove_BatmanHit : BmSDK.BmGame.RCombatMove, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_Initialise;
     /// <summary>
     /// Function: Initialise
     /// </summary>
     public unsafe override void Initialise()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_BatmanHit.Initialise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Initialise, "BmGame.RCombatMove_BatmanHit.Initialise");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

@@ -78,24 +78,26 @@ public partial class RSwingChuteExit : BmSDK.BmGame.RSwingChuteExitBase, BmSDK.I
         where TComponent : class, Framework.IScriptComponent<RSwingChuteExit>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSwingChuteExit.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmScript.RSwingChuteExit.Tick");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayGrateAnim;
     /// <summary>
     /// Function: PlayGrateAnim
     /// </summary>
     public unsafe override void PlayGrateAnim(BmSDK.FName GrateAnim, float Rate = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSwingChuteExit.PlayGrateAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayGrateAnim, "BmScript.RSwingChuteExit.PlayGrateAnim");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GrateAnim, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Rate, paramsPtr + 8);

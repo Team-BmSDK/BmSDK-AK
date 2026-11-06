@@ -78,34 +78,37 @@ public partial class RAttackPointSearch : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RAttackPointSearch>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetThoughtString;
     /// <summary>
     /// Function: GetThoughtString
     /// </summary>
     public unsafe virtual BmSDK.FString GetThoughtString()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAttackPointSearch.GetThoughtString", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetThoughtString, "BmGame.RAttackPointSearch.GetThoughtString");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Release;
     /// <summary>
     /// Function: Release
     /// </summary>
     public unsafe virtual void Release()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAttackPointSearch.Release", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Release, "BmGame.RAttackPointSearch.Release");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartSearch;
     /// <summary>
     /// Function: StartSearch
     /// </summary>
     public unsafe virtual void StartSearch(System.Numerics.Vector3 NewTargetLocation, float NewAttackRadius, BmSDK.FName NewClaimName, BmSDK.BmGame.RAttackPointSearch.StanceVisType NewStanceToCheck, BmSDK.TArray<BmSDK.Engine.Pylon> NewPylonList, float NewSubDivideSizeTarget, bool bNewAutoAdjustToFloor, bool bNewAdjustHeightForHumanTargetSize)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAttackPointSearch.StartSearch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartSearch, "BmGame.RAttackPointSearch.StartSearch");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewTargetLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAttackRadius, paramsPtr + 12);
@@ -119,12 +122,13 @@ public partial class RAttackPointSearch : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ShowDebug;
     /// <summary>
     /// Function: ShowDebug
     /// </summary>
     public unsafe virtual void ShowDebug(bool bPermanent = default, BmSDK.FName DrawIDName = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAttackPointSearch.ShowDebug", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowDebug, "BmGame.RAttackPointSearch.ShowDebug");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bPermanent, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DrawIDName, paramsPtr + 4);
@@ -139,12 +143,13 @@ public partial class RAttackPointSearch : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SearchFinished;
     /// <summary>
     /// Function: SearchFinished
     /// </summary>
     public unsafe virtual bool SearchFinished()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAttackPointSearch.SearchFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SearchFinished, "BmGame.RAttackPointSearch.SearchFinished");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -157,12 +162,13 @@ public partial class RAttackPointSearch : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsAvailable;
     /// <summary>
     /// Function: IsAvailable
     /// </summary>
     public unsafe virtual bool IsAvailable()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAttackPointSearch.IsAvailable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAvailable, "BmGame.RAttackPointSearch.IsAvailable");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -175,12 +181,13 @@ public partial class RAttackPointSearch : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Search;
     /// <summary>
     /// Function: Search
     /// </summary>
     public unsafe virtual void Search(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAttackPointSearch.Search", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Search, "BmGame.RAttackPointSearch.Search");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

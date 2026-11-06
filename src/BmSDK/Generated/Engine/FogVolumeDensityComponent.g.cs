@@ -73,12 +73,13 @@ public partial class FogVolumeDensityComponent : BmSDK.Engine.ActorComponent, Bm
         where TComponent : class, Framework.IScriptComponent<FogVolumeDensityComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetEnabled;
     /// <summary>
     /// Function: SetEnabled
     /// </summary>
     public unsafe virtual void SetEnabled(bool bSetEnabled)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.FogVolumeDensityComponent.SetEnabled", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetEnabled, "Engine.FogVolumeDensityComponent.SetEnabled");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSetEnabled, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

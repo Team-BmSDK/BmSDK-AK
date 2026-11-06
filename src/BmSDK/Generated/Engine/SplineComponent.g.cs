@@ -78,12 +78,13 @@ public partial class SplineComponent : BmSDK.Engine.PrimitiveComponent, BmSDK.IG
         where TComponent : class, Framework.IScriptComponent<SplineComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetTangentAtDistanceAlongSpline;
     /// <summary>
     /// Function: GetTangentAtDistanceAlongSpline
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetTangentAtDistanceAlongSpline(float Distance)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SplineComponent.GetTangentAtDistanceAlongSpline", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTangentAtDistanceAlongSpline, "Engine.SplineComponent.GetTangentAtDistanceAlongSpline");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Distance, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -97,12 +98,13 @@ public partial class SplineComponent : BmSDK.Engine.PrimitiveComponent, BmSDK.IG
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetLocationAtDistanceAlongSpline;
     /// <summary>
     /// Function: GetLocationAtDistanceAlongSpline
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetLocationAtDistanceAlongSpline(float Distance)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SplineComponent.GetLocationAtDistanceAlongSpline", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLocationAtDistanceAlongSpline, "Engine.SplineComponent.GetLocationAtDistanceAlongSpline");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Distance, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -116,12 +118,13 @@ public partial class SplineComponent : BmSDK.Engine.PrimitiveComponent, BmSDK.IG
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetSplineLength;
     /// <summary>
     /// Function: GetSplineLength
     /// </summary>
     public unsafe virtual float GetSplineLength()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SplineComponent.GetSplineLength", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSplineLength, "Engine.SplineComponent.GetSplineLength");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -134,12 +137,13 @@ public partial class SplineComponent : BmSDK.Engine.PrimitiveComponent, BmSDK.IG
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UpdateSplineReparamTable;
     /// <summary>
     /// Function: UpdateSplineReparamTable
     /// </summary>
     public unsafe virtual void UpdateSplineReparamTable()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SplineComponent.UpdateSplineReparamTable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateSplineReparamTable, "Engine.SplineComponent.UpdateSplineReparamTable");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -152,12 +156,13 @@ public partial class SplineComponent : BmSDK.Engine.PrimitiveComponent, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateSplineCurviness;
     /// <summary>
     /// Function: UpdateSplineCurviness
     /// </summary>
     public unsafe virtual void UpdateSplineCurviness()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SplineComponent.UpdateSplineCurviness", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateSplineCurviness, "Engine.SplineComponent.UpdateSplineCurviness");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

@@ -78,12 +78,13 @@ public partial class AnimNotify_Trails : BmSDK.Engine.AnimNotify, BmSDK.IGameObj
         where TComponent : class, Framework.IScriptComponent<AnimNotify_Trails>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetNumSteps;
     /// <summary>
     /// Function: GetNumSteps
     /// </summary>
     public unsafe virtual int GetNumSteps(int InLastTrailIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNotify_Trails.GetNumSteps", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNumSteps, "Engine.AnimNotify_Trails.GetNumSteps");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InLastTrailIndex, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

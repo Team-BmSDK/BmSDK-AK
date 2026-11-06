@@ -73,12 +73,13 @@ public partial class RSeqEvent_TakedownBase : BmSDK.Engine.SequenceEvent, BmSDK.
         where TComponent : class, Framework.IScriptComponent<RSeqEvent_TakedownBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetVictim;
     /// <summary>
     /// Function: SetVictim
     /// </summary>
     public unsafe virtual void SetVictim(int victimNumber, BmSDK.BmGame.RPawnVillain Victim)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqEvent_TakedownBase.SetVictim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetVictim, "BmGame.RSeqEvent_TakedownBase.SetVictim");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(victimNumber, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Victim, paramsPtr + 4);

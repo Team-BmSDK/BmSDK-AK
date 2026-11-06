@@ -78,12 +78,13 @@ public partial class AnimNodeAimOffset : BmSDK.Engine.AnimNodeBlendBase, BmSDK.I
         where TComponent : class, Framework.IScriptComponent<AnimNodeAimOffset>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetActiveProfileByIndex;
     /// <summary>
     /// Function: SetActiveProfileByIndex
     /// </summary>
     public unsafe virtual void SetActiveProfileByIndex(int ProfileIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodeAimOffset.SetActiveProfileByIndex", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetActiveProfileByIndex, "Engine.AnimNodeAimOffset.SetActiveProfileByIndex");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProfileIndex, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -97,12 +98,13 @@ public partial class AnimNodeAimOffset : BmSDK.Engine.AnimNodeBlendBase, BmSDK.I
         return;
     }
 
+    private static BmSDK.Function __fn_SetActiveProfileByName;
     /// <summary>
     /// Function: SetActiveProfileByName
     /// </summary>
     public unsafe virtual void SetActiveProfileByName(BmSDK.FName ProfileName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodeAimOffset.SetActiveProfileByName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetActiveProfileByName, "Engine.AnimNodeAimOffset.SetActiveProfileByName");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProfileName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

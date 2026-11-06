@@ -78,34 +78,37 @@ public partial class MRHBehaviour_StickyConcussionGrenadeHitReaction : BmSDK.BmG
         where TComponent : class, Framework.IScriptComponent<MRHBehaviour_StickyConcussionGrenadeHitReaction>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ExitStickyConcussionGrenadeHitReaction;
     /// <summary>
     /// Function: ExitStickyConcussionGrenadeHitReaction
     /// </summary>
     public unsafe virtual void ExitStickyConcussionGrenadeHitReaction()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MRHBehaviour_StickyConcussionGrenadeHitReaction.ExitStickyConcussionGrenadeHitReaction", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ExitStickyConcussionGrenadeHitReaction, "BmGame.MRHBehaviour_StickyConcussionGrenadeHitReaction.ExitStickyConcussionGrenadeHitReaction");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ResetStunDuration;
     /// <summary>
     /// Function: ResetStunDuration
     /// </summary>
     public unsafe virtual void ResetStunDuration()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MRHBehaviour_StickyConcussionGrenadeHitReaction.ResetStunDuration", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetStunDuration, "BmGame.MRHBehaviour_StickyConcussionGrenadeHitReaction.ResetStunDuration");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Initialise;
     /// <summary>
     /// Function: Initialise
     /// </summary>
     public unsafe override void Initialise(BmSDK.BmGame.RPawnCombat.FDamageInfo NewDmgInfo, bool bNewInterruptedHitReaction = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MRHBehaviour_StickyConcussionGrenadeHitReaction.Initialise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Initialise, "BmGame.MRHBehaviour_StickyConcussionGrenadeHitReaction.Initialise");
         byte* paramsPtr = stackalloc byte[252];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewDmgInfo, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewInterruptedHitReaction, paramsPtr + 248);
@@ -113,12 +116,13 @@ public partial class MRHBehaviour_StickyConcussionGrenadeHitReaction : BmSDK.BmG
         return;
     }
 
+    private static BmSDK.Function __fn_AwareOfPlayer;
     /// <summary>
     /// Function: AwareOfPlayer
     /// </summary>
     public unsafe override bool AwareOfPlayer(BmSDK.Engine.Actor Player, BmSDK.Class dmgType = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MRHBehaviour_StickyConcussionGrenadeHitReaction.AwareOfPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AwareOfPlayer, "BmGame.MRHBehaviour_StickyConcussionGrenadeHitReaction.AwareOfPlayer");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 8);

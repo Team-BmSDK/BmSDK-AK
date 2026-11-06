@@ -78,36 +78,39 @@ public partial class RGangInteractChineseStandGlass : BmSDK.BmGame.RGangInteract
         where TComponent : class, Framework.IScriptComponent<RGangInteractChineseStandGlass>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetFinished;
     /// <summary>
     /// Function: SetFinished
     /// </summary>
     public unsafe override void SetFinished(BmSDK.BmGame.RBMPawnAI P)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGangInteractChineseStandGlass.SetFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetFinished, "BmScript.RGangInteractChineseStandGlass.SetFinished");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetInUse;
     /// <summary>
     /// Function: SetInUse
     /// </summary>
     public unsafe override void SetInUse(BmSDK.BmGame.RBMPawnAI UsagePawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGangInteractChineseStandGlass.SetInUse", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetInUse, "BmScript.RGangInteractChineseStandGlass.SetInUse");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UsagePawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CrackObject;
     /// <summary>
     /// Function: CrackObject
     /// </summary>
     public unsafe override void CrackObject(System.Numerics.Vector3 SmashLocation, System.Numerics.Vector3 SmashNormal, System.Numerics.Vector3 SmashSpeed, bool bCanSmash, bool bForceSmash, BmSDK.Engine.Actor SmashActor = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGangInteractChineseStandGlass.CrackObject", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CrackObject, "BmScript.RGangInteractChineseStandGlass.CrackObject");
         byte* paramsPtr = stackalloc byte[116];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SmashLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SmashNormal, paramsPtr + 12);
@@ -119,12 +122,13 @@ public partial class RGangInteractChineseStandGlass : BmSDK.BmGame.RGangInteract
         return;
     }
 
+    private static BmSDK.Function __fn_GetBehaviourClass;
     /// <summary>
     /// Function: GetBehaviourClass
     /// </summary>
     public unsafe override BmSDK.Class GetBehaviourClass()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGangInteractChineseStandGlass.GetBehaviourClass", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBehaviourClass, "BmScript.RGangInteractChineseStandGlass.GetBehaviourClass");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Class>(paramsPtr + 0);

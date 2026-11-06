@@ -78,23 +78,25 @@ public partial class NavMeshPath_AlongLine : BmSDK.Engine.NavMeshPathConstraint,
         where TComponent : class, Framework.IScriptComponent<NavMeshPath_AlongLine>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Recycle;
     /// <summary>
     /// Function: Recycle
     /// </summary>
     public unsafe override void Recycle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavMeshPath_AlongLine.Recycle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Recycle, "Engine.NavMeshPath_AlongLine.Recycle");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AlongLine;
     /// <summary>
     /// Function: AlongLine
     /// </summary>
     public unsafe static bool AlongLine(BmSDK.Engine.NavigationHandle NavHandle, System.Numerics.Vector3 Dir)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavMeshPath_AlongLine.AlongLine", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AlongLine, "Engine.NavMeshPath_AlongLine.AlongLine");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NavHandle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Dir, paramsPtr + 8);

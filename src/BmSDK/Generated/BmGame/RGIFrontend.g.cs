@@ -78,46 +78,50 @@ public partial class RGIFrontend : BmSDK.BmGame.RGameInfo, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RGIFrontend>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CustomContentIsFiltered;
     /// <summary>
     /// Function: CustomContentIsFiltered
     /// </summary>
     public unsafe override bool CustomContentIsFiltered(BmSDK.FString sFilter)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGIFrontend.CustomContentIsFiltered", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CustomContentIsFiltered, "BmGame.RGIFrontend.CustomContentIsFiltered");
         byte* paramsPtr = stackalloc byte[76];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sFilter, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_DestroyWBIDOverlayManager;
     /// <summary>
     /// Function: DestroyWBIDOverlayManager
     /// </summary>
     public unsafe virtual void DestroyWBIDOverlayManager()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGIFrontend.DestroyWBIDOverlayManager", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DestroyWBIDOverlayManager, "BmGame.RGIFrontend.DestroyWBIDOverlayManager");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CreateWBIDOverlayManager;
     /// <summary>
     /// Function: CreateWBIDOverlayManager
     /// </summary>
     public unsafe virtual void CreateWBIDOverlayManager()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGIFrontend.CreateWBIDOverlayManager", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateWBIDOverlayManager, "BmGame.RGIFrontend.CreateWBIDOverlayManager");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreBeginPlay;
     /// <summary>
     /// Function: PreBeginPlay
     /// </summary>
     public unsafe override void PreBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGIFrontend.PreBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreBeginPlay, "BmGame.RGIFrontend.PreBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

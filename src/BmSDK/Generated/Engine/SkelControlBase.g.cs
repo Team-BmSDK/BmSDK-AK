@@ -73,12 +73,13 @@ public partial class SkelControlBase : BmSDK.Engine.AnimObject, BmSDK.IGameObjec
         where TComponent : class, Framework.IScriptComponent<SkelControlBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetControlMetadataWeight;
     /// <summary>
     /// Function: GetControlMetadataWeight
     /// </summary>
     public unsafe virtual float GetControlMetadataWeight()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkelControlBase.GetControlMetadataWeight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetControlMetadataWeight, "Engine.SkelControlBase.GetControlMetadataWeight");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -91,12 +92,13 @@ public partial class SkelControlBase : BmSDK.Engine.AnimObject, BmSDK.IGameObjec
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_TickSkelControl;
     /// <summary>
     /// Function: TickSkelControl
     /// </summary>
     public unsafe virtual void TickSkelControl(float DeltaTime, BmSDK.Engine.SkeletalMeshComponent SkelComp)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkelControlBase.TickSkelControl", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TickSkelControl, "Engine.SkelControlBase.TickSkelControl");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SkelComp, paramsPtr + 4);
@@ -104,12 +106,13 @@ public partial class SkelControlBase : BmSDK.Engine.AnimObject, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_SetSkelControlStrength;
     /// <summary>
     /// Function: SetSkelControlStrength
     /// </summary>
     public unsafe virtual void SetSkelControlStrength(float NewStrength, float InBlendTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkelControlBase.SetSkelControlStrength", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSkelControlStrength, "Engine.SkelControlBase.SetSkelControlStrength");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewStrength, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InBlendTime, paramsPtr + 4);
@@ -124,12 +127,13 @@ public partial class SkelControlBase : BmSDK.Engine.AnimObject, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_SetSkelControlActive;
     /// <summary>
     /// Function: SetSkelControlActive
     /// </summary>
     public unsafe virtual void SetSkelControlActive(bool bInActive)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkelControlBase.SetSkelControlActive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSkelControlActive, "Engine.SkelControlBase.SetSkelControlActive");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bInActive, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

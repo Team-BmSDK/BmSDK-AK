@@ -78,12 +78,13 @@ public partial class HelpCommandlet : BmSDK.Commandlet, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<HelpCommandlet>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Main;
     /// <summary>
     /// Function: Main
     /// </summary>
     public unsafe override int Main(BmSDK.FString Params)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Core.HelpCommandlet.Main", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Main, "Core.HelpCommandlet.Main");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Params, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

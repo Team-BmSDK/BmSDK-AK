@@ -73,91 +73,99 @@ public partial class RThugMineablePointBase : BmSDK.Engine.Actor, BmSDK.IGameObj
         where TComponent : class, Framework.IScriptComponent<RThugMineablePointBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsReadyForMinePlacement;
     /// <summary>
     /// Function: IsReadyForMinePlacement
     /// </summary>
     public unsafe virtual bool IsReadyForMinePlacement()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RThugMineablePointBase.IsReadyForMinePlacement", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsReadyForMinePlacement, "BmGame.RThugMineablePointBase.IsReadyForMinePlacement");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetStandPoint;
     /// <summary>
     /// Function: GetStandPoint
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetStandPoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RThugMineablePointBase.GetStandPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStandPoint, "BmGame.RThugMineablePointBase.GetStandPoint");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsActive;
     /// <summary>
     /// Function: IsActive
     /// </summary>
     public unsafe virtual bool IsActive()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RThugMineablePointBase.IsActive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsActive, "BmGame.RThugMineablePointBase.IsActive");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetActive;
     /// <summary>
     /// Function: SetActive
     /// </summary>
     public unsafe virtual void SetActive(bool bNewActive)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RThugMineablePointBase.SetActive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetActive, "BmGame.RThugMineablePointBase.SetActive");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewActive, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_MinePlaced;
     /// <summary>
     /// Function: MinePlaced
     /// </summary>
     public unsafe virtual void MinePlaced(BmSDK.BmGame.RThugMineBase NewMine)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RThugMineablePointBase.MinePlaced", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MinePlaced, "BmGame.RThugMineablePointBase.MinePlaced");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewMine, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetClosestActiveLinkedMinePoint;
     /// <summary>
     /// Function: GetClosestActiveLinkedMinePoint
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RThugMineablePointBase GetClosestActiveLinkedMinePoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RThugMineablePointBase.GetClosestActiveLinkedMinePoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetClosestActiveLinkedMinePoint, "BmGame.RThugMineablePointBase.GetClosestActiveLinkedMinePoint");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RThugMineablePointBase>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetAssignedMiner;
     /// <summary>
     /// Function: GetAssignedMiner
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RAEC_Search_Sub_FloorMine GetAssignedMiner()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RThugMineablePointBase.GetAssignedMiner", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAssignedMiner, "BmGame.RThugMineablePointBase.GetAssignedMiner");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RAEC_Search_Sub_FloorMine>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_AssignMiner;
     /// <summary>
     /// Function: AssignMiner
     /// </summary>
     public unsafe virtual void AssignMiner(BmSDK.BmGame.RAEC_Search_Sub_FloorMine assignee)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RThugMineablePointBase.AssignMiner", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AssignMiner, "BmGame.RThugMineablePointBase.AssignMiner");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(assignee, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

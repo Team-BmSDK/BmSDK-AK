@@ -78,69 +78,75 @@ public partial class RSeqAct_FilmPredatorJokers : BmSDK.Engine.SeqAct_Latent, Bm
         where TComponent : class, Framework.IScriptComponent<RSeqAct_FilmPredatorJokers>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_FilmPredatorJokers.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmScript.RSeqAct_FilmPredatorJokers.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Update;
     /// <summary>
     /// Function: Update
     /// </summary>
     public unsafe override bool Update(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_FilmPredatorJokers.Update", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Update, "BmScript.RSeqAct_FilmPredatorJokers.Update");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_JokerHallucinationsAllowed;
     /// <summary>
     /// Function: JokerHallucinationsAllowed
     /// </summary>
     public unsafe virtual bool JokerHallucinationsAllowed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_FilmPredatorJokers.JokerHallucinationsAllowed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_JokerHallucinationsAllowed, "BmScript.RSeqAct_FilmPredatorJokers.JokerHallucinationsAllowed");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_FindSpawnPoint;
     /// <summary>
     /// Function: FindSpawnPoint
     /// </summary>
     public unsafe virtual BmSDK.BmScript.RJokerRooftopPoint FindSpawnPoint(bool bHightLightSpheres = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_FilmPredatorJokers.FindSpawnPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindSpawnPoint, "BmScript.RSeqAct_FilmPredatorJokers.FindSpawnPoint");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bHightLightSpheres, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmScript.RJokerRooftopPoint>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_SpawnRooftopJoker;
     /// <summary>
     /// Function: SpawnRooftopJoker
     /// </summary>
     public unsafe virtual void SpawnRooftopJoker()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_FilmPredatorJokers.SpawnRooftopJoker", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnRooftopJoker, "BmScript.RSeqAct_FilmPredatorJokers.SpawnRooftopJoker");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_JokerInView;
     /// <summary>
     /// Function: JokerInView
     /// </summary>
     public unsafe virtual bool JokerInView()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_FilmPredatorJokers.JokerInView", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_JokerInView, "BmScript.RSeqAct_FilmPredatorJokers.JokerInView");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

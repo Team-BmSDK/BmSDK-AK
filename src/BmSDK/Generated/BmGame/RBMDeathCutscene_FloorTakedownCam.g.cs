@@ -78,115 +78,125 @@ public partial class RBMDeathCutscene_FloorTakedownCam : BmSDK.BmGame.RBMDeathCu
         where TComponent : class, Framework.IScriptComponent<RBMDeathCutscene_FloorTakedownCam>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnDeactivate;
     /// <summary>
     /// Function: OnDeactivate
     /// </summary>
     public unsafe override void OnDeactivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMDeathCutscene_FloorTakedownCam.OnDeactivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeactivate, "BmGame.RBMDeathCutscene_FloorTakedownCam.OnDeactivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMDeathCutscene_FloorTakedownCam.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RBMDeathCutscene_FloorTakedownCam.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetSlowMoOff;
     /// <summary>
     /// Function: SetSlowMoOff
     /// </summary>
     public unsafe virtual void SetSlowMoOff()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMDeathCutscene_FloorTakedownCam.SetSlowMoOff", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSlowMoOff, "BmGame.RBMDeathCutscene_FloorTakedownCam.SetSlowMoOff");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetSlowMoSpeed;
     /// <summary>
     /// Function: SetSlowMoSpeed
     /// </summary>
     public unsafe virtual void SetSlowMoSpeed(float Speed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMDeathCutscene_FloorTakedownCam.SetSlowMoSpeed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSlowMoSpeed, "BmGame.RBMDeathCutscene_FloorTakedownCam.SetSlowMoSpeed");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speed, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StrikeImpact;
     /// <summary>
     /// Function: StrikeImpact
     /// </summary>
     public unsafe override void StrikeImpact(bool bFinalImpact = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMDeathCutscene_FloorTakedownCam.StrikeImpact", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StrikeImpact, "BmGame.RBMDeathCutscene_FloorTakedownCam.StrikeImpact");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bFinalImpact, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanSkip;
     /// <summary>
     /// Function: CanSkip
     /// </summary>
     public unsafe override bool CanSkip()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMDeathCutscene_FloorTakedownCam.CanSkip", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanSkip, "BmGame.RBMDeathCutscene_FloorTakedownCam.CanSkip");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ResetViewTarget;
     /// <summary>
     /// Function: ResetViewTarget
     /// </summary>
     public unsafe override void ResetViewTarget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMDeathCutscene_FloorTakedownCam.ResetViewTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetViewTarget, "BmGame.RBMDeathCutscene_FloorTakedownCam.ResetViewTarget");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DoLastResortCam;
     /// <summary>
     /// Function: DoLastResortCam
     /// </summary>
     public unsafe virtual void DoLastResortCam(System.Numerics.Vector3 TargetOffset)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMDeathCutscene_FloorTakedownCam.DoLastResortCam", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoLastResortCam, "BmGame.RBMDeathCutscene_FloorTakedownCam.DoLastResortCam");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetOffset, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetFirstPos;
     /// <summary>
     /// Function: SetFirstPos
     /// </summary>
     public unsafe virtual void SetFirstPos()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMDeathCutscene_FloorTakedownCam.SetFirstPos", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetFirstPos, "BmGame.RBMDeathCutscene_FloorTakedownCam.SetFirstPos");
         byte* paramsPtr = stackalloc byte[116];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override bool OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMDeathCutscene_FloorTakedownCam.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMDeathCutscene_FloorTakedownCam.OnActivate");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

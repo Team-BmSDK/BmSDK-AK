@@ -78,36 +78,39 @@ public partial class RHelicopterPathNode : BmSDK.Engine.PathNode, BmSDK.IGameObj
         where TComponent : class, Framework.IScriptComponent<RHelicopterPathNode>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UnlinkToActor;
     /// <summary>
     /// Function: UnlinkToActor
     /// </summary>
     public unsafe override bool UnlinkToActor(BmSDK.Engine.Actor LinkTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHelicopterPathNode.UnlinkToActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnlinkToActor, "BmGame.RHelicopterPathNode.UnlinkToActor");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkTarget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_LinkToActor;
     /// <summary>
     /// Function: LinkToActor
     /// </summary>
     public unsafe override bool LinkToActor(BmSDK.Engine.Actor LinkTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHelicopterPathNode.LinkToActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LinkToActor, "BmGame.RHelicopterPathNode.LinkToActor");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkTarget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_UnLinkPath;
     /// <summary>
     /// Function: UnLinkPath
     /// </summary>
     public unsafe virtual void UnLinkPath(BmSDK.BmGame.RHelicopterPathNode Target)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHelicopterPathNode.UnLinkPath", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnLinkPath, "BmGame.RHelicopterPathNode.UnLinkPath");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -121,12 +124,13 @@ public partial class RHelicopterPathNode : BmSDK.Engine.PathNode, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_LinkPath;
     /// <summary>
     /// Function: LinkPath
     /// </summary>
     public unsafe virtual void LinkPath(BmSDK.BmGame.RHelicopterPathNode Target)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHelicopterPathNode.LinkPath", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LinkPath, "BmGame.RHelicopterPathNode.LinkPath");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

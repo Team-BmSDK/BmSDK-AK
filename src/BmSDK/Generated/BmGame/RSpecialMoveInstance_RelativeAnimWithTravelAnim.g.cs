@@ -78,23 +78,25 @@ public partial class RSpecialMoveInstance_RelativeAnimWithTravelAnim : BmSDK.BmG
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveInstance_RelativeAnimWithTravelAnim>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_FinalAnimStarted;
     /// <summary>
     /// Function: FinalAnimStarted
     /// </summary>
     public unsafe override void FinalAnimStarted()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_RelativeAnimWithTravelAnim.FinalAnimStarted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinalAnimStarted, "BmGame.RSpecialMoveInstance_RelativeAnimWithTravelAnim.FinalAnimStarted");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PickRandomAnim;
     /// <summary>
     /// Function: PickRandomAnim
     /// </summary>
     public unsafe override void PickRandomAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_RelativeAnimWithTravelAnim.PickRandomAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PickRandomAnim, "BmGame.RSpecialMoveInstance_RelativeAnimWithTravelAnim.PickRandomAnim");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

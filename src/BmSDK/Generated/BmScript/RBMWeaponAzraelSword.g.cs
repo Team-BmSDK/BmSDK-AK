@@ -78,35 +78,38 @@ public partial class RBMWeaponAzraelSword : BmSDK.BmGame.RBMWeapon, BmSDK.IGameO
         where TComponent : class, Framework.IScriptComponent<RBMWeaponAzraelSword>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CreateWeaponConfig;
     /// <summary>
     /// Function: CreateWeaponConfig
     /// </summary>
     public unsafe override BmSDK.BmGame.RWeaponConfig CreateWeaponConfig(BmSDK.GameObject NewOwner)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponAzraelSword.CreateWeaponConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateWeaponConfig, "BmScript.RBMWeaponAzraelSword.CreateWeaponConfig");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewOwner, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RWeaponConfig>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_ItemRemovedFromInvManager;
     /// <summary>
     /// Function: ItemRemovedFromInvManager
     /// </summary>
     public unsafe override void ItemRemovedFromInvManager()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponAzraelSword.ItemRemovedFromInvManager", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ItemRemovedFromInvManager, "BmScript.RBMWeaponAzraelSword.ItemRemovedFromInvManager");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GivenTo;
     /// <summary>
     /// Function: GivenTo
     /// </summary>
     public unsafe override void GivenTo(BmSDK.Engine.Pawn thisPawn, bool bDoNotActivate = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponAzraelSword.GivenTo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GivenTo, "BmScript.RBMWeaponAzraelSword.GivenTo");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(thisPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDoNotActivate, paramsPtr + 8);
@@ -114,12 +117,13 @@ public partial class RBMWeaponAzraelSword : BmSDK.BmGame.RBMWeapon, BmSDK.IGameO
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponAzraelSword.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmScript.RBMWeaponAzraelSword.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

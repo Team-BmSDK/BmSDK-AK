@@ -78,36 +78,39 @@ public partial class RHarpoonProjectile : BmSDK.BmGame.RProjectileWithRope, BmSD
         where TComponent : class, Framework.IScriptComponent<RHarpoonProjectile>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_HitFearGas;
     /// <summary>
     /// Function: HitFearGas
     /// </summary>
     public unsafe override void HitFearGas(System.Numerics.Vector3 vHitLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonProjectile.HitFearGas", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitFearGas, "BmGame.RHarpoonProjectile.HitFearGas");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(vHitLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HitOcean;
     /// <summary>
     /// Function: HitOcean
     /// </summary>
     public unsafe override void HitOcean(System.Numerics.Vector3 vHitLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonProjectile.HitOcean", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitOcean, "BmGame.RHarpoonProjectile.HitOcean");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(vHitLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HitWall;
     /// <summary>
     /// Function: HitWall
     /// </summary>
     public unsafe override void HitWall(System.Numerics.Vector3 HitNormal, BmSDK.Engine.Actor Other, BmSDK.Engine.PrimitiveComponent WallComp)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonProjectile.HitWall", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitWall, "BmGame.RHarpoonProjectile.HitWall");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 12);
@@ -116,12 +119,13 @@ public partial class RHarpoonProjectile : BmSDK.BmGame.RProjectileWithRope, BmSD
         return;
     }
 
+    private static BmSDK.Function __fn_BumpLevel;
     /// <summary>
     /// Function: BumpLevel
     /// </summary>
     public unsafe virtual void BumpLevel(System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonProjectile.BumpLevel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BumpLevel, "BmGame.RHarpoonProjectile.BumpLevel");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 12);
@@ -129,12 +133,13 @@ public partial class RHarpoonProjectile : BmSDK.BmGame.RProjectileWithRope, BmSD
         return;
     }
 
+    private static BmSDK.Function __fn_ApplyFluidSurfaceImpact;
     /// <summary>
     /// Function: ApplyFluidSurfaceImpact
     /// </summary>
     public unsafe override void ApplyFluidSurfaceImpact(BmSDK.Engine.FluidSurfaceActor Fluid, System.Numerics.Vector3 HitLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonProjectile.ApplyFluidSurfaceImpact", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyFluidSurfaceImpact, "BmGame.RHarpoonProjectile.ApplyFluidSurfaceImpact");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Fluid, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 8);
@@ -142,12 +147,13 @@ public partial class RHarpoonProjectile : BmSDK.BmGame.RProjectileWithRope, BmSD
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnHitEffects;
     /// <summary>
     /// Function: SpawnHitEffects
     /// </summary>
     public unsafe virtual bool SpawnHitEffects(System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitVelocity, BmSDK.Engine.RPhysicalMaterialProperty.EPhysMaterialImpactTypes ImpactType, BmSDK.Engine.Interface_AudioImpact audioImpact, bool bPlaySound = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonProjectile.SpawnHitEffects", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnHitEffects, "BmGame.RHarpoonProjectile.SpawnHitEffects");
         byte* paramsPtr = stackalloc byte[176];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitVelocity, paramsPtr + 12);
@@ -158,104 +164,113 @@ public partial class RHarpoonProjectile : BmSDK.BmGame.RProjectileWithRope, BmSD
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 48);
     }
 
+    private static BmSDK.Function __fn_GetImpactMaterial;
     /// <summary>
     /// Function: GetImpactMaterial
     /// </summary>
     public unsafe virtual BmSDK.Engine.RPhysicalMaterialProperty GetImpactMaterial(BmSDK.Engine.Actor.FImpactInfo Impact)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonProjectile.GetImpactMaterial", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetImpactMaterial, "BmGame.RHarpoonProjectile.GetImpactMaterial");
         byte* paramsPtr = stackalloc byte[104];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Impact, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.RPhysicalMaterialProperty>(paramsPtr + 96);
     }
 
+    private static BmSDK.Function __fn_BaseChange;
     /// <summary>
     /// Function: BaseChange
     /// </summary>
     public unsafe override void BaseChange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonProjectile.BaseChange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BaseChange, "BmGame.RHarpoonProjectile.BaseChange");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Hide;
     /// <summary>
     /// Function: Hide
     /// </summary>
     public unsafe override void Hide(bool NewHidden)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonProjectile.Hide", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Hide, "BmGame.RHarpoonProjectile.Hide");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewHidden, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayClawAnim;
     /// <summary>
     /// Function: PlayClawAnim
     /// </summary>
     public unsafe virtual void PlayClawAnim(BmSDK.FName GadgetAnim)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonProjectile.PlayClawAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayClawAnim, "BmGame.RHarpoonProjectile.PlayClawAnim");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GadgetAnim, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnRicochetFX;
     /// <summary>
     /// Function: SpawnRicochetFX
     /// </summary>
     public unsafe virtual void SpawnRicochetFX()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonProjectile.SpawnRicochetFX", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnRicochetFX, "BmGame.RHarpoonProjectile.SpawnRicochetFX");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerNoiseEvent;
     /// <summary>
     /// Function: TriggerNoiseEvent
     /// </summary>
     public unsafe virtual void TriggerNoiseEvent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonProjectile.TriggerNoiseEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerNoiseEvent, "BmGame.RHarpoonProjectile.TriggerNoiseEvent");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Fire;
     /// <summary>
     /// Function: Fire
     /// </summary>
     public unsafe override void Fire(System.Numerics.Vector3 To)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonProjectile.Fire", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Fire, "BmGame.RHarpoonProjectile.Fire");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(To, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ReachedDest;
     /// <summary>
     /// Function: ReachedDest
     /// </summary>
     public unsafe override void ReachedDest()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonProjectile.ReachedDest", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReachedDest, "BmGame.RHarpoonProjectile.ReachedDest");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonProjectile.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RHarpoonProjectile.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

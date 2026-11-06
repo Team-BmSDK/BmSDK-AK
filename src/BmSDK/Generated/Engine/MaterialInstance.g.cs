@@ -73,12 +73,13 @@ public partial class MaterialInstance : BmSDK.Engine.MaterialInterface, BmSDK.IG
         where TComponent : class, Framework.IScriptComponent<MaterialInstance>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsInMapOrTransientPackage;
     /// <summary>
     /// Function: IsInMapOrTransientPackage
     /// </summary>
     public unsafe virtual bool IsInMapOrTransientPackage()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.MaterialInstance.IsInMapOrTransientPackage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInMapOrTransientPackage, "Engine.MaterialInstance.IsInMapOrTransientPackage");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -91,12 +92,13 @@ public partial class MaterialInstance : BmSDK.Engine.MaterialInterface, BmSDK.IG
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ClearParameterValues;
     /// <summary>
     /// Function: ClearParameterValues
     /// </summary>
     public unsafe virtual void ClearParameterValues()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.MaterialInstance.ClearParameterValues", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearParameterValues, "Engine.MaterialInstance.ClearParameterValues");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -109,12 +111,13 @@ public partial class MaterialInstance : BmSDK.Engine.MaterialInterface, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_SetFontParameterValue;
     /// <summary>
     /// Function: SetFontParameterValue
     /// </summary>
     public unsafe virtual void SetFontParameterValue(BmSDK.FName ParameterName, BmSDK.Engine.Font FontValue, int FontPage)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.MaterialInstance.SetFontParameterValue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetFontParameterValue, "Engine.MaterialInstance.SetFontParameterValue");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FontValue, paramsPtr + 8);
@@ -130,12 +133,13 @@ public partial class MaterialInstance : BmSDK.Engine.MaterialInterface, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_GetTextureParameterValue;
     /// <summary>
     /// Function: GetTextureParameterValue
     /// </summary>
     public unsafe override bool GetTextureParameterValue(BmSDK.FName ParameterName, out BmSDK.Engine.Texture Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.MaterialInstance.GetTextureParameterValue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTextureParameterValue, "Engine.MaterialInstance.GetTextureParameterValue");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -150,12 +154,13 @@ public partial class MaterialInstance : BmSDK.Engine.MaterialInterface, BmSDK.IG
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_SetTextureParameterValue;
     /// <summary>
     /// Function: SetTextureParameterValue
     /// </summary>
     public unsafe virtual void SetTextureParameterValue(BmSDK.FName ParameterName, BmSDK.Engine.Texture Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.MaterialInstance.SetTextureParameterValue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetTextureParameterValue, "Engine.MaterialInstance.SetTextureParameterValue");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 8);
@@ -170,12 +175,13 @@ public partial class MaterialInstance : BmSDK.Engine.MaterialInterface, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_SetScalarCurveParameterValue;
     /// <summary>
     /// Function: SetScalarCurveParameterValue
     /// </summary>
     public unsafe virtual void SetScalarCurveParameterValue(BmSDK.FName ParameterName, out BmSDK.GameObject.FInterpCurveFloat Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.MaterialInstance.SetScalarCurveParameterValue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetScalarCurveParameterValue, "Engine.MaterialInstance.SetScalarCurveParameterValue");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -190,12 +196,13 @@ public partial class MaterialInstance : BmSDK.Engine.MaterialInterface, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_SetScalarParameterValue;
     /// <summary>
     /// Function: SetScalarParameterValue
     /// </summary>
     public unsafe virtual void SetScalarParameterValue(BmSDK.FName ParameterName, float Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.MaterialInstance.SetScalarParameterValue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetScalarParameterValue, "Engine.MaterialInstance.SetScalarParameterValue");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 8);
@@ -210,12 +217,13 @@ public partial class MaterialInstance : BmSDK.Engine.MaterialInterface, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_SetVectorParameterValue;
     /// <summary>
     /// Function: SetVectorParameterValue
     /// </summary>
     public unsafe virtual void SetVectorParameterValue(BmSDK.FName ParameterName, out BmSDK.GameObject.FLinearColor Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.MaterialInstance.SetVectorParameterValue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetVectorParameterValue, "Engine.MaterialInstance.SetVectorParameterValue");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParameterName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -230,12 +238,13 @@ public partial class MaterialInstance : BmSDK.Engine.MaterialInterface, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_SetParent;
     /// <summary>
     /// Function: SetParent
     /// </summary>
     public unsafe virtual void SetParent(BmSDK.Engine.MaterialInterface NewParent)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.MaterialInstance.SetParent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetParent, "Engine.MaterialInstance.SetParent");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewParent, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

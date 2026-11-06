@@ -78,36 +78,39 @@ public partial class RSeqAct_ModifyPostProcess : BmSDK.Engine.SeqAct_Latent, BmS
         where TComponent : class, Framework.IScriptComponent<RSeqAct_ModifyPostProcess>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DeactivatePP;
     /// <summary>
     /// Function: DeactivatePP
     /// </summary>
     public unsafe virtual void DeactivatePP(BmSDK.Engine.LocalPlayer Player)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_ModifyPostProcess.DeactivatePP", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DeactivatePP, "BmGame.RSeqAct_ModifyPostProcess.DeactivatePP");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdatePP;
     /// <summary>
     /// Function: UpdatePP
     /// </summary>
     public unsafe virtual void UpdatePP(BmSDK.Engine.LocalPlayer Player)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_ModifyPostProcess.UpdatePP", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdatePP, "BmGame.RSeqAct_ModifyPostProcess.UpdatePP");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ActivatePP;
     /// <summary>
     /// Function: ActivatePP
     /// </summary>
     public unsafe virtual void ActivatePP(BmSDK.Engine.LocalPlayer Player)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_ModifyPostProcess.ActivatePP", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActivatePP, "BmGame.RSeqAct_ModifyPostProcess.ActivatePP");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

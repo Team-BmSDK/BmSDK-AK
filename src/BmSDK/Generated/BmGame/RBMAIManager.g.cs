@@ -78,23 +78,25 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RBMAIManager>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnDifficultyChanged;
     /// <summary>
     /// Function: OnDifficultyChanged
     /// </summary>
     public unsafe virtual void OnDifficultyChanged()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.OnDifficultyChanged", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDifficultyChanged, "BmGame.RBMAIManager.OnDifficultyChanged");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnPlayerUnZoom;
     /// <summary>
     /// Function: OnPlayerUnZoom
     /// </summary>
     public unsafe virtual void OnPlayerUnZoom()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.OnPlayerUnZoom", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnPlayerUnZoom, "BmGame.RBMAIManager.OnPlayerUnZoom");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -107,83 +109,90 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_OnPlayerZoom;
     /// <summary>
     /// Function: OnPlayerZoom
     /// </summary>
     public unsafe virtual void OnPlayerZoom()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.OnPlayerZoom", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnPlayerZoom, "BmGame.RBMAIManager.OnPlayerZoom");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShouldDisableDivingForPawn;
     /// <summary>
     /// Function: ShouldDisableDivingForPawn
     /// </summary>
     public unsafe virtual bool ShouldDisableDivingForPawn(BmSDK.BmGame.RBMPawnAI TestPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.ShouldDisableDivingForPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldDisableDivingForPawn, "BmGame.RBMAIManager.ShouldDisableDivingForPawn");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_UpdateShouldLoadPredVolBarks_Gang;
     /// <summary>
     /// Function: UpdateShouldLoadPredVolBarks_Gang
     /// </summary>
     public unsafe virtual void UpdateShouldLoadPredVolBarks_Gang(bool bNewVal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.UpdateShouldLoadPredVolBarks_Gang", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateShouldLoadPredVolBarks_Gang, "BmGame.RBMAIManager.UpdateShouldLoadPredVolBarks_Gang");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewVal, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateShouldLoadPredVolBarks_Militia;
     /// <summary>
     /// Function: UpdateShouldLoadPredVolBarks_Militia
     /// </summary>
     public unsafe virtual void UpdateShouldLoadPredVolBarks_Militia(bool bNewVal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.UpdateShouldLoadPredVolBarks_Militia", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateShouldLoadPredVolBarks_Militia, "BmGame.RBMAIManager.UpdateShouldLoadPredVolBarks_Militia");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewVal, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateBarks_RemovePlayer;
     /// <summary>
     /// Function: UpdateBarks_RemovePlayer
     /// </summary>
     public unsafe virtual void UpdateBarks_RemovePlayer(BmSDK.BmGame.RPawnPlayerCombat ExPlayer)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.UpdateBarks_RemovePlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateBarks_RemovePlayer, "BmGame.RBMAIManager.UpdateBarks_RemovePlayer");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExPlayer, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateBarks_AddPlayer;
     /// <summary>
     /// Function: UpdateBarks_AddPlayer
     /// </summary>
     public unsafe virtual void UpdateBarks_AddPlayer(BmSDK.BmGame.RPawnPlayerCombat NewPlayer)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.UpdateBarks_AddPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateBarks_AddPlayer, "BmGame.RBMAIManager.UpdateBarks_AddPlayer");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPlayer, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FilterValList;
     /// <summary>
     /// Function: FilterValList
     /// </summary>
     public unsafe virtual void FilterValList(BmSDK.TArray<BmSDK.BmGame.RBarkPillarLookup.FFlagValAndFileName> InList, BmSDK.BmGame.RBarkValDef.FlagTypeEnum TestType, out BmSDK.TArray<BmSDK.FString> OutList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.FilterValList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FilterValList, "BmGame.RBMAIManager.FilterValList");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InList, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestType, paramsPtr + 16);
@@ -199,12 +208,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GenerateCurrentSuffixList;
     /// <summary>
     /// Function: GenerateCurrentSuffixList
     /// </summary>
     public unsafe virtual void GenerateCurrentSuffixList(out BmSDK.TArray<BmSDK.FString> SuffixList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.GenerateCurrentSuffixList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GenerateCurrentSuffixList, "BmGame.RBMAIManager.GenerateCurrentSuffixList");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -218,35 +228,38 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_RefreshBarkData;
     /// <summary>
     /// Function: RefreshBarkData
     /// </summary>
     public unsafe virtual void RefreshBarkData()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.RefreshBarkData", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RefreshBarkData, "BmGame.RBMAIManager.RefreshBarkData");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UnregisterBarkCharDef;
     /// <summary>
     /// Function: UnregisterBarkCharDef
     /// </summary>
     public unsafe virtual void UnregisterBarkCharDef(BmSDK.BmGame.RBarkCharacterDefInstance OldDef)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.UnregisterBarkCharDef", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnregisterBarkCharDef, "BmGame.RBMAIManager.UnregisterBarkCharDef");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OldDef, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ValidateChaptersOnBarks;
     /// <summary>
     /// Function: ValidateChaptersOnBarks
     /// </summary>
     public unsafe virtual void ValidateChaptersOnBarks(BmSDK.BmGame.RBarkSet TestSet)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.ValidateChaptersOnBarks", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ValidateChaptersOnBarks, "BmGame.RBMAIManager.ValidateChaptersOnBarks");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestSet, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -260,71 +273,77 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ApplyPlayerNameHackForMultiStageEnemyType;
     /// <summary>
     /// Function: ApplyPlayerNameHackForMultiStageEnemyType
     /// </summary>
     public unsafe virtual void ApplyPlayerNameHackForMultiStageEnemyType(BmSDK.BmGame.RBarkSet LoadedSetToHack)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.ApplyPlayerNameHackForMultiStageEnemyType", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyPlayerNameHackForMultiStageEnemyType, "BmGame.RBMAIManager.ApplyPlayerNameHackForMultiStageEnemyType");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LoadedSetToHack, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AsyncLoadDone;
     /// <summary>
     /// Function: AsyncLoadDone
     /// </summary>
     public unsafe override void AsyncLoadDone(BmSDK.FString ObjectFinished)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.AsyncLoadDone", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AsyncLoadDone, "BmGame.RBMAIManager.AsyncLoadDone");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ObjectFinished, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartBarkLoadingRequests;
     /// <summary>
     /// Function: StartBarkLoadingRequests
     /// </summary>
     public unsafe virtual void StartBarkLoadingRequests(BmSDK.BmGame.RBarkCharacterDefInstance NewDef)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.StartBarkLoadingRequests", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartBarkLoadingRequests, "BmGame.RBMAIManager.StartBarkLoadingRequests");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewDef, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RegisterBarkCharDef;
     /// <summary>
     /// Function: RegisterBarkCharDef
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RBarkCharacterDefInstance RegisterBarkCharDef(BmSDK.BmGame.RBarkCharacterDef NewDef)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.RegisterBarkCharDef", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterBarkCharDef, "BmGame.RBMAIManager.RegisterBarkCharDef");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewDef, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBarkCharacterDefInstance>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_TrackPawnAIList;
     /// <summary>
     /// Function: TrackPawnAIList
     /// </summary>
     public unsafe virtual void TrackPawnAIList()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.TrackPawnAIList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TrackPawnAIList, "BmGame.RBMAIManager.TrackPawnAIList");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateRebuildSpecialEdgeActorList;
     /// <summary>
     /// Function: UpdateRebuildSpecialEdgeActorList
     /// </summary>
     public unsafe virtual void UpdateRebuildSpecialEdgeActorList()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.UpdateRebuildSpecialEdgeActorList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateRebuildSpecialEdgeActorList, "BmGame.RBMAIManager.UpdateRebuildSpecialEdgeActorList");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -337,48 +356,52 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_RegisterRebuildSpecialEdgeActor;
     /// <summary>
     /// Function: RegisterRebuildSpecialEdgeActor
     /// </summary>
     public unsafe virtual void RegisterRebuildSpecialEdgeActor(BmSDK.Engine.Actor NewActor)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.RegisterRebuildSpecialEdgeActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterRebuildSpecialEdgeActor, "BmGame.RBMAIManager.RegisterRebuildSpecialEdgeActor");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewActor, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TeleportStasisPawn;
     /// <summary>
     /// Function: TeleportStasisPawn
     /// </summary>
     public unsafe virtual void TeleportStasisPawn(BmSDK.BmGame.RBMPawnAI PawnAI)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.TeleportStasisPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TeleportStasisPawn, "BmGame.RBMAIManager.TeleportStasisPawn");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PawnAI, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RemovePawnToTeleportInStasis;
     /// <summary>
     /// Function: RemovePawnToTeleportInStasis
     /// </summary>
     public unsafe virtual void RemovePawnToTeleportInStasis(BmSDK.BmGame.RBMPawnAI PawnAI)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.RemovePawnToTeleportInStasis", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemovePawnToTeleportInStasis, "BmGame.RBMAIManager.RemovePawnToTeleportInStasis");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PawnAI, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddPawnToTeleportInStasis;
     /// <summary>
     /// Function: AddPawnToTeleportInStasis
     /// </summary>
     public unsafe virtual void AddPawnToTeleportInStasis(BmSDK.BmGame.RBMPawnAI PawnAI, float TimeUntilTeleport)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.AddPawnToTeleportInStasis", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddPawnToTeleportInStasis, "BmGame.RBMAIManager.AddPawnToTeleportInStasis");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PawnAI, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TimeUntilTeleport, paramsPtr + 8);
@@ -386,35 +409,38 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_DestroyAllPawnsThatWouldDestroyInStasis;
     /// <summary>
     /// Function: DestroyAllPawnsThatWouldDestroyInStasis
     /// </summary>
     public unsafe virtual void DestroyAllPawnsThatWouldDestroyInStasis()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.DestroyAllPawnsThatWouldDestroyInStasis", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DestroyAllPawnsThatWouldDestroyInStasis, "BmGame.RBMAIManager.DestroyAllPawnsThatWouldDestroyInStasis");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RemovePawnToDestroyInStasis;
     /// <summary>
     /// Function: RemovePawnToDestroyInStasis
     /// </summary>
     public unsafe virtual void RemovePawnToDestroyInStasis(BmSDK.BmGame.RBMPawnAI PawnAI)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.RemovePawnToDestroyInStasis", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemovePawnToDestroyInStasis, "BmGame.RBMAIManager.RemovePawnToDestroyInStasis");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PawnAI, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddPawnToDestroyInStasis;
     /// <summary>
     /// Function: AddPawnToDestroyInStasis
     /// </summary>
     public unsafe virtual void AddPawnToDestroyInStasis(BmSDK.BmGame.RBMPawnAI PawnAI, float TimeUntilDestroy)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.AddPawnToDestroyInStasis", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddPawnToDestroyInStasis, "BmGame.RBMAIManager.AddPawnToDestroyInStasis");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PawnAI, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TimeUntilDestroy, paramsPtr + 8);
@@ -422,47 +448,51 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateJokerInCombat;
     /// <summary>
     /// Function: UpdateJokerInCombat
     /// </summary>
     public unsafe virtual void UpdateJokerInCombat(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.UpdateJokerInCombat", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateJokerInCombat, "BmGame.RBMAIManager.UpdateJokerInCombat");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartleThugsAtLocation;
     /// <summary>
     /// Function: StartleThugsAtLocation
     /// </summary>
     public unsafe virtual void StartleThugsAtLocation(System.Numerics.Vector3 StartleLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.StartleThugsAtLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartleThugsAtLocation, "BmGame.RBMAIManager.StartleThugsAtLocation");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartleLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanRocketLauncherFire;
     /// <summary>
     /// Function: CanRocketLauncherFire
     /// </summary>
     public unsafe virtual bool CanRocketLauncherFire()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.CanRocketLauncherFire", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanRocketLauncherFire, "BmGame.RBMAIManager.CanRocketLauncherFire");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetAntiDodgeFactor;
     /// <summary>
     /// Function: GetAntiDodgeFactor
     /// </summary>
     public unsafe virtual float GetAntiDodgeFactor()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.GetAntiDodgeFactor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAntiDodgeFactor, "BmGame.RBMAIManager.GetAntiDodgeFactor");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -475,12 +505,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetInstantHitIfNotRunningRange;
     /// <summary>
     /// Function: GetInstantHitIfNotRunningRange
     /// </summary>
     public unsafe virtual float GetInstantHitIfNotRunningRange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.GetInstantHitIfNotRunningRange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetInstantHitIfNotRunningRange, "BmGame.RBMAIManager.GetInstantHitIfNotRunningRange");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -493,12 +524,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetAlwaysHitRange;
     /// <summary>
     /// Function: GetAlwaysHitRange
     /// </summary>
     public unsafe virtual float GetAlwaysHitRange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.GetAlwaysHitRange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAlwaysHitRange, "BmGame.RBMAIManager.GetAlwaysHitRange");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -511,68 +543,74 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetInaccuracyRange;
     /// <summary>
     /// Function: GetInaccuracyRange
     /// </summary>
     public unsafe virtual float GetInaccuracyRange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.GetInaccuracyRange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetInaccuracyRange, "BmGame.RBMAIManager.GetInaccuracyRange");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetHitRatio;
     /// <summary>
     /// Function: GetHitRatio
     /// </summary>
     public unsafe virtual float GetHitRatio(float TestDist)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.GetHitRatio", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHitRatio, "BmGame.RBMAIManager.GetHitRatio");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestDist, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetDamageMultiplier;
     /// <summary>
     /// Function: GetDamageMultiplier
     /// </summary>
     public unsafe virtual float GetDamageMultiplier()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.GetDamageMultiplier", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDamageMultiplier, "BmGame.RBMAIManager.GetDamageMultiplier");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetGrenadeDamage;
     /// <summary>
     /// Function: GetGrenadeDamage
     /// </summary>
     public unsafe virtual float GetGrenadeDamage()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.GetGrenadeDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGrenadeDamage, "BmGame.RBMAIManager.GetGrenadeDamage");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetSniperDamage;
     /// <summary>
     /// Function: GetSniperDamage
     /// </summary>
     public unsafe virtual float GetSniperDamage()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.GetSniperDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSniperDamage, "BmGame.RBMAIManager.GetSniperDamage");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetShotgunDamage;
     /// <summary>
     /// Function: GetShotgunDamage
     /// </summary>
     public unsafe virtual float GetShotgunDamage(BmSDK.Engine.Actor User, BmSDK.Engine.Actor Target)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.GetShotgunDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetShotgunDamage, "BmGame.RBMAIManager.GetShotgunDamage");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(User, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 8);
@@ -580,23 +618,25 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_GetRifleDamage;
     /// <summary>
     /// Function: GetRifleDamage
     /// </summary>
     public unsafe virtual float GetRifleDamage()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.GetRifleDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRifleDamage, "BmGame.RBMAIManager.GetRifleDamage");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDDAValue;
     /// <summary>
     /// Function: GetDDAValue
     /// </summary>
     public unsafe virtual float GetDDAValue(float NormalValue, float EasyValue)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.GetDDAValue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDDAValue, "BmGame.RBMAIManager.GetDDAValue");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NormalValue, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EasyValue, paramsPtr + 4);
@@ -604,69 +644,75 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_DumpBehaviourHistory;
     /// <summary>
     /// Function: DumpBehaviourHistory
     /// </summary>
     public unsafe virtual void DumpBehaviourHistory()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.DumpBehaviourHistory", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DumpBehaviourHistory, "BmGame.RBMAIManager.DumpBehaviourHistory");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RespawnAllThrowable;
     /// <summary>
     /// Function: RespawnAllThrowable
     /// </summary>
     public unsafe virtual void RespawnAllThrowable()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.RespawnAllThrowable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RespawnAllThrowable, "BmGame.RBMAIManager.RespawnAllThrowable");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DestroyAllWeapons;
     /// <summary>
     /// Function: DestroyAllWeapons
     /// </summary>
     public unsafe virtual void DestroyAllWeapons()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.DestroyAllWeapons", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DestroyAllWeapons, "BmGame.RBMAIManager.DestroyAllWeapons");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_KillAllButOneEnemyInRoom;
     /// <summary>
     /// Function: KillAllButOneEnemyInRoom
     /// </summary>
     public unsafe virtual void KillAllButOneEnemyInRoom(BmSDK.Engine.Controller PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.KillAllButOneEnemyInRoom", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_KillAllButOneEnemyInRoom, "BmGame.RBMAIManager.KillAllButOneEnemyInRoom");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_KillAllEnemies;
     /// <summary>
     /// Function: KillAllEnemies
     /// </summary>
     public unsafe virtual void KillAllEnemies(BmSDK.Engine.Controller PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.KillAllEnemies", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_KillAllEnemies, "BmGame.RBMAIManager.KillAllEnemies");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_BroadcastBatmanSpottedToSnipers;
     /// <summary>
     /// Function: BroadcastBatmanSpottedToSnipers
     /// </summary>
     public unsafe virtual void BroadcastBatmanSpottedToSnipers(BmSDK.Engine.Actor PlayerActor)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.BroadcastBatmanSpottedToSnipers", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BroadcastBatmanSpottedToSnipers, "BmGame.RBMAIManager.BroadcastBatmanSpottedToSnipers");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerActor, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -680,12 +726,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_QueueBroadcastBatmanSpottedToSnipers;
     /// <summary>
     /// Function: QueueBroadcastBatmanSpottedToSnipers
     /// </summary>
     public unsafe virtual void QueueBroadcastBatmanSpottedToSnipers(BmSDK.Engine.Actor PlayerActor)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.QueueBroadcastBatmanSpottedToSnipers", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_QueueBroadcastBatmanSpottedToSnipers, "BmGame.RBMAIManager.QueueBroadcastBatmanSpottedToSnipers");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerActor, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -699,12 +746,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerSniperEvent;
     /// <summary>
     /// Function: TriggerSniperEvent
     /// </summary>
     public unsafe virtual void TriggerSniperEvent(System.Numerics.Vector3 NoiseLocation, float NoiseRadius)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.TriggerSniperEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerSniperEvent, "BmGame.RBMAIManager.TriggerSniperEvent");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NoiseLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NoiseRadius, paramsPtr + 12);
@@ -712,12 +760,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_CreatePlayerNoise;
     /// <summary>
     /// Function: CreatePlayerNoise
     /// </summary>
     public unsafe virtual void CreatePlayerNoise(BmSDK.BmGame.RPawnPlayer NoiseMaker, float NoiseRadius)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.CreatePlayerNoise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreatePlayerNoise, "BmGame.RBMAIManager.CreatePlayerNoise");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NoiseMaker, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NoiseRadius, paramsPtr + 8);
@@ -725,153 +774,166 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_PrioritiseControllerForWorldAvoidance;
     /// <summary>
     /// Function: PrioritiseControllerForWorldAvoidance
     /// </summary>
     public unsafe virtual bool PrioritiseControllerForWorldAvoidance(BmSDK.BmGame.RBMAIController PriorityController)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.PrioritiseControllerForWorldAvoidance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PrioritiseControllerForWorldAvoidance, "BmGame.RBMAIManager.PrioritiseControllerForWorldAvoidance");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PriorityController, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CanDoWorldAvoidanceCheck;
     /// <summary>
     /// Function: CanDoWorldAvoidanceCheck
     /// </summary>
     public unsafe virtual bool CanDoWorldAvoidanceCheck(BmSDK.BmGame.RBMAIController TestController)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.CanDoWorldAvoidanceCheck", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanDoWorldAvoidanceCheck, "BmGame.RBMAIManager.CanDoWorldAvoidanceCheck");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestController, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_ScanModeDeactivated;
     /// <summary>
     /// Function: ScanModeDeactivated
     /// </summary>
     public unsafe virtual void ScanModeDeactivated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.ScanModeDeactivated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ScanModeDeactivated, "BmGame.RBMAIManager.ScanModeDeactivated");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ScanModeActivated;
     /// <summary>
     /// Function: ScanModeActivated
     /// </summary>
     public unsafe virtual void ScanModeActivated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.ScanModeActivated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ScanModeActivated, "BmGame.RBMAIManager.ScanModeActivated");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ForceTick;
     /// <summary>
     /// Function: ForceTick
     /// </summary>
     public unsafe virtual void ForceTick(BmSDK.BmGame.RBMAIController ForceController)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.ForceTick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForceTick, "BmGame.RBMAIManager.ForceTick");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ForceController, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetChatterDefForGangType;
     /// <summary>
     /// Function: GetChatterDefForGangType
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RBarkCharacterDef GetChatterDefForGangType(BmSDK.BmGame.RCharacterDefine.GangTypeDefineEnum TestGang)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.GetChatterDefForGangType", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetChatterDefForGangType, "BmGame.RBMAIManager.GetChatterDefForGangType");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestGang, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBarkCharacterDef>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_PlayedBark;
     /// <summary>
     /// Function: PlayedBark
     /// </summary>
     public unsafe virtual void PlayedBark(BmSDK.BmGame.RBMAIController BarkController)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.PlayedBark", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayedBark, "BmGame.RBMAIManager.PlayedBark");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BarkController, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanPlayBark;
     /// <summary>
     /// Function: CanPlayBark
     /// </summary>
     public unsafe virtual bool CanPlayBark(BmSDK.BmGame.RBMAIController BarkController)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.CanPlayBark", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanPlayBark, "BmGame.RBMAIManager.CanPlayBark");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BarkController, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetPSC;
     /// <summary>
     /// Function: GetPSC
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RBMPawnSpawnerController GetPSC(int Index)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.GetPSC", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPSC, "BmGame.RBMAIManager.GetPSC");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Index, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMPawnSpawnerController>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetNumPSC;
     /// <summary>
     /// Function: GetNumPSC
     /// </summary>
     public unsafe virtual int GetNumPSC()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.GetNumPSC", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNumPSC, "BmGame.RBMAIManager.GetNumPSC");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_RemovePSC;
     /// <summary>
     /// Function: RemovePSC
     /// </summary>
     public unsafe virtual void RemovePSC(BmSDK.BmGame.RBMPawnSpawnerController _RemovePSC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.RemovePSC", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemovePSC, "BmGame.RBMAIManager.RemovePSC");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_RemovePSC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddPSC;
     /// <summary>
     /// Function: AddPSC
     /// </summary>
     public unsafe virtual void AddPSC(BmSDK.BmGame.RBMPawnSpawnerController NewPSC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.AddPSC", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddPSC, "BmGame.RBMAIManager.AddPSC");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPSC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddDamage;
     /// <summary>
     /// Function: AddDamage
     /// </summary>
     public unsafe virtual void AddDamage(BmSDK.BmGame.RBMAIController Attacked, float DamageCaused)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.AddDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddDamage, "BmGame.RBMAIManager.AddDamage");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Attacked, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageCaused, paramsPtr + 8);
@@ -879,47 +941,51 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_BatmanSeenEvent;
     /// <summary>
     /// Function: BatmanSeenEvent
     /// </summary>
     public unsafe virtual void BatmanSeenEvent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.BatmanSeenEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BatmanSeenEvent, "BmGame.RBMAIManager.BatmanSeenEvent");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_BatmanSeenEventUpdateVal;
     /// <summary>
     /// Function: BatmanSeenEventUpdateVal
     /// </summary>
     public unsafe virtual void BatmanSeenEventUpdateVal(bool Seen)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.BatmanSeenEventUpdateVal", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BatmanSeenEventUpdateVal, "BmGame.RBMAIManager.BatmanSeenEventUpdateVal");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Seen, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetClosestPawnDist;
     /// <summary>
     /// Function: GetClosestPawnDist
     /// </summary>
     public unsafe virtual float GetClosestPawnDist(System.Numerics.Vector3 TestLoc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.GetClosestPawnDist", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetClosestPawnDist, "BmGame.RBMAIManager.GetClosestPawnDist");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestLoc, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_PawnsCloseTogether;
     /// <summary>
     /// Function: PawnsCloseTogether
     /// </summary>
     public unsafe virtual bool PawnsCloseTogether(BmSDK.BmGame.RPawn Pawn1, BmSDK.BmGame.RPawn Pawn2)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.PawnsCloseTogether", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PawnsCloseTogether, "BmGame.RBMAIManager.PawnsCloseTogether");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Pawn1, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Pawn2, paramsPtr + 8);
@@ -927,72 +993,78 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_UnregisterPredatorSpecialMovePoint;
     /// <summary>
     /// Function: UnregisterPredatorSpecialMovePoint
     /// </summary>
     public unsafe virtual void UnregisterPredatorSpecialMovePoint(BmSDK.BmGame.RPredatorSpecialMovePointBase MovePoint)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.UnregisterPredatorSpecialMovePoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnregisterPredatorSpecialMovePoint, "BmGame.RBMAIManager.UnregisterPredatorSpecialMovePoint");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MovePoint, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RegisterPredatorSpecialMovePoint;
     /// <summary>
     /// Function: RegisterPredatorSpecialMovePoint
     /// </summary>
     public unsafe virtual void RegisterPredatorSpecialMovePoint(BmSDK.BmGame.RPredatorSpecialMovePointBase MovePoint)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.RegisterPredatorSpecialMovePoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterPredatorSpecialMovePoint, "BmGame.RBMAIManager.RegisterPredatorSpecialMovePoint");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MovePoint, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UnregisterPredGunLocker;
     /// <summary>
     /// Function: UnregisterPredGunLocker
     /// </summary>
     public unsafe virtual void UnregisterPredGunLocker(BmSDK.BmGame.RPredatorGunLockerBase OldGunLocker)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.UnregisterPredGunLocker", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnregisterPredGunLocker, "BmGame.RBMAIManager.UnregisterPredGunLocker");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OldGunLocker, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RegisterPredGunLocker;
     /// <summary>
     /// Function: RegisterPredGunLocker
     /// </summary>
     public unsafe virtual void RegisterPredGunLocker(BmSDK.BmGame.RPredatorGunLockerBase NewGunLocker)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.RegisterPredGunLocker", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterPredGunLocker, "BmGame.RBMAIManager.RegisterPredGunLocker");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewGunLocker, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetStateForNewRoom;
     /// <summary>
     /// Function: SetStateForNewRoom
     /// </summary>
     public unsafe virtual void SetStateForNewRoom(BmSDK.BmGame.RLevelVolume CurrentVol)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.SetStateForNewRoom", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetStateForNewRoom, "BmGame.RBMAIManager.SetStateForNewRoom");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CurrentVol, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RemoveController;
     /// <summary>
     /// Function: RemoveController
     /// </summary>
     public unsafe virtual void RemoveController(BmSDK.BmGame.RBMAIController ToRemove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.RemoveController", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveController, "BmGame.RBMAIManager.RemoveController");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ToRemove, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1006,12 +1078,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ShouldForceTickForController;
     /// <summary>
     /// Function: ShouldForceTickForController
     /// </summary>
     public unsafe virtual bool ShouldForceTickForController(BmSDK.BmGame.RBMAIController C, int Idx = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.ShouldForceTickForController", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldForceTickForController, "BmGame.RBMAIManager.ShouldForceTickForController");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(C, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Idx, paramsPtr + 8);
@@ -1026,12 +1099,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_SetForceTickIfCloseController;
     /// <summary>
     /// Function: SetForceTickIfCloseController
     /// </summary>
     public unsafe virtual void SetForceTickIfCloseController(BmSDK.BmGame.RBMAIController ControllerToForce, bool bNewValue)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.SetForceTickIfCloseController", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetForceTickIfCloseController, "BmGame.RBMAIManager.SetForceTickIfCloseController");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerToForce, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewValue, paramsPtr + 8);
@@ -1039,12 +1113,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetForceTickController;
     /// <summary>
     /// Function: SetForceTickController
     /// </summary>
     public unsafe virtual void SetForceTickController(BmSDK.BmGame.RBMAIController ControllerToForce, bool bNewValue)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.SetForceTickController", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetForceTickController, "BmGame.RBMAIManager.SetForceTickController");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerToForce, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewValue, paramsPtr + 8);
@@ -1052,12 +1127,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_RegisterController;
     /// <summary>
     /// Function: RegisterController
     /// </summary>
     public unsafe virtual void RegisterController(BmSDK.BmGame.RBMAIController NewAIController, bool bForceTick)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.RegisterController", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterController, "BmGame.RBMAIManager.RegisterController");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAIController, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForceTick, paramsPtr + 8);
@@ -1072,46 +1148,50 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_TellBehavioursOfGadgetNoise;
     /// <summary>
     /// Function: TellBehavioursOfGadgetNoise
     /// </summary>
     public unsafe virtual void TellBehavioursOfGadgetNoise(System.Numerics.Vector3 SafeNoiseLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.TellBehavioursOfGadgetNoise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TellBehavioursOfGadgetNoise, "BmGame.RBMAIManager.TellBehavioursOfGadgetNoise");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SafeNoiseLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ClearWaveRespawnTimers;
     /// <summary>
     /// Function: ClearWaveRespawnTimers
     /// </summary>
     public unsafe virtual void ClearWaveRespawnTimers()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.ClearWaveRespawnTimers", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearWaveRespawnTimers, "BmGame.RBMAIManager.ClearWaveRespawnTimers");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RBMAIManager.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RemoveObstacle;
     /// <summary>
     /// Function: RemoveObstacle
     /// </summary>
     public unsafe virtual void RemoveObstacle(BmSDK.BmGame.RNavMeshObstacle_Queue Prop)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.RemoveObstacle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveObstacle, "BmGame.RBMAIManager.RemoveObstacle");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Prop, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1125,12 +1205,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_AddObstacle;
     /// <summary>
     /// Function: AddObstacle
     /// </summary>
     public unsafe virtual void AddObstacle(BmSDK.BmGame.RNavMeshObstacle_Queue Prop)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.AddObstacle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddObstacle, "BmGame.RBMAIManager.AddObstacle");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Prop, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1144,12 +1225,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_RemoveBlockade;
     /// <summary>
     /// Function: RemoveBlockade
     /// </summary>
     public unsafe virtual void RemoveBlockade(BmSDK.BmGame.RCheckpointBlockadeBase Prop)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.RemoveBlockade", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveBlockade, "BmGame.RBMAIManager.RemoveBlockade");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Prop, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1163,12 +1245,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_AddBlockade;
     /// <summary>
     /// Function: AddBlockade
     /// </summary>
     public unsafe virtual void AddBlockade(BmSDK.BmGame.RCheckpointBlockadeBase Prop)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.AddBlockade", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddBlockade, "BmGame.RBMAIManager.AddBlockade");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Prop, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1182,12 +1265,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_RemoveDestructibleProp;
     /// <summary>
     /// Function: RemoveDestructibleProp
     /// </summary>
     public unsafe virtual void RemoveDestructibleProp(BmSDK.BmGame.RDestructibleProp Prop)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.RemoveDestructibleProp", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveDestructibleProp, "BmGame.RBMAIManager.RemoveDestructibleProp");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Prop, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1201,12 +1285,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_AddDestructibleProp;
     /// <summary>
     /// Function: AddDestructibleProp
     /// </summary>
     public unsafe virtual void AddDestructibleProp(BmSDK.BmGame.RDestructibleProp Prop)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.AddDestructibleProp", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddDestructibleProp, "BmGame.RBMAIManager.AddDestructibleProp");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Prop, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1220,12 +1305,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_PylonLoaded;
     /// <summary>
     /// Function: PylonLoaded
     /// </summary>
     public unsafe virtual void PylonLoaded(BmSDK.Engine.Pylon NewPylon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.PylonLoaded", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PylonLoaded, "BmGame.RBMAIManager.PylonLoaded");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPylon, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1239,12 +1325,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_UmbraVisibilityCheck;
     /// <summary>
     /// Function: UmbraVisibilityCheck
     /// </summary>
     public unsafe virtual bool UmbraVisibilityCheck(System.Numerics.Vector3 TestLocation, float BoundsXY, float BoundsZ)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.UmbraVisibilityCheck", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UmbraVisibilityCheck, "BmGame.RBMAIManager.UmbraVisibilityCheck");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoundsXY, paramsPtr + 12);
@@ -1260,12 +1347,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_HasActiveChasePoint;
     /// <summary>
     /// Function: HasActiveChasePoint
     /// </summary>
     public unsafe virtual bool HasActiveChasePoint(BmSDK.BmGame.RChasePoint ToTest)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.HasActiveChasePoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasActiveChasePoint, "BmGame.RBMAIManager.HasActiveChasePoint");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ToTest, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1279,12 +1367,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_RemoveActiveChasePoint;
     /// <summary>
     /// Function: RemoveActiveChasePoint
     /// </summary>
     public unsafe virtual void RemoveActiveChasePoint(BmSDK.BmGame.RChasePoint ToRemove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.RemoveActiveChasePoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveActiveChasePoint, "BmGame.RBMAIManager.RemoveActiveChasePoint");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ToRemove, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1298,12 +1387,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_AddActiveChasePoint;
     /// <summary>
     /// Function: AddActiveChasePoint
     /// </summary>
     public unsafe virtual void AddActiveChasePoint(BmSDK.BmGame.RChasePoint ToAdd)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.AddActiveChasePoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddActiveChasePoint, "BmGame.RBMAIManager.AddActiveChasePoint");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ToAdd, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1317,12 +1407,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_NavMeshObstacleUnregistered;
     /// <summary>
     /// Function: NavMeshObstacleUnregistered
     /// </summary>
     public unsafe virtual void NavMeshObstacleUnregistered(BmSDK.Engine.Actor A)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.NavMeshObstacleUnregistered", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NavMeshObstacleUnregistered, "BmGame.RBMAIManager.NavMeshObstacleUnregistered");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(A, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1336,12 +1427,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_NavMeshObstacleRegistered;
     /// <summary>
     /// Function: NavMeshObstacleRegistered
     /// </summary>
     public unsafe virtual void NavMeshObstacleRegistered(BmSDK.Engine.Actor A)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.NavMeshObstacleRegistered", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NavMeshObstacleRegistered, "BmGame.RBMAIManager.NavMeshObstacleRegistered");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(A, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1355,12 +1447,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_CanSpawnPawnObject;
     /// <summary>
     /// Function: CanSpawnPawnObject
     /// </summary>
     public unsafe virtual bool CanSpawnPawnObject()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.CanSpawnPawnObject", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanSpawnPawnObject, "BmGame.RBMAIManager.CanSpawnPawnObject");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1373,12 +1466,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PawnObjectSpawned;
     /// <summary>
     /// Function: PawnObjectSpawned
     /// </summary>
     public unsafe virtual void PawnObjectSpawned()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.PawnObjectSpawned", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PawnObjectSpawned, "BmGame.RBMAIManager.PawnObjectSpawned");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1391,12 +1485,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_CanUnpoolPawn;
     /// <summary>
     /// Function: CanUnpoolPawn
     /// </summary>
     public unsafe virtual bool CanUnpoolPawn(bool bSpawningPassenger = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.CanUnpoolPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanUnpoolPawn, "BmGame.RBMAIManager.CanUnpoolPawn");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSpawningPassenger, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1410,12 +1505,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_CanSpawnPawn;
     /// <summary>
     /// Function: CanSpawnPawn
     /// </summary>
     public unsafe virtual bool CanSpawnPawn()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.CanSpawnPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanSpawnPawn, "BmGame.RBMAIManager.CanSpawnPawn");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1428,12 +1524,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PawnUnpooled;
     /// <summary>
     /// Function: PawnUnpooled
     /// </summary>
     public unsafe virtual void PawnUnpooled()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.PawnUnpooled", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PawnUnpooled, "BmGame.RBMAIManager.PawnUnpooled");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1446,12 +1543,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_PawnSpawned;
     /// <summary>
     /// Function: PawnSpawned
     /// </summary>
     public unsafe virtual void PawnSpawned()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.PawnSpawned", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PawnSpawned, "BmGame.RBMAIManager.PawnSpawned");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1464,12 +1562,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateStasisTeleportPawns;
     /// <summary>
     /// Function: UpdateStasisTeleportPawns
     /// </summary>
     public unsafe virtual bool UpdateStasisTeleportPawns(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.UpdateStasisTeleportPawns", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateStasisTeleportPawns, "BmGame.RBMAIManager.UpdateStasisTeleportPawns");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1483,12 +1582,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_UpdateStasisDestroyPawns;
     /// <summary>
     /// Function: UpdateStasisDestroyPawns
     /// </summary>
     public unsafe virtual bool UpdateStasisDestroyPawns(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.UpdateStasisDestroyPawns", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateStasisDestroyPawns, "BmGame.RBMAIManager.UpdateStasisDestroyPawns");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1502,12 +1602,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_UpdatePawnToCameraDistances;
     /// <summary>
     /// Function: UpdatePawnToCameraDistances
     /// </summary>
     public unsafe virtual void UpdatePawnToCameraDistances(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.UpdatePawnToCameraDistances", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdatePawnToCameraDistances, "BmGame.RBMAIManager.UpdatePawnToCameraDistances");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1521,12 +1622,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_UpdatePredatorGunLockers;
     /// <summary>
     /// Function: UpdatePredatorGunLockers
     /// </summary>
     public unsafe virtual void UpdatePredatorGunLockers(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.UpdatePredatorGunLockers", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdatePredatorGunLockers, "BmGame.RBMAIManager.UpdatePredatorGunLockers");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1540,12 +1642,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateNavMeshObstacleQueue;
     /// <summary>
     /// Function: UpdateNavMeshObstacleQueue
     /// </summary>
     public unsafe virtual void UpdateNavMeshObstacleQueue()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.UpdateNavMeshObstacleQueue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateNavMeshObstacleQueue, "BmGame.RBMAIManager.UpdateNavMeshObstacleQueue");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1558,12 +1661,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ObstacleIsInQueue;
     /// <summary>
     /// Function: ObstacleIsInQueue
     /// </summary>
     public unsafe virtual bool ObstacleIsInQueue(BmSDK.Engine.Interface_NavMeshPathObstacle ObstacleToRemove, out int bAddObstacle)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.ObstacleIsInQueue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ObstacleIsInQueue, "BmGame.RBMAIManager.ObstacleIsInQueue");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ObstacleToRemove, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1578,12 +1682,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_RemoveNavMeshPathObstacleFromQueue;
     /// <summary>
     /// Function: RemoveNavMeshPathObstacleFromQueue
     /// </summary>
     public unsafe virtual void RemoveNavMeshPathObstacleFromQueue(BmSDK.Engine.Interface_NavMeshPathObstacle ObstacleToRemove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.RemoveNavMeshPathObstacleFromQueue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveNavMeshPathObstacleFromQueue, "BmGame.RBMAIManager.RemoveNavMeshPathObstacleFromQueue");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ObstacleToRemove, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1597,12 +1702,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_QueueNavMeshPathObstacleToRemove;
     /// <summary>
     /// Function: QueueNavMeshPathObstacleToRemove
     /// </summary>
     public unsafe virtual void QueueNavMeshPathObstacleToRemove(BmSDK.Engine.Interface_NavMeshPathObstacle ObstacleToQueue)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.QueueNavMeshPathObstacleToRemove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_QueueNavMeshPathObstacleToRemove, "BmGame.RBMAIManager.QueueNavMeshPathObstacleToRemove");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ObstacleToQueue, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1616,12 +1722,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_QueueNavMeshPathObstacleToAdd;
     /// <summary>
     /// Function: QueueNavMeshPathObstacleToAdd
     /// </summary>
     public unsafe virtual void QueueNavMeshPathObstacleToAdd(BmSDK.Engine.Interface_NavMeshPathObstacle ObstacleToQueue)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.QueueNavMeshPathObstacleToAdd", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_QueueNavMeshPathObstacleToAdd, "BmGame.RBMAIManager.QueueNavMeshPathObstacleToAdd");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ObstacleToQueue, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1635,12 +1742,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetClosestPointOnVolume;
     /// <summary>
     /// Function: GetClosestPointOnVolume
     /// </summary>
     public unsafe virtual bool GetClosestPointOnVolume(BmSDK.Engine.Volume TestVolume, System.Numerics.Vector3 TestPoint, out System.Numerics.Vector3 out_ClosestPoint)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.GetClosestPointOnVolume", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetClosestPointOnVolume, "BmGame.RBMAIManager.GetClosestPointOnVolume");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestVolume, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPoint, paramsPtr + 8);
@@ -1656,12 +1764,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_UnRegisterBatmanCloseCheckBehaviour;
     /// <summary>
     /// Function: UnRegisterBatmanCloseCheckBehaviour
     /// </summary>
     public unsafe virtual void UnRegisterBatmanCloseCheckBehaviour(BmSDK.BmGame.RBM2Behaviour_IdleConfig BehaviourToRemove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.UnRegisterBatmanCloseCheckBehaviour", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnRegisterBatmanCloseCheckBehaviour, "BmGame.RBMAIManager.UnRegisterBatmanCloseCheckBehaviour");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BehaviourToRemove, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1675,12 +1784,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_RegisterBatmanCloseCheckBehaviour;
     /// <summary>
     /// Function: RegisterBatmanCloseCheckBehaviour
     /// </summary>
     public unsafe virtual void RegisterBatmanCloseCheckBehaviour(BmSDK.BmGame.RBM2Behaviour_IdleConfig BehaviourToAdd)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.RegisterBatmanCloseCheckBehaviour", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterBatmanCloseCheckBehaviour, "BmGame.RBMAIManager.RegisterBatmanCloseCheckBehaviour");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BehaviourToAdd, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1694,12 +1804,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateBatmanCloseCheckBehaviours;
     /// <summary>
     /// Function: UpdateBatmanCloseCheckBehaviours
     /// </summary>
     public unsafe virtual void UpdateBatmanCloseCheckBehaviours(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.UpdateBatmanCloseCheckBehaviours", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateBatmanCloseCheckBehaviours, "BmGame.RBMAIManager.UpdateBatmanCloseCheckBehaviours");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1713,12 +1824,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_CanDoIdleConfigLOSCheck;
     /// <summary>
     /// Function: CanDoIdleConfigLOSCheck
     /// </summary>
     public unsafe virtual bool CanDoIdleConfigLOSCheck(BmSDK.BmGame.RBMAIController TestController)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.CanDoIdleConfigLOSCheck", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanDoIdleConfigLOSCheck, "BmGame.RBMAIManager.CanDoIdleConfigLOSCheck");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestController, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1732,12 +1844,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetFiringCount;
     /// <summary>
     /// Function: GetFiringCount
     /// </summary>
     public unsafe virtual int GetFiringCount()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.GetFiringCount", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFiringCount, "BmGame.RBMAIManager.GetFiringCount");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1750,12 +1863,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ShouldLockDoors;
     /// <summary>
     /// Function: ShouldLockDoors
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RGameInfo.ECombatLockType ShouldLockDoors()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.ShouldLockDoors", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldLockDoors, "BmGame.RBMAIManager.ShouldLockDoors");
         byte* paramsPtr = stackalloc byte[1];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1768,12 +1882,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameInfo.ECombatLockType>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UpdateTimeSlicers;
     /// <summary>
     /// Function: UpdateTimeSlicers
     /// </summary>
     public unsafe virtual void UpdateTimeSlicers()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.UpdateTimeSlicers", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateTimeSlicers, "BmGame.RBMAIManager.UpdateTimeSlicers");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1786,12 +1901,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateAIState;
     /// <summary>
     /// Function: UpdateAIState
     /// </summary>
     public unsafe virtual void UpdateAIState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.UpdateAIState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateAIState, "BmGame.RBMAIManager.UpdateAIState");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1804,12 +1920,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateBehaviours;
     /// <summary>
     /// Function: UpdateBehaviours
     /// </summary>
     public unsafe virtual void UpdateBehaviours()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.UpdateBehaviours", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateBehaviours, "BmGame.RBMAIManager.UpdateBehaviours");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1822,12 +1939,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateBehaviourDeltas;
     /// <summary>
     /// Function: UpdateBehaviourDeltas
     /// </summary>
     public unsafe virtual void UpdateBehaviourDeltas(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.UpdateBehaviourDeltas", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateBehaviourDeltas, "BmGame.RBMAIManager.UpdateBehaviourDeltas");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1841,12 +1959,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ClearNoneControllers;
     /// <summary>
     /// Function: ClearNoneControllers
     /// </summary>
     public unsafe virtual void ClearNoneControllers()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.ClearNoneControllers", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearNoneControllers, "BmGame.RBMAIManager.ClearNoneControllers");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1859,12 +1978,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_CanDoNavMeshCollisionFloorCheck;
     /// <summary>
     /// Function: CanDoNavMeshCollisionFloorCheck
     /// </summary>
     public unsafe virtual bool CanDoNavMeshCollisionFloorCheck(BmSDK.BmGame.RPawn TestPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.CanDoNavMeshCollisionFloorCheck", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanDoNavMeshCollisionFloorCheck, "BmGame.RBMAIManager.CanDoNavMeshCollisionFloorCheck");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1878,12 +1998,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CanUpdateCombatCollision;
     /// <summary>
     /// Function: CanUpdateCombatCollision
     /// </summary>
     public unsafe virtual bool CanUpdateCombatCollision(BmSDK.BmGame.RPawn TestPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.CanUpdateCombatCollision", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanUpdateCombatCollision, "BmGame.RBMAIManager.CanUpdateCombatCollision");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1897,12 +2018,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_PawnSpawnerActivated;
     /// <summary>
     /// Function: PawnSpawnerActivated
     /// </summary>
     public unsafe virtual void PawnSpawnerActivated(BmSDK.GameObject Spawner, float SpawnDelay)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.PawnSpawnerActivated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PawnSpawnerActivated, "BmGame.RBMAIManager.PawnSpawnerActivated");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Spawner, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnDelay, paramsPtr + 8);
@@ -1917,12 +2039,13 @@ public partial class RBMAIManager : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_CanPawnSpawnerActivate;
     /// <summary>
     /// Function: CanPawnSpawnerActivate
     /// </summary>
     public unsafe virtual bool CanPawnSpawnerActivate(BmSDK.GameObject Spawner)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIManager.CanPawnSpawnerActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanPawnSpawnerActivate, "BmGame.RBMAIManager.CanPawnSpawnerActivate");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Spawner, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

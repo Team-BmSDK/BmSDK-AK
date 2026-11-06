@@ -78,12 +78,13 @@ public partial class TannoyVoiceSynthActor : BmSDK.Engine.Actor, BmSDK.IGameObje
         where TComponent : class, Framework.IScriptComponent<TannoyVoiceSynthActor>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PlayLine;
     /// <summary>
     /// Function: PlayLine
     /// </summary>
     public unsafe virtual bool PlayLine(BmSDK.Engine.Actor Subject, BmSDK.FName flag, BmSDK.BmGame.RAlertEventCoordinatorBase owningEvent, BmSDK.TArray<BmSDK.Engine.Actor> extraSpeakers = default, BmSDK.FName nInvestigateTargetFlag = default, System.IntPtr NewBarkFinished = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.TannoyVoiceSynthActor.PlayLine", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayLine, "BmGame.TannoyVoiceSynthActor.PlayLine");
         byte* paramsPtr = stackalloc byte[100];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Subject, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(flag, paramsPtr + 8);
@@ -95,46 +96,50 @@ public partial class TannoyVoiceSynthActor : BmSDK.Engine.Actor, BmSDK.IGameObje
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 64);
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.TannoyVoiceSynthActor.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmGame.TannoyVoiceSynthActor.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.TannoyVoiceSynthActor.PreStreamOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmGame.TannoyVoiceSynthActor.PreStreamOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetBCD;
     /// <summary>
     /// Function: SetBCD
     /// </summary>
     public unsafe virtual void SetBCD(BmSDK.BmGame.RBarkCharacterDef NewCharDef)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.TannoyVoiceSynthActor.SetBCD", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBCD, "BmGame.TannoyVoiceSynthActor.SetBCD");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCharDef, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetVoice;
     /// <summary>
     /// Function: SetVoice
     /// </summary>
     public unsafe virtual void SetVoice(BmSDK.Engine.AkDialogueVoice NewVoice)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.TannoyVoiceSynthActor.SetVoice", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetVoice, "BmGame.TannoyVoiceSynthActor.SetVoice");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewVoice, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

@@ -78,12 +78,13 @@ public partial class DebugCameraInput : BmSDK.Engine.PlayerInput, BmSDK.IGameObj
         where TComponent : class, Framework.IScriptComponent<DebugCameraInput>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_InputKey;
     /// <summary>
     /// Function: InputKey
     /// </summary>
     public unsafe virtual bool InputKey(int ControllerId, BmSDK.FName Key, BmSDK.GameObject.EInputEvent Event, float AmountDepressed = default, bool bGamepad = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DebugCameraInput.InputKey", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InputKey, "Engine.DebugCameraInput.InputKey");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Key, paramsPtr + 4);

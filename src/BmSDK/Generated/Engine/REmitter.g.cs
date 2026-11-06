@@ -78,23 +78,25 @@ public partial class REmitter : BmSDK.Engine.Emitter, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<REmitter>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GoIntoStasis;
     /// <summary>
     /// Function: GoIntoStasis
     /// </summary>
     public unsafe virtual void GoIntoStasis()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.REmitter.GoIntoStasis", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GoIntoStasis, "Engine.REmitter.GoIntoStasis");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnParticleSystemFinished;
     /// <summary>
     /// Function: OnParticleSystemFinished
     /// </summary>
     public unsafe override void OnParticleSystemFinished(BmSDK.Engine.ParticleSystemComponent FinishedComponent)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.REmitter.OnParticleSystemFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnParticleSystemFinished, "Engine.REmitter.OnParticleSystemFinished");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FinishedComponent, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

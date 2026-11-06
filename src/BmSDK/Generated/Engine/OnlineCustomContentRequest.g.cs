@@ -78,12 +78,13 @@ public partial class OnlineCustomContentRequest : BmSDK.GameObject, BmSDK.IGameO
         where TComponent : class, Framework.IScriptComponent<OnlineCustomContentRequest>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CancelCustomContentRequest;
     /// <summary>
     /// Function: CancelCustomContentRequest
     /// </summary>
     public unsafe virtual void CancelCustomContentRequest()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.OnlineCustomContentRequest.CancelCustomContentRequest", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelCustomContentRequest, "Engine.OnlineCustomContentRequest.CancelCustomContentRequest");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class OnlineCustomContentRequest : BmSDK.GameObject, BmSDK.IGameO
         return;
     }
 
+    private static BmSDK.Function __fn_GetCustomContentAsString;
     /// <summary>
     /// Function: GetCustomContentAsString
     /// </summary>
     public unsafe virtual void GetCustomContentAsString(out BmSDK.FString ContentData)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.OnlineCustomContentRequest.GetCustomContentAsString", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCustomContentAsString, "Engine.OnlineCustomContentRequest.GetCustomContentAsString");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -115,12 +117,13 @@ public partial class OnlineCustomContentRequest : BmSDK.GameObject, BmSDK.IGameO
         return;
     }
 
+    private static BmSDK.Function __fn_GetCustomContent;
     /// <summary>
     /// Function: GetCustomContent
     /// </summary>
     public unsafe virtual void GetCustomContent(out BmSDK.TArray<byte> ContentData)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.OnlineCustomContentRequest.GetCustomContent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCustomContent, "Engine.OnlineCustomContentRequest.GetCustomContent");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -134,12 +137,13 @@ public partial class OnlineCustomContentRequest : BmSDK.GameObject, BmSDK.IGameO
         return;
     }
 
+    private static BmSDK.Function __fn_StartCustomContentRequest;
     /// <summary>
     /// Function: StartCustomContentRequest
     /// </summary>
     public unsafe virtual void StartCustomContentRequest(BmSDK.FString sContentName, BmSDK.FString sCustomId, System.IntPtr dRequestCustomContentComplete)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.OnlineCustomContentRequest.StartCustomContentRequest", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartCustomContentRequest, "Engine.OnlineCustomContentRequest.StartCustomContentRequest");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sContentName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sCustomId, paramsPtr + 16);
@@ -155,12 +159,13 @@ public partial class OnlineCustomContentRequest : BmSDK.GameObject, BmSDK.IGameO
         return;
     }
 
+    private static BmSDK.Function __fn_OnRequestCustomContentComplete;
     /// <summary>
     /// Function: OnRequestCustomContentComplete
     /// </summary>
     public unsafe virtual void OnRequestCustomContentComplete(bool bWasSuccessful, BmSDK.FString sCustomId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.OnlineCustomContentRequest.OnRequestCustomContentComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnRequestCustomContentComplete, "Engine.OnlineCustomContentRequest.OnRequestCustomContentComplete");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sCustomId, paramsPtr + 4);

@@ -73,34 +73,37 @@ public partial class SequenceEvent : BmSDK.Engine.SequenceOp, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<SequenceEvent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Toggled;
     /// <summary>
     /// Function: Toggled
     /// </summary>
     public unsafe virtual void Toggled()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SequenceEvent.Toggled", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Toggled, "Engine.SequenceEvent.Toggled");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Reset;
     /// <summary>
     /// Function: Reset
     /// </summary>
     public unsafe override void Reset()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SequenceEvent.Reset", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Reset, "Engine.SequenceEvent.Reset");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CheckActivate;
     /// <summary>
     /// Function: CheckActivate
     /// </summary>
     public unsafe virtual bool CheckActivate(BmSDK.Engine.Actor InOriginator, BmSDK.Engine.Actor InInstigator, bool bTest, out BmSDK.TArray<int> ActivateIndices, bool bPushTop)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SequenceEvent.CheckActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckActivate, "Engine.SequenceEvent.CheckActivate");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InOriginator, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInstigator, paramsPtr + 8);
@@ -118,12 +121,13 @@ public partial class SequenceEvent : BmSDK.Engine.SequenceOp, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 40);
     }
 
+    private static BmSDK.Function __fn_RegisterEvent;
     /// <summary>
     /// Function: RegisterEvent
     /// </summary>
     public unsafe virtual void RegisterEvent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SequenceEvent.RegisterEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterEvent, "Engine.SequenceEvent.RegisterEvent");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

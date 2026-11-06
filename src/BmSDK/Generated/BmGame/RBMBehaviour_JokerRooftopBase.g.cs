@@ -73,12 +73,13 @@ public partial class RBMBehaviour_JokerRooftopBase : BmSDK.BmGame.RBMBehaviour, 
         where TComponent : class, Framework.IScriptComponent<RBMBehaviour_JokerRooftopBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DoesJokerTypeTrumpMine;
     /// <summary>
     /// Function: DoesJokerTypeTrumpMine
     /// </summary>
     public unsafe virtual bool DoesJokerTypeTrumpMine(BmSDK.FString NewCaseIdentifier)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_JokerRooftopBase.DoesJokerTypeTrumpMine", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoesJokerTypeTrumpMine, "BmGame.RBMBehaviour_JokerRooftopBase.DoesJokerTypeTrumpMine");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCaseIdentifier, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

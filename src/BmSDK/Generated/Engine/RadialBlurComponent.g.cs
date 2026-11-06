@@ -78,45 +78,49 @@ public partial class RadialBlurComponent : BmSDK.Engine.ActorComponent, BmSDK.IG
         where TComponent : class, Framework.IScriptComponent<RadialBlurComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnUpdatePropertyBlurOpacity;
     /// <summary>
     /// Function: OnUpdatePropertyBlurOpacity
     /// </summary>
     public unsafe virtual void OnUpdatePropertyBlurOpacity()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RadialBlurComponent.OnUpdatePropertyBlurOpacity", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnUpdatePropertyBlurOpacity, "Engine.RadialBlurComponent.OnUpdatePropertyBlurOpacity");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnUpdatePropertyBlurFalloffExponent;
     /// <summary>
     /// Function: OnUpdatePropertyBlurFalloffExponent
     /// </summary>
     public unsafe virtual void OnUpdatePropertyBlurFalloffExponent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RadialBlurComponent.OnUpdatePropertyBlurFalloffExponent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnUpdatePropertyBlurFalloffExponent, "Engine.RadialBlurComponent.OnUpdatePropertyBlurFalloffExponent");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnUpdatePropertyBlurScale;
     /// <summary>
     /// Function: OnUpdatePropertyBlurScale
     /// </summary>
     public unsafe virtual void OnUpdatePropertyBlurScale()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RadialBlurComponent.OnUpdatePropertyBlurScale", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnUpdatePropertyBlurScale, "Engine.RadialBlurComponent.OnUpdatePropertyBlurScale");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetEnabled;
     /// <summary>
     /// Function: SetEnabled
     /// </summary>
     public unsafe virtual void SetEnabled(bool bInEnabled)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RadialBlurComponent.SetEnabled", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetEnabled, "Engine.RadialBlurComponent.SetEnabled");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bInEnabled, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -130,12 +134,13 @@ public partial class RadialBlurComponent : BmSDK.Engine.ActorComponent, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_SetBlurOpacity;
     /// <summary>
     /// Function: SetBlurOpacity
     /// </summary>
     public unsafe virtual void SetBlurOpacity(float InBlurOpacity)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RadialBlurComponent.SetBlurOpacity", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBlurOpacity, "Engine.RadialBlurComponent.SetBlurOpacity");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InBlurOpacity, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -149,12 +154,13 @@ public partial class RadialBlurComponent : BmSDK.Engine.ActorComponent, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_SetBlurFalloffExponent;
     /// <summary>
     /// Function: SetBlurFalloffExponent
     /// </summary>
     public unsafe virtual void SetBlurFalloffExponent(float InBlurFalloffExponent)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RadialBlurComponent.SetBlurFalloffExponent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBlurFalloffExponent, "Engine.RadialBlurComponent.SetBlurFalloffExponent");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InBlurFalloffExponent, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -168,12 +174,13 @@ public partial class RadialBlurComponent : BmSDK.Engine.ActorComponent, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_SetBlurScale;
     /// <summary>
     /// Function: SetBlurScale
     /// </summary>
     public unsafe virtual void SetBlurScale(float InBlurScale)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RadialBlurComponent.SetBlurScale", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBlurScale, "Engine.RadialBlurComponent.SetBlurScale");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InBlurScale, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -187,12 +194,13 @@ public partial class RadialBlurComponent : BmSDK.Engine.ActorComponent, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_SetMaterial;
     /// <summary>
     /// Function: SetMaterial
     /// </summary>
     public unsafe virtual void SetMaterial(BmSDK.Engine.MaterialInterface InMaterial)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RadialBlurComponent.SetMaterial", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMaterial, "Engine.RadialBlurComponent.SetMaterial");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InMaterial, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

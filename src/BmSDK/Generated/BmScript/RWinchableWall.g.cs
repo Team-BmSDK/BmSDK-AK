@@ -78,12 +78,13 @@ public partial class RWinchableWall : BmSDK.BmGame.RWinchableWallBase, BmSDK.IGa
         where TComponent : class, Framework.IScriptComponent<RWinchableWall>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_RigidBodyCollision;
     /// <summary>
     /// Function: RigidBodyCollision
     /// </summary>
     public unsafe override void RigidBodyCollision(BmSDK.Engine.PrimitiveComponent HitComponent, BmSDK.Engine.PrimitiveComponent OtherComponent, out BmSDK.Engine.Actor.FCollisionImpactData RigidCollisionData, int ContactIndex, float Speed, int Index0, int Index1)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RWinchableWall.RigidBodyCollision", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RigidBodyCollision, "BmScript.RWinchableWall.RigidBodyCollision");
         byte* paramsPtr = stackalloc byte[76];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitComponent, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherComponent, paramsPtr + 8);
@@ -96,126 +97,137 @@ public partial class RWinchableWall : BmSDK.BmGame.RWinchableWallBase, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_Broken;
     /// <summary>
     /// Function: Broken
     /// </summary>
     public unsafe override void Broken(BmSDK.BmGame.RPlayerController Controller)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RWinchableWall.Broken", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Broken, "BmScript.RWinchableWall.Broken");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Controller, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DestroyMe;
     /// <summary>
     /// Function: DestroyMe
     /// </summary>
     public unsafe override void DestroyMe()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RWinchableWall.DestroyMe", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DestroyMe, "BmScript.RWinchableWall.DestroyMe");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RWinchableWall.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmScript.RWinchableWall.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetWinchSubTargetComponent;
     /// <summary>
     /// Function: GetWinchSubTargetComponent
     /// </summary>
     public unsafe override BmSDK.Engine.PrimitiveComponent GetWinchSubTargetComponent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RWinchableWall.GetWinchSubTargetComponent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWinchSubTargetComponent, "BmScript.RWinchableWall.GetWinchSubTargetComponent");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.PrimitiveComponent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_WinchReleased;
     /// <summary>
     /// Function: WinchReleased
     /// </summary>
     public unsafe override void WinchReleased(BmSDK.BmGame.RBatmobileWinch Winch)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RWinchableWall.WinchReleased", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WinchReleased, "BmScript.RWinchableWall.WinchReleased");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Winch, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_WinchAttached;
     /// <summary>
     /// Function: WinchAttached
     /// </summary>
     public unsafe override void WinchAttached(BmSDK.BmGame.RBatmobileWinch Winch)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RWinchableWall.WinchAttached", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WinchAttached, "BmScript.RWinchableWall.WinchAttached");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Winch, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetWinchTargetRotation;
     /// <summary>
     /// Function: GetWinchTargetRotation
     /// </summary>
     public unsafe override BmSDK.Rotator GetWinchTargetRotation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RWinchableWall.GetWinchTargetRotation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWinchTargetRotation, "BmScript.RWinchableWall.GetWinchTargetRotation");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetWinchTargetLocation;
     /// <summary>
     /// Function: GetWinchTargetLocation
     /// </summary>
     public unsafe override System.Numerics.Vector3 GetWinchTargetLocation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RWinchableWall.GetWinchTargetLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWinchTargetLocation, "BmScript.RWinchableWall.GetWinchTargetLocation");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RWinchableWall.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmScript.RWinchableWall.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ClearMatinee;
     /// <summary>
     /// Function: ClearMatinee
     /// </summary>
     public unsafe virtual void ClearMatinee()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RWinchableWall.ClearMatinee", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearMatinee, "BmScript.RWinchableWall.ClearMatinee");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetMatinee;
     /// <summary>
     /// Function: SetMatinee
     /// </summary>
     public unsafe virtual void SetMatinee(BmSDK.Engine.SeqAct_Interp M)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RWinchableWall.SetMatinee", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMatinee, "BmScript.RWinchableWall.SetMatinee");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(M, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

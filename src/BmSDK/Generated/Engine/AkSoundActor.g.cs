@@ -73,12 +73,13 @@ public partial class AkSoundActor : BmSDK.Engine.AkActor, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<AkSoundActor>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_EndMatineeControl;
     /// <summary>
     /// Function: EndMatineeControl
     /// </summary>
     public unsafe override void EndMatineeControl(BmSDK.Engine.InterpGroup InInterpGroup, BmSDK.Engine.InterpGroupInst InInterpGroupInst)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkSoundActor.EndMatineeControl", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EndMatineeControl, "Engine.AkSoundActor.EndMatineeControl");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroup, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroupInst, paramsPtr + 8);
@@ -86,12 +87,13 @@ public partial class AkSoundActor : BmSDK.Engine.AkActor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_BeginMatineeControl;
     /// <summary>
     /// Function: BeginMatineeControl
     /// </summary>
     public unsafe override void BeginMatineeControl(BmSDK.Engine.InterpGroup InInterpGroup, BmSDK.Engine.InterpGroupInst InInterpGroupInst)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkSoundActor.BeginMatineeControl", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BeginMatineeControl, "Engine.AkSoundActor.BeginMatineeControl");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroup, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroupInst, paramsPtr + 8);

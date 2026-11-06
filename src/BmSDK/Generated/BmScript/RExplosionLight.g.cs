@@ -78,23 +78,25 @@ public partial class RExplosionLight : BmSDK.Engine.Actor, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RExplosionLight>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_FastStartSlowEnd;
     /// <summary>
     /// Function: FastStartSlowEnd
     /// </summary>
     public unsafe virtual void FastStartSlowEnd()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RExplosionLight.FastStartSlowEnd", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FastStartSlowEnd, "BmScript.RExplosionLight.FastStartSlowEnd");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateLight;
     /// <summary>
     /// Function: UpdateLight
     /// </summary>
     public unsafe virtual void UpdateLight(float DeltaTime, System.Numerics.Vector3 Loc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RExplosionLight.UpdateLight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateLight, "BmScript.RExplosionLight.UpdateLight");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 4);
@@ -102,12 +104,13 @@ public partial class RExplosionLight : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_StartLight;
     /// <summary>
     /// Function: StartLight
     /// </summary>
     public unsafe virtual void StartLight()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RExplosionLight.StartLight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartLight, "BmScript.RExplosionLight.StartLight");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

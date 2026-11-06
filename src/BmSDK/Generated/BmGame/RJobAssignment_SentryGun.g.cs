@@ -78,12 +78,13 @@ public partial class RJobAssignment_SentryGun : BmSDK.BmGame.RJobAssignment, BmS
         where TComponent : class, Framework.IScriptComponent<RJobAssignment_SentryGun>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DoAssignment;
     /// <summary>
     /// Function: DoAssignment
     /// </summary>
     public unsafe override void DoAssignment(BmSDK.BmGame.RBMRoomAIState RoomState, BmSDK.BmGame.RBMAIController ThugCon, BmSDK.GameObject AssignTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJobAssignment_SentryGun.DoAssignment", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoAssignment, "BmGame.RJobAssignment_SentryGun.DoAssignment");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RoomState, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThugCon, paramsPtr + 8);
@@ -92,12 +93,13 @@ public partial class RJobAssignment_SentryGun : BmSDK.BmGame.RJobAssignment, BmS
         return;
     }
 
+    private static BmSDK.Function __fn_CanBeAssigned;
     /// <summary>
     /// Function: CanBeAssigned
     /// </summary>
     public unsafe override bool CanBeAssigned(BmSDK.BmGame.RBMRoomAIState RoomState, BmSDK.BmGame.RBMAIController ThugCon, BmSDK.GameObject AssignTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJobAssignment_SentryGun.CanBeAssigned", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeAssigned, "BmGame.RJobAssignment_SentryGun.CanBeAssigned");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RoomState, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThugCon, paramsPtr + 8);
@@ -106,24 +108,26 @@ public partial class RJobAssignment_SentryGun : BmSDK.BmGame.RJobAssignment, BmS
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_IsAlreadyDoingJob;
     /// <summary>
     /// Function: IsAlreadyDoingJob
     /// </summary>
     public unsafe override bool IsAlreadyDoingJob(BmSDK.BmGame.RBMAIController TestCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJobAssignment_SentryGun.IsAlreadyDoingJob", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAlreadyDoingJob, "BmGame.RJobAssignment_SentryGun.IsAlreadyDoingJob");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_AddToDestList;
     /// <summary>
     /// Function: AddToDestList
     /// </summary>
     public unsafe override void AddToDestList(BmSDK.BmGame.RBMRoomAIState RoomState, out BmSDK.TArray<BmSDK.BmGame.RAEC_LevelScripting.FSearchTarget> OutList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJobAssignment_SentryGun.AddToDestList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddToDestList, "BmGame.RJobAssignment_SentryGun.AddToDestList");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RoomState, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

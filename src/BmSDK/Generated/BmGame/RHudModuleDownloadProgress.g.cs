@@ -78,23 +78,25 @@ public partial class RHudModuleDownloadProgress : BmSDK.BmGame.RHudModule, BmSDK
         where TComponent : class, Framework.IScriptComponent<RHudModuleDownloadProgress>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ShowOutro;
     /// <summary>
     /// Function: ShowOutro
     /// </summary>
     public unsafe virtual void ShowOutro()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDownloadProgress.ShowOutro", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowOutro, "BmGame.RHudModuleDownloadProgress.ShowOutro");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetDisplayMessage;
     /// <summary>
     /// Function: SetDisplayMessage
     /// </summary>
     public unsafe virtual void SetDisplayMessage(BmSDK.FString message_text, BmSDK.FString message_animation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDownloadProgress.SetDisplayMessage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDisplayMessage, "BmGame.RHudModuleDownloadProgress.SetDisplayMessage");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(message_text, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(message_animation, paramsPtr + 16);
@@ -102,58 +104,63 @@ public partial class RHudModuleDownloadProgress : BmSDK.BmGame.RHudModule, BmSDK
         return;
     }
 
+    private static BmSDK.Function __fn_SetProgressLevel;
     /// <summary>
     /// Function: SetProgressLevel
     /// </summary>
     public unsafe virtual void SetProgressLevel(float Proportion)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDownloadProgress.SetProgressLevel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetProgressLevel, "BmGame.RHudModuleDownloadProgress.SetProgressLevel");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Proportion, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_DownloadProgress_NotifyOutroComplete;
     /// <summary>
     /// Function: XI_DownloadProgress_NotifyOutroComplete
     /// </summary>
     public unsafe virtual void XI_DownloadProgress_NotifyOutroComplete()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDownloadProgress.XI_DownloadProgress_NotifyOutroComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_DownloadProgress_NotifyOutroComplete, "BmGame.RHudModuleDownloadProgress.XI_DownloadProgress_NotifyOutroComplete");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_DownloadProgress_NotifyIntroComplete;
     /// <summary>
     /// Function: XI_DownloadProgress_NotifyIntroComplete
     /// </summary>
     public unsafe virtual void XI_DownloadProgress_NotifyIntroComplete()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDownloadProgress.XI_DownloadProgress_NotifyIntroComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_DownloadProgress_NotifyIntroComplete, "BmGame.RHudModuleDownloadProgress.XI_DownloadProgress_NotifyIntroComplete");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShowIntro;
     /// <summary>
     /// Function: ShowIntro
     /// </summary>
     public unsafe virtual void ShowIntro(float initial_proportion)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDownloadProgress.ShowIntro", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowIntro, "BmGame.RHudModuleDownloadProgress.ShowIntro");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(initial_proportion, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ChangeToFailureMessage;
     /// <summary>
     /// Function: ChangeToFailureMessage
     /// </summary>
     public unsafe virtual void ChangeToFailureMessage(BmSDK.FString FailureMessageText, BmSDK.FString FailureMessageAnimation = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDownloadProgress.ChangeToFailureMessage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ChangeToFailureMessage, "BmGame.RHudModuleDownloadProgress.ChangeToFailureMessage");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FailureMessageText, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FailureMessageAnimation, paramsPtr + 16);
@@ -161,12 +168,13 @@ public partial class RHudModuleDownloadProgress : BmSDK.BmGame.RHudModule, BmSDK
         return;
     }
 
+    private static BmSDK.Function __fn_ChangeToCompleteMessage;
     /// <summary>
     /// Function: ChangeToCompleteMessage
     /// </summary>
     public unsafe virtual void ChangeToCompleteMessage(BmSDK.FString MessageText = default, BmSDK.FString MessageAnimation = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDownloadProgress.ChangeToCompleteMessage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ChangeToCompleteMessage, "BmGame.RHudModuleDownloadProgress.ChangeToCompleteMessage");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MessageText, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MessageAnimation, paramsPtr + 16);
@@ -174,58 +182,63 @@ public partial class RHudModuleDownloadProgress : BmSDK.BmGame.RHudModule, BmSDK
         return;
     }
 
+    private static BmSDK.Function __fn_TickDownloadProgress;
     /// <summary>
     /// Function: TickDownloadProgress
     /// </summary>
     public unsafe virtual void TickDownloadProgress(float delta_t)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDownloadProgress.TickDownloadProgress", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TickDownloadProgress, "BmGame.RHudModuleDownloadProgress.TickDownloadProgress");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(delta_t, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DownloadSoundPlaying;
     /// <summary>
     /// Function: DownloadSoundPlaying
     /// </summary>
     public unsafe virtual void DownloadSoundPlaying(bool Playing)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDownloadProgress.DownloadSoundPlaying", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DownloadSoundPlaying, "BmGame.RHudModuleDownloadProgress.DownloadSoundPlaying");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Playing, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InitialiseFlash;
     /// <summary>
     /// Function: InitialiseFlash
     /// </summary>
     public unsafe override void InitialiseFlash()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDownloadProgress.InitialiseFlash", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitialiseFlash, "BmGame.RHudModuleDownloadProgress.InitialiseFlash");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Close;
     /// <summary>
     /// Function: Close
     /// </summary>
     public unsafe override void Close()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDownloadProgress.Close", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Close, "BmGame.RHudModuleDownloadProgress.Close");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe override bool Init(BmSDK.BmGame.RPlayerController _RPC, BmSDK.FString _ExtensionName, BmSDK.FString _ExtensionPath)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleDownloadProgress.Init", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmGame.RHudModuleDownloadProgress.Init");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_RPC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_ExtensionName, paramsPtr + 8);

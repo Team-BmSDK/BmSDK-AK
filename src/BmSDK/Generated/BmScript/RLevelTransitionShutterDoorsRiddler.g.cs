@@ -78,91 +78,99 @@ public partial class RLevelTransitionShutterDoorsRiddler : BmSDK.BmScript.RLevel
         where TComponent : class, Framework.IScriptComponent<RLevelTransitionShutterDoorsRiddler>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RLevelTransitionShutterDoorsRiddler.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmScript.RLevelTransitionShutterDoorsRiddler.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsActive;
     /// <summary>
     /// Function: IsActive
     /// </summary>
     public unsafe override bool IsActive(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RLevelTransitionShutterDoorsRiddler.IsActive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsActive, "BmScript.RLevelTransitionShutterDoorsRiddler.IsActive");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CheckForRiddlerfy;
     /// <summary>
     /// Function: CheckForRiddlerfy
     /// </summary>
     public unsafe virtual void CheckForRiddlerfy()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RLevelTransitionShutterDoorsRiddler.CheckForRiddlerfy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckForRiddlerfy, "BmScript.RLevelTransitionShutterDoorsRiddler.CheckForRiddlerfy");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CheckForUnlock;
     /// <summary>
     /// Function: CheckForUnlock
     /// </summary>
     public unsafe virtual void CheckForUnlock()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RLevelTransitionShutterDoorsRiddler.CheckForUnlock", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckForUnlock, "BmScript.RLevelTransitionShutterDoorsRiddler.CheckForUnlock");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetRiddlerfied;
     /// <summary>
     /// Function: SetRiddlerfied
     /// </summary>
     public unsafe virtual void SetRiddlerfied()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RLevelTransitionShutterDoorsRiddler.SetRiddlerfied", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRiddlerfied, "BmScript.RLevelTransitionShutterDoorsRiddler.SetRiddlerfied");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AllowedToBeOpen;
     /// <summary>
     /// Function: AllowedToBeOpen
     /// </summary>
     public unsafe override bool AllowedToBeOpen(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RLevelTransitionShutterDoorsRiddler.AllowedToBeOpen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowedToBeOpen, "BmScript.RLevelTransitionShutterDoorsRiddler.AllowedToBeOpen");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_ShouldLockDoors;
     /// <summary>
     /// Function: ShouldLockDoors
     /// </summary>
     public unsafe override BmSDK.BmGame.RGameInfo.ECombatLockType ShouldLockDoors()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RLevelTransitionShutterDoorsRiddler.ShouldLockDoors", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldLockDoors, "BmScript.RLevelTransitionShutterDoorsRiddler.ShouldLockDoors");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameInfo.ECombatLockType>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_DisabledByPassenger;
     /// <summary>
     /// Function: DisabledByPassenger
     /// </summary>
     public unsafe override bool DisabledByPassenger(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RLevelTransitionShutterDoorsRiddler.DisabledByPassenger", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisabledByPassenger, "BmScript.RLevelTransitionShutterDoorsRiddler.DisabledByPassenger");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

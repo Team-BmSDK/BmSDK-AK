@@ -73,452 +73,492 @@ public partial class RPawnBossFireflyBase : BmSDK.BmGame.RPawnVillain, BmSDK.IGa
         where TComponent : class, Framework.IScriptComponent<RPawnBossFireflyBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_TriggerFFBark;
     /// <summary>
     /// Function: TriggerFFBark
     /// </summary>
     public unsafe virtual bool TriggerFFBark(BmSDK.FName eventFlagName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.TriggerFFBark", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerFFBark, "BmGame.RPawnBossFireflyBase.TriggerFFBark");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(eventFlagName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_TriggerSecondChaseOutroGauntlet;
     /// <summary>
     /// Function: TriggerSecondChaseOutroGauntlet
     /// </summary>
     public unsafe virtual bool TriggerSecondChaseOutroGauntlet()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.TriggerSecondChaseOutroGauntlet", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerSecondChaseOutroGauntlet, "BmGame.RPawnBossFireflyBase.TriggerSecondChaseOutroGauntlet");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_TriggerFirstChaseOutroGauntlet;
     /// <summary>
     /// Function: TriggerFirstChaseOutroGauntlet
     /// </summary>
     public unsafe virtual bool TriggerFirstChaseOutroGauntlet()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.TriggerFirstChaseOutroGauntlet", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerFirstChaseOutroGauntlet, "BmGame.RPawnBossFireflyBase.TriggerFirstChaseOutroGauntlet");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_NotifyBeatdownFailed;
     /// <summary>
     /// Function: NotifyBeatdownFailed
     /// </summary>
     public unsafe virtual void NotifyBeatdownFailed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.NotifyBeatdownFailed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyBeatdownFailed, "BmGame.RPawnBossFireflyBase.NotifyBeatdownFailed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyBeatdownComplete;
     /// <summary>
     /// Function: NotifyBeatdownComplete
     /// </summary>
     public unsafe virtual void NotifyBeatdownComplete()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.NotifyBeatdownComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyBeatdownComplete, "BmGame.RPawnBossFireflyBase.NotifyBeatdownComplete");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CleanUpGrenades;
     /// <summary>
     /// Function: CleanUpGrenades
     /// </summary>
     public unsafe virtual void CleanUpGrenades()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.CleanUpGrenades", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CleanUpGrenades, "BmGame.RPawnBossFireflyBase.CleanUpGrenades");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyGrenadeDidDamage;
     /// <summary>
     /// Function: NotifyGrenadeDidDamage
     /// </summary>
     public unsafe virtual void NotifyGrenadeDidDamage()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.NotifyGrenadeDidDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyGrenadeDidDamage, "BmGame.RPawnBossFireflyBase.NotifyGrenadeDidDamage");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RemoveGrenadeFromList;
     /// <summary>
     /// Function: RemoveGrenadeFromList
     /// </summary>
     public unsafe virtual void RemoveGrenadeFromList(BmSDK.BmGame.RProjectile_GrenadeBase gren)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.RemoveGrenadeFromList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveGrenadeFromList, "BmGame.RPawnBossFireflyBase.RemoveGrenadeFromList");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(gren, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InitiateTakedownMove;
     /// <summary>
     /// Function: InitiateTakedownMove
     /// </summary>
     public unsafe virtual void InitiateTakedownMove(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.InitiateTakedownMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitiateTakedownMove, "BmGame.RPawnBossFireflyBase.InitiateTakedownMove");
         byte* paramsPtr = stackalloc byte[152];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NeedsFallbackTakedownInstructions;
     /// <summary>
     /// Function: NeedsFallbackTakedownInstructions
     /// </summary>
     public unsafe virtual bool NeedsFallbackTakedownInstructions()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.NeedsFallbackTakedownInstructions", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NeedsFallbackTakedownInstructions, "BmGame.RPawnBossFireflyBase.NeedsFallbackTakedownInstructions");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_InRangeForActualTakedown;
     /// <summary>
     /// Function: InRangeForActualTakedown
     /// </summary>
     public unsafe virtual bool InRangeForActualTakedown(System.Numerics.Vector3 Loc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.InRangeForActualTakedown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InRangeForActualTakedown, "BmGame.RPawnBossFireflyBase.InRangeForActualTakedown");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_InRangeForTakedownPrompt;
     /// <summary>
     /// Function: InRangeForTakedownPrompt
     /// </summary>
     public unsafe virtual bool InRangeForTakedownPrompt(System.Numerics.Vector3 Loc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.InRangeForTakedownPrompt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InRangeForTakedownPrompt, "BmGame.RPawnBossFireflyBase.InRangeForTakedownPrompt");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_DropBomb_TimedRecursive;
     /// <summary>
     /// Function: DropBomb_TimedRecursive
     /// </summary>
     public unsafe virtual void DropBomb_TimedRecursive()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.DropBomb_TimedRecursive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DropBomb_TimedRecursive, "BmGame.RPawnBossFireflyBase.DropBomb_TimedRecursive");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateTargetVFX;
     /// <summary>
     /// Function: UpdateTargetVFX
     /// </summary>
     public unsafe virtual void UpdateTargetVFX(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.UpdateTargetVFX", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateTargetVFX, "BmGame.RPawnBossFireflyBase.UpdateTargetVFX");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TryDeactivateTargetVFX;
     /// <summary>
     /// Function: TryDeactivateTargetVFX
     /// </summary>
     public unsafe virtual void TryDeactivateTargetVFX()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.TryDeactivateTargetVFX", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TryDeactivateTargetVFX, "BmGame.RPawnBossFireflyBase.TryDeactivateTargetVFX");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TryActivateTargetVFX;
     /// <summary>
     /// Function: TryActivateTargetVFX
     /// </summary>
     public unsafe virtual void TryActivateTargetVFX()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.TryActivateTargetVFX", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TryActivateTargetVFX, "BmGame.RPawnBossFireflyBase.TryActivateTargetVFX");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DisableBoostFX;
     /// <summary>
     /// Function: DisableBoostFX
     /// </summary>
     public unsafe virtual void DisableBoostFX()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.DisableBoostFX", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisableBoostFX, "BmGame.RPawnBossFireflyBase.DisableBoostFX");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EnableBoostFX;
     /// <summary>
     /// Function: EnableBoostFX
     /// </summary>
     public unsafe virtual void EnableBoostFX()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.EnableBoostFX", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnableBoostFX, "BmGame.RPawnBossFireflyBase.EnableBoostFX");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DisableSmokeTrail;
     /// <summary>
     /// Function: DisableSmokeTrail
     /// </summary>
     public unsafe virtual void DisableSmokeTrail()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.DisableSmokeTrail", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisableSmokeTrail, "BmGame.RPawnBossFireflyBase.DisableSmokeTrail");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EnableSmokeTrail;
     /// <summary>
     /// Function: EnableSmokeTrail
     /// </summary>
     public unsafe virtual void EnableSmokeTrail()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.EnableSmokeTrail", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnableSmokeTrail, "BmGame.RPawnBossFireflyBase.EnableSmokeTrail");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyFFFliesAwayAfterBeatdown;
     /// <summary>
     /// Function: NotifyFFFliesAwayAfterBeatdown
     /// </summary>
     public unsafe virtual void NotifyFFFliesAwayAfterBeatdown()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.NotifyFFFliesAwayAfterBeatdown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyFFFliesAwayAfterBeatdown, "BmGame.RPawnBossFireflyBase.NotifyFFFliesAwayAfterBeatdown");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OutroGauntletFinished;
     /// <summary>
     /// Function: OutroGauntletFinished
     /// </summary>
     public unsafe virtual void OutroGauntletFinished()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.OutroGauntletFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OutroGauntletFinished, "BmGame.RPawnBossFireflyBase.OutroGauntletFinished");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NoMorePunches;
     /// <summary>
     /// Function: NoMorePunches
     /// </summary>
     public unsafe virtual void NoMorePunches()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.NoMorePunches", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NoMorePunches, "BmGame.RPawnBossFireflyBase.NoMorePunches");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PunchConnected;
     /// <summary>
     /// Function: PunchConnected
     /// </summary>
     public unsafe virtual void PunchConnected()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.PunchConnected", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PunchConnected, "BmGame.RPawnBossFireflyBase.PunchConnected");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayPunchedEmote;
     /// <summary>
     /// Function: PlayPunchedEmote
     /// </summary>
     public unsafe virtual void PlayPunchedEmote()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.PlayPunchedEmote", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayPunchedEmote, "BmGame.RPawnBossFireflyBase.PlayPunchedEmote");
         byte* paramsPtr = stackalloc byte[116];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CityOutOfView;
     /// <summary>
     /// Function: CityOutOfView
     /// </summary>
     public unsafe virtual void CityOutOfView()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.CityOutOfView", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CityOutOfView, "BmGame.RPawnBossFireflyBase.CityOutOfView");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CamPointingUpDuringTakedown;
     /// <summary>
     /// Function: CamPointingUpDuringTakedown
     /// </summary>
     public unsafe virtual void CamPointingUpDuringTakedown()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.CamPointingUpDuringTakedown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CamPointingUpDuringTakedown, "BmGame.RPawnBossFireflyBase.CamPointingUpDuringTakedown");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmGame.RPawnBossFireflyBase.Destroyed");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FireflyPawnNoLongerRequired;
     /// <summary>
     /// Function: FireflyPawnNoLongerRequired
     /// </summary>
     public unsafe virtual void FireflyPawnNoLongerRequired()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.FireflyPawnNoLongerRequired", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireflyPawnNoLongerRequired, "BmGame.RPawnBossFireflyBase.FireflyPawnNoLongerRequired");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RPawnBossFireflyBase.Tick");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RPawnBossFireflyBase.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DamagedBy;
     /// <summary>
     /// Function: DamagedBy
     /// </summary>
     public unsafe override BmSDK.BmGame.RPawnCombat.DamageResult DamagedBy(BmSDK.BmGame.RPawnCombat.FDamageInfo DmgInfo)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.DamagedBy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DamagedBy, "BmGame.RPawnBossFireflyBase.DamagedBy");
         byte* paramsPtr = stackalloc byte[249];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DmgInfo, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnCombat.DamageResult>(paramsPtr + 248);
     }
 
+    private static BmSDK.Function __fn_WarnAboutRiotSurpressorShot;
     /// <summary>
     /// Function: WarnAboutRiotSurpressorShot
     /// </summary>
     public unsafe override void WarnAboutRiotSurpressorShot()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.WarnAboutRiotSurpressorShot", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WarnAboutRiotSurpressorShot, "BmGame.RPawnBossFireflyBase.WarnAboutRiotSurpressorShot");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EncroachedBy;
     /// <summary>
     /// Function: EncroachedBy
     /// </summary>
     public unsafe override void EncroachedBy(BmSDK.Engine.Actor Other)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.EncroachedBy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EncroachedBy, "BmGame.RPawnBossFireflyBase.EncroachedBy");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StopGPS;
     /// <summary>
     /// Function: StopGPS
     /// </summary>
     public unsafe virtual bool StopGPS()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.StopGPS", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopGPS, "BmGame.RPawnBossFireflyBase.StopGPS");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Disarm;
     /// <summary>
     /// Function: Disarm
     /// </summary>
     public unsafe override BmSDK.BmGame.RBMCombatThrownObject Disarm(BmSDK.Class DisarmDamageType = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.Disarm", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Disarm, "BmGame.RPawnBossFireflyBase.Disarm");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DisarmDamageType, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMCombatThrownObject>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_AreTakedownsFatal;
     /// <summary>
     /// Function: AreTakedownsFatal
     /// </summary>
     public unsafe override bool AreTakedownsFatal()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.AreTakedownsFatal", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AreTakedownsFatal, "BmGame.RPawnBossFireflyBase.AreTakedownsFatal");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ShouldForceBeatDown;
     /// <summary>
     /// Function: ShouldForceBeatDown
     /// </summary>
     public unsafe override bool ShouldForceBeatDown(BmSDK.BmGame.RPawnPlayerCombat TestPlayer)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.ShouldForceBeatDown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldForceBeatDown, "BmGame.RPawnBossFireflyBase.ShouldForceBeatDown");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPlayer, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CanRedirect;
     /// <summary>
     /// Function: CanRedirect
     /// </summary>
     public unsafe override bool CanRedirect()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.CanRedirect", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanRedirect, "BmGame.RPawnBossFireflyBase.CanRedirect");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsAwareOfPlayer;
     /// <summary>
     /// Function: IsAwareOfPlayer
     /// </summary>
     public unsafe override bool IsAwareOfPlayer(BmSDK.BmGame.RPawnPlayer PlayerPawn, BmSDK.Class dmgType = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.IsAwareOfPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAwareOfPlayer, "BmGame.RPawnBossFireflyBase.IsAwareOfPlayer");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 8);
@@ -526,58 +566,63 @@ public partial class RPawnBossFireflyBase : BmSDK.BmGame.RPawnVillain, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_CheckForOverridenTakedown;
     /// <summary>
     /// Function: CheckForOverridenTakedown
     /// </summary>
     public unsafe override bool CheckForOverridenTakedown(BmSDK.BmGame.RGameInfo.EStealthTakeDownStages takedown_stage)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.CheckForOverridenTakedown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckForOverridenTakedown, "BmGame.RPawnBossFireflyBase.CheckForOverridenTakedown");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(takedown_stage, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_IsVulnerableToTakedown;
     /// <summary>
     /// Function: IsVulnerableToTakedown
     /// </summary>
     public unsafe override bool IsVulnerableToTakedown(BmSDK.FString takedown)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.IsVulnerableToTakedown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsVulnerableToTakedown, "BmGame.RPawnBossFireflyBase.IsVulnerableToTakedown");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(takedown, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_IsBoss;
     /// <summary>
     /// Function: IsBoss
     /// </summary>
     public unsafe override bool IsBoss()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.IsBoss", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsBoss, "BmGame.RPawnBossFireflyBase.IsBoss");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_HitByFracturePart;
     /// <summary>
     /// Function: HitByFracturePart
     /// </summary>
     public unsafe virtual void HitByFracturePart()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.HitByFracturePart", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitByFracturePart, "BmGame.RPawnBossFireflyBase.HitByFracturePart");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PossibleCarCollisionWarning;
     /// <summary>
     /// Function: PossibleCarCollisionWarning
     /// </summary>
     public unsafe override void PossibleCarCollisionWarning(BmSDK.Engine.Actor V, float Speed, float DeltaTime, bool bForceDive = default, bool bZap = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.PossibleCarCollisionWarning", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PossibleCarCollisionWarning, "BmGame.RPawnBossFireflyBase.PossibleCarCollisionWarning");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(V, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speed, paramsPtr + 8);
@@ -588,12 +633,13 @@ public partial class RPawnBossFireflyBase : BmSDK.BmGame.RPawnVillain, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_ProjectPointOntoPlane;
     /// <summary>
     /// Function: ProjectPointOntoPlane
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 ProjectPointOntoPlane(out System.Numerics.Vector3 rPlaneNormal, out System.Numerics.Vector3 rPointOnPlane, out System.Numerics.Vector3 rPoint)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.ProjectPointOntoPlane", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProjectPointOntoPlane, "BmGame.RPawnBossFireflyBase.ProjectPointOntoPlane");
         byte* paramsPtr = stackalloc byte[48];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -609,12 +655,13 @@ public partial class RPawnBossFireflyBase : BmSDK.BmGame.RPawnVillain, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 36);
     }
 
+    private static BmSDK.Function __fn_MoveNoCollision;
     /// <summary>
     /// Function: MoveNoCollision
     /// </summary>
     public unsafe virtual bool MoveNoCollision(System.Numerics.Vector3 Delta)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.MoveNoCollision", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MoveNoCollision, "BmGame.RPawnBossFireflyBase.MoveNoCollision");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Delta, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -628,12 +675,13 @@ public partial class RPawnBossFireflyBase : BmSDK.BmGame.RPawnVillain, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_UpdateRotation;
     /// <summary>
     /// Function: UpdateRotation
     /// </summary>
     public unsafe virtual void UpdateRotation(float DeltaTime, System.Numerics.Vector3 Destination, float currMaxSpeed, float cruisingMaxSpeed, float evasionMaxSpeed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.UpdateRotation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateRotation, "BmGame.RPawnBossFireflyBase.UpdateRotation");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Destination, paramsPtr + 4);
@@ -651,12 +699,13 @@ public partial class RPawnBossFireflyBase : BmSDK.BmGame.RPawnVillain, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_AccelerateTowards;
     /// <summary>
     /// Function: AccelerateTowards
     /// </summary>
     public unsafe virtual void AccelerateTowards(float DeltaTime, System.Numerics.Vector3 Destination, float currMaxSpeed, float cruisingMaxSpeed, float evasionMaxSpeed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnBossFireflyBase.AccelerateTowards", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AccelerateTowards, "BmGame.RPawnBossFireflyBase.AccelerateTowards");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Destination, paramsPtr + 4);

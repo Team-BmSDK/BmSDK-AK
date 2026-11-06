@@ -78,45 +78,49 @@ public partial class RGooSprayRb : BmSDK.BmGame.RGooSpray, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RGooSprayRb>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PlayedHostageInDangerLine;
     /// <summary>
     /// Function: PlayedHostageInDangerLine
     /// </summary>
     public unsafe virtual void PlayedHostageInDangerLine()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGooSprayRb.PlayedHostageInDangerLine", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayedHostageInDangerLine, "BmScript.RGooSprayRb.PlayedHostageInDangerLine");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartGelSpray;
     /// <summary>
     /// Function: StartGelSpray
     /// </summary>
     public unsafe override void StartGelSpray()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGooSprayRb.StartGelSpray", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartGelSpray, "BmScript.RGooSprayRb.StartGelSpray");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayHostageInDangerLine;
     /// <summary>
     /// Function: PlayHostageInDangerLine
     /// </summary>
     public unsafe override void PlayHostageInDangerLine()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGooSprayRb.PlayHostageInDangerLine", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayHostageInDangerLine, "BmScript.RGooSprayRb.PlayHostageInDangerLine");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayDetonateAudio;
     /// <summary>
     /// Function: PlayDetonateAudio
     /// </summary>
     public unsafe override void PlayDetonateAudio()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGooSprayRb.PlayDetonateAudio", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayDetonateAudio, "BmScript.RGooSprayRb.PlayDetonateAudio");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

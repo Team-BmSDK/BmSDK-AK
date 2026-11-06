@@ -78,12 +78,13 @@ public partial class DynamicLightEnvironmentComponent : BmSDK.Engine.LightEnviro
         where TComponent : class, Framework.IScriptComponent<DynamicLightEnvironmentComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetOwnerBounds;
     /// <summary>
     /// Function: GetOwnerBounds
     /// </summary>
     public unsafe virtual BmSDK.GameObject.FBoxSphereBounds GetOwnerBounds()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DynamicLightEnvironmentComponent.GetOwnerBounds", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetOwnerBounds, "Engine.DynamicLightEnvironmentComponent.GetOwnerBounds");
         byte* paramsPtr = stackalloc byte[28];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class DynamicLightEnvironmentComponent : BmSDK.Engine.LightEnviro
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.GameObject.FBoxSphereBounds>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ResetEnvironment;
     /// <summary>
     /// Function: ResetEnvironment
     /// </summary>
     public unsafe virtual void ResetEnvironment()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DynamicLightEnvironmentComponent.ResetEnvironment", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetEnvironment, "Engine.DynamicLightEnvironmentComponent.ResetEnvironment");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

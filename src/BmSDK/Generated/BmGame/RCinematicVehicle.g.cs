@@ -78,12 +78,13 @@ public partial class RCinematicVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.
         where TComponent : class, Framework.IScriptComponent<RCinematicVehicle>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetAkAudible;
     /// <summary>
     /// Function: GetAkAudible
     /// </summary>
     public unsafe override BmSDK.Engine.RAkAudible GetAkAudible(bool allowCreate = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCinematicVehicle.GetAkAudible", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAkAudible, "BmGame.RCinematicVehicle.GetAkAudible");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(allowCreate, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -97,24 +98,26 @@ public partial class RCinematicVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.RAkAudible>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_InterpolationFinished;
     /// <summary>
     /// Function: InterpolationFinished
     /// </summary>
     public unsafe override void InterpolationFinished(BmSDK.Engine.SeqAct_Interp InterpAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCinematicVehicle.InterpolationFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InterpolationFinished, "BmGame.RCinematicVehicle.InterpolationFinished");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InterpAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InterpolationStarted;
     /// <summary>
     /// Function: InterpolationStarted
     /// </summary>
     public unsafe override void InterpolationStarted(BmSDK.Engine.SeqAct_Interp InterpAction, BmSDK.Engine.InterpGroupInst GroupInst)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCinematicVehicle.InterpolationStarted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InterpolationStarted, "BmGame.RCinematicVehicle.InterpolationStarted");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InterpAction, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GroupInst, paramsPtr + 8);
@@ -122,12 +125,13 @@ public partial class RCinematicVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_FinishAnimControl;
     /// <summary>
     /// Function: FinishAnimControl
     /// </summary>
     public unsafe override void FinishAnimControl(BmSDK.Engine.InterpGroup InInterpGroup, BmSDK.Engine.InterpGroupInst InInterpGroupInst)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCinematicVehicle.FinishAnimControl", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishAnimControl, "BmGame.RCinematicVehicle.FinishAnimControl");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroup, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroupInst, paramsPtr + 8);
@@ -135,12 +139,13 @@ public partial class RCinematicVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_BlendOutAnimControl;
     /// <summary>
     /// Function: BlendOutAnimControl
     /// </summary>
     public unsafe override void BlendOutAnimControl(BmSDK.Engine.InterpGroup InInterpGroup, BmSDK.Engine.InterpGroupInst InInterpGroupInst, float BlendOutDuration)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCinematicVehicle.BlendOutAnimControl", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BlendOutAnimControl, "BmGame.RCinematicVehicle.BlendOutAnimControl");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroup, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroupInst, paramsPtr + 8);
@@ -149,12 +154,13 @@ public partial class RCinematicVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_SetAnimPosition;
     /// <summary>
     /// Function: SetAnimPosition
     /// </summary>
     public unsafe override void SetAnimPosition(BmSDK.Engine.InterpGroupInst InterpGroupInst, BmSDK.FName SlotName, int ChannelIndex, BmSDK.FName InAnimSeqName, float InPosition, bool bFireNotifies, bool bLooping, bool bEnableRootMotion)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCinematicVehicle.SetAnimPosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAnimPosition, "BmGame.RCinematicVehicle.SetAnimPosition");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InterpGroupInst, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SlotName, paramsPtr + 8);
@@ -168,12 +174,13 @@ public partial class RCinematicVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_BeginAnimControl;
     /// <summary>
     /// Function: BeginAnimControl
     /// </summary>
     public unsafe override void BeginAnimControl(BmSDK.Engine.InterpGroup InInterpGroup, BmSDK.Engine.InterpGroupInst InInterpGroupInst)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCinematicVehicle.BeginAnimControl", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BeginAnimControl, "BmGame.RCinematicVehicle.BeginAnimControl");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroup, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroupInst, paramsPtr + 8);
@@ -181,34 +188,37 @@ public partial class RCinematicVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_BeginAnimControlOnProxy;
     /// <summary>
     /// Function: BeginAnimControlOnProxy
     /// </summary>
     public unsafe virtual void BeginAnimControlOnProxy()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCinematicVehicle.BeginAnimControlOnProxy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BeginAnimControlOnProxy, "BmGame.RCinematicVehicle.BeginAnimControlOnProxy");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetupCustomPhysics;
     /// <summary>
     /// Function: SetupCustomPhysics
     /// </summary>
     public unsafe virtual void SetupCustomPhysics()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCinematicVehicle.SetupCustomPhysics", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupCustomPhysics, "BmGame.RCinematicVehicle.SetupCustomPhysics");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EndMatineeControl;
     /// <summary>
     /// Function: EndMatineeControl
     /// </summary>
     public unsafe override void EndMatineeControl(BmSDK.Engine.InterpGroup InInterpGroup, BmSDK.Engine.InterpGroupInst InInterpGroupInst)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCinematicVehicle.EndMatineeControl", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EndMatineeControl, "BmGame.RCinematicVehicle.EndMatineeControl");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroup, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroupInst, paramsPtr + 8);
@@ -216,12 +226,13 @@ public partial class RCinematicVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_BeginMatineeControl;
     /// <summary>
     /// Function: BeginMatineeControl
     /// </summary>
     public unsafe override void BeginMatineeControl(BmSDK.Engine.InterpGroup InInterpGroup, BmSDK.Engine.InterpGroupInst InInterpGroupInst)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCinematicVehicle.BeginMatineeControl", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BeginMatineeControl, "BmGame.RCinematicVehicle.BeginMatineeControl");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroup, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroupInst, paramsPtr + 8);
@@ -229,23 +240,25 @@ public partial class RCinematicVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCinematicVehicle.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RCinematicVehicle.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetHidden;
     /// <summary>
     /// Function: SetHidden
     /// </summary>
     public unsafe override void SetHidden(bool bNewHidden)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCinematicVehicle.SetHidden", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHidden, "BmGame.RCinematicVehicle.SetHidden");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewHidden, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -259,58 +272,63 @@ public partial class RCinematicVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_SetNoProxyActor;
     /// <summary>
     /// Function: SetNoProxyActor
     /// </summary>
     public unsafe virtual void SetNoProxyActor()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCinematicVehicle.SetNoProxyActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetNoProxyActor, "BmGame.RCinematicVehicle.SetNoProxyActor");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetProxyingActor;
     /// <summary>
     /// Function: SetProxyingActor
     /// </summary>
     public unsafe virtual void SetProxyingActor(BmSDK.Engine.Actor Other)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCinematicVehicle.SetProxyingActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetProxyingActor, "BmGame.RCinematicVehicle.SetProxyingActor");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HasProxyErrors;
     /// <summary>
     /// Function: HasProxyErrors
     /// </summary>
     public unsafe virtual bool HasProxyErrors()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCinematicVehicle.HasProxyErrors", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasProxyErrors, "BmGame.RCinematicVehicle.HasProxyErrors");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetMyComponentsHidden;
     /// <summary>
     /// Function: SetMyComponentsHidden
     /// </summary>
     public unsafe virtual void SetMyComponentsHidden(bool bHide)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCinematicVehicle.SetMyComponentsHidden", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMyComponentsHidden, "BmGame.RCinematicVehicle.SetMyComponentsHidden");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bHide, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateFakeWheelRotation;
     /// <summary>
     /// Function: UpdateFakeWheelRotation
     /// </summary>
     public unsafe virtual void UpdateFakeWheelRotation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCinematicVehicle.UpdateFakeWheelRotation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateFakeWheelRotation, "BmGame.RCinematicVehicle.UpdateFakeWheelRotation");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -323,12 +341,13 @@ public partial class RCinematicVehicle : BmSDK.BmGame.RSkeletalMeshActor, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_Teleport;
     /// <summary>
     /// Function: Teleport
     /// </summary>
     public unsafe virtual void Teleport()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCinematicVehicle.Teleport", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Teleport, "BmGame.RCinematicVehicle.Teleport");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

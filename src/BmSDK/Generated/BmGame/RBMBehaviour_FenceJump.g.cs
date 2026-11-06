@@ -78,103 +78,112 @@ public partial class RBMBehaviour_FenceJump : BmSDK.BmGame.RBMBehaviour, BmSDK.I
         where TComponent : class, Framework.IScriptComponent<RBMBehaviour_FenceJump>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetThoughts;
     /// <summary>
     /// Function: GetThoughts
     /// </summary>
     public unsafe override void GetThoughts(out BmSDK.TArray<BmSDK.Engine.Actor.FThought> ThoughtList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_FenceJump.GetThoughts", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetThoughts, "BmGame.RBMBehaviour_FenceJump.GetThoughts");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ThoughtList = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.Engine.Actor.FThought>>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnDeactivate;
     /// <summary>
     /// Function: OnDeactivate
     /// </summary>
     public unsafe override void OnDeactivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_FenceJump.OnDeactivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeactivate, "BmGame.RBMBehaviour_FenceJump.OnDeactivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_JumpLocationLooksABitInsane;
     /// <summary>
     /// Function: JumpLocationLooksABitInsane
     /// </summary>
     public unsafe virtual bool JumpLocationLooksABitInsane()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_FenceJump.JumpLocationLooksABitInsane", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_JumpLocationLooksABitInsane, "BmGame.RBMBehaviour_FenceJump.JumpLocationLooksABitInsane");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PlayFenceJumpAnim;
     /// <summary>
     /// Function: PlayFenceJumpAnim
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RAnimUtil_PosePlayer.FTransitionId PlayFenceJumpAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_FenceJump.PlayFenceJumpAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayFenceJumpAnim, "BmGame.RBMBehaviour_FenceJump.PlayFenceJumpAnim");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RAnimUtil_PosePlayer.FTransitionId>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_MirrorJumpCarAnim;
     /// <summary>
     /// Function: MirrorJumpCarAnim
     /// </summary>
     public unsafe virtual bool MirrorJumpCarAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_FenceJump.MirrorJumpCarAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MirrorJumpCarAnim, "BmGame.RBMBehaviour_FenceJump.MirrorJumpCarAnim");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CheckPawnsBelow;
     /// <summary>
     /// Function: CheckPawnsBelow
     /// </summary>
     public unsafe virtual void CheckPawnsBelow()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_FenceJump.CheckPawnsBelow", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckPawnsBelow, "BmGame.RBMBehaviour_FenceJump.CheckPawnsBelow");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_KnockBackPawn;
     /// <summary>
     /// Function: KnockBackPawn
     /// </summary>
     public unsafe virtual void KnockBackPawn(BmSDK.BmGame.RPawnCombat TestPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_FenceJump.KnockBackPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_KnockBackPawn, "BmGame.RBMBehaviour_FenceJump.KnockBackPawn");
         byte* paramsPtr = stackalloc byte[256];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_WillLandOnPawn;
     /// <summary>
     /// Function: WillLandOnPawn
     /// </summary>
     public unsafe virtual bool WillLandOnPawn(BmSDK.BmGame.RPawn TestPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_FenceJump.WillLandOnPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WillLandOnPawn, "BmGame.RBMBehaviour_FenceJump.WillLandOnPawn");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_StartTraversal;
     /// <summary>
     /// Function: StartTraversal
     /// </summary>
     public unsafe virtual void StartTraversal(int NewJumpType, System.Numerics.Vector3 NewJumpDirection, System.Numerics.Vector3 NewJumpLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_FenceJump.StartTraversal", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartTraversal, "BmGame.RBMBehaviour_FenceJump.StartTraversal");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewJumpType, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewJumpDirection, paramsPtr + 4);
@@ -183,12 +192,13 @@ public partial class RBMBehaviour_FenceJump : BmSDK.BmGame.RBMBehaviour, BmSDK.I
         return;
     }
 
+    private static BmSDK.Function __fn_GetJumpType;
     /// <summary>
     /// Function: GetJumpType
     /// </summary>
     public unsafe virtual BmSDK.FName GetJumpType()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_FenceJump.GetJumpType", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetJumpType, "BmGame.RBMBehaviour_FenceJump.GetJumpType");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);

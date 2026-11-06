@@ -73,12 +73,13 @@ public partial class DamageType : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<DamageType>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_VehicleDamageScalingFor;
     /// <summary>
     /// Function: VehicleDamageScalingFor
     /// </summary>
     public unsafe static float VehicleDamageScalingFor(BmSDK.Engine.Vehicle V)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DamageType.VehicleDamageScalingFor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_VehicleDamageScalingFor, "Engine.DamageType.VehicleDamageScalingFor");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(V, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

@@ -73,12 +73,13 @@ public partial class AkDialogueLine : BmSDK.Engine.AkDialogueSpeech, BmSDK.IGame
         where TComponent : class, Framework.IScriptComponent<AkDialogueLine>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetDialogueType;
     /// <summary>
     /// Function: SetDialogueType
     /// </summary>
     public unsafe virtual void SetDialogueType(BmSDK.Engine.AkDialogueType dlgType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkDialogueLine.SetDialogueType", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDialogueType, "Engine.AkDialogueLine.SetDialogueType");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dlgType, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -92,12 +93,13 @@ public partial class AkDialogueLine : BmSDK.Engine.AkDialogueSpeech, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_IsBarkFallback;
     /// <summary>
     /// Function: IsBarkFallback
     /// </summary>
     public unsafe virtual bool IsBarkFallback()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkDialogueLine.IsBarkFallback", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsBarkFallback, "Engine.AkDialogueLine.IsBarkFallback");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -110,12 +112,13 @@ public partial class AkDialogueLine : BmSDK.Engine.AkDialogueSpeech, BmSDK.IGame
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetLineVoice;
     /// <summary>
     /// Function: GetLineVoice
     /// </summary>
     public unsafe virtual BmSDK.Engine.AkDialogueVoice GetLineVoice()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkDialogueLine.GetLineVoice", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLineVoice, "Engine.AkDialogueLine.GetLineVoice");
         byte* paramsPtr = stackalloc byte[8];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -128,12 +131,13 @@ public partial class AkDialogueLine : BmSDK.Engine.AkDialogueSpeech, BmSDK.IGame
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AkDialogueVoice>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetPlayCount;
     /// <summary>
     /// Function: GetPlayCount
     /// </summary>
     public unsafe virtual float GetPlayCount()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkDialogueLine.GetPlayCount", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPlayCount, "Engine.AkDialogueLine.GetPlayCount");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

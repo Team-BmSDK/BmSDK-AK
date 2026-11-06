@@ -78,112 +78,122 @@ public partial class RCombatMove_VillainClash : BmSDK.BmGame.RCombatMove_Villain
         where TComponent : class, Framework.IScriptComponent<RCombatMove_VillainClash>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ExitMove;
     /// <summary>
     /// Function: ExitMove
     /// </summary>
     public unsafe override void ExitMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.ExitMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ExitMove, "BmGame.RCombatMove_VillainClash.ExitMove");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ExitMoveForPawn;
     /// <summary>
     /// Function: ExitMoveForPawn
     /// </summary>
     public unsafe override void ExitMoveForPawn(BmSDK.BmGame.RPawnCombat PawnToExit)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.ExitMoveForPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ExitMoveForPawn, "BmGame.RCombatMove_VillainClash.ExitMoveForPawn");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PawnToExit, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EndCounterState;
     /// <summary>
     /// Function: EndCounterState
     /// </summary>
     public unsafe virtual void EndCounterState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.EndCounterState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EndCounterState, "BmGame.RCombatMove_VillainClash.EndCounterState");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DoCameraLook;
     /// <summary>
     /// Function: DoCameraLook
     /// </summary>
     public unsafe virtual void DoCameraLook()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.DoCameraLook", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoCameraLook, "BmGame.RCombatMove_VillainClash.DoCameraLook");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetCameraAnimset;
     /// <summary>
     /// Function: GetCameraAnimset
     /// </summary>
     public unsafe virtual BmSDK.Engine.AnimSet GetCameraAnimset()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.GetCameraAnimset", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCameraAnimset, "BmGame.RCombatMove_VillainClash.GetCameraAnimset");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSet>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IncrementClash;
     /// <summary>
     /// Function: IncrementClash
     /// </summary>
     public unsafe virtual void IncrementClash()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.IncrementClash", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IncrementClash, "BmGame.RCombatMove_VillainClash.IncrementClash");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetCurrBeatdown;
     /// <summary>
     /// Function: GetCurrBeatdown
     /// </summary>
     public unsafe virtual int GetCurrBeatdown()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.GetCurrBeatdown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCurrBeatdown, "BmGame.RCombatMove_VillainClash.GetCurrBeatdown");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetCurrClash;
     /// <summary>
     /// Function: GetCurrClash
     /// </summary>
     public unsafe virtual int GetCurrClash()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.GetCurrClash", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCurrClash, "BmGame.RCombatMove_VillainClash.GetCurrClash");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetFOVModifier;
     /// <summary>
     /// Function: GetFOVModifier
     /// </summary>
     public unsafe override float GetFOVModifier()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.GetFOVModifier", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFOVModifier, "BmGame.RCombatMove_VillainClash.GetFOVModifier");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_MoveOverridenForPawn;
     /// <summary>
     /// Function: MoveOverridenForPawn
     /// </summary>
     public unsafe override void MoveOverridenForPawn(BmSDK.BmGame.RPawnCombat OverridenPawn, BmSDK.BmGame.RCombatMove NewMove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.MoveOverridenForPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MoveOverridenForPawn, "BmGame.RCombatMove_VillainClash.MoveOverridenForPawn");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverridenPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewMove, paramsPtr + 8);
@@ -191,36 +201,39 @@ public partial class RCombatMove_VillainClash : BmSDK.BmGame.RCombatMove_Villain
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RCombatMove_VillainClash.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetCounterAnimName;
     /// <summary>
     /// Function: GetCounterAnimName
     /// </summary>
     public unsafe virtual BmSDK.FName GetCounterAnimName(int ClashNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.GetCounterAnimName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCounterAnimName, "BmGame.RCombatMove_VillainClash.GetCounterAnimName");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClashNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetBeatdownAnimName;
     /// <summary>
     /// Function: GetBeatdownAnimName
     /// </summary>
     public unsafe virtual BmSDK.FName GetBeatdownAnimName(int ClashNum, int BeatdownNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.GetBeatdownAnimName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBeatdownAnimName, "BmGame.RCombatMove_VillainClash.GetBeatdownAnimName");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClashNum, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BeatdownNum, paramsPtr + 4);
@@ -228,48 +241,52 @@ public partial class RCombatMove_VillainClash : BmSDK.BmGame.RCombatMove_Villain
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetIdleAnimName;
     /// <summary>
     /// Function: GetIdleAnimName
     /// </summary>
     public unsafe virtual BmSDK.FName GetIdleAnimName(int ClashNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.GetIdleAnimName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetIdleAnimName, "BmGame.RCombatMove_VillainClash.GetIdleAnimName");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClashNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetClashAnimName;
     /// <summary>
     /// Function: GetClashAnimName
     /// </summary>
     public unsafe virtual BmSDK.FName GetClashAnimName(int ClashNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.GetClashAnimName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetClashAnimName, "BmGame.RCombatMove_VillainClash.GetClashAnimName");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClashNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetClashInAnimName;
     /// <summary>
     /// Function: GetClashInAnimName
     /// </summary>
     public unsafe virtual BmSDK.FName GetClashInAnimName(int ClashNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.GetClashInAnimName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetClashInAnimName, "BmGame.RCombatMove_VillainClash.GetClashInAnimName");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClashNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_CreateClashAnimName;
     /// <summary>
     /// Function: CreateClashAnimName
     /// </summary>
     public unsafe virtual BmSDK.FName CreateClashAnimName(BmSDK.FName Prefix, int ClashNum, BmSDK.FName PostFix = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.CreateClashAnimName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateClashAnimName, "BmGame.RCombatMove_VillainClash.CreateClashAnimName");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Prefix, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClashNum, paramsPtr + 8);
@@ -278,78 +295,85 @@ public partial class RCombatMove_VillainClash : BmSDK.BmGame.RCombatMove_Villain
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_PlayJoinClashStrike;
     /// <summary>
     /// Function: PlayJoinClashStrike
     /// </summary>
     public unsafe virtual void PlayJoinClashStrike()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.PlayJoinClashStrike", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayJoinClashStrike, "BmGame.RCombatMove_VillainClash.PlayJoinClashStrike");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartStrike;
     /// <summary>
     /// Function: StartStrike
     /// </summary>
     public unsafe virtual bool StartStrike()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.StartStrike", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartStrike, "BmGame.RCombatMove_VillainClash.StartStrike");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_DoCounter;
     /// <summary>
     /// Function: DoCounter
     /// </summary>
     public unsafe virtual void DoCounter()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.DoCounter", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoCounter, "BmGame.RCombatMove_VillainClash.DoCounter");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartCounter;
     /// <summary>
     /// Function: StartCounter
     /// </summary>
     public unsafe virtual void StartCounter()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.StartCounter", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartCounter, "BmGame.RCombatMove_VillainClash.StartCounter");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateCamLook;
     /// <summary>
     /// Function: UpdateCamLook
     /// </summary>
     public unsafe virtual void UpdateCamLook()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.UpdateCamLook", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateCamLook, "BmGame.RCombatMove_VillainClash.UpdateCamLook");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetClashInfo;
     /// <summary>
     /// Function: SetClashInfo
     /// </summary>
     public unsafe virtual void SetClashInfo()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.SetClashInfo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetClashInfo, "BmGame.RCombatMove_VillainClash.SetClashInfo");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanReceiveAttackFromPawn;
     /// <summary>
     /// Function: CanReceiveAttackFromPawn
     /// </summary>
     public unsafe override bool CanReceiveAttackFromPawn(BmSDK.BmGame.RPawnCombat TestPawn, BmSDK.BmGame.RPawnCombat NewAttacker)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.CanReceiveAttackFromPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanReceiveAttackFromPawn, "BmGame.RCombatMove_VillainClash.CanReceiveAttackFromPawn");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAttacker, paramsPtr + 8);
@@ -357,12 +381,13 @@ public partial class RCombatMove_VillainClash : BmSDK.BmGame.RCombatMove_Villain
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_CanPerformNextComboMove;
     /// <summary>
     /// Function: CanPerformNextComboMove
     /// </summary>
     public unsafe override bool CanPerformNextComboMove(bool bSpecialMove = default, bool bStrike = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.CanPerformNextComboMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanPerformNextComboMove, "BmGame.RCombatMove_VillainClash.CanPerformNextComboMove");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSpecialMove, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bStrike, paramsPtr + 4);
@@ -370,199 +395,217 @@ public partial class RCombatMove_VillainClash : BmSDK.BmGame.RCombatMove_Villain
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_IsAttacking;
     /// <summary>
     /// Function: IsAttacking
     /// </summary>
     public unsafe override bool IsAttacking()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.IsAttacking", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAttacking, "BmGame.RCombatMove_VillainClash.IsAttacking");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Initialise;
     /// <summary>
     /// Function: Initialise
     /// </summary>
     public unsafe override void Initialise()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.Initialise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Initialise, "BmGame.RCombatMove_VillainClash.Initialise");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CheckShouldCounterStateEnd;
     /// <summary>
     /// Function: CheckShouldCounterStateEnd
     /// </summary>
     public unsafe virtual void CheckShouldCounterStateEnd()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.CheckShouldCounterStateEnd", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckShouldCounterStateEnd, "BmGame.RCombatMove_VillainClash.CheckShouldCounterStateEnd");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TargetPushingTowardsVillain;
     /// <summary>
     /// Function: TargetPushingTowardsVillain
     /// </summary>
     public unsafe virtual bool TargetPushingTowardsVillain()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.TargetPushingTowardsVillain", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TargetPushingTowardsVillain, "BmGame.RCombatMove_VillainClash.TargetPushingTowardsVillain");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_AllowThugAttack;
     /// <summary>
     /// Function: AllowThugAttack
     /// </summary>
     public unsafe virtual void AllowThugAttack()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.AllowThugAttack", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowThugAttack, "BmGame.RCombatMove_VillainClash.AllowThugAttack");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SpeedUp;
     /// <summary>
     /// Function: SpeedUp
     /// </summary>
     public unsafe virtual void SpeedUp()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.SpeedUp", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpeedUp, "BmGame.RCombatMove_VillainClash.SpeedUp");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SlowDown;
     /// <summary>
     /// Function: SlowDown
     /// </summary>
     public unsafe virtual void SlowDown()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.SlowDown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SlowDown, "BmGame.RCombatMove_VillainClash.SlowDown");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayBeatdown;
     /// <summary>
     /// Function: PlayBeatdown
     /// </summary>
     public unsafe virtual void PlayBeatdown()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.PlayBeatdown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayBeatdown, "BmGame.RCombatMove_VillainClash.PlayBeatdown");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayCounter;
     /// <summary>
     /// Function: PlayCounter
     /// </summary>
     public unsafe virtual void PlayCounter()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.PlayCounter", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayCounter, "BmGame.RCombatMove_VillainClash.PlayCounter");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Retaliate;
     /// <summary>
     /// Function: Retaliate
     /// </summary>
     public unsafe virtual void Retaliate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.Retaliate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Retaliate, "BmGame.RCombatMove_VillainClash.Retaliate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IntoClashHit;
     /// <summary>
     /// Function: IntoClashHit
     /// </summary>
     public unsafe virtual void IntoClashHit()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.IntoClashHit", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IntoClashHit, "BmGame.RCombatMove_VillainClash.IntoClashHit");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinalHit;
     /// <summary>
     /// Function: FinalHit
     /// </summary>
     public unsafe virtual void FinalHit()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.FinalHit", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinalHit, "BmGame.RCombatMove_VillainClash.FinalHit");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Hit;
     /// <summary>
     /// Function: Hit
     /// </summary>
     public unsafe virtual void Hit()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.Hit", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Hit, "BmGame.RCombatMove_VillainClash.Hit");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HitLight;
     /// <summary>
     /// Function: HitLight
     /// </summary>
     public unsafe virtual void HitLight()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.HitLight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitLight, "BmGame.RCombatMove_VillainClash.HitLight");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HitPlayer;
     /// <summary>
     /// Function: HitPlayer
     /// </summary>
     public unsafe virtual void HitPlayer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.HitPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitPlayer, "BmGame.RCombatMove_VillainClash.HitPlayer");
         byte* paramsPtr = stackalloc byte[264];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanBeTakenOut;
     /// <summary>
     /// Function: CanBeTakenOut
     /// </summary>
     public unsafe virtual void CanBeTakenOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.CanBeTakenOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeTakenOut, "BmGame.RCombatMove_VillainClash.CanBeTakenOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AllowMovementExit;
     /// <summary>
     /// Function: AllowMovementExit
     /// </summary>
     public unsafe virtual void AllowMovementExit()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.AllowMovementExit", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowMovementExit, "BmGame.RCombatMove_VillainClash.AllowMovementExit");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AllowNextStrike;
     /// <summary>
     /// Function: AllowNextStrike
     /// </summary>
     public unsafe virtual void AllowNextStrike()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_VillainClash.AllowNextStrike", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowNextStrike, "BmGame.RCombatMove_VillainClash.AllowNextStrike");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

@@ -78,12 +78,13 @@ public partial class RBarkGroupContext_Combat : BmSDK.BmGame.RBarkGroupContext, 
         where TComponent : class, Framework.IScriptComponent<RBarkGroupContext_Combat>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetDlgComponentsOfGroup;
     /// <summary>
     /// Function: GetDlgComponentsOfGroup
     /// </summary>
     public unsafe override BmSDK.TArray<BmSDK.Engine.AkDialogueComponent> GetDlgComponentsOfGroup()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBarkGroupContext_Combat.GetDlgComponentsOfGroup", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDlgComponentsOfGroup, "BmGame.RBarkGroupContext_Combat.GetDlgComponentsOfGroup");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.Engine.AkDialogueComponent>>(paramsPtr + 0);

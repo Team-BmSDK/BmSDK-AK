@@ -78,12 +78,13 @@ public partial class RPathNode : BmSDK.Engine.PathNode, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RPathNode>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetTimeSinceLastSighting;
     /// <summary>
     /// Function: GetTimeSinceLastSighting
     /// </summary>
     public unsafe virtual float GetTimeSinceLastSighting(int Index)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPathNode.GetTimeSinceLastSighting", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTimeSinceLastSighting, "BmGame.RPathNode.GetTimeSinceLastSighting");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Index, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -97,12 +98,13 @@ public partial class RPathNode : BmSDK.Engine.PathNode, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_UpdateLastSeenTime;
     /// <summary>
     /// Function: UpdateLastSeenTime
     /// </summary>
     public unsafe virtual void UpdateLastSeenTime(int Index)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPathNode.UpdateLastSeenTime", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateLastSeenTime, "BmGame.RPathNode.UpdateLastSeenTime");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Index, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -116,12 +118,13 @@ public partial class RPathNode : BmSDK.Engine.PathNode, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_IsSafe;
     /// <summary>
     /// Function: IsSafe
     /// </summary>
     public unsafe virtual bool IsSafe(BmSDK.Engine.Pawn TestPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPathNode.IsSafe", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsSafe, "BmGame.RPathNode.IsSafe");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

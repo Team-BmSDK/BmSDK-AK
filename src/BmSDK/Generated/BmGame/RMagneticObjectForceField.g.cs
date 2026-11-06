@@ -78,12 +78,13 @@ public partial class RMagneticObjectForceField : BmSDK.Engine.NxRadialForceField
         where TComponent : class, Framework.IScriptComponent<RMagneticObjectForceField>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetFieldProperties;
     /// <summary>
     /// Function: SetFieldProperties
     /// </summary>
     public unsafe virtual void SetFieldProperties(float Radius, float Strength)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RMagneticObjectForceField.SetFieldProperties", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetFieldProperties, "BmGame.RMagneticObjectForceField.SetFieldProperties");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Radius, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Strength, paramsPtr + 4);

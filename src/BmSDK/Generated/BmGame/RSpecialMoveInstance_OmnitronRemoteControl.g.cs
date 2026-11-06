@@ -78,12 +78,13 @@ public partial class RSpecialMoveInstance_OmnitronRemoteControl : BmSDK.BmGame.R
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveInstance_OmnitronRemoteControl>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UpdatePCCursorPos;
     /// <summary>
     /// Function: UpdatePCCursorPos
     /// </summary>
     public unsafe virtual void UpdatePCCursorPos(BmSDK.BmGame.RPlayerInput Input, float DeltaTime, float TurnSpeed, float Accel, float Decel)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.UpdatePCCursorPos", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdatePCCursorPos, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.UpdatePCCursorPos");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Input, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 8);
@@ -101,12 +102,13 @@ public partial class RSpecialMoveInstance_OmnitronRemoteControl : BmSDK.BmGame.R
         return;
     }
 
+    private static BmSDK.Function __fn_InterpThumb;
     /// <summary>
     /// Function: InterpThumb
     /// </summary>
     public unsafe virtual float InterpThumb(float DesiredPos, float CurrentPos, float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.InterpThumb", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InterpThumb, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.InterpThumb");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DesiredPos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CurrentPos, paramsPtr + 4);
@@ -122,146 +124,159 @@ public partial class RSpecialMoveInstance_OmnitronRemoteControl : BmSDK.BmGame.R
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_IsPlayerInAirshipTiltTutorial;
     /// <summary>
     /// Function: IsPlayerInAirshipTiltTutorial
     /// </summary>
     public unsafe virtual bool IsPlayerInAirshipTiltTutorial()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.IsPlayerInAirshipTiltTutorial", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPlayerInAirshipTiltTutorial, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.IsPlayerInAirshipTiltTutorial");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_HardenTiltVolumes;
     /// <summary>
     /// Function: HardenTiltVolumes
     /// </summary>
     public unsafe virtual void HardenTiltVolumes()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.HardenTiltVolumes", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HardenTiltVolumes, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.HardenTiltVolumes");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetEndControllerState;
     /// <summary>
     /// Function: GetEndControllerState
     /// </summary>
     public unsafe override BmSDK.FName GetEndControllerState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.GetEndControllerState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetEndControllerState, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.GetEndControllerState");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetTimerParam;
     /// <summary>
     /// Function: SetTimerParam
     /// </summary>
     public unsafe virtual void SetTimerParam(float Time)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.SetTimerParam", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetTimerParam, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.SetTimerParam");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Time, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateDifficulty;
     /// <summary>
     /// Function: UpdateDifficulty
     /// </summary>
     public unsafe virtual void UpdateDifficulty()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.UpdateDifficulty", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateDifficulty, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.UpdateDifficulty");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RemoveResonator;
     /// <summary>
     /// Function: RemoveResonator
     /// </summary>
     public unsafe virtual void RemoveResonator()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.RemoveResonator", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveResonator, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.RemoveResonator");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PowerOffScreen;
     /// <summary>
     /// Function: PowerOffScreen
     /// </summary>
     public unsafe virtual void PowerOffScreen()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.PowerOffScreen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PowerOffScreen, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.PowerOffScreen");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_BlendBackFromExternalCam;
     /// <summary>
     /// Function: BlendBackFromExternalCam
     /// </summary>
     public unsafe virtual void BlendBackFromExternalCam()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.BlendBackFromExternalCam", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BlendBackFromExternalCam, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.BlendBackFromExternalCam");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_BlendOutCinematicCamera;
     /// <summary>
     /// Function: BlendOutCinematicCamera
     /// </summary>
     public unsafe virtual void BlendOutCinematicCamera()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.BlendOutCinematicCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BlendOutCinematicCamera, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.BlendOutCinematicCamera");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishSpecialMove;
     /// <summary>
     /// Function: FinishSpecialMove
     /// </summary>
     public unsafe override void FinishSpecialMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.FinishSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishSpecialMove, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.FinishSpecialMove");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CancelSpecialMove;
     /// <summary>
     /// Function: CancelSpecialMove
     /// </summary>
     public unsafe override void CancelSpecialMove(BmSDK.BmGame.RSpecialMoveConfig NextSpecialMove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.CancelSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelSpecialMove, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.CancelSpecialMove");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NextSpecialMove, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SuccessfullActivateDisruptor;
     /// <summary>
     /// Function: SuccessfullActivateDisruptor
     /// </summary>
     public unsafe virtual void SuccessfullActivateDisruptor()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.SuccessfullActivateDisruptor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SuccessfullActivateDisruptor, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.SuccessfullActivateDisruptor");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdatePoseLean;
     /// <summary>
     /// Function: UpdatePoseLean
     /// </summary>
     public unsafe virtual void UpdatePoseLean(float fDeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.UpdatePoseLean", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdatePoseLean, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.UpdatePoseLean");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(fDeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -275,12 +290,13 @@ public partial class RSpecialMoveInstance_OmnitronRemoteControl : BmSDK.BmGame.R
         return;
     }
 
+    private static BmSDK.Function __fn_SetRumble;
     /// <summary>
     /// Function: SetRumble
     /// </summary>
     public unsafe virtual void SetRumble(float left_rumble, float right_rumble)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.SetRumble", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRumble, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.SetRumble");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(left_rumble, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(right_rumble, paramsPtr + 4);
@@ -288,36 +304,39 @@ public partial class RSpecialMoveInstance_OmnitronRemoteControl : BmSDK.BmGame.R
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateSpecialMove;
     /// <summary>
     /// Function: UpdateSpecialMove
     /// </summary>
     public unsafe override bool UpdateSpecialMove(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.UpdateSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateSpecialMove, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.UpdateSpecialMove");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_TriggerSpecialMove;
     /// <summary>
     /// Function: TriggerSpecialMove
     /// </summary>
     public unsafe override void TriggerSpecialMove(BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator MoveLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.TriggerSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerSpecialMove, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.TriggerSpecialMove");
         byte* paramsPtr = stackalloc byte[232];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsInteruptable;
     /// <summary>
     /// Function: IsInteruptable
     /// </summary>
     public unsafe override bool IsInteruptable()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.IsInteruptable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInteruptable, "BmGame.RSpecialMoveInstance_OmnitronRemoteControl.IsInteruptable");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

@@ -73,24 +73,26 @@ public partial class RJokerGunGadgetBase : BmSDK.BmGame.RInventoryGadget, BmSDK.
         where TComponent : class, Framework.IScriptComponent<RJokerGunGadgetBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetJokerRoom3;
     /// <summary>
     /// Function: SetJokerRoom3
     /// </summary>
     public unsafe virtual void SetJokerRoom3(bool On)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerGunGadgetBase.SetJokerRoom3", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetJokerRoom3, "BmGame.RJokerGunGadgetBase.SetJokerRoom3");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(On, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetShouldKnockHelmetOff;
     /// <summary>
     /// Function: GetShouldKnockHelmetOff
     /// </summary>
     public unsafe virtual bool GetShouldKnockHelmetOff(BmSDK.FName BoneName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerGunGadgetBase.GetShouldKnockHelmetOff", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetShouldKnockHelmetOff, "BmGame.RJokerGunGadgetBase.GetShouldKnockHelmetOff");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -104,12 +106,13 @@ public partial class RJokerGunGadgetBase : BmSDK.BmGame.RInventoryGadget, BmSDK.
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetWritheAnimName;
     /// <summary>
     /// Function: GetWritheAnimName
     /// </summary>
     public unsafe virtual BmSDK.FName GetWritheAnimName(BmSDK.FName BoneName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerGunGadgetBase.GetWritheAnimName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWritheAnimName, "BmGame.RJokerGunGadgetBase.GetWritheAnimName");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -123,12 +126,13 @@ public partial class RJokerGunGadgetBase : BmSDK.BmGame.RInventoryGadget, BmSDK.
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CalculateFireGunHitResult;
     /// <summary>
     /// Function: CalculateFireGunHitResult
     /// </summary>
     public unsafe virtual bool CalculateFireGunHitResult(BmSDK.Rotator FireRotation, System.Numerics.Vector3 FirePosition, out BmSDK.TArray<BmSDK.Engine.Actor.FImpactInfo> OutImpactInfo, float CheckBoxExtent = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJokerGunGadgetBase.CalculateFireGunHitResult", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculateFireGunHitResult, "BmGame.RJokerGunGadgetBase.CalculateFireGunHitResult");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FireRotation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FirePosition, paramsPtr + 12);

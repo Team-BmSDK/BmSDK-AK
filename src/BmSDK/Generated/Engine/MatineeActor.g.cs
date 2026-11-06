@@ -78,34 +78,37 @@ public partial class MatineeActor : BmSDK.Engine.Actor, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<MatineeActor>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CheckPriorityRefresh;
     /// <summary>
     /// Function: CheckPriorityRefresh
     /// </summary>
     public unsafe virtual void CheckPriorityRefresh()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.MatineeActor.CheckPriorityRefresh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckPriorityRefresh, "Engine.MatineeActor.CheckPriorityRefresh");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Update;
     /// <summary>
     /// Function: Update
     /// </summary>
     public unsafe virtual void Update()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.MatineeActor.Update", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Update, "Engine.MatineeActor.Update");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddAIGroupActor;
     /// <summary>
     /// Function: AddAIGroupActor
     /// </summary>
     public unsafe virtual void AddAIGroupActor(BmSDK.Engine.InterpGroupInstAI AIGroupInst)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.MatineeActor.AddAIGroupActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddAIGroupActor, "Engine.MatineeActor.AddAIGroupActor");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AIGroupInst, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

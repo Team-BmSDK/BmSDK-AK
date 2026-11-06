@@ -78,45 +78,49 @@ public partial class RCombatMove_LieutenantMFAReaction : BmSDK.BmGame.RCombatMov
         where TComponent : class, Framework.IScriptComponent<RCombatMove_LieutenantMFAReaction>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ExitMoveNaturally;
     /// <summary>
     /// Function: ExitMoveNaturally
     /// </summary>
     public unsafe override void ExitMoveNaturally()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_LieutenantMFAReaction.ExitMoveNaturally", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ExitMoveNaturally, "BmGame.RCombatMove_LieutenantMFAReaction.ExitMoveNaturally");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CombatAnimHitEnd;
     /// <summary>
     /// Function: CombatAnimHitEnd
     /// </summary>
     public unsafe override void CombatAnimHitEnd()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_LieutenantMFAReaction.CombatAnimHitEnd", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CombatAnimHitEnd, "BmGame.RCombatMove_LieutenantMFAReaction.CombatAnimHitEnd");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CombatAnimHit;
     /// <summary>
     /// Function: CombatAnimHit
     /// </summary>
     public unsafe override void CombatAnimHit()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_LieutenantMFAReaction.CombatAnimHit", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CombatAnimHit, "BmGame.RCombatMove_LieutenantMFAReaction.CombatAnimHit");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetAnimInfo;
     /// <summary>
     /// Function: GetAnimInfo
     /// </summary>
     public unsafe override void GetAnimInfo(out BmSDK.FName AnimName, out float DurationScale)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_LieutenantMFAReaction.GetAnimInfo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAnimInfo, "BmGame.RCombatMove_LieutenantMFAReaction.GetAnimInfo");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         AnimName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
@@ -124,24 +128,26 @@ public partial class RCombatMove_LieutenantMFAReaction : BmSDK.BmGame.RCombatMov
         return;
     }
 
+    private static BmSDK.Function __fn_CanRespondToDamageType;
     /// <summary>
     /// Function: CanRespondToDamageType
     /// </summary>
     public unsafe override bool CanRespondToDamageType(BmSDK.Class dmgType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_LieutenantMFAReaction.CanRespondToDamageType", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanRespondToDamageType, "BmGame.RCombatMove_LieutenantMFAReaction.CanRespondToDamageType");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_Initialise;
     /// <summary>
     /// Function: Initialise
     /// </summary>
     public unsafe override void Initialise()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_LieutenantMFAReaction.Initialise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Initialise, "BmGame.RCombatMove_LieutenantMFAReaction.Initialise");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

@@ -78,12 +78,13 @@ public partial class RDestructibleProp_LampPost : BmSDK.BmGame.RDestructibleProp
         where TComponent : class, Framework.IScriptComponent<RDestructibleProp_LampPost>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OverrideDamageParams;
     /// <summary>
     /// Function: OverrideDamageParams
     /// </summary>
     public unsafe override void OverrideDamageParams(out float BaseDamage, out float DamageRadius, out float Momentum, BmSDK.Class DamageType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDestructibleProp_LampPost.OverrideDamageParams", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverrideDamageParams, "BmGame.RDestructibleProp_LampPost.OverrideDamageParams");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageType, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -93,12 +94,13 @@ public partial class RDestructibleProp_LampPost : BmSDK.BmGame.RDestructibleProp
         return;
     }
 
+    private static BmSDK.Function __fn_SetDamageStage;
     /// <summary>
     /// Function: SetDamageStage
     /// </summary>
     public unsafe override void SetDamageStage(int Stage)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDestructibleProp_LampPost.SetDamageStage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDamageStage, "BmGame.RDestructibleProp_LampPost.SetDamageStage");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Stage, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

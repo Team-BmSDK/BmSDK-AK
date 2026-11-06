@@ -73,12 +73,13 @@ public partial class GFxFSCmdHandler : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<GFxFSCmdHandler>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_FSCommand;
     /// <summary>
     /// Function: FSCommand
     /// </summary>
     public unsafe virtual bool FSCommand(BmSDK.GFxUI.GFxMoviePlayer Movie, BmSDK.GFxUI.GFxEvent_FSCommand Event, BmSDK.FString Cmd, BmSDK.FString Arg)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "GFxUI.GFxFSCmdHandler.FSCommand", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FSCommand, "GFxUI.GFxFSCmdHandler.FSCommand");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Movie, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Event, paramsPtr + 8);

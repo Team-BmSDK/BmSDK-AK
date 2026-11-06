@@ -78,12 +78,13 @@ public partial class GameEngine : BmSDK.Engine._Engine, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<GameEngine>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetLocHelperSystem;
     /// <summary>
     /// Function: GetLocHelperSystem
     /// </summary>
     public unsafe static BmSDK.Engine.LocHelper GetLocHelperSystem()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.GameEngine.GetLocHelperSystem", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLocHelperSystem, "Engine.GameEngine.GetLocHelperSystem");
         byte* paramsPtr = stackalloc byte[8];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class GameEngine : BmSDK.Engine._Engine, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.LocHelper>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_HasSecondaryScreenActive;
     /// <summary>
     /// Function: HasSecondaryScreenActive
     /// </summary>
     public unsafe static bool HasSecondaryScreenActive()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.GameEngine.HasSecondaryScreenActive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasSecondaryScreenActive, "Engine.GameEngine.HasSecondaryScreenActive");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -114,12 +116,13 @@ public partial class GameEngine : BmSDK.Engine._Engine, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDLCManager;
     /// <summary>
     /// Function: GetDLCManager
     /// </summary>
     public unsafe static BmSDK.Engine.DownloadableContentManager GetDLCManager()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.GameEngine.GetDLCManager", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDLCManager, "Engine.GameEngine.GetDLCManager");
         byte* paramsPtr = stackalloc byte[8];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -132,12 +135,13 @@ public partial class GameEngine : BmSDK.Engine._Engine, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.DownloadableContentManager>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDLCEnumerator;
     /// <summary>
     /// Function: GetDLCEnumerator
     /// </summary>
     public unsafe static BmSDK.Engine.DownloadableContentEnumerator GetDLCEnumerator()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.GameEngine.GetDLCEnumerator", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDLCEnumerator, "Engine.GameEngine.GetDLCEnumerator");
         byte* paramsPtr = stackalloc byte[8];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -150,12 +154,13 @@ public partial class GameEngine : BmSDK.Engine._Engine, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.DownloadableContentEnumerator>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetOnlineSubsystem;
     /// <summary>
     /// Function: GetOnlineSubsystem
     /// </summary>
     public unsafe static BmSDK.Engine.OnlineSubsystem GetOnlineSubsystem()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.GameEngine.GetOnlineSubsystem", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetOnlineSubsystem, "Engine.GameEngine.GetOnlineSubsystem");
         byte* paramsPtr = stackalloc byte[8];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -168,12 +173,13 @@ public partial class GameEngine : BmSDK.Engine._Engine, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineSubsystem>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_DestroyNamedNetDriver;
     /// <summary>
     /// Function: DestroyNamedNetDriver
     /// </summary>
     public unsafe virtual void DestroyNamedNetDriver(BmSDK.FName NetDriverName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.GameEngine.DestroyNamedNetDriver", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DestroyNamedNetDriver, "Engine.GameEngine.DestroyNamedNetDriver");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NetDriverName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -187,12 +193,13 @@ public partial class GameEngine : BmSDK.Engine._Engine, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_CreateNamedNetDriver;
     /// <summary>
     /// Function: CreateNamedNetDriver
     /// </summary>
     public unsafe virtual bool CreateNamedNetDriver(BmSDK.FName NetDriverName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.GameEngine.CreateNamedNetDriver", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateNamedNetDriver, "Engine.GameEngine.CreateNamedNetDriver");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NetDriverName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

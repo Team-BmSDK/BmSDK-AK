@@ -445,6 +445,13 @@ void Printer::PrintProperty(const PropertyInfo& prop, ostream& out)
 
 void Printer::PrintFunction(const FunctionInfo& func, bool isInInterface, ostream& out)
     {
+    // Print the field caching this function's UFunction lookup
+    if (!isInInterface)
+    {
+        Printer::Indent(out) << "private static BmSDK.Function __fn_" << func.ManagedName << ";"
+            << endl;
+    }
+
     // Print func comment
     Printer::Indent(out) << "/// <summary>" << endl;
     Printer::Indent(out) << "/// Function: " << func.Name << endl;
@@ -511,9 +518,8 @@ void Printer::PrintFunction(const FunctionInfo& func, bool isInInterface, ostrea
         string ptrText = func.IsStatic ? "StaticClass().DefaultObject.Ptr" : "Ptr";
 
         Printer::Indent(out) << "var funcManaged = "
-            "BmSDK.GameObject.StaticFindObjectChecked<BmSDK."
-            "Function>(BmSDK.Function.StaticClass(), null, \""
-            << func.PathName << "\", true);" << endl;
+            "BmSDK.Framework.FunctionCache.Get(ref __fn_" << func.ManagedName << ", \""
+            << func.PathName << "\");" << endl;
 
         Printer::Indent(out) << "byte* paramsPtr = stackalloc byte[" << func.PropertiesSize << "];"
             << endl;

@@ -78,56 +78,61 @@ public partial class RBatmobileMineLauncher : BmSDK.BmGame.RVehicleWeapon, BmSDK
         where TComponent : class, Framework.IScriptComponent<RBatmobileMineLauncher>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ReadyToFire;
     /// <summary>
     /// Function: ReadyToFire
     /// </summary>
     public unsafe override bool ReadyToFire()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileMineLauncher.ReadyToFire", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadyToFire, "BmGame.RBatmobileMineLauncher.ReadyToFire");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetMineLaunchPosition;
     /// <summary>
     /// Function: GetMineLaunchPosition
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetMineLaunchPosition()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileMineLauncher.GetMineLaunchPosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMineLaunchPosition, "BmGame.RBatmobileMineLauncher.GetMineLaunchPosition");
         byte* paramsPtr = stackalloc byte[76];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_FireMines;
     /// <summary>
     /// Function: FireMines
     /// </summary>
     public unsafe virtual void FireMines()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileMineLauncher.FireMines", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireMines, "BmGame.RBatmobileMineLauncher.FireMines");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DetonateMines;
     /// <summary>
     /// Function: DetonateMines
     /// </summary>
     public unsafe virtual void DetonateMines()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileMineLauncher.DetonateMines", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DetonateMines, "BmGame.RBatmobileMineLauncher.DetonateMines");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FireWeapon;
     /// <summary>
     /// Function: FireWeapon
     /// </summary>
     public unsafe override bool FireWeapon()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBatmobileMineLauncher.FireWeapon", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireWeapon, "BmGame.RBatmobileMineLauncher.FireWeapon");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

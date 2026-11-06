@@ -78,163 +78,177 @@ public partial class RBMAIAction_PauseCheckVerts : BmSDK.BmGame.RBMAIAction, BmS
         where TComponent : class, Framework.IScriptComponent<RBMAIAction_PauseCheckVerts>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DebugShowVerts;
     /// <summary>
     /// Function: DebugShowVerts
     /// </summary>
     public unsafe virtual void DebugShowVerts()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PauseCheckVerts.DebugShowVerts", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DebugShowVerts, "BmGame.RBMAIAction_PauseCheckVerts.DebugShowVerts");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ActionTick;
     /// <summary>
     /// Function: ActionTick
     /// </summary>
     public unsafe override BmSDK.BmGame.RBMAIAction.ActionTickResult ActionTick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PauseCheckVerts.ActionTick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActionTick, "BmGame.RBMAIAction_PauseCheckVerts.ActionTick");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMAIAction.ActionTickResult>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetNextAimIndex_Checked;
     /// <summary>
     /// Function: GetNextAimIndex_Checked
     /// </summary>
     public unsafe virtual int GetNextAimIndex_Checked(out System.Numerics.Vector3 FaceAtDir)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PauseCheckVerts.GetNextAimIndex_Checked", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNextAimIndex_Checked, "BmGame.RBMAIAction_PauseCheckVerts.GetNextAimIndex_Checked");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         FaceAtDir = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_GetNextAimIndex_Unchecked;
     /// <summary>
     /// Function: GetNextAimIndex_Unchecked
     /// </summary>
     public unsafe virtual int GetNextAimIndex_Unchecked(out System.Numerics.Vector3 FaceAtDir)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PauseCheckVerts.GetNextAimIndex_Unchecked", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNextAimIndex_Unchecked, "BmGame.RBMAIAction_PauseCheckVerts.GetNextAimIndex_Unchecked");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         FaceAtDir = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_PointIsBehind;
     /// <summary>
     /// Function: PointIsBehind
     /// </summary>
     public unsafe virtual bool PointIsBehind(System.Numerics.Vector3 TestDir)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PauseCheckVerts.PointIsBehind", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PointIsBehind, "BmGame.RBMAIAction_PauseCheckVerts.PointIsBehind");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestDir, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_MoveCheckedPointsToCheckedArray;
     /// <summary>
     /// Function: MoveCheckedPointsToCheckedArray
     /// </summary>
     public unsafe virtual void MoveCheckedPointsToCheckedArray()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PauseCheckVerts.MoveCheckedPointsToCheckedArray", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MoveCheckedPointsToCheckedArray, "BmGame.RBMAIAction_PauseCheckVerts.MoveCheckedPointsToCheckedArray");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ProcessUntraced_Checked;
     /// <summary>
     /// Function: ProcessUntraced_Checked
     /// </summary>
     public unsafe virtual void ProcessUntraced_Checked(out int ChecksLeft)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PauseCheckVerts.ProcessUntraced_Checked", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProcessUntraced_Checked, "BmGame.RBMAIAction_PauseCheckVerts.ProcessUntraced_Checked");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ChecksLeft = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ProcessUntraced_Unchecked;
     /// <summary>
     /// Function: ProcessUntraced_Unchecked
     /// </summary>
     public unsafe virtual void ProcessUntraced_Unchecked(out int ChecksLeft)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PauseCheckVerts.ProcessUntraced_Unchecked", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProcessUntraced_Unchecked, "BmGame.RBMAIAction_PauseCheckVerts.ProcessUntraced_Unchecked");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ChecksLeft = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartPause;
     /// <summary>
     /// Function: StartPause
     /// </summary>
     public unsafe virtual void StartPause()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PauseCheckVerts.StartPause", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartPause, "BmGame.RBMAIAction_PauseCheckVerts.StartPause");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Cleanup;
     /// <summary>
     /// Function: Cleanup
     /// </summary>
     public unsafe override void Cleanup()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PauseCheckVerts.Cleanup", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Cleanup, "BmGame.RBMAIAction_PauseCheckVerts.Cleanup");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PauseCheckVerts.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMAIAction_PauseCheckVerts.OnActivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetValidFaceAtPoints;
     /// <summary>
     /// Function: SetValidFaceAtPoints
     /// </summary>
     public unsafe virtual void SetValidFaceAtPoints(BmSDK.TArray<System.Numerics.Vector3> NewFaceDirList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PauseCheckVerts.SetValidFaceAtPoints", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetValidFaceAtPoints, "BmGame.RBMAIAction_PauseCheckVerts.SetValidFaceAtPoints");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewFaceDirList, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetNextDirOfTravel;
     /// <summary>
     /// Function: SetNextDirOfTravel
     /// </summary>
     public unsafe virtual void SetNextDirOfTravel(System.Numerics.Vector3 NewFaceTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PauseCheckVerts.SetNextDirOfTravel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetNextDirOfTravel, "BmGame.RBMAIAction_PauseCheckVerts.SetNextDirOfTravel");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewFaceTarget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetVertsToCheck;
     /// <summary>
     /// Function: SetVertsToCheck
     /// </summary>
     public unsafe virtual void SetVertsToCheck(BmSDK.TArray<int> NewUnchecked, BmSDK.TArray<int> NewChecked, BmSDK.Engine.Pylon NewVertPylon, float NewCheckingStartTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_PauseCheckVerts.SetVertsToCheck", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetVertsToCheck, "BmGame.RBMAIAction_PauseCheckVerts.SetVertsToCheck");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewUnchecked, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewChecked, paramsPtr + 16);

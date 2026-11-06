@@ -78,56 +78,61 @@ public partial class RAEC_Search_Sub_DestroyGrate : BmSDK.BmGame.RAlertEventCoor
         where TComponent : class, Framework.IScriptComponent<RAEC_Search_Sub_DestroyGrate>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetGrateLookRefPoint;
     /// <summary>
     /// Function: GetGrateLookRefPoint
     /// </summary>
     public unsafe virtual bool GetGrateLookRefPoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Sub_DestroyGrate.GetGrateLookRefPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGrateLookRefPoint, "BmGame.RAEC_Search_Sub_DestroyGrate.GetGrateLookRefPoint");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_DisableGrateVis;
     /// <summary>
     /// Function: DisableGrateVis
     /// </summary>
     public unsafe virtual void DisableGrateVis()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Sub_DestroyGrate.DisableGrateVis", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisableGrateVis, "BmGame.RAEC_Search_Sub_DestroyGrate.DisableGrateVis");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EnableGrateVis;
     /// <summary>
     /// Function: EnableGrateVis
     /// </summary>
     public unsafe virtual void EnableGrateVis()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Sub_DestroyGrate.EnableGrateVis", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnableGrateVis, "BmGame.RAEC_Search_Sub_DestroyGrate.EnableGrateVis");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnBeginShutdown;
     /// <summary>
     /// Function: OnBeginShutdown
     /// </summary>
     public unsafe override void OnBeginShutdown()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Sub_DestroyGrate.OnBeginShutdown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnBeginShutdown, "BmGame.RAEC_Search_Sub_DestroyGrate.OnBeginShutdown");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnStartChild;
     /// <summary>
     /// Function: OnStartChild
     /// </summary>
     public unsafe override void OnStartChild()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Sub_DestroyGrate.OnStartChild", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnStartChild, "BmGame.RAEC_Search_Sub_DestroyGrate.OnStartChild");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

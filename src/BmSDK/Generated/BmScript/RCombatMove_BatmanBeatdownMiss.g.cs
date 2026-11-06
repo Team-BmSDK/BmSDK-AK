@@ -78,12 +78,13 @@ public partial class RCombatMove_BatmanBeatdownMiss : BmSDK.BmGame.RCombatMove_B
         where TComponent : class, Framework.IScriptComponent<RCombatMove_BatmanBeatdownMiss>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetDamageInfo;
     /// <summary>
     /// Function: SetDamageInfo
     /// </summary>
     public unsafe override BmSDK.BmGame.RPawnCombat.FDamageInfo SetDamageInfo(BmSDK.BmGame.RPawnCombat DamageReceiver, float DmgAmount)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_BatmanBeatdownMiss.SetDamageInfo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDamageInfo, "BmScript.RCombatMove_BatmanBeatdownMiss.SetDamageInfo");
         byte* paramsPtr = stackalloc byte[508];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageReceiver, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DmgAmount, paramsPtr + 8);
@@ -91,34 +92,37 @@ public partial class RCombatMove_BatmanBeatdownMiss : BmSDK.BmGame.RCombatMove_B
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnCombat.FDamageInfo>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_GetStrikeAnimSet;
     /// <summary>
     /// Function: GetStrikeAnimSet
     /// </summary>
     public unsafe override BmSDK.Engine.AnimSet GetStrikeAnimSet()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_BatmanBeatdownMiss.GetStrikeAnimSet", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeAnimSet, "BmScript.RCombatMove_BatmanBeatdownMiss.GetStrikeAnimSet");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSet>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetStrikeAnim;
     /// <summary>
     /// Function: GetStrikeAnim
     /// </summary>
     public unsafe override BmSDK.FName GetStrikeAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_BatmanBeatdownMiss.GetStrikeAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeAnim, "BmScript.RCombatMove_BatmanBeatdownMiss.GetStrikeAnim");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ShouldStartFinalBlowCam;
     /// <summary>
     /// Function: ShouldStartFinalBlowCam
     /// </summary>
     public unsafe override bool ShouldStartFinalBlowCam()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCombatMove_BatmanBeatdownMiss.ShouldStartFinalBlowCam", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldStartFinalBlowCam, "BmScript.RCombatMove_BatmanBeatdownMiss.ShouldStartFinalBlowCam");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

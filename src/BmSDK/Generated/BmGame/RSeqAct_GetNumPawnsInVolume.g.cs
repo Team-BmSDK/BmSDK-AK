@@ -78,23 +78,25 @@ public partial class RSeqAct_GetNumPawnsInVolume : BmSDK.Engine.SequenceAction, 
         where TComponent : class, Framework.IScriptComponent<RSeqAct_GetNumPawnsInVolume>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_GetNumPawnsInVolume.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmGame.RSeqAct_GetNumPawnsInVolume.Activated");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetPawnFromActor;
     /// <summary>
     /// Function: GetPawnFromActor
     /// </summary>
     public unsafe virtual BmSDK.Engine.Pawn GetPawnFromActor(BmSDK.Engine.Actor act)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_GetNumPawnsInVolume.GetPawnFromActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPawnFromActor, "BmGame.RSeqAct_GetNumPawnsInVolume.GetPawnFromActor");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(act, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -108,12 +110,13 @@ public partial class RSeqAct_GetNumPawnsInVolume : BmSDK.Engine.SequenceAction, 
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Pawn>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CheckPawns;
     /// <summary>
     /// Function: CheckPawns
     /// </summary>
     public unsafe virtual void CheckPawns(bool bForceEncompassCheck)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_GetNumPawnsInVolume.CheckPawns", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckPawns, "BmGame.RSeqAct_GetNumPawnsInVolume.CheckPawns");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForceEncompassCheck, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -127,12 +130,13 @@ public partial class RSeqAct_GetNumPawnsInVolume : BmSDK.Engine.SequenceAction, 
         return;
     }
 
+    private static BmSDK.Function __fn_ShouldCheckPawn;
     /// <summary>
     /// Function: ShouldCheckPawn
     /// </summary>
     public unsafe virtual bool ShouldCheckPawn(BmSDK.BmGame.RPawnCharacter TestPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_GetNumPawnsInVolume.ShouldCheckPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldCheckPawn, "BmGame.RSeqAct_GetNumPawnsInVolume.ShouldCheckPawn");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

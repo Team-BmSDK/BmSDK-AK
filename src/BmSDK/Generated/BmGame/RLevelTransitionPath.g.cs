@@ -78,12 +78,13 @@ public partial class RLevelTransitionPath : BmSDK.BmGame.RLevelTransition, BmSDK
         where TComponent : class, Framework.IScriptComponent<RLevelTransitionPath>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsPlayerPassingThrough;
     /// <summary>
     /// Function: IsPlayerPassingThrough
     /// </summary>
     public unsafe override bool IsPlayerPassingThrough(System.Numerics.Vector3 PlayerLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RLevelTransitionPath.IsPlayerPassingThrough", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPlayerPassingThrough, "BmGame.RLevelTransitionPath.IsPlayerPassingThrough");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerLocation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

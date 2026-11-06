@@ -78,12 +78,13 @@ public partial class AnimTree : BmSDK.Engine.AnimNodeBlendBase, BmSDK.IGameObjec
         where TComponent : class, Framework.IScriptComponent<AnimTree>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetGroupIndex;
     /// <summary>
     /// Function: GetGroupIndex
     /// </summary>
     public unsafe virtual int GetGroupIndex(BmSDK.FName GroupName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimTree.GetGroupIndex", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGroupIndex, "Engine.AnimTree.GetGroupIndex");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GroupName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -97,12 +98,13 @@ public partial class AnimTree : BmSDK.Engine.AnimNodeBlendBase, BmSDK.IGameObjec
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetGroupRateScale;
     /// <summary>
     /// Function: GetGroupRateScale
     /// </summary>
     public unsafe virtual float GetGroupRateScale(BmSDK.FName GroupName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimTree.GetGroupRateScale", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGroupRateScale, "Engine.AnimTree.GetGroupRateScale");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GroupName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -116,12 +118,13 @@ public partial class AnimTree : BmSDK.Engine.AnimNodeBlendBase, BmSDK.IGameObjec
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_SetGroupRateScale;
     /// <summary>
     /// Function: SetGroupRateScale
     /// </summary>
     public unsafe virtual void SetGroupRateScale(BmSDK.FName GroupName, float NewRateScale)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimTree.SetGroupRateScale", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetGroupRateScale, "Engine.AnimTree.SetGroupRateScale");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GroupName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewRateScale, paramsPtr + 8);
@@ -136,12 +139,13 @@ public partial class AnimTree : BmSDK.Engine.AnimNodeBlendBase, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_GetGroupRelativePosition;
     /// <summary>
     /// Function: GetGroupRelativePosition
     /// </summary>
     public unsafe virtual float GetGroupRelativePosition(BmSDK.FName GroupName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimTree.GetGroupRelativePosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGroupRelativePosition, "Engine.AnimTree.GetGroupRelativePosition");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GroupName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -155,12 +159,13 @@ public partial class AnimTree : BmSDK.Engine.AnimNodeBlendBase, BmSDK.IGameObjec
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_ForceGroupRelativePosition;
     /// <summary>
     /// Function: ForceGroupRelativePosition
     /// </summary>
     public unsafe virtual void ForceGroupRelativePosition(BmSDK.FName GroupName, float RelativePosition)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimTree.ForceGroupRelativePosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForceGroupRelativePosition, "Engine.AnimTree.ForceGroupRelativePosition");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GroupName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RelativePosition, paramsPtr + 8);
@@ -175,12 +180,13 @@ public partial class AnimTree : BmSDK.Engine.AnimNodeBlendBase, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_GetGroupNotifyMaster;
     /// <summary>
     /// Function: GetGroupNotifyMaster
     /// </summary>
     public unsafe virtual BmSDK.Engine.AnimNodeSequence GetGroupNotifyMaster(BmSDK.FName GroupName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimTree.GetGroupNotifyMaster", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGroupNotifyMaster, "Engine.AnimTree.GetGroupNotifyMaster");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GroupName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -194,12 +200,13 @@ public partial class AnimTree : BmSDK.Engine.AnimNodeBlendBase, BmSDK.IGameObjec
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimNodeSequence>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetGroupSynchMaster;
     /// <summary>
     /// Function: GetGroupSynchMaster
     /// </summary>
     public unsafe virtual BmSDK.Engine.AnimNodeSequence GetGroupSynchMaster(BmSDK.FName GroupName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimTree.GetGroupSynchMaster", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGroupSynchMaster, "Engine.AnimTree.GetGroupSynchMaster");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GroupName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -213,12 +220,13 @@ public partial class AnimTree : BmSDK.Engine.AnimNodeBlendBase, BmSDK.IGameObjec
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimNodeSequence>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_SetAnimGroupForNode;
     /// <summary>
     /// Function: SetAnimGroupForNode
     /// </summary>
     public unsafe virtual bool SetAnimGroupForNode(BmSDK.Engine.AnimNodeSequence SeqNode, BmSDK.FName GroupName, bool bCreateIfNotFound = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimTree.SetAnimGroupForNode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAnimGroupForNode, "Engine.AnimTree.SetAnimGroupForNode");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SeqNode, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GroupName, paramsPtr + 8);
@@ -234,12 +242,13 @@ public partial class AnimTree : BmSDK.Engine.AnimNodeBlendBase, BmSDK.IGameObjec
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_SetUseSavedPose;
     /// <summary>
     /// Function: SetUseSavedPose
     /// </summary>
     public unsafe virtual void SetUseSavedPose(bool bUseSaved)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimTree.SetUseSavedPose", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetUseSavedPose, "Engine.AnimTree.SetUseSavedPose");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bUseSaved, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -253,12 +262,13 @@ public partial class AnimTree : BmSDK.Engine.AnimNodeBlendBase, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_FindMorphNode;
     /// <summary>
     /// Function: FindMorphNode
     /// </summary>
     public unsafe virtual BmSDK.Engine.MorphNodeBase FindMorphNode(BmSDK.FName InNodeName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimTree.FindMorphNode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindMorphNode, "Engine.AnimTree.FindMorphNode");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InNodeName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -272,12 +282,13 @@ public partial class AnimTree : BmSDK.Engine.AnimNodeBlendBase, BmSDK.IGameObjec
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.MorphNodeBase>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_FindSkelControls;
     /// <summary>
     /// Function: FindSkelControls
     /// </summary>
     public unsafe virtual void FindSkelControls(BmSDK.FName InControlName, out BmSDK.TArray<BmSDK.Engine.SkelControlBase> SkelControls)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimTree.FindSkelControls", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindSkelControls, "Engine.AnimTree.FindSkelControls");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InControlName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -292,12 +303,13 @@ public partial class AnimTree : BmSDK.Engine.AnimNodeBlendBase, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_FindSkelControl;
     /// <summary>
     /// Function: FindSkelControl
     /// </summary>
     public unsafe virtual BmSDK.Engine.SkelControlBase FindSkelControl(BmSDK.FName InControlName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimTree.FindSkelControl", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindSkelControl, "Engine.AnimTree.FindSkelControl");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InControlName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

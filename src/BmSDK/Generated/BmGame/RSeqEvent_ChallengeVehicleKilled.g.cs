@@ -78,24 +78,26 @@ public partial class RSeqEvent_ChallengeVehicleKilled : BmSDK.Engine.SequenceEve
         where TComponent : class, Framework.IScriptComponent<RSeqEvent_ChallengeVehicleKilled>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_TriggerEvent;
     /// <summary>
     /// Function: TriggerEvent
     /// </summary>
     public unsafe virtual void TriggerEvent(BmSDK.Engine.Actor hVehicle)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqEvent_ChallengeVehicleKilled.TriggerEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerEvent, "BmGame.RSeqEvent_ChallengeVehicleKilled.TriggerEvent");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(hVehicle, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetArchetype;
     /// <summary>
     /// Function: GetArchetype
     /// </summary>
     public unsafe virtual BmSDK.GameObject GetArchetype(BmSDK.Engine.Actor hActor)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqEvent_ChallengeVehicleKilled.GetArchetype", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetArchetype, "BmGame.RSeqEvent_ChallengeVehicleKilled.GetArchetype");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(hActor, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -109,12 +111,13 @@ public partial class RSeqEvent_ChallengeVehicleKilled : BmSDK.Engine.SequenceEve
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.GameObject>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqEvent_ChallengeVehicleKilled.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmGame.RSeqEvent_ChallengeVehicleKilled.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);

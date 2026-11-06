@@ -78,12 +78,13 @@ public partial class RSpecialMoveInstance_CwClawClimbEnd : BmSDK.BmGame.RSpecial
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveInstance_CwClawClimbEnd>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_NotifyTouch;
     /// <summary>
     /// Function: NotifyTouch
     /// </summary>
     public unsafe override void NotifyTouch(BmSDK.Engine.Actor Other, BmSDK.Engine.PrimitiveComponent OtherComp, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_CwClawClimbEnd.NotifyTouch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyTouch, "BmScript.RSpecialMoveInstance_CwClawClimbEnd.NotifyTouch");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherComp, paramsPtr + 8);
@@ -93,12 +94,13 @@ public partial class RSpecialMoveInstance_CwClawClimbEnd : BmSDK.BmGame.RSpecial
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyBump;
     /// <summary>
     /// Function: NotifyBump
     /// </summary>
     public unsafe override void NotifyBump(BmSDK.Engine.Actor Other, System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_CwClawClimbEnd.NotifyBump", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyBump, "BmScript.RSpecialMoveInstance_CwClawClimbEnd.NotifyBump");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 8);
@@ -106,12 +108,13 @@ public partial class RSpecialMoveInstance_CwClawClimbEnd : BmSDK.BmGame.RSpecial
         return;
     }
 
+    private static BmSDK.Function __fn_BreakWall;
     /// <summary>
     /// Function: BreakWall
     /// </summary>
     public unsafe virtual void BreakWall(BmSDK.Engine.Actor Other, System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_CwClawClimbEnd.BreakWall", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BreakWall, "BmScript.RSpecialMoveInstance_CwClawClimbEnd.BreakWall");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 8);
@@ -119,34 +122,37 @@ public partial class RSpecialMoveInstance_CwClawClimbEnd : BmSDK.BmGame.RSpecial
         return;
     }
 
+    private static BmSDK.Function __fn_FinishSpecialMove;
     /// <summary>
     /// Function: FinishSpecialMove
     /// </summary>
     public unsafe override void FinishSpecialMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_CwClawClimbEnd.FinishSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishSpecialMove, "BmScript.RSpecialMoveInstance_CwClawClimbEnd.FinishSpecialMove");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanClimbFromHere;
     /// <summary>
     /// Function: CanClimbFromHere
     /// </summary>
     public unsafe virtual void CanClimbFromHere()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_CwClawClimbEnd.CanClimbFromHere", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanClimbFromHere, "BmScript.RSpecialMoveInstance_CwClawClimbEnd.CanClimbFromHere");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerSpecialMove;
     /// <summary>
     /// Function: TriggerSpecialMove
     /// </summary>
     public unsafe override void TriggerSpecialMove(BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator MoveLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_CwClawClimbEnd.TriggerSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerSpecialMove, "BmScript.RSpecialMoveInstance_CwClawClimbEnd.TriggerSpecialMove");
         byte* paramsPtr = stackalloc byte[184];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

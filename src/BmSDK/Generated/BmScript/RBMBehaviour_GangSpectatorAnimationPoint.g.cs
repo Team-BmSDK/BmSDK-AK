@@ -78,91 +78,99 @@ public partial class RBMBehaviour_GangSpectatorAnimationPoint : BmSDK.BmScript.R
         where TComponent : class, Framework.IScriptComponent<RBMBehaviour_GangSpectatorAnimationPoint>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_GangSpectatorAnimationPoint.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmScript.RBMBehaviour_GangSpectatorAnimationPoint.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Cheer;
     /// <summary>
     /// Function: Cheer
     /// </summary>
     public unsafe virtual void Cheer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_GangSpectatorAnimationPoint.Cheer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Cheer, "BmScript.RBMBehaviour_GangSpectatorAnimationPoint.Cheer");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartAnimationInAnyDirection;
     /// <summary>
     /// Function: StartAnimationInAnyDirection
     /// </summary>
     public unsafe override bool StartAnimationInAnyDirection()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_GangSpectatorAnimationPoint.StartAnimationInAnyDirection", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartAnimationInAnyDirection, "BmScript.RBMBehaviour_GangSpectatorAnimationPoint.StartAnimationInAnyDirection");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetCustomAnyDirectionAnimSettings;
     /// <summary>
     /// Function: SetCustomAnyDirectionAnimSettings
     /// </summary>
     public unsafe override void SetCustomAnyDirectionAnimSettings(BmSDK.FName PrevState)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_GangSpectatorAnimationPoint.SetCustomAnyDirectionAnimSettings", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCustomAnyDirectionAnimSettings, "BmScript.RBMBehaviour_GangSpectatorAnimationPoint.SetCustomAnyDirectionAnimSettings");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PrevState, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetWatchingPOILocation;
     /// <summary>
     /// Function: GetWatchingPOILocation
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetWatchingPOILocation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_GangSpectatorAnimationPoint.GetWatchingPOILocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWatchingPOILocation, "BmScript.RBMBehaviour_GangSpectatorAnimationPoint.GetWatchingPOILocation");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SuggestPOI;
     /// <summary>
     /// Function: SuggestPOI
     /// </summary>
     public unsafe virtual bool SuggestPOI(BmSDK.BmGame.RGangInteractPointBase SuggestedPOI)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_GangSpectatorAnimationPoint.SuggestPOI", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SuggestPOI, "BmScript.RBMBehaviour_GangSpectatorAnimationPoint.SuggestPOI");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SuggestedPOI, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_POIStillValid;
     /// <summary>
     /// Function: POIStillValid
     /// </summary>
     public unsafe virtual bool POIStillValid()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_GangSpectatorAnimationPoint.POIStillValid", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_POIStillValid, "BmScript.RBMBehaviour_GangSpectatorAnimationPoint.POIStillValid");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_GangSpectatorAnimationPoint.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmScript.RBMBehaviour_GangSpectatorAnimationPoint.OnActivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

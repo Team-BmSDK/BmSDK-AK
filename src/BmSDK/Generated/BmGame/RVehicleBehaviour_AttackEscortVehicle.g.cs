@@ -78,12 +78,13 @@ public partial class RVehicleBehaviour_AttackEscortVehicle : BmSDK.BmGame.RVehic
         where TComponent : class, Framework.IScriptComponent<RVehicleBehaviour_AttackEscortVehicle>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_NotifyRigidBodyCollision;
     /// <summary>
     /// Function: NotifyRigidBodyCollision
     /// </summary>
     public unsafe override void NotifyRigidBodyCollision(BmSDK.Engine.PrimitiveComponent HitComp, float Speed, bool HitGround)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleBehaviour_AttackEscortVehicle.NotifyRigidBodyCollision", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyRigidBodyCollision, "BmGame.RVehicleBehaviour_AttackEscortVehicle.NotifyRigidBodyCollision");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitComp, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speed, paramsPtr + 8);
@@ -92,71 +93,77 @@ public partial class RVehicleBehaviour_AttackEscortVehicle : BmSDK.BmGame.RVehic
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleBehaviour_AttackEscortVehicle.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RVehicleBehaviour_AttackEscortVehicle.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateFollowMinMaxThrottle;
     /// <summary>
     /// Function: UpdateFollowMinMaxThrottle
     /// </summary>
     public unsafe override void UpdateFollowMinMaxThrottle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleBehaviour_AttackEscortVehicle.UpdateFollowMinMaxThrottle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateFollowMinMaxThrottle, "BmGame.RVehicleBehaviour_AttackEscortVehicle.UpdateFollowMinMaxThrottle");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetDesiredFollowOffsetBehind;
     /// <summary>
     /// Function: GetDesiredFollowOffsetBehind
     /// </summary>
     public unsafe override float GetDesiredFollowOffsetBehind(int FollowerIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleBehaviour_AttackEscortVehicle.GetDesiredFollowOffsetBehind", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDesiredFollowOffsetBehind, "BmGame.RVehicleBehaviour_AttackEscortVehicle.GetDesiredFollowOffsetBehind");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FollowerIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_AvoidingActor;
     /// <summary>
     /// Function: AvoidingActor
     /// </summary>
     public unsafe override void AvoidingActor(BmSDK.Engine.Actor ActorBeingAvoided)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleBehaviour_AttackEscortVehicle.AvoidingActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AvoidingActor, "BmGame.RVehicleBehaviour_AttackEscortVehicle.AvoidingActor");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ActorBeingAvoided, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ExitBehaviour;
     /// <summary>
     /// Function: ExitBehaviour
     /// </summary>
     public unsafe override void ExitBehaviour(BmSDK.BmGame.RVehicleBehaviour NextBehaviour)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleBehaviour_AttackEscortVehicle.ExitBehaviour", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ExitBehaviour, "BmGame.RVehicleBehaviour_AttackEscortVehicle.ExitBehaviour");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NextBehaviour, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EnterBehaviour;
     /// <summary>
     /// Function: EnterBehaviour
     /// </summary>
     public unsafe override void EnterBehaviour(BmSDK.BmGame.RVehicleBehaviour PreviousBehaviour)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RVehicleBehaviour_AttackEscortVehicle.EnterBehaviour", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnterBehaviour, "BmGame.RVehicleBehaviour_AttackEscortVehicle.EnterBehaviour");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PreviousBehaviour, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

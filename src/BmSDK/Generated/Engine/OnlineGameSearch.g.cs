@@ -78,12 +78,13 @@ public partial class OnlineGameSearch : BmSDK.Engine.Settings, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<OnlineGameSearch>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SortSearchResults;
     /// <summary>
     /// Function: SortSearchResults
     /// </summary>
     public unsafe virtual void SortSearchResults()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.OnlineGameSearch.SortSearchResults", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SortSearchResults, "Engine.OnlineGameSearch.SortSearchResults");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class OnlineGameSearch : BmSDK.Engine.Settings, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetSkillOverride;
     /// <summary>
     /// Function: SetSkillOverride
     /// </summary>
     public unsafe virtual void SetSkillOverride(int LeaderboardId, out BmSDK.TArray<BmSDK.Engine.OnlineSubsystem.FUniqueNetId> Players)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.OnlineGameSearch.SetSkillOverride", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSkillOverride, "Engine.OnlineGameSearch.SetSkillOverride");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LeaderboardId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

@@ -78,12 +78,13 @@ public partial class RBMCombatPoint_LoPipes : BmSDK.BmGame.RBMCombatPoint_Enviro
         where TComponent : class, Framework.IScriptComponent<RBMCombatPoint_LoPipes>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsValidLoc;
     /// <summary>
     /// Function: IsValidLoc
     /// </summary>
     public unsafe override bool IsValidLoc(BmSDK.BmGame.RPawnPlayerCombat TestPlayer, BmSDK.BmGame.RPawnVillain TestPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_LoPipes.IsValidLoc", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsValidLoc, "BmScript.RBMCombatPoint_LoPipes.IsValidLoc");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPlayer, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 8);
@@ -91,36 +92,39 @@ public partial class RBMCombatPoint_LoPipes : BmSDK.BmGame.RBMCombatPoint_Enviro
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_OnToggle;
     /// <summary>
     /// Function: OnToggle
     /// </summary>
     public unsafe override void OnToggle(BmSDK.Engine.SeqAct_Toggle Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_LoPipes.OnToggle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggle, "BmScript.RBMCombatPoint_LoPipes.OnToggle");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayDestroyAnim;
     /// <summary>
     /// Function: PlayDestroyAnim
     /// </summary>
     public unsafe override bool PlayDestroyAnim(BmSDK.FName AnimName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_LoPipes.PlayDestroyAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayDestroyAnim, "BmScript.RBMCombatPoint_LoPipes.PlayDestroyAnim");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetAnimName;
     /// <summary>
     /// Function: GetAnimName
     /// </summary>
     public unsafe override BmSDK.FName GetAnimName(BmSDK.BmGame.RPawnVillain TargetPawn, BmSDK.BmGame.RPawnPlayerCombat PlayerPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_LoPipes.GetAnimName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAnimName, "BmScript.RBMCombatPoint_LoPipes.GetAnimName");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerPawn, paramsPtr + 8);
@@ -128,34 +132,37 @@ public partial class RBMCombatPoint_LoPipes : BmSDK.BmGame.RBMCombatPoint_Enviro
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_StopElectric;
     /// <summary>
     /// Function: StopElectric
     /// </summary>
     public unsafe virtual void StopElectric()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_LoPipes.StopElectric", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopElectric, "BmScript.RBMCombatPoint_LoPipes.StopElectric");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnFxEvent;
     /// <summary>
     /// Function: OnFxEvent
     /// </summary>
     public unsafe override void OnFxEvent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_LoPipes.OnFxEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnFxEvent, "BmScript.RBMCombatPoint_LoPipes.OnFxEvent");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UsedByPawn;
     /// <summary>
     /// Function: UsedByPawn
     /// </summary>
     public unsafe override void UsedByPawn(BmSDK.BmGame.RPawnCombat NewUser, BmSDK.Engine.Actor NewTarget = default, bool bUsedDuringTaunt = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_LoPipes.UsedByPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UsedByPawn, "BmScript.RBMCombatPoint_LoPipes.UsedByPawn");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewUser, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewTarget, paramsPtr + 8);
@@ -164,57 +171,62 @@ public partial class RBMCombatPoint_LoPipes : BmSDK.BmGame.RBMCombatPoint_Enviro
         return;
     }
 
+    private static BmSDK.Function __fn_DebugReset;
     /// <summary>
     /// Function: DebugReset
     /// </summary>
     public unsafe override void DebugReset(BmSDK.BmGame.RBMCombatManager CM)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_LoPipes.DebugReset", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DebugReset, "BmScript.RBMCombatPoint_LoPipes.DebugReset");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CM, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnSwapMesh;
     /// <summary>
     /// Function: OnSwapMesh
     /// </summary>
     public unsafe override void OnSwapMesh()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_LoPipes.OnSwapMesh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnSwapMesh, "BmScript.RBMCombatPoint_LoPipes.OnSwapMesh");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetMyPylon;
     /// <summary>
     /// Function: SetMyPylon
     /// </summary>
     public unsafe override void SetMyPylon()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_LoPipes.SetMyPylon", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMyPylon, "BmScript.RBMCombatPoint_LoPipes.SetMyPylon");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetupHighlightMesh;
     /// <summary>
     /// Function: SetupHighlightMesh
     /// </summary>
     public unsafe override void SetupHighlightMesh()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_LoPipes.SetupHighlightMesh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupHighlightMesh, "BmScript.RBMCombatPoint_LoPipes.SetupHighlightMesh");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RegisterStasisCheckMesh;
     /// <summary>
     /// Function: RegisterStasisCheckMesh
     /// </summary>
     public unsafe override void RegisterStasisCheckMesh()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatPoint_LoPipes.RegisterStasisCheckMesh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterStasisCheckMesh, "BmScript.RBMCombatPoint_LoPipes.RegisterStasisCheckMesh");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

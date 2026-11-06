@@ -73,45 +73,49 @@ public partial class RHarpoonGun : BmSDK.BmGame.RInventoryGadget, BmSDK.IGameObj
         where TComponent : class, Framework.IScriptComponent<RHarpoonGun>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetRobinBatclawMaterial;
     /// <summary>
     /// Function: GetRobinBatclawMaterial
     /// </summary>
     public unsafe virtual BmSDK.Engine.MaterialInstanceConstant GetRobinBatclawMaterial()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.GetRobinBatclawMaterial", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRobinBatclawMaterial, "BmGame.RHarpoonGun.GetRobinBatclawMaterial");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.MaterialInstanceConstant>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UpgradeToSuperComboGadget;
     /// <summary>
     /// Function: UpgradeToSuperComboGadget
     /// </summary>
     public unsafe override bool UpgradeToSuperComboGadget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.UpgradeToSuperComboGadget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpgradeToSuperComboGadget, "BmGame.RHarpoonGun.UpgradeToSuperComboGadget");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmGame.RHarpoonGun.Destroyed");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CalculateEquipBoneName;
     /// <summary>
     /// Function: CalculateEquipBoneName
     /// </summary>
     public unsafe override void CalculateEquipBoneName(out BmSDK.FName OutEquipBoneName, out BmSDK.FName OutEquipBoneName2, out BmSDK.Rotator OutRelativeRotation, BmSDK.FName CustomBone = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.CalculateEquipBoneName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculateEquipBoneName, "BmGame.RHarpoonGun.CalculateEquipBoneName");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CustomBone, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -121,56 +125,61 @@ public partial class RHarpoonGun : BmSDK.BmGame.RInventoryGadget, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_CanDisableTick;
     /// <summary>
     /// Function: CanDisableTick
     /// </summary>
     public unsafe override bool CanDisableTick()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.CanDisableTick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanDisableTick, "BmGame.RHarpoonGun.CanDisableTick");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PlayFireSound;
     /// <summary>
     /// Function: PlayFireSound
     /// </summary>
     public unsafe virtual void PlayFireSound()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.PlayFireSound", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayFireSound, "BmGame.RHarpoonGun.PlayFireSound");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FireGadgetGliding;
     /// <summary>
     /// Function: FireGadgetGliding
     /// </summary>
     public unsafe override BmSDK.Engine.Actor FireGadgetGliding()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.FireGadgetGliding", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireGadgetGliding, "BmGame.RHarpoonGun.FireGadgetGliding");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_FireGadgetCombat;
     /// <summary>
     /// Function: FireGadgetCombat
     /// </summary>
     public unsafe override bool FireGadgetCombat()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.FireGadgetCombat", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireGadgetCombat, "BmGame.RHarpoonGun.FireGadgetCombat");
         byte* paramsPtr = stackalloc byte[29];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CheckAutoTarget;
     /// <summary>
     /// Function: CheckAutoTarget
     /// </summary>
     public unsafe override bool CheckAutoTarget(BmSDK.Engine.Actor Target, out System.Numerics.Vector3 TargetPosition, out float OverridePriority, out float OverrideMaxRange, out byte DoLOSCheck)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.CheckAutoTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckAutoTarget, "BmGame.RHarpoonGun.CheckAutoTarget");
         byte* paramsPtr = stackalloc byte[176];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -181,113 +190,123 @@ public partial class RHarpoonGun : BmSDK.BmGame.RInventoryGadget, BmSDK.IGameObj
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_GetCentralTarget;
     /// <summary>
     /// Function: GetCentralTarget
     /// </summary>
     public unsafe virtual BmSDK.Engine.Actor GetCentralTarget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.GetCentralTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCentralTarget, "BmGame.RHarpoonGun.GetCentralTarget");
         byte* paramsPtr = stackalloc byte[84];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ProjectileCam;
     /// <summary>
     /// Function: ProjectileCam
     /// </summary>
     public unsafe virtual void ProjectileCam()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.ProjectileCam", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProjectileCam, "BmGame.RHarpoonGun.ProjectileCam");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AttachToBelt;
     /// <summary>
     /// Function: AttachToBelt
     /// </summary>
     public unsafe override void AttachToBelt()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.AttachToBelt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttachToBelt, "BmGame.RHarpoonGun.AttachToBelt");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HideMesh;
     /// <summary>
     /// Function: HideMesh
     /// </summary>
     public unsafe virtual void HideMesh()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.HideMesh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideMesh, "BmGame.RHarpoonGun.HideMesh");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AttachToHand;
     /// <summary>
     /// Function: AttachToHand
     /// </summary>
     public unsafe override void AttachToHand(BmSDK.FName CustomBone = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.AttachToHand", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttachToHand, "BmGame.RHarpoonGun.AttachToHand");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CustomBone, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ProjectileReachedDest;
     /// <summary>
     /// Function: ProjectileReachedDest
     /// </summary>
     public unsafe virtual void ProjectileReachedDest(int ProjectileIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.ProjectileReachedDest", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProjectileReachedDest, "BmGame.RHarpoonGun.ProjectileReachedDest");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProjectileIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartPullMove;
     /// <summary>
     /// Function: StartPullMove
     /// </summary>
     public unsafe virtual void StartPullMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.StartPullMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartPullMove, "BmGame.RHarpoonGun.StartPullMove");
         byte* paramsPtr = stackalloc byte[152];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AttachProjectileToBelt;
     /// <summary>
     /// Function: AttachProjectileToBelt
     /// </summary>
     public unsafe virtual void AttachProjectileToBelt()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.AttachProjectileToBelt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttachProjectileToBelt, "BmGame.RHarpoonGun.AttachProjectileToBelt");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TurnOffProjectiles;
     /// <summary>
     /// Function: TurnOffProjectiles
     /// </summary>
     public unsafe override void TurnOffProjectiles()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.TurnOffProjectiles", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TurnOffProjectiles, "BmGame.RHarpoonGun.TurnOffProjectiles");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FireHarpoonProjectile;
     /// <summary>
     /// Function: FireHarpoonProjectile
     /// </summary>
     public unsafe virtual void FireHarpoonProjectile(int ProjectileIndex, System.Numerics.Vector3 ProjectileTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.FireHarpoonProjectile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireHarpoonProjectile, "BmGame.RHarpoonGun.FireHarpoonProjectile");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProjectileIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProjectileTarget, paramsPtr + 4);
@@ -295,90 +314,98 @@ public partial class RHarpoonGun : BmSDK.BmGame.RInventoryGadget, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_AttachMeshToProjectile;
     /// <summary>
     /// Function: AttachMeshToProjectile
     /// </summary>
     public unsafe virtual void AttachMeshToProjectile()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.AttachMeshToProjectile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttachMeshToProjectile, "BmGame.RHarpoonGun.AttachMeshToProjectile");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RHarpoonGun.Tick");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetEnemyTargetAngle;
     /// <summary>
     /// Function: GetEnemyTargetAngle
     /// </summary>
     public unsafe virtual float GetEnemyTargetAngle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.GetEnemyTargetAngle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetEnemyTargetAngle, "BmGame.RHarpoonGun.GetEnemyTargetAngle");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetAutoTargetAngle;
     /// <summary>
     /// Function: GetAutoTargetAngle
     /// </summary>
     public unsafe virtual float GetAutoTargetAngle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.GetAutoTargetAngle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAutoTargetAngle, "BmGame.RHarpoonGun.GetAutoTargetAngle");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UpdateTarget;
     /// <summary>
     /// Function: UpdateTarget
     /// </summary>
     public unsafe virtual void UpdateTarget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.UpdateTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateTarget, "BmGame.RHarpoonGun.UpdateTarget");
         byte* paramsPtr = stackalloc byte[72];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DrawAimingHUD;
     /// <summary>
     /// Function: DrawAimingHUD
     /// </summary>
     public unsafe virtual void DrawAimingHUD()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.DrawAimingHUD", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DrawAimingHUD, "BmGame.RHarpoonGun.DrawAimingHUD");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanFireInOwnerPhysicsMode;
     /// <summary>
     /// Function: CanFireInOwnerPhysicsMode
     /// </summary>
     public unsafe virtual bool CanFireInOwnerPhysicsMode()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.CanFireInOwnerPhysicsMode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanFireInOwnerPhysicsMode, "BmGame.RHarpoonGun.CanFireInOwnerPhysicsMode");
         byte* paramsPtr = stackalloc byte[5];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetPrimedPose;
     /// <summary>
     /// Function: GetPrimedPose
     /// </summary>
     public unsafe override BmSDK.FName GetPrimedPose(out BmSDK.BmGame.RInventoryGadget.PlayerWantsToCrouch StanceIsCrouched, out BmSDK.BmGame.RAnimUtil.EMirrorChoice MirroredNess, bool InSoftCover, BmSDK.BmGame.RInventoryGadget.CoverCornerType CornerType, out BmSDK.FName OutCapeState, out BmSDK.FName OutCapeTransitionState)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.GetPrimedPose", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPrimedPose, "BmGame.RHarpoonGun.GetPrimedPose");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InSoftCover, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CornerType, paramsPtr + 8);
@@ -390,12 +417,13 @@ public partial class RHarpoonGun : BmSDK.BmGame.RInventoryGadget, BmSDK.IGameObj
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_GetGadgetCamera;
     /// <summary>
     /// Function: GetGadgetCamera
     /// </summary>
     public unsafe override BmSDK.FName GetGadgetCamera(bool InSoftCover = default, BmSDK.BmGame.RInventoryGadget.CoverCornerType CornerType = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.GetGadgetCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGadgetCamera, "BmGame.RHarpoonGun.GetGadgetCamera");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InSoftCover, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CornerType, paramsPtr + 4);
@@ -403,12 +431,13 @@ public partial class RHarpoonGun : BmSDK.BmGame.RInventoryGadget, BmSDK.IGameObj
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetPotentialTargetPositions;
     /// <summary>
     /// Function: GetPotentialTargetPositions
     /// </summary>
     public unsafe override bool GetPotentialTargetPositions(BmSDK.Engine.Actor Target, out System.Numerics.Vector3 InTargetPosition, out BmSDK.TArray<System.Numerics.Vector3> PotentialTargetPositions, out BmSDK.Engine.Actor LineCheckActor)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.GetPotentialTargetPositions", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPotentialTargetPositions, "BmGame.RHarpoonGun.GetPotentialTargetPositions");
         byte* paramsPtr = stackalloc byte[72];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -418,70 +447,76 @@ public partial class RHarpoonGun : BmSDK.BmGame.RInventoryGadget, BmSDK.IGameObj
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 44);
     }
 
+    private static BmSDK.Function __fn_UpdateHarpoonTarget;
     /// <summary>
     /// Function: UpdateHarpoonTarget
     /// </summary>
     public unsafe virtual bool UpdateHarpoonTarget(bool bInFlight = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.UpdateHarpoonTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateHarpoonTarget, "BmGame.RHarpoonGun.UpdateHarpoonTarget");
         byte* paramsPtr = stackalloc byte[72];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bInFlight, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_UpdateGrateTargets;
     /// <summary>
     /// Function: UpdateGrateTargets
     /// </summary>
     public unsafe virtual void UpdateGrateTargets(BmSDK.BmGame.RRemoveableGrate GrateTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.UpdateGrateTargets", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateGrateTargets, "BmGame.RHarpoonGun.UpdateGrateTargets");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GrateTarget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ThugsDodgedFire;
     /// <summary>
     /// Function: ThugsDodgedFire
     /// </summary>
     public unsafe virtual void ThugsDodgedFire()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.ThugsDodgedFire", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ThugsDodgedFire, "BmGame.RHarpoonGun.ThugsDodgedFire");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HarpoonNothing;
     /// <summary>
     /// Function: HarpoonNothing
     /// </summary>
     public unsafe virtual bool HarpoonNothing(System.Numerics.Vector3 overrideTargetPos = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.HarpoonNothing", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HarpoonNothing, "BmGame.RHarpoonGun.HarpoonNothing");
         byte* paramsPtr = stackalloc byte[132];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(overrideTargetPos, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_HarpoonTrackedObject;
     /// <summary>
     /// Function: HarpoonTrackedObject
     /// </summary>
     public unsafe virtual void HarpoonTrackedObject()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.HarpoonTrackedObject", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HarpoonTrackedObject, "BmGame.RHarpoonGun.HarpoonTrackedObject");
         byte* paramsPtr = stackalloc byte[132];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetRopeObstruction;
     /// <summary>
     /// Function: GetRopeObstruction
     /// </summary>
     public unsafe virtual BmSDK.Engine.Actor GetRopeObstruction(System.Numerics.Vector3 StartPos, System.Numerics.Vector3 EndPos)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.GetRopeObstruction", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRopeObstruction, "BmGame.RHarpoonGun.GetRopeObstruction");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartPos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EndPos, paramsPtr + 12);
@@ -496,12 +531,13 @@ public partial class RHarpoonGun : BmSDK.BmGame.RInventoryGadget, BmSDK.IGameObj
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_HarpoonFired;
     /// <summary>
     /// Function: HarpoonFired
     /// </summary>
     public unsafe virtual void HarpoonFired()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.HarpoonFired", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HarpoonFired, "BmGame.RHarpoonGun.HarpoonFired");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -514,45 +550,49 @@ public partial class RHarpoonGun : BmSDK.BmGame.RInventoryGadget, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_DoFireMove;
     /// <summary>
     /// Function: DoFireMove
     /// </summary>
     public unsafe virtual void DoFireMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.DoFireMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoFireMove, "BmGame.RHarpoonGun.DoFireMove");
         byte* paramsPtr = stackalloc byte[136];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_BatclawThugMove;
     /// <summary>
     /// Function: BatclawThugMove
     /// </summary>
     public unsafe virtual bool BatclawThugMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.BatclawThugMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BatclawThugMove, "BmGame.RHarpoonGun.BatclawThugMove");
         byte* paramsPtr = stackalloc byte[136];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_FireHarpoon;
     /// <summary>
     /// Function: FireHarpoon
     /// </summary>
     public unsafe virtual bool FireHarpoon()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.FireHarpoon", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireHarpoon, "BmGame.RHarpoonGun.FireHarpoon");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ReSpawnProjectile;
     /// <summary>
     /// Function: ReSpawnProjectile
     /// </summary>
     public unsafe virtual void ReSpawnProjectile()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHarpoonGun.ReSpawnProjectile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReSpawnProjectile, "BmGame.RHarpoonGun.ReSpawnProjectile");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

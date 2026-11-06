@@ -78,23 +78,25 @@ public partial class RHudModuleForensicBeaconTracking : BmSDK.BmGame.RHudModule,
         where TComponent : class, Framework.IScriptComponent<RHudModuleForensicBeaconTracking>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DoOutro;
     /// <summary>
     /// Function: DoOutro
     /// </summary>
     public unsafe virtual void DoOutro()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleForensicBeaconTracking.DoOutro", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoOutro, "BmGame.RHudModuleForensicBeaconTracking.DoOutro");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetLockon;
     /// <summary>
     /// Function: SetLockon
     /// </summary>
     public unsafe virtual void SetLockon(int DistanceMeters, float AngleLockonProportion)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleForensicBeaconTracking.SetLockon", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetLockon, "BmGame.RHudModuleForensicBeaconTracking.SetLockon");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DistanceMeters, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AngleLockonProportion, paramsPtr + 4);
@@ -102,23 +104,25 @@ public partial class RHudModuleForensicBeaconTracking : BmSDK.BmGame.RHudModule,
         return;
     }
 
+    private static BmSDK.Function __fn_Close;
     /// <summary>
     /// Function: Close
     /// </summary>
     public unsafe override void Close()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleForensicBeaconTracking.Close", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Close, "BmGame.RHudModuleForensicBeaconTracking.Close");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe override bool Init(BmSDK.BmGame.RPlayerController _RPC, BmSDK.FString _ExtensionName, BmSDK.FString _ExtensionPath)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleForensicBeaconTracking.Init", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmGame.RHudModuleForensicBeaconTracking.Init");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_RPC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_ExtensionName, paramsPtr + 8);

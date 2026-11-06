@@ -78,36 +78,39 @@ public partial class RRoadPoint : BmSDK.Engine.Actor, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RRoadPoint>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UnlinkToActor;
     /// <summary>
     /// Function: UnlinkToActor
     /// </summary>
     public unsafe override bool UnlinkToActor(BmSDK.Engine.Actor LinkTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadPoint.UnlinkToActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnlinkToActor, "BmGame.RRoadPoint.UnlinkToActor");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkTarget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_LinkToActor;
     /// <summary>
     /// Function: LinkToActor
     /// </summary>
     public unsafe override bool LinkToActor(BmSDK.Engine.Actor LinkTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadPoint.LinkToActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LinkToActor, "BmGame.RRoadPoint.LinkToActor");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkTarget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_SpawnRoadLink;
     /// <summary>
     /// Function: SpawnRoadLink
     /// </summary>
     public unsafe static BmSDK.BmGame.RRoadLink SpawnRoadLink(BmSDK.BmGame.RRoadPoint PointA, BmSDK.BmGame.RRoadPoint PointB)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadPoint.SpawnRoadLink", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnRoadLink, "BmGame.RRoadPoint.SpawnRoadLink");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PointA, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PointB, paramsPtr + 8);
@@ -122,12 +125,13 @@ public partial class RRoadPoint : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadLink>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_UpdateDisplayLines;
     /// <summary>
     /// Function: UpdateDisplayLines
     /// </summary>
     public unsafe virtual void UpdateDisplayLines()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadPoint.UpdateDisplayLines", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateDisplayLines, "BmGame.RRoadPoint.UpdateDisplayLines");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

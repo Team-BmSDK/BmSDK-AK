@@ -78,12 +78,13 @@ public partial class StaticMeshComponent : BmSDK.Engine.MeshComponent, BmSDK.IGa
         where TComponent : class, Framework.IScriptComponent<StaticMeshComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CanBecomeDynamic;
     /// <summary>
     /// Function: CanBecomeDynamic
     /// </summary>
     public unsafe virtual bool CanBecomeDynamic()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.StaticMeshComponent.CanBecomeDynamic", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBecomeDynamic, "Engine.StaticMeshComponent.CanBecomeDynamic");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class StaticMeshComponent : BmSDK.Engine.MeshComponent, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsComponentAttached;
     /// <summary>
     /// Function: IsComponentAttached
     /// </summary>
     public unsafe virtual bool IsComponentAttached(BmSDK.Engine.ActorComponent Component, BmSDK.FName BoneName = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.StaticMeshComponent.IsComponentAttached", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsComponentAttached, "Engine.StaticMeshComponent.IsComponentAttached");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Component, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 8);
@@ -116,12 +118,13 @@ public partial class StaticMeshComponent : BmSDK.Engine.MeshComponent, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_GetSocketByName;
     /// <summary>
     /// Function: GetSocketByName
     /// </summary>
     public unsafe virtual BmSDK.Engine.StaticMeshSocket GetSocketByName(BmSDK.FName InSocketName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.StaticMeshComponent.GetSocketByName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSocketByName, "Engine.StaticMeshComponent.GetSocketByName");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InSocketName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -135,12 +138,13 @@ public partial class StaticMeshComponent : BmSDK.Engine.MeshComponent, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.StaticMeshSocket>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetSocketWorldLocationAndRotation;
     /// <summary>
     /// Function: GetSocketWorldLocationAndRotation
     /// </summary>
     public unsafe virtual bool GetSocketWorldLocationAndRotation(BmSDK.FName InSocketName, out System.Numerics.Vector3 OutLocation, out BmSDK.Rotator OutRotation, int Space)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.StaticMeshComponent.GetSocketWorldLocationAndRotation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSocketWorldLocationAndRotation, "Engine.StaticMeshComponent.GetSocketWorldLocationAndRotation");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InSocketName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Space, paramsPtr + 32);
@@ -157,12 +161,13 @@ public partial class StaticMeshComponent : BmSDK.Engine.MeshComponent, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 36);
     }
 
+    private static BmSDK.Function __fn_AttachComponentToSocket;
     /// <summary>
     /// Function: AttachComponentToSocket
     /// </summary>
     public unsafe virtual void AttachComponentToSocket(BmSDK.Engine.ActorComponent Component, BmSDK.FName SocketName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.StaticMeshComponent.AttachComponentToSocket", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttachComponentToSocket, "Engine.StaticMeshComponent.AttachComponentToSocket");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Component, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SocketName, paramsPtr + 8);
@@ -177,12 +182,13 @@ public partial class StaticMeshComponent : BmSDK.Engine.MeshComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_DetachComponent;
     /// <summary>
     /// Function: DetachComponent
     /// </summary>
     public unsafe virtual void DetachComponent(BmSDK.Engine.ActorComponent Component)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.StaticMeshComponent.DetachComponent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DetachComponent, "Engine.StaticMeshComponent.DetachComponent");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Component, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -196,12 +202,13 @@ public partial class StaticMeshComponent : BmSDK.Engine.MeshComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_AttachComponent;
     /// <summary>
     /// Function: AttachComponent
     /// </summary>
     public unsafe virtual void AttachComponent(BmSDK.Engine.ActorComponent Component, System.Numerics.Vector3 RelativeLocation = default, BmSDK.Rotator RelativeRotation = default, System.Numerics.Vector3 RelativeScale = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.StaticMeshComponent.AttachComponent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttachComponent, "Engine.StaticMeshComponent.AttachComponent");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Component, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RelativeLocation, paramsPtr + 8);
@@ -218,12 +225,13 @@ public partial class StaticMeshComponent : BmSDK.Engine.MeshComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_GetUseSimpleLineCollision;
     /// <summary>
     /// Function: GetUseSimpleLineCollision
     /// </summary>
     public unsafe override bool GetUseSimpleLineCollision()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.StaticMeshComponent.GetUseSimpleLineCollision", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetUseSimpleLineCollision, "Engine.StaticMeshComponent.GetUseSimpleLineCollision");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -236,12 +244,13 @@ public partial class StaticMeshComponent : BmSDK.Engine.MeshComponent, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetUseSimpleBoxCollision;
     /// <summary>
     /// Function: GetUseSimpleBoxCollision
     /// </summary>
     public unsafe override bool GetUseSimpleBoxCollision()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.StaticMeshComponent.GetUseSimpleBoxCollision", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetUseSimpleBoxCollision, "Engine.StaticMeshComponent.GetUseSimpleBoxCollision");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -254,12 +263,13 @@ public partial class StaticMeshComponent : BmSDK.Engine.MeshComponent, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetForceStaticDecals;
     /// <summary>
     /// Function: SetForceStaticDecals
     /// </summary>
     public unsafe virtual void SetForceStaticDecals(bool bInForceStaticDecals)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.StaticMeshComponent.SetForceStaticDecals", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetForceStaticDecals, "Engine.StaticMeshComponent.SetForceStaticDecals");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bInForceStaticDecals, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -273,12 +283,13 @@ public partial class StaticMeshComponent : BmSDK.Engine.MeshComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_DisableRBCollisionWithSMC;
     /// <summary>
     /// Function: DisableRBCollisionWithSMC
     /// </summary>
     public unsafe virtual void DisableRBCollisionWithSMC(BmSDK.Engine.PrimitiveComponent OtherSMC, bool bDisabled)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.StaticMeshComponent.DisableRBCollisionWithSMC", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisableRBCollisionWithSMC, "Engine.StaticMeshComponent.DisableRBCollisionWithSMC");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherSMC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDisabled, paramsPtr + 8);
@@ -293,12 +304,13 @@ public partial class StaticMeshComponent : BmSDK.Engine.MeshComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetStaticMesh;
     /// <summary>
     /// Function: SetStaticMesh
     /// </summary>
     public unsafe virtual bool SetStaticMesh(BmSDK.Engine.StaticMesh NewMesh, bool bForce = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.StaticMeshComponent.SetStaticMesh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetStaticMesh, "Engine.StaticMeshComponent.SetStaticMesh");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewMesh, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForce, paramsPtr + 8);

@@ -78,23 +78,25 @@ public partial class RCombatMove_LieutenantSmokeReaction : BmSDK.BmGame.RCombatM
         where TComponent : class, Framework.IScriptComponent<RCombatMove_LieutenantSmokeReaction>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CombatAnimHitStart;
     /// <summary>
     /// Function: CombatAnimHitStart
     /// </summary>
     public unsafe virtual void CombatAnimHitStart()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_LieutenantSmokeReaction.CombatAnimHitStart", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CombatAnimHitStart, "BmGame.RCombatMove_LieutenantSmokeReaction.CombatAnimHitStart");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetAnimInfo;
     /// <summary>
     /// Function: GetAnimInfo
     /// </summary>
     public unsafe override void GetAnimInfo(out BmSDK.FName AnimName, out float DurationScale)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_LieutenantSmokeReaction.GetAnimInfo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAnimInfo, "BmGame.RCombatMove_LieutenantSmokeReaction.GetAnimInfo");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         AnimName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);

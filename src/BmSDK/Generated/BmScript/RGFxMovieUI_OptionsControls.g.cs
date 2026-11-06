@@ -78,35 +78,38 @@ public partial class RGFxMovieUI_OptionsControls : BmSDK.BmGame.RGFxMovieUI, BmS
         where TComponent : class, Framework.IScriptComponent<RGFxMovieUI_OptionsControls>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CloseScreen;
     /// <summary>
     /// Function: CloseScreen
     /// </summary>
     public unsafe override void CloseScreen()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_OptionsControls.CloseScreen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CloseScreen, "BmScript.RGFxMovieUI_OptionsControls.CloseScreen");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetCurrentPage;
     /// <summary>
     /// Function: SetCurrentPage
     /// </summary>
     public unsafe virtual void SetCurrentPage(int nPage)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_OptionsControls.SetCurrentPage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCurrentPage, "BmScript.RGFxMovieUI_OptionsControls.SetCurrentPage");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(nPage, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AppendPage;
     /// <summary>
     /// Function: AppendPage
     /// </summary>
     public unsafe virtual void AppendPage(BmSDK.FString sDevice, BmSDK.FString sScheme, BmSDK.FString sPackage, BmSDK.FString sConfig = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_OptionsControls.AppendPage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AppendPage, "BmScript.RGFxMovieUI_OptionsControls.AppendPage");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sDevice, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sScheme, paramsPtr + 16);
@@ -116,24 +119,26 @@ public partial class RGFxMovieUI_OptionsControls : BmSDK.BmGame.RGFxMovieUI, BmS
         return;
     }
 
+    private static BmSDK.Function __fn_XI_RequestPages;
     /// <summary>
     /// Function: XI_RequestPages
     /// </summary>
     public unsafe virtual void XI_RequestPages(BmSDK.FString sPath)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_OptionsControls.XI_RequestPages", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_RequestPages, "BmScript.RGFxMovieUI_OptionsControls.XI_RequestPages");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sPath, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe override void Init(BmSDK.Engine.LocalPlayer LocPlay = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieUI_OptionsControls.Init", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmScript.RGFxMovieUI_OptionsControls.Init");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocPlay, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

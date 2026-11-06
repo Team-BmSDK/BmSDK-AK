@@ -78,101 +78,110 @@ public partial class RBMBehaviour_Flee : BmSDK.BmGame.RBMBehaviour, BmSDK.IGameO
         where TComponent : class, Framework.IScriptComponent<RBMBehaviour_Flee>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnDeactivate;
     /// <summary>
     /// Function: OnDeactivate
     /// </summary>
     public unsafe override void OnDeactivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_Flee.OnDeactivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeactivate, "BmGame.RBMBehaviour_Flee.OnDeactivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RagdollDrop;
     /// <summary>
     /// Function: RagdollDrop
     /// </summary>
     public unsafe virtual void RagdollDrop()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_Flee.RagdollDrop", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RagdollDrop, "BmGame.RBMBehaviour_Flee.RagdollDrop");
         byte* paramsPtr = stackalloc byte[248];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FailedToFlee;
     /// <summary>
     /// Function: FailedToFlee
     /// </summary>
     public unsafe virtual void FailedToFlee()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_Flee.FailedToFlee", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FailedToFlee, "BmGame.RBMBehaviour_Flee.FailedToFlee");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ReachedFleePoint;
     /// <summary>
     /// Function: ReachedFleePoint
     /// </summary>
     public unsafe virtual void ReachedFleePoint(BmSDK.BmGame.RNavigationHandle Nav)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_Flee.ReachedFleePoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReachedFleePoint, "BmGame.RBMBehaviour_Flee.ReachedFleePoint");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Nav, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartPathingToFleePoint;
     /// <summary>
     /// Function: StartPathingToFleePoint
     /// </summary>
     public unsafe virtual void StartPathingToFleePoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_Flee.StartPathingToFleePoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartPathingToFleePoint, "BmGame.RBMBehaviour_Flee.StartPathingToFleePoint");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetFleePoint;
     /// <summary>
     /// Function: SetFleePoint
     /// </summary>
     public unsafe virtual bool SetFleePoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_Flee.SetFleePoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetFleePoint, "BmGame.RBMBehaviour_Flee.SetFleePoint");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetFleePointFromKismet;
     /// <summary>
     /// Function: SetFleePointFromKismet
     /// </summary>
     public unsafe virtual bool SetFleePointFromKismet()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_Flee.SetFleePointFromKismet", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetFleePointFromKismet, "BmGame.RBMBehaviour_Flee.SetFleePointFromKismet");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetupMultiNavHandleWrapper;
     /// <summary>
     /// Function: SetupMultiNavHandleWrapper
     /// </summary>
     public unsafe virtual void SetupMultiNavHandleWrapper()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_Flee.SetupMultiNavHandleWrapper", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupMultiNavHandleWrapper, "BmGame.RBMBehaviour_Flee.SetupMultiNavHandleWrapper");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_Flee.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMBehaviour_Flee.OnActivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

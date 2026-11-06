@@ -78,184 +78,200 @@ public partial class RRadarTower : BmSDK.BmGame.RRadarTowerBase, BmSDK.IGameObje
         where TComponent : class, Framework.IScriptComponent<RRadarTower>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SuppressDetectiveModeVisibilityThroughWalls;
     /// <summary>
     /// Function: SuppressDetectiveModeVisibilityThroughWalls
     /// </summary>
     public unsafe virtual void SuppressDetectiveModeVisibilityThroughWalls(bool bSuppress)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRadarTower.SuppressDetectiveModeVisibilityThroughWalls", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SuppressDetectiveModeVisibilityThroughWalls, "BmScript.RRadarTower.SuppressDetectiveModeVisibilityThroughWalls");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSuppress, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UnregisterDMThroughWallsSuppressable;
     /// <summary>
     /// Function: UnregisterDMThroughWallsSuppressable
     /// </summary>
     public unsafe virtual void UnregisterDMThroughWallsSuppressable()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRadarTower.UnregisterDMThroughWallsSuppressable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnregisterDMThroughWallsSuppressable, "BmScript.RRadarTower.UnregisterDMThroughWallsSuppressable");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RegisterDMThroughWallsSuppressable;
     /// <summary>
     /// Function: RegisterDMThroughWallsSuppressable
     /// </summary>
     public unsafe virtual void RegisterDMThroughWallsSuppressable()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRadarTower.RegisterDMThroughWallsSuppressable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterDMThroughWallsSuppressable, "BmScript.RRadarTower.RegisterDMThroughWallsSuppressable");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetXrayMaterials;
     /// <summary>
     /// Function: SetXrayMaterials
     /// </summary>
     public unsafe virtual void SetXrayMaterials(bool bHighlight)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRadarTower.SetXrayMaterials", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetXrayMaterials, "BmScript.RRadarTower.SetXrayMaterials");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bHighlight, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HidePanel;
     /// <summary>
     /// Function: HidePanel
     /// </summary>
     public unsafe virtual void HidePanel()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRadarTower.HidePanel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HidePanel, "BmScript.RRadarTower.HidePanel");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EnterDamagedState;
     /// <summary>
     /// Function: EnterDamagedState
     /// </summary>
     public unsafe virtual void EnterDamagedState(bool bInstant)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRadarTower.EnterDamagedState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnterDamagedState, "BmScript.RRadarTower.EnterDamagedState");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bInstant, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InValidPositionToPlaceGel;
     /// <summary>
     /// Function: InValidPositionToPlaceGel
     /// </summary>
     public unsafe virtual bool InValidPositionToPlaceGel(BmSDK.BmGame.RPawnPlayer Player)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRadarTower.InValidPositionToPlaceGel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InValidPositionToPlaceGel, "BmScript.RRadarTower.InValidPositionToPlaceGel");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_DetonateGel;
     /// <summary>
     /// Function: DetonateGel
     /// </summary>
     public unsafe virtual void DetonateGel()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRadarTower.DetonateGel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DetonateGel, "BmScript.RRadarTower.DetonateGel");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlaceExplosiveGel;
     /// <summary>
     /// Function: PlaceExplosiveGel
     /// </summary>
     public unsafe virtual bool PlaceExplosiveGel(BmSDK.BmGame.RPawnPlayer Player)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRadarTower.PlaceExplosiveGel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlaceExplosiveGel, "BmScript.RRadarTower.PlaceExplosiveGel");
         byte* paramsPtr = stackalloc byte[148];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_OnToggle;
     /// <summary>
     /// Function: OnToggle
     /// </summary>
     public unsafe virtual void OnToggle(BmSDK.Engine.SeqAct_Toggle Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRadarTower.OnToggle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggle, "BmScript.RRadarTower.OnToggle");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsTowerDestroyed;
     /// <summary>
     /// Function: IsTowerDestroyed
     /// </summary>
     public unsafe virtual bool IsTowerDestroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRadarTower.IsTowerDestroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsTowerDestroyed, "BmScript.RRadarTower.IsTowerDestroyed");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetTowerDestroyedFlag;
     /// <summary>
     /// Function: SetTowerDestroyedFlag
     /// </summary>
     public unsafe virtual void SetTowerDestroyedFlag()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRadarTower.SetTowerDestroyedFlag", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetTowerDestroyedFlag, "BmScript.RRadarTower.SetTowerDestroyedFlag");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRadarTower.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmScript.RRadarTower.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRadarTower.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmScript.RRadarTower.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRadarTower.PreStreamOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmScript.RRadarTower.PreStreamOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRadarTower.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmScript.RRadarTower.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

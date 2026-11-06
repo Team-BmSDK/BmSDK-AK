@@ -78,12 +78,13 @@ public partial class RBMAIAction_RestoreJammer : BmSDK.BmGame.RBMAIAction_Restor
         where TComponent : class, Framework.IScriptComponent<RBMAIAction_RestoreJammer>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_RestoreFinished;
     /// <summary>
     /// Function: RestoreFinished
     /// </summary>
     public unsafe override void RestoreFinished()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_RestoreJammer.RestoreFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RestoreFinished, "BmGame.RBMAIAction_RestoreJammer.RestoreFinished");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

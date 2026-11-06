@@ -78,137 +78,149 @@ public partial class RSpecialMoveInstance_DriveCar : BmSDK.BmGame.RSpecialMoveIn
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveInstance_DriveCar>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ToggleBatmansRagdoll;
     /// <summary>
     /// Function: ToggleBatmansRagdoll
     /// </summary>
     public unsafe virtual void ToggleBatmansRagdoll(bool bEnableRagdoll)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_DriveCar.ToggleBatmansRagdoll", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ToggleBatmansRagdoll, "BmGame.RSpecialMoveInstance_DriveCar.ToggleBatmansRagdoll");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bEnableRagdoll, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CancelSpecialMove;
     /// <summary>
     /// Function: CancelSpecialMove
     /// </summary>
     public unsafe override void CancelSpecialMove(BmSDK.BmGame.RSpecialMoveConfig NextSpecialMove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_DriveCar.CancelSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelSpecialMove, "BmGame.RSpecialMoveInstance_DriveCar.CancelSpecialMove");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NextSpecialMove, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishSpecialMove;
     /// <summary>
     /// Function: FinishSpecialMove
     /// </summary>
     public unsafe override void FinishSpecialMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_DriveCar.FinishSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishSpecialMove, "BmGame.RSpecialMoveInstance_DriveCar.FinishSpecialMove");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetEndMovementStance;
     /// <summary>
     /// Function: GetEndMovementStance
     /// </summary>
     public unsafe override BmSDK.FName GetEndMovementStance()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_DriveCar.GetEndMovementStance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetEndMovementStance, "BmGame.RSpecialMoveInstance_DriveCar.GetEndMovementStance");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ApplyBrakes;
     /// <summary>
     /// Function: ApplyBrakes
     /// </summary>
     public unsafe virtual void ApplyBrakes()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_DriveCar.ApplyBrakes", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyBrakes, "BmGame.RSpecialMoveInstance_DriveCar.ApplyBrakes");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SwitchToCar;
     /// <summary>
     /// Function: SwitchToCar
     /// </summary>
     public unsafe virtual void SwitchToCar()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_DriveCar.SwitchToCar", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SwitchToCar, "BmGame.RSpecialMoveInstance_DriveCar.SwitchToCar");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdatePlayerAnims;
     /// <summary>
     /// Function: UpdatePlayerAnims
     /// </summary>
     public unsafe virtual void UpdatePlayerAnims(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_DriveCar.UpdatePlayerAnims", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdatePlayerAnims, "BmGame.RSpecialMoveInstance_DriveCar.UpdatePlayerAnims");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateSpecialMove;
     /// <summary>
     /// Function: UpdateSpecialMove
     /// </summary>
     public unsafe override bool UpdateSpecialMove(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_DriveCar.UpdateSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateSpecialMove, "BmGame.RSpecialMoveInstance_DriveCar.UpdateSpecialMove");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetCustomIdle;
     /// <summary>
     /// Function: GetCustomIdle
     /// </summary>
     public unsafe override BmSDK.BmGame.RAnimConfig.FCustomAnimConfig GetCustomIdle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_DriveCar.GetCustomIdle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCustomIdle, "BmGame.RSpecialMoveInstance_DriveCar.GetCustomIdle");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RAnimConfig.FCustomAnimConfig>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CloseCockpit;
     /// <summary>
     /// Function: CloseCockpit
     /// </summary>
     public unsafe virtual void CloseCockpit()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_DriveCar.CloseCockpit", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CloseCockpit, "BmGame.RSpecialMoveInstance_DriveCar.CloseCockpit");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OpenCockpit;
     /// <summary>
     /// Function: OpenCockpit
     /// </summary>
     public unsafe virtual void OpenCockpit()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_DriveCar.OpenCockpit", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OpenCockpit, "BmGame.RSpecialMoveInstance_DriveCar.OpenCockpit");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerSpecialMove;
     /// <summary>
     /// Function: TriggerSpecialMove
     /// </summary>
     public unsafe override void TriggerSpecialMove(BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator MoveLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_DriveCar.TriggerSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerSpecialMove, "BmGame.RSpecialMoveInstance_DriveCar.TriggerSpecialMove");
         byte* paramsPtr = stackalloc byte[148];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

@@ -78,12 +78,13 @@ public partial class RFreezeClusterTrapBase : BmSDK.BmGame.RThugTrap, BmSDK.IGam
         where TComponent : class, Framework.IScriptComponent<RFreezeClusterTrapBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ForceFindTouchingActors;
     /// <summary>
     /// Function: ForceFindTouchingActors
     /// </summary>
     public unsafe virtual void ForceFindTouchingActors()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFreezeClusterTrapBase.ForceFindTouchingActors", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForceFindTouchingActors, "BmGame.RFreezeClusterTrapBase.ForceFindTouchingActors");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

@@ -78,69 +78,75 @@ public partial class RRbStealthTakedownStage_OrderedTakedown : BmSDK.BmGame.RSte
         where TComponent : class, Framework.IScriptComponent<RRbStealthTakedownStage_OrderedTakedown>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRbStealthTakedownStage_OrderedTakedown.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmScript.RRbStealthTakedownStage_OrderedTakedown.Tick");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishAttackVictim;
     /// <summary>
     /// Function: FinishAttackVictim
     /// </summary>
     public unsafe override bool FinishAttackVictim(int iVictimNumber)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRbStealthTakedownStage_OrderedTakedown.FinishAttackVictim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishAttackVictim, "BmScript.RRbStealthTakedownStage_OrderedTakedown.FinishAttackVictim");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(iVictimNumber, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_Begin;
     /// <summary>
     /// Function: Begin
     /// </summary>
     public unsafe override void Begin()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRbStealthTakedownStage_OrderedTakedown.Begin", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Begin, "BmScript.RRbStealthTakedownStage_OrderedTakedown.Begin");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EquipGrappleGun;
     /// <summary>
     /// Function: EquipGrappleGun
     /// </summary>
     public unsafe virtual void EquipGrappleGun()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRbStealthTakedownStage_OrderedTakedown.EquipGrappleGun", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EquipGrappleGun, "BmScript.RRbStealthTakedownStage_OrderedTakedown.EquipGrappleGun");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TakedownFireGrappleGun;
     /// <summary>
     /// Function: TakedownFireGrappleGun
     /// </summary>
     public unsafe virtual void TakedownFireGrappleGun()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRbStealthTakedownStage_OrderedTakedown.TakedownFireGrappleGun", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TakedownFireGrappleGun, "BmScript.RRbStealthTakedownStage_OrderedTakedown.TakedownFireGrappleGun");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetReferencePosition;
     /// <summary>
     /// Function: GetReferencePosition
     /// </summary>
     public unsafe override void GetReferencePosition(out System.Numerics.Vector3 ReferencePosition, out BmSDK.Rotator ReferenceRotation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRbStealthTakedownStage_OrderedTakedown.GetReferencePosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetReferencePosition, "BmScript.RRbStealthTakedownStage_OrderedTakedown.GetReferencePosition");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ReferencePosition = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
@@ -148,24 +154,26 @@ public partial class RRbStealthTakedownStage_OrderedTakedown : BmSDK.BmGame.RSte
         return;
     }
 
+    private static BmSDK.Function __fn_OverrideChosenAnim;
     /// <summary>
     /// Function: OverrideChosenAnim
     /// </summary>
     public unsafe override void OverrideChosenAnim(out int Anim)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRbStealthTakedownStage_OrderedTakedown.OverrideChosenAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverrideChosenAnim, "BmScript.RRbStealthTakedownStage_OrderedTakedown.OverrideChosenAnim");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Anim = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FillInAnimNames;
     /// <summary>
     /// Function: FillInAnimNames
     /// </summary>
     public unsafe override void FillInAnimNames()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRbStealthTakedownStage_OrderedTakedown.FillInAnimNames", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FillInAnimNames, "BmScript.RRbStealthTakedownStage_OrderedTakedown.FillInAnimNames");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

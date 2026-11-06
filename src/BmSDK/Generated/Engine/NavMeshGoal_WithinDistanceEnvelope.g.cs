@@ -78,23 +78,25 @@ public partial class NavMeshGoal_WithinDistanceEnvelope : BmSDK.Engine.NavMeshPa
         where TComponent : class, Framework.IScriptComponent<NavMeshGoal_WithinDistanceEnvelope>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Recycle;
     /// <summary>
     /// Function: Recycle
     /// </summary>
     public unsafe override void Recycle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavMeshGoal_WithinDistanceEnvelope.Recycle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Recycle, "Engine.NavMeshGoal_WithinDistanceEnvelope.Recycle");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GoalWithinEnvelopeToLoc;
     /// <summary>
     /// Function: GoalWithinEnvelopeToLoc
     /// </summary>
     public unsafe static bool GoalWithinEnvelopeToLoc(BmSDK.Engine.NavigationHandle NavHandle, System.Numerics.Vector3 InEnvelopeTestPoint, float InMaxDistance, float InMinDistance, float InMinTraversalDist = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavMeshGoal_WithinDistanceEnvelope.GoalWithinEnvelopeToLoc", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GoalWithinEnvelopeToLoc, "Engine.NavMeshGoal_WithinDistanceEnvelope.GoalWithinEnvelopeToLoc");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NavHandle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InEnvelopeTestPoint, paramsPtr + 8);

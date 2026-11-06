@@ -78,12 +78,13 @@ public partial class RAEC_Attack_Sub_CheckGarg : BmSDK.BmGame.RAlertEventCoordin
         where TComponent : class, Framework.IScriptComponent<RAEC_Attack_Sub_CheckGarg>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_AssignGarg;
     /// <summary>
     /// Function: AssignGarg
     /// </summary>
     public unsafe virtual void AssignGarg(System.Numerics.Vector3 NewMovePos, System.Numerics.Vector3 NewAimPos)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Sub_CheckGarg.AssignGarg", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AssignGarg, "BmGame.RAEC_Attack_Sub_CheckGarg.AssignGarg");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewMovePos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAimPos, paramsPtr + 12);
@@ -91,12 +92,13 @@ public partial class RAEC_Attack_Sub_CheckGarg : BmSDK.BmGame.RAlertEventCoordin
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyFinished;
     /// <summary>
     /// Function: NotifyFinished
     /// </summary>
     public unsafe override void NotifyFinished(BmSDK.BmGame.RBMAIAction FinishedAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Attack_Sub_CheckGarg.NotifyFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyFinished, "BmGame.RAEC_Attack_Sub_CheckGarg.NotifyFinished");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FinishedAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

@@ -78,12 +78,13 @@ public partial class RCharacter : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RCharacter>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_StaticCreatePawn;
     /// <summary>
     /// Function: StaticCreatePawn
     /// </summary>
     public unsafe static BmSDK.BmGame.RBMPawnAI StaticCreatePawn(System.Numerics.Vector3 Location, BmSDK.Rotator Rotation, BmSDK.Engine.Actor UseSpawnPoint, BmSDK.Class SpawnPawnClass, BmSDK.Class SpawnCharactersType, bool SnapToGround, BmSDK.FName InitialMovementStance, BmSDK.FName InitialWeaponStance)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCharacter.StaticCreatePawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StaticCreatePawn, "BmGame.RCharacter.StaticCreatePawn");
         byte* paramsPtr = stackalloc byte[76];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Location, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Rotation, paramsPtr + 12);
@@ -104,111 +105,121 @@ public partial class RCharacter : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMPawnAI>(paramsPtr + 68);
     }
 
+    private static BmSDK.Function __fn_GetFriendlyName;
     /// <summary>
     /// Function: GetFriendlyName
     /// </summary>
     public unsafe static BmSDK.FString GetFriendlyName()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCharacter.GetFriendlyName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFriendlyName, "BmGame.RCharacter.GetFriendlyName");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetStrikeImpactCue_BodyKick;
     /// <summary>
     /// Function: GetStrikeImpactCue_BodyKick
     /// </summary>
     public unsafe static BmSDK.Engine.AkEvent GetStrikeImpactCue_BodyKick()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCharacter.GetStrikeImpactCue_BodyKick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeImpactCue_BodyKick, "BmGame.RCharacter.GetStrikeImpactCue_BodyKick");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AkEvent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetStrikeImpactCue_BodyPunchQuick;
     /// <summary>
     /// Function: GetStrikeImpactCue_BodyPunchQuick
     /// </summary>
     public unsafe static BmSDK.Engine.AkEvent GetStrikeImpactCue_BodyPunchQuick()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCharacter.GetStrikeImpactCue_BodyPunchQuick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeImpactCue_BodyPunchQuick, "BmGame.RCharacter.GetStrikeImpactCue_BodyPunchQuick");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AkEvent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetStrikeImpactCue_BodyPunch;
     /// <summary>
     /// Function: GetStrikeImpactCue_BodyPunch
     /// </summary>
     public unsafe static BmSDK.Engine.AkEvent GetStrikeImpactCue_BodyPunch()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCharacter.GetStrikeImpactCue_BodyPunch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeImpactCue_BodyPunch, "BmGame.RCharacter.GetStrikeImpactCue_BodyPunch");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AkEvent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetStrikeImpactCue_HeadKick;
     /// <summary>
     /// Function: GetStrikeImpactCue_HeadKick
     /// </summary>
     public unsafe static BmSDK.Engine.AkEvent GetStrikeImpactCue_HeadKick()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCharacter.GetStrikeImpactCue_HeadKick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeImpactCue_HeadKick, "BmGame.RCharacter.GetStrikeImpactCue_HeadKick");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AkEvent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetStrikeImpactCue_HeadPunchQuick;
     /// <summary>
     /// Function: GetStrikeImpactCue_HeadPunchQuick
     /// </summary>
     public unsafe static BmSDK.Engine.AkEvent GetStrikeImpactCue_HeadPunchQuick()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCharacter.GetStrikeImpactCue_HeadPunchQuick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeImpactCue_HeadPunchQuick, "BmGame.RCharacter.GetStrikeImpactCue_HeadPunchQuick");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AkEvent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetStrikeImpactCue_HeadPunch;
     /// <summary>
     /// Function: GetStrikeImpactCue_HeadPunch
     /// </summary>
     public unsafe static BmSDK.Engine.AkEvent GetStrikeImpactCue_HeadPunch()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCharacter.GetStrikeImpactCue_HeadPunch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeImpactCue_HeadPunch, "BmGame.RCharacter.GetStrikeImpactCue_HeadPunch");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AkEvent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetStrikeImpactCue_CounterBlock;
     /// <summary>
     /// Function: GetStrikeImpactCue_CounterBlock
     /// </summary>
     public unsafe static BmSDK.Engine.AkEvent GetStrikeImpactCue_CounterBlock()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCharacter.GetStrikeImpactCue_CounterBlock", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeImpactCue_CounterBlock, "BmGame.RCharacter.GetStrikeImpactCue_CounterBlock");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AkEvent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetStrikeImpactCue_FinishingBlow;
     /// <summary>
     /// Function: GetStrikeImpactCue_FinishingBlow
     /// </summary>
     public unsafe static BmSDK.Engine.AkEvent GetStrikeImpactCue_FinishingBlow()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCharacter.GetStrikeImpactCue_FinishingBlow", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeImpactCue_FinishingBlow, "BmGame.RCharacter.GetStrikeImpactCue_FinishingBlow");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AkEvent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UpdateCustomPhysics;
     /// <summary>
     /// Function: UpdateCustomPhysics
     /// </summary>
     public unsafe static bool UpdateCustomPhysics(BmSDK.BmGame.RBMPawnAI Pawn, float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCharacter.UpdateCustomPhysics", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateCustomPhysics, "BmGame.RCharacter.UpdateCustomPhysics");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Pawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 8);
@@ -216,12 +227,13 @@ public partial class RCharacter : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_SetupCustomPhysics;
     /// <summary>
     /// Function: SetupCustomPhysics
     /// </summary>
     public unsafe static void SetupCustomPhysics(BmSDK.BmGame.RBMPawnAI Pawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCharacter.SetupCustomPhysics", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupCustomPhysics, "BmGame.RCharacter.SetupCustomPhysics");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Pawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

@@ -73,266 +73,290 @@ public partial class RPredatorGunLockerBase : BmSDK.Engine.Actor, BmSDK.IGameObj
         where TComponent : class, Framework.IScriptComponent<RPredatorGunLockerBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetVoiceSynthesiserTargetMarkerOffset;
     /// <summary>
     /// Function: GetVoiceSynthesiserTargetMarkerOffset
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetVoiceSynthesiserTargetMarkerOffset()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.GetVoiceSynthesiserTargetMarkerOffset", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVoiceSynthesiserTargetMarkerOffset, "BmGame.RPredatorGunLockerBase.GetVoiceSynthesiserTargetMarkerOffset");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDisruptorTargetMesh;
     /// <summary>
     /// Function: GetDisruptorTargetMesh
     /// </summary>
     public unsafe virtual BmSDK.Engine.MeshComponent GetDisruptorTargetMesh()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.GetDisruptorTargetMesh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDisruptorTargetMesh, "BmGame.RPredatorGunLockerBase.GetDisruptorTargetMesh");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.MeshComponent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsDisrupted;
     /// <summary>
     /// Function: IsDisrupted
     /// </summary>
     public unsafe virtual bool IsDisrupted()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.IsDisrupted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsDisrupted, "BmGame.RPredatorGunLockerBase.IsDisrupted");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDisruptorDescriptionParameters;
     /// <summary>
     /// Function: GetDisruptorDescriptionParameters
     /// </summary>
     public unsafe virtual BmSDK.FString GetDisruptorDescriptionParameters()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.GetDisruptorDescriptionParameters", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDisruptorDescriptionParameters, "BmGame.RPredatorGunLockerBase.GetDisruptorDescriptionParameters");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_RequiresDisruptorUpgrade;
     /// <summary>
     /// Function: RequiresDisruptorUpgrade
     /// </summary>
     public unsafe virtual bool RequiresDisruptorUpgrade()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.RequiresDisruptorUpgrade", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RequiresDisruptorUpgrade, "BmGame.RPredatorGunLockerBase.RequiresDisruptorUpgrade");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_RequiresDroneDisruptor;
     /// <summary>
     /// Function: RequiresDroneDisruptor
     /// </summary>
     public unsafe virtual bool RequiresDroneDisruptor()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.RequiresDroneDisruptor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RequiresDroneDisruptor, "BmGame.RPredatorGunLockerBase.RequiresDroneDisruptor");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_HitByDisruptorGadgetSecondary;
     /// <summary>
     /// Function: HitByDisruptorGadgetSecondary
     /// </summary>
     public unsafe virtual bool HitByDisruptorGadgetSecondary()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.HitByDisruptorGadgetSecondary", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitByDisruptorGadgetSecondary, "BmGame.RPredatorGunLockerBase.HitByDisruptorGadgetSecondary");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanBeDisruptedSecondary;
     /// <summary>
     /// Function: CanBeDisruptedSecondary
     /// </summary>
     public unsafe virtual bool CanBeDisruptedSecondary()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.CanBeDisruptedSecondary", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeDisruptedSecondary, "BmGame.RPredatorGunLockerBase.CanBeDisruptedSecondary");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDisruptorOverridePriority;
     /// <summary>
     /// Function: GetDisruptorOverridePriority
     /// </summary>
     public unsafe virtual float GetDisruptorOverridePriority()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.GetDisruptorOverridePriority", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDisruptorOverridePriority, "BmGame.RPredatorGunLockerBase.GetDisruptorOverridePriority");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanBeDisrupted;
     /// <summary>
     /// Function: CanBeDisrupted
     /// </summary>
     public unsafe virtual bool CanBeDisrupted()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.CanBeDisrupted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeDisrupted, "BmGame.RPredatorGunLockerBase.CanBeDisrupted");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_HitByDisruptorGadgetCharge;
     /// <summary>
     /// Function: HitByDisruptorGadgetCharge
     /// </summary>
     public unsafe virtual bool HitByDisruptorGadgetCharge()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.HitByDisruptorGadgetCharge", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitByDisruptorGadgetCharge, "BmGame.RPredatorGunLockerBase.HitByDisruptorGadgetCharge");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDisruptorTargetPosition;
     /// <summary>
     /// Function: GetDisruptorTargetPosition
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetDisruptorTargetPosition()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.GetDisruptorTargetPosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDisruptorTargetPosition, "BmGame.RPredatorGunLockerBase.GetDisruptorTargetPosition");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_TriggerThugKOEvent;
     /// <summary>
     /// Function: TriggerThugKOEvent
     /// </summary>
     public unsafe virtual void TriggerThugKOEvent(BmSDK.BmGame.RBMPawnAI Thug)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.TriggerThugKOEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerThugKOEvent, "BmGame.RPredatorGunLockerBase.TriggerThugKOEvent");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Thug, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnJammedExplosion;
     /// <summary>
     /// Function: SpawnJammedExplosion
     /// </summary>
     public unsafe virtual void SpawnJammedExplosion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.SpawnJammedExplosion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnJammedExplosion, "BmGame.RPredatorGunLockerBase.SpawnJammedExplosion");
         byte* paramsPtr = stackalloc byte[292];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetObstacleActor;
     /// <summary>
     /// Function: GetObstacleActor
     /// </summary>
     public unsafe virtual BmSDK.Engine.Actor GetObstacleActor()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.GetObstacleActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObstacleActor, "BmGame.RPredatorGunLockerBase.GetObstacleActor");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetCurrentWeighting;
     /// <summary>
     /// Function: GetCurrentWeighting
     /// </summary>
     public unsafe virtual float GetCurrentWeighting()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.GetCurrentWeighting", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCurrentWeighting, "BmGame.RPredatorGunLockerBase.GetCurrentWeighting");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetAnimRefYaw;
     /// <summary>
     /// Function: GetAnimRefYaw
     /// </summary>
     public unsafe virtual int GetAnimRefYaw()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.GetAnimRefYaw", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAnimRefYaw, "BmGame.RPredatorGunLockerBase.GetAnimRefYaw");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetAnimRefPoint;
     /// <summary>
     /// Function: GetAnimRefPoint
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetAnimRefPoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.GetAnimRefPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAnimRefPoint, "BmGame.RPredatorGunLockerBase.GetAnimRefPoint");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetMoveLoc;
     /// <summary>
     /// Function: GetMoveLoc
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetMoveLoc()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.GetMoveLoc", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMoveLoc, "BmGame.RPredatorGunLockerBase.GetMoveLoc");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmGame.RPredatorGunLockerBase.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.PreStreamOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmGame.RPredatorGunLockerBase.PreStreamOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CheckForWeaponLoad;
     /// <summary>
     /// Function: CheckForWeaponLoad
     /// </summary>
     public unsafe virtual void CheckForWeaponLoad()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.CheckForWeaponLoad", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckForWeaponLoad, "BmGame.RPredatorGunLockerBase.CheckForWeaponLoad");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RPredatorGunLockerBase.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetXrayMaterials;
     /// <summary>
     /// Function: SetXrayMaterials
     /// </summary>
     public unsafe virtual void SetXrayMaterials()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.SetXrayMaterials", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetXrayMaterials, "BmGame.RPredatorGunLockerBase.SetXrayMaterials");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -345,12 +369,13 @@ public partial class RPredatorGunLockerBase : BmSDK.Engine.Actor, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_UnRegisterObstacle;
     /// <summary>
     /// Function: UnRegisterObstacle
     /// </summary>
     public unsafe virtual void UnRegisterObstacle(bool bInstant)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.UnRegisterObstacle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnRegisterObstacle, "BmGame.RPredatorGunLockerBase.UnRegisterObstacle");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bInstant, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -364,12 +389,13 @@ public partial class RPredatorGunLockerBase : BmSDK.Engine.Actor, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_RegisterObstacle;
     /// <summary>
     /// Function: RegisterObstacle
     /// </summary>
     public unsafe virtual void RegisterObstacle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.RegisterObstacle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterObstacle, "BmGame.RPredatorGunLockerBase.RegisterObstacle");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -382,12 +408,13 @@ public partial class RPredatorGunLockerBase : BmSDK.Engine.Actor, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_CancelWeaponLoading;
     /// <summary>
     /// Function: CancelWeaponLoading
     /// </summary>
     public unsafe virtual void CancelWeaponLoading()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.CancelWeaponLoading", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelWeaponLoading, "BmGame.RPredatorGunLockerBase.CancelWeaponLoading");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -400,12 +427,13 @@ public partial class RPredatorGunLockerBase : BmSDK.Engine.Actor, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_LoadWeapon;
     /// <summary>
     /// Function: LoadWeapon
     /// </summary>
     public unsafe virtual bool LoadWeapon(BmSDK.FString WeaponPackageString)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPredatorGunLockerBase.LoadWeapon", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LoadWeapon, "BmGame.RPredatorGunLockerBase.LoadWeapon");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WeaponPackageString, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

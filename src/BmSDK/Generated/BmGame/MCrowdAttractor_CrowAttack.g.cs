@@ -78,12 +78,13 @@ public partial class MCrowdAttractor_CrowAttack : BmSDK.BmGame.RCrowdAttractor, 
         where TComponent : class, Framework.IScriptComponent<MCrowdAttractor_CrowAttack>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetAttractionForce;
     /// <summary>
     /// Function: GetAttractionForce
     /// </summary>
     public unsafe override System.Numerics.Vector3 GetAttractionForce(BmSDK.BmGame.RCrowdAgent Agent, float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MCrowdAttractor_CrowAttack.GetAttractionForce", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAttractionForce, "BmGame.MCrowdAttractor_CrowAttack.GetAttractionForce");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Agent, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 8);

@@ -78,12 +78,13 @@ public partial class RDestructibleProp_SignPost : BmSDK.BmGame.RDestructibleProp
         where TComponent : class, Framework.IScriptComponent<RDestructibleProp_SignPost>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OverrideDamageParams;
     /// <summary>
     /// Function: OverrideDamageParams
     /// </summary>
     public unsafe override void OverrideDamageParams(out float BaseDamage, out float DamageRadius, out float Momentum, BmSDK.Class DamageType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDestructibleProp_SignPost.OverrideDamageParams", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverrideDamageParams, "BmGame.RDestructibleProp_SignPost.OverrideDamageParams");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageType, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

@@ -78,12 +78,13 @@ public partial class RMine_StaticMesh : BmSDK.BmGame.RMineBase, BmSDK.IGameObjec
         where TComponent : class, Framework.IScriptComponent<RMine_StaticMesh>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetPrimedEffects;
     /// <summary>
     /// Function: SetPrimedEffects
     /// </summary>
     public unsafe override void SetPrimedEffects()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RMine_StaticMesh.SetPrimedEffects", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetPrimedEffects, "BmGame.RMine_StaticMesh.SetPrimedEffects");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class RMine_StaticMesh : BmSDK.BmGame.RMineBase, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_SetDisarmedEffects;
     /// <summary>
     /// Function: SetDisarmedEffects
     /// </summary>
     public unsafe override void SetDisarmedEffects()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RMine_StaticMesh.SetDisarmedEffects", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDisarmedEffects, "BmGame.RMine_StaticMesh.SetDisarmedEffects");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -114,12 +116,13 @@ public partial class RMine_StaticMesh : BmSDK.BmGame.RMineBase, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RMine_StaticMesh.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RMine_StaticMesh.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

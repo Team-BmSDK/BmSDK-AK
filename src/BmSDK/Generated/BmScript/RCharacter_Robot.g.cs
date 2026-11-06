@@ -78,89 +78,97 @@ public partial class RCharacter_Robot : BmSDK.BmGame.RCharacter_Thug, BmSDK.IGam
         where TComponent : class, Framework.IScriptComponent<RCharacter_Robot>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetStrikeImpactCue_BodyKick;
     /// <summary>
     /// Function: GetStrikeImpactCue_BodyKick
     /// </summary>
     public unsafe static BmSDK.Engine.AkEvent GetStrikeImpactCue_BodyKick()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCharacter_Robot.GetStrikeImpactCue_BodyKick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeImpactCue_BodyKick, "BmScript.RCharacter_Robot.GetStrikeImpactCue_BodyKick");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AkEvent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetStrikeImpactCue_BodyPunchQuick;
     /// <summary>
     /// Function: GetStrikeImpactCue_BodyPunchQuick
     /// </summary>
     public unsafe static BmSDK.Engine.AkEvent GetStrikeImpactCue_BodyPunchQuick()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCharacter_Robot.GetStrikeImpactCue_BodyPunchQuick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeImpactCue_BodyPunchQuick, "BmScript.RCharacter_Robot.GetStrikeImpactCue_BodyPunchQuick");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AkEvent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetStrikeImpactCue_BodyPunch;
     /// <summary>
     /// Function: GetStrikeImpactCue_BodyPunch
     /// </summary>
     public unsafe static BmSDK.Engine.AkEvent GetStrikeImpactCue_BodyPunch()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCharacter_Robot.GetStrikeImpactCue_BodyPunch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeImpactCue_BodyPunch, "BmScript.RCharacter_Robot.GetStrikeImpactCue_BodyPunch");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AkEvent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetStrikeImpactCue_HeadKick;
     /// <summary>
     /// Function: GetStrikeImpactCue_HeadKick
     /// </summary>
     public unsafe static BmSDK.Engine.AkEvent GetStrikeImpactCue_HeadKick()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCharacter_Robot.GetStrikeImpactCue_HeadKick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeImpactCue_HeadKick, "BmScript.RCharacter_Robot.GetStrikeImpactCue_HeadKick");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AkEvent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetStrikeImpactCue_HeadPunchQuick;
     /// <summary>
     /// Function: GetStrikeImpactCue_HeadPunchQuick
     /// </summary>
     public unsafe static BmSDK.Engine.AkEvent GetStrikeImpactCue_HeadPunchQuick()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCharacter_Robot.GetStrikeImpactCue_HeadPunchQuick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeImpactCue_HeadPunchQuick, "BmScript.RCharacter_Robot.GetStrikeImpactCue_HeadPunchQuick");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AkEvent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetStrikeImpactCue_HeadPunch;
     /// <summary>
     /// Function: GetStrikeImpactCue_HeadPunch
     /// </summary>
     public unsafe static BmSDK.Engine.AkEvent GetStrikeImpactCue_HeadPunch()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCharacter_Robot.GetStrikeImpactCue_HeadPunch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeImpactCue_HeadPunch, "BmScript.RCharacter_Robot.GetStrikeImpactCue_HeadPunch");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AkEvent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetStrikeImpactCue_CounterBlock;
     /// <summary>
     /// Function: GetStrikeImpactCue_CounterBlock
     /// </summary>
     public unsafe static BmSDK.Engine.AkEvent GetStrikeImpactCue_CounterBlock()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCharacter_Robot.GetStrikeImpactCue_CounterBlock", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeImpactCue_CounterBlock, "BmScript.RCharacter_Robot.GetStrikeImpactCue_CounterBlock");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AkEvent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetStrikeImpactCue_FinishingBlow;
     /// <summary>
     /// Function: GetStrikeImpactCue_FinishingBlow
     /// </summary>
     public unsafe static BmSDK.Engine.AkEvent GetStrikeImpactCue_FinishingBlow()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCharacter_Robot.GetStrikeImpactCue_FinishingBlow", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStrikeImpactCue_FinishingBlow, "BmScript.RCharacter_Robot.GetStrikeImpactCue_FinishingBlow");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AkEvent>(paramsPtr + 0);

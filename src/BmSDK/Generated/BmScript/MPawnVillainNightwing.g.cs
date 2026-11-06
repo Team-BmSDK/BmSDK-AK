@@ -78,12 +78,13 @@ public partial class MPawnVillainNightwing : BmSDK.BmGame.MPawnVillainNightwingB
         where TComponent : class, Framework.IScriptComponent<MPawnVillainNightwing>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PlaySound_ImpactAI;
     /// <summary>
     /// Function: PlaySound_ImpactAI
     /// </summary>
     public unsafe override void PlaySound_ImpactAI(BmSDK.Engine.Actor playOn, bool bIsStrike, bool bFinishingBlow, bool bIsHeadImpact, bool bIsPunch, bool bIsStrong, bool bIsBlocked, bool bCanEmote = default, bool bIsQuick = default, bool bPlayerAttacked = default, bool bForceEmote = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.PlaySound_ImpactAI", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlaySound_ImpactAI, "BmScript.MPawnVillainNightwing.PlaySound_ImpactAI");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(playOn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIsStrike, paramsPtr + 8);
@@ -100,12 +101,13 @@ public partial class MPawnVillainNightwing : BmSDK.BmGame.MPawnVillainNightwingB
         return;
     }
 
+    private static BmSDK.Function __fn_GetTargetPriority;
     /// <summary>
     /// Function: GetTargetPriority
     /// </summary>
     public unsafe override float GetTargetPriority(BmSDK.BmGame.RPawnCombat Attacker, BmSDK.Class dmgType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.GetTargetPriority", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTargetPriority, "BmScript.MPawnVillainNightwing.GetTargetPriority");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Attacker, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 8);
@@ -113,12 +115,13 @@ public partial class MPawnVillainNightwing : BmSDK.BmGame.MPawnVillainNightwingB
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_CreateCombatWeaponConfig;
     /// <summary>
     /// Function: CreateCombatWeaponConfig
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RWeaponConfig CreateCombatWeaponConfig(BmSDK.GameObject NewOwner, BmSDK.Engine.AnimSet AnimSet1, BmSDK.Engine.AnimSet AnimSet2, BmSDK.Engine.AnimSet AnimSet3, BmSDK.Engine.AnimSet AnimSet4, BmSDK.Engine.AnimSet AnimSet5)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.CreateCombatWeaponConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateCombatWeaponConfig, "BmScript.MPawnVillainNightwing.CreateCombatWeaponConfig");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewOwner, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimSet1, paramsPtr + 8);
@@ -130,12 +133,13 @@ public partial class MPawnVillainNightwing : BmSDK.BmGame.MPawnVillainNightwingB
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RWeaponConfig>(paramsPtr + 48);
     }
 
+    private static BmSDK.Function __fn_CreateRagdollWeaponConfig;
     /// <summary>
     /// Function: CreateRagdollWeaponConfig
     /// </summary>
     public unsafe override BmSDK.BmGame.RWeaponConfig CreateRagdollWeaponConfig(BmSDK.GameObject NewOwner, BmSDK.Engine.AnimSet AnimSet1, BmSDK.Engine.AnimSet AnimSet2, BmSDK.Engine.AnimSet AnimSet3 = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.CreateRagdollWeaponConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateRagdollWeaponConfig, "BmScript.MPawnVillainNightwing.CreateRagdollWeaponConfig");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewOwner, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimSet1, paramsPtr + 8);
@@ -145,115 +149,125 @@ public partial class MPawnVillainNightwing : BmSDK.BmGame.MPawnVillainNightwingB
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RWeaponConfig>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_CreateWeaponConfigUnarmed;
     /// <summary>
     /// Function: CreateWeaponConfigUnarmed
     /// </summary>
     public unsafe override BmSDK.BmGame.RWeaponConfig CreateWeaponConfigUnarmed(BmSDK.GameObject NewOwner)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.CreateWeaponConfigUnarmed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateWeaponConfigUnarmed, "BmScript.MPawnVillainNightwing.CreateWeaponConfigUnarmed");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewOwner, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RWeaponConfig>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetCombatAimingConfig;
     /// <summary>
     /// Function: GetCombatAimingConfig
     /// </summary>
     public unsafe static BmSDK.Engine.RAimingConfig GetCombatAimingConfig()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.GetCombatAimingConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCombatAimingConfig, "BmScript.MPawnVillainNightwing.GetCombatAimingConfig");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.RAimingConfig>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmScript.MPawnVillainNightwing.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsFacingHarley;
     /// <summary>
     /// Function: IsFacingHarley
     /// </summary>
     public unsafe virtual bool IsFacingHarley()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.IsFacingHarley", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsFacingHarley, "BmScript.MPawnVillainNightwing.IsFacingHarley");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_HandleStickVFX;
     /// <summary>
     /// Function: HandleStickVFX
     /// </summary>
     public unsafe virtual void HandleStickVFX()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.HandleStickVFX", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandleStickVFX, "BmScript.MPawnVillainNightwing.HandleStickVFX");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetHidden;
     /// <summary>
     /// Function: SetHidden
     /// </summary>
     public unsafe override void SetHidden(bool bNewHidden)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.SetHidden", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHidden, "BmScript.MPawnVillainNightwing.SetHidden");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewHidden, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TurnStickOff;
     /// <summary>
     /// Function: TurnStickOff
     /// </summary>
     public unsafe virtual void TurnStickOff()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.TurnStickOff", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TurnStickOff, "BmScript.MPawnVillainNightwing.TurnStickOff");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TurnStickOn;
     /// <summary>
     /// Function: TurnStickOn
     /// </summary>
     public unsafe virtual void TurnStickOn()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.TurnStickOn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TurnStickOn, "BmScript.MPawnVillainNightwing.TurnStickOn");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanRepelDuringHitReaction;
     /// <summary>
     /// Function: CanRepelDuringHitReaction
     /// </summary>
     public unsafe override bool CanRepelDuringHitReaction(BmSDK.BmGame.RPawnCombat.FDamageInfo NewDmgInfo)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.CanRepelDuringHitReaction", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanRepelDuringHitReaction, "BmScript.MPawnVillainNightwing.CanRepelDuringHitReaction");
         byte* paramsPtr = stackalloc byte[252];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewDmgInfo, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 248);
     }
 
+    private static BmSDK.Function __fn_CanRepelAttack;
     /// <summary>
     /// Function: CanRepelAttack
     /// </summary>
     public unsafe override bool CanRepelAttack(BmSDK.BmGame.RPawnCombat Attacker, BmSDK.Class DamageType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.CanRepelAttack", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanRepelAttack, "BmScript.MPawnVillainNightwing.CanRepelAttack");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Attacker, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageType, paramsPtr + 8);
@@ -261,58 +275,63 @@ public partial class MPawnVillainNightwing : BmSDK.BmGame.MPawnVillainNightwingB
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_CanRepel;
     /// <summary>
     /// Function: CanRepel
     /// </summary>
     public unsafe override bool CanRepel()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.CanRepel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanRepel, "BmScript.MPawnVillainNightwing.CanRepel");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanBeInSimultaneousAttack;
     /// <summary>
     /// Function: CanBeInSimultaneousAttack
     /// </summary>
     public unsafe override bool CanBeInSimultaneousAttack(BmSDK.BmGame.RPawnPlayerCombat AttackingPlayer)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.CanBeInSimultaneousAttack", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeInSimultaneousAttack, "BmScript.MPawnVillainNightwing.CanBeInSimultaneousAttack");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AttackingPlayer, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_RemoveCounterIcon;
     /// <summary>
     /// Function: RemoveCounterIcon
     /// </summary>
     public unsafe override void RemoveCounterIcon()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.RemoveCounterIcon", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveCounterIcon, "BmScript.MPawnVillainNightwing.RemoveCounterIcon");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StopAttackingFX;
     /// <summary>
     /// Function: StopAttackingFX
     /// </summary>
     public unsafe override void StopAttackingFX(bool bSuccessfulCounter = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.StopAttackingFX", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopAttackingFX, "BmScript.MPawnVillainNightwing.StopAttackingFX");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSuccessfulCounter, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartAttackingFX;
     /// <summary>
     /// Function: StartAttackingFX
     /// </summary>
     public unsafe override void StartAttackingFX(int CTypeInt, BmSDK.BmGame.RPlayerController PC = default, BmSDK.FName OverrideBoneName = default, bool bForceShow = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.StartAttackingFX", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartAttackingFX, "BmScript.MPawnVillainNightwing.StartAttackingFX");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CTypeInt, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 4);
@@ -322,12 +341,13 @@ public partial class MPawnVillainNightwing : BmSDK.BmGame.MPawnVillainNightwingB
         return;
     }
 
+    private static BmSDK.Function __fn_OverrideCanDodgeProjectile;
     /// <summary>
     /// Function: OverrideCanDodgeProjectile
     /// </summary>
     public unsafe override bool OverrideCanDodgeProjectile(System.Numerics.Vector3 ThrownFromPos, int CheckBatarangID)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.OverrideCanDodgeProjectile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverrideCanDodgeProjectile, "BmScript.MPawnVillainNightwing.OverrideCanDodgeProjectile");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThrownFromPos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckBatarangID, paramsPtr + 12);
@@ -335,12 +355,13 @@ public partial class MPawnVillainNightwing : BmSDK.BmGame.MPawnVillainNightwingB
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_DodgeStrike;
     /// <summary>
     /// Function: DodgeStrike
     /// </summary>
     public unsafe override void DodgeStrike(BmSDK.BmGame.RPawnCombat Attacker, BmSDK.Class dmgType, bool bFar)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.DodgeStrike", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DodgeStrike, "BmScript.MPawnVillainNightwing.DodgeStrike");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Attacker, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 8);
@@ -349,12 +370,13 @@ public partial class MPawnVillainNightwing : BmSDK.BmGame.MPawnVillainNightwingB
         return;
     }
 
+    private static BmSDK.Function __fn_CanDodgeAttack;
     /// <summary>
     /// Function: CanDodgeAttack
     /// </summary>
     public unsafe override bool CanDodgeAttack(BmSDK.BmGame.RPawnCombat Attacker, BmSDK.Class dmgType, bool bFar)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.CanDodgeAttack", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanDodgeAttack, "BmScript.MPawnVillainNightwing.CanDodgeAttack");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Attacker, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 8);
@@ -363,80 +385,87 @@ public partial class MPawnVillainNightwing : BmSDK.BmGame.MPawnVillainNightwingB
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_CanBePushedBy;
     /// <summary>
     /// Function: CanBePushedBy
     /// </summary>
     public unsafe override bool CanBePushedBy(BmSDK.BmGame.RPawnVillain Pusher)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.CanBePushedBy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBePushedBy, "BmScript.MPawnVillainNightwing.CanBePushedBy");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Pusher, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetCombatStance;
     /// <summary>
     /// Function: GetCombatStance
     /// </summary>
     public unsafe override BmSDK.FName GetCombatStance()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.GetCombatStance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCombatStance, "BmScript.MPawnVillainNightwing.GetCombatStance");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ShouldForceBeatDownEnd;
     /// <summary>
     /// Function: ShouldForceBeatDownEnd
     /// </summary>
     public unsafe override bool ShouldForceBeatDownEnd()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.ShouldForceBeatDownEnd", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldForceBeatDownEnd, "BmScript.MPawnVillainNightwing.ShouldForceBeatDownEnd");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetHealthForBeatdown;
     /// <summary>
     /// Function: GetHealthForBeatdown
     /// </summary>
     public unsafe override float GetHealthForBeatdown(bool bBeatdownEndCheck)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.GetHealthForBeatdown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHealthForBeatdown, "BmScript.MPawnVillainNightwing.GetHealthForBeatdown");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bBeatdownEndCheck, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_AreTakedownsFatal;
     /// <summary>
     /// Function: AreTakedownsFatal
     /// </summary>
     public unsafe override bool AreTakedownsFatal()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.AreTakedownsFatal", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AreTakedownsFatal, "BmScript.MPawnVillainNightwing.AreTakedownsFatal");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsFloorStrikeable;
     /// <summary>
     /// Function: IsFloorStrikeable
     /// </summary>
     public unsafe override bool IsFloorStrikeable()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.IsFloorStrikeable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsFloorStrikeable, "BmScript.MPawnVillainNightwing.IsFloorStrikeable");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetOverrideTakedownInfo;
     /// <summary>
     /// Function: GetOverrideTakedownInfo
     /// </summary>
     public unsafe override bool GetOverrideTakedownInfo(BmSDK.BmGame.RPawnPlayerCombat Attacker, out BmSDK.BmGame.RPawnPlayerCombat.ETakedownType takedownType, out System.Numerics.Vector3 TakedownLocation, out BmSDK.Rotator TakedownRotation, out int DamageAmount)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.GetOverrideTakedownInfo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetOverrideTakedownInfo, "BmScript.MPawnVillainNightwing.GetOverrideTakedownInfo");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Attacker, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -447,80 +476,87 @@ public partial class MPawnVillainNightwing : BmSDK.BmGame.MPawnVillainNightwingB
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 40);
     }
 
+    private static BmSDK.Function __fn_ShouldComboTakedownKill;
     /// <summary>
     /// Function: ShouldComboTakedownKill
     /// </summary>
     public unsafe override bool ShouldComboTakedownKill(BmSDK.BmGame.RPawnCombat.FDamageInfo DmgInfo)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.ShouldComboTakedownKill", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldComboTakedownKill, "BmScript.MPawnVillainNightwing.ShouldComboTakedownKill");
         byte* paramsPtr = stackalloc byte[252];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DmgInfo, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 248);
     }
 
+    private static BmSDK.Function __fn_WillTakedownKill;
     /// <summary>
     /// Function: WillTakedownKill
     /// </summary>
     public unsafe virtual bool WillTakedownKill()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.WillTakedownKill", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WillTakedownKill, "BmScript.MPawnVillainNightwing.WillTakedownKill");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetNonFatalTakedownDamage;
     /// <summary>
     /// Function: GetNonFatalTakedownDamage
     /// </summary>
     public unsafe override float GetNonFatalTakedownDamage()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.GetNonFatalTakedownDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNonFatalTakedownDamage, "BmScript.MPawnVillainNightwing.GetNonFatalTakedownDamage");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_RagdollKill;
     /// <summary>
     /// Function: RagdollKill
     /// </summary>
     public unsafe override void RagdollKill()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.RagdollKill", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RagdollKill, "BmScript.MPawnVillainNightwing.RagdollKill");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetForceGetUpTime;
     /// <summary>
     /// Function: GetForceGetUpTime
     /// </summary>
     public unsafe override float GetForceGetUpTime()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.GetForceGetUpTime", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetForceGetUpTime, "BmScript.MPawnVillainNightwing.GetForceGetUpTime");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetBlockBreakerStunTime;
     /// <summary>
     /// Function: GetBlockBreakerStunTime
     /// </summary>
     public unsafe override float GetBlockBreakerStunTime(BmSDK.BmGame.RPawnCombat.FDamageInfo DmgInfo)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.GetBlockBreakerStunTime", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBlockBreakerStunTime, "BmScript.MPawnVillainNightwing.GetBlockBreakerStunTime");
         byte* paramsPtr = stackalloc byte[252];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DmgInfo, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 248);
     }
 
+    private static BmSDK.Function __fn_ModifyDamageAmount;
     /// <summary>
     /// Function: ModifyDamageAmount
     /// </summary>
     public unsafe override void ModifyDamageAmount(BmSDK.Class dmgType, out float DmgAmount)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.ModifyDamageAmount", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ModifyDamageAmount, "BmScript.MPawnVillainNightwing.ModifyDamageAmount");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -528,12 +564,13 @@ public partial class MPawnVillainNightwing : BmSDK.BmGame.MPawnVillainNightwingB
         return;
     }
 
+    private static BmSDK.Function __fn_TakeDamage;
     /// <summary>
     /// Function: TakeDamage
     /// </summary>
     public unsafe override void TakeDamage(int Damage, BmSDK.Engine.Controller InstigatedBy, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 Momentum, BmSDK.Class DamageType, BmSDK.Engine.Actor.FTraceHitInfo HitInfo = default, BmSDK.Engine.Actor DamageCauser = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.TakeDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TakeDamage, "BmScript.MPawnVillainNightwing.TakeDamage");
         byte* paramsPtr = stackalloc byte[104];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Damage, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InstigatedBy, paramsPtr + 4);
@@ -546,46 +583,50 @@ public partial class MPawnVillainNightwing : BmSDK.BmGame.MPawnVillainNightwingB
         return;
     }
 
+    private static BmSDK.Function __fn_DamagedBy;
     /// <summary>
     /// Function: DamagedBy
     /// </summary>
     public unsafe override BmSDK.BmGame.RPawnCombat.DamageResult DamagedBy(BmSDK.BmGame.RPawnCombat.FDamageInfo DmgInfo)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.DamagedBy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DamagedBy, "BmScript.MPawnVillainNightwing.DamagedBy");
         byte* paramsPtr = stackalloc byte[268];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DmgInfo, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnCombat.DamageResult>(paramsPtr + 248);
     }
 
+    private static BmSDK.Function __fn_InitHealthBar;
     /// <summary>
     /// Function: InitHealthBar
     /// </summary>
     public unsafe virtual void InitHealthBar()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.InitHealthBar", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitHealthBar, "BmScript.MPawnVillainNightwing.InitHealthBar");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetHealth;
     /// <summary>
     /// Function: SetHealth
     /// </summary>
     public unsafe override void SetHealth()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.SetHealth", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHealth, "BmScript.MPawnVillainNightwing.SetHealth");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IgnoreFinalBlowCam;
     /// <summary>
     /// Function: IgnoreFinalBlowCam
     /// </summary>
     public unsafe override bool IgnoreFinalBlowCam(BmSDK.Class DamageType, float DamageAmount)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.IgnoreFinalBlowCam", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IgnoreFinalBlowCam, "BmScript.MPawnVillainNightwing.IgnoreFinalBlowCam");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageType, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageAmount, paramsPtr + 8);
@@ -593,34 +634,37 @@ public partial class MPawnVillainNightwing : BmSDK.BmGame.MPawnVillainNightwingB
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmScript.MPawnVillainNightwing.Destroyed");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetComboTakedownAnimset;
     /// <summary>
     /// Function: GetComboTakedownAnimset
     /// </summary>
     public unsafe override BmSDK.Engine.AnimSet GetComboTakedownAnimset()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.GetComboTakedownAnimset", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetComboTakedownAnimset, "BmScript.MPawnVillainNightwing.GetComboTakedownAnimset");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSet>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.MPawnVillainNightwing.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmScript.MPawnVillainNightwing.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

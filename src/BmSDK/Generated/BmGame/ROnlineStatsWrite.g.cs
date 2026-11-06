@@ -78,12 +78,13 @@ public partial class ROnlineStatsWrite : BmSDK.Engine.OnlineStatsWrite, BmSDK.IG
         where TComponent : class, Framework.IScriptComponent<ROnlineStatsWrite>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CopyAndWriteAllStats;
     /// <summary>
     /// Function: CopyAndWriteAllStats
     /// </summary>
     public unsafe virtual void CopyAndWriteAllStats(BmSDK.BmGame.RPlayerController PC, BmSDK.Engine.OnlineSubsystem.FUniqueNetId UniqId, BmSDK.Engine.PlayerReplicationInfo PRI, BmSDK.Engine.OnlineStatsInterface StatsInterface)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROnlineStatsWrite.CopyAndWriteAllStats", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CopyAndWriteAllStats, "BmGame.ROnlineStatsWrite.CopyAndWriteAllStats");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UniqId, paramsPtr + 8);
@@ -93,12 +94,13 @@ public partial class ROnlineStatsWrite : BmSDK.Engine.OnlineStatsWrite, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_CopyAllStats;
     /// <summary>
     /// Function: CopyAllStats
     /// </summary>
     public unsafe virtual bool CopyAllStats(BmSDK.BmGame.RPlayerController PC, BmSDK.Engine.PlayerReplicationInfo PRI)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROnlineStatsWrite.CopyAllStats", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CopyAllStats, "BmGame.ROnlineStatsWrite.CopyAllStats");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PRI, paramsPtr + 8);

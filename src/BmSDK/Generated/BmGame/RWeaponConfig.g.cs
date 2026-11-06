@@ -78,12 +78,13 @@ public partial class RWeaponConfig : BmSDK.BmGame.RConfig, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RWeaponConfig>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ToString;
     /// <summary>
     /// Function: ToString
     /// </summary>
     public unsafe virtual BmSDK.FString ToString()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWeaponConfig.ToString", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ToString, "BmGame.RWeaponConfig.ToString");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class RWeaponConfig : BmSDK.BmGame.RConfig, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Shrink;
     /// <summary>
     /// Function: Shrink
     /// </summary>
     public unsafe virtual void Shrink()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWeaponConfig.Shrink", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Shrink, "BmGame.RWeaponConfig.Shrink");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

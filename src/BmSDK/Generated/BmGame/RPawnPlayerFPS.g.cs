@@ -73,12 +73,13 @@ public partial class RPawnPlayerFPS : BmSDK.BmGame.RPawnPlayerAnim, BmSDK.IGameO
         where TComponent : class, Framework.IScriptComponent<RPawnPlayerFPS>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_FindContactName;
     /// <summary>
     /// Function: FindContactName
     /// </summary>
     public unsafe override BmSDK.Engine.AkEvent FindContactName(BmSDK.BmGame.RAnimNotify_Footstep.EFoot Foot, BmSDK.BmGame.RAnimNotify_Footstep.EContactType Contact)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerFPS.FindContactName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindContactName, "BmGame.RPawnPlayerFPS.FindContactName");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Foot, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Contact, paramsPtr + 1);
@@ -86,23 +87,25 @@ public partial class RPawnPlayerFPS : BmSDK.BmGame.RPawnPlayerAnim, BmSDK.IGameO
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AkEvent>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_FinishMatinee;
     /// <summary>
     /// Function: FinishMatinee
     /// </summary>
     public unsafe virtual void FinishMatinee()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerFPS.FinishMatinee", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishMatinee, "BmGame.RPawnPlayerFPS.FinishMatinee");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AdjustMeshTranslationToMatchEndOfMat;
     /// <summary>
     /// Function: AdjustMeshTranslationToMatchEndOfMat
     /// </summary>
     public unsafe virtual void AdjustMeshTranslationToMatchEndOfMat(System.Numerics.Vector3 LocationDiff, BmSDK.Rotator RotDiff)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerFPS.AdjustMeshTranslationToMatchEndOfMat", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AdjustMeshTranslationToMatchEndOfMat, "BmGame.RPawnPlayerFPS.AdjustMeshTranslationToMatchEndOfMat");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocationDiff, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RotDiff, paramsPtr + 12);
@@ -110,12 +113,13 @@ public partial class RPawnPlayerFPS : BmSDK.BmGame.RPawnPlayerAnim, BmSDK.IGameO
         return;
     }
 
+    private static BmSDK.Function __fn_FinishAnimControl;
     /// <summary>
     /// Function: FinishAnimControl
     /// </summary>
     public unsafe override void FinishAnimControl(BmSDK.Engine.InterpGroup InInterpGroup, BmSDK.Engine.InterpGroupInst InInterpGroupInst)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerFPS.FinishAnimControl", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishAnimControl, "BmGame.RPawnPlayerFPS.FinishAnimControl");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroup, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroupInst, paramsPtr + 8);
@@ -123,12 +127,13 @@ public partial class RPawnPlayerFPS : BmSDK.BmGame.RPawnPlayerAnim, BmSDK.IGameO
         return;
     }
 
+    private static BmSDK.Function __fn_BlendOutAnimControl;
     /// <summary>
     /// Function: BlendOutAnimControl
     /// </summary>
     public unsafe override void BlendOutAnimControl(BmSDK.Engine.InterpGroup InInterpGroup, BmSDK.Engine.InterpGroupInst InInterpGroupInst, float BlendOutDuration)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerFPS.BlendOutAnimControl", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BlendOutAnimControl, "BmGame.RPawnPlayerFPS.BlendOutAnimControl");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroup, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroupInst, paramsPtr + 8);
@@ -137,12 +142,13 @@ public partial class RPawnPlayerFPS : BmSDK.BmGame.RPawnPlayerAnim, BmSDK.IGameO
         return;
     }
 
+    private static BmSDK.Function __fn_BeginAnimControl;
     /// <summary>
     /// Function: BeginAnimControl
     /// </summary>
     public unsafe override void BeginAnimControl(BmSDK.Engine.InterpGroup InInterpGroup, BmSDK.Engine.InterpGroupInst InInterpGroupInst)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerFPS.BeginAnimControl", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BeginAnimControl, "BmGame.RPawnPlayerFPS.BeginAnimControl");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroup, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InInterpGroupInst, paramsPtr + 8);
@@ -150,57 +156,62 @@ public partial class RPawnPlayerFPS : BmSDK.BmGame.RPawnPlayerAnim, BmSDK.IGameO
         return;
     }
 
+    private static BmSDK.Function __fn_Reload;
     /// <summary>
     /// Function: Reload
     /// </summary>
     public unsafe virtual void Reload()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerFPS.Reload", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Reload, "BmGame.RPawnPlayerFPS.Reload");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Zoom;
     /// <summary>
     /// Function: Zoom
     /// </summary>
     public unsafe virtual void Zoom(bool bZoom)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerFPS.Zoom", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Zoom, "BmGame.RPawnPlayerFPS.Zoom");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bZoom, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ToggleZoom;
     /// <summary>
     /// Function: ToggleZoom
     /// </summary>
     public unsafe virtual void ToggleZoom()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerFPS.ToggleZoom", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ToggleZoom, "BmGame.RPawnPlayerFPS.ToggleZoom");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ToggleCameraZoom;
     /// <summary>
     /// Function: ToggleCameraZoom
     /// </summary>
     public unsafe virtual void ToggleCameraZoom()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerFPS.ToggleCameraZoom", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ToggleCameraZoom, "BmGame.RPawnPlayerFPS.ToggleCameraZoom");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PossessedBy;
     /// <summary>
     /// Function: PossessedBy
     /// </summary>
     public unsafe override void PossessedBy(BmSDK.Engine.Controller C, bool bVehicleTransition)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerFPS.PossessedBy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PossessedBy, "BmGame.RPawnPlayerFPS.PossessedBy");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(C, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bVehicleTransition, paramsPtr + 8);
@@ -208,12 +219,13 @@ public partial class RPawnPlayerFPS : BmSDK.BmGame.RPawnPlayerAnim, BmSDK.IGameO
         return;
     }
 
+    private static BmSDK.Function __fn_OnCameraUpdatedNoMeshTranslate;
     /// <summary>
     /// Function: OnCameraUpdatedNoMeshTranslate
     /// </summary>
     public unsafe virtual void OnCameraUpdatedNoMeshTranslate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerFPS.OnCameraUpdatedNoMeshTranslate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnCameraUpdatedNoMeshTranslate, "BmGame.RPawnPlayerFPS.OnCameraUpdatedNoMeshTranslate");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -226,12 +238,13 @@ public partial class RPawnPlayerFPS : BmSDK.BmGame.RPawnPlayerAnim, BmSDK.IGameO
         return;
     }
 
+    private static BmSDK.Function __fn_OnCameraUpdated;
     /// <summary>
     /// Function: OnCameraUpdated
     /// </summary>
     public unsafe virtual void OnCameraUpdated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerFPS.OnCameraUpdated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnCameraUpdated, "BmGame.RPawnPlayerFPS.OnCameraUpdated");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -244,126 +257,137 @@ public partial class RPawnPlayerFPS : BmSDK.BmGame.RPawnPlayerAnim, BmSDK.IGameO
         return;
     }
 
+    private static BmSDK.Function __fn_PreBeginPlay;
     /// <summary>
     /// Function: PreBeginPlay
     /// </summary>
     public unsafe override void PreBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerFPS.PreBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreBeginPlay, "BmGame.RPawnPlayerFPS.PreBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetupAnimConfig;
     /// <summary>
     /// Function: SetupAnimConfig
     /// </summary>
     public unsafe virtual void SetupAnimConfig()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerFPS.SetupAnimConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupAnimConfig, "BmGame.RPawnPlayerFPS.SetupAnimConfig");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetPlayerConfig;
     /// <summary>
     /// Function: GetPlayerConfig
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RAddContentPlayerCharacter GetPlayerConfig()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerFPS.GetPlayerConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPlayerConfig, "BmGame.RPawnPlayerFPS.GetPlayerConfig");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RAddContentPlayerCharacter>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CheckForNoShootItems;
     /// <summary>
     /// Function: CheckForNoShootItems
     /// </summary>
     public unsafe virtual void CheckForNoShootItems()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerFPS.CheckForNoShootItems", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckForNoShootItems, "BmGame.RPawnPlayerFPS.CheckForNoShootItems");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AdditiveArmAvoidance;
     /// <summary>
     /// Function: AdditiveArmAvoidance
     /// </summary>
     public unsafe virtual void AdditiveArmAvoidance()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerFPS.AdditiveArmAvoidance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AdditiveArmAvoidance, "BmGame.RPawnPlayerFPS.AdditiveArmAvoidance");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayAdditiveOverlays;
     /// <summary>
     /// Function: PlayAdditiveOverlays
     /// </summary>
     public unsafe virtual void PlayAdditiveOverlays(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerFPS.PlayAdditiveOverlays", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayAdditiveOverlays, "BmGame.RPawnPlayerFPS.PlayAdditiveOverlays");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerFPS.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RPawnPlayerFPS.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreRender;
     /// <summary>
     /// Function: PreRender
     /// </summary>
     public unsafe virtual void PreRender(BmSDK.Engine.Canvas HudCanvas)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerFPS.PreRender", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreRender, "BmGame.RPawnPlayerFPS.PreRender");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HudCanvas, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TurnOnLight;
     /// <summary>
     /// Function: TurnOnLight
     /// </summary>
     public unsafe virtual void TurnOnLight()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerFPS.TurnOnLight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TurnOnLight, "BmGame.RPawnPlayerFPS.TurnOnLight");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FireGunNow;
     /// <summary>
     /// Function: FireGunNow
     /// </summary>
     public unsafe virtual bool FireGunNow(bool bGunAnimOnly = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerFPS.FireGunNow", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireGunNow, "BmGame.RPawnPlayerFPS.FireGunNow");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bGunAnimOnly, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_FireWeapon;
     /// <summary>
     /// Function: FireWeapon
     /// </summary>
     public unsafe virtual void FireWeapon()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerFPS.FireWeapon", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireWeapon, "BmGame.RPawnPlayerFPS.FireWeapon");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

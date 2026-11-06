@@ -73,36 +73,39 @@ public partial class RSeqAct_SpawnVehicleBase : BmSDK.Engine.SeqAct_Latent, BmSD
         where TComponent : class, Framework.IScriptComponent<RSeqAct_SpawnVehicleBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SpawnedActorBatmanSeen;
     /// <summary>
     /// Function: SpawnedActorBatmanSeen
     /// </summary>
     public unsafe virtual void SpawnedActorBatmanSeen(BmSDK.Engine.Actor ExActor)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SpawnVehicleBase.SpawnedActorBatmanSeen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnedActorBatmanSeen, "BmGame.RSeqAct_SpawnVehicleBase.SpawnedActorBatmanSeen");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExActor, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnedActorDied;
     /// <summary>
     /// Function: SpawnedActorDied
     /// </summary>
     public unsafe virtual void SpawnedActorDied(BmSDK.Engine.Actor ExActor)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SpawnVehicleBase.SpawnedActorDied", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnedActorDied, "BmGame.RSeqAct_SpawnVehicleBase.SpawnedActorDied");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExActor, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsNewGamePlus;
     /// <summary>
     /// Function: IsNewGamePlus
     /// </summary>
     public unsafe virtual bool IsNewGamePlus()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SpawnVehicleBase.IsNewGamePlus", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsNewGamePlus, "BmGame.RSeqAct_SpawnVehicleBase.IsNewGamePlus");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -115,12 +118,13 @@ public partial class RSeqAct_SpawnVehicleBase : BmSDK.Engine.SeqAct_Latent, BmSD
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UpdateNewGamePlus;
     /// <summary>
     /// Function: UpdateNewGamePlus
     /// </summary>
     public unsafe virtual void UpdateNewGamePlus()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SpawnVehicleBase.UpdateNewGamePlus", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateNewGamePlus, "BmGame.RSeqAct_SpawnVehicleBase.UpdateNewGamePlus");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

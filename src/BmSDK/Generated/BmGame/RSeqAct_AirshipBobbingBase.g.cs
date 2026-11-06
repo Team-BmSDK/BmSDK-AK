@@ -78,45 +78,49 @@ public partial class RSeqAct_AirshipBobbingBase : BmSDK.Engine.SeqAct_Latent, Bm
         where TComponent : class, Framework.IScriptComponent<RSeqAct_AirshipBobbingBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PlayerFinishedTilt;
     /// <summary>
     /// Function: PlayerFinishedTilt
     /// </summary>
     public unsafe virtual void PlayerFinishedTilt()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_AirshipBobbingBase.PlayerFinishedTilt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayerFinishedTilt, "BmGame.RSeqAct_AirshipBobbingBase.PlayerFinishedTilt");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayerStartedTilt;
     /// <summary>
     /// Function: PlayerStartedTilt
     /// </summary>
     public unsafe virtual void PlayerStartedTilt()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_AirshipBobbingBase.PlayerStartedTilt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayerStartedTilt, "BmGame.RSeqAct_AirshipBobbingBase.PlayerStartedTilt");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateVistaFromCameraBob;
     /// <summary>
     /// Function: UpdateVistaFromCameraBob
     /// </summary>
     public unsafe virtual void UpdateVistaFromCameraBob()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_AirshipBobbingBase.UpdateVistaFromCameraBob", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateVistaFromCameraBob, "BmGame.RSeqAct_AirshipBobbingBase.UpdateVistaFromCameraBob");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateManualControl;
     /// <summary>
     /// Function: UpdateManualControl
     /// </summary>
     public unsafe virtual void UpdateManualControl(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_AirshipBobbingBase.UpdateManualControl", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateManualControl, "BmGame.RSeqAct_AirshipBobbingBase.UpdateManualControl");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -130,12 +134,13 @@ public partial class RSeqAct_AirshipBobbingBase : BmSDK.Engine.SeqAct_Latent, Bm
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateOWBob;
     /// <summary>
     /// Function: UpdateOWBob
     /// </summary>
     public unsafe virtual BmSDK.Rotator UpdateOWBob(float DeltaTime, out System.Numerics.Vector3 BobEuler)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_AirshipBobbingBase.UpdateOWBob", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateOWBob, "BmGame.RSeqAct_AirshipBobbingBase.UpdateOWBob");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -150,58 +155,63 @@ public partial class RSeqAct_AirshipBobbingBase : BmSDK.Engine.SeqAct_Latent, Bm
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_AirshipBobbingBase.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmGame.RSeqAct_AirshipBobbingBase.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetPlayerInput;
     /// <summary>
     /// Function: SetPlayerInput
     /// </summary>
     public unsafe virtual void SetPlayerInput(float LeftToRight)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_AirshipBobbingBase.SetPlayerInput", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetPlayerInput, "BmGame.RSeqAct_AirshipBobbingBase.SetPlayerInput");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LeftToRight, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayerTriedToUseAirshipTiltWhenItsInactive;
     /// <summary>
     /// Function: PlayerTriedToUseAirshipTiltWhenItsInactive
     /// </summary>
     public unsafe virtual void PlayerTriedToUseAirshipTiltWhenItsInactive()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_AirshipBobbingBase.PlayerTriedToUseAirshipTiltWhenItsInactive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayerTriedToUseAirshipTiltWhenItsInactive, "BmGame.RSeqAct_AirshipBobbingBase.PlayerTriedToUseAirshipTiltWhenItsInactive");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Update;
     /// <summary>
     /// Function: Update
     /// </summary>
     public unsafe override bool Update(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_AirshipBobbingBase.Update", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Update, "BmGame.RSeqAct_AirshipBobbingBase.Update");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_AirshipBobbingBase.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmGame.RSeqAct_AirshipBobbingBase.Activated");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

@@ -78,23 +78,25 @@ public partial class RSpecialMoveInstance_Interrogation : BmSDK.BmGame.RSpecialM
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveInstance_Interrogation>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DisableMinesDisabledByVictim;
     /// <summary>
     /// Function: DisableMinesDisabledByVictim
     /// </summary>
     public unsafe virtual void DisableMinesDisabledByVictim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.DisableMinesDisabledByVictim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisableMinesDisabledByVictim, "BmGame.RSpecialMoveInstance_Interrogation.DisableMinesDisabledByVictim");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetRopeLength;
     /// <summary>
     /// Function: GetRopeLength
     /// </summary>
     public unsafe static float GetRopeLength(System.Numerics.Vector3 RopeTopPoint, System.Numerics.Vector3 OutwardsNormal, BmSDK.BmGame.RPawnPlayer Attacker)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.GetRopeLength", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRopeLength, "BmGame.RSpecialMoveInstance_Interrogation.GetRopeLength");
         byte* paramsPtr = stackalloc byte[112];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RopeTopPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OutwardsNormal, paramsPtr + 12);
@@ -103,12 +105,13 @@ public partial class RSpecialMoveInstance_Interrogation : BmSDK.BmGame.RSpecialM
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_PlayInterrogationCameraAnim;
     /// <summary>
     /// Function: PlayInterrogationCameraAnim
     /// </summary>
     public unsafe virtual bool PlayInterrogationCameraAnim(BmSDK.FName AnimName, bool bPlaying, bool bCamMirrored, float FOV = default, bool bLoop = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.PlayInterrogationCameraAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayInterrogationCameraAnim, "BmGame.RSpecialMoveInstance_Interrogation.PlayInterrogationCameraAnim");
         byte* paramsPtr = stackalloc byte[196];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bPlaying, paramsPtr + 8);
@@ -119,12 +122,13 @@ public partial class RSpecialMoveInstance_Interrogation : BmSDK.BmGame.RSpecialM
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_CheckCameraLocation;
     /// <summary>
     /// Function: CheckCameraLocation
     /// </summary>
     public unsafe virtual bool CheckCameraLocation(BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator Loc, System.Numerics.Vector3 PlayerLocation, BmSDK.FName AnimName, bool bCamMirrored, int Index, out float BestCollisionDistance, out int BestIndex, out int BestMirroredNess, float CheckTime = default, BmSDK.BmGame.RInGameCinematicCam CustomCamera = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.CheckCameraLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckCameraLocation, "BmGame.RSpecialMoveInstance_Interrogation.CheckCameraLocation");
         byte* paramsPtr = stackalloc byte[260];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerLocation, paramsPtr + 132);
@@ -140,12 +144,13 @@ public partial class RSpecialMoveInstance_Interrogation : BmSDK.BmGame.RSpecialM
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 184);
     }
 
+    private static BmSDK.Function __fn_GetCameraFallbackPos;
     /// <summary>
     /// Function: GetCameraFallbackPos
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetCameraFallbackPos(BmSDK.BmGame.RSpecialMoveConfig_Interrogation.CameraCollisionOption CollisionOption, System.Numerics.Vector3 Offset, System.Numerics.Vector3 PlayerLocation, BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator Loc, bool bInitialCall = default, bool bTesting = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.GetCameraFallbackPos", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCameraFallbackPos, "BmGame.RSpecialMoveInstance_Interrogation.GetCameraFallbackPos");
         byte* paramsPtr = stackalloc byte[192];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CollisionOption, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Offset, paramsPtr + 4);
@@ -157,12 +162,13 @@ public partial class RSpecialMoveInstance_Interrogation : BmSDK.BmGame.RSpecialM
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 168);
     }
 
+    private static BmSDK.Function __fn_converge;
     /// <summary>
     /// Function: converge
     /// </summary>
     public unsafe virtual void converge(out System.Numerics.Vector3 Value, System.Numerics.Vector3 targetv, float Speed, float Tolerance = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.converge", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_converge, "BmGame.RSpecialMoveInstance_Interrogation.converge");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(targetv, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speed, paramsPtr + 24);
@@ -172,57 +178,62 @@ public partial class RSpecialMoveInstance_Interrogation : BmSDK.BmGame.RSpecialM
         return;
     }
 
+    private static BmSDK.Function __fn_CanSetRadioMode;
     /// <summary>
     /// Function: CanSetRadioMode
     /// </summary>
     public unsafe override bool CanSetRadioMode(BmSDK.BmGame.RSeqAct_PlayRadioOrThoughtDialogue act)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.CanSetRadioMode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanSetRadioMode, "BmGame.RSpecialMoveInstance_Interrogation.CanSetRadioMode");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(act, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CanStartCameraConversation;
     /// <summary>
     /// Function: CanStartCameraConversation
     /// </summary>
     public unsafe override bool CanStartCameraConversation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.CanStartCameraConversation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanStartCameraConversation, "BmGame.RSpecialMoveInstance_Interrogation.CanStartCameraConversation");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmGame.RSpecialMoveInstance_Interrogation.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.PreStreamOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmGame.RSpecialMoveInstance_Interrogation.PreStreamOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetCameraAnimName;
     /// <summary>
     /// Function: GetCameraAnimName
     /// </summary>
     public unsafe virtual bool GetCameraAnimName(BmSDK.FName CharacterAnim, out BmSDK.FName CameraAnim, BmSDK.Engine.AnimSet CustomAnimSet, int Index)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.GetCameraAnimName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCameraAnimName, "BmGame.RSpecialMoveInstance_Interrogation.GetCameraAnimName");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CharacterAnim, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CustomAnimSet, paramsPtr + 16);
@@ -239,12 +250,13 @@ public partial class RSpecialMoveInstance_Interrogation : BmSDK.BmGame.RSpecialM
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_CancelConversationLoading;
     /// <summary>
     /// Function: CancelConversationLoading
     /// </summary>
     public unsafe virtual void CancelConversationLoading()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.CancelConversationLoading", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelConversationLoading, "BmGame.RSpecialMoveInstance_Interrogation.CancelConversationLoading");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -257,12 +269,13 @@ public partial class RSpecialMoveInstance_Interrogation : BmSDK.BmGame.RSpecialM
         return;
     }
 
+    private static BmSDK.Function __fn_InitConversation;
     /// <summary>
     /// Function: InitConversation
     /// </summary>
     public unsafe virtual bool InitConversation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.InitConversation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitConversation, "BmGame.RSpecialMoveInstance_Interrogation.InitConversation");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -275,12 +288,13 @@ public partial class RSpecialMoveInstance_Interrogation : BmSDK.BmGame.RSpecialM
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_LoadConversation;
     /// <summary>
     /// Function: LoadConversation
     /// </summary>
     public unsafe virtual bool LoadConversation(BmSDK.FString StringPackageName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.LoadConversation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LoadConversation, "BmGame.RSpecialMoveInstance_Interrogation.LoadConversation");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StringPackageName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -294,135 +308,147 @@ public partial class RSpecialMoveInstance_Interrogation : BmSDK.BmGame.RSpecialM
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_TryCreateRope;
     /// <summary>
     /// Function: TryCreateRope
     /// </summary>
     public unsafe virtual bool TryCreateRope()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.TryCreateRope", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TryCreateRope, "BmGame.RSpecialMoveInstance_Interrogation.TryCreateRope");
         byte* paramsPtr = stackalloc byte[204];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_HangThugFromRope;
     /// <summary>
     /// Function: HangThugFromRope
     /// </summary>
     public unsafe virtual void HangThugFromRope()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.HangThugFromRope", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HangThugFromRope, "BmGame.RSpecialMoveInstance_Interrogation.HangThugFromRope");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HandleAction;
     /// <summary>
     /// Function: HandleAction
     /// </summary>
     public unsafe override void HandleAction(BmSDK.FName actionName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.HandleAction", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandleAction, "BmGame.RSpecialMoveInstance_Interrogation.HandleAction");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(actionName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TrySkipConversationLine;
     /// <summary>
     /// Function: TrySkipConversationLine
     /// </summary>
     public unsafe virtual bool TrySkipConversationLine()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.TrySkipConversationLine", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TrySkipConversationLine, "BmGame.RSpecialMoveInstance_Interrogation.TrySkipConversationLine");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SkipConversationLine;
     /// <summary>
     /// Function: SkipConversationLine
     /// </summary>
     public unsafe virtual void SkipConversationLine()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.SkipConversationLine", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SkipConversationLine, "BmGame.RSpecialMoveInstance_Interrogation.SkipConversationLine");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CancelSpecialMove;
     /// <summary>
     /// Function: CancelSpecialMove
     /// </summary>
     public unsafe override void CancelSpecialMove(BmSDK.BmGame.RSpecialMoveConfig NextSpecialMove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.CancelSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelSpecialMove, "BmGame.RSpecialMoveInstance_Interrogation.CancelSpecialMove");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NextSpecialMove, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TargetGoRagdoll;
     /// <summary>
     /// Function: TargetGoRagdoll
     /// </summary>
     public unsafe virtual void TargetGoRagdoll()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.TargetGoRagdoll", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TargetGoRagdoll, "BmGame.RSpecialMoveInstance_Interrogation.TargetGoRagdoll");
         byte* paramsPtr = stackalloc byte[248];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TryUnlockRiddlerSecrets;
     /// <summary>
     /// Function: TryUnlockRiddlerSecrets
     /// </summary>
     public unsafe virtual void TryUnlockRiddlerSecrets()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.TryUnlockRiddlerSecrets", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TryUnlockRiddlerSecrets, "BmGame.RSpecialMoveInstance_Interrogation.TryUnlockRiddlerSecrets");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishSpecialMove;
     /// <summary>
     /// Function: FinishSpecialMove
     /// </summary>
     public unsafe override void FinishSpecialMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.FinishSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishSpecialMove, "BmGame.RSpecialMoveInstance_Interrogation.FinishSpecialMove");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ResetCamera;
     /// <summary>
     /// Function: ResetCamera
     /// </summary>
     public unsafe virtual void ResetCamera()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.ResetCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetCamera, "BmGame.RSpecialMoveInstance_Interrogation.ResetCamera");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishVictim;
     /// <summary>
     /// Function: FinishVictim
     /// </summary>
     public unsafe virtual void FinishVictim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.FinishVictim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishVictim, "BmGame.RSpecialMoveInstance_Interrogation.FinishVictim");
         byte* paramsPtr = stackalloc byte[248];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AnimationTriggerCallbackCutscene;
     /// <summary>
     /// Function: AnimationTriggerCallbackCutscene
     /// </summary>
     public unsafe virtual void AnimationTriggerCallbackCutscene(BmSDK.FName TagName, BmSDK.TArray<BmSDK.FString> Params, BmSDK.Engine.AnimSet TagAnimSet, float Time)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.AnimationTriggerCallbackCutscene", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AnimationTriggerCallbackCutscene, "BmGame.RSpecialMoveInstance_Interrogation.AnimationTriggerCallbackCutscene");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TagName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Params, paramsPtr + 8);
@@ -432,78 +458,85 @@ public partial class RSpecialMoveInstance_Interrogation : BmSDK.BmGame.RSpecialM
         return;
     }
 
+    private static BmSDK.Function __fn_CheckConversationLoadingTimeout;
     /// <summary>
     /// Function: CheckConversationLoadingTimeout
     /// </summary>
     public unsafe virtual void CheckConversationLoadingTimeout()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.CheckConversationLoadingTimeout", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckConversationLoadingTimeout, "BmGame.RSpecialMoveInstance_Interrogation.CheckConversationLoadingTimeout");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_WaitedAndFinishedAfterLoadingError;
     /// <summary>
     /// Function: WaitedAndFinishedAfterLoadingError
     /// </summary>
     public unsafe virtual void WaitedAndFinishedAfterLoadingError()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.WaitedAndFinishedAfterLoadingError", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WaitedAndFinishedAfterLoadingError, "BmGame.RSpecialMoveInstance_Interrogation.WaitedAndFinishedAfterLoadingError");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DialogueFinished;
     /// <summary>
     /// Function: DialogueFinished
     /// </summary>
     public unsafe virtual void DialogueFinished()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.DialogueFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DialogueFinished, "BmGame.RSpecialMoveInstance_Interrogation.DialogueFinished");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartIntimidate;
     /// <summary>
     /// Function: StartIntimidate
     /// </summary>
     public unsafe virtual void StartIntimidate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.StartIntimidate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartIntimidate, "BmGame.RSpecialMoveInstance_Interrogation.StartIntimidate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetBestIntimidateIndex;
     /// <summary>
     /// Function: GetBestIntimidateIndex
     /// </summary>
     public unsafe virtual int GetBestIntimidateIndex()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.GetBestIntimidateIndex", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBestIntimidateIndex, "BmGame.RSpecialMoveInstance_Interrogation.GetBestIntimidateIndex");
         byte* paramsPtr = stackalloc byte[196];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PlayThugReaction;
     /// <summary>
     /// Function: PlayThugReaction
     /// </summary>
     public unsafe virtual void PlayThugReaction()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.PlayThugReaction", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayThugReaction, "BmGame.RSpecialMoveInstance_Interrogation.PlayThugReaction");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetInferredReferenceLocation;
     /// <summary>
     /// Function: GetInferredReferenceLocation
     /// </summary>
     public unsafe virtual bool GetInferredReferenceLocation(out System.Numerics.Vector3 RefLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.GetInferredReferenceLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetInferredReferenceLocation, "BmGame.RSpecialMoveInstance_Interrogation.GetInferredReferenceLocation");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -517,124 +550,135 @@ public partial class RSpecialMoveInstance_Interrogation : BmSDK.BmGame.RSpecialM
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_UpdateSpecialMove;
     /// <summary>
     /// Function: UpdateSpecialMove
     /// </summary>
     public unsafe override bool UpdateSpecialMove(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.UpdateSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateSpecialMove, "BmGame.RSpecialMoveInstance_Interrogation.UpdateSpecialMove");
         byte* paramsPtr = stackalloc byte[196];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_UpdateCameraIdle;
     /// <summary>
     /// Function: UpdateCameraIdle
     /// </summary>
     public unsafe virtual void UpdateCameraIdle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.UpdateCameraIdle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateCameraIdle, "BmGame.RSpecialMoveInstance_Interrogation.UpdateCameraIdle");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsCinematicCameraFinished;
     /// <summary>
     /// Function: IsCinematicCameraFinished
     /// </summary>
     public unsafe virtual bool IsCinematicCameraFinished()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.IsCinematicCameraFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsCinematicCameraFinished, "BmGame.RSpecialMoveInstance_Interrogation.IsCinematicCameraFinished");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_StartConversation;
     /// <summary>
     /// Function: StartConversation
     /// </summary>
     public unsafe virtual void StartConversation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.StartConversation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartConversation, "BmGame.RSpecialMoveInstance_Interrogation.StartConversation");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetBatmanFinishedCounter;
     /// <summary>
     /// Function: SetBatmanFinishedCounter
     /// </summary>
     public unsafe virtual void SetBatmanFinishedCounter()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.SetBatmanFinishedCounter", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBatmanFinishedCounter, "BmGame.RSpecialMoveInstance_Interrogation.SetBatmanFinishedCounter");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SuccessfulCounter;
     /// <summary>
     /// Function: SuccessfulCounter
     /// </summary>
     public unsafe virtual void SuccessfulCounter()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.SuccessfulCounter", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SuccessfulCounter, "BmGame.RSpecialMoveInstance_Interrogation.SuccessfulCounter");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ThugHitBatman;
     /// <summary>
     /// Function: ThugHitBatman
     /// </summary>
     public unsafe virtual void ThugHitBatman()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.ThugHitBatman", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ThugHitBatman, "BmGame.RSpecialMoveInstance_Interrogation.ThugHitBatman");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartCounterIcon;
     /// <summary>
     /// Function: StartCounterIcon
     /// </summary>
     public unsafe virtual void StartCounterIcon()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.StartCounterIcon", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartCounterIcon, "BmGame.RSpecialMoveInstance_Interrogation.StartCounterIcon");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NewLineStarted;
     /// <summary>
     /// Function: NewLineStarted
     /// </summary>
     public unsafe virtual bool NewLineStarted()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.NewLineStarted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NewLineStarted, "BmGame.RSpecialMoveInstance_Interrogation.NewLineStarted");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_TriggerSpecialMove;
     /// <summary>
     /// Function: TriggerSpecialMove
     /// </summary>
     public unsafe override void TriggerSpecialMove(BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator MoveLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.TriggerSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerSpecialMove, "BmGame.RSpecialMoveInstance_Interrogation.TriggerSpecialMove");
         byte* paramsPtr = stackalloc byte[396];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetOuterRailingLocator;
     /// <summary>
     /// Function: GetOuterRailingLocator
     /// </summary>
     public unsafe virtual void GetOuterRailingLocator(BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator MoveLocation, out BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator OutLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.GetOuterRailingLocator", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetOuterRailingLocator, "BmGame.RSpecialMoveInstance_Interrogation.GetOuterRailingLocator");
         byte* paramsPtr = stackalloc byte[264];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -642,12 +686,13 @@ public partial class RSpecialMoveInstance_Interrogation : BmSDK.BmGame.RSpecialM
         return;
     }
 
+    private static BmSDK.Function __fn_StartAnimation;
     /// <summary>
     /// Function: StartAnimation
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RAnimUtil_PosePlayer.FTransitionId StartAnimation(BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator MoveLocation, BmSDK.FName AnimName, BmSDK.FName idleAnimName = default, BmSDK.FName CameraAnim = default, BmSDK.Engine.AnimSet CustomVictimInAnimSet = default, bool bThugAttack = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_Interrogation.StartAnimation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartAnimation, "BmGame.RSpecialMoveInstance_Interrogation.StartAnimation");
         byte* paramsPtr = stackalloc byte[172];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 132);

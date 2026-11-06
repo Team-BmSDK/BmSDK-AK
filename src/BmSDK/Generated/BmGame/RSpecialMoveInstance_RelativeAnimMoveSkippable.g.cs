@@ -78,24 +78,26 @@ public partial class RSpecialMoveInstance_RelativeAnimMoveSkippable : BmSDK.BmGa
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveInstance_RelativeAnimMoveSkippable>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UpdateSpecialMove;
     /// <summary>
     /// Function: UpdateSpecialMove
     /// </summary>
     public unsafe override bool UpdateSpecialMove(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_RelativeAnimMoveSkippable.UpdateSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateSpecialMove, "BmGame.RSpecialMoveInstance_RelativeAnimMoveSkippable.UpdateSpecialMove");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_AnyInput;
     /// <summary>
     /// Function: AnyInput
     /// </summary>
     public unsafe virtual bool AnyInput()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_RelativeAnimMoveSkippable.AnyInput", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AnyInput, "BmGame.RSpecialMoveInstance_RelativeAnimMoveSkippable.AnyInput");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

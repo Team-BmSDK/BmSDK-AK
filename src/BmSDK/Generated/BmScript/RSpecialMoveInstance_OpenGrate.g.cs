@@ -78,59 +78,64 @@ public partial class RSpecialMoveInstance_OpenGrate : BmSDK.BmGame.RSpecialMoveI
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveInstance_OpenGrate>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_AllowKismetHelpText;
     /// <summary>
     /// Function: AllowKismetHelpText
     /// </summary>
     public unsafe override bool AllowKismetHelpText(BmSDK.BmGame.RSeqAct_HelpText HelpAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_OpenGrate.AllowKismetHelpText", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowKismetHelpText, "BmScript.RSpecialMoveInstance_OpenGrate.AllowKismetHelpText");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HelpAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_PressingButtons;
     /// <summary>
     /// Function: PressingButtons
     /// </summary>
     public unsafe virtual void PressingButtons()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_OpenGrate.PressingButtons", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PressingButtons, "BmScript.RSpecialMoveInstance_OpenGrate.PressingButtons");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateRumbleStrength;
     /// <summary>
     /// Function: UpdateRumbleStrength
     /// </summary>
     public unsafe virtual void UpdateRumbleStrength(float Strength)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_OpenGrate.UpdateRumbleStrength", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateRumbleStrength, "BmScript.RSpecialMoveInstance_OpenGrate.UpdateRumbleStrength");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Strength, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ChoosePullSequence;
     /// <summary>
     /// Function: ChoosePullSequence
     /// </summary>
     public unsafe virtual void ChoosePullSequence(System.Numerics.Vector3 TargetLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_OpenGrate.ChoosePullSequence", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ChoosePullSequence, "BmScript.RSpecialMoveInstance_OpenGrate.ChoosePullSequence");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayGratePullCameraAnim;
     /// <summary>
     /// Function: PlayGratePullCameraAnim
     /// </summary>
     public unsafe virtual bool PlayGratePullCameraAnim(BmSDK.FName AnimName, bool bPlaying, float FOV = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_OpenGrate.PlayGratePullCameraAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayGratePullCameraAnim, "BmScript.RSpecialMoveInstance_OpenGrate.PlayGratePullCameraAnim");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bPlaying, paramsPtr + 8);
@@ -139,57 +144,62 @@ public partial class RSpecialMoveInstance_OpenGrate : BmSDK.BmGame.RSpecialMoveI
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_FirstFrameSucceeded;
     /// <summary>
     /// Function: FirstFrameSucceeded
     /// </summary>
     public unsafe virtual void FirstFrameSucceeded()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_OpenGrate.FirstFrameSucceeded", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FirstFrameSucceeded, "BmScript.RSpecialMoveInstance_OpenGrate.FirstFrameSucceeded");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StopRumble;
     /// <summary>
     /// Function: StopRumble
     /// </summary>
     public unsafe virtual void StopRumble()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_OpenGrate.StopRumble", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopRumble, "BmScript.RSpecialMoveInstance_OpenGrate.StopRumble");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AllowPull;
     /// <summary>
     /// Function: AllowPull
     /// </summary>
     public unsafe virtual void AllowPull()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_OpenGrate.AllowPull", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowPull, "BmScript.RSpecialMoveInstance_OpenGrate.AllowPull");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateSpecialMove;
     /// <summary>
     /// Function: UpdateSpecialMove
     /// </summary>
     public unsafe override bool UpdateSpecialMove(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_OpenGrate.UpdateSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateSpecialMove, "BmScript.RSpecialMoveInstance_OpenGrate.UpdateSpecialMove");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_PlayGrateAnim;
     /// <summary>
     /// Function: PlayGrateAnim
     /// </summary>
     public unsafe virtual void PlayGrateAnim(BmSDK.FName AnimName, bool bAnimMirrored = default, float StartTime = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_OpenGrate.PlayGrateAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayGrateAnim, "BmScript.RSpecialMoveInstance_OpenGrate.PlayGrateAnim");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAnimMirrored, paramsPtr + 8);
@@ -198,68 +208,74 @@ public partial class RSpecialMoveInstance_OpenGrate : BmSDK.BmGame.RSpecialMoveI
         return;
     }
 
+    private static BmSDK.Function __fn_FinalYank;
     /// <summary>
     /// Function: FinalYank
     /// </summary>
     public unsafe virtual void FinalYank()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_OpenGrate.FinalYank", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinalYank, "BmScript.RSpecialMoveInstance_OpenGrate.FinalYank");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Yank;
     /// <summary>
     /// Function: Yank
     /// </summary>
     public unsafe virtual void Yank()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_OpenGrate.Yank", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Yank, "BmScript.RSpecialMoveInstance_OpenGrate.Yank");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CancelSpecialMove;
     /// <summary>
     /// Function: CancelSpecialMove
     /// </summary>
     public unsafe override void CancelSpecialMove(BmSDK.BmGame.RSpecialMoveConfig NextSpecialMove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_OpenGrate.CancelSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelSpecialMove, "BmScript.RSpecialMoveInstance_OpenGrate.CancelSpecialMove");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NextSpecialMove, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishSpecialMove;
     /// <summary>
     /// Function: FinishSpecialMove
     /// </summary>
     public unsafe override void FinishSpecialMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_OpenGrate.FinishSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishSpecialMove, "BmScript.RSpecialMoveInstance_OpenGrate.FinishSpecialMove");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayReleaseSound;
     /// <summary>
     /// Function: PlayReleaseSound
     /// </summary>
     public unsafe override void PlayReleaseSound()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_OpenGrate.PlayReleaseSound", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayReleaseSound, "BmScript.RSpecialMoveInstance_OpenGrate.PlayReleaseSound");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerSpecialMove;
     /// <summary>
     /// Function: TriggerSpecialMove
     /// </summary>
     public unsafe override void TriggerSpecialMove(BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator MoveLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_OpenGrate.TriggerSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerSpecialMove, "BmScript.RSpecialMoveInstance_OpenGrate.TriggerSpecialMove");
         byte* paramsPtr = stackalloc byte[192];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

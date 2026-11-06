@@ -78,12 +78,13 @@ public partial class RArenaCamera : BmSDK.BmGame.RMultiTargetCamera, BmSDK.IGame
         where TComponent : class, Framework.IScriptComponent<RArenaCamera>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UpdateCorrection;
     /// <summary>
     /// Function: UpdateCorrection
     /// </summary>
     public unsafe virtual void UpdateCorrection(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RArenaCamera.UpdateCorrection", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateCorrection, "BmGame.RArenaCamera.UpdateCorrection");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -97,12 +98,13 @@ public partial class RArenaCamera : BmSDK.BmGame.RMultiTargetCamera, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_GetCameraView;
     /// <summary>
     /// Function: GetCameraView
     /// </summary>
     public unsafe override void GetCameraView(float DeltaTime, out BmSDK.GameObject.FTPOV OutPOV)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RArenaCamera.GetCameraView", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCameraView, "BmGame.RArenaCamera.GetCameraView");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -110,12 +112,13 @@ public partial class RArenaCamera : BmSDK.BmGame.RMultiTargetCamera, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RArenaCamera.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RArenaCamera.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

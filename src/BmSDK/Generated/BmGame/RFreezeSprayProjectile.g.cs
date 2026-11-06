@@ -73,12 +73,13 @@ public partial class RFreezeSprayProjectile : BmSDK.BmGame.RFreezeGrenadeCommonP
         where TComponent : class, Framework.IScriptComponent<RFreezeSprayProjectile>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SpawnSmallIceSphere;
     /// <summary>
     /// Function: SpawnSmallIceSphere
     /// </summary>
     public unsafe virtual BmSDK.Engine.Actor SpawnSmallIceSphere(System.Numerics.Vector3 SpawnLocation, BmSDK.Rotator SpawnRotation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFreezeSprayProjectile.SpawnSmallIceSphere", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnSmallIceSphere, "BmGame.RFreezeSprayProjectile.SpawnSmallIceSphere");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnRotation, paramsPtr + 12);
@@ -86,12 +87,13 @@ public partial class RFreezeSprayProjectile : BmSDK.BmGame.RFreezeGrenadeCommonP
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_SpawnIceSphere;
     /// <summary>
     /// Function: SpawnIceSphere
     /// </summary>
     public unsafe virtual void SpawnIceSphere(System.Numerics.Vector3 SpawnLocation, BmSDK.Rotator SpawnRotation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFreezeSprayProjectile.SpawnIceSphere", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnIceSphere, "BmGame.RFreezeSprayProjectile.SpawnIceSphere");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnRotation, paramsPtr + 12);
@@ -99,24 +101,26 @@ public partial class RFreezeSprayProjectile : BmSDK.BmGame.RFreezeGrenadeCommonP
         return;
     }
 
+    private static BmSDK.Function __fn_CanFreezeVillain;
     /// <summary>
     /// Function: CanFreezeVillain
     /// </summary>
     public unsafe virtual bool CanFreezeVillain(BmSDK.BmGame.RPawnVillain V)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFreezeSprayProjectile.CanFreezeVillain", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanFreezeVillain, "BmGame.RFreezeSprayProjectile.CanFreezeVillain");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(V, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_HitWall;
     /// <summary>
     /// Function: HitWall
     /// </summary>
     public unsafe override void HitWall(System.Numerics.Vector3 HitNormal, BmSDK.Engine.Actor Wall, BmSDK.Engine.PrimitiveComponent WallComp)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFreezeSprayProjectile.HitWall", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitWall, "BmGame.RFreezeSprayProjectile.HitWall");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Wall, paramsPtr + 12);
@@ -125,36 +129,39 @@ public partial class RFreezeSprayProjectile : BmSDK.BmGame.RFreezeGrenadeCommonP
         return;
     }
 
+    private static BmSDK.Function __fn_ProximityTriggered;
     /// <summary>
     /// Function: ProximityTriggered
     /// </summary>
     public unsafe override void ProximityTriggered(BmSDK.BmGame.RPawnVillain NearbyVillain)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFreezeSprayProjectile.ProximityTriggered", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProximityTriggered, "BmGame.RFreezeSprayProjectile.ProximityTriggered");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NearbyVillain, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SuperComboBlast;
     /// <summary>
     /// Function: SuperComboBlast
     /// </summary>
     public unsafe virtual void SuperComboBlast(BmSDK.BmGame.RPawnVillain Victim)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFreezeSprayProjectile.SuperComboBlast", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SuperComboBlast, "BmGame.RFreezeSprayProjectile.SuperComboBlast");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Victim, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Deploy;
     /// <summary>
     /// Function: Deploy
     /// </summary>
     public unsafe override void Deploy(BmSDK.Engine.Actor Other, BmSDK.Engine.PrimitiveComponent OtherComp, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFreezeSprayProjectile.Deploy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Deploy, "BmGame.RFreezeSprayProjectile.Deploy");
         byte* paramsPtr = stackalloc byte[120];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherComp, paramsPtr + 8);
@@ -164,24 +171,26 @@ public partial class RFreezeSprayProjectile : BmSDK.BmGame.RFreezeGrenadeCommonP
         return;
     }
 
+    private static BmSDK.Function __fn_StartFreezeBlastFailEffect;
     /// <summary>
     /// Function: StartFreezeBlastFailEffect
     /// </summary>
     public unsafe virtual void StartFreezeBlastFailEffect(bool bUseOffset = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFreezeSprayProjectile.StartFreezeBlastFailEffect", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartFreezeBlastFailEffect, "BmGame.RFreezeSprayProjectile.StartFreezeBlastFailEffect");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bUseOffset, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Detonate;
     /// <summary>
     /// Function: Detonate
     /// </summary>
     public unsafe override void Detonate(bool noGroundParticles = default, bool ProximityDetonate = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFreezeSprayProjectile.Detonate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Detonate, "BmGame.RFreezeSprayProjectile.Detonate");
         byte* paramsPtr = stackalloc byte[76];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(noGroundParticles, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProximityDetonate, paramsPtr + 4);
@@ -189,23 +198,25 @@ public partial class RFreezeSprayProjectile : BmSDK.BmGame.RFreezeGrenadeCommonP
         return;
     }
 
+    private static BmSDK.Function __fn_GadgetNoiseEvent;
     /// <summary>
     /// Function: GadgetNoiseEvent
     /// </summary>
     public unsafe virtual void GadgetNoiseEvent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFreezeSprayProjectile.GadgetNoiseEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GadgetNoiseEvent, "BmGame.RFreezeSprayProjectile.GadgetNoiseEvent");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FreezeVictimBody;
     /// <summary>
     /// Function: FreezeVictimBody
     /// </summary>
     public unsafe virtual void FreezeVictimBody(BmSDK.BmGame.RPawnVillain Victim, bool bInstant = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFreezeSprayProjectile.FreezeVictimBody", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FreezeVictimBody, "BmGame.RFreezeSprayProjectile.FreezeVictimBody");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Victim, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bInstant, paramsPtr + 8);
@@ -213,34 +224,37 @@ public partial class RFreezeSprayProjectile : BmSDK.BmGame.RFreezeGrenadeCommonP
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerFreezeBlastHitEvent;
     /// <summary>
     /// Function: TriggerFreezeBlastHitEvent
     /// </summary>
     public unsafe virtual void TriggerFreezeBlastHitEvent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFreezeSprayProjectile.TriggerFreezeBlastHitEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerFreezeBlastHitEvent, "BmGame.RFreezeSprayProjectile.TriggerFreezeBlastHitEvent");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFreezeSprayProjectile.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmGame.RFreezeSprayProjectile.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetLookAtRotator;
     /// <summary>
     /// Function: GetLookAtRotator
     /// </summary>
     public unsafe virtual BmSDK.Rotator GetLookAtRotator(System.Numerics.Vector3 Direction, System.Numerics.Vector3 Up)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RFreezeSprayProjectile.GetLookAtRotator", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLookAtRotator, "BmGame.RFreezeSprayProjectile.GetLookAtRotator");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Direction, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Up, paramsPtr + 12);

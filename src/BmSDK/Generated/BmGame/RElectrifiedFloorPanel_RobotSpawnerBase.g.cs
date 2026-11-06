@@ -73,12 +73,13 @@ public partial class RElectrifiedFloorPanel_RobotSpawnerBase : BmSDK.BmGame.REle
         where TComponent : class, Framework.IScriptComponent<RElectrifiedFloorPanel_RobotSpawnerBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetMeshCentre;
     /// <summary>
     /// Function: GetMeshCentre
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetMeshCentre()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RElectrifiedFloorPanel_RobotSpawnerBase.GetMeshCentre", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMeshCentre, "BmGame.RElectrifiedFloorPanel_RobotSpawnerBase.GetMeshCentre");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);

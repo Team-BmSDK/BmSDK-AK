@@ -78,168 +78,183 @@ public partial class RPawnVillainDollotronTutorial : BmSDK.BmScript.RPawnVillain
         where TComponent : class, Framework.IScriptComponent<RPawnVillainDollotronTutorial>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainDollotronTutorial.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmScript.RPawnVillainDollotronTutorial.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanDoFinalBlow;
     /// <summary>
     /// Function: CanDoFinalBlow
     /// </summary>
     public unsafe override bool CanDoFinalBlow()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainDollotronTutorial.CanDoFinalBlow", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanDoFinalBlow, "BmScript.RPawnVillainDollotronTutorial.CanDoFinalBlow");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_StopRiseCamera;
     /// <summary>
     /// Function: StopRiseCamera
     /// </summary>
     public unsafe virtual void StopRiseCamera()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainDollotronTutorial.StopRiseCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopRiseCamera, "BmScript.RPawnVillainDollotronTutorial.StopRiseCamera");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnFinishGettingUpFromRagdoll;
     /// <summary>
     /// Function: OnFinishGettingUpFromRagdoll
     /// </summary>
     public unsafe override void OnFinishGettingUpFromRagdoll()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainDollotronTutorial.OnFinishGettingUpFromRagdoll", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnFinishGettingUpFromRagdoll, "BmScript.RPawnVillainDollotronTutorial.OnFinishGettingUpFromRagdoll");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateCameraLook;
     /// <summary>
     /// Function: UpdateCameraLook
     /// </summary>
     public unsafe virtual void UpdateCameraLook(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainDollotronTutorial.UpdateCameraLook", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateCameraLook, "BmScript.RPawnVillainDollotronTutorial.UpdateCameraLook");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartZoomOut;
     /// <summary>
     /// Function: StartZoomOut
     /// </summary>
     public unsafe virtual void StartZoomOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainDollotronTutorial.StartZoomOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartZoomOut, "BmScript.RPawnVillainDollotronTutorial.StartZoomOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartBMLine;
     /// <summary>
     /// Function: StartBMLine
     /// </summary>
     public unsafe virtual void StartBMLine()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainDollotronTutorial.StartBMLine", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartBMLine, "BmScript.RPawnVillainDollotronTutorial.StartBMLine");
         byte* paramsPtr = stackalloc byte[116];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayRiseCamera;
     /// <summary>
     /// Function: PlayRiseCamera
     /// </summary>
     public unsafe virtual void PlayRiseCamera()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainDollotronTutorial.PlayRiseCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayRiseCamera, "BmScript.RPawnVillainDollotronTutorial.PlayRiseCamera");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RiseMyPretty;
     /// <summary>
     /// Function: RiseMyPretty
     /// </summary>
     public unsafe virtual void RiseMyPretty()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainDollotronTutorial.RiseMyPretty", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RiseMyPretty, "BmScript.RPawnVillainDollotronTutorial.RiseMyPretty");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TickLOS;
     /// <summary>
     /// Function: TickLOS
     /// </summary>
     public unsafe virtual void TickLOS()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainDollotronTutorial.TickLOS", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TickLOS, "BmScript.RPawnVillainDollotronTutorial.TickLOS");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TickDialogue;
     /// <summary>
     /// Function: TickDialogue
     /// </summary>
     public unsafe virtual void TickDialogue()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainDollotronTutorial.TickDialogue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TickDialogue, "BmScript.RPawnVillainDollotronTutorial.TickDialogue");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CheckDialogueStart;
     /// <summary>
     /// Function: CheckDialogueStart
     /// </summary>
     public unsafe virtual void CheckDialogueStart()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainDollotronTutorial.CheckDialogueStart", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckDialogueStart, "BmScript.RPawnVillainDollotronTutorial.CheckDialogueStart");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CheckLOSStart;
     /// <summary>
     /// Function: CheckLOSStart
     /// </summary>
     public unsafe virtual void CheckLOSStart()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainDollotronTutorial.CheckLOSStart", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckLOSStart, "BmScript.RPawnVillainDollotronTutorial.CheckLOSStart");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TutorialDone;
     /// <summary>
     /// Function: TutorialDone
     /// </summary>
     public unsafe virtual void TutorialDone()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainDollotronTutorial.TutorialDone", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TutorialDone, "BmScript.RPawnVillainDollotronTutorial.TutorialDone");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Died;
     /// <summary>
     /// Function: Died
     /// </summary>
     public unsafe override bool Died(BmSDK.Engine.Controller Killer, BmSDK.Class DamageType, System.Numerics.Vector3 HitLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainDollotronTutorial.Died", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Died, "BmScript.RPawnVillainDollotronTutorial.Died");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Killer, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageType, paramsPtr + 8);
@@ -248,12 +263,13 @@ public partial class RPawnVillainDollotronTutorial : BmSDK.BmScript.RPawnVillain
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_PostInitCharacter;
     /// <summary>
     /// Function: PostInitCharacter
     /// </summary>
     public unsafe override void PostInitCharacter()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainDollotronTutorial.PostInitCharacter", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostInitCharacter, "BmScript.RPawnVillainDollotronTutorial.PostInitCharacter");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

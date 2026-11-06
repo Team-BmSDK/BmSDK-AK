@@ -78,12 +78,13 @@ public partial class OnlineCustomContentRequestCacheableHydra : BmSDK.Engine.Onl
         where TComponent : class, Framework.IScriptComponent<OnlineCustomContentRequestCacheableHydra>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CacheSaveComplete;
     /// <summary>
     /// Function: CacheSaveComplete
     /// </summary>
     public unsafe virtual void CacheSaveComplete(bool p_bSaveSuccessful, BmSDK.FString CalculatedCRC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.OnlineCustomContentRequestCacheableHydra.CacheSaveComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CacheSaveComplete, "Engine.OnlineCustomContentRequestCacheableHydra.CacheSaveComplete");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(p_bSaveSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CalculatedCRC, paramsPtr + 4);
@@ -98,12 +99,13 @@ public partial class OnlineCustomContentRequestCacheableHydra : BmSDK.Engine.Onl
         return;
     }
 
+    private static BmSDK.Function __fn_CacheSaveStarted;
     /// <summary>
     /// Function: CacheSaveStarted
     /// </summary>
     public unsafe virtual void CacheSaveStarted()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.OnlineCustomContentRequestCacheableHydra.CacheSaveStarted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CacheSaveStarted, "Engine.OnlineCustomContentRequestCacheableHydra.CacheSaveStarted");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -116,12 +118,13 @@ public partial class OnlineCustomContentRequestCacheableHydra : BmSDK.Engine.Onl
         return;
     }
 
+    private static BmSDK.Function __fn_CacheLoadComplete;
     /// <summary>
     /// Function: CacheLoadComplete
     /// </summary>
     public unsafe virtual void CacheLoadComplete(bool p_bLoadComplete, bool p_bLoadSuccessful, BmSDK.FString CalculatedCRC, BmSDK.FString StoredCRC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.OnlineCustomContentRequestCacheableHydra.CacheLoadComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CacheLoadComplete, "Engine.OnlineCustomContentRequestCacheableHydra.CacheLoadComplete");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(p_bLoadComplete, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(p_bLoadSuccessful, paramsPtr + 4);
@@ -138,12 +141,13 @@ public partial class OnlineCustomContentRequestCacheableHydra : BmSDK.Engine.Onl
         return;
     }
 
+    private static BmSDK.Function __fn_CacheLoadStarted;
     /// <summary>
     /// Function: CacheLoadStarted
     /// </summary>
     public unsafe virtual void CacheLoadStarted()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.OnlineCustomContentRequestCacheableHydra.CacheLoadStarted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CacheLoadStarted, "Engine.OnlineCustomContentRequestCacheableHydra.CacheLoadStarted");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -156,12 +160,13 @@ public partial class OnlineCustomContentRequestCacheableHydra : BmSDK.Engine.Onl
         return;
     }
 
+    private static BmSDK.Function __fn_CancelCustomContentRequest;
     /// <summary>
     /// Function: CancelCustomContentRequest
     /// </summary>
     public unsafe override void CancelCustomContentRequest()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.OnlineCustomContentRequestCacheableHydra.CancelCustomContentRequest", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelCustomContentRequest, "Engine.OnlineCustomContentRequestCacheableHydra.CancelCustomContentRequest");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -174,12 +179,13 @@ public partial class OnlineCustomContentRequestCacheableHydra : BmSDK.Engine.Onl
         return;
     }
 
+    private static BmSDK.Function __fn_GetCustomContentAsString;
     /// <summary>
     /// Function: GetCustomContentAsString
     /// </summary>
     public unsafe override void GetCustomContentAsString(out BmSDK.FString ContentData)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.OnlineCustomContentRequestCacheableHydra.GetCustomContentAsString", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCustomContentAsString, "Engine.OnlineCustomContentRequestCacheableHydra.GetCustomContentAsString");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -193,12 +199,13 @@ public partial class OnlineCustomContentRequestCacheableHydra : BmSDK.Engine.Onl
         return;
     }
 
+    private static BmSDK.Function __fn_GetCustomContent;
     /// <summary>
     /// Function: GetCustomContent
     /// </summary>
     public unsafe override void GetCustomContent(out BmSDK.TArray<byte> ContentData)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.OnlineCustomContentRequestCacheableHydra.GetCustomContent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCustomContent, "Engine.OnlineCustomContentRequestCacheableHydra.GetCustomContent");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -212,12 +219,13 @@ public partial class OnlineCustomContentRequestCacheableHydra : BmSDK.Engine.Onl
         return;
     }
 
+    private static BmSDK.Function __fn_StartCustomContentRequest;
     /// <summary>
     /// Function: StartCustomContentRequest
     /// </summary>
     public unsafe override void StartCustomContentRequest(BmSDK.FString sContentName, BmSDK.FString sCustomId, System.IntPtr dRequestCustomContentComplete)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.OnlineCustomContentRequestCacheableHydra.StartCustomContentRequest", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartCustomContentRequest, "Engine.OnlineCustomContentRequestCacheableHydra.StartCustomContentRequest");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sContentName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sCustomId, paramsPtr + 16);

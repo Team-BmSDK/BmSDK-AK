@@ -78,35 +78,38 @@ public partial class RStealthTakeDownStage_BmDoubleTunnelGrateGrab : BmSDK.BmGam
         where TComponent : class, Framework.IScriptComponent<RStealthTakeDownStage_BmDoubleTunnelGrateGrab>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_StartFearTakedownFinaleCamera;
     /// <summary>
     /// Function: StartFearTakedownFinaleCamera
     /// </summary>
     public unsafe override void StartFearTakedownFinaleCamera()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RStealthTakeDownStage_BmDoubleTunnelGrateGrab.StartFearTakedownFinaleCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartFearTakedownFinaleCamera, "BmScript.RStealthTakeDownStage_BmDoubleTunnelGrateGrab.StartFearTakedownFinaleCamera");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GotoStage;
     /// <summary>
     /// Function: GotoStage
     /// </summary>
     public unsafe override void GotoStage(BmSDK.BmGame.RGameInfo.EStealthTakeDownStages NextStageClass)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RStealthTakeDownStage_BmDoubleTunnelGrateGrab.GotoStage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GotoStage, "BmScript.RStealthTakeDownStage_BmDoubleTunnelGrateGrab.GotoStage");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NextStageClass, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetReferencePosition;
     /// <summary>
     /// Function: GetReferencePosition
     /// </summary>
     public unsafe override void GetReferencePosition(out System.Numerics.Vector3 ReferencePosition, out BmSDK.Rotator ReferenceRotation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RStealthTakeDownStage_BmDoubleTunnelGrateGrab.GetReferencePosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetReferencePosition, "BmScript.RStealthTakeDownStage_BmDoubleTunnelGrateGrab.GetReferencePosition");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ReferencePosition = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);

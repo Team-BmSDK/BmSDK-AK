@@ -78,12 +78,13 @@ public partial class PhysicalMaterial : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<PhysicalMaterial>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetPhysicalMaterialProperty;
     /// <summary>
     /// Function: GetPhysicalMaterialProperty
     /// </summary>
     public unsafe virtual BmSDK.Engine.PhysicalMaterialPropertyBase GetPhysicalMaterialProperty(BmSDK.Class DesiredClass)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PhysicalMaterial.GetPhysicalMaterialProperty", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPhysicalMaterialProperty, "Engine.PhysicalMaterial.GetPhysicalMaterialProperty");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DesiredClass, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -97,12 +98,13 @@ public partial class PhysicalMaterial : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.PhysicalMaterialPropertyBase>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CalculateSlideStrength;
     /// <summary>
     /// Function: CalculateSlideStrength
     /// </summary>
     public unsafe virtual float CalculateSlideStrength(float SlideSpeed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PhysicalMaterial.CalculateSlideStrength", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculateSlideStrength, "Engine.PhysicalMaterial.CalculateSlideStrength");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SlideSpeed, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -116,12 +118,13 @@ public partial class PhysicalMaterial : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_CalculateImpactStrength;
     /// <summary>
     /// Function: CalculateImpactStrength
     /// </summary>
     public unsafe virtual float CalculateImpactStrength(float ImpactSpeed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PhysicalMaterial.CalculateImpactStrength", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculateImpactStrength, "Engine.PhysicalMaterial.CalculateImpactStrength");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ImpactSpeed, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -135,12 +138,13 @@ public partial class PhysicalMaterial : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_FindPhysEffectInfo;
     /// <summary>
     /// Function: FindPhysEffectInfo
     /// </summary>
     public unsafe virtual BmSDK.Engine.Actor.FPhysEffectInfo FindPhysEffectInfo(BmSDK.Engine.PhysicalMaterial.EPhysEffectType Type)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PhysicalMaterial.FindPhysEffectInfo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindPhysEffectInfo, "Engine.PhysicalMaterial.FindPhysEffectInfo");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Type, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

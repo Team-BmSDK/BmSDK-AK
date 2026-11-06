@@ -73,23 +73,25 @@ public partial class UISceneClient : BmSDK.Engine.UIRoot, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<UISceneClient>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_InitializeSceneClient;
     /// <summary>
     /// Function: InitializeSceneClient
     /// </summary>
     public unsafe virtual void InitializeSceneClient()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UISceneClient.InitializeSceneClient", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitializeSceneClient, "Engine.UISceneClient.InitializeSceneClient");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetInverseCanvasToScreen;
     /// <summary>
     /// Function: GetInverseCanvasToScreen
     /// </summary>
     public unsafe virtual BmSDK.GameObject.FMatrix GetInverseCanvasToScreen()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UISceneClient.GetInverseCanvasToScreen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetInverseCanvasToScreen, "Engine.UISceneClient.GetInverseCanvasToScreen");
         byte* paramsPtr = stackalloc byte[64];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -102,12 +104,13 @@ public partial class UISceneClient : BmSDK.Engine.UIRoot, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.GameObject.FMatrix>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetCanvasToScreen;
     /// <summary>
     /// Function: GetCanvasToScreen
     /// </summary>
     public unsafe virtual BmSDK.GameObject.FMatrix GetCanvasToScreen()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UISceneClient.GetCanvasToScreen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCanvasToScreen, "Engine.UISceneClient.GetCanvasToScreen");
         byte* paramsPtr = stackalloc byte[64];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -120,12 +123,13 @@ public partial class UISceneClient : BmSDK.Engine.UIRoot, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.GameObject.FMatrix>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsUIActive;
     /// <summary>
     /// Function: IsUIActive
     /// </summary>
     public unsafe virtual bool IsUIActive(int Flags = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UISceneClient.IsUIActive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsUIActive, "Engine.UISceneClient.IsUIActive");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Flags, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

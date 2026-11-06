@@ -78,12 +78,13 @@ public partial class PathTargetPoint : BmSDK.Engine.Keypoint, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<PathTargetPoint>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ShouldBeHiddenBySHOW_NavigationNodes;
     /// <summary>
     /// Function: ShouldBeHiddenBySHOW_NavigationNodes
     /// </summary>
     public unsafe override bool ShouldBeHiddenBySHOW_NavigationNodes()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PathTargetPoint.ShouldBeHiddenBySHOW_NavigationNodes", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldBeHiddenBySHOW_NavigationNodes, "Engine.PathTargetPoint.ShouldBeHiddenBySHOW_NavigationNodes");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

@@ -78,12 +78,13 @@ public partial class AkParameterName : BmSDK.Engine.AkHash, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<AkParameterName>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_MapParameterValue;
     /// <summary>
     /// Function: MapParameterValue
     /// </summary>
     public unsafe virtual float MapParameterValue(float curValue, float rangeMin = default, float rangeMax = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkParameterName.MapParameterValue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MapParameterValue, "Engine.AkParameterName.MapParameterValue");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(curValue, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(rangeMin, paramsPtr + 4);
@@ -99,12 +100,13 @@ public partial class AkParameterName : BmSDK.Engine.AkHash, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_ClampParameterValue;
     /// <summary>
     /// Function: ClampParameterValue
     /// </summary>
     public unsafe virtual float ClampParameterValue(float curValue)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkParameterName.ClampParameterValue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClampParameterValue, "Engine.AkParameterName.ClampParameterValue");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(curValue, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

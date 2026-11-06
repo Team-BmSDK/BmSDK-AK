@@ -78,12 +78,13 @@ public partial class RThreatBaseAsset : BmSDK.BmGame.RConfig, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RThreatBaseAsset>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ShouldActivate;
     /// <summary>
     /// Function: ShouldActivate
     /// </summary>
     public unsafe virtual bool ShouldActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RThreatBaseAsset.ShouldActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldActivate, "BmGame.RThreatBaseAsset.ShouldActivate");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,23 +97,25 @@ public partial class RThreatBaseAsset : BmSDK.BmGame.RConfig, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetWorldInfo;
     /// <summary>
     /// Function: GetWorldInfo
     /// </summary>
     public unsafe virtual BmSDK.Engine.WorldInfo GetWorldInfo()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RThreatBaseAsset.GetWorldInfo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWorldInfo, "BmGame.RThreatBaseAsset.GetWorldInfo");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.WorldInfo>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsDestroyed;
     /// <summary>
     /// Function: IsDestroyed
     /// </summary>
     public unsafe virtual bool IsDestroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RThreatBaseAsset.IsDestroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsDestroyed, "BmGame.RThreatBaseAsset.IsDestroyed");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -125,12 +128,13 @@ public partial class RThreatBaseAsset : BmSDK.BmGame.RConfig, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetDestroyed;
     /// <summary>
     /// Function: SetDestroyed
     /// </summary>
     public unsafe virtual void SetDestroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RThreatBaseAsset.SetDestroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDestroyed, "BmGame.RThreatBaseAsset.SetDestroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

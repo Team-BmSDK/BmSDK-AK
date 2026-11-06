@@ -78,57 +78,62 @@ public partial class RBMDeathCutscene : BmSDK.BmGame.RBMCutsceneBase, BmSDK.IGam
         where TComponent : class, Framework.IScriptComponent<RBMDeathCutscene>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_StrikeImpact;
     /// <summary>
     /// Function: StrikeImpact
     /// </summary>
     public unsafe virtual void StrikeImpact(bool bFinalImpact = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMDeathCutscene.StrikeImpact", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StrikeImpact, "BmGame.RBMDeathCutscene.StrikeImpact");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bFinalImpact, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetKillerPawnLocation;
     /// <summary>
     /// Function: GetKillerPawnLocation
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetKillerPawnLocation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMDeathCutscene.GetKillerPawnLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetKillerPawnLocation, "BmGame.RBMDeathCutscene.GetKillerPawnLocation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetKillerPawn;
     /// <summary>
     /// Function: GetKillerPawn
     /// </summary>
     public unsafe virtual BmSDK.Engine.Pawn GetKillerPawn()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMDeathCutscene.GetKillerPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetKillerPawn, "BmGame.RBMDeathCutscene.GetKillerPawn");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Pawn>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PickCamera;
     /// <summary>
     /// Function: PickCamera
     /// </summary>
     public unsafe override void PickCamera()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMDeathCutscene.PickCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PickCamera, "BmGame.RBMDeathCutscene.PickCamera");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InitialiseDeathCutscene;
     /// <summary>
     /// Function: InitialiseDeathCutscene
     /// </summary>
     public unsafe virtual void InitialiseDeathCutscene(BmSDK.BmGame.RPlayerController NewCutsceneOwner, BmSDK.BmGame.RPawn NewCutsceneTarget, BmSDK.BmGame.RPawn NewCutsceneKiller, BmSDK.BmGame.RPawnPlayerCombat.FStrikeInfo NewStrikeInfo, BmSDK.Class DeathCamClass, float NewTimeUntilImpact)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMDeathCutscene.InitialiseDeathCutscene", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitialiseDeathCutscene, "BmGame.RBMDeathCutscene.InitialiseDeathCutscene");
         byte* paramsPtr = stackalloc byte[176];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCutsceneOwner, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCutsceneTarget, paramsPtr + 8);
@@ -140,12 +145,13 @@ public partial class RBMDeathCutscene : BmSDK.BmGame.RBMCutsceneBase, BmSDK.IGam
         return;
     }
 
+    private static BmSDK.Function __fn_InitialiseBoneFollowers;
     /// <summary>
     /// Function: InitialiseBoneFollowers
     /// </summary>
     public unsafe override void InitialiseBoneFollowers(BmSDK.FName TargetBoneToFollow)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMDeathCutscene.InitialiseBoneFollowers", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitialiseBoneFollowers, "BmGame.RBMDeathCutscene.InitialiseBoneFollowers");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetBoneToFollow, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

@@ -78,23 +78,25 @@ public partial class RSeqAct_RemoveRopeFromClimbData : BmSDK.Engine.SequenceActi
         where TComponent : class, Framework.IScriptComponent<RSeqAct_RemoveRopeFromClimbData>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_RemoveRopeFromClimbData.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmGame.RSeqAct_RemoveRopeFromClimbData.Activated");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RemoveRope;
     /// <summary>
     /// Function: RemoveRope
     /// </summary>
     public unsafe virtual void RemoveRope(BmSDK.Engine.Actor RopeToRemove, System.Numerics.Vector3 RopeLoc1, System.Numerics.Vector3 RopeLoc2, int CollectionIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_RemoveRopeFromClimbData.RemoveRope", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveRope, "BmGame.RSeqAct_RemoveRopeFromClimbData.RemoveRope");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RopeToRemove, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RopeLoc1, paramsPtr + 8);

@@ -78,191 +78,208 @@ public partial class RSpecialMoveInstance_HarpoonThug : BmSDK.BmGame.RSpecialMov
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveInstance_HarpoonThug>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_StopHarpoonAim;
     /// <summary>
     /// Function: StopHarpoonAim
     /// </summary>
     public unsafe virtual void StopHarpoonAim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_HarpoonThug.StopHarpoonAim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopHarpoonAim, "BmGame.RSpecialMoveInstance_HarpoonThug.StopHarpoonAim");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetRopeRetractTime;
     /// <summary>
     /// Function: GetRopeRetractTime
     /// </summary>
     public unsafe override float GetRopeRetractTime()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_HarpoonThug.GetRopeRetractTime", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRopeRetractTime, "BmGame.RSpecialMoveInstance_HarpoonThug.GetRopeRetractTime");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Tug;
     /// <summary>
     /// Function: Tug
     /// </summary>
     public unsafe virtual void Tug()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_HarpoonThug.Tug", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tug, "BmGame.RSpecialMoveInstance_HarpoonThug.Tug");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_YankThug;
     /// <summary>
     /// Function: YankThug
     /// </summary>
     public unsafe virtual void YankThug()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_HarpoonThug.YankThug", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_YankThug, "BmGame.RSpecialMoveInstance_HarpoonThug.YankThug");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_LeftHandOn;
     /// <summary>
     /// Function: LeftHandOn
     /// </summary>
     public unsafe override void LeftHandOn()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_HarpoonThug.LeftHandOn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LeftHandOn, "BmGame.RSpecialMoveInstance_HarpoonThug.LeftHandOn");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RightHandOn;
     /// <summary>
     /// Function: RightHandOn
     /// </summary>
     public unsafe override void RightHandOn()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_HarpoonThug.RightHandOn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RightHandOn, "BmGame.RSpecialMoveInstance_HarpoonThug.RightHandOn");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ReleaseClaws;
     /// <summary>
     /// Function: ReleaseClaws
     /// </summary>
     public unsafe override void ReleaseClaws()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_HarpoonThug.ReleaseClaws", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReleaseClaws, "BmGame.RSpecialMoveInstance_HarpoonThug.ReleaseClaws");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanDoCombat;
     /// <summary>
     /// Function: CanDoCombat
     /// </summary>
     public unsafe override bool CanDoCombat(bool CheckForEvade = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_HarpoonThug.CanDoCombat", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanDoCombat, "BmGame.RSpecialMoveInstance_HarpoonThug.CanDoCombat");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckForEvade, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_DissipateChargeEnd;
     /// <summary>
     /// Function: DissipateChargeEnd
     /// </summary>
     public unsafe virtual void DissipateChargeEnd()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_HarpoonThug.DissipateChargeEnd", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DissipateChargeEnd, "BmGame.RSpecialMoveInstance_HarpoonThug.DissipateChargeEnd");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DissipateCharge;
     /// <summary>
     /// Function: DissipateCharge
     /// </summary>
     public unsafe virtual void DissipateCharge()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_HarpoonThug.DissipateCharge", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DissipateCharge, "BmGame.RSpecialMoveInstance_HarpoonThug.DissipateCharge");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ProjectileHit;
     /// <summary>
     /// Function: ProjectileHit
     /// </summary>
     public unsafe override void ProjectileHit()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_HarpoonThug.ProjectileHit", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProjectileHit, "BmGame.RSpecialMoveInstance_HarpoonThug.ProjectileHit");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CancelSpecialMove;
     /// <summary>
     /// Function: CancelSpecialMove
     /// </summary>
     public unsafe override void CancelSpecialMove(BmSDK.BmGame.RSpecialMoveConfig NextSpecialMove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_HarpoonThug.CancelSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelSpecialMove, "BmGame.RSpecialMoveInstance_HarpoonThug.CancelSpecialMove");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NextSpecialMove, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishSpecialMove;
     /// <summary>
     /// Function: FinishSpecialMove
     /// </summary>
     public unsafe override void FinishSpecialMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_HarpoonThug.FinishSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishSpecialMove, "BmGame.RSpecialMoveInstance_HarpoonThug.FinishSpecialMove");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FireBatclaw;
     /// <summary>
     /// Function: FireBatclaw
     /// </summary>
     public unsafe virtual void FireBatclaw()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_HarpoonThug.FireBatclaw", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireBatclaw, "BmGame.RSpecialMoveInstance_HarpoonThug.FireBatclaw");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateSpecialMove;
     /// <summary>
     /// Function: UpdateSpecialMove
     /// </summary>
     public unsafe override bool UpdateSpecialMove(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_HarpoonThug.UpdateSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateSpecialMove, "BmGame.RSpecialMoveInstance_HarpoonThug.UpdateSpecialMove");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetHarpoonTarget;
     /// <summary>
     /// Function: GetHarpoonTarget
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RPawnVillain GetHarpoonTarget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_HarpoonThug.GetHarpoonTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHarpoonTarget, "BmGame.RSpecialMoveInstance_HarpoonThug.GetHarpoonTarget");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetHitVillainHitReaction;
     /// <summary>
     /// Function: GetHitVillainHitReaction
     /// </summary>
     public unsafe virtual BmSDK.FName GetHitVillainHitReaction(BmSDK.Engine.AnimSet HitReactionAnimSet, bool bDisarmsThug)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_HarpoonThug.GetHitVillainHitReaction", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHitVillainHitReaction, "BmGame.RSpecialMoveInstance_HarpoonThug.GetHitVillainHitReaction");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitReactionAnimSet, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDisarmsThug, paramsPtr + 8);
@@ -277,24 +294,26 @@ public partial class RSpecialMoveInstance_HarpoonThug : BmSDK.BmGame.RSpecialMov
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_OverrideStumbleHeading;
     /// <summary>
     /// Function: OverrideStumbleHeading
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 OverrideStumbleHeading(BmSDK.BmGame.RPawnVillain Target)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_HarpoonThug.OverrideStumbleHeading", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverrideStumbleHeading, "BmGame.RSpecialMoveInstance_HarpoonThug.OverrideStumbleHeading");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_DoHarpoonDamage;
     /// <summary>
     /// Function: DoHarpoonDamage
     /// </summary>
     public unsafe virtual void DoHarpoonDamage(BmSDK.BmGame.RPawnVillain Target, bool DelayedFrozenDmg)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_HarpoonThug.DoHarpoonDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoHarpoonDamage, "BmGame.RSpecialMoveInstance_HarpoonThug.DoHarpoonDamage");
         byte* paramsPtr = stackalloc byte[284];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DelayedFrozenDmg, paramsPtr + 8);
@@ -302,12 +321,13 @@ public partial class RSpecialMoveInstance_HarpoonThug : BmSDK.BmGame.RSpecialMov
         return;
     }
 
+    private static BmSDK.Function __fn_PlayHarpoonAnim;
     /// <summary>
     /// Function: PlayHarpoonAnim
     /// </summary>
     public unsafe virtual void PlayHarpoonAnim(BmSDK.FName AnimName, bool bMirrored, bool bCanAim)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_HarpoonThug.PlayHarpoonAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayHarpoonAnim, "BmGame.RSpecialMoveInstance_HarpoonThug.PlayHarpoonAnim");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bMirrored, paramsPtr + 8);
@@ -316,23 +336,25 @@ public partial class RSpecialMoveInstance_HarpoonThug : BmSDK.BmGame.RSpecialMov
         return;
     }
 
+    private static BmSDK.Function __fn_DelayHarpoonDamage;
     /// <summary>
     /// Function: DelayHarpoonDamage
     /// </summary>
     public unsafe virtual bool DelayHarpoonDamage()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_HarpoonThug.DelayHarpoonDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DelayHarpoonDamage, "BmGame.RSpecialMoveInstance_HarpoonThug.DelayHarpoonDamage");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_TriggerSpecialMove;
     /// <summary>
     /// Function: TriggerSpecialMove
     /// </summary>
     public unsafe override void TriggerSpecialMove(BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator MoveLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_HarpoonThug.TriggerSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerSpecialMove, "BmGame.RSpecialMoveInstance_HarpoonThug.TriggerSpecialMove");
         byte* paramsPtr = stackalloc byte[188];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

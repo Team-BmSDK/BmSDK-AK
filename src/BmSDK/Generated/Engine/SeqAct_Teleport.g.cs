@@ -78,23 +78,25 @@ public partial class SeqAct_Teleport : BmSDK.Engine.SequenceAction, BmSDK.IGameO
         where TComponent : class, Framework.IScriptComponent<SeqAct_Teleport>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SeqAct_Teleport.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "Engine.SeqAct_Teleport.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDestination;
     /// <summary>
     /// Function: GetDestination
     /// </summary>
     public unsafe virtual bool GetDestination(out System.Numerics.Vector3 Loc, out BmSDK.Rotator Rot, out int bNoDestinationSet)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SeqAct_Teleport.GetDestination", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDestination, "Engine.SeqAct_Teleport.GetDestination");
         byte* paramsPtr = stackalloc byte[112];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Loc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
@@ -103,12 +105,13 @@ public partial class SeqAct_Teleport : BmSDK.Engine.SequenceAction, BmSDK.IGameO
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_GetActor;
     /// <summary>
     /// Function: GetActor
     /// </summary>
     public unsafe virtual BmSDK.Engine.Actor GetActor(BmSDK.GameObject Obj)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SeqAct_Teleport.GetActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetActor, "Engine.SeqAct_Teleport.GetActor");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Obj, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

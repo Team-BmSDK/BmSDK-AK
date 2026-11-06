@@ -78,12 +78,13 @@ public partial class PlatformInterfaceWebResponse : BmSDK.GameObject, BmSDK.IGam
         where TComponent : class, Framework.IScriptComponent<PlatformInterfaceWebResponse>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetHeaderValue;
     /// <summary>
     /// Function: GetHeaderValue
     /// </summary>
     public unsafe virtual BmSDK.FString GetHeaderValue(BmSDK.FString HeaderName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PlatformInterfaceWebResponse.GetHeaderValue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHeaderValue, "Engine.PlatformInterfaceWebResponse.GetHeaderValue");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HeaderName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -97,12 +98,13 @@ public partial class PlatformInterfaceWebResponse : BmSDK.GameObject, BmSDK.IGam
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_GetHeader;
     /// <summary>
     /// Function: GetHeader
     /// </summary>
     public unsafe virtual void GetHeader(int HeaderIndex, out BmSDK.FString Header, out BmSDK.FString Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PlatformInterfaceWebResponse.GetHeader", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHeader, "Engine.PlatformInterfaceWebResponse.GetHeader");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HeaderIndex, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -118,12 +120,13 @@ public partial class PlatformInterfaceWebResponse : BmSDK.GameObject, BmSDK.IGam
         return;
     }
 
+    private static BmSDK.Function __fn_GetNumHeaders;
     /// <summary>
     /// Function: GetNumHeaders
     /// </summary>
     public unsafe virtual int GetNumHeaders()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PlatformInterfaceWebResponse.GetNumHeaders", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNumHeaders, "Engine.PlatformInterfaceWebResponse.GetNumHeaders");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

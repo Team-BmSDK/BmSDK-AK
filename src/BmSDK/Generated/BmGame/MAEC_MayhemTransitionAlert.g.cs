@@ -78,12 +78,13 @@ public partial class MAEC_MayhemTransitionAlert : BmSDK.BmGame.RAEC_GelMineExplo
         where TComponent : class, Framework.IScriptComponent<MAEC_MayhemTransitionAlert>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_TriggerReaction;
     /// <summary>
     /// Function: TriggerReaction
     /// </summary>
     public unsafe override void TriggerReaction(System.Numerics.Vector3 ReactionCentre)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_MayhemTransitionAlert.TriggerReaction", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerReaction, "BmGame.MAEC_MayhemTransitionAlert.TriggerReaction");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReactionCentre, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

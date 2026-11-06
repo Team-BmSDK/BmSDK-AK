@@ -78,92 +78,100 @@ public partial class RPawnVillainJokerBoxer : BmSDK.BmGame.RPawnVillainJokerBoxe
         where TComponent : class, Framework.IScriptComponent<RPawnVillainJokerBoxer>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_FireClashEvent;
     /// <summary>
     /// Function: FireClashEvent
     /// </summary>
     public unsafe override void FireClashEvent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.FireClashEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireClashEvent, "BmScript.RPawnVillainJokerBoxer.FireClashEvent");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmScript.RPawnVillainJokerBoxer.Tick");
         byte* paramsPtr = stackalloc byte[136];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IncVisibleDamageLevel;
     /// <summary>
     /// Function: IncVisibleDamageLevel
     /// </summary>
     public unsafe override void IncVisibleDamageLevel(int OverrideLevel = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.IncVisibleDamageLevel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IncVisibleDamageLevel, "BmScript.RPawnVillainJokerBoxer.IncVisibleDamageLevel");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverrideLevel, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayCombatBarkTaunt;
     /// <summary>
     /// Function: PlayCombatBarkTaunt
     /// </summary>
     public unsafe override void PlayCombatBarkTaunt()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.PlayCombatBarkTaunt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayCombatBarkTaunt, "BmScript.RPawnVillainJokerBoxer.PlayCombatBarkTaunt");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanThugReact;
     /// <summary>
     /// Function: CanThugReact
     /// </summary>
     public unsafe override bool CanThugReact()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.CanThugReact", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanThugReact, "BmScript.RPawnVillainJokerBoxer.CanThugReact");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PlayHitReaction;
     /// <summary>
     /// Function: PlayHitReaction
     /// </summary>
     public unsafe override void PlayHitReaction(BmSDK.BmGame.RPawnCombat.FDamageInfo DmgInfo)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.PlayHitReaction", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayHitReaction, "BmScript.RPawnVillainJokerBoxer.PlayHitReaction");
         byte* paramsPtr = stackalloc byte[248];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DmgInfo, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnFreezeBlastDeploy;
     /// <summary>
     /// Function: OnFreezeBlastDeploy
     /// </summary>
     public unsafe override void OnFreezeBlastDeploy()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.OnFreezeBlastDeploy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnFreezeBlastDeploy, "BmScript.RPawnVillainJokerBoxer.OnFreezeBlastDeploy");
         byte* paramsPtr = stackalloc byte[248];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayDying;
     /// <summary>
     /// Function: PlayDying
     /// </summary>
     public unsafe override void PlayDying(BmSDK.Class DamageType, System.Numerics.Vector3 HitLoc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.PlayDying", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayDying, "BmScript.RPawnVillainJokerBoxer.PlayDying");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageType, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLoc, paramsPtr + 8);
@@ -171,23 +179,25 @@ public partial class RPawnVillainJokerBoxer : BmSDK.BmGame.RPawnVillainJokerBoxe
         return;
     }
 
+    private static BmSDK.Function __fn_GetRagdollClass;
     /// <summary>
     /// Function: GetRagdollClass
     /// </summary>
     public unsafe override BmSDK.Class GetRagdollClass()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.GetRagdollClass", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRagdollClass, "BmScript.RPawnVillainJokerBoxer.GetRagdollClass");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Class>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CreateRagdollWeaponConfig;
     /// <summary>
     /// Function: CreateRagdollWeaponConfig
     /// </summary>
     public unsafe override BmSDK.BmGame.RWeaponConfig CreateRagdollWeaponConfig(BmSDK.GameObject NewOwner, BmSDK.Engine.AnimSet AnimSet1, BmSDK.Engine.AnimSet AnimSet2, BmSDK.Engine.AnimSet AnimSet3 = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.CreateRagdollWeaponConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateRagdollWeaponConfig, "BmScript.RPawnVillainJokerBoxer.CreateRagdollWeaponConfig");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewOwner, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimSet1, paramsPtr + 8);
@@ -197,23 +207,25 @@ public partial class RPawnVillainJokerBoxer : BmSDK.BmGame.RPawnVillainJokerBoxe
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RWeaponConfig>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_GetFailedPairedAnimMoveAnimsetBm;
     /// <summary>
     /// Function: GetFailedPairedAnimMoveAnimsetBm
     /// </summary>
     public unsafe override BmSDK.Engine.AnimSet GetFailedPairedAnimMoveAnimsetBm()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.GetFailedPairedAnimMoveAnimsetBm", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFailedPairedAnimMoveAnimsetBm, "BmScript.RPawnVillainJokerBoxer.GetFailedPairedAnimMoveAnimsetBm");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSet>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetFailedPairedAnimMoveAnimset;
     /// <summary>
     /// Function: GetFailedPairedAnimMoveAnimset
     /// </summary>
     public unsafe override void GetFailedPairedAnimMoveAnimset(out BmSDK.Engine.AnimSet MyAnimset, BmSDK.BmGame.RPawnCombat OtherPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.GetFailedPairedAnimMoveAnimset", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFailedPairedAnimMoveAnimset, "BmScript.RPawnVillainJokerBoxer.GetFailedPairedAnimMoveAnimset");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherPawn, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -221,69 +233,75 @@ public partial class RPawnVillainJokerBoxer : BmSDK.BmGame.RPawnVillainJokerBoxe
         return;
     }
 
+    private static BmSDK.Function __fn_CreateJokerBoxerWeaponConfig;
     /// <summary>
     /// Function: CreateJokerBoxerWeaponConfig
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RWeaponConfig CreateJokerBoxerWeaponConfig(BmSDK.GameObject NewOwner)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.CreateJokerBoxerWeaponConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateJokerBoxerWeaponConfig, "BmScript.RPawnVillainJokerBoxer.CreateJokerBoxerWeaponConfig");
         byte* paramsPtr = stackalloc byte[1932];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewOwner, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RWeaponConfig>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CreateWeaponConfigUnarmed;
     /// <summary>
     /// Function: CreateWeaponConfigUnarmed
     /// </summary>
     public unsafe override BmSDK.BmGame.RWeaponConfig CreateWeaponConfigUnarmed(BmSDK.GameObject NewOwner)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.CreateWeaponConfigUnarmed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateWeaponConfigUnarmed, "BmScript.RPawnVillainJokerBoxer.CreateWeaponConfigUnarmed");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewOwner, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RWeaponConfig>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CanBeFrozen;
     /// <summary>
     /// Function: CanBeFrozen
     /// </summary>
     public unsafe override bool CanBeFrozen()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.CanBeFrozen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeFrozen, "BmScript.RPawnVillainJokerBoxer.CanBeFrozen");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetBatClawPriority;
     /// <summary>
     /// Function: GetBatClawPriority
     /// </summary>
     public unsafe override float GetBatClawPriority()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.GetBatClawPriority", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBatClawPriority, "BmScript.RPawnVillainJokerBoxer.GetBatClawPriority");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetSmokeBombReactionClass;
     /// <summary>
     /// Function: GetSmokeBombReactionClass
     /// </summary>
     public unsafe override BmSDK.Class GetSmokeBombReactionClass()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.GetSmokeBombReactionClass", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSmokeBombReactionClass, "BmScript.RPawnVillainJokerBoxer.GetSmokeBombReactionClass");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Class>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_DecHitPoint;
     /// <summary>
     /// Function: DecHitPoint
     /// </summary>
     public unsafe override void DecHitPoint(bool bDualplayMove = default, bool bCounterHit = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.DecHitPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DecHitPoint, "BmScript.RPawnVillainJokerBoxer.DecHitPoint");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDualplayMove, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bCounterHit, paramsPtr + 4);
@@ -291,35 +309,38 @@ public partial class RPawnVillainJokerBoxer : BmSDK.BmGame.RPawnVillainJokerBoxe
         return;
     }
 
+    private static BmSDK.Function __fn_SetCombatMirrored;
     /// <summary>
     /// Function: SetCombatMirrored
     /// </summary>
     public unsafe override void SetCombatMirrored()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.SetCombatMirrored", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCombatMirrored, "BmScript.RPawnVillainJokerBoxer.SetCombatMirrored");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetPossibleMoves;
     /// <summary>
     /// Function: GetPossibleMoves
     /// </summary>
     public unsafe override void GetPossibleMoves(out BmSDK.TArray<BmSDK.Class> PossibleMoves)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.GetPossibleMoves", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPossibleMoves, "BmScript.RPawnVillainJokerBoxer.GetPossibleMoves");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         PossibleMoves = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.Class>>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HasCustomTargetingMinCosAngle;
     /// <summary>
     /// Function: HasCustomTargetingMinCosAngle
     /// </summary>
     public unsafe override bool HasCustomTargetingMinCosAngle(out float OutMinCosAngle, BmSDK.Class dmgType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.HasCustomTargetingMinCosAngle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasCustomTargetingMinCosAngle, "BmScript.RPawnVillainJokerBoxer.HasCustomTargetingMinCosAngle");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -327,12 +348,13 @@ public partial class RPawnVillainJokerBoxer : BmSDK.BmGame.RPawnVillainJokerBoxe
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_GetTargetPriority;
     /// <summary>
     /// Function: GetTargetPriority
     /// </summary>
     public unsafe override float GetTargetPriority(BmSDK.BmGame.RPawnCombat Attacker, BmSDK.Class dmgType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.GetTargetPriority", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTargetPriority, "BmScript.RPawnVillainJokerBoxer.GetTargetPriority");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Attacker, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 8);
@@ -340,23 +362,25 @@ public partial class RPawnVillainJokerBoxer : BmSDK.BmGame.RPawnVillainJokerBoxe
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_CanAerialAttack;
     /// <summary>
     /// Function: CanAerialAttack
     /// </summary>
     public unsafe override bool CanAerialAttack()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.CanAerialAttack", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanAerialAttack, "BmScript.RPawnVillainJokerBoxer.CanAerialAttack");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanBeTargettedByBot;
     /// <summary>
     /// Function: CanBeTargettedByBot
     /// </summary>
     public unsafe override bool CanBeTargettedByBot(BmSDK.BmGame.RPawnPlayerCombat NewAttacker, BmSDK.Class dmgType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.CanBeTargettedByBot", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeTargettedByBot, "BmScript.RPawnVillainJokerBoxer.CanBeTargettedByBot");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAttacker, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 8);
@@ -364,48 +388,52 @@ public partial class RPawnVillainJokerBoxer : BmSDK.BmGame.RPawnVillainJokerBoxe
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_SpawnHeavyStrike;
     /// <summary>
     /// Function: SpawnHeavyStrike
     /// </summary>
     public unsafe virtual void SpawnHeavyStrike(BmSDK.BmGame.RPawnPlayerCombat PlayerPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.SpawnHeavyStrike", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnHeavyStrike, "BmScript.RPawnVillainJokerBoxer.SpawnHeavyStrike");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnOverrideDualStrike;
     /// <summary>
     /// Function: SpawnOverrideDualStrike
     /// </summary>
     public unsafe override bool SpawnOverrideDualStrike(BmSDK.BmGame.RPawnPlayerCombat PlayerPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.SpawnOverrideDualStrike", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnOverrideDualStrike, "BmScript.RPawnVillainJokerBoxer.SpawnOverrideDualStrike");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_SpawnOverrideDualTakedown;
     /// <summary>
     /// Function: SpawnOverrideDualTakedown
     /// </summary>
     public unsafe override bool SpawnOverrideDualTakedown(BmSDK.BmGame.RPawnPlayerCombat PlayerPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.SpawnOverrideDualTakedown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnOverrideDualTakedown, "BmScript.RPawnVillainJokerBoxer.SpawnOverrideDualTakedown");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_SpawnDualAttackMove;
     /// <summary>
     /// Function: SpawnDualAttackMove
     /// </summary>
     public unsafe override bool SpawnDualAttackMove(BmSDK.BmGame.RPawnPlayerCombat Grabber, BmSDK.FName InitialGrabAnim, System.Numerics.Vector3 MoveLoc, float MoveYaw, BmSDK.Engine.AnimSet JBAnimSet = default, BmSDK.Engine.AnimSet GrabberAnimSet = default, BmSDK.Engine.AnimSet AttackerAnimSet = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.SpawnDualAttackMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnDualAttackMove, "BmScript.RPawnVillainJokerBoxer.SpawnDualAttackMove");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Grabber, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InitialGrabAnim, paramsPtr + 8);
@@ -418,12 +446,13 @@ public partial class RPawnVillainJokerBoxer : BmSDK.BmGame.RPawnVillainJokerBoxe
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 56);
     }
 
+    private static BmSDK.Function __fn_GetOverrideTakedownInfo;
     /// <summary>
     /// Function: GetOverrideTakedownInfo
     /// </summary>
     public unsafe override bool GetOverrideTakedownInfo(BmSDK.BmGame.RPawnPlayerCombat Attacker, out BmSDK.BmGame.RPawnPlayerCombat.ETakedownType takedownType, out System.Numerics.Vector3 TakedownLocation, out BmSDK.Rotator TakedownRotation, out int DamageAmount)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.GetOverrideTakedownInfo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetOverrideTakedownInfo, "BmScript.RPawnVillainJokerBoxer.GetOverrideTakedownInfo");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Attacker, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -434,35 +463,38 @@ public partial class RPawnVillainJokerBoxer : BmSDK.BmGame.RPawnVillainJokerBoxe
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 40);
     }
 
+    private static BmSDK.Function __fn_IsDualPlayClashable;
     /// <summary>
     /// Function: IsDualPlayClashable
     /// </summary>
     public unsafe override bool IsDualPlayClashable()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.IsDualPlayClashable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsDualPlayClashable, "BmScript.RPawnVillainJokerBoxer.IsDualPlayClashable");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_StartBlocking;
     /// <summary>
     /// Function: StartBlocking
     /// </summary>
     public unsafe virtual void StartBlocking(BmSDK.Engine.Actor Attacker)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.StartBlocking", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartBlocking, "BmScript.RPawnVillainJokerBoxer.StartBlocking");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Attacker, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartAttackingFX;
     /// <summary>
     /// Function: StartAttackingFX
     /// </summary>
     public unsafe override void StartAttackingFX(int CTypeInt, BmSDK.BmGame.RPlayerController PC = default, BmSDK.FName OverrideBoneName = default, bool bForceShow = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.StartAttackingFX", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartAttackingFX, "BmScript.RPawnVillainJokerBoxer.StartAttackingFX");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CTypeInt, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 4);
@@ -472,24 +504,26 @@ public partial class RPawnVillainJokerBoxer : BmSDK.BmGame.RPawnVillainJokerBoxe
         return;
     }
 
+    private static BmSDK.Function __fn_CanBeStruckBy;
     /// <summary>
     /// Function: CanBeStruckBy
     /// </summary>
     public unsafe override bool CanBeStruckBy(BmSDK.BmGame.RPawnCombat Attacker)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.CanBeStruckBy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeStruckBy, "BmScript.RPawnVillainJokerBoxer.CanBeStruckBy");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Attacker, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_ModifyDamageAmount;
     /// <summary>
     /// Function: ModifyDamageAmount
     /// </summary>
     public unsafe override void ModifyDamageAmount(BmSDK.Class dmgType, out float DmgAmount)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.ModifyDamageAmount", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ModifyDamageAmount, "BmScript.RPawnVillainJokerBoxer.ModifyDamageAmount");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -497,70 +531,76 @@ public partial class RPawnVillainJokerBoxer : BmSDK.BmGame.RPawnVillainJokerBoxe
         return;
     }
 
+    private static BmSDK.Function __fn_ProcessDamagedBy;
     /// <summary>
     /// Function: ProcessDamagedBy
     /// </summary>
     public unsafe override BmSDK.BmGame.RPawnCombat.DamageResult ProcessDamagedBy(out BmSDK.BmGame.RPawnCombat.FDamageInfo DmgInfo)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.ProcessDamagedBy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProcessDamagedBy, "BmScript.RPawnVillainJokerBoxer.ProcessDamagedBy");
         byte* paramsPtr = stackalloc byte[249];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         DmgInfo = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnCombat.FDamageInfo>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnCombat.DamageResult>(paramsPtr + 248);
     }
 
+    private static BmSDK.Function __fn_CantCombo;
     /// <summary>
     /// Function: CantCombo
     /// </summary>
     public unsafe override bool CantCombo()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.CantCombo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CantCombo, "BmScript.RPawnVillainJokerBoxer.CantCombo");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanBeKilled;
     /// <summary>
     /// Function: CanBeKilled
     /// </summary>
     public unsafe virtual bool CanBeKilled(BmSDK.Class dmgType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.CanBeKilled", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeKilled, "BmScript.RPawnVillainJokerBoxer.CanBeKilled");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CanDebugKill;
     /// <summary>
     /// Function: CanDebugKill
     /// </summary>
     public unsafe override bool CanDebugKill()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.CanDebugKill", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanDebugKill, "BmScript.RPawnVillainJokerBoxer.CanDebugKill");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanBePushedBy;
     /// <summary>
     /// Function: CanBePushedBy
     /// </summary>
     public unsafe override bool CanBePushedBy(BmSDK.BmGame.RPawnVillain Pusher)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.CanBePushedBy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBePushedBy, "BmScript.RPawnVillainJokerBoxer.CanBePushedBy");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Pusher, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CanReviveOtherThug;
     /// <summary>
     /// Function: CanReviveOtherThug
     /// </summary>
     public unsafe override bool CanReviveOtherThug()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainJokerBoxer.CanReviveOtherThug", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanReviveOtherThug, "BmScript.RPawnVillainJokerBoxer.CanReviveOtherThug");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

@@ -78,12 +78,13 @@ public partial class RSecurityLaserBase : BmSDK.Engine.Actor, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RSecurityLaserBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SuccessfullyDisrupted;
     /// <summary>
     /// Function: SuccessfullyDisrupted
     /// </summary>
     public unsafe virtual void SuccessfullyDisrupted()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSecurityLaserBase.SuccessfullyDisrupted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SuccessfullyDisrupted, "BmGame.RSecurityLaserBase.SuccessfullyDisrupted");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

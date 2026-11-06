@@ -78,12 +78,13 @@ public partial class RProjectileWithRope : BmSDK.Engine.Actor, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RProjectileWithRope>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsLocationInFearGas;
     /// <summary>
     /// Function: IsLocationInFearGas
     /// </summary>
     public unsafe virtual bool IsLocationInFearGas(System.Numerics.Vector3 vTestLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RProjectileWithRope.IsLocationInFearGas", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsLocationInFearGas, "BmGame.RProjectileWithRope.IsLocationInFearGas");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(vTestLocation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -97,12 +98,13 @@ public partial class RProjectileWithRope : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_ProcessFearGasCollision;
     /// <summary>
     /// Function: ProcessFearGasCollision
     /// </summary>
     public unsafe virtual void ProcessFearGasCollision()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RProjectileWithRope.ProcessFearGasCollision", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProcessFearGasCollision, "BmGame.RProjectileWithRope.ProcessFearGasCollision");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -115,12 +117,13 @@ public partial class RProjectileWithRope : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_IsLocationAboveOcean;
     /// <summary>
     /// Function: IsLocationAboveOcean
     /// </summary>
     public unsafe virtual bool IsLocationAboveOcean(System.Numerics.Vector3 vTestLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RProjectileWithRope.IsLocationAboveOcean", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsLocationAboveOcean, "BmGame.RProjectileWithRope.IsLocationAboveOcean");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(vTestLocation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -134,12 +137,13 @@ public partial class RProjectileWithRope : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_ProcessOceanCollision;
     /// <summary>
     /// Function: ProcessOceanCollision
     /// </summary>
     public unsafe virtual void ProcessOceanCollision()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RProjectileWithRope.ProcessOceanCollision", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProcessOceanCollision, "BmGame.RProjectileWithRope.ProcessOceanCollision");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -152,137 +156,149 @@ public partial class RProjectileWithRope : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_HitFearGas;
     /// <summary>
     /// Function: HitFearGas
     /// </summary>
     public unsafe virtual void HitFearGas(System.Numerics.Vector3 vHitLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RProjectileWithRope.HitFearGas", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitFearGas, "BmGame.RProjectileWithRope.HitFearGas");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(vHitLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HitOcean;
     /// <summary>
     /// Function: HitOcean
     /// </summary>
     public unsafe virtual void HitOcean(System.Numerics.Vector3 vHitLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RProjectileWithRope.HitOcean", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitOcean, "BmGame.RProjectileWithRope.HitOcean");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(vHitLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ReachedDest;
     /// <summary>
     /// Function: ReachedDest
     /// </summary>
     public unsafe virtual void ReachedDest()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RProjectileWithRope.ReachedDest", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReachedDest, "BmGame.RProjectileWithRope.ReachedDest");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StopPhysics;
     /// <summary>
     /// Function: StopPhysics
     /// </summary>
     public unsafe virtual void StopPhysics()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RProjectileWithRope.StopPhysics", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopPhysics, "BmGame.RProjectileWithRope.StopPhysics");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartPhysics;
     /// <summary>
     /// Function: StartPhysics
     /// </summary>
     public unsafe virtual void StartPhysics()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RProjectileWithRope.StartPhysics", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartPhysics, "BmGame.RProjectileWithRope.StartPhysics");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RetractRopeForFailedGrapple;
     /// <summary>
     /// Function: RetractRopeForFailedGrapple
     /// </summary>
     public unsafe virtual void RetractRopeForFailedGrapple()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RProjectileWithRope.RetractRopeForFailedGrapple", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RetractRopeForFailedGrapple, "BmGame.RProjectileWithRope.RetractRopeForFailedGrapple");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GrappleSlip;
     /// <summary>
     /// Function: GrappleSlip
     /// </summary>
     public unsafe virtual void GrappleSlip()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RProjectileWithRope.GrappleSlip", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GrappleSlip, "BmGame.RProjectileWithRope.GrappleSlip");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DisableTickForHidden;
     /// <summary>
     /// Function: DisableTickForHidden
     /// </summary>
     public unsafe virtual void DisableTickForHidden()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RProjectileWithRope.DisableTickForHidden", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisableTickForHidden, "BmGame.RProjectileWithRope.DisableTickForHidden");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Hide;
     /// <summary>
     /// Function: Hide
     /// </summary>
     public unsafe virtual void Hide(bool NewHidden)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RProjectileWithRope.Hide", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Hide, "BmGame.RProjectileWithRope.Hide");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewHidden, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Drop;
     /// <summary>
     /// Function: Drop
     /// </summary>
     public unsafe virtual void Drop()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RProjectileWithRope.Drop", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Drop, "BmGame.RProjectileWithRope.Drop");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Fire;
     /// <summary>
     /// Function: Fire
     /// </summary>
     public unsafe virtual void Fire(System.Numerics.Vector3 To)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RProjectileWithRope.Fire", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Fire, "BmGame.RProjectileWithRope.Fire");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(To, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Initialise;
     /// <summary>
     /// Function: Initialise
     /// </summary>
     public unsafe virtual void Initialise(BmSDK.FName NewAttachToBoneName, bool bSocket = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RProjectileWithRope.Initialise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Initialise, "BmGame.RProjectileWithRope.Initialise");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAttachToBoneName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSocket, paramsPtr + 8);

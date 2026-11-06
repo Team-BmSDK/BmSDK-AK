@@ -73,81 +73,88 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         where TComponent : class, Framework.IScriptComponent<ROverworldPopulationVolume>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ResetBombThug;
     /// <summary>
     /// Function: ResetBombThug
     /// </summary>
     public unsafe virtual void ResetBombThug()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.ResetBombThug", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetBombThug, "BmGame.ROverworldPopulationVolume.ResetBombThug");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetBombThugController;
     /// <summary>
     /// Function: SetBombThugController
     /// </summary>
     public unsafe virtual void SetBombThugController(BmSDK.BmGame.RSeqAct_ActivateBombThugRiots ControllerAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.SetBombThugController", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBombThugController, "BmGame.ROverworldPopulationVolume.SetBombThugController");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanDoFlare;
     /// <summary>
     /// Function: CanDoFlare
     /// </summary>
     public unsafe virtual bool CanDoFlare()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.CanDoFlare", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanDoFlare, "BmGame.ROverworldPopulationVolume.CanDoFlare");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_DoFlare;
     /// <summary>
     /// Function: DoFlare
     /// </summary>
     public unsafe virtual void DoFlare()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.DoFlare", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoFlare, "BmGame.ROverworldPopulationVolume.DoFlare");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnDebugRunAwayThugAtLocation;
     /// <summary>
     /// Function: SpawnDebugRunAwayThugAtLocation
     /// </summary>
     public unsafe virtual void SpawnDebugRunAwayThugAtLocation(System.Numerics.Vector3 SpawnPos)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.SpawnDebugRunAwayThugAtLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnDebugRunAwayThugAtLocation, "BmGame.ROverworldPopulationVolume.SpawnDebugRunAwayThugAtLocation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnPos, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnJokers;
     /// <summary>
     /// Function: SpawnJokers
     /// </summary>
     public unsafe virtual bool SpawnJokers(int NumToSpawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.SpawnJokers", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnJokers, "BmGame.ROverworldPopulationVolume.SpawnJokers");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NumToSpawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_HasVisiblePawn;
     /// <summary>
     /// Function: HasVisiblePawn
     /// </summary>
     public unsafe virtual bool HasVisiblePawn()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.HasVisiblePawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasVisiblePawn, "BmGame.ROverworldPopulationVolume.HasVisiblePawn");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -160,12 +167,13 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsPopulationActive;
     /// <summary>
     /// Function: IsPopulationActive
     /// </summary>
     public unsafe virtual bool IsPopulationActive()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.IsPopulationActive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPopulationActive, "BmGame.ROverworldPopulationVolume.IsPopulationActive");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -178,12 +186,13 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_RioterWantsToFight;
     /// <summary>
     /// Function: RioterWantsToFight
     /// </summary>
     public unsafe virtual bool RioterWantsToFight(BmSDK.BmGame.RPawnVillain Thug, BmSDK.Engine.Actor Threat)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.RioterWantsToFight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RioterWantsToFight, "BmGame.ROverworldPopulationVolume.RioterWantsToFight");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Thug, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Threat, paramsPtr + 8);
@@ -198,92 +207,100 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_DeactivatePopulation;
     /// <summary>
     /// Function: DeactivatePopulation
     /// </summary>
     public unsafe virtual void DeactivatePopulation(bool bDueToStreamingOut = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.DeactivatePopulation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DeactivatePopulation, "BmGame.ROverworldPopulationVolume.DeactivatePopulation");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDueToStreamingOut, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ActivatePopulation;
     /// <summary>
     /// Function: ActivatePopulation
     /// </summary>
     public unsafe virtual void ActivatePopulation(int MaxPawnsAllowed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.ActivatePopulation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActivatePopulation, "BmGame.ROverworldPopulationVolume.ActivatePopulation");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxPawnsAllowed, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_KismetRevertToDynamic;
     /// <summary>
     /// Function: KismetRevertToDynamic
     /// </summary>
     public unsafe virtual void KismetRevertToDynamic()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.KismetRevertToDynamic", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_KismetRevertToDynamic, "BmGame.ROverworldPopulationVolume.KismetRevertToDynamic");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_KismetForceOff;
     /// <summary>
     /// Function: KismetForceOff
     /// </summary>
     public unsafe virtual void KismetForceOff()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.KismetForceOff", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_KismetForceOff, "BmGame.ROverworldPopulationVolume.KismetForceOff");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_KismetForceOn;
     /// <summary>
     /// Function: KismetForceOn
     /// </summary>
     public unsafe virtual void KismetForceOn(bool bEvenIfAlreadyActive)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.KismetForceOn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_KismetForceOn, "BmGame.ROverworldPopulationVolume.KismetForceOn");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bEvenIfAlreadyActive, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanRunAwayIfExhausted;
     /// <summary>
     /// Function: CanRunAwayIfExhausted
     /// </summary>
     public unsafe virtual bool CanRunAwayIfExhausted()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.CanRunAwayIfExhausted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanRunAwayIfExhausted, "BmGame.ROverworldPopulationVolume.CanRunAwayIfExhausted");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetExhausted;
     /// <summary>
     /// Function: SetExhausted
     /// </summary>
     public unsafe virtual void SetExhausted()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.SetExhausted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetExhausted, "BmGame.ROverworldPopulationVolume.SetExhausted");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FireLackOfPawnsWarning;
     /// <summary>
     /// Function: FireLackOfPawnsWarning
     /// </summary>
     public unsafe virtual bool FireLackOfPawnsWarning()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.FireLackOfPawnsWarning", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireLackOfPawnsWarning, "BmGame.ROverworldPopulationVolume.FireLackOfPawnsWarning");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -296,12 +313,13 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanBeAutoDeactivated;
     /// <summary>
     /// Function: CanBeAutoDeactivated
     /// </summary>
     public unsafe virtual bool CanBeAutoDeactivated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.CanBeAutoDeactivated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeAutoDeactivated, "BmGame.ROverworldPopulationVolume.CanBeAutoDeactivated");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -314,12 +332,13 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanBeAutoActivated;
     /// <summary>
     /// Function: CanBeAutoActivated
     /// </summary>
     public unsafe virtual bool CanBeAutoActivated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.CanBeAutoActivated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeAutoActivated, "BmGame.ROverworldPopulationVolume.CanBeAutoActivated");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -332,103 +351,112 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_OnToggle;
     /// <summary>
     /// Function: OnToggle
     /// </summary>
     public unsafe override void OnToggle(BmSDK.Engine.SeqAct_Toggle Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.OnToggle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggle, "BmGame.ROverworldPopulationVolume.OnToggle");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.PreStreamOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmGame.ROverworldPopulationVolume.PreStreamOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmGame.ROverworldPopulationVolume.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ForceRioterToFlee;
     /// <summary>
     /// Function: ForceRioterToFlee
     /// </summary>
     public unsafe virtual void ForceRioterToFlee(BmSDK.BmGame.RBMPawnAI CurrPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.ForceRioterToFlee", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForceRioterToFlee, "BmGame.ROverworldPopulationVolume.ForceRioterToFlee");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CurrPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ForceAllToFlee;
     /// <summary>
     /// Function: ForceAllToFlee
     /// </summary>
     public unsafe virtual void ForceAllToFlee()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.ForceAllToFlee", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForceAllToFlee, "BmGame.ROverworldPopulationVolume.ForceAllToFlee");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ThugInRiotDamagedByBatman;
     /// <summary>
     /// Function: ThugInRiotDamagedByBatman
     /// </summary>
     public unsafe virtual void ThugInRiotDamagedByBatman(BmSDK.Engine.Actor Attacker)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.ThugInRiotDamagedByBatman", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ThugInRiotDamagedByBatman, "BmGame.ROverworldPopulationVolume.ThugInRiotDamagedByBatman");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Attacker, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateActivationBasedOnObjective;
     /// <summary>
     /// Function: UpdateActivationBasedOnObjective
     /// </summary>
     public unsafe virtual void UpdateActivationBasedOnObjective()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.UpdateActivationBasedOnObjective", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateActivationBasedOnObjective, "BmGame.ROverworldPopulationVolume.UpdateActivationBasedOnObjective");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_WarnAboutNoPoints;
     /// <summary>
     /// Function: WarnAboutNoPoints
     /// </summary>
     public unsafe virtual void WarnAboutNoPoints()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.WarnAboutNoPoints", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WarnAboutNoPoints, "BmGame.ROverworldPopulationVolume.WarnAboutNoPoints");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShouldBeForcedOnByObjective;
     /// <summary>
     /// Function: ShouldBeForcedOnByObjective
     /// </summary>
     public unsafe virtual bool ShouldBeForcedOnByObjective()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.ShouldBeForcedOnByObjective", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldBeForcedOnByObjective, "BmGame.ROverworldPopulationVolume.ShouldBeForcedOnByObjective");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -441,46 +469,50 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.ROverworldPopulationVolume.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_WarnRiotZoneAboutBreakLevel;
     /// <summary>
     /// Function: WarnRiotZoneAboutBreakLevel
     /// </summary>
     public unsafe virtual void WarnRiotZoneAboutBreakLevel()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.WarnRiotZoneAboutBreakLevel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WarnRiotZoneAboutBreakLevel, "BmGame.ROverworldPopulationVolume.WarnRiotZoneAboutBreakLevel");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RioterFleeing;
     /// <summary>
     /// Function: RioterFleeing
     /// </summary>
     public unsafe virtual void RioterFleeing(BmSDK.BmGame.RBMPawnAI FleePawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.RioterFleeing", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RioterFleeing, "BmGame.ROverworldPopulationVolume.RioterFleeing");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FleePawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnBehaviour;
     /// <summary>
     /// Function: SpawnBehaviour
     /// </summary>
     public unsafe virtual void SpawnBehaviour(BmSDK.BmGame.RBMAIController AICont, BmSDK.Class behav)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.SpawnBehaviour", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnBehaviour, "BmGame.ROverworldPopulationVolume.SpawnBehaviour");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AICont, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(behav, paramsPtr + 8);
@@ -488,12 +520,13 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnLonePawn;
     /// <summary>
     /// Function: SpawnLonePawn
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RPawn SpawnLonePawn(BmSDK.BmGame.RGangInteractPointBase SuggestedSpawnPoint, bool bWeaponThug)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.SpawnLonePawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnLonePawn, "BmGame.ROverworldPopulationVolume.SpawnLonePawn");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SuggestedSpawnPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWeaponThug, paramsPtr + 8);
@@ -508,12 +541,13 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawn>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_GetRiotZoneThreatActor;
     /// <summary>
     /// Function: GetRiotZoneThreatActor
     /// </summary>
     public unsafe virtual BmSDK.Engine.Actor GetRiotZoneThreatActor()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.GetRiotZoneThreatActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRiotZoneThreatActor, "BmGame.ROverworldPopulationVolume.GetRiotZoneThreatActor");
         byte* paramsPtr = stackalloc byte[8];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -526,12 +560,13 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ForceRiotZoneThreatActor;
     /// <summary>
     /// Function: ForceRiotZoneThreatActor
     /// </summary>
     public unsafe virtual void ForceRiotZoneThreatActor(BmSDK.Engine.Actor NewThreatActor)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.ForceRiotZoneThreatActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForceRiotZoneThreatActor, "BmGame.ROverworldPopulationVolume.ForceRiotZoneThreatActor");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewThreatActor, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -545,12 +580,13 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateRiotZoneThreatActor;
     /// <summary>
     /// Function: UpdateRiotZoneThreatActor
     /// </summary>
     public unsafe virtual void UpdateRiotZoneThreatActor(BmSDK.Engine.Actor ForcedThreatActor)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.UpdateRiotZoneThreatActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateRiotZoneThreatActor, "BmGame.ROverworldPopulationVolume.UpdateRiotZoneThreatActor");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ForcedThreatActor, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -564,12 +600,13 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_PassivePointsNeedPartners;
     /// <summary>
     /// Function: PassivePointsNeedPartners
     /// </summary>
     public unsafe virtual bool PassivePointsNeedPartners(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.PassivePointsNeedPartners", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PassivePointsNeedPartners, "BmGame.ROverworldPopulationVolume.PassivePointsNeedPartners");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -583,12 +620,13 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_UpdatePawns;
     /// <summary>
     /// Function: UpdatePawns
     /// </summary>
     public unsafe virtual bool UpdatePawns(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.UpdatePawns", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdatePawns, "BmGame.ROverworldPopulationVolume.UpdatePawns");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -602,12 +640,13 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_ShouldSpawnAnotherPawn;
     /// <summary>
     /// Function: ShouldSpawnAnotherPawn
     /// </summary>
     public unsafe virtual bool ShouldSpawnAnotherPawn(out int bPassivePointsNeedPartners)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.ShouldSpawnAnotherPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldSpawnAnotherPawn, "BmGame.ROverworldPopulationVolume.ShouldSpawnAnotherPawn");
         byte* paramsPtr = stackalloc byte[8];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -621,12 +660,13 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_UpdateVolume;
     /// <summary>
     /// Function: UpdateVolume
     /// </summary>
     public unsafe virtual bool UpdateVolume(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.UpdateVolume", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateVolume, "BmGame.ROverworldPopulationVolume.UpdateVolume");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -640,23 +680,25 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetFleePressPoints;
     /// <summary>
     /// Function: GetFleePressPoints
     /// </summary>
     public unsafe virtual BmSDK.TArray<BmSDK.BmGame.RGangFleePressPointBase> GetFleePressPoints()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.GetFleePressPoints", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFleePressPoints, "BmGame.ROverworldPopulationVolume.GetFleePressPoints");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.BmGame.RGangFleePressPointBase>>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GenerateFleePressPoints;
     /// <summary>
     /// Function: GenerateFleePressPoints
     /// </summary>
     public unsafe virtual void GenerateFleePressPoints()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.GenerateFleePressPoints", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GenerateFleePressPoints, "BmGame.ROverworldPopulationVolume.GenerateFleePressPoints");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -669,12 +711,13 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_FindObjectEndPoint;
     /// <summary>
     /// Function: FindObjectEndPoint
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RGangInteractPointBase FindObjectEndPoint(BmSDK.BmGame.RGangInteractPointBase.ObjectPickupTypes ObjectPickupType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.FindObjectEndPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindObjectEndPoint, "BmGame.ROverworldPopulationVolume.FindObjectEndPoint");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ObjectPickupType, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -688,12 +731,13 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGangInteractPointBase>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_TestSpawnPoint;
     /// <summary>
     /// Function: TestSpawnPoint
     /// </summary>
     public unsafe virtual bool TestSpawnPoint(BmSDK.BmGame.RGangInteractPointBase _TestSpawnPoint, out System.Numerics.Vector3 SpawnLoc, System.Numerics.Vector3 CameraLocation, System.Numerics.Vector3 CameraDirection, out int WasExpensiveTest, bool bIgnoreProximityTest, BmSDK.FName WeaponName, bool bSkipInUseCheck = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.TestSpawnPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TestSpawnPoint, "BmGame.ROverworldPopulationVolume.TestSpawnPoint");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_TestSpawnPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CameraLocation, paramsPtr + 20);
@@ -714,12 +758,13 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 64);
     }
 
+    private static BmSDK.Function __fn_FindSingleSpawnPoint;
     /// <summary>
     /// Function: FindSingleSpawnPoint
     /// </summary>
     public unsafe virtual BmSDK.Engine.Actor FindSingleSpawnPoint(out System.Numerics.Vector3 SpawnLoc, bool bPassiveOnly, BmSDK.FName WeaponName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.FindSingleSpawnPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindSingleSpawnPoint, "BmGame.ROverworldPopulationVolume.FindSingleSpawnPoint");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bPassiveOnly, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WeaponName, paramsPtr + 16);
@@ -735,12 +780,13 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_SpawnLinkBehaviour;
     /// <summary>
     /// Function: SpawnLinkBehaviour
     /// </summary>
     public unsafe virtual void SpawnLinkBehaviour(BmSDK.BmGame.RPawn TestPawn, BmSDK.BmGame.RGangInteractPointBase DestinationActor)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.SpawnLinkBehaviour", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnLinkBehaviour, "BmGame.ROverworldPopulationVolume.SpawnLinkBehaviour");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DestinationActor, paramsPtr + 8);
@@ -748,12 +794,13 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_FindNewPointOfInterest;
     /// <summary>
     /// Function: FindNewPointOfInterest
     /// </summary>
     public unsafe virtual bool FindNewPointOfInterest(BmSDK.BmGame.RBMPawnAI TestPawn, bool bSkipSpeedTest, bool bSkipAngleCheck, BmSDK.BmGame.RGangInteractPointBase SuggestPoint)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.FindNewPointOfInterest", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindNewPointOfInterest, "BmGame.ROverworldPopulationVolume.FindNewPointOfInterest");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSkipSpeedTest, paramsPtr + 8);
@@ -770,12 +817,13 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_SpawnPawn;
     /// <summary>
     /// Function: SpawnPawn
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RPawn SpawnPawn(BmSDK.Class NewPawnClass, BmSDK.BmGame.RCharacterDefine CharacterDefine, BmSDK.Class CharacterType, BmSDK.Class NewWeaponClass, BmSDK.Engine.Actor SpawnActor, System.Numerics.Vector3 NewSpawnPoint, BmSDK.Rotator NewSpawnRotation = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.SpawnPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnPawn, "BmGame.ROverworldPopulationVolume.SpawnPawn");
         byte* paramsPtr = stackalloc byte[72];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPawnClass, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CharacterDefine, paramsPtr + 8);
@@ -795,12 +843,13 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawn>(paramsPtr + 64);
     }
 
+    private static BmSDK.Function __fn_StopWalla;
     /// <summary>
     /// Function: StopWalla
     /// </summary>
     public unsafe virtual void StopWalla()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.StopWalla", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopWalla, "BmGame.ROverworldPopulationVolume.StopWalla");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -813,12 +862,13 @@ public partial class ROverworldPopulationVolume : BmSDK.Engine.Volume, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_StartWalla;
     /// <summary>
     /// Function: StartWalla
     /// </summary>
     public unsafe virtual void StartWalla()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROverworldPopulationVolume.StartWalla", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartWalla, "BmGame.ROverworldPopulationVolume.StartWalla");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

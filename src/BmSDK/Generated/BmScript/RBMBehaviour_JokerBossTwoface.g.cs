@@ -78,100 +78,109 @@ public partial class RBMBehaviour_JokerBossTwoface : BmSDK.BmGame.RBMBehaviour, 
         where TComponent : class, Framework.IScriptComponent<RBMBehaviour_JokerBossTwoface>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_EndCameraZoom;
     /// <summary>
     /// Function: EndCameraZoom
     /// </summary>
     public unsafe virtual void EndCameraZoom()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_JokerBossTwoface.EndCameraZoom", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EndCameraZoom, "BmScript.RBMBehaviour_JokerBossTwoface.EndCameraZoom");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AllowShootInZoom;
     /// <summary>
     /// Function: AllowShootInZoom
     /// </summary>
     public unsafe virtual void AllowShootInZoom()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_JokerBossTwoface.AllowShootInZoom", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowShootInZoom, "BmScript.RBMBehaviour_JokerBossTwoface.AllowShootInZoom");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartCameraZoom;
     /// <summary>
     /// Function: StartCameraZoom
     /// </summary>
     public unsafe virtual void StartCameraZoom()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_JokerBossTwoface.StartCameraZoom", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartCameraZoom, "BmScript.RBMBehaviour_JokerBossTwoface.StartCameraZoom");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShotJoker;
     /// <summary>
     /// Function: ShotJoker
     /// </summary>
     public unsafe virtual void ShotJoker()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_JokerBossTwoface.ShotJoker", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShotJoker, "BmScript.RBMBehaviour_JokerBossTwoface.ShotJoker");
         byte* paramsPtr = stackalloc byte[196];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShotByJoker;
     /// <summary>
     /// Function: ShotByJoker
     /// </summary>
     public unsafe virtual void ShotByJoker()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_JokerBossTwoface.ShotByJoker", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShotByJoker, "BmScript.RBMBehaviour_JokerBossTwoface.ShotByJoker");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_JokerGunFired;
     /// <summary>
     /// Function: JokerGunFired
     /// </summary>
     public unsafe virtual void JokerGunFired()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_JokerBossTwoface.JokerGunFired", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_JokerGunFired, "BmScript.RBMBehaviour_JokerBossTwoface.JokerGunFired");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanSeeJoker;
     /// <summary>
     /// Function: CanSeeJoker
     /// </summary>
     public unsafe virtual bool CanSeeJoker()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_JokerBossTwoface.CanSeeJoker", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanSeeJoker, "BmScript.RBMBehaviour_JokerBossTwoface.CanSeeJoker");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_TwoFaceTalkingOver;
     /// <summary>
     /// Function: TwoFaceTalkingOver
     /// </summary>
     public unsafe virtual void TwoFaceTalkingOver()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_JokerBossTwoface.TwoFaceTalkingOver", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TwoFaceTalkingOver, "BmScript.RBMBehaviour_JokerBossTwoface.TwoFaceTalkingOver");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetJokerDist;
     /// <summary>
     /// Function: GetJokerDist
     /// </summary>
     public unsafe virtual float GetJokerDist()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_JokerBossTwoface.GetJokerDist", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetJokerDist, "BmScript.RBMBehaviour_JokerBossTwoface.GetJokerDist");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);

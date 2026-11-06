@@ -78,12 +78,13 @@ public partial class NavMeshGoal_ClosestActorInList : BmSDK.Engine.NavMeshPathGo
         where TComponent : class, Framework.IScriptComponent<NavMeshGoal_ClosestActorInList>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_RecycleInternal;
     /// <summary>
     /// Function: RecycleInternal
     /// </summary>
     public unsafe virtual void RecycleInternal()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavMeshGoal_ClosestActorInList.RecycleInternal", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RecycleInternal, "Engine.NavMeshGoal_ClosestActorInList.RecycleInternal");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,23 +97,25 @@ public partial class NavMeshGoal_ClosestActorInList : BmSDK.Engine.NavMeshPathGo
         return;
     }
 
+    private static BmSDK.Function __fn_Recycle;
     /// <summary>
     /// Function: Recycle
     /// </summary>
     public unsafe override void Recycle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavMeshGoal_ClosestActorInList.Recycle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Recycle, "Engine.NavMeshGoal_ClosestActorInList.Recycle");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ClosestActorInList;
     /// <summary>
     /// Function: ClosestActorInList
     /// </summary>
     public unsafe static BmSDK.Engine.NavMeshGoal_ClosestActorInList ClosestActorInList(BmSDK.Engine.NavigationHandle NavHandle, out BmSDK.TArray<BmSDK.Engine.NavMeshPathGoalEvaluator.FBiasedGoalActor> InGoalList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavMeshGoal_ClosestActorInList.ClosestActorInList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClosestActorInList, "Engine.NavMeshGoal_ClosestActorInList.ClosestActorInList");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NavHandle, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

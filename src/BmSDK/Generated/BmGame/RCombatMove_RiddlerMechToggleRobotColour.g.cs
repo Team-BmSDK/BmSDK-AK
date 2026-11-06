@@ -78,79 +78,86 @@ public partial class RCombatMove_RiddlerMechToggleRobotColour : BmSDK.BmGame.RCo
         where TComponent : class, Framework.IScriptComponent<RCombatMove_RiddlerMechToggleRobotColour>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ExitMove;
     /// <summary>
     /// Function: ExitMove
     /// </summary>
     public unsafe override void ExitMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_RiddlerMechToggleRobotColour.ExitMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ExitMove, "BmGame.RCombatMove_RiddlerMechToggleRobotColour.ExitMove");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ExitMoveForPawn;
     /// <summary>
     /// Function: ExitMoveForPawn
     /// </summary>
     public unsafe override void ExitMoveForPawn(BmSDK.BmGame.RPawnCombat PawnToExit)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_RiddlerMechToggleRobotColour.ExitMoveForPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ExitMoveForPawn, "BmGame.RCombatMove_RiddlerMechToggleRobotColour.ExitMoveForPawn");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PawnToExit, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Initialise;
     /// <summary>
     /// Function: Initialise
     /// </summary>
     public unsafe override void Initialise()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_RiddlerMechToggleRobotColour.Initialise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Initialise, "BmGame.RCombatMove_RiddlerMechToggleRobotColour.Initialise");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RobotFloorFx;
     /// <summary>
     /// Function: RobotFloorFx
     /// </summary>
     public unsafe virtual void RobotFloorFx()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_RiddlerMechToggleRobotColour.RobotFloorFx", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RobotFloorFx, "BmGame.RCombatMove_RiddlerMechToggleRobotColour.RobotFloorFx");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ToggleColour;
     /// <summary>
     /// Function: ToggleColour
     /// </summary>
     public unsafe virtual void ToggleColour()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_RiddlerMechToggleRobotColour.ToggleColour", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ToggleColour, "BmGame.RCombatMove_RiddlerMechToggleRobotColour.ToggleColour");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinaliseRobotColour;
     /// <summary>
     /// Function: FinaliseRobotColour
     /// </summary>
     public unsafe virtual void FinaliseRobotColour()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_RiddlerMechToggleRobotColour.FinaliseRobotColour", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinaliseRobotColour, "BmGame.RCombatMove_RiddlerMechToggleRobotColour.FinaliseRobotColour");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TurnOnLights;
     /// <summary>
     /// Function: TurnOnLights
     /// </summary>
     public unsafe virtual void TurnOnLights()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_RiddlerMechToggleRobotColour.TurnOnLights", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TurnOnLights, "BmGame.RCombatMove_RiddlerMechToggleRobotColour.TurnOnLights");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

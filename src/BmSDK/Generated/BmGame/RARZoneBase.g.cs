@@ -78,12 +78,13 @@ public partial class RARZoneBase : BmSDK.BmGame.RDummyTarget, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RARZoneBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetFlashFrame;
     /// <summary>
     /// Function: GetFlashFrame
     /// </summary>
     public unsafe virtual int GetFlashFrame()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RARZoneBase.GetFlashFrame", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFlashFrame, "BmGame.RARZoneBase.GetFlashFrame");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);

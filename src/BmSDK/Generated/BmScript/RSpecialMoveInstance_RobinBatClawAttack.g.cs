@@ -78,23 +78,25 @@ public partial class RSpecialMoveInstance_RobinBatClawAttack : BmSDK.BmGame.RSpe
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveInstance_RobinBatClawAttack>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_TakeDownVillain;
     /// <summary>
     /// Function: TakeDownVillain
     /// </summary>
     public unsafe virtual void TakeDownVillain()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_RobinBatClawAttack.TakeDownVillain", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TakeDownVillain, "BmScript.RSpecialMoveInstance_RobinBatClawAttack.TakeDownVillain");
         byte* paramsPtr = stackalloc byte[257];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SpecificVillainBlocks;
     /// <summary>
     /// Function: SpecificVillainBlocks
     /// </summary>
     public unsafe virtual bool SpecificVillainBlocks(BmSDK.BmGame.RPawnVillain Villain, bool FromRear, bool AlwaysBlockIfShield)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_RobinBatClawAttack.SpecificVillainBlocks", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpecificVillainBlocks, "BmScript.RSpecialMoveInstance_RobinBatClawAttack.SpecificVillainBlocks");
         byte* paramsPtr = stackalloc byte[268];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Villain, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FromRear, paramsPtr + 8);
@@ -103,45 +105,49 @@ public partial class RSpecialMoveInstance_RobinBatClawAttack : BmSDK.BmGame.RSpe
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_VillainBlocks;
     /// <summary>
     /// Function: VillainBlocks
     /// </summary>
     public unsafe virtual void VillainBlocks()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_RobinBatClawAttack.VillainBlocks", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_VillainBlocks, "BmScript.RSpecialMoveInstance_RobinBatClawAttack.VillainBlocks");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_MakeVillainStumble;
     /// <summary>
     /// Function: MakeVillainStumble
     /// </summary>
     public unsafe virtual void MakeVillainStumble()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_RobinBatClawAttack.MakeVillainStumble", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MakeVillainStumble, "BmScript.RSpecialMoveInstance_RobinBatClawAttack.MakeVillainStumble");
         byte* paramsPtr = stackalloc byte[264];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_MakeVillainStumbleShortRange;
     /// <summary>
     /// Function: MakeVillainStumbleShortRange
     /// </summary>
     public unsafe virtual void MakeVillainStumbleShortRange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_RobinBatClawAttack.MakeVillainStumbleShortRange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MakeVillainStumbleShortRange, "BmScript.RSpecialMoveInstance_RobinBatClawAttack.MakeVillainStumbleShortRange");
         byte* paramsPtr = stackalloc byte[256];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyBump;
     /// <summary>
     /// Function: NotifyBump
     /// </summary>
     public unsafe override void NotifyBump(BmSDK.Engine.Actor Other, System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_RobinBatClawAttack.NotifyBump", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyBump, "BmScript.RSpecialMoveInstance_RobinBatClawAttack.NotifyBump");
         byte* paramsPtr = stackalloc byte[280];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 8);
@@ -149,35 +155,38 @@ public partial class RSpecialMoveInstance_RobinBatClawAttack : BmSDK.BmGame.RSpe
         return;
     }
 
+    private static BmSDK.Function __fn_CancelSpecialMove;
     /// <summary>
     /// Function: CancelSpecialMove
     /// </summary>
     public unsafe override void CancelSpecialMove(BmSDK.BmGame.RSpecialMoveConfig NextSpecialMove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_RobinBatClawAttack.CancelSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelSpecialMove, "BmScript.RSpecialMoveInstance_RobinBatClawAttack.CancelSpecialMove");
         byte* paramsPtr = stackalloc byte[268];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NextSpecialMove, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishSpecialMove;
     /// <summary>
     /// Function: FinishSpecialMove
     /// </summary>
     public unsafe override void FinishSpecialMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_RobinBatClawAttack.FinishSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishSpecialMove, "BmScript.RSpecialMoveInstance_RobinBatClawAttack.FinishSpecialMove");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerSpecialMove;
     /// <summary>
     /// Function: TriggerSpecialMove
     /// </summary>
     public unsafe override void TriggerSpecialMove(BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator Loc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_RobinBatClawAttack.TriggerSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerSpecialMove, "BmScript.RSpecialMoveInstance_RobinBatClawAttack.TriggerSpecialMove");
         byte* paramsPtr = stackalloc byte[132];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

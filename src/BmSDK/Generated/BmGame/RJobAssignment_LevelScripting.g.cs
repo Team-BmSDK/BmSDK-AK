@@ -78,24 +78,26 @@ public partial class RJobAssignment_LevelScripting : BmSDK.BmGame.RJobAssignment
         where TComponent : class, Framework.IScriptComponent<RJobAssignment_LevelScripting>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_LevelScriptRootIsActive;
     /// <summary>
     /// Function: LevelScriptRootIsActive
     /// </summary>
     public unsafe virtual bool LevelScriptRootIsActive(BmSDK.BmGame.RSeqEvent_LevelScripting TestRoot)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJobAssignment_LevelScripting.LevelScriptRootIsActive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LevelScriptRootIsActive, "BmGame.RJobAssignment_LevelScripting.LevelScriptRootIsActive");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestRoot, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CanJoinScripting;
     /// <summary>
     /// Function: CanJoinScripting
     /// </summary>
     public unsafe virtual bool CanJoinScripting(BmSDK.BmGame.RBMRoomAIState RoomState, BmSDK.BmGame.RBMAIController ThugCon = default, BmSDK.GameObject AssignTarget = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJobAssignment_LevelScripting.CanJoinScripting", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanJoinScripting, "BmGame.RJobAssignment_LevelScripting.CanJoinScripting");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RoomState, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThugCon, paramsPtr + 8);
@@ -104,12 +106,13 @@ public partial class RJobAssignment_LevelScripting : BmSDK.BmGame.RJobAssignment
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_DoAssignment;
     /// <summary>
     /// Function: DoAssignment
     /// </summary>
     public unsafe override void DoAssignment(BmSDK.BmGame.RBMRoomAIState RoomState, BmSDK.BmGame.RBMAIController ThugCon, BmSDK.GameObject AssignTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJobAssignment_LevelScripting.DoAssignment", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoAssignment, "BmGame.RJobAssignment_LevelScripting.DoAssignment");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RoomState, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThugCon, paramsPtr + 8);
@@ -118,12 +121,13 @@ public partial class RJobAssignment_LevelScripting : BmSDK.BmGame.RJobAssignment
         return;
     }
 
+    private static BmSDK.Function __fn_CanBeAssigned;
     /// <summary>
     /// Function: CanBeAssigned
     /// </summary>
     public unsafe override bool CanBeAssigned(BmSDK.BmGame.RBMRoomAIState RoomState, BmSDK.BmGame.RBMAIController ThugCon, BmSDK.GameObject AssignTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJobAssignment_LevelScripting.CanBeAssigned", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeAssigned, "BmGame.RJobAssignment_LevelScripting.CanBeAssigned");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RoomState, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThugCon, paramsPtr + 8);
@@ -132,24 +136,26 @@ public partial class RJobAssignment_LevelScripting : BmSDK.BmGame.RJobAssignment
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_IsAlreadyDoingJob;
     /// <summary>
     /// Function: IsAlreadyDoingJob
     /// </summary>
     public unsafe override bool IsAlreadyDoingJob(BmSDK.BmGame.RBMAIController TestCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJobAssignment_LevelScripting.IsAlreadyDoingJob", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAlreadyDoingJob, "BmGame.RJobAssignment_LevelScripting.IsAlreadyDoingJob");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_AddToDestList;
     /// <summary>
     /// Function: AddToDestList
     /// </summary>
     public unsafe override void AddToDestList(BmSDK.BmGame.RBMRoomAIState RoomState, out BmSDK.TArray<BmSDK.BmGame.RAEC_LevelScripting.FSearchTarget> OutList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RJobAssignment_LevelScripting.AddToDestList", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddToDestList, "BmGame.RJobAssignment_LevelScripting.AddToDestList");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RoomState, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

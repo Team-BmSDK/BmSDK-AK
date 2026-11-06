@@ -78,12 +78,13 @@ public partial class RSuperRECGeneratorBase : BmSDK.Engine.Actor, BmSDK.IGameObj
         where TComponent : class, Framework.IScriptComponent<RSuperRECGeneratorBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_HitByREC;
     /// <summary>
     /// Function: HitByREC
     /// </summary>
     public unsafe virtual void HitByREC(System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 Momentum, BmSDK.BmGame.RMagneticBlast.MBImpulseType HitType, BmSDK.Engine.Controller InstigatedBy)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSuperRECGeneratorBase.HitByREC", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitByREC, "BmGame.RSuperRECGeneratorBase.HitByREC");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Momentum, paramsPtr + 12);

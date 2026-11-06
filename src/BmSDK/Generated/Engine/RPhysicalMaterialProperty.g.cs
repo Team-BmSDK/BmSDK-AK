@@ -78,12 +78,13 @@ public partial class RPhysicalMaterialProperty : BmSDK.Engine.PhysicalMaterialPr
         where TComponent : class, Framework.IScriptComponent<RPhysicalMaterialProperty>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SpawnActualHitEffect;
     /// <summary>
     /// Function: SpawnActualHitEffect
     /// </summary>
     public unsafe static void SpawnActualHitEffect(BmSDK.Engine.Actor.FImpactInfo Impact, BmSDK.Engine.RPhysicalMaterialProperty.FImpactEffectInfo PhysImpactInfo, BmSDK.Engine.AkEvent ImpactSound, bool bPlaySound = default, float Wetness = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RPhysicalMaterialProperty.SpawnActualHitEffect", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnActualHitEffect, "Engine.RPhysicalMaterialProperty.SpawnActualHitEffect");
         byte* paramsPtr = stackalloc byte[268];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Impact, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PhysImpactInfo, paramsPtr + 96);
@@ -94,12 +95,13 @@ public partial class RPhysicalMaterialProperty : BmSDK.Engine.PhysicalMaterialPr
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnHitEffect;
     /// <summary>
     /// Function: SpawnHitEffect
     /// </summary>
     public unsafe virtual void SpawnHitEffect(BmSDK.Engine.Actor.FImpactInfo Impact, BmSDK.Engine.RPhysicalMaterialProperty.EPhysMaterialImpactTypes ImpactType, BmSDK.Engine.AkEvent ImpactSound, bool bPlaySound = default, float Wetness = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RPhysicalMaterialProperty.SpawnHitEffect", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnHitEffect, "Engine.RPhysicalMaterialProperty.SpawnHitEffect");
         byte* paramsPtr = stackalloc byte[360];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Impact, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ImpactType, paramsPtr + 96);
@@ -110,12 +112,13 @@ public partial class RPhysicalMaterialProperty : BmSDK.Engine.PhysicalMaterialPr
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnHitDefaultEffect;
     /// <summary>
     /// Function: SpawnHitDefaultEffect
     /// </summary>
     public unsafe static void SpawnHitDefaultEffect(BmSDK.Engine.Actor.FImpactInfo Impact, BmSDK.Engine.RPhysicalMaterialProperty.EPhysMaterialImpactTypes ImpactType, BmSDK.Engine.AkEvent SoundImpact, bool bPlaySound = default, float Wetness = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RPhysicalMaterialProperty.SpawnHitDefaultEffect", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnHitDefaultEffect, "Engine.RPhysicalMaterialProperty.SpawnHitDefaultEffect");
         byte* paramsPtr = stackalloc byte[124];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Impact, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ImpactType, paramsPtr + 96);
@@ -126,12 +129,13 @@ public partial class RPhysicalMaterialProperty : BmSDK.Engine.PhysicalMaterialPr
         return;
     }
 
+    private static BmSDK.Function __fn_HitEffectParticleSystemFinished;
     /// <summary>
     /// Function: HitEffectParticleSystemFinished
     /// </summary>
     public unsafe virtual void HitEffectParticleSystemFinished(BmSDK.Engine.ParticleSystemComponent PSC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RPhysicalMaterialProperty.HitEffectParticleSystemFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitEffectParticleSystemFinished, "Engine.RPhysicalMaterialProperty.HitEffectParticleSystemFinished");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PSC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

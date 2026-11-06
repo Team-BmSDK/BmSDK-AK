@@ -78,68 +78,74 @@ public partial class RBMAIAction_KillHostage : BmSDK.BmGame.RBMAIAction, BmSDK.I
         where TComponent : class, Framework.IScriptComponent<RBMAIAction_KillHostage>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_HandlesGlance;
     /// <summary>
     /// Function: HandlesGlance
     /// </summary>
     public unsafe override bool HandlesGlance()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_KillHostage.HandlesGlance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandlesGlance, "BmGame.RBMAIAction_KillHostage.HandlesGlance");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_TriggerGameOver;
     /// <summary>
     /// Function: TriggerGameOver
     /// </summary>
     public unsafe virtual void TriggerGameOver()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_KillHostage.TriggerGameOver", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerGameOver, "BmGame.RBMAIAction_KillHostage.TriggerGameOver");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GunStop;
     /// <summary>
     /// Function: GunStop
     /// </summary>
     public unsafe virtual void GunStop()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_KillHostage.GunStop", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GunStop, "BmGame.RBMAIAction_KillHostage.GunStop");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GunStart;
     /// <summary>
     /// Function: GunStart
     /// </summary>
     public unsafe virtual void GunStart()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_KillHostage.GunStart", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GunStart, "BmGame.RBMAIAction_KillHostage.GunStart");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ActionTick;
     /// <summary>
     /// Function: ActionTick
     /// </summary>
     public unsafe override BmSDK.BmGame.RBMAIAction.ActionTickResult ActionTick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_KillHostage.ActionTick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActionTick, "BmGame.RBMAIAction_KillHostage.ActionTick");
         byte* paramsPtr = stackalloc byte[5];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMAIAction.ActionTickResult>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_PlayKill;
     /// <summary>
     /// Function: PlayKill
     /// </summary>
     public unsafe virtual void PlayKill(System.Numerics.Vector3 KillLoc, BmSDK.BmGame.RPawnFriendly TargetHostage)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_KillHostage.PlayKill", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayKill, "BmGame.RBMAIAction_KillHostage.PlayKill");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(KillLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetHostage, paramsPtr + 12);
@@ -147,46 +153,50 @@ public partial class RBMAIAction_KillHostage : BmSDK.BmGame.RBMAIAction, BmSDK.I
         return;
     }
 
+    private static BmSDK.Function __fn_OnDeactivate;
     /// <summary>
     /// Function: OnDeactivate
     /// </summary>
     public unsafe override void OnDeactivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_KillHostage.OnDeactivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeactivate, "BmGame.RBMAIAction_KillHostage.OnDeactivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_KillHostage.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMAIAction_KillHostage.OnActivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetSpottedPlayer;
     /// <summary>
     /// Function: SetSpottedPlayer
     /// </summary>
     public unsafe virtual void SetSpottedPlayer(BmSDK.BmGame.RPlayerController NewPC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_KillHostage.SetSpottedPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSpottedPlayer, "BmGame.RBMAIAction_KillHostage.SetSpottedPlayer");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetHostage;
     /// <summary>
     /// Function: SetHostage
     /// </summary>
     public unsafe virtual void SetHostage(BmSDK.BmGame.RPawnFriendly NewHostage)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_KillHostage.SetHostage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHostage, "BmGame.RBMAIAction_KillHostage.SetHostage");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewHostage, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

@@ -78,113 +78,123 @@ public partial class RXPSequence : BmSDK.BmGame.RCrowdSequence, BmSDK.IGameObjec
         where TComponent : class, Framework.IScriptComponent<RXPSequence>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_EndSequence;
     /// <summary>
     /// Function: EndSequence
     /// </summary>
     public unsafe override void EndSequence()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RXPSequence.EndSequence", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EndSequence, "BmGame.RXPSequence.EndSequence");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RXPSequence.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmGame.RXPSequence.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RXPSequence.PreStreamOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmGame.RXPSequence.PreStreamOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateAttractors;
     /// <summary>
     /// Function: UpdateAttractors
     /// </summary>
     public unsafe override void UpdateAttractors(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RXPSequence.UpdateAttractors", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateAttractors, "BmGame.RXPSequence.UpdateAttractors");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddUnbankedXP;
     /// <summary>
     /// Function: AddUnbankedXP
     /// </summary>
     public unsafe virtual void AddUnbankedXP()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RXPSequence.AddUnbankedXP", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddUnbankedXP, "BmGame.RXPSequence.AddUnbankedXP");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AgentAdvancedToStage;
     /// <summary>
     /// Function: AgentAdvancedToStage
     /// </summary>
     public unsafe override void AgentAdvancedToStage(int NewStage)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RXPSequence.AgentAdvancedToStage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AgentAdvancedToStage, "BmGame.RXPSequence.AgentAdvancedToStage");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewStage, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetIsTeeth;
     /// <summary>
     /// Function: GetIsTeeth
     /// </summary>
     public unsafe virtual bool GetIsTeeth()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RXPSequence.GetIsTeeth", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetIsTeeth, "BmGame.RXPSequence.GetIsTeeth");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CreateAttractors;
     /// <summary>
     /// Function: CreateAttractors
     /// </summary>
     public unsafe override void CreateAttractors()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RXPSequence.CreateAttractors", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateAttractors, "BmGame.RXPSequence.CreateAttractors");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetSpawnLocation;
     /// <summary>
     /// Function: GetSpawnLocation
     /// </summary>
     public unsafe override System.Numerics.Vector3 GetSpawnLocation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RXPSequence.GetSpawnLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSpawnLocation, "BmGame.RXPSequence.GetSpawnLocation");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ActivateXPSequence;
     /// <summary>
     /// Function: ActivateXPSequence
     /// </summary>
     public unsafe virtual void ActivateXPSequence(int NewNumXP, BmSDK.Engine.AkEvent SoundEvent, BmSDK.Engine.Actor NewTargetActor = default, float BatMultiplier = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RXPSequence.ActivateXPSequence", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActivateXPSequence, "BmGame.RXPSequence.ActivateXPSequence");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewNumXP, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SoundEvent, paramsPtr + 4);

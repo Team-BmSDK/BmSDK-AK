@@ -78,23 +78,25 @@ public partial class SavedMove : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<SavedMove>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetDebugString;
     /// <summary>
     /// Function: GetDebugString
     /// </summary>
     public unsafe virtual BmSDK.FString GetDebugString()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SavedMove.GetDebugString", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDebugString, "Engine.SavedMove.GetDebugString");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetFlags;
     /// <summary>
     /// Function: SetFlags
     /// </summary>
     public unsafe static BmSDK.Engine.Actor.EDoubleClickDir SetFlags(byte Flags, BmSDK.Engine.PlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SavedMove.SetFlags", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetFlags, "Engine.SavedMove.SetFlags");
         byte* paramsPtr = stackalloc byte[13];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Flags, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 4);
@@ -102,47 +104,51 @@ public partial class SavedMove : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor.EDoubleClickDir>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_CompressedFlags;
     /// <summary>
     /// Function: CompressedFlags
     /// </summary>
     public unsafe virtual byte CompressedFlags()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SavedMove.CompressedFlags", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CompressedFlags, "Engine.SavedMove.CompressedFlags");
         byte* paramsPtr = stackalloc byte[2];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<byte>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ResetMoveFor;
     /// <summary>
     /// Function: ResetMoveFor
     /// </summary>
     public unsafe virtual void ResetMoveFor(BmSDK.Engine.Pawn P)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SavedMove.ResetMoveFor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetMoveFor, "Engine.SavedMove.ResetMoveFor");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PrepMoveFor;
     /// <summary>
     /// Function: PrepMoveFor
     /// </summary>
     public unsafe virtual void PrepMoveFor(BmSDK.Engine.Pawn P)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SavedMove.PrepMoveFor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PrepMoveFor, "Engine.SavedMove.PrepMoveFor");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetMoveFor;
     /// <summary>
     /// Function: SetMoveFor
     /// </summary>
     public unsafe virtual void SetMoveFor(BmSDK.Engine.PlayerController P, float DeltaTime, System.Numerics.Vector3 newAccel, BmSDK.Engine.Actor.EDoubleClickDir InDoubleClick)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SavedMove.SetMoveFor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMoveFor, "Engine.SavedMove.SetMoveFor");
         byte* paramsPtr = stackalloc byte[25];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 8);
@@ -152,12 +158,13 @@ public partial class SavedMove : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_CanCombineWith;
     /// <summary>
     /// Function: CanCombineWith
     /// </summary>
     public unsafe virtual bool CanCombineWith(BmSDK.Engine.SavedMove NewMove, BmSDK.Engine.Pawn inPawn, float MaxDelta)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SavedMove.CanCombineWith", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanCombineWith, "Engine.SavedMove.CanCombineWith");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewMove, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(inPawn, paramsPtr + 8);
@@ -166,59 +173,64 @@ public partial class SavedMove : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_SetInitialPosition;
     /// <summary>
     /// Function: SetInitialPosition
     /// </summary>
     public unsafe virtual void SetInitialPosition(BmSDK.Engine.Pawn P)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SavedMove.SetInitialPosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetInitialPosition, "Engine.SavedMove.SetInitialPosition");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetStartLocation;
     /// <summary>
     /// Function: GetStartLocation
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetStartLocation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SavedMove.GetStartLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStartLocation, "Engine.SavedMove.GetStartLocation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsImportantMove;
     /// <summary>
     /// Function: IsImportantMove
     /// </summary>
     public unsafe virtual bool IsImportantMove(System.Numerics.Vector3 CompareAccel)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SavedMove.IsImportantMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsImportantMove, "Engine.SavedMove.IsImportantMove");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CompareAccel, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_PostUpdate;
     /// <summary>
     /// Function: PostUpdate
     /// </summary>
     public unsafe virtual void PostUpdate(BmSDK.Engine.PlayerController P)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SavedMove.PostUpdate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostUpdate, "Engine.SavedMove.PostUpdate");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Clear;
     /// <summary>
     /// Function: Clear
     /// </summary>
     public unsafe virtual void Clear()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SavedMove.Clear", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Clear, "Engine.SavedMove.Clear");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

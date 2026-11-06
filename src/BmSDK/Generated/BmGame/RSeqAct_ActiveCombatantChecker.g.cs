@@ -78,24 +78,26 @@ public partial class RSeqAct_ActiveCombatantChecker : BmSDK.Engine.SeqAct_Latent
         where TComponent : class, Framework.IScriptComponent<RSeqAct_ActiveCombatantChecker>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Update;
     /// <summary>
     /// Function: Update
     /// </summary>
     public unsafe override bool Update(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_ActiveCombatantChecker.Update", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Update, "BmGame.RSeqAct_ActiveCombatantChecker.Update");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_IsValueInThreshold;
     /// <summary>
     /// Function: IsValueInThreshold
     /// </summary>
     public unsafe virtual bool IsValueInThreshold(int Value, int ThresholdIdx)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_ActiveCombatantChecker.IsValueInThreshold", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsValueInThreshold, "BmGame.RSeqAct_ActiveCombatantChecker.IsValueInThreshold");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThresholdIdx, paramsPtr + 4);
@@ -103,12 +105,13 @@ public partial class RSeqAct_ActiveCombatantChecker : BmSDK.Engine.SeqAct_Latent
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_ActiveCombatantChecker.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmGame.RSeqAct_ActiveCombatantChecker.Activated");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

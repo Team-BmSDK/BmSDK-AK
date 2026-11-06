@@ -73,12 +73,13 @@ public partial class DistributionVector : BmSDK.Component, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<DistributionVector>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetVectorValue;
     /// <summary>
     /// Function: GetVectorValue
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetVectorValue(float F = default, int LastExtreme = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Core.DistributionVector.GetVectorValue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVectorValue, "Core.DistributionVector.GetVectorValue");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(F, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LastExtreme, paramsPtr + 4);

@@ -78,24 +78,26 @@ public partial class OnlineImageDownloaderWeb : BmSDK.GameObject, BmSDK.IGameObj
         where TComponent : class, Framework.IScriptComponent<OnlineImageDownloaderWeb>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DebugDraw;
     /// <summary>
     /// Function: DebugDraw
     /// </summary>
     public unsafe virtual void DebugDraw(BmSDK.Engine.Canvas Canvas)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.OnlineImageDownloaderWeb.DebugDraw", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DebugDraw, "IpDrv.OnlineImageDownloaderWeb.DebugDraw");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Canvas, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnDownloadComplete;
     /// <summary>
     /// Function: OnDownloadComplete
     /// </summary>
     public unsafe void OnDownloadComplete(BmSDK.Engine.HttpRequestInterface OriginalRequest, BmSDK.Engine.HttpResponseInterface Response, bool bDidSucceed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.OnlineImageDownloaderWeb.OnDownloadComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDownloadComplete, "IpDrv.OnlineImageDownloaderWeb.OnDownloadComplete");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OriginalRequest, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Response, paramsPtr + 8);
@@ -104,81 +106,88 @@ public partial class OnlineImageDownloaderWeb : BmSDK.GameObject, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_DownloadNextImage;
     /// <summary>
     /// Function: DownloadNextImage
     /// </summary>
     public unsafe void DownloadNextImage()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.OnlineImageDownloaderWeb.DownloadNextImage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DownloadNextImage, "IpDrv.OnlineImageDownloaderWeb.DownloadNextImage");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ClearAllDownloads;
     /// <summary>
     /// Function: ClearAllDownloads
     /// </summary>
     public unsafe virtual void ClearAllDownloads()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.OnlineImageDownloaderWeb.ClearAllDownloads", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearAllDownloads, "IpDrv.OnlineImageDownloaderWeb.ClearAllDownloads");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ClearDownloads;
     /// <summary>
     /// Function: ClearDownloads
     /// </summary>
     public unsafe virtual void ClearDownloads(BmSDK.TArray<BmSDK.FString> URLs)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.OnlineImageDownloaderWeb.ClearDownloads", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearDownloads, "IpDrv.OnlineImageDownloaderWeb.ClearDownloads");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(URLs, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetNumPendingDownloads;
     /// <summary>
     /// Function: GetNumPendingDownloads
     /// </summary>
     public unsafe virtual int GetNumPendingDownloads()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.OnlineImageDownloaderWeb.GetNumPendingDownloads", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNumPendingDownloads, "IpDrv.OnlineImageDownloaderWeb.GetNumPendingDownloads");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_RequestOnlineImages;
     /// <summary>
     /// Function: RequestOnlineImages
     /// </summary>
     public unsafe virtual void RequestOnlineImages(BmSDK.TArray<BmSDK.FString> URLs)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.OnlineImageDownloaderWeb.RequestOnlineImages", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RequestOnlineImages, "IpDrv.OnlineImageDownloaderWeb.RequestOnlineImages");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(URLs, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetOnlineImageTexture;
     /// <summary>
     /// Function: GetOnlineImageTexture
     /// </summary>
     public unsafe virtual BmSDK.Engine.Texture GetOnlineImageTexture(BmSDK.FString URL)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.OnlineImageDownloaderWeb.GetOnlineImageTexture", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetOnlineImageTexture, "IpDrv.OnlineImageDownloaderWeb.GetOnlineImageTexture");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(URL, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Texture>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_OnOnlineImageDownloaded;
     /// <summary>
     /// Function: OnOnlineImageDownloaded
     /// </summary>
     public unsafe virtual void OnOnlineImageDownloaded(BmSDK.IpDrv.OnlineImageDownloaderWeb.FOnlineImageDownload CachedEntry)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.OnlineImageDownloaderWeb.OnOnlineImageDownloaded", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnOnlineImageDownloaded, "IpDrv.OnlineImageDownloaderWeb.OnOnlineImageDownloaded");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CachedEntry, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

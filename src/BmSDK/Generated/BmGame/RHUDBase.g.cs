@@ -78,56 +78,61 @@ public partial class RHUDBase : BmSDK.Engine.HUD, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RHUDBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PreBeginPlay;
     /// <summary>
     /// Function: PreBeginPlay
     /// </summary>
     public unsafe override void PreBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHUDBase.PreBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreBeginPlay, "BmGame.RHUDBase.PreBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DrawHUD;
     /// <summary>
     /// Function: DrawHUD
     /// </summary>
     public unsafe override void DrawHUD()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHUDBase.DrawHUD", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DrawHUD, "BmGame.RHUDBase.DrawHUD");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShouldDrawHUD;
     /// <summary>
     /// Function: ShouldDrawHUD
     /// </summary>
     public unsafe virtual bool ShouldDrawHUD()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHUDBase.ShouldDrawHUD", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldDrawHUD, "BmGame.RHUDBase.ShouldDrawHUD");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PostRender;
     /// <summary>
     /// Function: PostRender
     /// </summary>
     public unsafe override void PostRender()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHUDBase.PostRender", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostRender, "BmGame.RHUDBase.PostRender");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetRenderGFX;
     /// <summary>
     /// Function: SetRenderGFX
     /// </summary>
     public unsafe virtual void SetRenderGFX(bool bRender)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHUDBase.SetRenderGFX", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRenderGFX, "BmGame.RHUDBase.SetRenderGFX");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bRender, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -141,12 +146,13 @@ public partial class RHUDBase : BmSDK.Engine.HUD, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_RenderDebugQuadTreeMap;
     /// <summary>
     /// Function: RenderDebugQuadTreeMap
     /// </summary>
     public unsafe virtual void RenderDebugQuadTreeMap()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHUDBase.RenderDebugQuadTreeMap", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RenderDebugQuadTreeMap, "BmGame.RHUDBase.RenderDebugQuadTreeMap");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -159,12 +165,13 @@ public partial class RHUDBase : BmSDK.Engine.HUD, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_RenderDebugMiniMap;
     /// <summary>
     /// Function: RenderDebugMiniMap
     /// </summary>
     public unsafe virtual void RenderDebugMiniMap()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHUDBase.RenderDebugMiniMap", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RenderDebugMiniMap, "BmGame.RHUDBase.RenderDebugMiniMap");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -177,12 +184,13 @@ public partial class RHUDBase : BmSDK.Engine.HUD, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ToggleDebugMiniMap;
     /// <summary>
     /// Function: ToggleDebugMiniMap
     /// </summary>
     public unsafe virtual void ToggleDebugMiniMap()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHUDBase.ToggleDebugMiniMap", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ToggleDebugMiniMap, "BmGame.RHUDBase.ToggleDebugMiniMap");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -195,12 +203,13 @@ public partial class RHUDBase : BmSDK.Engine.HUD, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_DumpAssets;
     /// <summary>
     /// Function: DumpAssets
     /// </summary>
     public unsafe virtual void DumpAssets(bool bViewIt = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHUDBase.DumpAssets", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DumpAssets, "BmGame.RHUDBase.DumpAssets");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bViewIt, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -214,12 +223,13 @@ public partial class RHUDBase : BmSDK.Engine.HUD, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ClearDuplicateWarningsAndErrors;
     /// <summary>
     /// Function: ClearDuplicateWarningsAndErrors
     /// </summary>
     public unsafe virtual void ClearDuplicateWarningsAndErrors()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHUDBase.ClearDuplicateWarningsAndErrors", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearDuplicateWarningsAndErrors, "BmGame.RHUDBase.ClearDuplicateWarningsAndErrors");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -232,12 +242,13 @@ public partial class RHUDBase : BmSDK.Engine.HUD, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_DisplayWarningsAndErrors;
     /// <summary>
     /// Function: DisplayWarningsAndErrors
     /// </summary>
     public unsafe virtual void DisplayWarningsAndErrors(bool ShowDuplicates, bool Outline, int Max)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHUDBase.DisplayWarningsAndErrors", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisplayWarningsAndErrors, "BmGame.RHUDBase.DisplayWarningsAndErrors");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ShowDuplicates, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Outline, paramsPtr + 4);
@@ -253,12 +264,13 @@ public partial class RHUDBase : BmSDK.Engine.HUD, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ClearWarningsAndErrors;
     /// <summary>
     /// Function: ClearWarningsAndErrors
     /// </summary>
     public unsafe virtual void ClearWarningsAndErrors()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHUDBase.ClearWarningsAndErrors", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearWarningsAndErrors, "BmGame.RHUDBase.ClearWarningsAndErrors");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

@@ -78,12 +78,13 @@ public partial class WorldAttractor : BmSDK.Engine.Actor, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<WorldAttractor>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnSetWorldAttractorParam;
     /// <summary>
     /// Function: OnSetWorldAttractorParam
     /// </summary>
     public unsafe virtual void OnSetWorldAttractorParam(BmSDK.Engine.SeqAct_SetWorldAttractorParam Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.WorldAttractor.OnSetWorldAttractorParam", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnSetWorldAttractorParam, "Engine.WorldAttractor.OnSetWorldAttractorParam");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

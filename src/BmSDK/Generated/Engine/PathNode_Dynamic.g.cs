@@ -78,12 +78,13 @@ public partial class PathNode_Dynamic : BmSDK.Engine.PathNode, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<PathNode_Dynamic>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetDebugAbbrev;
     /// <summary>
     /// Function: GetDebugAbbrev
     /// </summary>
     public unsafe override BmSDK.FString GetDebugAbbrev()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PathNode_Dynamic.GetDebugAbbrev", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDebugAbbrev, "Engine.PathNode_Dynamic.GetDebugAbbrev");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);

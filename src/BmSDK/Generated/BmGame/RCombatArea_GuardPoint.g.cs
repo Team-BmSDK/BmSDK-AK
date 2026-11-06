@@ -78,23 +78,25 @@ public partial class RCombatArea_GuardPoint : BmSDK.Engine.Actor, BmSDK.IGameObj
         where TComponent : class, Framework.IScriptComponent<RCombatArea_GuardPoint>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UnlockFromTimer;
     /// <summary>
     /// Function: UnlockFromTimer
     /// </summary>
     public unsafe virtual void UnlockFromTimer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatArea_GuardPoint.UnlockFromTimer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnlockFromTimer, "BmGame.RCombatArea_GuardPoint.UnlockFromTimer");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UnlockInTime;
     /// <summary>
     /// Function: UnlockInTime
     /// </summary>
     public unsafe virtual void UnlockInTime(BmSDK.BmGame.RBMPawnAI OldUser, float UnlockTimer)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatArea_GuardPoint.UnlockInTime", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnlockInTime, "BmGame.RCombatArea_GuardPoint.UnlockInTime");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OldUser, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UnlockTimer, paramsPtr + 8);
@@ -102,94 +104,102 @@ public partial class RCombatArea_GuardPoint : BmSDK.Engine.Actor, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_UnLock;
     /// <summary>
     /// Function: UnLock
     /// </summary>
     public unsafe virtual void UnLock(BmSDK.BmGame.RBMPawnAI OldUser)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatArea_GuardPoint.UnLock", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnLock, "BmGame.RCombatArea_GuardPoint.UnLock");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OldUser, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_LockedBy;
     /// <summary>
     /// Function: LockedBy
     /// </summary>
     public unsafe virtual bool LockedBy(BmSDK.BmGame.RBMPawnAI NewUser)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatArea_GuardPoint.LockedBy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LockedBy, "BmGame.RCombatArea_GuardPoint.LockedBy");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewUser, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CanBeUsedBy;
     /// <summary>
     /// Function: CanBeUsedBy
     /// </summary>
     public unsafe virtual bool CanBeUsedBy(BmSDK.BmGame.RBMPawnAI NewUser)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatArea_GuardPoint.CanBeUsedBy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeUsedBy, "BmGame.RCombatArea_GuardPoint.CanBeUsedBy");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewUser, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_RemoveCombatArea;
     /// <summary>
     /// Function: RemoveCombatArea
     /// </summary>
     public unsafe virtual void RemoveCombatArea(BmSDK.BmGame.RCombatArea ToRemove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatArea_GuardPoint.RemoveCombatArea", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveCombatArea, "BmGame.RCombatArea_GuardPoint.RemoveCombatArea");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ToRemove, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddCombatArea;
     /// <summary>
     /// Function: AddCombatArea
     /// </summary>
     public unsafe virtual void AddCombatArea(BmSDK.BmGame.RCombatArea ToAdd)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatArea_GuardPoint.AddCombatArea", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddCombatArea, "BmGame.RCombatArea_GuardPoint.AddCombatArea");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ToAdd, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatArea_GuardPoint.PreStreamOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmGame.RCombatArea_GuardPoint.PreStreamOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatArea_GuardPoint.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmGame.RCombatArea_GuardPoint.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatArea_GuardPoint.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RCombatArea_GuardPoint.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

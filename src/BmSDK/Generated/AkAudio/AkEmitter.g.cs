@@ -78,12 +78,13 @@ public partial class AkEmitter : BmSDK.Engine.AkSoundActor, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<AkEmitter>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ApplyEmitterSpatial;
     /// <summary>
     /// Function: ApplyEmitterSpatial
     /// </summary>
     public unsafe virtual void ApplyEmitterSpatial()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkEmitter.ApplyEmitterSpatial", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyEmitterSpatial, "AkAudio.AkEmitter.ApplyEmitterSpatial");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class AkEmitter : BmSDK.Engine.AkSoundActor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_DisableEmitter;
     /// <summary>
     /// Function: DisableEmitter
     /// </summary>
     public unsafe virtual void DisableEmitter()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkEmitter.DisableEmitter", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisableEmitter, "AkAudio.AkEmitter.DisableEmitter");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -114,12 +116,13 @@ public partial class AkEmitter : BmSDK.Engine.AkSoundActor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_EnableEmitter;
     /// <summary>
     /// Function: EnableEmitter
     /// </summary>
     public unsafe virtual void EnableEmitter()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkEmitter.EnableEmitter", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnableEmitter, "AkAudio.AkEmitter.EnableEmitter");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -132,24 +135,26 @@ public partial class AkEmitter : BmSDK.Engine.AkSoundActor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_OnToggleHidden;
     /// <summary>
     /// Function: OnToggleHidden
     /// </summary>
     public unsafe override void OnToggleHidden(BmSDK.Engine.SeqAct_ToggleHidden Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkEmitter.OnToggleHidden", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggleHidden, "AkAudio.AkEmitter.OnToggleHidden");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnToggle;
     /// <summary>
     /// Function: OnToggle
     /// </summary>
     public unsafe virtual void OnToggle(BmSDK.Engine.SeqAct_Toggle ToggleAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkEmitter.OnToggle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggle, "AkAudio.AkEmitter.OnToggle");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ToggleAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

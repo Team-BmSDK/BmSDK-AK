@@ -73,36 +73,39 @@ public partial class RBMWeaponHeavyObject : BmSDK.BmGame.RBMWeaponMelee, BmSDK.I
         where TComponent : class, Framework.IScriptComponent<RBMWeaponHeavyObject>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnWeaponDestroy;
     /// <summary>
     /// Function: OnWeaponDestroy
     /// </summary>
     public unsafe override void OnWeaponDestroy(System.Numerics.Vector3 SmashVel)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponHeavyObject.OnWeaponDestroy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnWeaponDestroy, "BmScript.RBMWeaponHeavyObject.OnWeaponDestroy");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SmashVel, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CreateWeaponConfig;
     /// <summary>
     /// Function: CreateWeaponConfig
     /// </summary>
     public unsafe override BmSDK.BmGame.RWeaponConfig CreateWeaponConfig(BmSDK.GameObject NewOwner)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponHeavyObject.CreateWeaponConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateWeaponConfig, "BmScript.RBMWeaponHeavyObject.CreateWeaponConfig");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewOwner, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RWeaponConfig>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CreateCombatWeaponConfig;
     /// <summary>
     /// Function: CreateCombatWeaponConfig
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RWeaponConfig CreateCombatWeaponConfig(BmSDK.GameObject NewOwner, BmSDK.Engine.AnimSet AnimSet1, BmSDK.Engine.AnimSet AnimSet2)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponHeavyObject.CreateCombatWeaponConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateCombatWeaponConfig, "BmScript.RBMWeaponHeavyObject.CreateCombatWeaponConfig");
         byte* paramsPtr = stackalloc byte[3868];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewOwner, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimSet1, paramsPtr + 8);
@@ -111,12 +114,13 @@ public partial class RBMWeaponHeavyObject : BmSDK.BmGame.RBMWeaponMelee, BmSDK.I
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RWeaponConfig>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_GetWeaponUpAimingConfig;
     /// <summary>
     /// Function: GetWeaponUpAimingConfig
     /// </summary>
     public unsafe static BmSDK.Engine.RAimingConfig GetWeaponUpAimingConfig()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponHeavyObject.GetWeaponUpAimingConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWeaponUpAimingConfig, "BmScript.RBMWeaponHeavyObject.GetWeaponUpAimingConfig");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.RAimingConfig>(paramsPtr + 0);

@@ -78,69 +78,75 @@ public partial class RPawnJokerHallucinationThug : BmSDK.BmGame.RPawnVillainThug
         where TComponent : class, Framework.IScriptComponent<RPawnJokerHallucinationThug>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ForceSlaveToRef;
     /// <summary>
     /// Function: ForceSlaveToRef
     /// </summary>
     public unsafe virtual void ForceSlaveToRef()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnJokerHallucinationThug.ForceSlaveToRef", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForceSlaveToRef, "BmGame.RPawnJokerHallucinationThug.ForceSlaveToRef");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InterceptNewJokerCall;
     /// <summary>
     /// Function: InterceptNewJokerCall
     /// </summary>
     public unsafe virtual bool InterceptNewJokerCall(BmSDK.BmGame.RPawnJokerHallucination.TypesOfHallucination AppearanceType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnJokerHallucinationThug.InterceptNewJokerCall", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InterceptNewJokerCall, "BmGame.RPawnJokerHallucinationThug.InterceptNewJokerCall");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AppearanceType, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_StopAimAtBatman;
     /// <summary>
     /// Function: StopAimAtBatman
     /// </summary>
     public unsafe virtual void StopAimAtBatman()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnJokerHallucinationThug.StopAimAtBatman", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopAimAtBatman, "BmGame.RPawnJokerHallucinationThug.StopAimAtBatman");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AimAtBatman;
     /// <summary>
     /// Function: AimAtBatman
     /// </summary>
     public unsafe virtual void AimAtBatman()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnJokerHallucinationThug.AimAtBatman", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AimAtBatman, "BmGame.RPawnJokerHallucinationThug.AimAtBatman");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_JokerHallucinationFadeNotify;
     /// <summary>
     /// Function: JokerHallucinationFadeNotify
     /// </summary>
     public unsafe virtual void JokerHallucinationFadeNotify(BmSDK.BmGame.RAnimNotify_JokerHallucination.EFadeType FadeType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnJokerHallucinationThug.JokerHallucinationFadeNotify", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_JokerHallucinationFadeNotify, "BmGame.RPawnJokerHallucinationThug.JokerHallucinationFadeNotify");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FadeType, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TellControllerAboutCollisionWarning;
     /// <summary>
     /// Function: TellControllerAboutCollisionWarning
     /// </summary>
     public unsafe override void TellControllerAboutCollisionWarning(BmSDK.Engine.Actor V, float Speed, BmSDK.BmGame.RGameInfo.EEvadeVehicleType EvadeType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnJokerHallucinationThug.TellControllerAboutCollisionWarning", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TellControllerAboutCollisionWarning, "BmGame.RPawnJokerHallucinationThug.TellControllerAboutCollisionWarning");
         byte* paramsPtr = stackalloc byte[13];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(V, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speed, paramsPtr + 8);
@@ -149,79 +155,86 @@ public partial class RPawnJokerHallucinationThug : BmSDK.BmGame.RPawnVillainThug
         return;
     }
 
+    private static BmSDK.Function __fn_IsFadedOut;
     /// <summary>
     /// Function: IsFadedOut
     /// </summary>
     public unsafe virtual bool IsFadedOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnJokerHallucinationThug.IsFadedOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsFadedOut, "BmGame.RPawnJokerHallucinationThug.IsFadedOut");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_DestroyMe;
     /// <summary>
     /// Function: DestroyMe
     /// </summary>
     public unsafe virtual void DestroyMe()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnJokerHallucinationThug.DestroyMe", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DestroyMe, "BmGame.RPawnJokerHallucinationThug.DestroyMe");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanBeSeenByBatmanForFadeIn;
     /// <summary>
     /// Function: CanBeSeenByBatmanForFadeIn
     /// </summary>
     public unsafe virtual bool CanBeSeenByBatmanForFadeIn()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnJokerHallucinationThug.CanBeSeenByBatmanForFadeIn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeSeenByBatmanForFadeIn, "BmGame.RPawnJokerHallucinationThug.CanBeSeenByBatmanForFadeIn");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanBeSeenByBatman;
     /// <summary>
     /// Function: CanBeSeenByBatman
     /// </summary>
     public unsafe virtual bool CanBeSeenByBatman()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnJokerHallucinationThug.CanBeSeenByBatman", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeSeenByBatman, "BmGame.RPawnJokerHallucinationThug.CanBeSeenByBatman");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_FireDestroyEvent;
     /// <summary>
     /// Function: FireDestroyEvent
     /// </summary>
     public unsafe virtual void FireDestroyEvent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnJokerHallucinationThug.FireDestroyEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireDestroyEvent, "BmGame.RPawnJokerHallucinationThug.FireDestroyEvent");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnJokerHallucinationThug.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RPawnJokerHallucinationThug.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateJoker;
     /// <summary>
     /// Function: UpdateJoker
     /// </summary>
     public unsafe virtual void UpdateJoker(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnJokerHallucinationThug.UpdateJoker", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateJoker, "BmGame.RPawnJokerHallucinationThug.UpdateJoker");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -235,47 +248,51 @@ public partial class RPawnJokerHallucinationThug : BmSDK.BmGame.RPawnVillainThug
         return;
     }
 
+    private static BmSDK.Function __fn_GetJokerSickVector;
     /// <summary>
     /// Function: GetJokerSickVector
     /// </summary>
     public unsafe static BmSDK.GameObject.FLinearColor GetJokerSickVector(BmSDK.Engine.WorldInfo MyWorldInfo)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnJokerHallucinationThug.GetJokerSickVector", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetJokerSickVector, "BmGame.RPawnJokerHallucinationThug.GetJokerSickVector");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MyWorldInfo, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.GameObject.FLinearColor>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_PostInitCharacter;
     /// <summary>
     /// Function: PostInitCharacter
     /// </summary>
     public unsafe override void PostInitCharacter()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnJokerHallucinationThug.PostInitCharacter", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostInitCharacter, "BmGame.RPawnJokerHallucinationThug.PostInitCharacter");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnDestroy;
     /// <summary>
     /// Function: OnDestroy
     /// </summary>
     public unsafe override void OnDestroy(BmSDK.Engine.SeqAct_Destroy Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnJokerHallucinationThug.OnDestroy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDestroy, "BmGame.RPawnJokerHallucinationThug.OnDestroy");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnJokerHallucinationThug.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmGame.RPawnJokerHallucinationThug.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

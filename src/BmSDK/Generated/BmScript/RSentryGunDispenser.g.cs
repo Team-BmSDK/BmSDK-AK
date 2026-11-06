@@ -78,57 +78,62 @@ public partial class RSentryGunDispenser : BmSDK.BmGame.RLootSourceBase, BmSDK.I
         where TComponent : class, Framework.IScriptComponent<RSentryGunDispenser>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetXrayMaterials;
     /// <summary>
     /// Function: SetXrayMaterials
     /// </summary>
     public unsafe override void SetXrayMaterials()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSentryGunDispenser.SetXrayMaterials", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetXrayMaterials, "BmScript.RSentryGunDispenser.SetXrayMaterials");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HitByDisruptorGadgetCharge;
     /// <summary>
     /// Function: HitByDisruptorGadgetCharge
     /// </summary>
     public unsafe override bool HitByDisruptorGadgetCharge()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSentryGunDispenser.HitByDisruptorGadgetCharge", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitByDisruptorGadgetCharge, "BmScript.RSentryGunDispenser.HitByDisruptorGadgetCharge");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetLootExhausted;
     /// <summary>
     /// Function: SetLootExhausted
     /// </summary>
     public unsafe override void SetLootExhausted()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSentryGunDispenser.SetLootExhausted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetLootExhausted, "BmScript.RSentryGunDispenser.SetLootExhausted");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_BagSpawned;
     /// <summary>
     /// Function: BagSpawned
     /// </summary>
     public unsafe override void BagSpawned(BmSDK.BmGame.RCarriableObjectBagBase NewBag)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSentryGunDispenser.BagSpawned", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BagSpawned, "BmScript.RSentryGunDispenser.BagSpawned");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewBag, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSentryGunDispenser.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmScript.RSentryGunDispenser.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

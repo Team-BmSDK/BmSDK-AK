@@ -78,101 +78,110 @@ public partial class RSeqAct_SetTrackingCamera : BmSDK.Engine.SeqAct_Latent, BmS
         where TComponent : class, Framework.IScriptComponent<RSeqAct_SetTrackingCamera>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SetTrackingCamera.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmGame.RSeqAct_SetTrackingCamera.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Update;
     /// <summary>
     /// Function: Update
     /// </summary>
     public unsafe override bool Update(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SetTrackingCamera.Update", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Update, "BmGame.RSeqAct_SetTrackingCamera.Update");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_UsingSecondStageGadget;
     /// <summary>
     /// Function: UsingSecondStageGadget
     /// </summary>
     public unsafe virtual bool UsingSecondStageGadget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SetTrackingCamera.UsingSecondStageGadget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UsingSecondStageGadget, "BmGame.RSeqAct_SetTrackingCamera.UsingSecondStageGadget");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UsingGadget;
     /// <summary>
     /// Function: UsingGadget
     /// </summary>
     public unsafe virtual bool UsingGadget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SetTrackingCamera.UsingGadget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UsingGadget, "BmGame.RSeqAct_SetTrackingCamera.UsingGadget");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CheckPath;
     /// <summary>
     /// Function: CheckPath
     /// </summary>
     public unsafe virtual bool CheckPath()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SetTrackingCamera.CheckPath", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckPath, "BmGame.RSeqAct_SetTrackingCamera.CheckPath");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SetTrackingCamera.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmGame.RSeqAct_SetTrackingCamera.Activated");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AssignPathVars;
     /// <summary>
     /// Function: AssignPathVars
     /// </summary>
     public unsafe virtual void AssignPathVars()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SetTrackingCamera.AssignPathVars", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AssignPathVars, "BmGame.RSeqAct_SetTrackingCamera.AssignPathVars");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FindMatinee;
     /// <summary>
     /// Function: FindMatinee
     /// </summary>
     public unsafe virtual void FindMatinee()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SetTrackingCamera.FindMatinee", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindMatinee, "BmGame.RSeqAct_SetTrackingCamera.FindMatinee");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetPercDistAlongPath;
     /// <summary>
     /// Function: GetPercDistAlongPath
     /// </summary>
     public unsafe virtual float GetPercDistAlongPath(float TimeDelta)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SetTrackingCamera.GetPercDistAlongPath", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPercDistAlongPath, "BmGame.RSeqAct_SetTrackingCamera.GetPercDistAlongPath");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TimeDelta, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

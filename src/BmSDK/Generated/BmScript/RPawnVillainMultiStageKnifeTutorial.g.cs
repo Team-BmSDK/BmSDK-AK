@@ -78,12 +78,13 @@ public partial class RPawnVillainMultiStageKnifeTutorial : BmSDK.BmScript.RPawnV
         where TComponent : class, Framework.IScriptComponent<RPawnVillainMultiStageKnifeTutorial>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CreateMultiStageWeaponConfig;
     /// <summary>
     /// Function: CreateMultiStageWeaponConfig
     /// </summary>
     public unsafe override BmSDK.BmGame.RWeaponConfig CreateMultiStageWeaponConfig(BmSDK.GameObject NewOwner)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainMultiStageKnifeTutorial.CreateMultiStageWeaponConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateMultiStageWeaponConfig, "BmScript.RPawnVillainMultiStageKnifeTutorial.CreateMultiStageWeaponConfig");
         byte* paramsPtr = stackalloc byte[1992];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewOwner, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

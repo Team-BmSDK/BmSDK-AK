@@ -78,12 +78,13 @@ public partial class RAnimNode_VehicleMotionExtraction : BmSDK.Engine.AnimNodeSe
         where TComponent : class, Framework.IScriptComponent<RAnimNode_VehicleMotionExtraction>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PlayAnim;
     /// <summary>
     /// Function: PlayAnim
     /// </summary>
     public unsafe override void PlayAnim(bool bLoop = default, float InRate = default, float StartTime = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAnimNode_VehicleMotionExtraction.PlayAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayAnim, "BmGame.RAnimNode_VehicleMotionExtraction.PlayAnim");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bLoop, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InRate, paramsPtr + 4);

@@ -78,12 +78,13 @@ public partial class RFearGasDart : BmSDK.BmGame.RBlowDartBase, BmSDK.IGameObjec
         where TComponent : class, Framework.IScriptComponent<RFearGasDart>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CalculateHitImpulse;
     /// <summary>
     /// Function: CalculateHitImpulse
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 CalculateHitImpulse(BmSDK.Engine.Actor.FImpactInfo HitImpactInfo, int HitVillainIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFearGasDart.CalculateHitImpulse", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculateHitImpulse, "BmScript.RFearGasDart.CalculateHitImpulse");
         byte* paramsPtr = stackalloc byte[124];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitImpactInfo, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitVillainIndex, paramsPtr + 96);
@@ -91,12 +92,13 @@ public partial class RFearGasDart : BmSDK.BmGame.RBlowDartBase, BmSDK.IGameObjec
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 100);
     }
 
+    private static BmSDK.Function __fn_AlertNearbyVillains;
     /// <summary>
     /// Function: AlertNearbyVillains
     /// </summary>
     public unsafe virtual void AlertNearbyVillains(BmSDK.BmGame.RPawnVillain HitVillain, float Range)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFearGasDart.AlertNearbyVillains", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AlertNearbyVillains, "BmScript.RFearGasDart.AlertNearbyVillains");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitVillain, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Range, paramsPtr + 8);
@@ -104,46 +106,50 @@ public partial class RFearGasDart : BmSDK.BmGame.RBlowDartBase, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_DestroyProjectile;
     /// <summary>
     /// Function: DestroyProjectile
     /// </summary>
     public unsafe virtual void DestroyProjectile()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFearGasDart.DestroyProjectile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DestroyProjectile, "BmScript.RFearGasDart.DestroyProjectile");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TickDart;
     /// <summary>
     /// Function: TickDart
     /// </summary>
     public unsafe virtual bool TickDart(float TimeDelta)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFearGasDart.TickDart", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TickDart, "BmScript.RFearGasDart.TickDart");
         byte* paramsPtr = stackalloc byte[484];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TimeDelta, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_QuickFireDart;
     /// <summary>
     /// Function: QuickFireDart
     /// </summary>
     public unsafe virtual void QuickFireDart()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFearGasDart.QuickFireDart", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_QuickFireDart, "BmScript.RFearGasDart.QuickFireDart");
         byte* paramsPtr = stackalloc byte[336];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FireDart;
     /// <summary>
     /// Function: FireDart
     /// </summary>
     public unsafe virtual void FireDart(BmSDK.Rotator FireRotation, System.Numerics.Vector3 FirePosition)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFearGasDart.FireDart", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireDart, "BmScript.RFearGasDart.FireDart");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FireRotation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FirePosition, paramsPtr + 12);
@@ -151,34 +157,37 @@ public partial class RFearGasDart : BmSDK.BmGame.RBlowDartBase, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_PlayFireAnim;
     /// <summary>
     /// Function: PlayFireAnim
     /// </summary>
     public unsafe virtual void PlayFireAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFearGasDart.PlayFireAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayFireAnim, "BmScript.RFearGasDart.PlayFireAnim");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanThrowGadget;
     /// <summary>
     /// Function: CanThrowGadget
     /// </summary>
     public unsafe override bool CanThrowGadget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFearGasDart.CanThrowGadget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanThrowGadget, "BmScript.RFearGasDart.CanThrowGadget");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetGadgetCamera;
     /// <summary>
     /// Function: GetGadgetCamera
     /// </summary>
     public unsafe override BmSDK.FName GetGadgetCamera(bool InSoftCover = default, BmSDK.BmGame.RInventoryGadget.CoverCornerType CornerType = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFearGasDart.GetGadgetCamera", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGadgetCamera, "BmScript.RFearGasDart.GetGadgetCamera");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InSoftCover, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CornerType, paramsPtr + 4);
@@ -186,12 +195,13 @@ public partial class RFearGasDart : BmSDK.BmGame.RBlowDartBase, BmSDK.IGameObjec
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CheckAutoTarget;
     /// <summary>
     /// Function: CheckAutoTarget
     /// </summary>
     public unsafe override bool CheckAutoTarget(BmSDK.Engine.Actor BatarangTarget, out System.Numerics.Vector3 BatarangTargetPosition, out float OverridePriority, out float OverrideMaxRange, out byte DoLOSCheck)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFearGasDart.CheckAutoTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckAutoTarget, "BmScript.RFearGasDart.CheckAutoTarget");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BatarangTarget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -202,34 +212,37 @@ public partial class RFearGasDart : BmSDK.BmGame.RBlowDartBase, BmSDK.IGameObjec
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_FireGadgetCombat;
     /// <summary>
     /// Function: FireGadgetCombat
     /// </summary>
     public unsafe override bool FireGadgetCombat()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFearGasDart.FireGadgetCombat", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireGadgetCombat, "BmScript.RFearGasDart.FireGadgetCombat");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UpdateAutoTarget;
     /// <summary>
     /// Function: UpdateAutoTarget
     /// </summary>
     public unsafe virtual void UpdateAutoTarget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFearGasDart.UpdateAutoTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateAutoTarget, "BmScript.RFearGasDart.UpdateAutoTarget");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetPrimedPose;
     /// <summary>
     /// Function: GetPrimedPose
     /// </summary>
     public unsafe override BmSDK.FName GetPrimedPose(out BmSDK.BmGame.RInventoryGadget.PlayerWantsToCrouch StanceIsCrouched, out BmSDK.BmGame.RAnimUtil.EMirrorChoice MirroredNess, bool InSoftCover, BmSDK.BmGame.RInventoryGadget.CoverCornerType CornerType, out BmSDK.FName OutCapeState, out BmSDK.FName OutCapeTransitionState)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFearGasDart.GetPrimedPose", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPrimedPose, "BmScript.RFearGasDart.GetPrimedPose");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InSoftCover, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CornerType, paramsPtr + 8);
@@ -241,78 +254,85 @@ public partial class RFearGasDart : BmSDK.BmGame.RBlowDartBase, BmSDK.IGameObjec
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_DrawAimingHUD;
     /// <summary>
     /// Function: DrawAimingHUD
     /// </summary>
     public unsafe virtual void DrawAimingHUD()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFearGasDart.DrawAimingHUD", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DrawAimingHUD, "BmScript.RFearGasDart.DrawAimingHUD");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsFiring;
     /// <summary>
     /// Function: IsFiring
     /// </summary>
     public unsafe override bool IsFiring()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFearGasDart.IsFiring", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsFiring, "BmScript.RFearGasDart.IsFiring");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ExittedPrimedMode;
     /// <summary>
     /// Function: ExittedPrimedMode
     /// </summary>
     public unsafe override void ExittedPrimedMode()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFearGasDart.ExittedPrimedMode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ExittedPrimedMode, "BmScript.RFearGasDart.ExittedPrimedMode");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShowBody;
     /// <summary>
     /// Function: ShowBody
     /// </summary>
     public unsafe virtual void ShowBody()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFearGasDart.ShowBody", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowBody, "BmScript.RFearGasDart.ShowBody");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AdditiveArmAvoidance;
     /// <summary>
     /// Function: AdditiveArmAvoidance
     /// </summary>
     public unsafe override void AdditiveArmAvoidance()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFearGasDart.AdditiveArmAvoidance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AdditiveArmAvoidance, "BmScript.RFearGasDart.AdditiveArmAvoidance");
         byte* paramsPtr = stackalloc byte[84];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RestockAmmo;
     /// <summary>
     /// Function: RestockAmmo
     /// </summary>
     public unsafe override void RestockAmmo()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFearGasDart.RestockAmmo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RestockAmmo, "BmScript.RFearGasDart.RestockAmmo");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanPlayerMove;
     /// <summary>
     /// Function: CanPlayerMove
     /// </summary>
     public unsafe override bool CanPlayerMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RFearGasDart.CanPlayerMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanPlayerMove, "BmScript.RFearGasDart.CanPlayerMove");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

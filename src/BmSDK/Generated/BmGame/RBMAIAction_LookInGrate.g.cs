@@ -78,36 +78,39 @@ public partial class RBMAIAction_LookInGrate : BmSDK.BmGame.RBMAIAction, BmSDK.I
         where TComponent : class, Framework.IScriptComponent<RBMAIAction_LookInGrate>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ActionTick;
     /// <summary>
     /// Function: ActionTick
     /// </summary>
     public unsafe override BmSDK.BmGame.RBMAIAction.ActionTickResult ActionTick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_LookInGrate.ActionTick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActionTick, "BmGame.RBMAIAction_LookInGrate.ActionTick");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMAIAction.ActionTickResult>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_PlayIncendiaryCountdownLine;
     /// <summary>
     /// Function: PlayIncendiaryCountdownLine
     /// </summary>
     public unsafe virtual void PlayIncendiaryCountdownLine(int CountVal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_LookInGrate.PlayIncendiaryCountdownLine", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayIncendiaryCountdownLine, "BmGame.RBMAIAction_LookInGrate.PlayIncendiaryCountdownLine");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CountVal, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayThrowGrenadeOnTopOfGrateAnim;
     /// <summary>
     /// Function: PlayThrowGrenadeOnTopOfGrateAnim
     /// </summary>
     public unsafe virtual void PlayThrowGrenadeOnTopOfGrateAnim(BmSDK.BmGame.RTunnelGrateBase inGrate, BmSDK.FName AnimName, BmSDK.Engine.AnimSet AnimSet, System.Numerics.Vector3 GrenAnimRefLoc, BmSDK.Rotator GrenAnimRefRot)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_LookInGrate.PlayThrowGrenadeOnTopOfGrateAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayThrowGrenadeOnTopOfGrateAnim, "BmGame.RBMAIAction_LookInGrate.PlayThrowGrenadeOnTopOfGrateAnim");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(inGrate, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 8);
@@ -118,34 +121,37 @@ public partial class RBMAIAction_LookInGrate : BmSDK.BmGame.RBMAIAction, BmSDK.I
         return;
     }
 
+    private static BmSDK.Function __fn_PlayOutAnim;
     /// <summary>
     /// Function: PlayOutAnim
     /// </summary>
     public unsafe virtual void PlayOutAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_LookInGrate.PlayOutAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayOutAnim, "BmGame.RBMAIAction_LookInGrate.PlayOutAnim");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayAnim;
     /// <summary>
     /// Function: PlayAnim
     /// </summary>
     public unsafe virtual void PlayAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_LookInGrate.PlayAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayAnim, "BmGame.RBMAIAction_LookInGrate.PlayAnim");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetGrateAnimParams;
     /// <summary>
     /// Function: SetGrateAnimParams
     /// </summary>
     public unsafe virtual void SetGrateAnimParams(BmSDK.BmGame.RTunnelGrateBase NewGrate, BmSDK.FName NewTransName, BmSDK.FName NewIdleName, BmSDK.FName NewOutAnimName, System.Numerics.Vector3 NewRefLoc, BmSDK.Rotator NewRefRot, BmSDK.FName NewSlaveInAnimName = default, BmSDK.FName NewSlaveIdleName = default, BmSDK.FName NewSlaveOutAnimName = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_LookInGrate.SetGrateAnimParams", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetGrateAnimParams, "BmGame.RBMAIAction_LookInGrate.SetGrateAnimParams");
         byte* paramsPtr = stackalloc byte[80];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewGrate, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewTransName, paramsPtr + 8);
@@ -160,123 +166,134 @@ public partial class RBMAIAction_LookInGrate : BmSDK.BmGame.RBMAIAction, BmSDK.I
         return;
     }
 
+    private static BmSDK.Function __fn_HasValidSlave;
     /// <summary>
     /// Function: HasValidSlave
     /// </summary>
     public unsafe virtual bool HasValidSlave()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_LookInGrate.HasValidSlave", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasValidSlave, "BmGame.RBMAIAction_LookInGrate.HasValidSlave");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_HandlesGlance;
     /// <summary>
     /// Function: HandlesGlance
     /// </summary>
     public unsafe override bool HandlesGlance()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_LookInGrate.HandlesGlance", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandlesGlance, "BmGame.RBMAIAction_LookInGrate.HandlesGlance");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_OnDeactivate;
     /// <summary>
     /// Function: OnDeactivate
     /// </summary>
     public unsafe override void OnDeactivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_LookInGrate.OnDeactivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeactivate, "BmGame.RBMAIAction_LookInGrate.OnDeactivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_LookInGrate.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMAIAction_LookInGrate.OnActivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ReleaseGrenade;
     /// <summary>
     /// Function: ReleaseGrenade
     /// </summary>
     public unsafe virtual void ReleaseGrenade()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_LookInGrate.ReleaseGrenade", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReleaseGrenade, "BmGame.RBMAIAction_LookInGrate.ReleaseGrenade");
         byte* paramsPtr = stackalloc byte[112];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnGrenade;
     /// <summary>
     /// Function: SpawnGrenade
     /// </summary>
     public unsafe virtual void SpawnGrenade()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_LookInGrate.SpawnGrenade", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnGrenade, "BmGame.RBMAIAction_LookInGrate.SpawnGrenade");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StopGrateFiring;
     /// <summary>
     /// Function: StopGrateFiring
     /// </summary>
     public unsafe virtual void StopGrateFiring()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_LookInGrate.StopGrateFiring", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopGrateFiring, "BmGame.RBMAIAction_LookInGrate.StopGrateFiring");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartGrateFiring;
     /// <summary>
     /// Function: StartGrateFiring
     /// </summary>
     public unsafe virtual void StartGrateFiring()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_LookInGrate.StartGrateFiring", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartGrateFiring, "BmGame.RBMAIAction_LookInGrate.StartGrateFiring");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EndJokerHallucination;
     /// <summary>
     /// Function: EndJokerHallucination
     /// </summary>
     public unsafe virtual void EndJokerHallucination()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_LookInGrate.EndJokerHallucination", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EndJokerHallucination, "BmGame.RBMAIAction_LookInGrate.EndJokerHallucination");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DoSlavedJokerHallucination;
     /// <summary>
     /// Function: DoSlavedJokerHallucination
     /// </summary>
     public unsafe virtual void DoSlavedJokerHallucination(bool bIgnoreCollisionCheck)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_LookInGrate.DoSlavedJokerHallucination", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoSlavedJokerHallucination, "BmGame.RBMAIAction_LookInGrate.DoSlavedJokerHallucination");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIgnoreCollisionCheck, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetJokerHallucinationFadeMultiplier;
     /// <summary>
     /// Function: GetJokerHallucinationFadeMultiplier
     /// </summary>
     public unsafe virtual int GetJokerHallucinationFadeMultiplier()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_LookInGrate.GetJokerHallucinationFadeMultiplier", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetJokerHallucinationFadeMultiplier, "BmGame.RBMAIAction_LookInGrate.GetJokerHallucinationFadeMultiplier");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);

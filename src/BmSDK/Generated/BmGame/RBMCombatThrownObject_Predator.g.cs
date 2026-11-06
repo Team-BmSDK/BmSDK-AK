@@ -78,12 +78,13 @@ public partial class RBMCombatThrownObject_Predator : BmSDK.BmGame.RBMCombatThro
         where TComponent : class, Framework.IScriptComponent<RBMCombatThrownObject_Predator>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CanBePickedUpBy;
     /// <summary>
     /// Function: CanBePickedUpBy
     /// </summary>
     public unsafe override bool CanBePickedUpBy(BmSDK.BmGame.RBMPawnAI NewUser, bool bInCombat, bool bTaunting)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCombatThrownObject_Predator.CanBePickedUpBy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBePickedUpBy, "BmGame.RBMCombatThrownObject_Predator.CanBePickedUpBy");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewUser, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bInCombat, paramsPtr + 8);
@@ -92,12 +93,13 @@ public partial class RBMCombatThrownObject_Predator : BmSDK.BmGame.RBMCombatThro
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCombatThrownObject_Predator.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RBMCombatThrownObject_Predator.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

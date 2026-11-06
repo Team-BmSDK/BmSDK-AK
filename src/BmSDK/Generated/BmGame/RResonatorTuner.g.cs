@@ -73,12 +73,13 @@ public partial class RResonatorTuner : BmSDK.BmGame.RInventoryGadget, BmSDK.IGam
         where TComponent : class, Framework.IScriptComponent<RResonatorTuner>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetHelpPrompt;
     /// <summary>
     /// Function: GetHelpPrompt
     /// </summary>
     public unsafe override bool GetHelpPrompt(BmSDK.BmGame.RHUDPrompt HelpPrompt, bool bKismetHelpOn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.GetHelpPrompt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHelpPrompt, "BmGame.RResonatorTuner.GetHelpPrompt");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HelpPrompt, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bKismetHelpOn, paramsPtr + 8);
@@ -86,80 +87,87 @@ public partial class RResonatorTuner : BmSDK.BmGame.RInventoryGadget, BmSDK.IGam
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_PlayCodesNeededDialogue;
     /// <summary>
     /// Function: PlayCodesNeededDialogue
     /// </summary>
     public unsafe virtual void PlayCodesNeededDialogue()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.PlayCodesNeededDialogue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayCodesNeededDialogue, "BmGame.RResonatorTuner.PlayCodesNeededDialogue");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EquipResSwapLHand;
     /// <summary>
     /// Function: EquipResSwapLHand
     /// </summary>
     public unsafe virtual void EquipResSwapLHand()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.EquipResSwapLHand", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EquipResSwapLHand, "BmGame.RResonatorTuner.EquipResSwapLHand");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TurnOffLights;
     /// <summary>
     /// Function: TurnOffLights
     /// </summary>
     public unsafe virtual void TurnOffLights()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.TurnOffLights", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TurnOffLights, "BmGame.RResonatorTuner.TurnOffLights");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AttachToBelt;
     /// <summary>
     /// Function: AttachToBelt
     /// </summary>
     public unsafe override void AttachToBelt()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.AttachToBelt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttachToBelt, "BmGame.RResonatorTuner.AttachToBelt");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AttachToHand;
     /// <summary>
     /// Function: AttachToHand
     /// </summary>
     public unsafe override void AttachToHand(BmSDK.FName CustomBone = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.AttachToHand", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttachToHand, "BmGame.RResonatorTuner.AttachToHand");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CustomBone, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetProgressDisplay;
     /// <summary>
     /// Function: SetProgressDisplay
     /// </summary>
     public unsafe virtual void SetProgressDisplay(float Progress)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.SetProgressDisplay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetProgressDisplay, "BmGame.RResonatorTuner.SetProgressDisplay");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Progress, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetThumbStickPositions;
     /// <summary>
     /// Function: SetThumbStickPositions
     /// </summary>
     public unsafe virtual void SetThumbStickPositions(float LeftPos, float RightPos)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.SetThumbStickPositions", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetThumbStickPositions, "BmGame.RResonatorTuner.SetThumbStickPositions");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LeftPos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RightPos, paramsPtr + 4);
@@ -167,60 +175,65 @@ public partial class RResonatorTuner : BmSDK.BmGame.RInventoryGadget, BmSDK.IGam
         return;
     }
 
+    private static BmSDK.Function __fn_SetThumbStickPositionRight;
     /// <summary>
     /// Function: SetThumbStickPositionRight
     /// </summary>
     public unsafe virtual void SetThumbStickPositionRight(float RightPos)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.SetThumbStickPositionRight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetThumbStickPositionRight, "BmGame.RResonatorTuner.SetThumbStickPositionRight");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RightPos, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetThumbStickPositionLeft;
     /// <summary>
     /// Function: SetThumbStickPositionLeft
     /// </summary>
     public unsafe virtual void SetThumbStickPositionLeft(float LeftPos)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.SetThumbStickPositionLeft", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetThumbStickPositionLeft, "BmGame.RResonatorTuner.SetThumbStickPositionLeft");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LeftPos, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateLightAndScreen;
     /// <summary>
     /// Function: UpdateLightAndScreen
     /// </summary>
     public unsafe virtual void UpdateLightAndScreen(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.UpdateLightAndScreen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateLightAndScreen, "BmGame.RResonatorTuner.UpdateLightAndScreen");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetWinscreen;
     /// <summary>
     /// Function: SetWinscreen
     /// </summary>
     public unsafe virtual void SetWinscreen(BmSDK.FString winscreen_string)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.SetWinscreen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetWinscreen, "BmGame.RResonatorTuner.SetWinscreen");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(winscreen_string, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_BeginMinigame;
     /// <summary>
     /// Function: BeginMinigame
     /// </summary>
     public unsafe virtual void BeginMinigame(BmSDK.GFxUI.SwfMovie mg_movie_info, BmSDK.Engine.TextureRenderTarget2D mg_texture, BmSDK.Engine.Material mg_material, BmSDK.FString mg_loadstring)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.BeginMinigame", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BeginMinigame, "BmGame.RResonatorTuner.BeginMinigame");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(mg_movie_info, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(mg_texture, paramsPtr + 8);
@@ -230,12 +243,13 @@ public partial class RResonatorTuner : BmSDK.BmGame.RInventoryGadget, BmSDK.IGam
         return;
     }
 
+    private static BmSDK.Function __fn_AddPassword;
     /// <summary>
     /// Function: AddPassword
     /// </summary>
     public unsafe virtual void AddPassword(int pw_index, BmSDK.FString the_password)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.AddPassword", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddPassword, "BmGame.RResonatorTuner.AddPassword");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(pw_index, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(the_password, paramsPtr + 4);
@@ -243,105 +257,114 @@ public partial class RResonatorTuner : BmSDK.BmGame.RInventoryGadget, BmSDK.IGam
         return;
     }
 
+    private static BmSDK.Function __fn_PushPasswords;
     /// <summary>
     /// Function: PushPasswords
     /// </summary>
     public unsafe virtual void PushPasswords(BmSDK.BmGame.RRemoteControlHighSecurityInterface disruptable)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.PushPasswords", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PushPasswords, "BmGame.RResonatorTuner.PushPasswords");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(disruptable, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartFlashMovie;
     /// <summary>
     /// Function: StartFlashMovie
     /// </summary>
     public unsafe virtual void StartFlashMovie()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.StartFlashMovie", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartFlashMovie, "BmGame.RResonatorTuner.StartFlashMovie");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_BeginResonate;
     /// <summary>
     /// Function: BeginResonate
     /// </summary>
     public unsafe virtual void BeginResonate(BmSDK.Engine.Actor ResonateTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.BeginResonate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BeginResonate, "BmGame.RResonatorTuner.BeginResonate");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ResonateTarget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetCommsDisruptedMovieString;
     /// <summary>
     /// Function: GetCommsDisruptedMovieString
     /// </summary>
     public unsafe virtual BmSDK.FString GetCommsDisruptedMovieString(bool FirstTimeDisrupted)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.GetCommsDisruptedMovieString", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCommsDisruptedMovieString, "BmGame.RResonatorTuner.GetCommsDisruptedMovieString");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FirstTimeDisrupted, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_AreCommsDisrupted;
     /// <summary>
     /// Function: AreCommsDisrupted
     /// </summary>
     public unsafe virtual bool AreCommsDisrupted()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.AreCommsDisrupted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AreCommsDisrupted, "BmGame.RResonatorTuner.AreCommsDisrupted");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetStage;
     /// <summary>
     /// Function: SetStage
     /// </summary>
     public unsafe virtual void SetStage(int Stage)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.SetStage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetStage, "BmGame.RResonatorTuner.SetStage");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Stage, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartMiniGame;
     /// <summary>
     /// Function: StartMiniGame
     /// </summary>
     public unsafe virtual void StartMiniGame(bool MultiStage = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.StartMiniGame", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartMiniGame, "BmGame.RResonatorTuner.StartMiniGame");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MultiStage, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PowerOffScreen;
     /// <summary>
     /// Function: PowerOffScreen
     /// </summary>
     public unsafe virtual void PowerOffScreen()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.PowerOffScreen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PowerOffScreen, "BmGame.RResonatorTuner.PowerOffScreen");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CheckFlag;
     /// <summary>
     /// Function: CheckFlag
     /// </summary>
     public unsafe virtual bool CheckFlag(byte bitfield, byte flag)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.CheckFlag", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckFlag, "BmGame.RResonatorTuner.CheckFlag");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bitfield, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(flag, paramsPtr + 1);
@@ -349,23 +372,25 @@ public partial class RResonatorTuner : BmSDK.BmGame.RInventoryGadget, BmSDK.IGam
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_PowerOnScreen;
     /// <summary>
     /// Function: PowerOnScreen
     /// </summary>
     public unsafe virtual void PowerOnScreen()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.PowerOnScreen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PowerOnScreen, "BmGame.RResonatorTuner.PowerOnScreen");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CheckAutoTarget;
     /// <summary>
     /// Function: CheckAutoTarget
     /// </summary>
     public unsafe override bool CheckAutoTarget(BmSDK.Engine.Actor Target, out System.Numerics.Vector3 TargetPosition, out float OverridePriority, out float OverrideMaxRange, out byte DoLOSCheck)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.CheckAutoTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckAutoTarget, "BmGame.RResonatorTuner.CheckAutoTarget");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -376,70 +401,76 @@ public partial class RResonatorTuner : BmSDK.BmGame.RInventoryGadget, BmSDK.IGam
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_UpgradeGadget;
     /// <summary>
     /// Function: UpgradeGadget
     /// </summary>
     public unsafe override void UpgradeGadget(int NewUpgradeLevel)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.UpgradeGadget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpgradeGadget, "BmGame.RResonatorTuner.UpgradeGadget");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewUpgradeLevel, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AcquireTarget;
     /// <summary>
     /// Function: AcquireTarget
     /// </summary>
     public unsafe virtual void AcquireTarget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.AcquireTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AcquireTarget, "BmGame.RResonatorTuner.AcquireTarget");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SecureAreaToContinue;
     /// <summary>
     /// Function: SecureAreaToContinue
     /// </summary>
     public unsafe virtual bool SecureAreaToContinue(BmSDK.Engine.Actor Target)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.SecureAreaToContinue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SecureAreaToContinue, "BmGame.RResonatorTuner.SecureAreaToContinue");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CanResonateTarget;
     /// <summary>
     /// Function: CanResonateTarget
     /// </summary>
     public unsafe virtual bool CanResonateTarget(BmSDK.Engine.Actor Target)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.CanResonateTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanResonateTarget, "BmGame.RResonatorTuner.CanResonateTarget");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_AllowedToUseGadget;
     /// <summary>
     /// Function: AllowedToUseGadget
     /// </summary>
     public unsafe virtual bool AllowedToUseGadget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.AllowedToUseGadget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowedToUseGadget, "BmGame.RResonatorTuner.AllowedToUseGadget");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetPrimedPose;
     /// <summary>
     /// Function: GetPrimedPose
     /// </summary>
     public unsafe override BmSDK.FName GetPrimedPose(out BmSDK.BmGame.RInventoryGadget.PlayerWantsToCrouch StanceIsCrouched, out BmSDK.BmGame.RAnimUtil.EMirrorChoice MirroredNess, bool InSoftCover, BmSDK.BmGame.RInventoryGadget.CoverCornerType CornerType, out BmSDK.FName OutCapeState, out BmSDK.FName OutCapeTransitionState)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.GetPrimedPose", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPrimedPose, "BmGame.RResonatorTuner.GetPrimedPose");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InSoftCover, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CornerType, paramsPtr + 8);
@@ -451,57 +482,62 @@ public partial class RResonatorTuner : BmSDK.BmGame.RInventoryGadget, BmSDK.IGam
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_RestoreCachedHelpText;
     /// <summary>
     /// Function: RestoreCachedHelpText
     /// </summary>
     public unsafe virtual void RestoreCachedHelpText()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.RestoreCachedHelpText", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RestoreCachedHelpText, "BmGame.RResonatorTuner.RestoreCachedHelpText");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CacheAndClearHelpText;
     /// <summary>
     /// Function: CacheAndClearHelpText
     /// </summary>
     public unsafe virtual void CacheAndClearHelpText()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.CacheAndClearHelpText", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CacheAndClearHelpText, "BmGame.RResonatorTuner.CacheAndClearHelpText");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetupCustomLocator;
     /// <summary>
     /// Function: SetupCustomLocator
     /// </summary>
     public unsafe virtual void SetupCustomLocator(out BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator Loc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.SetupCustomLocator", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupCustomLocator, "BmGame.RResonatorTuner.SetupCustomLocator");
         byte* paramsPtr = stackalloc byte[132];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         Loc = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetResonateMoveConfig;
     /// <summary>
     /// Function: GetResonateMoveConfig
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RSpecialMoveConfig GetResonateMoveConfig()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.GetResonateMoveConfig", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetResonateMoveConfig, "BmGame.RResonatorTuner.GetResonateMoveConfig");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RSpecialMoveConfig>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RResonatorTuner.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RResonatorTuner.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

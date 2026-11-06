@@ -73,12 +73,13 @@ public partial class HttpRequestInterface : BmSDK.Engine.HttpBaseInterface, BmSD
         where TComponent : class, Framework.IScriptComponent<HttpRequestInterface>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetProcessRequestCompleteDelegate;
     /// <summary>
     /// Function: SetProcessRequestCompleteDelegate
     /// </summary>
     public unsafe virtual BmSDK.Engine.HttpRequestInterface SetProcessRequestCompleteDelegate(System.IntPtr ProcessRequestCompleteDelegate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.HttpRequestInterface.SetProcessRequestCompleteDelegate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetProcessRequestCompleteDelegate, "Engine.HttpRequestInterface.SetProcessRequestCompleteDelegate");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProcessRequestCompleteDelegate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -94,12 +95,13 @@ public partial class HttpRequestInterface : BmSDK.Engine.HttpBaseInterface, BmSD
         set { BmSDK.Framework.MarshalUtil.ToUnmanaged(value, Ptr + 84); }
     }
 
+    private static BmSDK.Function __fn_OnProcessRequestComplete;
     /// <summary>
     /// Function: OnProcessRequestComplete
     /// </summary>
     public unsafe virtual void OnProcessRequestComplete(BmSDK.Engine.HttpRequestInterface OriginalRequest, BmSDK.Engine.HttpResponseInterface InHttpResponse, bool bDidSucceed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.HttpRequestInterface.OnProcessRequestComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnProcessRequestComplete, "Engine.HttpRequestInterface.OnProcessRequestComplete");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OriginalRequest, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InHttpResponse, paramsPtr + 8);
@@ -108,12 +110,13 @@ public partial class HttpRequestInterface : BmSDK.Engine.HttpBaseInterface, BmSD
         return;
     }
 
+    private static BmSDK.Function __fn_ProcessRequest;
     /// <summary>
     /// Function: ProcessRequest
     /// </summary>
     public unsafe virtual bool ProcessRequest()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.HttpRequestInterface.ProcessRequest", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProcessRequest, "Engine.HttpRequestInterface.ProcessRequest");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -126,12 +129,13 @@ public partial class HttpRequestInterface : BmSDK.Engine.HttpBaseInterface, BmSD
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetHeader;
     /// <summary>
     /// Function: SetHeader
     /// </summary>
     public unsafe virtual BmSDK.Engine.HttpRequestInterface SetHeader(BmSDK.FString HeaderName, BmSDK.FString HeaderValue)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.HttpRequestInterface.SetHeader", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHeader, "Engine.HttpRequestInterface.SetHeader");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HeaderName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HeaderValue, paramsPtr + 16);
@@ -146,12 +150,13 @@ public partial class HttpRequestInterface : BmSDK.Engine.HttpBaseInterface, BmSD
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.HttpRequestInterface>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_SetContentAsString;
     /// <summary>
     /// Function: SetContentAsString
     /// </summary>
     public unsafe virtual BmSDK.Engine.HttpRequestInterface SetContentAsString(BmSDK.FString ContentString)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.HttpRequestInterface.SetContentAsString", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetContentAsString, "Engine.HttpRequestInterface.SetContentAsString");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ContentString, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -165,12 +170,13 @@ public partial class HttpRequestInterface : BmSDK.Engine.HttpBaseInterface, BmSD
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.HttpRequestInterface>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_SetContent;
     /// <summary>
     /// Function: SetContent
     /// </summary>
     public unsafe virtual BmSDK.Engine.HttpRequestInterface SetContent(out BmSDK.TArray<byte> ContentPayload)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.HttpRequestInterface.SetContent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetContent, "Engine.HttpRequestInterface.SetContent");
         byte* paramsPtr = stackalloc byte[24];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -184,12 +190,13 @@ public partial class HttpRequestInterface : BmSDK.Engine.HttpBaseInterface, BmSD
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.HttpRequestInterface>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_SetURL;
     /// <summary>
     /// Function: SetURL
     /// </summary>
     public unsafe virtual BmSDK.Engine.HttpRequestInterface SetURL(BmSDK.FString URL)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.HttpRequestInterface.SetURL", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetURL, "Engine.HttpRequestInterface.SetURL");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(URL, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -203,12 +210,13 @@ public partial class HttpRequestInterface : BmSDK.Engine.HttpBaseInterface, BmSD
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.HttpRequestInterface>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_SetVerb;
     /// <summary>
     /// Function: SetVerb
     /// </summary>
     public unsafe virtual BmSDK.Engine.HttpRequestInterface SetVerb(BmSDK.FString Verb)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.HttpRequestInterface.SetVerb", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetVerb, "Engine.HttpRequestInterface.SetVerb");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Verb, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -222,12 +230,13 @@ public partial class HttpRequestInterface : BmSDK.Engine.HttpBaseInterface, BmSD
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.HttpRequestInterface>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_GetVerb;
     /// <summary>
     /// Function: GetVerb
     /// </summary>
     public unsafe virtual BmSDK.FString GetVerb()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.HttpRequestInterface.GetVerb", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVerb, "Engine.HttpRequestInterface.GetVerb");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

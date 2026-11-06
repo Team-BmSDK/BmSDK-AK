@@ -78,23 +78,25 @@ public partial class RNavMeshPath_AvoidBlockedPolys : BmSDK.Engine.NavMeshPathCo
         where TComponent : class, Framework.IScriptComponent<RNavMeshPath_AvoidBlockedPolys>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Recycle;
     /// <summary>
     /// Function: Recycle
     /// </summary>
     public unsafe override void Recycle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RNavMeshPath_AvoidBlockedPolys.Recycle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Recycle, "BmGame.RNavMeshPath_AvoidBlockedPolys.Recycle");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AvoidPolysInHandle;
     /// <summary>
     /// Function: AvoidPolysInHandle
     /// </summary>
     public unsafe static bool AvoidPolysInHandle(BmSDK.BmGame.RNavigationHandle NewNavHandle)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RNavMeshPath_AvoidBlockedPolys.AvoidPolysInHandle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AvoidPolysInHandle, "BmGame.RNavMeshPath_AvoidBlockedPolys.AvoidPolysInHandle");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewNavHandle, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

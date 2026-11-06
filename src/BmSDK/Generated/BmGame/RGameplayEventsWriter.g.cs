@@ -78,12 +78,13 @@ public partial class RGameplayEventsWriter : BmSDK.BmGame.RGameplayEventsHydra, 
         where TComponent : class, Framework.IScriptComponent<RGameplayEventsWriter>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_LogBugEvent;
     /// <summary>
     /// Function: LogBugEvent
     /// </summary>
     public unsafe virtual int LogBugEvent(BmSDK.Engine.Controller Player, BmSDK.FString EventString)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGameplayEventsWriter.LogBugEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LogBugEvent, "BmGame.RGameplayEventsWriter.LogBugEvent");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventString, paramsPtr + 8);
@@ -98,12 +99,13 @@ public partial class RGameplayEventsWriter : BmSDK.BmGame.RGameplayEventsHydra, 
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_LogSystemPollEvents;
     /// <summary>
     /// Function: LogSystemPollEvents
     /// </summary>
     public unsafe override void LogSystemPollEvents()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGameplayEventsWriter.LogSystemPollEvents", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LogSystemPollEvents, "BmGame.RGameplayEventsWriter.LogSystemPollEvents");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -116,12 +118,13 @@ public partial class RGameplayEventsWriter : BmSDK.BmGame.RGameplayEventsHydra, 
         return;
     }
 
+    private static BmSDK.Function __fn_LogAllPlayerPositionsEvent;
     /// <summary>
     /// Function: LogAllPlayerPositionsEvent
     /// </summary>
     public unsafe override void LogAllPlayerPositionsEvent(int EventID)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGameplayEventsWriter.LogAllPlayerPositionsEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LogAllPlayerPositionsEvent, "BmGame.RGameplayEventsWriter.LogAllPlayerPositionsEvent");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventID, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -135,12 +138,13 @@ public partial class RGameplayEventsWriter : BmSDK.BmGame.RGameplayEventsHydra, 
         return;
     }
 
+    private static BmSDK.Function __fn_LogPlayerStringEvent;
     /// <summary>
     /// Function: LogPlayerStringEvent
     /// </summary>
     public unsafe override void LogPlayerStringEvent(int EventID, BmSDK.Engine.Controller Player, BmSDK.FString EventString)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGameplayEventsWriter.LogPlayerStringEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LogPlayerStringEvent, "BmGame.RGameplayEventsWriter.LogPlayerStringEvent");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventID, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 4);
@@ -156,12 +160,13 @@ public partial class RGameplayEventsWriter : BmSDK.BmGame.RGameplayEventsHydra, 
         return;
     }
 
+    private static BmSDK.Function __fn_LogPlayerFloatEvent;
     /// <summary>
     /// Function: LogPlayerFloatEvent
     /// </summary>
     public unsafe override void LogPlayerFloatEvent(int EventID, BmSDK.Engine.Controller Player, float Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGameplayEventsWriter.LogPlayerFloatEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LogPlayerFloatEvent, "BmGame.RGameplayEventsWriter.LogPlayerFloatEvent");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventID, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 4);
@@ -177,12 +182,13 @@ public partial class RGameplayEventsWriter : BmSDK.BmGame.RGameplayEventsHydra, 
         return;
     }
 
+    private static BmSDK.Function __fn_LogPlayerIntEvent;
     /// <summary>
     /// Function: LogPlayerIntEvent
     /// </summary>
     public unsafe override void LogPlayerIntEvent(int EventID, BmSDK.Engine.Controller Player, int Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGameplayEventsWriter.LogPlayerIntEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LogPlayerIntEvent, "BmGame.RGameplayEventsWriter.LogPlayerIntEvent");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventID, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 4);
@@ -198,12 +204,13 @@ public partial class RGameplayEventsWriter : BmSDK.BmGame.RGameplayEventsHydra, 
         return;
     }
 
+    private static BmSDK.Function __fn_CloseStatsFile;
     /// <summary>
     /// Function: CloseStatsFile
     /// </summary>
     public unsafe override void CloseStatsFile()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGameplayEventsWriter.CloseStatsFile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CloseStatsFile, "BmGame.RGameplayEventsWriter.CloseStatsFile");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -216,12 +223,13 @@ public partial class RGameplayEventsWriter : BmSDK.BmGame.RGameplayEventsHydra, 
         return;
     }
 
+    private static BmSDK.Function __fn_SerializeHeader;
     /// <summary>
     /// Function: SerializeHeader
     /// </summary>
     public unsafe override bool SerializeHeader()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGameplayEventsWriter.SerializeHeader", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SerializeHeader, "BmGame.RGameplayEventsWriter.SerializeHeader");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -234,12 +242,13 @@ public partial class RGameplayEventsWriter : BmSDK.BmGame.RGameplayEventsHydra, 
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_OpenStatsFile;
     /// <summary>
     /// Function: OpenStatsFile
     /// </summary>
     public unsafe override bool OpenStatsFile(BmSDK.FString Filename)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGameplayEventsWriter.OpenStatsFile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OpenStatsFile, "BmGame.RGameplayEventsWriter.OpenStatsFile");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -253,12 +262,13 @@ public partial class RGameplayEventsWriter : BmSDK.BmGame.RGameplayEventsHydra, 
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe override void Init()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGameplayEventsWriter.Init", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmGame.RGameplayEventsWriter.Init");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

@@ -78,12 +78,13 @@ public partial class RPickup_RiddlerCatwoman : BmSDK.BmGame.RPickupBase, BmSDK.I
         where TComponent : class, Framework.IScriptComponent<RPickup_RiddlerCatwoman>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GenerateScanEvent;
     /// <summary>
     /// Function: GenerateScanEvent
     /// </summary>
     public unsafe override void GenerateScanEvent(BmSDK.BmGame.RPlayerController RPC, bool Rescanned)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPickup_RiddlerCatwoman.GenerateScanEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GenerateScanEvent, "BmScript.RPickup_RiddlerCatwoman.GenerateScanEvent");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RPC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Rescanned, paramsPtr + 8);
@@ -91,81 +92,88 @@ public partial class RPickup_RiddlerCatwoman : BmSDK.BmGame.RPickupBase, BmSDK.I
         return;
     }
 
+    private static BmSDK.Function __fn_CanScanAndAddToMap;
     /// <summary>
     /// Function: CanScanAndAddToMap
     /// </summary>
     public unsafe override bool CanScanAndAddToMap()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPickup_RiddlerCatwoman.CanScanAndAddToMap", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanScanAndAddToMap, "BmScript.RPickup_RiddlerCatwoman.CanScanAndAddToMap");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ReEnableAfterFailedPickup;
     /// <summary>
     /// Function: ReEnableAfterFailedPickup
     /// </summary>
     public unsafe virtual void ReEnableAfterFailedPickup()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPickup_RiddlerCatwoman.ReEnableAfterFailedPickup", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReEnableAfterFailedPickup, "BmScript.RPickup_RiddlerCatwoman.ReEnableAfterFailedPickup");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Interact;
     /// <summary>
     /// Function: Interact
     /// </summary>
     public unsafe override void Interact(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPickup_RiddlerCatwoman.Interact", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Interact, "BmScript.RPickup_RiddlerCatwoman.Interact");
         byte* paramsPtr = stackalloc byte[256];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsActive;
     /// <summary>
     /// Function: IsActive
     /// </summary>
     public unsafe override bool IsActive(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPickup_RiddlerCatwoman.IsActive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsActive, "BmScript.RPickup_RiddlerCatwoman.IsActive");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_BullwhipDestroy;
     /// <summary>
     /// Function: BullwhipDestroy
     /// </summary>
     public unsafe virtual void BullwhipDestroy()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPickup_RiddlerCatwoman.BullwhipDestroy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BullwhipDestroy, "BmScript.RPickup_RiddlerCatwoman.BullwhipDestroy");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PickedUp;
     /// <summary>
     /// Function: PickedUp
     /// </summary>
     public unsafe override void PickedUp(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPickup_RiddlerCatwoman.PickedUp", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PickedUp, "BmScript.RPickup_RiddlerCatwoman.PickedUp");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPickup_RiddlerCatwoman.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmScript.RPickup_RiddlerCatwoman.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

@@ -78,24 +78,26 @@ public partial class RSeqAct_KillPawnsInVolume : BmSDK.Engine.SequenceAction, Bm
         where TComponent : class, Framework.IScriptComponent<RSeqAct_KillPawnsInVolume>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetPawnFromActor;
     /// <summary>
     /// Function: GetPawnFromActor
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RPawnCharacter GetPawnFromActor(BmSDK.Engine.Actor act)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_KillPawnsInVolume.GetPawnFromActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPawnFromActor, "BmGame.RSeqAct_KillPawnsInVolume.GetPawnFromActor");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(act, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnCharacter>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_KillPawnsInVolume.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmGame.RSeqAct_KillPawnsInVolume.Activated");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

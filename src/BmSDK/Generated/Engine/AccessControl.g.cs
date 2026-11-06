@@ -78,70 +78,76 @@ public partial class AccessControl : BmSDK.Engine.Info, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<AccessControl>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsPendingAuth;
     /// <summary>
     /// Function: IsPendingAuth
     /// </summary>
     public unsafe virtual bool IsPendingAuth(BmSDK.Engine.OnlineSubsystem.FUniqueNetId PlayerUID)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.IsPendingAuth", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPendingAuth, "Engine.AccessControl.IsPendingAuth");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerUID, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_Cleanup;
     /// <summary>
     /// Function: Cleanup
     /// </summary>
     public unsafe virtual void Cleanup(bool bExit = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.Cleanup", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Cleanup, "Engine.AccessControl.Cleanup");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bExit, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyExit;
     /// <summary>
     /// Function: NotifyExit
     /// </summary>
     public unsafe virtual void NotifyExit()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.NotifyExit", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyExit, "Engine.AccessControl.NotifyExit");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyGameEnding;
     /// <summary>
     /// Function: NotifyGameEnding
     /// </summary>
     public unsafe virtual void NotifyGameEnding()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.NotifyGameEnding", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyGameEnding, "Engine.AccessControl.NotifyGameEnding");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyServerTravel;
     /// <summary>
     /// Function: NotifyServerTravel
     /// </summary>
     public unsafe virtual void NotifyServerTravel(bool bSeamless)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.NotifyServerTravel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyServerTravel, "Engine.AccessControl.NotifyServerTravel");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSeamless, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnDestroyOnlineGameComplete;
     /// <summary>
     /// Function: OnDestroyOnlineGameComplete
     /// </summary>
     public unsafe virtual void OnDestroyOnlineGameComplete(BmSDK.FName SessionName, bool bWasSuccessful)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.OnDestroyOnlineGameComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDestroyOnlineGameComplete, "Engine.AccessControl.OnDestroyOnlineGameComplete");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SessionName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 8);
@@ -149,104 +155,113 @@ public partial class AccessControl : BmSDK.Engine.Info, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_StaticOnClientConnectionClose;
     /// <summary>
     /// Function: StaticOnClientConnectionClose
     /// </summary>
     public unsafe static void StaticOnClientConnectionClose(BmSDK.Engine.Player ClientConnection)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.StaticOnClientConnectionClose", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StaticOnClientConnectionClose, "Engine.AccessControl.StaticOnClientConnectionClose");
         byte* paramsPtr = stackalloc byte[88];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClientConnection, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnClientConnectionClose;
     /// <summary>
     /// Function: OnClientConnectionClose
     /// </summary>
     public unsafe virtual void OnClientConnectionClose(BmSDK.Engine.Player ClientConnection)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.OnClientConnectionClose", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnClientConnectionClose, "Engine.AccessControl.OnClientConnectionClose");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClientConnection, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ListenHostAuthTimeout;
     /// <summary>
     /// Function: ListenHostAuthTimeout
     /// </summary>
     public unsafe virtual void ListenHostAuthTimeout()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.ListenHostAuthTimeout", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ListenHostAuthTimeout, "Engine.AccessControl.ListenHostAuthTimeout");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EndListenHostAuth;
     /// <summary>
     /// Function: EndListenHostAuth
     /// </summary>
     public unsafe virtual void EndListenHostAuth()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.EndListenHostAuth", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EndListenHostAuth, "Engine.AccessControl.EndListenHostAuth");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ContinueListenHostAuth;
     /// <summary>
     /// Function: ContinueListenHostAuth
     /// </summary>
     public unsafe virtual void ContinueListenHostAuth()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.ContinueListenHostAuth", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ContinueListenHostAuth, "Engine.AccessControl.ContinueListenHostAuth");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_BeginListenHostAuth;
     /// <summary>
     /// Function: BeginListenHostAuth
     /// </summary>
     public unsafe virtual void BeginListenHostAuth(bool bRetry = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.BeginListenHostAuth", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BeginListenHostAuth, "Engine.AccessControl.BeginListenHostAuth");
         byte* paramsPtr = stackalloc byte[96];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bRetry, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyStartOnlineGame;
     /// <summary>
     /// Function: NotifyStartOnlineGame
     /// </summary>
     public unsafe virtual void NotifyStartOnlineGame()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.NotifyStartOnlineGame", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyStartOnlineGame, "Engine.AccessControl.NotifyStartOnlineGame");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ProcessServerAuthRetryRequest;
     /// <summary>
     /// Function: ProcessServerAuthRetryRequest
     /// </summary>
     public unsafe virtual void ProcessServerAuthRetryRequest(BmSDK.Engine.Player ClientConnection)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.ProcessServerAuthRetryRequest", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProcessServerAuthRetryRequest, "Engine.AccessControl.ProcessServerAuthRetryRequest");
         byte* paramsPtr = stackalloc byte[80];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClientConnection, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ProcessServerAuthRequest;
     /// <summary>
     /// Function: ProcessServerAuthRequest
     /// </summary>
     public unsafe virtual void ProcessServerAuthRequest(BmSDK.Engine.Player ClientConnection, BmSDK.Engine.OnlineSubsystem.FUniqueNetId ClientUID, int ClientIP, int ClientPort)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.ProcessServerAuthRequest", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProcessServerAuthRequest, "Engine.AccessControl.ProcessServerAuthRequest");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClientConnection, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClientUID, paramsPtr + 8);
@@ -256,12 +271,13 @@ public partial class AccessControl : BmSDK.Engine.Info, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_OnClientAuthComplete;
     /// <summary>
     /// Function: OnClientAuthComplete
     /// </summary>
     public unsafe virtual void OnClientAuthComplete(bool bSuccess, BmSDK.Engine.OnlineSubsystem.FUniqueNetId ClientUID, BmSDK.Engine.Player ClientConnection, BmSDK.FString ExtraInfo)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.OnClientAuthComplete", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnClientAuthComplete, "Engine.AccessControl.OnClientAuthComplete");
         byte* paramsPtr = stackalloc byte[100];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSuccess, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClientUID, paramsPtr + 4);
@@ -271,12 +287,13 @@ public partial class AccessControl : BmSDK.Engine.Info, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ProcessClientAuthResponse;
     /// <summary>
     /// Function: ProcessClientAuthResponse
     /// </summary>
     public unsafe virtual void ProcessClientAuthResponse(BmSDK.Engine.OnlineSubsystem.FUniqueNetId ClientUID, int ClientIP, int AuthTicketUID)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.ProcessClientAuthResponse", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProcessClientAuthResponse, "Engine.AccessControl.ProcessClientAuthResponse");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClientUID, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClientIP, paramsPtr + 8);
@@ -285,34 +302,37 @@ public partial class AccessControl : BmSDK.Engine.Info, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_OnAuthReady;
     /// <summary>
     /// Function: OnAuthReady
     /// </summary>
     public unsafe virtual void OnAuthReady()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.OnAuthReady", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnAuthReady, "Engine.AccessControl.OnAuthReady");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PendingAuthTimer;
     /// <summary>
     /// Function: PendingAuthTimer
     /// </summary>
     public unsafe virtual void PendingAuthTimer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.PendingAuthTimer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PendingAuthTimer, "Engine.AccessControl.PendingAuthTimer");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreLogin;
     /// <summary>
     /// Function: PreLogin
     /// </summary>
     public unsafe virtual void PreLogin(BmSDK.FString Options, BmSDK.FString Address, BmSDK.Engine.OnlineSubsystem.FUniqueNetId UniqueId, bool bSupportsAuth, out BmSDK.FString OutError, bool bSpectator)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.PreLogin", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreLogin, "Engine.AccessControl.PreLogin");
         byte* paramsPtr = stackalloc byte[172];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Options, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Address, paramsPtr + 16);
@@ -324,70 +344,76 @@ public partial class AccessControl : BmSDK.Engine.Info, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ClearAuthDelegates;
     /// <summary>
     /// Function: ClearAuthDelegates
     /// </summary>
     public unsafe virtual void ClearAuthDelegates(bool bExiting)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.ClearAuthDelegates", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearAuthDelegates, "Engine.AccessControl.ClearAuthDelegates");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bExiting, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RegisterAuthDelegates;
     /// <summary>
     /// Function: RegisterAuthDelegates
     /// </summary>
     public unsafe virtual void RegisterAuthDelegates()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.RegisterAuthDelegates", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterAuthDelegates, "Engine.AccessControl.RegisterAuthDelegates");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InitAuthHooks;
     /// <summary>
     /// Function: InitAuthHooks
     /// </summary>
     public unsafe virtual void InitAuthHooks()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.InitAuthHooks", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitAuthHooks, "Engine.AccessControl.InitAuthHooks");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsIDBanned;
     /// <summary>
     /// Function: IsIDBanned
     /// </summary>
     public unsafe virtual bool IsIDBanned(out BmSDK.Engine.OnlineSubsystem.FUniqueNetId NetId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.IsIDBanned", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsIDBanned, "Engine.AccessControl.IsIDBanned");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NetId = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineSubsystem.FUniqueNetId>(paramsPtr + 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CheckIPPolicy;
     /// <summary>
     /// Function: CheckIPPolicy
     /// </summary>
     public unsafe virtual bool CheckIPPolicy(BmSDK.FString Address)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.CheckIPPolicy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckIPPolicy, "Engine.AccessControl.CheckIPPolicy");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Address, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_ValidLogin;
     /// <summary>
     /// Function: ValidLogin
     /// </summary>
     public unsafe virtual bool ValidLogin(BmSDK.FString UserName, BmSDK.FString Password)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.ValidLogin", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ValidLogin, "Engine.AccessControl.ValidLogin");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UserName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Password, paramsPtr + 16);
@@ -395,60 +421,65 @@ public partial class AccessControl : BmSDK.Engine.Info, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_ParseAdminOptions;
     /// <summary>
     /// Function: ParseAdminOptions
     /// </summary>
     public unsafe virtual bool ParseAdminOptions(BmSDK.FString Options)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.ParseAdminOptions", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ParseAdminOptions, "Engine.AccessControl.ParseAdminOptions");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Options, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_AdminExited;
     /// <summary>
     /// Function: AdminExited
     /// </summary>
     public unsafe virtual void AdminExited(BmSDK.Engine.PlayerController P)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.AdminExited", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AdminExited, "Engine.AccessControl.AdminExited");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AdminEntered;
     /// <summary>
     /// Function: AdminEntered
     /// </summary>
     public unsafe virtual void AdminEntered(BmSDK.Engine.PlayerController P)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.AdminEntered", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AdminEntered, "Engine.AccessControl.AdminEntered");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AdminLogout;
     /// <summary>
     /// Function: AdminLogout
     /// </summary>
     public unsafe virtual bool AdminLogout(BmSDK.Engine.PlayerController P)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.AdminLogout", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AdminLogout, "Engine.AccessControl.AdminLogout");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_AdminLogin;
     /// <summary>
     /// Function: AdminLogin
     /// </summary>
     public unsafe virtual bool AdminLogin(BmSDK.Engine.PlayerController P, BmSDK.FString Password)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.AdminLogin", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AdminLogin, "Engine.AccessControl.AdminLogin");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Password, paramsPtr + 8);
@@ -456,12 +487,13 @@ public partial class AccessControl : BmSDK.Engine.Info, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_KickPlayer;
     /// <summary>
     /// Function: KickPlayer
     /// </summary>
     public unsafe virtual bool KickPlayer(BmSDK.Engine.PlayerController C, BmSDK.FString KickReason)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.KickPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_KickPlayer, "Engine.AccessControl.KickPlayer");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(C, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(KickReason, paramsPtr + 8);
@@ -469,12 +501,13 @@ public partial class AccessControl : BmSDK.Engine.Info, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_ForceKickPlayer;
     /// <summary>
     /// Function: ForceKickPlayer
     /// </summary>
     public unsafe virtual bool ForceKickPlayer(BmSDK.Engine.PlayerController C, BmSDK.FString KickReason)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.ForceKickPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForceKickPlayer, "Engine.AccessControl.ForceKickPlayer");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(C, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(KickReason, paramsPtr + 8);
@@ -482,106 +515,115 @@ public partial class AccessControl : BmSDK.Engine.Info, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_KickBan;
     /// <summary>
     /// Function: KickBan
     /// </summary>
     public unsafe virtual void KickBan(BmSDK.FString Target)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.KickBan", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_KickBan, "Engine.AccessControl.KickBan");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Kick;
     /// <summary>
     /// Function: Kick
     /// </summary>
     public unsafe virtual void Kick(BmSDK.FString Target)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.Kick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Kick, "Engine.AccessControl.Kick");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetControllerFromString;
     /// <summary>
     /// Function: GetControllerFromString
     /// </summary>
     public unsafe virtual BmSDK.Engine.Controller GetControllerFromString(BmSDK.FString Target)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.GetControllerFromString", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetControllerFromString, "Engine.AccessControl.GetControllerFromString");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Controller>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_RequiresPassword;
     /// <summary>
     /// Function: RequiresPassword
     /// </summary>
     public unsafe virtual bool RequiresPassword()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.RequiresPassword", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RequiresPassword, "Engine.AccessControl.RequiresPassword");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetGamePassword;
     /// <summary>
     /// Function: SetGamePassword
     /// </summary>
     public unsafe virtual void SetGamePassword(BmSDK.FString P)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.SetGamePassword", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetGamePassword, "Engine.AccessControl.SetGamePassword");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetAdminPassword;
     /// <summary>
     /// Function: SetAdminPassword
     /// </summary>
     public unsafe virtual bool SetAdminPassword(BmSDK.FString P)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.SetAdminPassword", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAdminPassword, "Engine.AccessControl.SetAdminPassword");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_IsAdmin;
     /// <summary>
     /// Function: IsAdmin
     /// </summary>
     public unsafe virtual bool IsAdmin(BmSDK.Engine.PlayerController P)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.IsAdmin", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAdmin, "Engine.AccessControl.IsAdmin");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "Engine.AccessControl.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AccessControl.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "Engine.AccessControl.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

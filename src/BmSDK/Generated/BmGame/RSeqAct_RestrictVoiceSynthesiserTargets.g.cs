@@ -78,46 +78,50 @@ public partial class RSeqAct_RestrictVoiceSynthesiserTargets : BmSDK.Engine.Sequ
         where TComponent : class, Framework.IScriptComponent<RSeqAct_RestrictVoiceSynthesiserTargets>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_RestrictVoiceSynthesiserTargets.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmGame.RSeqAct_RestrictVoiceSynthesiserTargets.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_FiredAtWrongTarget;
     /// <summary>
     /// Function: FiredAtWrongTarget
     /// </summary>
     public unsafe virtual void FiredAtWrongTarget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_RestrictVoiceSynthesiserTargets.FiredAtWrongTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FiredAtWrongTarget, "BmGame.RSeqAct_RestrictVoiceSynthesiserTargets.FiredAtWrongTarget");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsCurrentTargetAllowed;
     /// <summary>
     /// Function: IsCurrentTargetAllowed
     /// </summary>
     public unsafe virtual bool IsCurrentTargetAllowed(BmSDK.Engine.Actor CheckTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_RestrictVoiceSynthesiserTargets.IsCurrentTargetAllowed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsCurrentTargetAllowed, "BmGame.RSeqAct_RestrictVoiceSynthesiserTargets.IsCurrentTargetAllowed");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckTarget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_RestrictVoiceSynthesiserTargets.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmGame.RSeqAct_RestrictVoiceSynthesiserTargets.Activated");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

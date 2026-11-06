@@ -78,12 +78,13 @@ public partial class RRiddlerBoxBase : BmSDK.BmGame.RMagneticDynamicObjectBase, 
         where TComponent : class, Framework.IScriptComponent<RRiddlerBoxBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_InitAllPhysics;
     /// <summary>
     /// Function: InitAllPhysics
     /// </summary>
     public unsafe virtual void InitAllPhysics()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRiddlerBoxBase.InitAllPhysics", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitAllPhysics, "BmGame.RRiddlerBoxBase.InitAllPhysics");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

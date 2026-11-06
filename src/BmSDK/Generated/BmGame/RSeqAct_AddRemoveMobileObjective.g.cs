@@ -78,12 +78,13 @@ public partial class RSeqAct_AddRemoveMobileObjective : BmSDK.Engine.SequenceAct
         where TComponent : class, Framework.IScriptComponent<RSeqAct_AddRemoveMobileObjective>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CollectLinkedWaveSpawners;
     /// <summary>
     /// Function: CollectLinkedWaveSpawners
     /// </summary>
     public unsafe virtual void CollectLinkedWaveSpawners()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_AddRemoveMobileObjective.CollectLinkedWaveSpawners", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CollectLinkedWaveSpawners, "BmGame.RSeqAct_AddRemoveMobileObjective.CollectLinkedWaveSpawners");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,34 +97,37 @@ public partial class RSeqAct_AddRemoveMobileObjective : BmSDK.Engine.SequenceAct
         return;
     }
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_AddRemoveMobileObjective.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmGame.RSeqAct_AddRemoveMobileObjective.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_FindSeqAct;
     /// <summary>
     /// Function: FindSeqAct
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RSeqAct_MultipleMobileObjectives FindSeqAct()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_AddRemoveMobileObjective.FindSeqAct", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindSeqAct, "BmGame.RSeqAct_AddRemoveMobileObjective.FindSeqAct");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RSeqAct_MultipleMobileObjectives>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PassActors;
     /// <summary>
     /// Function: PassActors
     /// </summary>
     public unsafe virtual void PassActors(BmSDK.BmGame.RSeqAct_MultipleMobileObjectives MainSeqAct, bool dooAdd)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_AddRemoveMobileObjective.PassActors", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PassActors, "BmGame.RSeqAct_AddRemoveMobileObjective.PassActors");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MainSeqAct, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dooAdd, paramsPtr + 8);
@@ -131,12 +135,13 @@ public partial class RSeqAct_AddRemoveMobileObjective : BmSDK.Engine.SequenceAct
         return;
     }
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_AddRemoveMobileObjective.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmGame.RSeqAct_AddRemoveMobileObjective.Activated");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

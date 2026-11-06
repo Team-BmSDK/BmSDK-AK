@@ -78,171 +78,186 @@ public partial class RBMAIAction_SniperSearch : BmSDK.BmGame.RBMAIAction, BmSDK.
         where TComponent : class, Framework.IScriptComponent<RBMAIAction_SniperSearch>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetAIThoughts;
     /// <summary>
     /// Function: GetAIThoughts
     /// </summary>
     public unsafe virtual void GetAIThoughts(out BmSDK.TArray<BmSDK.Engine.Actor.FThought> ThoughtList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_SniperSearch.GetAIThoughts", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAIThoughts, "BmGame.RBMAIAction_SniperSearch.GetAIThoughts");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         ThoughtList = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.Engine.Actor.FThought>>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnDeactivate;
     /// <summary>
     /// Function: OnDeactivate
     /// </summary>
     public unsafe override void OnDeactivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_SniperSearch.OnDeactivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeactivate, "BmGame.RBMAIAction_SniperSearch.OnDeactivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetLongFOV;
     /// <summary>
     /// Function: SetLongFOV
     /// </summary>
     public unsafe virtual void SetLongFOV()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_SniperSearch.SetLongFOV", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetLongFOV, "BmGame.RBMAIAction_SniperSearch.SetLongFOV");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetShortFOV;
     /// <summary>
     /// Function: SetShortFOV
     /// </summary>
     public unsafe virtual void SetShortFOV()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_SniperSearch.SetShortFOV", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetShortFOV, "BmGame.RBMAIAction_SniperSearch.SetShortFOV");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ActionTick;
     /// <summary>
     /// Function: ActionTick
     /// </summary>
     public unsafe override BmSDK.BmGame.RBMAIAction.ActionTickResult ActionTick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_SniperSearch.ActionTick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActionTick, "BmGame.RBMAIAction_SniperSearch.ActionTick");
         byte* paramsPtr = stackalloc byte[5];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMAIAction.ActionTickResult>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetAimAtActor;
     /// <summary>
     /// Function: GetAimAtActor
     /// </summary>
     public unsafe virtual BmSDK.Engine.Actor GetAimAtActor()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_SniperSearch.GetAimAtActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAimAtActor, "BmGame.RBMAIAction_SniperSearch.GetAimAtActor");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetNextAimAtActor;
     /// <summary>
     /// Function: SetNextAimAtActor
     /// </summary>
     public unsafe virtual BmSDK.Engine.Actor SetNextAimAtActor(bool bNewSniperPoint = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_SniperSearch.SetNextAimAtActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetNextAimAtActor, "BmGame.RBMAIAction_SniperSearch.SetNextAimAtActor");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewSniperPoint, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_UpdateAim;
     /// <summary>
     /// Function: UpdateAim
     /// </summary>
     public unsafe virtual bool UpdateAim(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_SniperSearch.UpdateAim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateAim, "BmGame.RBMAIAction_SniperSearch.UpdateAim");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetMaxAimSpeed;
     /// <summary>
     /// Function: GetMaxAimSpeed
     /// </summary>
     public unsafe virtual float GetMaxAimSpeed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_SniperSearch.GetMaxAimSpeed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMaxAimSpeed, "BmGame.RBMAIAction_SniperSearch.GetMaxAimSpeed");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_StartNextShotState;
     /// <summary>
     /// Function: StartNextShotState
     /// </summary>
     public unsafe virtual void StartNextShotState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_SniperSearch.StartNextShotState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartNextShotState, "BmGame.RBMAIAction_SniperSearch.StartNextShotState");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GunFired;
     /// <summary>
     /// Function: GunFired
     /// </summary>
     public unsafe override void GunFired()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_SniperSearch.GunFired", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GunFired, "BmGame.RBMAIAction_SniperSearch.GunFired");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetBetweenShotTimer;
     /// <summary>
     /// Function: SetBetweenShotTimer
     /// </summary>
     public unsafe virtual void SetBetweenShotTimer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_SniperSearch.SetBetweenShotTimer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBetweenShotTimer, "BmGame.RBMAIAction_SniperSearch.SetBetweenShotTimer");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TickFiring;
     /// <summary>
     /// Function: TickFiring
     /// </summary>
     public unsafe virtual void TickFiring(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_SniperSearch.TickFiring", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TickFiring, "BmGame.RBMAIAction_SniperSearch.TickFiring");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_SniperSearch.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMAIAction_SniperSearch.OnActivate");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetSniperInfo;
     /// <summary>
     /// Function: SetSniperInfo
     /// </summary>
     public unsafe virtual void SetSniperInfo(BmSDK.BmGame.RSniperPoint NewSniperPoint, BmSDK.BmGame.RAEC_Search_Sub_Sniper NewSniperAEC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_SniperSearch.SetSniperInfo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSniperInfo, "BmGame.RBMAIAction_SniperSearch.SetSniperInfo");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewSniperPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewSniperAEC, paramsPtr + 8);
@@ -250,12 +265,13 @@ public partial class RBMAIAction_SniperSearch : BmSDK.BmGame.RBMAIAction, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_GetSniperPointInfo;
     /// <summary>
     /// Function: GetSniperPointInfo
     /// </summary>
     public unsafe virtual bool GetSniperPointInfo(out System.Numerics.Vector3 StandPos, out BmSDK.Rotator StandRotator)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_SniperSearch.GetSniperPointInfo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSniperPointInfo, "BmGame.RBMAIAction_SniperSearch.GetSniperPointInfo");
         byte* paramsPtr = stackalloc byte[100];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         StandPos = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
@@ -263,12 +279,13 @@ public partial class RBMAIAction_SniperSearch : BmSDK.BmGame.RBMAIAction, BmSDK.
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_InitialiseAimAtPlayerTimer;
     /// <summary>
     /// Function: InitialiseAimAtPlayerTimer
     /// </summary>
     public unsafe virtual void InitialiseAimAtPlayerTimer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_SniperSearch.InitialiseAimAtPlayerTimer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitialiseAimAtPlayerTimer, "BmGame.RBMAIAction_SniperSearch.InitialiseAimAtPlayerTimer");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

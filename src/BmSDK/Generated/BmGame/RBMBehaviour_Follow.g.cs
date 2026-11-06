@@ -78,90 +78,98 @@ public partial class RBMBehaviour_Follow : BmSDK.BmGame.RBMBehaviour, BmSDK.IGam
         where TComponent : class, Framework.IScriptComponent<RBMBehaviour_Follow>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetPathToFollowActor;
     /// <summary>
     /// Function: SetPathToFollowActor
     /// </summary>
     public unsafe virtual void SetPathToFollowActor()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_Follow.SetPathToFollowActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetPathToFollowActor, "BmGame.RBMBehaviour_Follow.SetPathToFollowActor");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PathToFollowActorFailed;
     /// <summary>
     /// Function: PathToFollowActorFailed
     /// </summary>
     public unsafe virtual void PathToFollowActorFailed(BmSDK.BmGame.RNavigationHandle NavH)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_Follow.PathToFollowActorFailed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PathToFollowActorFailed, "BmGame.RBMBehaviour_Follow.PathToFollowActorFailed");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NavH, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetMoveToSpeed;
     /// <summary>
     /// Function: SetMoveToSpeed
     /// </summary>
     public unsafe virtual void SetMoveToSpeed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_Follow.SetMoveToSpeed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMoveToSpeed, "BmGame.RBMBehaviour_Follow.SetMoveToSpeed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnEndInterrupt;
     /// <summary>
     /// Function: OnEndInterrupt
     /// </summary>
     public unsafe override void OnEndInterrupt()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_Follow.OnEndInterrupt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnEndInterrupt, "BmGame.RBMBehaviour_Follow.OnEndInterrupt");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InRange;
     /// <summary>
     /// Function: InRange
     /// </summary>
     public unsafe virtual bool InRange()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_Follow.InRange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InRange, "BmGame.RBMBehaviour_Follow.InRange");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ReleaseNavHandle;
     /// <summary>
     /// Function: ReleaseNavHandle
     /// </summary>
     public unsafe virtual void ReleaseNavHandle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_Follow.ReleaseNavHandle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReleaseNavHandle, "BmGame.RBMBehaviour_Follow.ReleaseNavHandle");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnDeactivate;
     /// <summary>
     /// Function: OnDeactivate
     /// </summary>
     public unsafe override void OnDeactivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_Follow.OnDeactivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeactivate, "BmGame.RBMBehaviour_Follow.OnDeactivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_Follow.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMBehaviour_Follow.OnActivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

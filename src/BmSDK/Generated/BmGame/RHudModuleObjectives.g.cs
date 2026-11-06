@@ -78,23 +78,25 @@ public partial class RHudModuleObjectives : BmSDK.BmGame.RHudModule, BmSDK.IGame
         where TComponent : class, Framework.IScriptComponent<RHudModuleObjectives>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_XI_ObjectiveBarFilled;
     /// <summary>
     /// Function: XI_ObjectiveBarFilled
     /// </summary>
     public unsafe virtual void XI_ObjectiveBarFilled()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleObjectives.XI_ObjectiveBarFilled", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_ObjectiveBarFilled, "BmGame.RHudModuleObjectives.XI_ObjectiveBarFilled");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_ObjectiveItemShown;
     /// <summary>
     /// Function: XI_ObjectiveItemShown
     /// </summary>
     public unsafe virtual void XI_ObjectiveItemShown(int arrow_type, BmSDK.FString CustomIconString)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleObjectives.XI_ObjectiveItemShown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_ObjectiveItemShown, "BmGame.RHudModuleObjectives.XI_ObjectiveItemShown");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(arrow_type, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CustomIconString, paramsPtr + 4);
@@ -102,24 +104,26 @@ public partial class RHudModuleObjectives : BmSDK.BmGame.RHudModule, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_FlushObjectivePrivate;
     /// <summary>
     /// Function: FlushObjectivePrivate
     /// </summary>
     public unsafe virtual void FlushObjectivePrivate(BmSDK.FString Title)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleObjectives.FlushObjectivePrivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FlushObjectivePrivate, "BmGame.RHudModuleObjectives.FlushObjectivePrivate");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Title, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddObjectivePrivate;
     /// <summary>
     /// Function: AddObjectivePrivate
     /// </summary>
     public unsafe virtual void AddObjectivePrivate(float Time, BmSDK.FString Title, BmSDK.FString Desc, BmSDK.FString OrgDesc, int ArrowType, bool bForceShowMap, BmSDK.FString BackPrompt, bool bNoDuplicates, bool bPulseCompassIndicatorm, BmSDK.FString mostWantedUnlocksString)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleObjectives.AddObjectivePrivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddObjectivePrivate, "BmGame.RHudModuleObjectives.AddObjectivePrivate");
         byte* paramsPtr = stackalloc byte[100];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Time, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Title, paramsPtr + 4);
@@ -135,12 +139,13 @@ public partial class RHudModuleObjectives : BmSDK.BmGame.RHudModule, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_ObjectivesPromptCallback;
     /// <summary>
     /// Function: ObjectivesPromptCallback
     /// </summary>
     public unsafe virtual void ObjectivesPromptCallback(BmSDK.FString PadStr, BmSDK.FString KeyStr)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleObjectives.ObjectivesPromptCallback", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ObjectivesPromptCallback, "BmGame.RHudModuleObjectives.ObjectivesPromptCallback");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PadStr, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(KeyStr, paramsPtr + 16);
@@ -148,34 +153,37 @@ public partial class RHudModuleObjectives : BmSDK.BmGame.RHudModule, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_SendQueuedInfo;
     /// <summary>
     /// Function: SendQueuedInfo
     /// </summary>
     public unsafe virtual void SendQueuedInfo()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleObjectives.SendQueuedInfo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SendQueuedInfo, "BmGame.RHudModuleObjectives.SendQueuedInfo");
         byte* paramsPtr = stackalloc byte[100];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Close;
     /// <summary>
     /// Function: Close
     /// </summary>
     public unsafe override void Close()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleObjectives.Close", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Close, "BmGame.RHudModuleObjectives.Close");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe override bool Init(BmSDK.BmGame.RPlayerController _RPC, BmSDK.FString _ExtensionName, BmSDK.FString _ExtensionPath)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleObjectives.Init", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmGame.RHudModuleObjectives.Init");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_RPC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_ExtensionName, paramsPtr + 8);

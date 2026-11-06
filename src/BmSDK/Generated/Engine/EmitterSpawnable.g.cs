@@ -78,24 +78,26 @@ public partial class EmitterSpawnable : BmSDK.Engine.Emitter, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<EmitterSpawnable>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ReplicatedEvent;
     /// <summary>
     /// Function: ReplicatedEvent
     /// </summary>
     public unsafe override void ReplicatedEvent(BmSDK.FName VarName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.EmitterSpawnable.ReplicatedEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReplicatedEvent, "Engine.EmitterSpawnable.ReplicatedEvent");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VarName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetTemplate;
     /// <summary>
     /// Function: SetTemplate
     /// </summary>
     public unsafe override void SetTemplate(BmSDK.Engine.ParticleSystem NewTemplate, bool bDestroyOnFinish)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.EmitterSpawnable.SetTemplate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetTemplate, "Engine.EmitterSpawnable.SetTemplate");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewTemplate, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDestroyOnFinish, paramsPtr + 8);

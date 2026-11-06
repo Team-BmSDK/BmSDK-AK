@@ -78,58 +78,63 @@ public partial class RAEC_ExplodedWall : BmSDK.BmGame.RAlertEventCoordinatorBase
         where TComponent : class, Framework.IScriptComponent<RAEC_ExplodedWall>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ClearInvestigateNavReqs;
     /// <summary>
     /// Function: ClearInvestigateNavReqs
     /// </summary>
     public unsafe virtual void ClearInvestigateNavReqs()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_ExplodedWall.ClearInvestigateNavReqs", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearInvestigateNavReqs, "BmGame.RAEC_ExplodedWall.ClearInvestigateNavReqs");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartInvestigateNavRequests;
     /// <summary>
     /// Function: StartInvestigateNavRequests
     /// </summary>
     public unsafe virtual void StartInvestigateNavRequests()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_ExplodedWall.StartInvestigateNavRequests", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartInvestigateNavRequests, "BmGame.RAEC_ExplodedWall.StartInvestigateNavRequests");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetBarkFractureType;
     /// <summary>
     /// Function: GetBarkFractureType
     /// </summary>
     public unsafe virtual BmSDK.TArray<BmSDK.BmGame.RBarkFlagBase.FBarkFlag> GetBarkFractureType(BmSDK.BmGame.RPawn TestPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_ExplodedWall.GetBarkFractureType", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBarkFractureType, "BmGame.RAEC_ExplodedWall.GetBarkFractureType");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.BmGame.RBarkFlagBase.FBarkFlag>>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_WallSeen;
     /// <summary>
     /// Function: WallSeen
     /// </summary>
     public unsafe virtual void WallSeen(BmSDK.BmGame.RBMAIController Spotter)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_ExplodedWall.WallSeen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WallSeen, "BmGame.RAEC_ExplodedWall.WallSeen");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Spotter, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HandleExplodeNoise;
     /// <summary>
     /// Function: HandleExplodeNoise
     /// </summary>
     public unsafe virtual void HandleExplodeNoise(System.Numerics.Vector3 NewExplosionCentre, System.Numerics.Vector3 NewWallNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_ExplodedWall.HandleExplodeNoise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandleExplodeNoise, "BmGame.RAEC_ExplodedWall.HandleExplodeNoise");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewExplosionCentre, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewWallNormal, paramsPtr + 12);
@@ -137,81 +142,88 @@ public partial class RAEC_ExplodedWall : BmSDK.BmGame.RAlertEventCoordinatorBase
         return;
     }
 
+    private static BmSDK.Function __fn_WallDownCleanUp;
     /// <summary>
     /// Function: WallDownCleanUp
     /// </summary>
     public unsafe virtual void WallDownCleanUp()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_ExplodedWall.WallDownCleanUp", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WallDownCleanUp, "BmGame.RAEC_ExplodedWall.WallDownCleanUp");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetBarkPriority;
     /// <summary>
     /// Function: GetBarkPriority
     /// </summary>
     public unsafe override int GetBarkPriority()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_ExplodedWall.GetBarkPriority", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBarkPriority, "BmGame.RAEC_ExplodedWall.GetBarkPriority");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_FinishTopLevelAEC;
     /// <summary>
     /// Function: FinishTopLevelAEC
     /// </summary>
     public unsafe override void FinishTopLevelAEC(BmSDK.BmGame.RBMAIController StolenCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_ExplodedWall.FinishTopLevelAEC", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishTopLevelAEC, "BmGame.RAEC_ExplodedWall.FinishTopLevelAEC");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StolenCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnRemoveGroupChild;
     /// <summary>
     /// Function: OnRemoveGroupChild
     /// </summary>
     public unsafe override void OnRemoveGroupChild(BmSDK.BmGame.RAlertEventCoordinatorBase RemAEC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_ExplodedWall.OnRemoveGroupChild", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnRemoveGroupChild, "BmGame.RAEC_ExplodedWall.OnRemoveGroupChild");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RemAEC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_ExplodedWall.PreStreamOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmGame.RAEC_ExplodedWall.PreStreamOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetWall;
     /// <summary>
     /// Function: SetWall
     /// </summary>
     public unsafe virtual void SetWall(BmSDK.BmGame.RDestructibleProp_FractureWall NewDestructibleWall)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_ExplodedWall.SetWall", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetWall, "BmGame.RAEC_ExplodedWall.SetWall");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewDestructibleWall, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_ExplodedWall.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RAEC_ExplodedWall.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

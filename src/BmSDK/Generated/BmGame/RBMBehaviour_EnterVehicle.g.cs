@@ -78,122 +78,133 @@ public partial class RBMBehaviour_EnterVehicle : BmSDK.BmGame.RBMBehaviour, BmSD
         where TComponent : class, Framework.IScriptComponent<RBMBehaviour_EnterVehicle>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_InteriorLightsOff;
     /// <summary>
     /// Function: InteriorLightsOff
     /// </summary>
     public unsafe virtual void InteriorLightsOff()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_EnterVehicle.InteriorLightsOff", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InteriorLightsOff, "BmGame.RBMBehaviour_EnterVehicle.InteriorLightsOff");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InteriorLightsOn;
     /// <summary>
     /// Function: InteriorLightsOn
     /// </summary>
     public unsafe virtual void InteriorLightsOn()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_EnterVehicle.InteriorLightsOn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InteriorLightsOn, "BmGame.RBMBehaviour_EnterVehicle.InteriorLightsOn");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnDeactivate;
     /// <summary>
     /// Function: OnDeactivate
     /// </summary>
     public unsafe override void OnDeactivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_EnterVehicle.OnDeactivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeactivate, "BmGame.RBMBehaviour_EnterVehicle.OnDeactivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetInitialState;
     /// <summary>
     /// Function: SetInitialState
     /// </summary>
     public unsafe override void SetInitialState()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_EnterVehicle.SetInitialState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetInitialState, "BmGame.RBMBehaviour_EnterVehicle.SetInitialState");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayEnterAnim;
     /// <summary>
     /// Function: PlayEnterAnim
     /// </summary>
     public unsafe virtual void PlayEnterAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_EnterVehicle.PlayEnterAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayEnterAnim, "BmGame.RBMBehaviour_EnterVehicle.PlayEnterAnim");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetAnimRotation;
     /// <summary>
     /// Function: GetAnimRotation
     /// </summary>
     public unsafe virtual BmSDK.Rotator GetAnimRotation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_EnterVehicle.GetAnimRotation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAnimRotation, "BmGame.RBMBehaviour_EnterVehicle.GetAnimRotation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetStartAnimLocation;
     /// <summary>
     /// Function: GetStartAnimLocation
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetStartAnimLocation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_EnterVehicle.GetStartAnimLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStartAnimLocation, "BmGame.RBMBehaviour_EnterVehicle.GetStartAnimLocation");
         byte* paramsPtr = stackalloc byte[88];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetAnimLocation;
     /// <summary>
     /// Function: GetAnimLocation
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetAnimLocation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_EnterVehicle.GetAnimLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAnimLocation, "BmGame.RBMBehaviour_EnterVehicle.GetAnimLocation");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UnableToAssignToSlot;
     /// <summary>
     /// Function: UnableToAssignToSlot
     /// </summary>
     public unsafe virtual void UnableToAssignToSlot()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_EnterVehicle.UnableToAssignToSlot", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnableToAssignToSlot, "BmGame.RBMBehaviour_EnterVehicle.UnableToAssignToSlot");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Initialise;
     /// <summary>
     /// Function: Initialise
     /// </summary>
     public unsafe virtual void Initialise()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_EnterVehicle.Initialise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Initialise, "BmGame.RBMBehaviour_EnterVehicle.Initialise");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_EnterVehicle.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMBehaviour_EnterVehicle.OnActivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

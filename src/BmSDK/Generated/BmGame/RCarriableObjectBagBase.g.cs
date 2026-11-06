@@ -73,179 +73,195 @@ public partial class RCarriableObjectBagBase : BmSDK.BmGame.RCarriableObjectBase
         where TComponent : class, Framework.IScriptComponent<RCarriableObjectBagBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_RemoveDisruptorInteraction;
     /// <summary>
     /// Function: RemoveDisruptorInteraction
     /// </summary>
     public unsafe virtual void RemoveDisruptorInteraction()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCarriableObjectBagBase.RemoveDisruptorInteraction", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveDisruptorInteraction, "BmGame.RCarriableObjectBagBase.RemoveDisruptorInteraction");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnJammedExplosion;
     /// <summary>
     /// Function: SpawnJammedExplosion
     /// </summary>
     public unsafe virtual void SpawnJammedExplosion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCarriableObjectBagBase.SpawnJammedExplosion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnJammedExplosion, "BmGame.RCarriableObjectBagBase.SpawnJammedExplosion");
         byte* paramsPtr = stackalloc byte[292];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsDisrupted;
     /// <summary>
     /// Function: IsDisrupted
     /// </summary>
     public unsafe virtual bool IsDisrupted()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCarriableObjectBagBase.IsDisrupted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsDisrupted, "BmGame.RCarriableObjectBagBase.IsDisrupted");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDisruptorDescriptionParameters;
     /// <summary>
     /// Function: GetDisruptorDescriptionParameters
     /// </summary>
     public unsafe virtual BmSDK.FString GetDisruptorDescriptionParameters()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCarriableObjectBagBase.GetDisruptorDescriptionParameters", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDisruptorDescriptionParameters, "BmGame.RCarriableObjectBagBase.GetDisruptorDescriptionParameters");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_RequiresDisruptorUpgrade;
     /// <summary>
     /// Function: RequiresDisruptorUpgrade
     /// </summary>
     public unsafe virtual bool RequiresDisruptorUpgrade()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCarriableObjectBagBase.RequiresDisruptorUpgrade", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RequiresDisruptorUpgrade, "BmGame.RCarriableObjectBagBase.RequiresDisruptorUpgrade");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_RequiresDroneDisruptor;
     /// <summary>
     /// Function: RequiresDroneDisruptor
     /// </summary>
     public unsafe virtual bool RequiresDroneDisruptor()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCarriableObjectBagBase.RequiresDroneDisruptor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RequiresDroneDisruptor, "BmGame.RCarriableObjectBagBase.RequiresDroneDisruptor");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDisruptorTargetMesh;
     /// <summary>
     /// Function: GetDisruptorTargetMesh
     /// </summary>
     public unsafe virtual BmSDK.Engine.MeshComponent GetDisruptorTargetMesh()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCarriableObjectBagBase.GetDisruptorTargetMesh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDisruptorTargetMesh, "BmGame.RCarriableObjectBagBase.GetDisruptorTargetMesh");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.MeshComponent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_HitByDisruptorGadgetSecondary;
     /// <summary>
     /// Function: HitByDisruptorGadgetSecondary
     /// </summary>
     public unsafe virtual bool HitByDisruptorGadgetSecondary()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCarriableObjectBagBase.HitByDisruptorGadgetSecondary", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitByDisruptorGadgetSecondary, "BmGame.RCarriableObjectBagBase.HitByDisruptorGadgetSecondary");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanBeDisruptedSecondary;
     /// <summary>
     /// Function: CanBeDisruptedSecondary
     /// </summary>
     public unsafe virtual bool CanBeDisruptedSecondary()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCarriableObjectBagBase.CanBeDisruptedSecondary", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeDisruptedSecondary, "BmGame.RCarriableObjectBagBase.CanBeDisruptedSecondary");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDisruptorOverridePriority;
     /// <summary>
     /// Function: GetDisruptorOverridePriority
     /// </summary>
     public unsafe virtual float GetDisruptorOverridePriority()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCarriableObjectBagBase.GetDisruptorOverridePriority", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDisruptorOverridePriority, "BmGame.RCarriableObjectBagBase.GetDisruptorOverridePriority");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CanBeDisrupted;
     /// <summary>
     /// Function: CanBeDisrupted
     /// </summary>
     public unsafe virtual bool CanBeDisrupted()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCarriableObjectBagBase.CanBeDisrupted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBeDisrupted, "BmGame.RCarriableObjectBagBase.CanBeDisrupted");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_HitByDisruptorGadgetCharge;
     /// <summary>
     /// Function: HitByDisruptorGadgetCharge
     /// </summary>
     public unsafe virtual bool HitByDisruptorGadgetCharge()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCarriableObjectBagBase.HitByDisruptorGadgetCharge", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitByDisruptorGadgetCharge, "BmGame.RCarriableObjectBagBase.HitByDisruptorGadgetCharge");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDisruptorTargetPosition;
     /// <summary>
     /// Function: GetDisruptorTargetPosition
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetDisruptorTargetPosition()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCarriableObjectBagBase.GetDisruptorTargetPosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDisruptorTargetPosition, "BmGame.RCarriableObjectBagBase.GetDisruptorTargetPosition");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCarriableObjectBagBase.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RCarriableObjectBagBase.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetDoorWaitIdleAnimName;
     /// <summary>
     /// Function: GetDoorWaitIdleAnimName
     /// </summary>
     public unsafe virtual BmSDK.FName GetDoorWaitIdleAnimName(bool bCocky)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCarriableObjectBagBase.GetDoorWaitIdleAnimName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDoorWaitIdleAnimName, "BmGame.RCarriableObjectBagBase.GetDoorWaitIdleAnimName");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bCocky, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetBombReactAnim;
     /// <summary>
     /// Function: GetBombReactAnim
     /// </summary>
     public unsafe virtual void GetBombReactAnim(bool bFront, out BmSDK.FName AnimName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCarriableObjectBagBase.GetBombReactAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBombReactAnim, "BmGame.RCarriableObjectBagBase.GetBombReactAnim");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bFront, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -253,95 +269,103 @@ public partial class RCarriableObjectBagBase : BmSDK.BmGame.RCarriableObjectBase
         return;
     }
 
+    private static BmSDK.Function __fn_SetBagCollision;
     /// <summary>
     /// Function: SetBagCollision
     /// </summary>
     public unsafe virtual void SetBagCollision(bool bEnabled)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCarriableObjectBagBase.SetBagCollision", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBagCollision, "BmGame.RCarriableObjectBagBase.SetBagCollision");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bEnabled, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetXrayMatsEnabled;
     /// <summary>
     /// Function: SetXrayMatsEnabled
     /// </summary>
     public unsafe virtual void SetXrayMatsEnabled(bool bEnabled)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCarriableObjectBagBase.SetXrayMatsEnabled", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetXrayMatsEnabled, "BmGame.RCarriableObjectBagBase.SetXrayMatsEnabled");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bEnabled, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe override void Init(BmSDK.BmGame.RPawnVillain Thug)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCarriableObjectBagBase.Init", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmGame.RCarriableObjectBagBase.Init");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Thug, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetPickupAnimStartLoc;
     /// <summary>
     /// Function: GetPickupAnimStartLoc
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetPickupAnimStartLoc(BmSDK.BmGame.RBMPawnAI Pawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCarriableObjectBagBase.GetPickupAnimStartLoc", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPickupAnimStartLoc, "BmGame.RCarriableObjectBagBase.GetPickupAnimStartLoc");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Pawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetPickupFromFloorRot;
     /// <summary>
     /// Function: GetPickupFromFloorRot
     /// </summary>
     public unsafe virtual BmSDK.Rotator GetPickupFromFloorRot(System.Numerics.Vector3 pawnLoc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCarriableObjectBagBase.GetPickupFromFloorRot", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPickupFromFloorRot, "BmGame.RCarriableObjectBagBase.GetPickupFromFloorRot");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(pawnLoc, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_GetBagCentre;
     /// <summary>
     /// Function: GetBagCentre
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetBagCentre()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCarriableObjectBagBase.GetBagCentre", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBagCentre, "BmGame.RCarriableObjectBagBase.GetBagCentre");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ApplyImpulseAwayFromCarrier;
     /// <summary>
     /// Function: ApplyImpulseAwayFromCarrier
     /// </summary>
     public unsafe virtual void ApplyImpulseAwayFromCarrier(BmSDK.Engine.Pawn carrier)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCarriableObjectBagBase.ApplyImpulseAwayFromCarrier", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyImpulseAwayFromCarrier, "BmGame.RCarriableObjectBagBase.ApplyImpulseAwayFromCarrier");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(carrier, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanBePickedUpFromAnyDirection;
     /// <summary>
     /// Function: CanBePickedUpFromAnyDirection
     /// </summary>
     public unsafe virtual bool CanBePickedUpFromAnyDirection()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCarriableObjectBagBase.CanBePickedUpFromAnyDirection", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBePickedUpFromAnyDirection, "BmGame.RCarriableObjectBagBase.CanBePickedUpFromAnyDirection");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);

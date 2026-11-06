@@ -78,12 +78,13 @@ public partial class RSkelControl_CantileverBeam : BmSDK.Engine.SkelControlLookA
         where TComponent : class, Framework.IScriptComponent<RSkelControl_CantileverBeam>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_EntireBeamVelocity;
     /// <summary>
     /// Function: EntireBeamVelocity
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 EntireBeamVelocity()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSkelControl_CantileverBeam.EntireBeamVelocity", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EntireBeamVelocity, "BmGame.RSkelControl_CantileverBeam.EntireBeamVelocity");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);

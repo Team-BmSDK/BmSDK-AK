@@ -78,79 +78,86 @@ public partial class RBMBehaviour_JokerBossRiddler : BmSDK.BmGame.RBMBehaviour, 
         where TComponent : class, Framework.IScriptComponent<RBMBehaviour_JokerBossRiddler>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ShotJokerDmgOnly;
     /// <summary>
     /// Function: ShotJokerDmgOnly
     /// </summary>
     public unsafe virtual void ShotJokerDmgOnly()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_JokerBossRiddler.ShotJokerDmgOnly", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShotJokerDmgOnly, "BmScript.RBMBehaviour_JokerBossRiddler.ShotJokerDmgOnly");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShotJokerEnd;
     /// <summary>
     /// Function: ShotJokerEnd
     /// </summary>
     public unsafe virtual void ShotJokerEnd()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_JokerBossRiddler.ShotJokerEnd", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShotJokerEnd, "BmScript.RBMBehaviour_JokerBossRiddler.ShotJokerEnd");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShotJoker;
     /// <summary>
     /// Function: ShotJoker
     /// </summary>
     public unsafe virtual void ShotJoker()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_JokerBossRiddler.ShotJoker", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShotJoker, "BmScript.RBMBehaviour_JokerBossRiddler.ShotJoker");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanSeeBatman;
     /// <summary>
     /// Function: CanSeeBatman
     /// </summary>
     public unsafe virtual bool CanSeeBatman()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_JokerBossRiddler.CanSeeBatman", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanSeeBatman, "BmScript.RBMBehaviour_JokerBossRiddler.CanSeeBatman");
         byte* paramsPtr = stackalloc byte[72];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_JokerBossRiddler.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmScript.RBMBehaviour_JokerBossRiddler.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyThugDied;
     /// <summary>
     /// Function: NotifyThugDied
     /// </summary>
     public unsafe virtual void NotifyThugDied()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_JokerBossRiddler.NotifyThugDied", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyThugDied, "BmScript.RBMBehaviour_JokerBossRiddler.NotifyThugDied");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShotByJokerGun;
     /// <summary>
     /// Function: ShotByJokerGun
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RPawnVillain ShotByJokerGun()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMBehaviour_JokerBossRiddler.ShotByJokerGun", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShotByJokerGun, "BmScript.RBMBehaviour_JokerBossRiddler.ShotByJokerGun");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 0);

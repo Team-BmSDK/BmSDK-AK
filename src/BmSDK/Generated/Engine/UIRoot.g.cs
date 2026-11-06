@@ -73,24 +73,26 @@ public partial class UIRoot : BmSDK.StateObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<UIRoot>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SafeCaps;
     /// <summary>
     /// Function: SafeCaps
     /// </summary>
     public unsafe static BmSDK.FString SafeCaps(BmSDK.FString StringToCap)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIRoot.SafeCaps", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SafeCaps, "Engine.UIRoot.SafeCaps");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StringToCap, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_StaticResolveDataStore;
     /// <summary>
     /// Function: StaticResolveDataStore
     /// </summary>
     public unsafe static BmSDK.Engine.UIDataStore StaticResolveDataStore(BmSDK.FName DataStoreTag, BmSDK.Engine.LocalPlayer InPlayerOwner = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIRoot.StaticResolveDataStore", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StaticResolveDataStore, "Engine.UIRoot.StaticResolveDataStore");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DataStoreTag, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InPlayerOwner, paramsPtr + 8);
@@ -98,12 +100,13 @@ public partial class UIRoot : BmSDK.StateObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.UIDataStore>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_GetSceneClient;
     /// <summary>
     /// Function: GetSceneClient
     /// </summary>
     public unsafe static BmSDK.Engine.GameUISceneClient GetSceneClient()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIRoot.GetSceneClient", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSceneClient, "Engine.UIRoot.GetSceneClient");
         byte* paramsPtr = stackalloc byte[8];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -116,12 +119,13 @@ public partial class UIRoot : BmSDK.StateObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.GameUISceneClient>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetCurrentUIController;
     /// <summary>
     /// Function: GetCurrentUIController
     /// </summary>
     public unsafe static BmSDK.Engine.UIInteraction GetCurrentUIController()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIRoot.GetCurrentUIController", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCurrentUIController, "Engine.UIRoot.GetCurrentUIController");
         byte* paramsPtr = stackalloc byte[8];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -134,12 +138,13 @@ public partial class UIRoot : BmSDK.StateObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.UIInteraction>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetInputPlatformType;
     /// <summary>
     /// Function: GetInputPlatformType
     /// </summary>
     public unsafe static BmSDK.Engine.UIRoot.EInputPlatformType GetInputPlatformType(BmSDK.Engine.LocalPlayer OwningPlayer = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIRoot.GetInputPlatformType", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetInputPlatformType, "Engine.UIRoot.GetInputPlatformType");
         byte* paramsPtr = stackalloc byte[9];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OwningPlayer, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

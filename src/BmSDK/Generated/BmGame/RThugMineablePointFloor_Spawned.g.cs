@@ -78,12 +78,13 @@ public partial class RThugMineablePointFloor_Spawned : BmSDK.BmGame.RThugMineabl
         where TComponent : class, Framework.IScriptComponent<RThugMineablePointFloor_Spawned>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetRoomState;
     /// <summary>
     /// Function: SetRoomState
     /// </summary>
     public unsafe virtual void SetRoomState(BmSDK.BmGame.RBMRoomAIState NewRoomState)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RThugMineablePointFloor_Spawned.SetRoomState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRoomState, "BmGame.RThugMineablePointFloor_Spawned.SetRoomState");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewRoomState, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

@@ -78,12 +78,13 @@ public partial class RBMCombatThrownObject_Brick : BmSDK.BmGame.RBMCombatThrownO
         where TComponent : class, Framework.IScriptComponent<RBMCombatThrownObject_Brick>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_HitCombatPawn;
     /// <summary>
     /// Function: HitCombatPawn
     /// </summary>
     public unsafe override void HitCombatPawn(BmSDK.BmGame.RPawnCombat HitPawn, float Speed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCombatThrownObject_Brick.HitCombatPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitCombatPawn, "BmGame.RBMCombatThrownObject_Brick.HitCombatPawn");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speed, paramsPtr + 8);

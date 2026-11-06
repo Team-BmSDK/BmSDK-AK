@@ -78,12 +78,13 @@ public partial class RGFxWorldMovieActorMap3D : BmSDK.BmGame.RGFxWorldMovieActor
         where TComponent : class, Framework.IScriptComponent<RGFxWorldMovieActorMap3D>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CalcRoute;
     /// <summary>
     /// Function: CalcRoute
     /// </summary>
     public unsafe virtual bool CalcRoute(bool bEnabled, BmSDK.FString WaypointName, float X, float Y, float Z)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxWorldMovieActorMap3D.CalcRoute", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalcRoute, "BmGame.RGFxWorldMovieActorMap3D.CalcRoute");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bEnabled, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WaypointName, paramsPtr + 4);
@@ -94,59 +95,64 @@ public partial class RGFxWorldMovieActorMap3D : BmSDK.BmGame.RGFxWorldMovieActor
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_SetMapIsMoving;
     /// <summary>
     /// Function: SetMapIsMoving
     /// </summary>
     public unsafe virtual void SetMapIsMoving(bool bMoving)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxWorldMovieActorMap3D.SetMapIsMoving", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMapIsMoving, "BmGame.RGFxWorldMovieActorMap3D.SetMapIsMoving");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bMoving, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetIconState;
     /// <summary>
     /// Function: SetIconState
     /// </summary>
     public unsafe virtual void SetIconState(bool bVisible)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxWorldMovieActorMap3D.SetIconState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetIconState, "BmGame.RGFxWorldMovieActorMap3D.SetIconState");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bVisible, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ChangeIconFilter;
     /// <summary>
     /// Function: ChangeIconFilter
     /// </summary>
     public unsafe virtual void ChangeIconFilter(int FilterId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxWorldMovieActorMap3D.ChangeIconFilter", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ChangeIconFilter, "BmGame.RGFxWorldMovieActorMap3D.ChangeIconFilter");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FilterId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetActiveFilters;
     /// <summary>
     /// Function: GetActiveFilters
     /// </summary>
     public unsafe virtual BmSDK.TArray<int> GetActiveFilters()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxWorldMovieActorMap3D.GetActiveFilters", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetActiveFilters, "BmGame.RGFxWorldMovieActorMap3D.GetActiveFilters");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<int>>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetUserMarker;
     /// <summary>
     /// Function: SetUserMarker
     /// </summary>
     public unsafe virtual void SetUserMarker(bool bVisible, bool bOnIcon, float atX, float atY, float atZ, BmSDK.FString WaypointName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxWorldMovieActorMap3D.SetUserMarker", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetUserMarker, "BmGame.RGFxWorldMovieActorMap3D.SetUserMarker");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bVisible, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bOnIcon, paramsPtr + 4);
@@ -158,23 +164,25 @@ public partial class RGFxWorldMovieActorMap3D : BmSDK.BmGame.RGFxWorldMovieActor
         return;
     }
 
+    private static BmSDK.Function __fn_GetBaseLocation;
     /// <summary>
     /// Function: GetBaseLocation
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetBaseLocation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxWorldMovieActorMap3D.GetBaseLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBaseLocation, "BmGame.RGFxWorldMovieActorMap3D.GetBaseLocation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetCameraAngles;
     /// <summary>
     /// Function: SetCameraAngles
     /// </summary>
     public unsafe virtual void SetCameraAngles(float CurrentX, float CurrentY, float CurrentZ, float CurrentRotation, float CurrentElevation, float CurrentDistance, int CityArea)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxWorldMovieActorMap3D.SetCameraAngles", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCameraAngles, "BmGame.RGFxWorldMovieActorMap3D.SetCameraAngles");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CurrentX, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CurrentY, paramsPtr + 4);
@@ -187,47 +195,51 @@ public partial class RGFxWorldMovieActorMap3D : BmSDK.BmGame.RGFxWorldMovieActor
         return;
     }
 
+    private static BmSDK.Function __fn_PreRender;
     /// <summary>
     /// Function: PreRender
     /// </summary>
     public unsafe virtual void PreRender(BmSDK.Engine.Canvas Canvas)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxWorldMovieActorMap3D.PreRender", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreRender, "BmGame.RGFxWorldMovieActorMap3D.PreRender");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Canvas, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetDebugMode;
     /// <summary>
     /// Function: SetDebugMode
     /// </summary>
     public unsafe virtual void SetDebugMode(bool bEnabled)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxWorldMovieActorMap3D.SetDebugMode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDebugMode, "BmGame.RGFxWorldMovieActorMap3D.SetDebugMode");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bEnabled, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxWorldMovieActorMap3D.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmGame.RGFxWorldMovieActorMap3D.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxWorldMovieActorMap3D.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RGFxWorldMovieActorMap3D.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

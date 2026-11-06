@@ -78,24 +78,26 @@ public partial class RStringUpRope : BmSDK.BmGame.RRopeBaseSpawnable, BmSDK.IGam
         where TComponent : class, Framework.IScriptComponent<RStringUpRope>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStringUpRope.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RStringUpRope.Tick");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_MulticastSetupRailingAttackRope;
     /// <summary>
     /// Function: MulticastSetupRailingAttackRope
     /// </summary>
     public unsafe virtual void MulticastSetupRailingAttackRope(BmSDK.BmGame.RStringUpRope.FRailingAttackRopeSetupParams SetupParams)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RStringUpRope.MulticastSetupRailingAttackRope", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MulticastSetupRailingAttackRope, "BmGame.RStringUpRope.MulticastSetupRailingAttackRope");
         byte* paramsPtr = stackalloc byte[200];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SetupParams, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

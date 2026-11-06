@@ -78,12 +78,13 @@ public partial class RPawnPlayer_Gordon : BmSDK.BmScript.RPawnPlayer_BruceWayne,
         where TComponent : class, Framework.IScriptComponent<RPawnPlayer_Gordon>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GordonGoFP;
     /// <summary>
     /// Function: GordonGoFP
     /// </summary>
     public unsafe virtual void GordonGoFP()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayer_Gordon.GordonGoFP", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GordonGoFP, "BmScript.RPawnPlayer_Gordon.GordonGoFP");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

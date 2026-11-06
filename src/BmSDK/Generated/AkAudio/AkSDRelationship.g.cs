@@ -73,12 +73,13 @@ public partial class AkSDRelationship : BmSDK.AkAudio.AkSDNode, BmSDK.IGameObjec
         where TComponent : class, Framework.IScriptComponent<AkSDRelationship>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Evaluate;
     /// <summary>
     /// Function: Evaluate
     /// </summary>
     public unsafe virtual float Evaluate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkSDRelationship.Evaluate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Evaluate, "AkAudio.AkSDRelationship.Evaluate");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

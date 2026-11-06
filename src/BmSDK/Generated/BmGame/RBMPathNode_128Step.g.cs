@@ -78,12 +78,13 @@ public partial class RBMPathNode_128Step : BmSDK.BmGame.RBMPathNode_VariablePosi
         where TComponent : class, Framework.IScriptComponent<RBMPathNode_128Step>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Use128Step;
     /// <summary>
     /// Function: Use128Step
     /// </summary>
     public unsafe virtual void Use128Step(BmSDK.Engine.Actor User, int EdgeType, System.Numerics.Vector3 JumpDirection, System.Numerics.Vector3 JumpLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMPathNode_128Step.Use128Step", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Use128Step, "BmGame.RBMPathNode_128Step.Use128Step");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(User, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EdgeType, paramsPtr + 8);
@@ -93,12 +94,13 @@ public partial class RBMPathNode_128Step : BmSDK.BmGame.RBMPathNode_VariablePosi
         return;
     }
 
+    private static BmSDK.Function __fn_GetReferencePoint;
     /// <summary>
     /// Function: GetReferencePoint
     /// </summary>
     public unsafe override System.Numerics.Vector3 GetReferencePoint(BmSDK.BmGame.RBMPawnAI Jumper)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMPathNode_128Step.GetReferencePoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetReferencePoint, "BmGame.RBMPathNode_128Step.GetReferencePoint");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Jumper, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

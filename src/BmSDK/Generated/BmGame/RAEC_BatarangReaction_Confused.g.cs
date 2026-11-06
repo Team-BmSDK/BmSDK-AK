@@ -78,24 +78,26 @@ public partial class RAEC_BatarangReaction_Confused : BmSDK.BmGame.RAlertEventCo
         where TComponent : class, Framework.IScriptComponent<RAEC_BatarangReaction_Confused>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_TryDoQuitIntoSearchBark;
     /// <summary>
     /// Function: TryDoQuitIntoSearchBark
     /// </summary>
     public unsafe virtual void TryDoQuitIntoSearchBark(BmSDK.BmGame.RPawnVillain TalkPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_BatarangReaction_Confused.TryDoQuitIntoSearchBark", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TryDoQuitIntoSearchBark, "BmGame.RAEC_BatarangReaction_Confused.TryDoQuitIntoSearchBark");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TalkPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HandleRicochetNoise;
     /// <summary>
     /// Function: HandleRicochetNoise
     /// </summary>
     public unsafe virtual void HandleRicochetNoise(System.Numerics.Vector3 HitLoc, float JumpRange, out int bShouldEscalate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_BatarangReaction_Confused.HandleRicochetNoise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandleRicochetNoise, "BmGame.RAEC_BatarangReaction_Confused.HandleRicochetNoise");
         byte* paramsPtr = stackalloc byte[116];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(JumpRange, paramsPtr + 12);
@@ -104,12 +106,13 @@ public partial class RAEC_BatarangReaction_Confused : BmSDK.BmGame.RAlertEventCo
         return;
     }
 
+    private static BmSDK.Function __fn_OnRemoveSoloChild;
     /// <summary>
     /// Function: OnRemoveSoloChild
     /// </summary>
     public unsafe override void OnRemoveSoloChild(BmSDK.BmGame.RAlertEventCoordinatorSolo RemAEC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_BatarangReaction_Confused.OnRemoveSoloChild", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnRemoveSoloChild, "BmGame.RAEC_BatarangReaction_Confused.OnRemoveSoloChild");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RemAEC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

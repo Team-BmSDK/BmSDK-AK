@@ -78,34 +78,37 @@ public partial class RSpecialMoveConfig_CalibrateVoiceSynthesiser : BmSDK.BmGame
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveConfig_CalibrateVoiceSynthesiser>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UnloadAudio;
     /// <summary>
     /// Function: UnloadAudio
     /// </summary>
     public unsafe virtual void UnloadAudio()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveConfig_CalibrateVoiceSynthesiser.UnloadAudio", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnloadAudio, "BmScript.RSpecialMoveConfig_CalibrateVoiceSynthesiser.UnloadAudio");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsAudioLoaded;
     /// <summary>
     /// Function: IsAudioLoaded
     /// </summary>
     public unsafe virtual bool IsAudioLoaded()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveConfig_CalibrateVoiceSynthesiser.IsAudioLoaded", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAudioLoaded, "BmScript.RSpecialMoveConfig_CalibrateVoiceSynthesiser.IsAudioLoaded");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_LoadAudio;
     /// <summary>
     /// Function: LoadAudio
     /// </summary>
     public unsafe virtual void LoadAudio()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveConfig_CalibrateVoiceSynthesiser.LoadAudio", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LoadAudio, "BmScript.RSpecialMoveConfig_CalibrateVoiceSynthesiser.LoadAudio");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

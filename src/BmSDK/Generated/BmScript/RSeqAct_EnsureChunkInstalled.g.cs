@@ -78,23 +78,25 @@ public partial class RSeqAct_EnsureChunkInstalled : BmSDK.Engine.SequenceAction,
         where TComponent : class, Framework.IScriptComponent<RSeqAct_EnsureChunkInstalled>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ShowUI;
     /// <summary>
     /// Function: ShowUI
     /// </summary>
     public unsafe virtual void ShowUI()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_EnsureChunkInstalled.ShowUI", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowUI, "BmScript.RSeqAct_EnsureChunkInstalled.ShowUI");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_EnsureChunkInstalled.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmScript.RSeqAct_EnsureChunkInstalled.Activated");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

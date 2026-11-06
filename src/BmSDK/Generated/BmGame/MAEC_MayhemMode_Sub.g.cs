@@ -78,24 +78,26 @@ public partial class MAEC_MayhemMode_Sub : BmSDK.BmGame.RAlertEventCoordinatorSo
         where TComponent : class, Framework.IScriptComponent<MAEC_MayhemMode_Sub>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetStartleLoc;
     /// <summary>
     /// Function: SetStartleLoc
     /// </summary>
     public unsafe virtual void SetStartleLoc(System.Numerics.Vector3 NewPos)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_MayhemMode_Sub.SetStartleLoc", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetStartleLoc, "BmGame.MAEC_MayhemMode_Sub.SetStartleLoc");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPos, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyFinished;
     /// <summary>
     /// Function: NotifyFinished
     /// </summary>
     public unsafe override void NotifyFinished(BmSDK.BmGame.RBMAIAction FinishedAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_MayhemMode_Sub.NotifyFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyFinished, "BmGame.MAEC_MayhemMode_Sub.NotifyFinished");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FinishedAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

@@ -78,12 +78,13 @@ public partial class RInteractionComponent : BmSDK.Engine.ActorComponent, BmSDK.
         where TComponent : class, Framework.IScriptComponent<RInteractionComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_RemoveRelevantInteraction;
     /// <summary>
     /// Function: RemoveRelevantInteraction
     /// </summary>
     public unsafe virtual void RemoveRelevantInteraction(BmSDK.FName InteractionToRemove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RInteractionComponent.RemoveRelevantInteraction", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveRelevantInteraction, "Engine.RInteractionComponent.RemoveRelevantInteraction");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InteractionToRemove, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -97,12 +98,13 @@ public partial class RInteractionComponent : BmSDK.Engine.ActorComponent, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_AddRelevantInteraction;
     /// <summary>
     /// Function: AddRelevantInteraction
     /// </summary>
     public unsafe virtual void AddRelevantInteraction(BmSDK.FName NewInteraction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RInteractionComponent.AddRelevantInteraction", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddRelevantInteraction, "Engine.RInteractionComponent.AddRelevantInteraction");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewInteraction, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

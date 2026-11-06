@@ -73,34 +73,37 @@ public partial class GameplayEvents : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<GameplayEvents>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetFilename;
     /// <summary>
     /// Function: GetFilename
     /// </summary>
     public unsafe virtual BmSDK.FString GetFilename()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.GameplayEvents.GetFilename", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFilename, "Engine.GameplayEvents.GetFilename");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CloseStatsFile;
     /// <summary>
     /// Function: CloseStatsFile
     /// </summary>
     public unsafe virtual void CloseStatsFile()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.GameplayEvents.CloseStatsFile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CloseStatsFile, "Engine.GameplayEvents.CloseStatsFile");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OpenStatsFile;
     /// <summary>
     /// Function: OpenStatsFile
     /// </summary>
     public unsafe virtual bool OpenStatsFile(BmSDK.FString Filename)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.GameplayEvents.OpenStatsFile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OpenStatsFile, "Engine.GameplayEvents.OpenStatsFile");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

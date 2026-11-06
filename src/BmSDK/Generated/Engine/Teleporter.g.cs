@@ -78,12 +78,13 @@ public partial class Teleporter : BmSDK.Engine.NavigationPoint, BmSDK.IGameObjec
         where TComponent : class, Framework.IScriptComponent<Teleporter>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CanTeleport;
     /// <summary>
     /// Function: CanTeleport
     /// </summary>
     public unsafe override bool CanTeleport(BmSDK.Engine.Actor A)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.Teleporter.CanTeleport", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanTeleport, "Engine.Teleporter.CanTeleport");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(A, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

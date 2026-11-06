@@ -78,59 +78,64 @@ public partial class DataStoreClient : BmSDK.Engine.UIRoot, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<DataStoreClient>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DebugDumpDataStoreInfo;
     /// <summary>
     /// Function: DebugDumpDataStoreInfo
     /// </summary>
     public unsafe virtual void DebugDumpDataStoreInfo(bool bVerbose)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DataStoreClient.DebugDumpDataStoreInfo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DebugDumpDataStoreInfo, "Engine.DataStoreClient.DebugDumpDataStoreInfo");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bVerbose, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyGameSessionEnded;
     /// <summary>
     /// Function: NotifyGameSessionEnded
     /// </summary>
     public unsafe virtual void NotifyGameSessionEnded()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DataStoreClient.NotifyGameSessionEnded", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyGameSessionEnded, "Engine.DataStoreClient.NotifyGameSessionEnded");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FindDataStoreClass;
     /// <summary>
     /// Function: FindDataStoreClass
     /// </summary>
     public unsafe virtual BmSDK.Class FindDataStoreClass(BmSDK.Class RequiredMetaClass)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DataStoreClient.FindDataStoreClass", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindDataStoreClass, "Engine.DataStoreClient.FindDataStoreClass");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RequiredMetaClass, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Class>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetPlayerDataStoreClasses;
     /// <summary>
     /// Function: GetPlayerDataStoreClasses
     /// </summary>
     public unsafe virtual void GetPlayerDataStoreClasses(out BmSDK.TArray<BmSDK.Class> out_DataStoreClasses)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DataStoreClient.GetPlayerDataStoreClasses", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPlayerDataStoreClasses, "Engine.DataStoreClient.GetPlayerDataStoreClasses");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         out_DataStoreClasses = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.Class>>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FindPlayerDataStoreIndex;
     /// <summary>
     /// Function: FindPlayerDataStoreIndex
     /// </summary>
     public unsafe virtual int FindPlayerDataStoreIndex(BmSDK.Engine.LocalPlayer PlayerOwner)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DataStoreClient.FindPlayerDataStoreIndex", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindPlayerDataStoreIndex, "Engine.DataStoreClient.FindPlayerDataStoreIndex");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerOwner, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -144,12 +149,13 @@ public partial class DataStoreClient : BmSDK.Engine.UIRoot, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_UnregisterDataStore;
     /// <summary>
     /// Function: UnregisterDataStore
     /// </summary>
     public unsafe virtual bool UnregisterDataStore(BmSDK.Engine.UIDataStore DataStore)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DataStoreClient.UnregisterDataStore", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnregisterDataStore, "Engine.DataStoreClient.UnregisterDataStore");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DataStore, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -163,12 +169,13 @@ public partial class DataStoreClient : BmSDK.Engine.UIRoot, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_RegisterDataStore;
     /// <summary>
     /// Function: RegisterDataStore
     /// </summary>
     public unsafe virtual bool RegisterDataStore(BmSDK.Engine.UIDataStore DataStore, BmSDK.Engine.LocalPlayer PlayerOwner = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DataStoreClient.RegisterDataStore", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterDataStore, "Engine.DataStoreClient.RegisterDataStore");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DataStore, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerOwner, paramsPtr + 8);
@@ -183,12 +190,13 @@ public partial class DataStoreClient : BmSDK.Engine.UIRoot, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_CreateDataStore;
     /// <summary>
     /// Function: CreateDataStore
     /// </summary>
     public unsafe virtual BmSDK.Engine.UIDataStore CreateDataStore(BmSDK.Class DataStoreClass)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DataStoreClient.CreateDataStore", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateDataStore, "Engine.DataStoreClient.CreateDataStore");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DataStoreClass, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -202,12 +210,13 @@ public partial class DataStoreClient : BmSDK.Engine.UIRoot, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.UIDataStore>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_FindDataStore;
     /// <summary>
     /// Function: FindDataStore
     /// </summary>
     public unsafe virtual BmSDK.Engine.UIDataStore FindDataStore(BmSDK.FName DataStoreTag, BmSDK.Engine.LocalPlayer PlayerOwner = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DataStoreClient.FindDataStore", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindDataStore, "Engine.DataStoreClient.FindDataStore");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DataStoreTag, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerOwner, paramsPtr + 8);

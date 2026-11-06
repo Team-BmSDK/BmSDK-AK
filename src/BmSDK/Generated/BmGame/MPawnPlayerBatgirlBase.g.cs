@@ -73,23 +73,25 @@ public partial class MPawnPlayerBatgirlBase : BmSDK.BmGame.RPawnPlayerBmBase, Bm
         where TComponent : class, Framework.IScriptComponent<MPawnPlayerBatgirlBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnPlayerBatgirlBase.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.MPawnPlayerBatgirlBase.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FixIncorrectShimmyNotify;
     /// <summary>
     /// Function: FixIncorrectShimmyNotify
     /// </summary>
     public unsafe virtual void FixIncorrectShimmyNotify(BmSDK.Engine.AnimSet VantageAnimSet, BmSDK.FName AnimName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnPlayerBatgirlBase.FixIncorrectShimmyNotify", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FixIncorrectShimmyNotify, "BmGame.MPawnPlayerBatgirlBase.FixIncorrectShimmyNotify");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VantageAnimSet, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 8);
@@ -97,80 +99,87 @@ public partial class MPawnPlayerBatgirlBase : BmSDK.BmGame.RPawnPlayerBmBase, Bm
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateThugsDefeatedDuringScareHack;
     /// <summary>
     /// Function: UpdateThugsDefeatedDuringScareHack
     /// </summary>
     public unsafe virtual void UpdateThugsDefeatedDuringScareHack()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnPlayerBatgirlBase.UpdateThugsDefeatedDuringScareHack", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateThugsDefeatedDuringScareHack, "BmGame.MPawnPlayerBatgirlBase.UpdateThugsDefeatedDuringScareHack");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateThugsDefeatedDuringHacking;
     /// <summary>
     /// Function: UpdateThugsDefeatedDuringHacking
     /// </summary>
     public unsafe virtual void UpdateThugsDefeatedDuringHacking()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnPlayerBatgirlBase.UpdateThugsDefeatedDuringHacking", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateThugsDefeatedDuringHacking, "BmGame.MPawnPlayerBatgirlBase.UpdateThugsDefeatedDuringHacking");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DelayedRestartLocalLight;
     /// <summary>
     /// Function: DelayedRestartLocalLight
     /// </summary>
     public unsafe virtual void DelayedRestartLocalLight()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnPlayerBatgirlBase.DelayedRestartLocalLight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DelayedRestartLocalLight, "BmGame.MPawnPlayerBatgirlBase.DelayedRestartLocalLight");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_LocalLightReactivationDelay;
     /// <summary>
     /// Function: LocalLightReactivationDelay
     /// </summary>
     public unsafe virtual void LocalLightReactivationDelay(float TimerDelay)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnPlayerBatgirlBase.LocalLightReactivationDelay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LocalLightReactivationDelay, "BmGame.MPawnPlayerBatgirlBase.LocalLightReactivationDelay");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TimerDelay, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ForceLocalLightChange;
     /// <summary>
     /// Function: ForceLocalLightChange
     /// </summary>
     public unsafe virtual void ForceLocalLightChange(bool bOn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnPlayerBatgirlBase.ForceLocalLightChange", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ForceLocalLightChange, "BmGame.MPawnPlayerBatgirlBase.ForceLocalLightChange");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bOn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateCollectableProgression;
     /// <summary>
     /// Function: UpdateCollectableProgression
     /// </summary>
     public unsafe virtual void UpdateCollectableProgression()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnPlayerBatgirlBase.UpdateCollectableProgression", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateCollectableProgression, "BmGame.MPawnPlayerBatgirlBase.UpdateCollectableProgression");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetRemaningCollectables;
     /// <summary>
     /// Function: GetRemaningCollectables
     /// </summary>
     public unsafe virtual void GetRemaningCollectables(out int NbBalloon, out int NbTheeth, out int NbJITB)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnPlayerBatgirlBase.GetRemaningCollectables", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRemaningCollectables, "BmGame.MPawnPlayerBatgirlBase.GetRemaningCollectables");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NbBalloon = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
@@ -179,12 +188,13 @@ public partial class MPawnPlayerBatgirlBase : BmSDK.BmGame.RPawnPlayerBmBase, Bm
         return;
     }
 
+    private static BmSDK.Function __fn_GetNumberCollectables;
     /// <summary>
     /// Function: GetNumberCollectables
     /// </summary>
     public unsafe virtual void GetNumberCollectables(out int NbBalloon, out int NbTheeth, out int NbJITB)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnPlayerBatgirlBase.GetNumberCollectables", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNumberCollectables, "BmGame.MPawnPlayerBatgirlBase.GetNumberCollectables");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         NbBalloon = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
@@ -193,12 +203,13 @@ public partial class MPawnPlayerBatgirlBase : BmSDK.BmGame.RPawnPlayerBmBase, Bm
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyKilledForTannoy;
     /// <summary>
     /// Function: NotifyKilledForTannoy
     /// </summary>
     public unsafe virtual void NotifyKilledForTannoy(BmSDK.Engine.Pawn KilledPawn, BmSDK.BmGame.RBMRoomAIState RoomState)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnPlayerBatgirlBase.NotifyKilledForTannoy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyKilledForTannoy, "BmGame.MPawnPlayerBatgirlBase.NotifyKilledForTannoy");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(KilledPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RoomState, paramsPtr + 8);
@@ -206,69 +217,75 @@ public partial class MPawnPlayerBatgirlBase : BmSDK.BmGame.RPawnPlayerBmBase, Bm
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyAfterRescue;
     /// <summary>
     /// Function: NotifyAfterRescue
     /// </summary>
     public unsafe virtual void NotifyAfterRescue()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnPlayerBatgirlBase.NotifyAfterRescue", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyAfterRescue, "BmGame.MPawnPlayerBatgirlBase.NotifyAfterRescue");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayHackInDangerAreaBarks;
     /// <summary>
     /// Function: PlayHackInDangerAreaBarks
     /// </summary>
     public unsafe virtual void PlayHackInDangerAreaBarks()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnPlayerBatgirlBase.PlayHackInDangerAreaBarks", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayHackInDangerAreaBarks, "BmGame.MPawnPlayerBatgirlBase.PlayHackInDangerAreaBarks");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayBombHackBarks;
     /// <summary>
     /// Function: PlayBombHackBarks
     /// </summary>
     public unsafe virtual void PlayBombHackBarks(bool havePlayedIntro)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnPlayerBatgirlBase.PlayBombHackBarks", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayBombHackBarks, "BmGame.MPawnPlayerBatgirlBase.PlayBombHackBarks");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(havePlayedIntro, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsScareTakedown;
     /// <summary>
     /// Function: IsScareTakedown
     /// </summary>
     public unsafe virtual bool IsScareTakedown(BmSDK.BmGame.RGameInfo.EStealthTakeDownStages Type)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnPlayerBatgirlBase.IsScareTakedown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsScareTakedown, "BmGame.MPawnPlayerBatgirlBase.IsScareTakedown");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Type, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_OverrideTakedownTarget;
     /// <summary>
     /// Function: OverrideTakedownTarget
     /// </summary>
     public unsafe virtual void OverrideTakedownTarget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnPlayerBatgirlBase.OverrideTakedownTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverrideTakedownTarget, "BmGame.MPawnPlayerBatgirlBase.OverrideTakedownTarget");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OverrideTakedown;
     /// <summary>
     /// Function: OverrideTakedown
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RGameInfo.EStealthTakeDownStages OverrideTakedown(BmSDK.FName StateName, BmSDK.BmGame.RPawnPlayer.FPlayerTakedownInfo Info, BmSDK.BmGame.RPawnVillain Victim, BmSDK.BmGame.RPawnVillain Victim2)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnPlayerBatgirlBase.OverrideTakedown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverrideTakedown, "BmGame.MPawnPlayerBatgirlBase.OverrideTakedown");
         byte* paramsPtr = stackalloc byte[53];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StateName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Info, paramsPtr + 8);
@@ -278,12 +295,13 @@ public partial class MPawnPlayerBatgirlBase : BmSDK.BmGame.RPawnPlayerBmBase, Bm
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameInfo.EStealthTakeDownStages>(paramsPtr + 52);
     }
 
+    private static BmSDK.Function __fn_SetSwingChuteSpecialMove;
     /// <summary>
     /// Function: SetSwingChuteSpecialMove
     /// </summary>
     public unsafe virtual void SetSwingChuteSpecialMove(out BmSDK.BmGame.RSpecialMoveConfig SwingMove, out BmSDK.BmGame.RSpecialMoveConfig GlideMove, out BmSDK.BmGame.RSpecialMoveConfig CrouchInMove, out BmSDK.BmGame.RSpecialMoveConfig RollOutOfChute)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnPlayerBatgirlBase.SetSwingChuteSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSwingChuteSpecialMove, "BmGame.MPawnPlayerBatgirlBase.SetSwingChuteSpecialMove");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         SwingMove = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RSpecialMoveConfig>(paramsPtr + 0);
@@ -293,12 +311,13 @@ public partial class MPawnPlayerBatgirlBase : BmSDK.BmGame.RPawnPlayerBmBase, Bm
         return;
     }
 
+    private static BmSDK.Function __fn_SetLadderSpecialMove;
     /// <summary>
     /// Function: SetLadderSpecialMove
     /// </summary>
     public unsafe virtual void SetLadderSpecialMove(out BmSDK.BmGame.RSpecialMoveConfig BatmanClimbRunMove, out BmSDK.BmGame.RSpecialMoveConfig BatmanClimbStandMove, out BmSDK.BmGame.RSpecialMoveConfig BatmanGrateMove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnPlayerBatgirlBase.SetLadderSpecialMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetLadderSpecialMove, "BmGame.MPawnPlayerBatgirlBase.SetLadderSpecialMove");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         BatmanClimbRunMove = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RSpecialMoveConfig>(paramsPtr + 0);
@@ -307,23 +326,25 @@ public partial class MPawnPlayerBatgirlBase : BmSDK.BmGame.RPawnPlayerBmBase, Bm
         return;
     }
 
+    private static BmSDK.Function __fn_HideStaff;
     /// <summary>
     /// Function: HideStaff
     /// </summary>
     public unsafe override void HideStaff()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnPlayerBatgirlBase.HideStaff", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideStaff, "BmGame.MPawnPlayerBatgirlBase.HideStaff");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SelectDeathTip_BG;
     /// <summary>
     /// Function: SelectDeathTip_BG
     /// </summary>
     public unsafe virtual BmSDK.FString SelectDeathTip_BG(BmSDK.Engine.Controller Killer, BmSDK.Class DamageType, System.Numerics.Vector3 HitLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnPlayerBatgirlBase.SelectDeathTip_BG", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SelectDeathTip_BG, "BmGame.MPawnPlayerBatgirlBase.SelectDeathTip_BG");
         byte* paramsPtr = stackalloc byte[116];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Killer, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageType, paramsPtr + 8);
@@ -332,12 +353,13 @@ public partial class MPawnPlayerBatgirlBase : BmSDK.BmGame.RPawnPlayerBmBase, Bm
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_SelectDeathMovie_BG;
     /// <summary>
     /// Function: SelectDeathMovie_BG
     /// </summary>
     public unsafe virtual BmSDK.FString SelectDeathMovie_BG(BmSDK.Engine.Controller Killer, BmSDK.Class DamageType, System.Numerics.Vector3 HitLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnPlayerBatgirlBase.SelectDeathMovie_BG", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SelectDeathMovie_BG, "BmGame.MPawnPlayerBatgirlBase.SelectDeathMovie_BG");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Killer, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageType, paramsPtr + 8);
@@ -346,12 +368,13 @@ public partial class MPawnPlayerBatgirlBase : BmSDK.BmGame.RPawnPlayerBmBase, Bm
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_Died;
     /// <summary>
     /// Function: Died
     /// </summary>
     public unsafe override bool Died(BmSDK.Engine.Controller Killer, BmSDK.Class DamageType, System.Numerics.Vector3 HitLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnPlayerBatgirlBase.Died", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Died, "BmGame.MPawnPlayerBatgirlBase.Died");
         byte* paramsPtr = stackalloc byte[76];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Killer, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageType, paramsPtr + 8);

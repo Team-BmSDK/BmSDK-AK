@@ -78,12 +78,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RGFxMovieUI>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetEnabledStatusIME;
     /// <summary>
     /// Function: SetEnabledStatusIME
     /// </summary>
     public unsafe virtual void SetEnabledStatusIME(bool bEnable)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetEnabledStatusIME", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetEnabledStatusIME, "BmGame.RGFxMovieUI.SetEnabledStatusIME");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bEnable, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -97,12 +98,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_XI_IsThumbButtonPressed;
     /// <summary>
     /// Function: XI_IsThumbButtonPressed
     /// </summary>
     public unsafe virtual void XI_IsThumbButtonPressed(BmSDK.FString TargetPath, BmSDK.FString TargetVar)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_IsThumbButtonPressed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_IsThumbButtonPressed, "BmGame.RGFxMovieUI.XI_IsThumbButtonPressed");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetPath, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetVar, paramsPtr + 16);
@@ -110,12 +112,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_XI_GetRebindableKeysDown;
     /// <summary>
     /// Function: XI_GetRebindableKeysDown
     /// </summary>
     public unsafe virtual void XI_GetRebindableKeysDown(BmSDK.FString TargetPath, BmSDK.FString TargetVar)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_GetRebindableKeysDown", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_GetRebindableKeysDown, "BmGame.RGFxMovieUI.XI_GetRebindableKeysDown");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetPath, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetVar, paramsPtr + 16);
@@ -123,35 +126,38 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_IsAnyAltPressed;
     /// <summary>
     /// Function: IsAnyAltPressed
     /// </summary>
     public unsafe virtual bool IsAnyAltPressed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.IsAnyAltPressed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAnyAltPressed, "BmGame.RGFxMovieUI.IsAnyAltPressed");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsKeyBindingPressed;
     /// <summary>
     /// Function: IsKeyBindingPressed
     /// </summary>
     public unsafe virtual int IsKeyBindingPressed(BmSDK.BmGame.RPersistentOptions.EControlsOptionsKeyboard KeyBinding)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.IsKeyBindingPressed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsKeyBindingPressed, "BmGame.RGFxMovieUI.IsKeyBindingPressed");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(KeyBinding, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_CheckLevelPackageIsPresent;
     /// <summary>
     /// Function: CheckLevelPackageIsPresent
     /// </summary>
     public unsafe virtual bool CheckLevelPackageIsPresent(out BmSDK.FString LevelName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.CheckLevelPackageIsPresent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckLevelPackageIsPresent, "BmGame.RGFxMovieUI.CheckLevelPackageIsPresent");
         byte* paramsPtr = stackalloc byte[20];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -165,12 +171,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_SendHydraReportPhotoModeUsed;
     /// <summary>
     /// Function: SendHydraReportPhotoModeUsed
     /// </summary>
     public unsafe virtual void SendHydraReportPhotoModeUsed(int TimeSpentInPhotoMode)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SendHydraReportPhotoModeUsed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SendHydraReportPhotoModeUsed, "BmGame.RGFxMovieUI.SendHydraReportPhotoModeUsed");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TimeSpentInPhotoMode, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -184,12 +191,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SendHydraWBPlayRewardClaimedEvent;
     /// <summary>
     /// Function: SendHydraWBPlayRewardClaimedEvent
     /// </summary>
     public unsafe virtual void SendHydraWBPlayRewardClaimedEvent(BmSDK.FString RewardFlag)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SendHydraWBPlayRewardClaimedEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SendHydraWBPlayRewardClaimedEvent, "BmGame.RGFxMovieUI.SendHydraWBPlayRewardClaimedEvent");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RewardFlag, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -203,12 +211,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SendHydraReportGraphicsOptions;
     /// <summary>
     /// Function: SendHydraReportGraphicsOptions
     /// </summary>
     public unsafe virtual void SendHydraReportGraphicsOptions()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SendHydraReportGraphicsOptions", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SendHydraReportGraphicsOptions, "BmGame.RGFxMovieUI.SendHydraReportGraphicsOptions");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -221,12 +230,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetKeyCode;
     /// <summary>
     /// Function: GetKeyCode
     /// </summary>
     public unsafe virtual int GetKeyCode(BmSDK.FString Key)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetKeyCode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetKeyCode, "BmGame.RGFxMovieUI.GetKeyCode");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Key, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -240,12 +250,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_XI_GetKeyBinding;
     /// <summary>
     /// Function: XI_GetKeyBinding
     /// </summary>
     public unsafe virtual void XI_GetKeyBinding(BmSDK.FString TargetPath, BmSDK.FString Ability, BmSDK.FString PrimaryKey, BmSDK.FString SecondaryKey)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_GetKeyBinding", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_GetKeyBinding, "BmGame.RGFxMovieUI.XI_GetKeyBinding");
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetPath, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Ability, paramsPtr + 16);
@@ -255,12 +266,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetMouseVisible;
     /// <summary>
     /// Function: SetMouseVisible
     /// </summary>
     public unsafe virtual void SetMouseVisible(bool bVisible)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetMouseVisible", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMouseVisible, "BmGame.RGFxMovieUI.SetMouseVisible");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bVisible, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -274,12 +286,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetMouseLock;
     /// <summary>
     /// Function: SetMouseLock
     /// </summary>
     public unsafe virtual void SetMouseLock(bool bLock)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetMouseLock", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMouseLock, "BmGame.RGFxMovieUI.SetMouseLock");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bLock, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -293,12 +306,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_XI_GetViewportHeight;
     /// <summary>
     /// Function: XI_GetViewportHeight
     /// </summary>
     public unsafe virtual void XI_GetViewportHeight(BmSDK.FString TargetPath, BmSDK.FString VariableName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_GetViewportHeight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_GetViewportHeight, "BmGame.RGFxMovieUI.XI_GetViewportHeight");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetPath, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VariableName, paramsPtr + 16);
@@ -306,12 +320,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_XI_GetViewportWidth;
     /// <summary>
     /// Function: XI_GetViewportWidth
     /// </summary>
     public unsafe virtual void XI_GetViewportWidth(BmSDK.FString TargetPath, BmSDK.FString VariableName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_GetViewportWidth", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_GetViewportWidth, "BmGame.RGFxMovieUI.XI_GetViewportWidth");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetPath, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VariableName, paramsPtr + 16);
@@ -319,12 +334,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_XI_GetMouse_Y;
     /// <summary>
     /// Function: XI_GetMouse_Y
     /// </summary>
     public unsafe virtual void XI_GetMouse_Y(BmSDK.FString TargetPath, BmSDK.FString VariableName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_GetMouse_Y", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_GetMouse_Y, "BmGame.RGFxMovieUI.XI_GetMouse_Y");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetPath, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VariableName, paramsPtr + 16);
@@ -332,12 +348,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_XI_GetMouseX;
     /// <summary>
     /// Function: XI_GetMouseX
     /// </summary>
     public unsafe virtual void XI_GetMouseX(BmSDK.FString TargetPath, BmSDK.FString VariableName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_GetMouseX", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_GetMouseX, "BmGame.RGFxMovieUI.XI_GetMouseX");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetPath, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VariableName, paramsPtr + 16);
@@ -345,12 +362,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_HaveWarnerIdCheckForConnection;
     /// <summary>
     /// Function: HaveWarnerIdCheckForConnection
     /// </summary>
     public unsafe virtual void HaveWarnerIdCheckForConnection()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.HaveWarnerIdCheckForConnection", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HaveWarnerIdCheckForConnection, "BmGame.RGFxMovieUI.HaveWarnerIdCheckForConnection");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -363,59 +381,64 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ProcessVoiceCommand;
     /// <summary>
     /// Function: ProcessVoiceCommand
     /// </summary>
     public unsafe override bool ProcessVoiceCommand(BmSDK.FString VoiceRecCommand)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.ProcessVoiceCommand", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProcessVoiceCommand, "BmGame.RGFxMovieUI.ProcessVoiceCommand");
         byte* paramsPtr = stackalloc byte[21];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VoiceRecCommand, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_UC_TriggerVoiceCommand;
     /// <summary>
     /// Function: UC_TriggerVoiceCommand
     /// </summary>
     public unsafe virtual void UC_TriggerVoiceCommand(BmSDK.FString VoiceRecCommand)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.UC_TriggerVoiceCommand", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_TriggerVoiceCommand, "BmGame.RGFxMovieUI.UC_TriggerVoiceCommand");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VoiceRecCommand, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HandleGAS;
     /// <summary>
     /// Function: HandleGAS
     /// </summary>
     public unsafe virtual bool HandleGAS(BmSDK.FString Cmd)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.HandleGAS", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandleGAS, "BmGame.RGFxMovieUI.HandleGAS");
         byte* paramsPtr = stackalloc byte[76];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Cmd, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_IsStoryActive;
     /// <summary>
     /// Function: IsStoryActive
     /// </summary>
     public unsafe virtual bool IsStoryActive()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.IsStoryActive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsStoryActive, "BmGame.RGFxMovieUI.IsStoryActive");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UpdateTextField;
     /// <summary>
     /// Function: UpdateTextField
     /// </summary>
     public unsafe virtual void UpdateTextField(BmSDK.FString FuncName, int Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.UpdateTextField", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateTextField, "BmGame.RGFxMovieUI.UpdateTextField");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FuncName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 16);
@@ -423,12 +446,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_XI_RegisterTextField;
     /// <summary>
     /// Function: XI_RegisterTextField
     /// </summary>
     public unsafe virtual void XI_RegisterTextField(BmSDK.FString FuncName, int Value, BmSDK.FString TargetPath)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_RegisterTextField", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_RegisterTextField, "BmGame.RGFxMovieUI.XI_RegisterTextField");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FuncName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 16);
@@ -437,46 +461,50 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_XI_SetIsUsingDefaults;
     /// <summary>
     /// Function: XI_SetIsUsingDefaults
     /// </summary>
     public unsafe virtual void XI_SetIsUsingDefaults(bool bIsDefaults)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_SetIsUsingDefaults", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_SetIsUsingDefaults, "BmGame.RGFxMovieUI.XI_SetIsUsingDefaults");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIsDefaults, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UC_UpdateInitialValues;
     /// <summary>
     /// Function: UC_UpdateInitialValues
     /// </summary>
     public unsafe virtual void UC_UpdateInitialValues()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.UC_UpdateInitialValues", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_UpdateInitialValues, "BmGame.RGFxMovieUI.UC_UpdateInitialValues");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UC_RestoreInitialValues;
     /// <summary>
     /// Function: UC_RestoreInitialValues
     /// </summary>
     public unsafe virtual void UC_RestoreInitialValues()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.UC_RestoreInitialValues", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_RestoreInitialValues, "BmGame.RGFxMovieUI.UC_RestoreInitialValues");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UC_SetButtonExponent;
     /// <summary>
     /// Function: UC_SetButtonExponent
     /// </summary>
     public unsafe virtual void UC_SetButtonExponent(BmSDK.FString sButtonLabel, BmSDK.FString sExponentText, BmSDK.FString sExponentIcon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.UC_SetButtonExponent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_SetButtonExponent, "BmGame.RGFxMovieUI.UC_SetButtonExponent");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sButtonLabel, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sExponentText, paramsPtr + 16);
@@ -485,71 +513,77 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_UC_SetDebugMenuAvailable;
     /// <summary>
     /// Function: UC_SetDebugMenuAvailable
     /// </summary>
     public unsafe virtual void UC_SetDebugMenuAvailable(bool bAvailable)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.UC_SetDebugMenuAvailable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_SetDebugMenuAvailable, "BmGame.RGFxMovieUI.UC_SetDebugMenuAvailable");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAvailable, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UC_SetKeyEcho;
     /// <summary>
     /// Function: UC_SetKeyEcho
     /// </summary>
     public unsafe virtual void UC_SetKeyEcho(bool bEnabled)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.UC_SetKeyEcho", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_SetKeyEcho, "BmGame.RGFxMovieUI.UC_SetKeyEcho");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bEnabled, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UC_SetMenuLocked;
     /// <summary>
     /// Function: UC_SetMenuLocked
     /// </summary>
     public unsafe virtual void UC_SetMenuLocked(bool bState)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.UC_SetMenuLocked", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_SetMenuLocked, "BmGame.RGFxMovieUI.UC_SetMenuLocked");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bState, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UC_RefreshFocus;
     /// <summary>
     /// Function: UC_RefreshFocus
     /// </summary>
     public unsafe virtual void UC_RefreshFocus()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.UC_RefreshFocus", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_RefreshFocus, "BmGame.RGFxMovieUI.UC_RefreshFocus");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UC_SetLastUID;
     /// <summary>
     /// Function: UC_SetLastUID
     /// </summary>
     public unsafe virtual void UC_SetLastUID(int Id)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.UC_SetLastUID", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_SetLastUID, "BmGame.RGFxMovieUI.UC_SetLastUID");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Id, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UC_AddLogo;
     /// <summary>
     /// Function: UC_AddLogo
     /// </summary>
     public unsafe virtual void UC_AddLogo(int Id, BmSDK.FString Label, BmSDK.FString DisplayText, bool bDisabled = default, BmSDK.FString LocBase = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.UC_AddLogo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_AddLogo, "BmGame.RGFxMovieUI.UC_AddLogo");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Id, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Label, paramsPtr + 4);
@@ -560,12 +594,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_UC_AddListItem;
     /// <summary>
     /// Function: UC_AddListItem
     /// </summary>
     public unsafe virtual void UC_AddListItem(int Id, BmSDK.FString Label, BmSDK.FString Params, bool bDisabled = default, BmSDK.FString LocBase = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.UC_AddListItem", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_AddListItem, "BmGame.RGFxMovieUI.UC_AddListItem");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Id, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Label, paramsPtr + 4);
@@ -576,12 +611,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_UC_AddSlider;
     /// <summary>
     /// Function: UC_AddSlider
     /// </summary>
     public unsafe virtual void UC_AddSlider(int Id, BmSDK.FString Label, int Step, bool bMakesSound = default, bool bDisabled = default, BmSDK.FString LocBase = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.UC_AddSlider", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_AddSlider, "BmGame.RGFxMovieUI.UC_AddSlider");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Id, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Label, paramsPtr + 4);
@@ -593,12 +629,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_UC_AddButtonSaveGame;
     /// <summary>
     /// Function: UC_AddButtonSaveGame
     /// </summary>
     public unsafe virtual void UC_AddButtonSaveGame(int Id, BmSDK.FString Label, bool bAllowRollOver = default, bool bDisabled = default, BmSDK.FString LocBase = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.UC_AddButtonSaveGame", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_AddButtonSaveGame, "BmGame.RGFxMovieUI.UC_AddButtonSaveGame");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Id, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Label, paramsPtr + 4);
@@ -609,12 +646,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_UC_AddButtonCentered;
     /// <summary>
     /// Function: UC_AddButtonCentered
     /// </summary>
     public unsafe virtual void UC_AddButtonCentered(int Id, BmSDK.FString Label, bool bAllowRollOver = default, bool bShowNew = default, bool bDisabled = default, BmSDK.FString LocBase = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.UC_AddButtonCentered", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_AddButtonCentered, "BmGame.RGFxMovieUI.UC_AddButtonCentered");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Id, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Label, paramsPtr + 4);
@@ -626,12 +664,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_UC_AddButton;
     /// <summary>
     /// Function: UC_AddButton
     /// </summary>
     public unsafe virtual void UC_AddButton(int Id, BmSDK.FString Label, bool bAllowRollOver = default, bool bShowNew = default, bool bDisabled = default, BmSDK.FString LocBase = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.UC_AddButton", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_AddButton, "BmGame.RGFxMovieUI.UC_AddButton");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Id, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Label, paramsPtr + 4);
@@ -643,48 +682,52 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_UC_AddIndent;
     /// <summary>
     /// Function: UC_AddIndent
     /// </summary>
     public unsafe virtual void UC_AddIndent(int Indent)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.UC_AddIndent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_AddIndent, "BmGame.RGFxMovieUI.UC_AddIndent");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Indent, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UC_SetOffset;
     /// <summary>
     /// Function: UC_SetOffset
     /// </summary>
     public unsafe virtual void UC_SetOffset(int Offset)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.UC_SetOffset", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_SetOffset, "BmGame.RGFxMovieUI.UC_SetOffset");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Offset, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_SetupMenu;
     /// <summary>
     /// Function: XI_SetupMenu
     /// </summary>
     public unsafe virtual void XI_SetupMenu(BmSDK.FString TargetPath)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_SetupMenu", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_SetupMenu, "BmGame.RGFxMovieUI.XI_SetupMenu");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetPath, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_DetectNetworkDebugCheat;
     /// <summary>
     /// Function: XI_DetectNetworkDebugCheat
     /// </summary>
     public unsafe virtual void XI_DetectNetworkDebugCheat(int charCode, bool bIsRepeat)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_DetectNetworkDebugCheat", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_DetectNetworkDebugCheat, "BmGame.RGFxMovieUI.XI_DetectNetworkDebugCheat");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(charCode, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIsRepeat, paramsPtr + 4);
@@ -692,45 +735,49 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_XI_GetTitle;
     /// <summary>
     /// Function: XI_GetTitle
     /// </summary>
     public unsafe virtual BmSDK.FString XI_GetTitle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_GetTitle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_GetTitle, "BmGame.RGFxMovieUI.XI_GetTitle");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_XI_OnOptionsToDefault;
     /// <summary>
     /// Function: XI_OnOptionsToDefault
     /// </summary>
     public unsafe virtual void XI_OnOptionsToDefault()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_OnOptionsToDefault", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_OnOptionsToDefault, "BmGame.RGFxMovieUI.XI_OnOptionsToDefault");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_OpenDebugLevelSelect;
     /// <summary>
     /// Function: XI_OpenDebugLevelSelect
     /// </summary>
     public unsafe virtual void XI_OpenDebugLevelSelect()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_OpenDebugLevelSelect", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_OpenDebugLevelSelect, "BmGame.RGFxMovieUI.XI_OpenDebugLevelSelect");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_OnKey;
     /// <summary>
     /// Function: XI_OnKey
     /// </summary>
     public unsafe virtual void XI_OnKey(int KeyCode, bool bDown)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_OnKey", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_OnKey, "BmGame.RGFxMovieUI.XI_OnKey");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(KeyCode, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDown, paramsPtr + 4);
@@ -738,250 +785,272 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_XI_OnLostFocus;
     /// <summary>
     /// Function: XI_OnLostFocus
     /// </summary>
     public unsafe virtual void XI_OnLostFocus(int Id)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_OnLostFocus", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_OnLostFocus, "BmGame.RGFxMovieUI.XI_OnLostFocus");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Id, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_OnFocus;
     /// <summary>
     /// Function: XI_OnFocus
     /// </summary>
     public unsafe virtual void XI_OnFocus(int Id)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_OnFocus", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_OnFocus, "BmGame.RGFxMovieUI.XI_OnFocus");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Id, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_OnBack;
     /// <summary>
     /// Function: XI_OnBack
     /// </summary>
     public unsafe virtual void XI_OnBack()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_OnBack", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_OnBack, "BmGame.RGFxMovieUI.XI_OnBack");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_OnStart;
     /// <summary>
     /// Function: XI_OnStart
     /// </summary>
     public unsafe virtual void XI_OnStart()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_OnStart", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_OnStart, "BmGame.RGFxMovieUI.XI_OnStart");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_OnY;
     /// <summary>
     /// Function: XI_OnY
     /// </summary>
     public unsafe virtual void XI_OnY()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_OnY", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_OnY, "BmGame.RGFxMovieUI.XI_OnY");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_OnX;
     /// <summary>
     /// Function: XI_OnX
     /// </summary>
     public unsafe virtual void XI_OnX()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_OnX", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_OnX, "BmGame.RGFxMovieUI.XI_OnX");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_OnClicked;
     /// <summary>
     /// Function: XI_OnClicked
     /// </summary>
     public unsafe virtual void XI_OnClicked(int Id)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_OnClicked", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_OnClicked, "BmGame.RGFxMovieUI.XI_OnClicked");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Id, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_Tick;
     /// <summary>
     /// Function: XI_Tick
     /// </summary>
     public unsafe virtual void XI_Tick()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_Tick, "BmGame.RGFxMovieUI.XI_Tick");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_OnOut;
     /// <summary>
     /// Function: XI_OnOut
     /// </summary>
     public unsafe virtual void XI_OnOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_OnOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_OnOut, "BmGame.RGFxMovieUI.XI_OnOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_OnOutro;
     /// <summary>
     /// Function: XI_OnOutro
     /// </summary>
     public unsafe virtual void XI_OnOutro()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_OnOutro", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_OnOutro, "BmGame.RGFxMovieUI.XI_OnOutro");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_OnIn;
     /// <summary>
     /// Function: XI_OnIn
     /// </summary>
     public unsafe virtual void XI_OnIn()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_OnIn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_OnIn, "BmGame.RGFxMovieUI.XI_OnIn");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_OnIntro;
     /// <summary>
     /// Function: XI_OnIntro
     /// </summary>
     public unsafe virtual void XI_OnIntro()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_OnIntro", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_OnIntro, "BmGame.RGFxMovieUI.XI_OnIntro");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CreateNewBlankGame;
     /// <summary>
     /// Function: CreateNewBlankGame
     /// </summary>
     public unsafe virtual void CreateNewBlankGame()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.CreateNewBlankGame", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateNewBlankGame, "BmGame.RGFxMovieUI.CreateNewBlankGame");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Game_Replay1stCatwoman;
     /// <summary>
     /// Function: Game_Replay1stCatwoman
     /// </summary>
     public unsafe virtual void Game_Replay1stCatwoman(BmSDK.FString CharacterName = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.Game_Replay1stCatwoman", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Game_Replay1stCatwoman, "BmGame.RGFxMovieUI.Game_Replay1stCatwoman");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CharacterName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CheckCatwomanOffer;
     /// <summary>
     /// Function: CheckCatwomanOffer
     /// </summary>
     public unsafe virtual bool CheckCatwomanOffer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.CheckCatwomanOffer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckCatwomanOffer, "BmGame.RGFxMovieUI.CheckCatwomanOffer");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetRetriesLeft;
     /// <summary>
     /// Function: GetRetriesLeft
     /// </summary>
     public unsafe virtual int GetRetriesLeft()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetRetriesLeft", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRetriesLeft, "BmGame.RGFxMovieUI.GetRetriesLeft");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsCampaign;
     /// <summary>
     /// Function: IsCampaign
     /// </summary>
     public unsafe virtual bool IsCampaign()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.IsCampaign", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsCampaign, "BmGame.RGFxMovieUI.IsCampaign");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetDeviceName;
     /// <summary>
     /// Function: SetDeviceName
     /// </summary>
     public unsafe virtual void SetDeviceName(BmSDK.FString DeviceName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetDeviceName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDeviceName, "BmGame.RGFxMovieUI.SetDeviceName");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeviceName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_GetGlobalFlag;
     /// <summary>
     /// Function: XI_GetGlobalFlag
     /// </summary>
     public unsafe virtual bool XI_GetGlobalFlag(BmSDK.FString sFlag)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_GetGlobalFlag", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_GetGlobalFlag, "BmGame.RGFxMovieUI.XI_GetGlobalFlag");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sFlag, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_XI_SetRivalName;
     /// <summary>
     /// Function: XI_SetRivalName
     /// </summary>
     public unsafe virtual void XI_SetRivalName(BmSDK.FString RivalName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_SetRivalName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_SetRivalName, "BmGame.RGFxMovieUI.XI_SetRivalName");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RivalName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_GetRivalName;
     /// <summary>
     /// Function: XI_GetRivalName
     /// </summary>
     public unsafe virtual BmSDK.FString XI_GetRivalName()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_GetRivalName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_GetRivalName, "BmGame.RGFxMovieUI.XI_GetRivalName");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_XI_CustomPrompts;
     /// <summary>
     /// Function: XI_CustomPrompts
     /// </summary>
     public unsafe virtual void XI_CustomPrompts(BmSDK.FString sA, BmSDK.FString sB, BmSDK.FString sX, BmSDK.FString sY, bool bWithTab = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_CustomPrompts", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_CustomPrompts, "BmGame.RGFxMovieUI.XI_CustomPrompts");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sA, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sB, paramsPtr + 16);
@@ -992,35 +1061,38 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetPrompts;
     /// <summary>
     /// Function: SetPrompts
     /// </summary>
     public unsafe virtual void SetPrompts(BmSDK.BmGame.RGFxMovieUI.UIPromptType PromptType = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetPrompts", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetPrompts, "BmGame.RGFxMovieUI.SetPrompts");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PromptType, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_ClearPrompts;
     /// <summary>
     /// Function: XI_ClearPrompts
     /// </summary>
     public unsafe override void XI_ClearPrompts()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_ClearPrompts", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_ClearPrompts, "BmGame.RGFxMovieUI.XI_ClearPrompts");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_MapPromptFind;
     /// <summary>
     /// Function: MapPromptFind
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RHUDPrompt.EControlIcon MapPromptFind(BmSDK.FString VoiceCmd)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.MapPromptFind", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MapPromptFind, "BmGame.RGFxMovieUI.MapPromptFind");
         byte* paramsPtr = stackalloc byte[17];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VoiceCmd, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1034,12 +1106,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RHUDPrompt.EControlIcon>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_MapPromptEntry;
     /// <summary>
     /// Function: MapPromptEntry
     /// </summary>
     public unsafe virtual void MapPromptEntry(BmSDK.BmGame.RHUDPrompt.EControlIcon Icon, BmSDK.FString LocDirectRef, BmSDK.FString VoiceCmd = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.MapPromptEntry", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MapPromptEntry, "BmGame.RGFxMovieUI.MapPromptEntry");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Icon, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocDirectRef, paramsPtr + 4);
@@ -1055,12 +1128,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ResetVoicePromptMap;
     /// <summary>
     /// Function: ResetVoicePromptMap
     /// </summary>
     public unsafe virtual void ResetVoicePromptMap()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.ResetVoicePromptMap", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetVoicePromptMap, "BmGame.RGFxMovieUI.ResetVoicePromptMap");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1073,92 +1147,100 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_AddVoiceCmd;
     /// <summary>
     /// Function: AddVoiceCmd
     /// </summary>
     public unsafe virtual void AddVoiceCmd(BmSDK.FString Cmd)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.AddVoiceCmd", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddVoiceCmd, "BmGame.RGFxMovieUI.AddVoiceCmd");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Cmd, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetupScreenPrompts;
     /// <summary>
     /// Function: SetupScreenPrompts
     /// </summary>
     public unsafe virtual void SetupScreenPrompts()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetupScreenPrompts", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupScreenPrompts, "BmGame.RGFxMovieUI.SetupScreenPrompts");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnEvent;
     /// <summary>
     /// Function: OnEvent
     /// </summary>
     public unsafe virtual void OnEvent(BmSDK.BmGame.RGFxMovieUI.UIEVENT_ActionType ActionType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.OnEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnEvent, "BmGame.RGFxMovieUI.OnEvent");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ActionType, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnLoginLost;
     /// <summary>
     /// Function: OnLoginLost
     /// </summary>
     public unsafe virtual void OnLoginLost()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.OnLoginLost", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnLoginLost, "BmGame.RGFxMovieUI.OnLoginLost");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnAltF4;
     /// <summary>
     /// Function: OnAltF4
     /// </summary>
     public unsafe virtual void OnAltF4()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.OnAltF4", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnAltF4, "BmGame.RGFxMovieUI.OnAltF4");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnBackCustom;
     /// <summary>
     /// Function: OnBackCustom
     /// </summary>
     public unsafe virtual void OnBackCustom()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.OnBackCustom", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnBackCustom, "BmGame.RGFxMovieUI.OnBackCustom");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnStreamingInstall_Callback;
     /// <summary>
     /// Function: OnStreamingInstall_Callback
     /// </summary>
     public unsafe virtual void OnStreamingInstall_Callback(bool bWasCancelled)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.OnStreamingInstall_Callback", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnStreamingInstall_Callback, "BmGame.RGFxMovieUI.OnStreamingInstall_Callback");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasCancelled, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PopupRequester_Callback;
     /// <summary>
     /// Function: PopupRequester_Callback
     /// </summary>
     public unsafe override void PopupRequester_Callback(BmSDK.BmGame.RGFxMoviePopupRequester ThePopUpMsg, int ButtonId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.PopupRequester_Callback", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PopupRequester_Callback, "BmGame.RGFxMovieUI.PopupRequester_Callback");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThePopUpMsg, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ButtonId, paramsPtr + 8);
@@ -1166,70 +1248,76 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_BackOut;
     /// <summary>
     /// Function: BackOut
     /// </summary>
     public unsafe virtual void BackOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.BackOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BackOut, "BmGame.RGFxMovieUI.BackOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DoExit;
     /// <summary>
     /// Function: DoExit
     /// </summary>
     public unsafe virtual void DoExit(bool ApplyChanges)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.DoExit", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoExit, "BmGame.RGFxMovieUI.DoExit");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ApplyChanges, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Close;
     /// <summary>
     /// Function: Close
     /// </summary>
     public unsafe override void Close(bool Unload = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.Close", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Close, "BmGame.RGFxMovieUI.Close");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Unload, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TransitionBackToCurrent;
     /// <summary>
     /// Function: TransitionBackToCurrent
     /// </summary>
     public unsafe virtual void TransitionBackToCurrent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.TransitionBackToCurrent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TransitionBackToCurrent, "BmGame.RGFxMovieUI.TransitionBackToCurrent");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TransitionForwardsKeepingCurrent;
     /// <summary>
     /// Function: TransitionForwardsKeepingCurrent
     /// </summary>
     public unsafe virtual void TransitionForwardsKeepingCurrent(BmSDK.FString EventName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.TransitionForwardsKeepingCurrent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TransitionForwardsKeepingCurrent, "BmGame.RGFxMovieUI.TransitionForwardsKeepingCurrent");
         byte* paramsPtr = stackalloc byte[17];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TransitionForwards;
     /// <summary>
     /// Function: TransitionForwards
     /// </summary>
     public unsafe virtual void TransitionForwards(BmSDK.FString EventName, bool bClose)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.TransitionForwards", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TransitionForwards, "BmGame.RGFxMovieUI.TransitionForwards");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bClose, paramsPtr + 16);
@@ -1237,12 +1325,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_TransitionBack;
     /// <summary>
     /// Function: TransitionBack
     /// </summary>
     public unsafe virtual void TransitionBack(BmSDK.FString EventName, bool bSilent = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.TransitionBack", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TransitionBack, "BmGame.RGFxMovieUI.TransitionBack");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSilent, paramsPtr + 16);
@@ -1250,230 +1339,250 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetTheClassName;
     /// <summary>
     /// Function: GetTheClassName
     /// </summary>
     public unsafe override BmSDK.FString GetTheClassName()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetTheClassName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTheClassName, "BmGame.RGFxMovieUI.GetTheClassName");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CloseScreen;
     /// <summary>
     /// Function: CloseScreen
     /// </summary>
     public unsafe virtual void CloseScreen()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.CloseScreen", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CloseScreen, "BmGame.RGFxMovieUI.CloseScreen");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsInOutro;
     /// <summary>
     /// Function: IsInOutro
     /// </summary>
     public unsafe virtual bool IsInOutro()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.IsInOutro", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInOutro, "BmGame.RGFxMovieUI.IsInOutro");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsInIntro;
     /// <summary>
     /// Function: IsInIntro
     /// </summary>
     public unsafe virtual bool IsInIntro()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.IsInIntro", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInIntro, "BmGame.RGFxMovieUI.IsInIntro");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsInputBlocked;
     /// <summary>
     /// Function: IsInputBlocked
     /// </summary>
     public unsafe virtual bool IsInputBlocked()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.IsInputBlocked", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInputBlocked, "BmGame.RGFxMovieUI.IsInputBlocked");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetMouseCursorEnabled;
     /// <summary>
     /// Function: SetMouseCursorEnabled
     /// </summary>
     public unsafe virtual void SetMouseCursorEnabled(bool is_enabled)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetMouseCursorEnabled", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMouseCursorEnabled, "BmGame.RGFxMovieUI.SetMouseCursorEnabled");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(is_enabled, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_GetUsingGamepad;
     /// <summary>
     /// Function: XI_GetUsingGamepad
     /// </summary>
     public unsafe override bool XI_GetUsingGamepad()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_GetUsingGamepad", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_GetUsingGamepad, "BmGame.RGFxMovieUI.XI_GetUsingGamepad");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_XI_BlockInput;
     /// <summary>
     /// Function: XI_BlockInput
     /// </summary>
     public unsafe virtual void XI_BlockInput(bool bBlocked)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_BlockInput", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_BlockInput, "BmGame.RGFxMovieUI.XI_BlockInput");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bBlocked, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_BlockInput;
     /// <summary>
     /// Function: BlockInput
     /// </summary>
     public unsafe virtual void BlockInput(bool bBlocked)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.BlockInput", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BlockInput, "BmGame.RGFxMovieUI.BlockInput");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bBlocked, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe override void Init(BmSDK.Engine.LocalPlayer LocPlay = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.Init", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmGame.RGFxMovieUI.Init");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocPlay, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SpecialInit;
     /// <summary>
     /// Function: SpecialInit
     /// </summary>
     public unsafe virtual bool SpecialInit(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SpecialInit", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpecialInit, "BmGame.RGFxMovieUI.SpecialInit");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_SaveCurrentMenu;
     /// <summary>
     /// Function: SaveCurrentMenu
     /// </summary>
     public unsafe virtual void SaveCurrentMenu(BmSDK.FString MenuName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SaveCurrentMenu", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SaveCurrentMenu, "BmGame.RGFxMovieUI.SaveCurrentMenu");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MenuName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetGridButtonContext;
     /// <summary>
     /// Function: GetGridButtonContext
     /// </summary>
     public unsafe virtual BmSDK.FString GetGridButtonContext(int ButtonId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetGridButtonContext", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGridButtonContext, "BmGame.RGFxMovieUI.GetGridButtonContext");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ButtonId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_IsCatwomanAvailable;
     /// <summary>
     /// Function: IsCatwomanAvailable
     /// </summary>
     public unsafe virtual bool IsCatwomanAvailable()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.IsCatwomanAvailable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsCatwomanAvailable, "BmGame.RGFxMovieUI.IsCatwomanAvailable");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsNewGamePlusStarted;
     /// <summary>
     /// Function: IsNewGamePlusStarted
     /// </summary>
     public unsafe virtual bool IsNewGamePlusStarted()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.IsNewGamePlusStarted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsNewGamePlusStarted, "BmGame.RGFxMovieUI.IsNewGamePlusStarted");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsNewGamePlusUnlocked;
     /// <summary>
     /// Function: IsNewGamePlusUnlocked
     /// </summary>
     public unsafe virtual bool IsNewGamePlusUnlocked()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.IsNewGamePlusUnlocked", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsNewGamePlusUnlocked, "BmGame.RGFxMovieUI.IsNewGamePlusUnlocked");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CountCharacters;
     /// <summary>
     /// Function: CountCharacters
     /// </summary>
     public unsafe virtual int CountCharacters(BmSDK.FString CharacterWanted)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.CountCharacters", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CountCharacters, "BmGame.RGFxMovieUI.CountCharacters");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CharacterWanted, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_XI_RequestGridMenuData;
     /// <summary>
     /// Function: XI_RequestGridMenuData
     /// </summary>
     public unsafe virtual int XI_RequestGridMenuData(BmSDK.FString TargetBasePath)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.XI_RequestGridMenuData", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_RequestGridMenuData, "BmGame.RGFxMovieUI.XI_RequestGridMenuData");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetBasePath, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_EndRow;
     /// <summary>
     /// Function: EndRow
     /// </summary>
     public unsafe virtual void EndRow()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.EndRow", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EndRow, "BmGame.RGFxMovieUI.EndRow");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddGridItem;
     /// <summary>
     /// Function: AddGridItem
     /// </summary>
     public unsafe virtual void AddGridItem(int InId, BmSDK.FString inItemName, BmSDK.FString inPackageName, BmSDK.FString inDisplayNameRef, bool inPlatformSpecific, bool inLocked, bool inNew = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.AddGridItem", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddGridItem, "BmGame.RGFxMovieUI.AddGridItem");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(inItemName, paramsPtr + 4);
@@ -1486,36 +1595,39 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_StoreButtonId;
     /// <summary>
     /// Function: StoreButtonId
     /// </summary>
     public unsafe virtual void StoreButtonId(int ButtonId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.StoreButtonId", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StoreButtonId, "BmGame.RGFxMovieUI.StoreButtonId");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ButtonId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetTheButtonName;
     /// <summary>
     /// Function: GetTheButtonName
     /// </summary>
     public unsafe virtual BmSDK.FString GetTheButtonName(int Id)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetTheButtonName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTheButtonName, "BmGame.RGFxMovieUI.GetTheButtonName");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Id, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_AreIniFilesModified;
     /// <summary>
     /// Function: AreIniFilesModified
     /// </summary>
     public unsafe virtual bool AreIniFilesModified()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.AreIniFilesModified", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AreIniFilesModified, "BmGame.RGFxMovieUI.AreIniFilesModified");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1528,12 +1640,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsBelowMinMemory;
     /// <summary>
     /// Function: IsBelowMinMemory
     /// </summary>
     public unsafe virtual bool IsBelowMinMemory(int TotalPhysMem)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.IsBelowMinMemory", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsBelowMinMemory, "BmGame.RGFxMovieUI.IsBelowMinMemory");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TotalPhysMem, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1547,12 +1660,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetGPUName;
     /// <summary>
     /// Function: GetGPUName
     /// </summary>
     public unsafe virtual BmSDK.FString GetGPUName()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetGPUName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGPUName, "BmGame.RGFxMovieUI.GetGPUName");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1565,12 +1679,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetMinVideoDriverVersion;
     /// <summary>
     /// Function: GetMinVideoDriverVersion
     /// </summary>
     public unsafe virtual BmSDK.FString GetMinVideoDriverVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetMinVideoDriverVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMinVideoDriverVersion, "BmGame.RGFxMovieUI.GetMinVideoDriverVersion");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1583,12 +1698,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetVideoDriverVersion;
     /// <summary>
     /// Function: GetVideoDriverVersion
     /// </summary>
     public unsafe virtual BmSDK.FString GetVideoDriverVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetVideoDriverVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVideoDriverVersion, "BmGame.RGFxMovieUI.GetVideoDriverVersion");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1601,12 +1717,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetMinMemoryWarning;
     /// <summary>
     /// Function: GetMinMemoryWarning
     /// </summary>
     public unsafe virtual BmSDK.FString GetMinMemoryWarning(int TotalPhysMem)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetMinMemoryWarning", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMinMemoryWarning, "BmGame.RGFxMovieUI.GetMinMemoryWarning");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TotalPhysMem, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1620,12 +1737,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetSystemTotalMemGBs;
     /// <summary>
     /// Function: GetSystemTotalMemGBs
     /// </summary>
     public unsafe virtual float GetSystemTotalMemGBs()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetSystemTotalMemGBs", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSystemTotalMemGBs, "BmGame.RGFxMovieUI.GetSystemTotalMemGBs");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1638,12 +1756,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_AreGiftCallsActive;
     /// <summary>
     /// Function: AreGiftCallsActive
     /// </summary>
     public unsafe virtual bool AreGiftCallsActive()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.AreGiftCallsActive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AreGiftCallsActive, "BmGame.RGFxMovieUI.AreGiftCallsActive");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1656,12 +1775,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_StartHydraFetchGiftCalls;
     /// <summary>
     /// Function: StartHydraFetchGiftCalls
     /// </summary>
     public unsafe virtual void StartHydraFetchGiftCalls()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.StartHydraFetchGiftCalls", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartHydraFetchGiftCalls, "BmGame.RGFxMovieUI.StartHydraFetchGiftCalls");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1674,12 +1794,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SendHydraInsufficientRAMPopupEvent;
     /// <summary>
     /// Function: SendHydraInsufficientRAMPopupEvent
     /// </summary>
     public unsafe virtual void SendHydraInsufficientRAMPopupEvent(int SystemTotalMemGBs)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SendHydraInsufficientRAMPopupEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SendHydraInsufficientRAMPopupEvent, "BmGame.RGFxMovieUI.SendHydraInsufficientRAMPopupEvent");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SystemTotalMemGBs, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1693,12 +1814,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SendHydraOutdatedDriverPopupEvent;
     /// <summary>
     /// Function: SendHydraOutdatedDriverPopupEvent
     /// </summary>
     public unsafe virtual void SendHydraOutdatedDriverPopupEvent(BmSDK.FString DriverVersion)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SendHydraOutdatedDriverPopupEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SendHydraOutdatedDriverPopupEvent, "BmGame.RGFxMovieUI.SendHydraOutdatedDriverPopupEvent");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DriverVersion, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1712,12 +1834,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SendHydraGWPageExposeEvent;
     /// <summary>
     /// Function: SendHydraGWPageExposeEvent
     /// </summary>
     public unsafe virtual void SendHydraGWPageExposeEvent(BmSDK.FString EventType, BmSDK.FString DLCId, BmSDK.FString EventID, int LoadTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SendHydraGWPageExposeEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SendHydraGWPageExposeEvent, "BmGame.RGFxMovieUI.SendHydraGWPageExposeEvent");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventType, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DLCId, paramsPtr + 16);
@@ -1734,12 +1857,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SendHydraRedeemCodePressedEvent;
     /// <summary>
     /// Function: SendHydraRedeemCodePressedEvent
     /// </summary>
     public unsafe virtual void SendHydraRedeemCodePressedEvent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SendHydraRedeemCodePressedEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SendHydraRedeemCodePressedEvent, "BmGame.RGFxMovieUI.SendHydraRedeemCodePressedEvent");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1752,12 +1876,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SendHydraDLCDetailViewEvent;
     /// <summary>
     /// Function: SendHydraDLCDetailViewEvent
     /// </summary>
     public unsafe virtual void SendHydraDLCDetailViewEvent(BmSDK.FString DLCId, BmSDK.FString DLCName, int LoadTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SendHydraDLCDetailViewEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SendHydraDLCDetailViewEvent, "BmGame.RGFxMovieUI.SendHydraDLCDetailViewEvent");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DLCId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DLCName, paramsPtr + 16);
@@ -1773,12 +1898,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SendHydraMOTDClickEvent;
     /// <summary>
     /// Function: SendHydraMOTDClickEvent
     /// </summary>
     public unsafe virtual void SendHydraMOTDClickEvent(BmSDK.FString MOTDId, BmSDK.FString MOTDType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SendHydraMOTDClickEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SendHydraMOTDClickEvent, "BmGame.RGFxMovieUI.SendHydraMOTDClickEvent");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MOTDId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MOTDType, paramsPtr + 16);
@@ -1793,12 +1919,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ReportHydraGWSessionEnd;
     /// <summary>
     /// Function: ReportHydraGWSessionEnd
     /// </summary>
     public unsafe virtual void ReportHydraGWSessionEnd()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.ReportHydraGWSessionEnd", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReportHydraGWSessionEnd, "BmGame.RGFxMovieUI.ReportHydraGWSessionEnd");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1811,12 +1938,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ReportHydraGWSessionBegin;
     /// <summary>
     /// Function: ReportHydraGWSessionBegin
     /// </summary>
     public unsafe virtual void ReportHydraGWSessionBegin()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.ReportHydraGWSessionBegin", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReportHydraGWSessionBegin, "BmGame.RGFxMovieUI.ReportHydraGWSessionBegin");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1829,12 +1957,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetAppSeconds;
     /// <summary>
     /// Function: GetAppSeconds
     /// </summary>
     public unsafe virtual int GetAppSeconds()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetAppSeconds", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAppSeconds, "BmGame.RGFxMovieUI.GetAppSeconds");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1847,12 +1976,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetCurrentUTCTime;
     /// <summary>
     /// Function: GetCurrentUTCTime
     /// </summary>
     public unsafe virtual void GetCurrentUTCTime(out int Year, out int Month, out int Day, out int Hour, out int Min, out int Sec, out int MSec)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetCurrentUTCTime", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCurrentUTCTime, "BmGame.RGFxMovieUI.GetCurrentUTCTime");
         byte* paramsPtr = stackalloc byte[28];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1872,12 +2002,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetMotionBlur;
     /// <summary>
     /// Function: SetMotionBlur
     /// </summary>
     public unsafe virtual void SetMotionBlur(int Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetMotionBlur", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMotionBlur, "BmGame.RGFxMovieUI.SetMotionBlur");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1891,12 +2022,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetMotionBlur;
     /// <summary>
     /// Function: GetMotionBlur
     /// </summary>
     public unsafe virtual int GetMotionBlur()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetMotionBlur", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMotionBlur, "BmGame.RGFxMovieUI.GetMotionBlur");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1909,12 +2041,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDefaultMotionBlur;
     /// <summary>
     /// Function: GetDefaultMotionBlur
     /// </summary>
     public unsafe virtual int GetDefaultMotionBlur()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetDefaultMotionBlur", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDefaultMotionBlur, "BmGame.RGFxMovieUI.GetDefaultMotionBlur");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1927,12 +2060,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetTextureFiltering;
     /// <summary>
     /// Function: SetTextureFiltering
     /// </summary>
     public unsafe virtual void SetTextureFiltering(int Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetTextureFiltering", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetTextureFiltering, "BmGame.RGFxMovieUI.SetTextureFiltering");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1946,12 +2080,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetTextureFiltering;
     /// <summary>
     /// Function: GetTextureFiltering
     /// </summary>
     public unsafe virtual int GetTextureFiltering()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetTextureFiltering", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTextureFiltering, "BmGame.RGFxMovieUI.GetTextureFiltering");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1964,12 +2099,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDefaultTextureFiltering;
     /// <summary>
     /// Function: GetDefaultTextureFiltering
     /// </summary>
     public unsafe virtual int GetDefaultTextureFiltering()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetDefaultTextureFiltering", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDefaultTextureFiltering, "BmGame.RGFxMovieUI.GetDefaultTextureFiltering");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1982,12 +2118,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetFilmGrain;
     /// <summary>
     /// Function: SetFilmGrain
     /// </summary>
     public unsafe virtual void SetFilmGrain(int Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetFilmGrain", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetFilmGrain, "BmGame.RGFxMovieUI.SetFilmGrain");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2001,12 +2138,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetFilmGrain;
     /// <summary>
     /// Function: GetFilmGrain
     /// </summary>
     public unsafe virtual int GetFilmGrain()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetFilmGrain", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFilmGrain, "BmGame.RGFxMovieUI.GetFilmGrain");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2019,12 +2157,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDefaultFilmGrain;
     /// <summary>
     /// Function: GetDefaultFilmGrain
     /// </summary>
     public unsafe virtual int GetDefaultFilmGrain()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetDefaultFilmGrain", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDefaultFilmGrain, "BmGame.RGFxMovieUI.GetDefaultFilmGrain");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2037,12 +2176,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetChromaticAberration;
     /// <summary>
     /// Function: SetChromaticAberration
     /// </summary>
     public unsafe virtual void SetChromaticAberration(int Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetChromaticAberration", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetChromaticAberration, "BmGame.RGFxMovieUI.SetChromaticAberration");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2056,12 +2196,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetChromaticAberration;
     /// <summary>
     /// Function: GetChromaticAberration
     /// </summary>
     public unsafe virtual int GetChromaticAberration()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetChromaticAberration", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetChromaticAberration, "BmGame.RGFxMovieUI.GetChromaticAberration");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2074,12 +2215,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDefaultChromaticAberration;
     /// <summary>
     /// Function: GetDefaultChromaticAberration
     /// </summary>
     public unsafe virtual int GetDefaultChromaticAberration()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetDefaultChromaticAberration", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDefaultChromaticAberration, "BmGame.RGFxMovieUI.GetDefaultChromaticAberration");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2092,12 +2234,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetMaxFPS;
     /// <summary>
     /// Function: SetMaxFPS
     /// </summary>
     public unsafe virtual void SetMaxFPS(int Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetMaxFPS", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMaxFPS, "BmGame.RGFxMovieUI.SetMaxFPS");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2111,12 +2254,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetMaxFPS;
     /// <summary>
     /// Function: GetMaxFPS
     /// </summary>
     public unsafe virtual int GetMaxFPS()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetMaxFPS", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMaxFPS, "BmGame.RGFxMovieUI.GetMaxFPS");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2129,12 +2273,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDefaultMaxFPS;
     /// <summary>
     /// Function: GetDefaultMaxFPS
     /// </summary>
     public unsafe virtual int GetDefaultMaxFPS()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetDefaultMaxFPS", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDefaultMaxFPS, "BmGame.RGFxMovieUI.GetDefaultMaxFPS");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2147,12 +2292,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetAdaptiveVsync;
     /// <summary>
     /// Function: SetAdaptiveVsync
     /// </summary>
     public unsafe virtual void SetAdaptiveVsync(int Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetAdaptiveVsync", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAdaptiveVsync, "BmGame.RGFxMovieUI.SetAdaptiveVsync");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2166,12 +2312,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetAdaptiveVsync;
     /// <summary>
     /// Function: GetAdaptiveVsync
     /// </summary>
     public unsafe virtual int GetAdaptiveVsync()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetAdaptiveVsync", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAdaptiveVsync, "BmGame.RGFxMovieUI.GetAdaptiveVsync");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2184,12 +2331,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDefaultAdaptiveVsync;
     /// <summary>
     /// Function: GetDefaultAdaptiveVsync
     /// </summary>
     public unsafe virtual int GetDefaultAdaptiveVsync()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetDefaultAdaptiveVsync", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDefaultAdaptiveVsync, "BmGame.RGFxMovieUI.GetDefaultAdaptiveVsync");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2202,12 +2350,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetVsync;
     /// <summary>
     /// Function: SetVsync
     /// </summary>
     public unsafe virtual void SetVsync(int Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetVsync", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetVsync, "BmGame.RGFxMovieUI.SetVsync");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2221,12 +2370,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetVsync;
     /// <summary>
     /// Function: GetVsync
     /// </summary>
     public unsafe virtual int GetVsync()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetVsync", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVsync, "BmGame.RGFxMovieUI.GetVsync");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2239,12 +2389,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDefaultVsync;
     /// <summary>
     /// Function: GetDefaultVsync
     /// </summary>
     public unsafe virtual int GetDefaultVsync()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetDefaultVsync", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDefaultVsync, "BmGame.RGFxMovieUI.GetDefaultVsync");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2257,12 +2408,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetVolumetricLighting;
     /// <summary>
     /// Function: SetVolumetricLighting
     /// </summary>
     public unsafe virtual void SetVolumetricLighting(int Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetVolumetricLighting", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetVolumetricLighting, "BmGame.RGFxMovieUI.SetVolumetricLighting");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2276,12 +2428,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetVolumetricLighting;
     /// <summary>
     /// Function: GetVolumetricLighting
     /// </summary>
     public unsafe virtual int GetVolumetricLighting()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetVolumetricLighting", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVolumetricLighting, "BmGame.RGFxMovieUI.GetVolumetricLighting");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2294,12 +2447,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDefaultVolumetricLighting;
     /// <summary>
     /// Function: GetDefaultVolumetricLighting
     /// </summary>
     public unsafe virtual int GetDefaultVolumetricLighting()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetDefaultVolumetricLighting", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDefaultVolumetricLighting, "BmGame.RGFxMovieUI.GetDefaultVolumetricLighting");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2312,12 +2466,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetRainFX;
     /// <summary>
     /// Function: SetRainFX
     /// </summary>
     public unsafe virtual void SetRainFX(int Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetRainFX", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRainFX, "BmGame.RGFxMovieUI.SetRainFX");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2331,12 +2486,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetRainFX;
     /// <summary>
     /// Function: GetRainFX
     /// </summary>
     public unsafe virtual int GetRainFX()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetRainFX", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRainFX, "BmGame.RGFxMovieUI.GetRainFX");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2349,12 +2505,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDefaultRainFX;
     /// <summary>
     /// Function: GetDefaultRainFX
     /// </summary>
     public unsafe virtual int GetDefaultRainFX()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetDefaultRainFX", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDefaultRainFX, "BmGame.RGFxMovieUI.GetDefaultRainFX");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2367,12 +2524,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetInteractiveDebris;
     /// <summary>
     /// Function: SetInteractiveDebris
     /// </summary>
     public unsafe virtual void SetInteractiveDebris(int Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetInteractiveDebris", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetInteractiveDebris, "BmGame.RGFxMovieUI.SetInteractiveDebris");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2386,12 +2544,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetInteractiveDebris;
     /// <summary>
     /// Function: GetInteractiveDebris
     /// </summary>
     public unsafe virtual int GetInteractiveDebris()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetInteractiveDebris", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetInteractiveDebris, "BmGame.RGFxMovieUI.GetInteractiveDebris");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2404,12 +2563,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDefaultInteractiveDebris;
     /// <summary>
     /// Function: GetDefaultInteractiveDebris
     /// </summary>
     public unsafe virtual int GetDefaultInteractiveDebris()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetDefaultInteractiveDebris", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDefaultInteractiveDebris, "BmGame.RGFxMovieUI.GetDefaultInteractiveDebris");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2422,12 +2582,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetInteractiveSmoke;
     /// <summary>
     /// Function: SetInteractiveSmoke
     /// </summary>
     public unsafe virtual void SetInteractiveSmoke(int Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetInteractiveSmoke", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetInteractiveSmoke, "BmGame.RGFxMovieUI.SetInteractiveSmoke");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2441,12 +2602,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetInteractiveSmoke;
     /// <summary>
     /// Function: GetInteractiveSmoke
     /// </summary>
     public unsafe virtual int GetInteractiveSmoke()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetInteractiveSmoke", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetInteractiveSmoke, "BmGame.RGFxMovieUI.GetInteractiveSmoke");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2459,12 +2621,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDefaultInteractiveSmoke;
     /// <summary>
     /// Function: GetDefaultInteractiveSmoke
     /// </summary>
     public unsafe virtual int GetDefaultInteractiveSmoke()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetDefaultInteractiveSmoke", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDefaultInteractiveSmoke, "BmGame.RGFxMovieUI.GetDefaultInteractiveSmoke");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2477,12 +2640,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetLevelOfDetail;
     /// <summary>
     /// Function: SetLevelOfDetail
     /// </summary>
     public unsafe virtual void SetLevelOfDetail(int Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetLevelOfDetail", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetLevelOfDetail, "BmGame.RGFxMovieUI.SetLevelOfDetail");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2496,12 +2660,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetLevelOfDetail;
     /// <summary>
     /// Function: GetLevelOfDetail
     /// </summary>
     public unsafe virtual int GetLevelOfDetail()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetLevelOfDetail", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLevelOfDetail, "BmGame.RGFxMovieUI.GetLevelOfDetail");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2514,12 +2679,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDefaultLevelOfDetail;
     /// <summary>
     /// Function: GetDefaultLevelOfDetail
     /// </summary>
     public unsafe virtual int GetDefaultLevelOfDetail()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetDefaultLevelOfDetail", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDefaultLevelOfDetail, "BmGame.RGFxMovieUI.GetDefaultLevelOfDetail");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2532,12 +2698,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetShadowQuality;
     /// <summary>
     /// Function: SetShadowQuality
     /// </summary>
     public unsafe virtual void SetShadowQuality(int Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetShadowQuality", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetShadowQuality, "BmGame.RGFxMovieUI.SetShadowQuality");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2551,12 +2718,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetShadowQuality;
     /// <summary>
     /// Function: GetShadowQuality
     /// </summary>
     public unsafe virtual int GetShadowQuality()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetShadowQuality", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetShadowQuality, "BmGame.RGFxMovieUI.GetShadowQuality");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2569,12 +2737,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDefaultShadowQuality;
     /// <summary>
     /// Function: GetDefaultShadowQuality
     /// </summary>
     public unsafe virtual int GetDefaultShadowQuality()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetDefaultShadowQuality", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDefaultShadowQuality, "BmGame.RGFxMovieUI.GetDefaultShadowQuality");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2587,12 +2756,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetTextureResolution;
     /// <summary>
     /// Function: SetTextureResolution
     /// </summary>
     public unsafe virtual void SetTextureResolution(int Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetTextureResolution", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetTextureResolution, "BmGame.RGFxMovieUI.SetTextureResolution");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2606,12 +2776,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetTextureResolution;
     /// <summary>
     /// Function: GetTextureResolution
     /// </summary>
     public unsafe virtual int GetTextureResolution()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetTextureResolution", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTextureResolution, "BmGame.RGFxMovieUI.GetTextureResolution");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2624,12 +2795,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDefaultTextureResolution;
     /// <summary>
     /// Function: GetDefaultTextureResolution
     /// </summary>
     public unsafe virtual int GetDefaultTextureResolution()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetDefaultTextureResolution", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDefaultTextureResolution, "BmGame.RGFxMovieUI.GetDefaultTextureResolution");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2642,12 +2814,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetAntialiasing;
     /// <summary>
     /// Function: SetAntialiasing
     /// </summary>
     public unsafe virtual void SetAntialiasing(int Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetAntialiasing", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAntialiasing, "BmGame.RGFxMovieUI.SetAntialiasing");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2661,12 +2834,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetAntialiasing;
     /// <summary>
     /// Function: GetAntialiasing
     /// </summary>
     public unsafe virtual int GetAntialiasing()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetAntialiasing", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAntialiasing, "BmGame.RGFxMovieUI.GetAntialiasing");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2679,12 +2853,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDefaultAntialiasing;
     /// <summary>
     /// Function: GetDefaultAntialiasing
     /// </summary>
     public unsafe virtual int GetDefaultAntialiasing()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetDefaultAntialiasing", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDefaultAntialiasing, "BmGame.RGFxMovieUI.GetDefaultAntialiasing");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2697,12 +2872,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetCurrentResolutionY;
     /// <summary>
     /// Function: SetCurrentResolutionY
     /// </summary>
     public unsafe virtual void SetCurrentResolutionY(int Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetCurrentResolutionY", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCurrentResolutionY, "BmGame.RGFxMovieUI.SetCurrentResolutionY");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2716,12 +2892,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetCurrentResolutionX;
     /// <summary>
     /// Function: SetCurrentResolutionX
     /// </summary>
     public unsafe virtual void SetCurrentResolutionX(int Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetCurrentResolutionX", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCurrentResolutionX, "BmGame.RGFxMovieUI.SetCurrentResolutionX");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2735,12 +2912,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetResolution;
     /// <summary>
     /// Function: SetResolution
     /// </summary>
     public unsafe virtual void SetResolution(int Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetResolution", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetResolution, "BmGame.RGFxMovieUI.SetResolution");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2754,12 +2932,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetCurrentResolutionY;
     /// <summary>
     /// Function: GetCurrentResolutionY
     /// </summary>
     public unsafe virtual int GetCurrentResolutionY()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetCurrentResolutionY", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCurrentResolutionY, "BmGame.RGFxMovieUI.GetCurrentResolutionY");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2772,12 +2951,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetCurrentResolutionX;
     /// <summary>
     /// Function: GetCurrentResolutionX
     /// </summary>
     public unsafe virtual int GetCurrentResolutionX()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetCurrentResolutionX", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCurrentResolutionX, "BmGame.RGFxMovieUI.GetCurrentResolutionX");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2790,12 +2970,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetResolution;
     /// <summary>
     /// Function: GetResolution
     /// </summary>
     public unsafe virtual int GetResolution()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetResolution", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetResolution, "BmGame.RGFxMovieUI.GetResolution");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2808,12 +2989,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDefaultResolution;
     /// <summary>
     /// Function: GetDefaultResolution
     /// </summary>
     public unsafe virtual int GetDefaultResolution()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetDefaultResolution", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDefaultResolution, "BmGame.RGFxMovieUI.GetDefaultResolution");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2826,12 +3008,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetDisplayMode;
     /// <summary>
     /// Function: SetDisplayMode
     /// </summary>
     public unsafe virtual void SetDisplayMode(int Value)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetDisplayMode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDisplayMode, "BmGame.RGFxMovieUI.SetDisplayMode");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2845,12 +3028,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetDisplayMode;
     /// <summary>
     /// Function: GetDisplayMode
     /// </summary>
     public unsafe virtual int GetDisplayMode()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetDisplayMode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDisplayMode, "BmGame.RGFxMovieUI.GetDisplayMode");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2863,12 +3047,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDefaultDisplayMode;
     /// <summary>
     /// Function: GetDefaultDisplayMode
     /// </summary>
     public unsafe virtual int GetDefaultDisplayMode()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetDefaultDisplayMode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDefaultDisplayMode, "BmGame.RGFxMovieUI.GetDefaultDisplayMode");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2881,12 +3066,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetRestartOptionsChanged;
     /// <summary>
     /// Function: SetRestartOptionsChanged
     /// </summary>
     public unsafe virtual void SetRestartOptionsChanged(bool OptionsChanged)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SetRestartOptionsChanged", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRestartOptionsChanged, "BmGame.RGFxMovieUI.SetRestartOptionsChanged");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OptionsChanged, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2900,12 +3086,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetRestartOptionsChanged;
     /// <summary>
     /// Function: GetRestartOptionsChanged
     /// </summary>
     public unsafe virtual bool GetRestartOptionsChanged()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.GetRestartOptionsChanged", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRestartOptionsChanged, "BmGame.RGFxMovieUI.GetRestartOptionsChanged");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2918,12 +3105,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_RevertGraphicsOptionsToCopy;
     /// <summary>
     /// Function: RevertGraphicsOptionsToCopy
     /// </summary>
     public unsafe virtual void RevertGraphicsOptionsToCopy()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.RevertGraphicsOptionsToCopy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RevertGraphicsOptionsToCopy, "BmGame.RGFxMovieUI.RevertGraphicsOptionsToCopy");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2936,12 +3124,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_HaveGraphicsOptionsChangedFromCopy;
     /// <summary>
     /// Function: HaveGraphicsOptionsChangedFromCopy
     /// </summary>
     public unsafe virtual bool HaveGraphicsOptionsChangedFromCopy()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.HaveGraphicsOptionsChangedFromCopy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HaveGraphicsOptionsChangedFromCopy, "BmGame.RGFxMovieUI.HaveGraphicsOptionsChangedFromCopy");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2954,12 +3143,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_MakeCopyOfGraphicsOptions;
     /// <summary>
     /// Function: MakeCopyOfGraphicsOptions
     /// </summary>
     public unsafe virtual void MakeCopyOfGraphicsOptions()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.MakeCopyOfGraphicsOptions", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MakeCopyOfGraphicsOptions, "BmGame.RGFxMovieUI.MakeCopyOfGraphicsOptions");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -2972,12 +3162,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ClearMenuState;
     /// <summary>
     /// Function: ClearMenuState
     /// </summary>
     public unsafe virtual void ClearMenuState(BmSDK.FString StorageName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.ClearMenuState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearMenuState, "BmGame.RGFxMovieUI.ClearMenuState");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StorageName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -2991,12 +3182,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_RestoreMenuState;
     /// <summary>
     /// Function: RestoreMenuState
     /// </summary>
     public unsafe virtual void RestoreMenuState(BmSDK.FString StorageName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.RestoreMenuState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RestoreMenuState, "BmGame.RGFxMovieUI.RestoreMenuState");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StorageName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -3010,12 +3202,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SaveMenuState;
     /// <summary>
     /// Function: SaveMenuState
     /// </summary>
     public unsafe virtual void SaveMenuState(BmSDK.FString StorageName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SaveMenuState", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SaveMenuState, "BmGame.RGFxMovieUI.SaveMenuState");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StorageName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -3029,12 +3222,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ClearAllMenuStates;
     /// <summary>
     /// Function: ClearAllMenuStates
     /// </summary>
     public unsafe virtual void ClearAllMenuStates()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.ClearAllMenuStates", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearAllMenuStates, "BmGame.RGFxMovieUI.ClearAllMenuStates");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -3047,12 +3241,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_CancelLoadControllerImagePackageSF;
     /// <summary>
     /// Function: CancelLoadControllerImagePackageSF
     /// </summary>
     public unsafe virtual void CancelLoadControllerImagePackageSF()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.CancelLoadControllerImagePackageSF", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelLoadControllerImagePackageSF, "BmGame.RGFxMovieUI.CancelLoadControllerImagePackageSF");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -3065,12 +3260,13 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_LoadControllerImagePackageSF;
     /// <summary>
     /// Function: LoadControllerImagePackageSF
     /// </summary>
     public unsafe virtual void LoadControllerImagePackageSF()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.LoadControllerImagePackageSF", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LoadControllerImagePackageSF, "BmGame.RGFxMovieUI.LoadControllerImagePackageSF");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -3083,23 +3279,25 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ControllerImageLoaded_CB;
     /// <summary>
     /// Function: ControllerImageLoaded_CB
     /// </summary>
     public unsafe virtual void ControllerImageLoaded_CB()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.ControllerImageLoaded_CB", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ControllerImageLoaded_CB, "BmGame.RGFxMovieUI.ControllerImageLoaded_CB");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SimpleLoadPackage;
     /// <summary>
     /// Function: SimpleLoadPackage
     /// </summary>
     public unsafe virtual void SimpleLoadPackage(BmSDK.FString SwfRef)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieUI.SimpleLoadPackage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SimpleLoadPackage, "BmGame.RGFxMovieUI.SimpleLoadPackage");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SwfRef, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

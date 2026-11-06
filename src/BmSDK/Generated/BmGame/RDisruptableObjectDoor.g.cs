@@ -78,79 +78,86 @@ public partial class RDisruptableObjectDoor : BmSDK.Engine.Actor, BmSDK.IGameObj
         where TComponent : class, Framework.IScriptComponent<RDisruptableObjectDoor>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObstacleActor;
     /// <summary>
     /// Function: GetObstacleActor
     /// </summary>
     public unsafe virtual BmSDK.Engine.Actor GetObstacleActor()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDisruptableObjectDoor.GetObstacleActor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObstacleActor, "BmGame.RDisruptableObjectDoor.GetObstacleActor");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PlayShockedSound;
     /// <summary>
     /// Function: PlayShockedSound
     /// </summary>
     public unsafe virtual void PlayShockedSound()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDisruptableObjectDoor.PlayShockedSound", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayShockedSound, "BmGame.RDisruptableObjectDoor.PlayShockedSound");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetHitNormal;
     /// <summary>
     /// Function: GetHitNormal
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetHitNormal(System.Numerics.Vector3 TestLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDisruptableObjectDoor.GetHitNormal", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHitNormal, "BmGame.RDisruptableObjectDoor.GetHitNormal");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestLocation, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_GetDamageType;
     /// <summary>
     /// Function: GetDamageType
     /// </summary>
     public unsafe virtual BmSDK.Class GetDamageType()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDisruptableObjectDoor.GetDamageType", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDamageType, "BmGame.RDisruptableObjectDoor.GetDamageType");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Class>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDisruptableObjectDoor.PreStreamOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmGame.RDisruptableObjectDoor.PreStreamOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDisruptableObjectDoor.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmGame.RDisruptableObjectDoor.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetSplitNavMesh;
     /// <summary>
     /// Function: SetSplitNavMesh
     /// </summary>
     public unsafe virtual void SetSplitNavMesh(bool bSplit)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDisruptableObjectDoor.SetSplitNavMesh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSplitNavMesh, "BmGame.RDisruptableObjectDoor.SetSplitNavMesh");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSplit, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -164,12 +171,13 @@ public partial class RDisruptableObjectDoor : BmSDK.Engine.Actor, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_CalcCharge;
     /// <summary>
     /// Function: CalcCharge
     /// </summary>
     public unsafe virtual float CalcCharge(System.Numerics.Vector3 InLoc, out float Dist)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDisruptableObjectDoor.CalcCharge", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalcCharge, "BmGame.RDisruptableObjectDoor.CalcCharge");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InLoc, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -184,24 +192,26 @@ public partial class RDisruptableObjectDoor : BmSDK.Engine.Actor, BmSDK.IGameObj
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_StopExtraEffects;
     /// <summary>
     /// Function: StopExtraEffects
     /// </summary>
     public unsafe virtual void StopExtraEffects(bool IsBats = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDisruptableObjectDoor.StopExtraEffects", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopExtraEffects, "BmGame.RDisruptableObjectDoor.StopExtraEffects");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IsBats, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartExtraEffects;
     /// <summary>
     /// Function: StartExtraEffects
     /// </summary>
     public unsafe virtual void StartExtraEffects(bool IsBats = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDisruptableObjectDoor.StartExtraEffects", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartExtraEffects, "BmGame.RDisruptableObjectDoor.StartExtraEffects");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IsBats, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

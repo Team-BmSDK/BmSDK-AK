@@ -73,101 +73,110 @@ public partial class RSeqAct_SoundMeterBase : BmSDK.Engine.SeqAct_Latent, BmSDK.
         where TComponent : class, Framework.IScriptComponent<RSeqAct_SoundMeterBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsBeingNoisyThisFrame;
     /// <summary>
     /// Function: IsBeingNoisyThisFrame
     /// </summary>
     public unsafe virtual bool IsBeingNoisyThisFrame()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SoundMeterBase.IsBeingNoisyThisFrame", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsBeingNoisyThisFrame, "BmGame.RSeqAct_SoundMeterBase.IsBeingNoisyThisFrame");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PlayBMWobbleAnimation;
     /// <summary>
     /// Function: PlayBMWobbleAnimation
     /// </summary>
     public unsafe virtual void PlayBMWobbleAnimation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SoundMeterBase.PlayBMWobbleAnimation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayBMWobbleAnimation, "BmGame.RSeqAct_SoundMeterBase.PlayBMWobbleAnimation");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateHud;
     /// <summary>
     /// Function: UpdateHud
     /// </summary>
     public unsafe virtual void UpdateHud()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SoundMeterBase.UpdateHud", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateHud, "BmGame.RSeqAct_SoundMeterBase.UpdateHud");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateNoiseLevel;
     /// <summary>
     /// Function: UpdateNoiseLevel
     /// </summary>
     public unsafe virtual void UpdateNoiseLevel(float UpdateTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SoundMeterBase.UpdateNoiseLevel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateNoiseLevel, "BmGame.RSeqAct_SoundMeterBase.UpdateNoiseLevel");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UpdateTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddBatWalkIfCan;
     /// <summary>
     /// Function: AddBatWalkIfCan
     /// </summary>
     public unsafe virtual void AddBatWalkIfCan()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SoundMeterBase.AddBatWalkIfCan", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddBatWalkIfCan, "BmGame.RSeqAct_SoundMeterBase.AddBatWalkIfCan");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RemoveBatWalkIfCan;
     /// <summary>
     /// Function: RemoveBatWalkIfCan
     /// </summary>
     public unsafe virtual void RemoveBatWalkIfCan()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SoundMeterBase.RemoveBatWalkIfCan", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveBatWalkIfCan, "BmGame.RSeqAct_SoundMeterBase.RemoveBatWalkIfCan");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RemoveBatWalk;
     /// <summary>
     /// Function: RemoveBatWalk
     /// </summary>
     public unsafe virtual void RemoveBatWalk()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SoundMeterBase.RemoveBatWalk", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveBatWalk, "BmGame.RSeqAct_SoundMeterBase.RemoveBatWalk");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsOnFloor;
     /// <summary>
     /// Function: IsOnFloor
     /// </summary>
     public unsafe virtual bool IsOnFloor()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SoundMeterBase.IsOnFloor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsOnFloor, "BmGame.RSeqAct_SoundMeterBase.IsOnFloor");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_NativeUpdate;
     /// <summary>
     /// Function: NativeUpdate
     /// </summary>
     public unsafe virtual bool NativeUpdate(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_SoundMeterBase.NativeUpdate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NativeUpdate, "BmGame.RSeqAct_SoundMeterBase.NativeUpdate");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;

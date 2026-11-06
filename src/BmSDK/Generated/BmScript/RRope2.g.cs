@@ -78,12 +78,13 @@ public partial class RRope2 : BmSDK.BmGame.RRope2Base, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RRope2>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SpawnRope;
     /// <summary>
     /// Function: SpawnRope
     /// </summary>
     public unsafe override BmSDK.BmGame.RRope2Base SpawnRope()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RRope2.SpawnRope", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnRope, "BmScript.RRope2.SpawnRope");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRope2Base>(paramsPtr + 0);

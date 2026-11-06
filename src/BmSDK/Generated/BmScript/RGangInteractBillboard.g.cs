@@ -78,36 +78,39 @@ public partial class RGangInteractBillboard : BmSDK.BmGame.RGangInteractPointBre
         where TComponent : class, Framework.IScriptComponent<RGangInteractBillboard>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetFinished;
     /// <summary>
     /// Function: SetFinished
     /// </summary>
     public unsafe override void SetFinished(BmSDK.BmGame.RBMPawnAI P)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGangInteractBillboard.SetFinished", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetFinished, "BmScript.RGangInteractBillboard.SetFinished");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetInUse;
     /// <summary>
     /// Function: SetInUse
     /// </summary>
     public unsafe override void SetInUse(BmSDK.BmGame.RBMPawnAI UsagePawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGangInteractBillboard.SetInUse", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetInUse, "BmScript.RGangInteractBillboard.SetInUse");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UsagePawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CrackObject;
     /// <summary>
     /// Function: CrackObject
     /// </summary>
     public unsafe override void CrackObject(System.Numerics.Vector3 SmashLocation, System.Numerics.Vector3 SmashNormal, System.Numerics.Vector3 SmashSpeed, bool bCanSmash, bool bForceSmash, BmSDK.Engine.Actor SmashActor = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGangInteractBillboard.CrackObject", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CrackObject, "BmScript.RGangInteractBillboard.CrackObject");
         byte* paramsPtr = stackalloc byte[116];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SmashLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SmashNormal, paramsPtr + 12);

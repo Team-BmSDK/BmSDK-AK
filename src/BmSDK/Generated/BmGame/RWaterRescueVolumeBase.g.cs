@@ -78,23 +78,25 @@ public partial class RWaterRescueVolumeBase : BmSDK.Engine.Volume, BmSDK.IGameOb
         where TComponent : class, Framework.IScriptComponent<RWaterRescueVolumeBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWaterRescueVolumeBase.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RWaterRescueVolumeBase.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Touch;
     /// <summary>
     /// Function: Touch
     /// </summary>
     public unsafe override void Touch(BmSDK.Engine.Actor Other, BmSDK.Engine.PrimitiveComponent OtherComp, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWaterRescueVolumeBase.Touch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Touch, "BmGame.RWaterRescueVolumeBase.Touch");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherComp, paramsPtr + 8);
@@ -104,24 +106,26 @@ public partial class RWaterRescueVolumeBase : BmSDK.Engine.Volume, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_UnTouch;
     /// <summary>
     /// Function: UnTouch
     /// </summary>
     public unsafe override void UnTouch(BmSDK.Engine.Actor Other)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWaterRescueVolumeBase.UnTouch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnTouch, "BmGame.RWaterRescueVolumeBase.UnTouch");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdatePlayerWake;
     /// <summary>
     /// Function: UpdatePlayerWake
     /// </summary>
     public unsafe virtual void UpdatePlayerWake()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWaterRescueVolumeBase.UpdatePlayerWake", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdatePlayerWake, "BmGame.RWaterRescueVolumeBase.UpdatePlayerWake");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -134,36 +138,39 @@ public partial class RWaterRescueVolumeBase : BmSDK.Engine.Volume, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWaterRescueVolumeBase.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RWaterRescueVolumeBase.Tick");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsPlayerImmuneBecauseOfBatmobile;
     /// <summary>
     /// Function: IsPlayerImmuneBecauseOfBatmobile
     /// </summary>
     public unsafe virtual bool IsPlayerImmuneBecauseOfBatmobile(BmSDK.BmGame.RPawnPlayer PlayerOther)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWaterRescueVolumeBase.IsPlayerImmuneBecauseOfBatmobile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPlayerImmuneBecauseOfBatmobile, "BmGame.RWaterRescueVolumeBase.IsPlayerImmuneBecauseOfBatmobile");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerOther, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_TouchedPawn;
     /// <summary>
     /// Function: TouchedPawn
     /// </summary>
     public unsafe virtual void TouchedPawn(BmSDK.BmGame.RPlayerController PC, BmSDK.BmGame.RPawnPlayer Other, bool CauseSplash = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWaterRescueVolumeBase.TouchedPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TouchedPawn, "BmGame.RWaterRescueVolumeBase.TouchedPawn");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 8);
@@ -172,24 +179,26 @@ public partial class RWaterRescueVolumeBase : BmSDK.Engine.Volume, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_IsGrapplePointValid;
     /// <summary>
     /// Function: IsGrapplePointValid
     /// </summary>
     public unsafe virtual bool IsGrapplePointValid(BmSDK.BmGame.RGrapplePoint.FGrapplePointInfo test_point)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWaterRescueVolumeBase.IsGrapplePointValid", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsGrapplePointValid, "BmGame.RWaterRescueVolumeBase.IsGrapplePointValid");
         byte* paramsPtr = stackalloc byte[84];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(test_point, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 80);
     }
 
+    private static BmSDK.Function __fn_FindClosestRescuePoint;
     /// <summary>
     /// Function: FindClosestRescuePoint
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RRescuePoint FindClosestRescuePoint(BmSDK.BmGame.RPlayerController PC, BmSDK.BmGame.RPawnPlayer PlayerPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWaterRescueVolumeBase.FindClosestRescuePoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindClosestRescuePoint, "BmGame.RWaterRescueVolumeBase.FindClosestRescuePoint");
         byte* paramsPtr = stackalloc byte[216];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerPawn, paramsPtr + 8);

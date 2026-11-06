@@ -73,135 +73,147 @@ public partial class RBMWeaponStunStickBase : BmSDK.BmGame.RBMWeaponMelee, BmSDK
         where TComponent : class, Framework.IScriptComponent<RBMWeaponStunStickBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetTurnOnPickupTime;
     /// <summary>
     /// Function: GetTurnOnPickupTime
     /// </summary>
     public unsafe override float GetTurnOnPickupTime()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMWeaponStunStickBase.GetTurnOnPickupTime", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTurnOnPickupTime, "BmGame.RBMWeaponStunStickBase.GetTurnOnPickupTime");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Backfire;
     /// <summary>
     /// Function: Backfire
     /// </summary>
     public unsafe virtual void Backfire(BmSDK.BmGame.RPawnCombat OtherPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMWeaponStunStickBase.Backfire", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Backfire, "BmGame.RBMWeaponStunStickBase.Backfire");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetSingleJammedParticleSystem;
     /// <summary>
     /// Function: GetSingleJammedParticleSystem
     /// </summary>
     public unsafe override BmSDK.Engine.ParticleSystem GetSingleJammedParticleSystem()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMWeaponStunStickBase.GetSingleJammedParticleSystem", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSingleJammedParticleSystem, "BmGame.RBMWeaponStunStickBase.GetSingleJammedParticleSystem");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.ParticleSystem>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_HasDisruptorMadeWeaponExplosive;
     /// <summary>
     /// Function: HasDisruptorMadeWeaponExplosive
     /// </summary>
     public unsafe override bool HasDisruptorMadeWeaponExplosive()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMWeaponStunStickBase.HasDisruptorMadeWeaponExplosive", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasDisruptorMadeWeaponExplosive, "BmGame.RBMWeaponStunStickBase.HasDisruptorMadeWeaponExplosive");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetBatClawPriority;
     /// <summary>
     /// Function: GetBatClawPriority
     /// </summary>
     public unsafe override float GetBatClawPriority()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMWeaponStunStickBase.GetBatClawPriority", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBatClawPriority, "BmGame.RBMWeaponStunStickBase.GetBatClawPriority");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetRECPriority;
     /// <summary>
     /// Function: GetRECPriority
     /// </summary>
     public unsafe override float GetRECPriority()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMWeaponStunStickBase.GetRECPriority", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRECPriority, "BmGame.RBMWeaponStunStickBase.GetRECPriority");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetRECFlailDamageType;
     /// <summary>
     /// Function: GetRECFlailDamageType
     /// </summary>
     public unsafe override BmSDK.Class GetRECFlailDamageType()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMWeaponStunStickBase.GetRECFlailDamageType", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRECFlailDamageType, "BmGame.RBMWeaponStunStickBase.GetRECFlailDamageType");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Class>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMWeaponStunStickBase.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RBMWeaponStunStickBase.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HitTarget;
     /// <summary>
     /// Function: HitTarget
     /// </summary>
     public unsafe virtual void HitTarget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMWeaponStunStickBase.HitTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitTarget, "BmGame.RBMWeaponStunStickBase.HitTarget");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TurnOff;
     /// <summary>
     /// Function: TurnOff
     /// </summary>
     public unsafe virtual void TurnOff()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMWeaponStunStickBase.TurnOff", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TurnOff, "BmGame.RBMWeaponStunStickBase.TurnOff");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TurnOn;
     /// <summary>
     /// Function: TurnOn
     /// </summary>
     public unsafe virtual void TurnOn()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMWeaponStunStickBase.TurnOn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TurnOn, "BmGame.RBMWeaponStunStickBase.TurnOn");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsOn;
     /// <summary>
     /// Function: IsOn
     /// </summary>
     public unsafe virtual bool IsOn()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMWeaponStunStickBase.IsOn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsOn, "BmGame.RBMWeaponStunStickBase.IsOn");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

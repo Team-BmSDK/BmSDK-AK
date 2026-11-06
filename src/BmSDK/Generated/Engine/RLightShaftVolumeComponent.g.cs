@@ -78,12 +78,13 @@ public partial class RLightShaftVolumeComponent : BmSDK.Engine.PrimitiveComponen
         where TComponent : class, Framework.IScriptComponent<RLightShaftVolumeComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetEnabled;
     /// <summary>
     /// Function: SetEnabled
     /// </summary>
     public unsafe virtual void SetEnabled(bool NewEnabled)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RLightShaftVolumeComponent.SetEnabled", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetEnabled, "Engine.RLightShaftVolumeComponent.SetEnabled");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewEnabled, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -97,12 +98,13 @@ public partial class RLightShaftVolumeComponent : BmSDK.Engine.PrimitiveComponen
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateBrightness;
     /// <summary>
     /// Function: UpdateBrightness
     /// </summary>
     public unsafe virtual bool UpdateBrightness(float NewBrightness)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RLightShaftVolumeComponent.UpdateBrightness", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateBrightness, "Engine.RLightShaftVolumeComponent.UpdateBrightness");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewBrightness, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -116,12 +118,13 @@ public partial class RLightShaftVolumeComponent : BmSDK.Engine.PrimitiveComponen
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_SetConeAngleAndRadius;
     /// <summary>
     /// Function: SetConeAngleAndRadius
     /// </summary>
     public unsafe virtual bool SetConeAngleAndRadius(float NewConeAngle, float NewRadius)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RLightShaftVolumeComponent.SetConeAngleAndRadius", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetConeAngleAndRadius, "Engine.RLightShaftVolumeComponent.SetConeAngleAndRadius");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewConeAngle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewRadius, paramsPtr + 4);

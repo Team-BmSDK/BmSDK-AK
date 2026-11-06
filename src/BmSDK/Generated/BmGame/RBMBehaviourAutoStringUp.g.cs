@@ -78,90 +78,98 @@ public partial class RBMBehaviourAutoStringUp : BmSDK.BmGame.RBMBehaviour, BmSDK
         where TComponent : class, Framework.IScriptComponent<RBMBehaviourAutoStringUp>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviourAutoStringUp.GetObjClassVersion", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmGame.RBMBehaviourAutoStringUp.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_AttachConstraint;
     /// <summary>
     /// Function: AttachConstraint
     /// </summary>
     public unsafe virtual void AttachConstraint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviourAutoStringUp.AttachConstraint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttachConstraint, "BmGame.RBMBehaviourAutoStringUp.AttachConstraint");
         byte* paramsPtr = stackalloc byte[84];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetupRagdoll;
     /// <summary>
     /// Function: SetupRagdoll
     /// </summary>
     public unsafe virtual void SetupRagdoll()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviourAutoStringUp.SetupRagdoll", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupRagdoll, "BmGame.RBMBehaviourAutoStringUp.SetupRagdoll");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviourAutoStringUp.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RBMBehaviourAutoStringUp.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviourAutoStringUp.Activated", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmGame.RBMBehaviourAutoStringUp.Activated");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnExitConditionTriggered;
     /// <summary>
     /// Function: OnExitConditionTriggered
     /// </summary>
     public unsafe override void OnExitConditionTriggered()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviourAutoStringUp.OnExitConditionTriggered", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnExitConditionTriggered, "BmGame.RBMBehaviourAutoStringUp.OnExitConditionTriggered");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateLinks;
     /// <summary>
     /// Function: UpdateLinks
     /// </summary>
     public unsafe virtual void UpdateLinks()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviourAutoStringUp.UpdateLinks", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateLinks, "BmGame.RBMBehaviourAutoStringUp.UpdateLinks");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetRope;
     /// <summary>
     /// Function: SetRope
     /// </summary>
     public unsafe virtual void SetRope(BmSDK.BmGame.RRopeBase NewSpawn, BmSDK.FString RopeName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviourAutoStringUp.SetRope", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRope, "BmGame.RBMBehaviourAutoStringUp.SetRope");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewSpawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RopeName, paramsPtr + 8);

@@ -78,24 +78,26 @@ public partial class RHazardousObject : BmSDK.Engine.InterpActor, BmSDK.IGameObj
         where TComponent : class, Framework.IScriptComponent<RHazardousObject>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_HitPawn;
     /// <summary>
     /// Function: HitPawn
     /// </summary>
     public unsafe virtual void HitPawn(BmSDK.BmGame.RPawnCombat PawnToHit)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHazardousObject.HitPawn", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitPawn, "BmGame.RHazardousObject.HitPawn");
         byte* paramsPtr = stackalloc byte[268];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PawnToHit, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Touch;
     /// <summary>
     /// Function: Touch
     /// </summary>
     public unsafe override void Touch(BmSDK.Engine.Actor Other, BmSDK.Engine.PrimitiveComponent OtherComp, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHazardousObject.Touch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Touch, "BmGame.RHazardousObject.Touch");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherComp, paramsPtr + 8);
@@ -105,12 +107,13 @@ public partial class RHazardousObject : BmSDK.Engine.InterpActor, BmSDK.IGameObj
         return;
     }
 
+    private static BmSDK.Function __fn_CanDamagePawns;
     /// <summary>
     /// Function: CanDamagePawns
     /// </summary>
     public unsafe virtual void CanDamagePawns()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHazardousObject.CanDamagePawns", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanDamagePawns, "BmGame.RHazardousObject.CanDamagePawns");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

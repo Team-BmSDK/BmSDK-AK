@@ -78,36 +78,39 @@ public partial class RBMAIAction_AimGunAt : BmSDK.BmGame.RBMAIAction, BmSDK.IGam
         where TComponent : class, Framework.IScriptComponent<RBMAIAction_AimGunAt>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ActionTick;
     /// <summary>
     /// Function: ActionTick
     /// </summary>
     public unsafe override BmSDK.BmGame.RBMAIAction.ActionTickResult ActionTick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_AimGunAt.ActionTick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ActionTick, "BmGame.RBMAIAction_AimGunAt.ActionTick");
         byte* paramsPtr = stackalloc byte[5];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMAIAction.ActionTickResult>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_SetLifetime;
     /// <summary>
     /// Function: SetLifetime
     /// </summary>
     public unsafe virtual void SetLifetime(float NewLifetime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_AimGunAt.SetLifetime", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetLifetime, "BmGame.RBMAIAction_AimGunAt.SetLifetime");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewLifetime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetAimTarget;
     /// <summary>
     /// Function: SetAimTarget
     /// </summary>
     public unsafe virtual void SetAimTarget(System.Numerics.Vector3 NewTarget, bool bNewAimRandom = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_AimGunAt.SetAimTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAimTarget, "BmGame.RBMAIAction_AimGunAt.SetAimTarget");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewTarget, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewAimRandom, paramsPtr + 12);
@@ -115,45 +118,49 @@ public partial class RBMAIAction_AimGunAt : BmSDK.BmGame.RBMAIAction, BmSDK.IGam
         return;
     }
 
+    private static BmSDK.Function __fn_OnDeactivate;
     /// <summary>
     /// Function: OnDeactivate
     /// </summary>
     public unsafe override void OnDeactivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_AimGunAt.OnDeactivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeactivate, "BmGame.RBMAIAction_AimGunAt.OnDeactivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_AimGunAt.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMAIAction_AimGunAt.OnActivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetLongFOV;
     /// <summary>
     /// Function: SetLongFOV
     /// </summary>
     public unsafe virtual void SetLongFOV()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_AimGunAt.SetLongFOV", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetLongFOV, "BmGame.RBMAIAction_AimGunAt.SetLongFOV");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetShortFOV;
     /// <summary>
     /// Function: SetShortFOV
     /// </summary>
     public unsafe virtual void SetShortFOV()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_AimGunAt.SetShortFOV", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetShortFOV, "BmGame.RBMAIAction_AimGunAt.SetShortFOV");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

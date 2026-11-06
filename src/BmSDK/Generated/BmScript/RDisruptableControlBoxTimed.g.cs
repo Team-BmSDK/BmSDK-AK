@@ -78,113 +78,123 @@ public partial class RDisruptableControlBoxTimed : BmSDK.BmGame.RDisruptableObje
         where TComponent : class, Framework.IScriptComponent<RDisruptableControlBoxTimed>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PostEditChangeScript;
     /// <summary>
     /// Function: PostEditChangeScript
     /// </summary>
     public unsafe override void PostEditChangeScript()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RDisruptableControlBoxTimed.PostEditChangeScript", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostEditChangeScript, "BmScript.RDisruptableControlBoxTimed.PostEditChangeScript");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RDisruptableControlBoxTimed.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmScript.RDisruptableControlBoxTimed.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RDisruptableControlBoxTimed.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmScript.RDisruptableControlBoxTimed.Tick");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Recharged;
     /// <summary>
     /// Function: Recharged
     /// </summary>
     public unsafe virtual void Recharged()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RDisruptableControlBoxTimed.Recharged", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Recharged, "BmScript.RDisruptableControlBoxTimed.Recharged");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SuccessfullyDisrupted;
     /// <summary>
     /// Function: SuccessfullyDisrupted
     /// </summary>
     public unsafe override void SuccessfullyDisrupted()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RDisruptableControlBoxTimed.SuccessfullyDisrupted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SuccessfullyDisrupted, "BmScript.RDisruptableControlBoxTimed.SuccessfullyDisrupted");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Discharge;
     /// <summary>
     /// Function: Discharge
     /// </summary>
     public unsafe virtual void Discharge()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RDisruptableControlBoxTimed.Discharge", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Discharge, "BmScript.RDisruptableControlBoxTimed.Discharge");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StillDisruptable;
     /// <summary>
     /// Function: StillDisruptable
     /// </summary>
     public unsafe override bool StillDisruptable()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RDisruptableControlBoxTimed.StillDisruptable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StillDisruptable, "BmScript.RDisruptableControlBoxTimed.StillDisruptable");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_OnToggle;
     /// <summary>
     /// Function: OnToggle
     /// </summary>
     public unsafe virtual void OnToggle(BmSDK.Engine.SeqAct_Toggle Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RDisruptableControlBoxTimed.OnToggle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggle, "BmScript.RDisruptableControlBoxTimed.OnToggle");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EnableControlBox;
     /// <summary>
     /// Function: EnableControlBox
     /// </summary>
     public unsafe virtual void EnableControlBox()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RDisruptableControlBoxTimed.EnableControlBox", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnableControlBox, "BmScript.RDisruptableControlBoxTimed.EnableControlBox");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DisableControlBox;
     /// <summary>
     /// Function: DisableControlBox
     /// </summary>
     public unsafe virtual void DisableControlBox()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RDisruptableControlBoxTimed.DisableControlBox", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisableControlBox, "BmScript.RDisruptableControlBoxTimed.DisableControlBox");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

@@ -78,12 +78,13 @@ public partial class RWinchableWallBase : BmSDK.Engine.Actor, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RWinchableWallBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UpdateRestingChunks;
     /// <summary>
     /// Function: UpdateRestingChunks
     /// </summary>
     public unsafe virtual void UpdateRestingChunks(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.UpdateRestingChunks", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateRestingChunks, "BmGame.RWinchableWallBase.UpdateRestingChunks");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -97,12 +98,13 @@ public partial class RWinchableWallBase : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_InitRestingChunk;
     /// <summary>
     /// Function: InitRestingChunk
     /// </summary>
     public unsafe virtual void InitRestingChunk(BmSDK.Engine.SkeletalMeshComponent MeshComp, int BodyIndex, int BoneIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.InitRestingChunk", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitRestingChunk, "BmGame.RWinchableWallBase.InitRestingChunk");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MeshComp, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BodyIndex, paramsPtr + 8);
@@ -111,83 +113,90 @@ public partial class RWinchableWallBase : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_WinchReleased;
     /// <summary>
     /// Function: WinchReleased
     /// </summary>
     public unsafe virtual void WinchReleased(BmSDK.BmGame.RBatmobileWinch Winch)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.WinchReleased", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WinchReleased, "BmGame.RWinchableWallBase.WinchReleased");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Winch, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_WinchAttached;
     /// <summary>
     /// Function: WinchAttached
     /// </summary>
     public unsafe virtual void WinchAttached(BmSDK.BmGame.RBatmobileWinch Winch)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.WinchAttached", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WinchAttached, "BmGame.RWinchableWallBase.WinchAttached");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Winch, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_WinchFailedToAttach;
     /// <summary>
     /// Function: WinchFailedToAttach
     /// </summary>
     public unsafe virtual void WinchFailedToAttach(BmSDK.BmGame.RBatmobileWinch Winch)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.WinchFailedToAttach", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WinchFailedToAttach, "BmGame.RWinchableWallBase.WinchFailedToAttach");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Winch, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_WinchFiredAtMe;
     /// <summary>
     /// Function: WinchFiredAtMe
     /// </summary>
     public unsafe virtual void WinchFiredAtMe(BmSDK.BmGame.RBatmobileWinch Winch)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.WinchFiredAtMe", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WinchFiredAtMe, "BmGame.RWinchableWallBase.WinchFiredAtMe");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Winch, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DestroyMe;
     /// <summary>
     /// Function: DestroyMe
     /// </summary>
     public unsafe virtual void DestroyMe()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.DestroyMe", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DestroyMe, "BmGame.RWinchableWallBase.DestroyMe");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Broken;
     /// <summary>
     /// Function: Broken
     /// </summary>
     public unsafe virtual void Broken(BmSDK.BmGame.RPlayerController Controller)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.Broken", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Broken, "BmGame.RWinchableWallBase.Broken");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Controller, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IncreaseDamage;
     /// <summary>
     /// Function: IncreaseDamage
     /// </summary>
     public unsafe virtual bool IncreaseDamage(float Amount, BmSDK.BmGame.RPlayerController Controller = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.IncreaseDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IncreaseDamage, "BmGame.RWinchableWallBase.IncreaseDamage");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Amount, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Controller, paramsPtr + 4);
@@ -195,35 +204,38 @@ public partial class RWinchableWallBase : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_CanDecreaseDamage;
     /// <summary>
     /// Function: CanDecreaseDamage
     /// </summary>
     public unsafe virtual bool CanDecreaseDamage()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.CanDecreaseDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanDecreaseDamage, "BmGame.RWinchableWallBase.CanDecreaseDamage");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RWinchableWallBase.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsBatmobileInAngleLimitsSecondary;
     /// <summary>
     /// Function: IsBatmobileInAngleLimitsSecondary
     /// </summary>
     public unsafe virtual bool IsBatmobileInAngleLimitsSecondary(BmSDK.Engine.Actor Batmobile, BmSDK.BmGame.RBatmobileWinch Winch, out System.Numerics.Vector3 LimitVec)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.IsBatmobileInAngleLimitsSecondary", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsBatmobileInAngleLimitsSecondary, "BmGame.RWinchableWallBase.IsBatmobileInAngleLimitsSecondary");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Batmobile, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Winch, paramsPtr + 8);
@@ -232,12 +244,13 @@ public partial class RWinchableWallBase : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_IsBatmobileInAngleLimits;
     /// <summary>
     /// Function: IsBatmobileInAngleLimits
     /// </summary>
     public unsafe virtual bool IsBatmobileInAngleLimits(BmSDK.Engine.Actor Batmobile, BmSDK.BmGame.RBatmobileWinch Winch, out System.Numerics.Vector3 LimitVec)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.IsBatmobileInAngleLimits", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsBatmobileInAngleLimits, "BmGame.RWinchableWallBase.IsBatmobileInAngleLimits");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Batmobile, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Winch, paramsPtr + 8);
@@ -246,46 +259,50 @@ public partial class RWinchableWallBase : BmSDK.Engine.Actor, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_OnToggle;
     /// <summary>
     /// Function: OnToggle
     /// </summary>
     public unsafe virtual void OnToggle(BmSDK.Engine.SeqAct_Toggle Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.OnToggle", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggle, "BmGame.RWinchableWallBase.OnToggle");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.PreStreamOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmGame.RWinchableWallBase.PreStreamOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RWinchableWallBase.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AdvanceMatinee;
     /// <summary>
     /// Function: AdvanceMatinee
     /// </summary>
     public unsafe static void AdvanceMatinee(BmSDK.Engine.SeqAct_Interp Interp, float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.AdvanceMatinee", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AdvanceMatinee, "BmGame.RWinchableWallBase.AdvanceMatinee");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Interp, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 8);
@@ -300,12 +317,13 @@ public partial class RWinchableWallBase : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_PlayMatinee;
     /// <summary>
     /// Function: PlayMatinee
     /// </summary>
     public unsafe static void PlayMatinee(BmSDK.Engine.SeqAct_Interp Interp)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.PlayMatinee", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayMatinee, "BmGame.RWinchableWallBase.PlayMatinee");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Interp, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -319,12 +337,13 @@ public partial class RWinchableWallBase : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_SetMatineePosition;
     /// <summary>
     /// Function: SetMatineePosition
     /// </summary>
     public unsafe static void SetMatineePosition(BmSDK.Engine.SeqAct_Interp Interp, float Position)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.SetMatineePosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMatineePosition, "BmGame.RWinchableWallBase.SetMatineePosition");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Interp, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Position, paramsPtr + 8);
@@ -339,89 +358,97 @@ public partial class RWinchableWallBase : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ShouldPreventBatmanExitingBatmobile;
     /// <summary>
     /// Function: ShouldPreventBatmanExitingBatmobile
     /// </summary>
     public unsafe virtual bool ShouldPreventBatmanExitingBatmobile()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.ShouldPreventBatmanExitingBatmobile", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldPreventBatmanExitingBatmobile, "BmGame.RWinchableWallBase.ShouldPreventBatmanExitingBatmobile");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ShouldPreventManualWinchRelease;
     /// <summary>
     /// Function: ShouldPreventManualWinchRelease
     /// </summary>
     public unsafe virtual bool ShouldPreventManualWinchRelease()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.ShouldPreventManualWinchRelease", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldPreventManualWinchRelease, "BmGame.RWinchableWallBase.ShouldPreventManualWinchRelease");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetWinchTargetRotation;
     /// <summary>
     /// Function: GetWinchTargetRotation
     /// </summary>
     public unsafe virtual BmSDK.Rotator GetWinchTargetRotation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.GetWinchTargetRotation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWinchTargetRotation, "BmGame.RWinchableWallBase.GetWinchTargetRotation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetWinchSecondaryTargetLocation;
     /// <summary>
     /// Function: GetWinchSecondaryTargetLocation
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetWinchSecondaryTargetLocation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.GetWinchSecondaryTargetLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWinchSecondaryTargetLocation, "BmGame.RWinchableWallBase.GetWinchSecondaryTargetLocation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetWinchTargetLocation;
     /// <summary>
     /// Function: GetWinchTargetLocation
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetWinchTargetLocation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.GetWinchTargetLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWinchTargetLocation, "BmGame.RWinchableWallBase.GetWinchTargetLocation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetWinchSubTargetComponent;
     /// <summary>
     /// Function: GetWinchSubTargetComponent
     /// </summary>
     public unsafe virtual BmSDK.Engine.PrimitiveComponent GetWinchSubTargetComponent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.GetWinchSubTargetComponent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWinchSubTargetComponent, "BmGame.RWinchableWallBase.GetWinchSubTargetComponent");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.PrimitiveComponent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetActiveSubTargetIndex;
     /// <summary>
     /// Function: GetActiveSubTargetIndex
     /// </summary>
     public unsafe virtual int GetActiveSubTargetIndex()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.GetActiveSubTargetIndex", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetActiveSubTargetIndex, "BmGame.RWinchableWallBase.GetActiveSubTargetIndex");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetActiveSubTargetIndex;
     /// <summary>
     /// Function: SetActiveSubTargetIndex
     /// </summary>
     public unsafe virtual void SetActiveSubTargetIndex(int Index)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RWinchableWallBase.SetActiveSubTargetIndex", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetActiveSubTargetIndex, "BmGame.RWinchableWallBase.SetActiveSubTargetIndex");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Index, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

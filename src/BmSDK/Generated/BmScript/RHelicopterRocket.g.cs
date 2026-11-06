@@ -78,34 +78,37 @@ public partial class RHelicopterRocket : BmSDK.BmGame.RHelicopterRocketBase, BmS
         where TComponent : class, Framework.IScriptComponent<RHelicopterRocket>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_RemoveRocket;
     /// <summary>
     /// Function: RemoveRocket
     /// </summary>
     public unsafe virtual void RemoveRocket()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHelicopterRocket.RemoveRocket", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveRocket, "BmScript.RHelicopterRocket.RemoveRocket");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HurtBatman;
     /// <summary>
     /// Function: HurtBatman
     /// </summary>
     public unsafe virtual void HurtBatman()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHelicopterRocket.HurtBatman", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HurtBatman, "BmScript.RHelicopterRocket.HurtBatman");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Touch;
     /// <summary>
     /// Function: Touch
     /// </summary>
     public unsafe override void Touch(BmSDK.Engine.Actor Other, BmSDK.Engine.PrimitiveComponent OtherComp, System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHelicopterRocket.Touch", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Touch, "BmScript.RHelicopterRocket.Touch");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Other, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherComp, paramsPtr + 8);
@@ -115,12 +118,13 @@ public partial class RHelicopterRocket : BmSDK.BmGame.RHelicopterRocketBase, BmS
         return;
     }
 
+    private static BmSDK.Function __fn_HitWall;
     /// <summary>
     /// Function: HitWall
     /// </summary>
     public unsafe override void HitWall(System.Numerics.Vector3 HitNormal, BmSDK.Engine.Actor Wall, BmSDK.Engine.PrimitiveComponent WallComp)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHelicopterRocket.HitWall", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitWall, "BmScript.RHelicopterRocket.HitWall");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Wall, paramsPtr + 12);
@@ -129,12 +133,13 @@ public partial class RHelicopterRocket : BmSDK.BmGame.RHelicopterRocketBase, BmS
         return;
     }
 
+    private static BmSDK.Function __fn_HitLevel;
     /// <summary>
     /// Function: HitLevel
     /// </summary>
     public unsafe override void HitLevel(System.Numerics.Vector3 HitLocation, System.Numerics.Vector3 HitNormal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHelicopterRocket.HitLevel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HitLevel, "BmScript.RHelicopterRocket.HitLevel");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitNormal, paramsPtr + 12);
@@ -142,82 +147,89 @@ public partial class RHelicopterRocket : BmSDK.BmGame.RHelicopterRocketBase, BmS
         return;
     }
 
+    private static BmSDK.Function __fn_Explode;
     /// <summary>
     /// Function: Explode
     /// </summary>
     public unsafe virtual void Explode(BmSDK.Rotator HitRotator)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHelicopterRocket.Explode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Explode, "BmScript.RHelicopterRocket.Explode");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitRotator, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InitialiseRocket;
     /// <summary>
     /// Function: InitialiseRocket
     /// </summary>
     public unsafe virtual void InitialiseRocket()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHelicopterRocket.InitialiseRocket", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitialiseRocket, "BmScript.RHelicopterRocket.InitialiseRocket");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHelicopterRocket.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmScript.RHelicopterRocket.Tick");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateMoveTarget;
     /// <summary>
     /// Function: UpdateMoveTarget
     /// </summary>
     public unsafe virtual void UpdateMoveTarget(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHelicopterRocket.UpdateMoveTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateMoveTarget, "BmScript.RHelicopterRocket.UpdateMoveTarget");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetLowDetailNoCollision;
     /// <summary>
     /// Function: SetLowDetailNoCollision
     /// </summary>
     public unsafe virtual void SetLowDetailNoCollision()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHelicopterRocket.SetLowDetailNoCollision", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetLowDetailNoCollision, "BmScript.RHelicopterRocket.SetLowDetailNoCollision");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetRocketFloor;
     /// <summary>
     /// Function: SetRocketFloor
     /// </summary>
     public unsafe virtual void SetRocketFloor(float FloorValue)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHelicopterRocket.SetRocketFloor", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRocketFloor, "BmScript.RHelicopterRocket.SetRocketFloor");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FloorValue, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetWaypoint;
     /// <summary>
     /// Function: SetWaypoint
     /// </summary>
     public unsafe virtual void SetWaypoint(System.Numerics.Vector3 Waypoint, float RangeForReached = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHelicopterRocket.SetWaypoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetWaypoint, "BmScript.RHelicopterRocket.SetWaypoint");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Waypoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RangeForReached, paramsPtr + 12);
@@ -225,12 +237,13 @@ public partial class RHelicopterRocket : BmSDK.BmGame.RHelicopterRocketBase, BmS
         return;
     }
 
+    private static BmSDK.Function __fn_AutoWaypoint;
     /// <summary>
     /// Function: AutoWaypoint
     /// </summary>
     public unsafe virtual void AutoWaypoint(bool LeftSide, float MinDistHoriz = default, float RangeDistHoriz = default, float RangeDistVert = default, float RangeForReached = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHelicopterRocket.AutoWaypoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AutoWaypoint, "BmScript.RHelicopterRocket.AutoWaypoint");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LeftSide, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinDistHoriz, paramsPtr + 4);
@@ -241,12 +254,13 @@ public partial class RHelicopterRocket : BmSDK.BmGame.RHelicopterRocketBase, BmS
         return;
     }
 
+    private static BmSDK.Function __fn_CheckDistanceToTargets;
     /// <summary>
     /// Function: CheckDistanceToTargets
     /// </summary>
     public unsafe virtual void CheckDistanceToTargets()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RHelicopterRocket.CheckDistanceToTargets", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckDistanceToTargets, "BmScript.RHelicopterRocket.CheckDistanceToTargets");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

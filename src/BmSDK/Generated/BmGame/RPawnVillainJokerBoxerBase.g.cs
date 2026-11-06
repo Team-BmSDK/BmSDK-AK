@@ -73,144 +73,157 @@ public partial class RPawnVillainJokerBoxerBase : BmSDK.BmGame.RPawnVillainThug,
         where TComponent : class, Framework.IScriptComponent<RPawnVillainJokerBoxerBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_EmoteExertWindUp;
     /// <summary>
     /// Function: EmoteExertWindUp
     /// </summary>
     public unsafe virtual void EmoteExertWindUp()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnVillainJokerBoxerBase.EmoteExertWindUp", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EmoteExertWindUp, "BmGame.RPawnVillainJokerBoxerBase.EmoteExertWindUp");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EmoteLaugh;
     /// <summary>
     /// Function: EmoteLaugh
     /// </summary>
     public unsafe virtual void EmoteLaugh()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnVillainJokerBoxerBase.EmoteLaugh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EmoteLaugh, "BmGame.RPawnVillainJokerBoxerBase.EmoteLaugh");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EmoteVictoryLaugh;
     /// <summary>
     /// Function: EmoteVictoryLaugh
     /// </summary>
     public unsafe virtual void EmoteVictoryLaugh()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnVillainJokerBoxerBase.EmoteVictoryLaugh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EmoteVictoryLaugh, "BmGame.RPawnVillainJokerBoxerBase.EmoteVictoryLaugh");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EmoteKO;
     /// <summary>
     /// Function: EmoteKO
     /// </summary>
     public unsafe virtual void EmoteKO()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnVillainJokerBoxerBase.EmoteKO", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EmoteKO, "BmGame.RPawnVillainJokerBoxerBase.EmoteKO");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EmoteExertLight;
     /// <summary>
     /// Function: EmoteExertLight
     /// </summary>
     public unsafe virtual void EmoteExertLight()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnVillainJokerBoxerBase.EmoteExertLight", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EmoteExertLight, "BmGame.RPawnVillainJokerBoxerBase.EmoteExertLight");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_EmoteExertStrong;
     /// <summary>
     /// Function: EmoteExertStrong
     /// </summary>
     public unsafe virtual void EmoteExertStrong()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnVillainJokerBoxerBase.EmoteExertStrong", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EmoteExertStrong, "BmGame.RPawnVillainJokerBoxerBase.EmoteExertStrong");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayPlayerSpecificTaunt;
     /// <summary>
     /// Function: PlayPlayerSpecificTaunt
     /// </summary>
     public unsafe virtual void PlayPlayerSpecificTaunt()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnVillainJokerBoxerBase.PlayPlayerSpecificTaunt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayPlayerSpecificTaunt, "BmGame.RPawnVillainJokerBoxerBase.PlayPlayerSpecificTaunt");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayHitByDualPlayBark;
     /// <summary>
     /// Function: PlayHitByDualPlayBark
     /// </summary>
     public unsafe virtual void PlayHitByDualPlayBark()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnVillainJokerBoxerBase.PlayHitByDualPlayBark", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayHitByDualPlayBark, "BmGame.RPawnVillainJokerBoxerBase.PlayHitByDualPlayBark");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayHitPlayerInClashBark;
     /// <summary>
     /// Function: PlayHitPlayerInClashBark
     /// </summary>
     public unsafe virtual void PlayHitPlayerInClashBark()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnVillainJokerBoxerBase.PlayHitPlayerInClashBark", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayHitPlayerInClashBark, "BmGame.RPawnVillainJokerBoxerBase.PlayHitPlayerInClashBark");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayCombatBarkTaunt;
     /// <summary>
     /// Function: PlayCombatBarkTaunt
     /// </summary>
     public unsafe override void PlayCombatBarkTaunt()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnVillainJokerBoxerBase.PlayCombatBarkTaunt", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayCombatBarkTaunt, "BmGame.RPawnVillainJokerBoxerBase.PlayCombatBarkTaunt");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayHitByRobinBark;
     /// <summary>
     /// Function: PlayHitByRobinBark
     /// </summary>
     public unsafe virtual void PlayHitByRobinBark()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnVillainJokerBoxerBase.PlayHitByRobinBark", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayHitByRobinBark, "BmGame.RPawnVillainJokerBoxerBase.PlayHitByRobinBark");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayHitByBatmanBark;
     /// <summary>
     /// Function: PlayHitByBatmanBark
     /// </summary>
     public unsafe virtual void PlayHitByBatmanBark()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnVillainJokerBoxerBase.PlayHitByBatmanBark", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayHitByBatmanBark, "BmGame.RPawnVillainJokerBoxerBase.PlayHitByBatmanBark");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayCombatBark;
     /// <summary>
     /// Function: PlayCombatBark
     /// </summary>
     public unsafe override void PlayCombatBark(BmSDK.FName EventName, bool bUseWeapon, BmSDK.BmGame.RBMWeapon OverrideWeapon = default, BmSDK.FName OverrideWeaponFlag = default, BmSDK.BmGame.RBarkValDef.FlagTypeEnum FlagType = default, BmSDK.FName FlagValue = default, BmSDK.BmGame.RPawnPlayer OverridePlayer = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnVillainJokerBoxerBase.PlayCombatBark", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayCombatBark, "BmGame.RPawnVillainJokerBoxerBase.PlayCombatBark");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bUseWeapon, paramsPtr + 8);
@@ -223,79 +236,86 @@ public partial class RPawnVillainJokerBoxerBase : BmSDK.BmGame.RPawnVillainThug,
         return;
     }
 
+    private static BmSDK.Function __fn_RecoverHitPoint;
     /// <summary>
     /// Function: RecoverHitPoint
     /// </summary>
     public unsafe virtual void RecoverHitPoint()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnVillainJokerBoxerBase.RecoverHitPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RecoverHitPoint, "BmGame.RPawnVillainJokerBoxerBase.RecoverHitPoint");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InitHealthBar;
     /// <summary>
     /// Function: InitHealthBar
     /// </summary>
     public unsafe virtual void InitHealthBar()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnVillainJokerBoxerBase.InitHealthBar", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitHealthBar, "BmGame.RPawnVillainJokerBoxerBase.InitHealthBar");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ClearAnimsets;
     /// <summary>
     /// Function: ClearAnimsets
     /// </summary>
     public unsafe override void ClearAnimsets()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnVillainJokerBoxerBase.ClearAnimsets", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearAnimsets, "BmGame.RPawnVillainJokerBoxerBase.ClearAnimsets");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InitAnimsets;
     /// <summary>
     /// Function: InitAnimsets
     /// </summary>
     public unsafe override void InitAnimsets()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnVillainJokerBoxerBase.InitAnimsets", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitAnimsets, "BmGame.RPawnVillainJokerBoxerBase.InitAnimsets");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FireClashEvent;
     /// <summary>
     /// Function: FireClashEvent
     /// </summary>
     public unsafe virtual void FireClashEvent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnVillainJokerBoxerBase.FireClashEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireClashEvent, "BmGame.RPawnVillainJokerBoxerBase.FireClashEvent");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IncVisibleDamageLevel;
     /// <summary>
     /// Function: IncVisibleDamageLevel
     /// </summary>
     public unsafe virtual void IncVisibleDamageLevel(int OverrideLevel = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnVillainJokerBoxerBase.IncVisibleDamageLevel", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IncVisibleDamageLevel, "BmGame.RPawnVillainJokerBoxerBase.IncVisibleDamageLevel");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverrideLevel, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DecHitPoint;
     /// <summary>
     /// Function: DecHitPoint
     /// </summary>
     public unsafe virtual void DecHitPoint(bool bDualplayMove = default, bool bCounterHit = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnVillainJokerBoxerBase.DecHitPoint", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DecHitPoint, "BmGame.RPawnVillainJokerBoxerBase.DecHitPoint");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDualplayMove, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bCounterHit, paramsPtr + 4);
@@ -303,48 +323,52 @@ public partial class RPawnVillainJokerBoxerBase : BmSDK.BmGame.RPawnVillainThug,
         return;
     }
 
+    private static BmSDK.Function __fn_GetPlayerCombatAnimSet;
     /// <summary>
     /// Function: GetPlayerCombatAnimSet
     /// </summary>
     public unsafe virtual BmSDK.Engine.AnimSet GetPlayerCombatAnimSet(BmSDK.BmGame.RPawnPlayerCombat PlayerPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnVillainJokerBoxerBase.GetPlayerCombatAnimSet", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPlayerCombatAnimSet, "BmGame.RPawnVillainJokerBoxerBase.GetPlayerCombatAnimSet");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSet>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetPairedCombatAnimSet;
     /// <summary>
     /// Function: GetPairedCombatAnimSet
     /// </summary>
     public unsafe virtual BmSDK.Engine.AnimSet GetPairedCombatAnimSet(BmSDK.BmGame.RPawnPlayerCombat PlayerPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnVillainJokerBoxerBase.GetPairedCombatAnimSet", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPairedCombatAnimSet, "BmGame.RPawnVillainJokerBoxerBase.GetPairedCombatAnimSet");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSet>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetPossibleMoves;
     /// <summary>
     /// Function: GetPossibleMoves
     /// </summary>
     public unsafe virtual void GetPossibleMoves(out BmSDK.TArray<BmSDK.Class> PossibleMoves)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnVillainJokerBoxerBase.GetPossibleMoves", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPossibleMoves, "BmGame.RPawnVillainJokerBoxerBase.GetPossibleMoves");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         PossibleMoves = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.Class>>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SpawnDualAttackMove;
     /// <summary>
     /// Function: SpawnDualAttackMove
     /// </summary>
     public unsafe virtual bool SpawnDualAttackMove(BmSDK.BmGame.RPawnPlayerCombat Grabber, BmSDK.FName InitialGrabAnim, System.Numerics.Vector3 MoveLoc, float MoveYaw, BmSDK.Engine.AnimSet JBAnimSet = default, BmSDK.Engine.AnimSet GrabberAnimSet = default, BmSDK.Engine.AnimSet AttackerAnimSet = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnVillainJokerBoxerBase.SpawnDualAttackMove", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnDualAttackMove, "BmGame.RPawnVillainJokerBoxerBase.SpawnDualAttackMove");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Grabber, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InitialGrabAnim, paramsPtr + 8);

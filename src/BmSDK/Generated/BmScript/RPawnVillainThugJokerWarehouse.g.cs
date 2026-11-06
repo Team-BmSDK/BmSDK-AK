@@ -78,24 +78,26 @@ public partial class RPawnVillainThugJokerWarehouse : BmSDK.BmGame.RPawnVillainT
         where TComponent : class, Framework.IScriptComponent<RPawnVillainThugJokerWarehouse>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OverrideDefaultAkAudible;
     /// <summary>
     /// Function: OverrideDefaultAkAudible
     /// </summary>
     public unsafe override BmSDK.Engine.RAkAudible OverrideDefaultAkAudible(bool allowCreate)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainThugJokerWarehouse.OverrideDefaultAkAudible", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverrideDefaultAkAudible, "BmScript.RPawnVillainThugJokerWarehouse.OverrideDefaultAkAudible");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(allowCreate, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.RAkAudible>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_FindContactName;
     /// <summary>
     /// Function: FindContactName
     /// </summary>
     public unsafe override BmSDK.Engine.AkEvent FindContactName(BmSDK.BmGame.RAnimNotify_Footstep.EFoot Foot, BmSDK.BmGame.RAnimNotify_Footstep.EContactType Contact)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainThugJokerWarehouse.FindContactName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindContactName, "BmScript.RPawnVillainThugJokerWarehouse.FindContactName");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Foot, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Contact, paramsPtr + 1);
@@ -103,24 +105,26 @@ public partial class RPawnVillainThugJokerWarehouse : BmSDK.BmGame.RPawnVillainT
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AkEvent>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_PlayHitReaction;
     /// <summary>
     /// Function: PlayHitReaction
     /// </summary>
     public unsafe override void PlayHitReaction(BmSDK.BmGame.RPawnCombat.FDamageInfo DmgInfo)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainThugJokerWarehouse.PlayHitReaction", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayHitReaction, "BmScript.RPawnVillainThugJokerWarehouse.PlayHitReaction");
         byte* paramsPtr = stackalloc byte[252];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DmgInfo, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PossibleCarCollisionWarning;
     /// <summary>
     /// Function: PossibleCarCollisionWarning
     /// </summary>
     public unsafe override void PossibleCarCollisionWarning(BmSDK.Engine.Actor V, float Speed, float DeltaTime, bool bForceDive = default, bool bZap = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainThugJokerWarehouse.PossibleCarCollisionWarning", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PossibleCarCollisionWarning, "BmScript.RPawnVillainThugJokerWarehouse.PossibleCarCollisionWarning");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(V, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speed, paramsPtr + 8);
@@ -131,24 +135,26 @@ public partial class RPawnVillainThugJokerWarehouse : BmSDK.BmGame.RPawnVillainT
         return;
     }
 
+    private static BmSDK.Function __fn_DamagedBy;
     /// <summary>
     /// Function: DamagedBy
     /// </summary>
     public unsafe override BmSDK.BmGame.RPawnCombat.DamageResult DamagedBy(BmSDK.BmGame.RPawnCombat.FDamageInfo DmgInfo)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainThugJokerWarehouse.DamagedBy", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DamagedBy, "BmScript.RPawnVillainThugJokerWarehouse.DamagedBy");
         byte* paramsPtr = stackalloc byte[249];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DmgInfo, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnCombat.DamageResult>(paramsPtr + 248);
     }
 
+    private static BmSDK.Function __fn_ShouldGoRagdoll;
     /// <summary>
     /// Function: ShouldGoRagdoll
     /// </summary>
     public unsafe override bool ShouldGoRagdoll(BmSDK.Class dmgType, float DamageAmount)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainThugJokerWarehouse.ShouldGoRagdoll", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldGoRagdoll, "BmScript.RPawnVillainThugJokerWarehouse.ShouldGoRagdoll");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageAmount, paramsPtr + 8);

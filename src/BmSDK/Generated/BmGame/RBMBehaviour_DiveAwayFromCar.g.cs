@@ -78,12 +78,13 @@ public partial class RBMBehaviour_DiveAwayFromCar : BmSDK.BmGame.RBMBehaviour, B
         where TComponent : class, Framework.IScriptComponent<RBMBehaviour_DiveAwayFromCar>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_AwareOfPlayer;
     /// <summary>
     /// Function: AwareOfPlayer
     /// </summary>
     public unsafe override bool AwareOfPlayer(BmSDK.Engine.Actor Player, BmSDK.Class dmgType = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_DiveAwayFromCar.AwareOfPlayer", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AwareOfPlayer, "BmGame.RBMBehaviour_DiveAwayFromCar.AwareOfPlayer");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(dmgType, paramsPtr + 8);
@@ -91,23 +92,25 @@ public partial class RBMBehaviour_DiveAwayFromCar : BmSDK.BmGame.RBMBehaviour, B
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_OnDeactivate;
     /// <summary>
     /// Function: OnDeactivate
     /// </summary>
     public unsafe override void OnDeactivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_DiveAwayFromCar.OnDeactivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDeactivate, "BmGame.RBMBehaviour_DiveAwayFromCar.OnDeactivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanCheckFalling;
     /// <summary>
     /// Function: CanCheckFalling
     /// </summary>
     public unsafe override bool CanCheckFalling()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_DiveAwayFromCar.CanCheckFalling", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanCheckFalling, "BmGame.RBMBehaviour_DiveAwayFromCar.CanCheckFalling");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -120,35 +123,38 @@ public partial class RBMBehaviour_DiveAwayFromCar : BmSDK.BmGame.RBMBehaviour, B
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_RagdollNotify;
     /// <summary>
     /// Function: RagdollNotify
     /// </summary>
     public unsafe virtual void RagdollNotify()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_DiveAwayFromCar.RagdollNotify", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RagdollNotify, "BmGame.RBMBehaviour_DiveAwayFromCar.RagdollNotify");
         byte* paramsPtr = stackalloc byte[252];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_DiveAwayFromCar.Tick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "BmGame.RBMBehaviour_DiveAwayFromCar.Tick");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetEvadeVehicleType;
     /// <summary>
     /// Function: GetEvadeVehicleType
     /// </summary>
     public unsafe override BmSDK.BmGame.RGameInfo.EEvadeVehicleType GetEvadeVehicleType(BmSDK.Engine.Actor V, float TestCarSpeed, bool bZap)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_DiveAwayFromCar.GetEvadeVehicleType", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetEvadeVehicleType, "BmGame.RBMBehaviour_DiveAwayFromCar.GetEvadeVehicleType");
         byte* paramsPtr = stackalloc byte[17];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(V, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestCarSpeed, paramsPtr + 8);
@@ -157,47 +163,51 @@ public partial class RBMBehaviour_DiveAwayFromCar : BmSDK.BmGame.RBMBehaviour, B
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameInfo.EEvadeVehicleType>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_CanEvadeAgain;
     /// <summary>
     /// Function: CanEvadeAgain
     /// </summary>
     public unsafe virtual void CanEvadeAgain()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_DiveAwayFromCar.CanEvadeAgain", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanEvadeAgain, "BmGame.RBMBehaviour_DiveAwayFromCar.CanEvadeAgain");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetStumbleAnimName;
     /// <summary>
     /// Function: GetStumbleAnimName
     /// </summary>
     public unsafe virtual BmSDK.FName GetStumbleAnimName(System.Numerics.Vector3 Dir)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_DiveAwayFromCar.GetStumbleAnimName", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStumbleAnimName, "BmGame.RBMBehaviour_DiveAwayFromCar.GetStumbleAnimName");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Dir, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_CheckForDiveInDirection;
     /// <summary>
     /// Function: CheckForDiveInDirection
     /// </summary>
     public unsafe virtual bool CheckForDiveInDirection(System.Numerics.Vector3 TestDirection)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_DiveAwayFromCar.CheckForDiveInDirection", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckForDiveInDirection, "BmGame.RBMBehaviour_DiveAwayFromCar.CheckForDiveInDirection");
         byte* paramsPtr = stackalloc byte[84];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestDirection, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_Initialise;
     /// <summary>
     /// Function: Initialise
     /// </summary>
     public unsafe virtual void Initialise(BmSDK.Engine.Actor NewCar, float NewCarSpeed, BmSDK.BmGame.RGameInfo.EEvadeVehicleType EvadeVehicleType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_DiveAwayFromCar.Initialise", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Initialise, "BmGame.RBMBehaviour_DiveAwayFromCar.Initialise");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCar, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCarSpeed, paramsPtr + 8);
@@ -206,12 +216,13 @@ public partial class RBMBehaviour_DiveAwayFromCar : BmSDK.BmGame.RBMBehaviour, B
         return;
     }
 
+    private static BmSDK.Function __fn_OnActivate;
     /// <summary>
     /// Function: OnActivate
     /// </summary>
     public unsafe override void OnActivate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMBehaviour_DiveAwayFromCar.OnActivate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnActivate, "BmGame.RBMBehaviour_DiveAwayFromCar.OnActivate");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

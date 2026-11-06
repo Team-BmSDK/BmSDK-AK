@@ -78,56 +78,61 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         where TComponent : class, Framework.IScriptComponent<RTunnelGrateBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsCatwomanFlipGrate;
     /// <summary>
     /// Function: IsCatwomanFlipGrate
     /// </summary>
     public unsafe virtual bool IsCatwomanFlipGrate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.IsCatwomanFlipGrate", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsCatwomanFlipGrate, "BmGame.RTunnelGrateBase.IsCatwomanFlipGrate");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_DroppedAsVoiceSynthesiserTarget;
     /// <summary>
     /// Function: DroppedAsVoiceSynthesiserTarget
     /// </summary>
     public unsafe virtual void DroppedAsVoiceSynthesiserTarget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.DroppedAsVoiceSynthesiserTarget", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DroppedAsVoiceSynthesiserTarget, "BmGame.RTunnelGrateBase.DroppedAsVoiceSynthesiserTarget");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TargetedByVoiceSynthesiser;
     /// <summary>
     /// Function: TargetedByVoiceSynthesiser
     /// </summary>
     public unsafe virtual void TargetedByVoiceSynthesiser()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.TargetedByVoiceSynthesiser", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TargetedByVoiceSynthesiser, "BmGame.RTunnelGrateBase.TargetedByVoiceSynthesiser");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OverridePreviousLines;
     /// <summary>
     /// Function: OverridePreviousLines
     /// </summary>
     public unsafe override bool OverridePreviousLines()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.OverridePreviousLines", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverridePreviousLines, "BmGame.RTunnelGrateBase.OverridePreviousLines");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetFinalGrateRotAndTrans;
     /// <summary>
     /// Function: GetFinalGrateRotAndTrans
     /// </summary>
     public unsafe virtual void GetFinalGrateRotAndTrans(out BmSDK.Rotator GrateRot, out System.Numerics.Vector3 GrateTrans)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.GetFinalGrateRotAndTrans", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFinalGrateRotAndTrans, "BmGame.RTunnelGrateBase.GetFinalGrateRotAndTrans");
         byte* paramsPtr = stackalloc byte[24];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -142,12 +147,13 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateCapeCollision;
     /// <summary>
     /// Function: UpdateCapeCollision
     /// </summary>
     public unsafe virtual void UpdateCapeCollision()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.UpdateCapeCollision", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateCapeCollision, "BmGame.RTunnelGrateBase.UpdateCapeCollision");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -160,12 +166,13 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return;
     }
 
+    private static BmSDK.Function __fn_GetDirectionAccessInfo;
     /// <summary>
     /// Function: GetDirectionAccessInfo
     /// </summary>
     public unsafe virtual void GetDirectionAccessInfo(BmSDK.Engine.Pawn TestPawn, out BmSDK.TArray<BmSDK.BmGame.RTunnelGrateBase.FDirectionAccessInfo> OutInfo)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.GetDirectionAccessInfo", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDirectionAccessInfo, "BmGame.RTunnelGrateBase.GetDirectionAccessInfo");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -173,12 +180,13 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return;
     }
 
+    private static BmSDK.Function __fn_SortByDotProdBiasedAgainstDeadEnds;
     /// <summary>
     /// Function: SortByDotProdBiasedAgainstDeadEnds
     /// </summary>
     public unsafe virtual int SortByDotProdBiasedAgainstDeadEnds(BmSDK.BmGame.RTunnelGrateBase.FDirectionAccessInfo A, BmSDK.BmGame.RTunnelGrateBase.FDirectionAccessInfo B)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.SortByDotProdBiasedAgainstDeadEnds", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SortByDotProdBiasedAgainstDeadEnds, "BmGame.RTunnelGrateBase.SortByDotProdBiasedAgainstDeadEnds");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(A, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(B, paramsPtr + 24);
@@ -186,12 +194,13 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 48);
     }
 
+    private static BmSDK.Function __fn_SortByDotProd;
     /// <summary>
     /// Function: SortByDotProd
     /// </summary>
     public unsafe virtual int SortByDotProd(BmSDK.BmGame.RTunnelGrateBase.FDirectionAccessInfo A, BmSDK.BmGame.RTunnelGrateBase.FDirectionAccessInfo B)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.SortByDotProd", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SortByDotProd, "BmGame.RTunnelGrateBase.SortByDotProd");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(A, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(B, paramsPtr + 24);
@@ -199,24 +208,26 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 48);
     }
 
+    private static BmSDK.Function __fn_NeighboursIncludePerpendicular;
     /// <summary>
     /// Function: NeighboursIncludePerpendicular
     /// </summary>
     public unsafe virtual bool NeighboursIncludePerpendicular(int fromDir)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.NeighboursIncludePerpendicular", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NeighboursIncludePerpendicular, "BmGame.RTunnelGrateBase.NeighboursIncludePerpendicular");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(fromDir, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_CheckNavMeshAtLocation;
     /// <summary>
     /// Function: CheckNavMeshAtLocation
     /// </summary>
     public unsafe virtual bool CheckNavMeshAtLocation(System.Numerics.Vector3 TestLoc, bool bDrawFailDebug = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.CheckNavMeshAtLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckNavMeshAtLocation, "BmGame.RTunnelGrateBase.CheckNavMeshAtLocation");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDrawFailDebug, paramsPtr + 12);
@@ -224,12 +235,13 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_IsClearOfCollisionFromLocation;
     /// <summary>
     /// Function: IsClearOfCollisionFromLocation
     /// </summary>
     public unsafe virtual bool IsClearOfCollisionFromLocation(BmSDK.Engine.Pawn TestPawn, System.Numerics.Vector3 TestLoc, bool bDrawFailDebug = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.IsClearOfCollisionFromLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsClearOfCollisionFromLocation, "BmGame.RTunnelGrateBase.IsClearOfCollisionFromLocation");
         byte* paramsPtr = stackalloc byte[96];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestLoc, paramsPtr + 8);
@@ -238,34 +250,37 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_ClearAllowTakedownOnly;
     /// <summary>
     /// Function: ClearAllowTakedownOnly
     /// </summary>
     public unsafe virtual void ClearAllowTakedownOnly()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.ClearAllowTakedownOnly", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearAllowTakedownOnly, "BmGame.RTunnelGrateBase.ClearAllowTakedownOnly");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetAllowTakedownOnly;
     /// <summary>
     /// Function: SetAllowTakedownOnly
     /// </summary>
     public unsafe virtual void SetAllowTakedownOnly()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.SetAllowTakedownOnly", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAllowTakedownOnly, "BmGame.RTunnelGrateBase.SetAllowTakedownOnly");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetBestGrateRotation;
     /// <summary>
     /// Function: GetBestGrateRotation
     /// </summary>
     public unsafe virtual BmSDK.Rotator GetBestGrateRotation(System.Numerics.Vector3 PlayerPosition, BmSDK.Rotator PlayerRotation, float YawOffset = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.GetBestGrateRotation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBestGrateRotation, "BmGame.RTunnelGrateBase.GetBestGrateRotation");
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerPosition, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerRotation, paramsPtr + 12);
@@ -274,12 +289,13 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_GetCwClimbDownLocator;
     /// <summary>
     /// Function: GetCwClimbDownLocator
     /// </summary>
     public unsafe virtual bool GetCwClimbDownLocator(out BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator Locator, BmSDK.BmGame.RPawnPlayer Player, bool bRotateGrate = default, float YawOffset = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.GetCwClimbDownLocator", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCwClimbDownLocator, "BmGame.RTunnelGrateBase.GetCwClimbDownLocator");
         byte* paramsPtr = stackalloc byte[152];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 132);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bRotateGrate, paramsPtr + 140);
@@ -289,12 +305,13 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 148);
     }
 
+    private static BmSDK.Function __fn_GetCwClimbUpLocator;
     /// <summary>
     /// Function: GetCwClimbUpLocator
     /// </summary>
     public unsafe virtual bool GetCwClimbUpLocator(out BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator Locator, BmSDK.BmGame.RPawnPlayer Player, bool bRotateGrate = default, float YawOffset = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.GetCwClimbUpLocator", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCwClimbUpLocator, "BmGame.RTunnelGrateBase.GetCwClimbUpLocator");
         byte* paramsPtr = stackalloc byte[152];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 132);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bRotateGrate, paramsPtr + 140);
@@ -304,12 +321,13 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 148);
     }
 
+    private static BmSDK.Function __fn_GetCwClimbLocator;
     /// <summary>
     /// Function: GetCwClimbLocator
     /// </summary>
     public unsafe virtual bool GetCwClimbLocator(out BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator Locator, BmSDK.BmGame.RPawnPlayer Player, bool bCheckDown, bool bRotateGrate = default, float YawOffset = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.GetCwClimbLocator", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCwClimbLocator, "BmGame.RTunnelGrateBase.GetCwClimbLocator");
         byte* paramsPtr = stackalloc byte[224];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 132);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bCheckDown, paramsPtr + 140);
@@ -320,12 +338,13 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 152);
     }
 
+    private static BmSDK.Function __fn_CheckCwTargetLocation;
     /// <summary>
     /// Function: CheckCwTargetLocation
     /// </summary>
     public unsafe virtual bool CheckCwTargetLocation(BmSDK.BmGame.RPlayerController PC, System.Numerics.Vector3 Dir, bool bCheckDown, bool bDebugDraw = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.CheckCwTargetLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckCwTargetLocation, "BmGame.RTunnelGrateBase.CheckCwTargetLocation");
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Dir, paramsPtr + 8);
@@ -335,12 +354,13 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_CheckCwStartLocation;
     /// <summary>
     /// Function: CheckCwStartLocation
     /// </summary>
     public unsafe virtual bool CheckCwStartLocation(BmSDK.BmGame.RPlayerController PC, System.Numerics.Vector3 Dir, bool bCheckDown, bool bDebugDraw = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.CheckCwStartLocation", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckCwStartLocation, "BmGame.RTunnelGrateBase.CheckCwStartLocation");
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Dir, paramsPtr + 8);
@@ -350,35 +370,38 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_EndTimedCapeCollisionDisable;
     /// <summary>
     /// Function: EndTimedCapeCollisionDisable
     /// </summary>
     public unsafe virtual void EndTimedCapeCollisionDisable()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.EndTimedCapeCollisionDisable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EndTimedCapeCollisionDisable, "BmGame.RTunnelGrateBase.EndTimedCapeCollisionDisable");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_BeginTimedCapeCollisionDisable;
     /// <summary>
     /// Function: BeginTimedCapeCollisionDisable
     /// </summary>
     public unsafe virtual void BeginTimedCapeCollisionDisable(float disabledTimer)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.BeginTimedCapeCollisionDisable", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BeginTimedCapeCollisionDisable, "BmGame.RTunnelGrateBase.BeginTimedCapeCollisionDisable");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(disabledTimer, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetDisableCapeCollision;
     /// <summary>
     /// Function: SetDisableCapeCollision
     /// </summary>
     public unsafe virtual void SetDisableCapeCollision(bool bDisabled)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.SetDisableCapeCollision", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDisableCapeCollision, "BmGame.RTunnelGrateBase.SetDisableCapeCollision");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDisabled, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -392,34 +415,37 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return;
     }
 
+    private static BmSDK.Function __fn_PlayLastGrateAnim;
     /// <summary>
     /// Function: PlayLastGrateAnim
     /// </summary>
     public unsafe virtual void PlayLastGrateAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.PlayLastGrateAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayLastGrateAnim, "BmGame.RTunnelGrateBase.PlayLastGrateAnim");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SkipToEndOfCurrentAnim;
     /// <summary>
     /// Function: SkipToEndOfCurrentAnim
     /// </summary>
     public unsafe virtual void SkipToEndOfCurrentAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.SkipToEndOfCurrentAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SkipToEndOfCurrentAnim, "BmGame.RTunnelGrateBase.SkipToEndOfCurrentAnim");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayGrateAnim;
     /// <summary>
     /// Function: PlayGrateAnim
     /// </summary>
     public unsafe virtual void PlayGrateAnim(BmSDK.FName GrateAnim, BmSDK.Rotator GrateAnimationRotation = default, float Rate = default, bool bLoop = default, bool WaitToPlay = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.PlayGrateAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayGrateAnim, "BmGame.RTunnelGrateBase.PlayGrateAnim");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GrateAnim, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GrateAnimationRotation, paramsPtr + 8);
@@ -430,67 +456,73 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return;
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.PreStreamOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmGame.RTunnelGrateBase.PreStreamOut");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.Destroyed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmGame.RTunnelGrateBase.Destroyed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DelayedDisableTick;
     /// <summary>
     /// Function: DelayedDisableTick
     /// </summary>
     public unsafe virtual void DelayedDisableTick()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.DelayedDisableTick", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DelayedDisableTick, "BmGame.RTunnelGrateBase.DelayedDisableTick");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UnDamage;
     /// <summary>
     /// Function: UnDamage
     /// </summary>
     public unsafe virtual void UnDamage()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.UnDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnDamage, "BmGame.RTunnelGrateBase.UnDamage");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShowDamage;
     /// <summary>
     /// Function: ShowDamage
     /// </summary>
     public unsafe virtual void ShowDamage()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.ShowDamage", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowDamage, "BmGame.RTunnelGrateBase.ShowDamage");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Damaged;
     /// <summary>
     /// Function: Damaged
     /// </summary>
     public unsafe virtual void Damaged(int distFromBlast, BmSDK.Rotator blastDirection)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.Damaged", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Damaged, "BmGame.RTunnelGrateBase.Damaged");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(distFromBlast, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(blastDirection, paramsPtr + 4);
@@ -498,56 +530,61 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerDamagedEvent;
     /// <summary>
     /// Function: TriggerDamagedEvent
     /// </summary>
     public unsafe virtual void TriggerDamagedEvent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.TriggerDamagedEvent", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerDamagedEvent, "BmGame.RTunnelGrateBase.TriggerDamagedEvent");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsLocked;
     /// <summary>
     /// Function: IsLocked
     /// </summary>
     public unsafe virtual bool IsLocked()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.IsLocked", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsLocked, "BmGame.RTunnelGrateBase.IsLocked");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_UnInitialiseNavmesh;
     /// <summary>
     /// Function: UnInitialiseNavmesh
     /// </summary>
     public unsafe virtual void UnInitialiseNavmesh()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.UnInitialiseNavmesh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UnInitialiseNavmesh, "BmGame.RTunnelGrateBase.UnInitialiseNavmesh");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InitialiseNavmesh;
     /// <summary>
     /// Function: InitialiseNavmesh
     /// </summary>
     public unsafe virtual void InitialiseNavmesh()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.InitialiseNavmesh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitialiseNavmesh, "BmGame.RTunnelGrateBase.InitialiseNavmesh");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RegisterWithNavMesh;
     /// <summary>
     /// Function: RegisterWithNavMesh
     /// </summary>
     public unsafe virtual void RegisterWithNavMesh(bool bRegister)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.RegisterWithNavMesh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterWithNavMesh, "BmGame.RTunnelGrateBase.RegisterWithNavMesh");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bRegister, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -561,12 +598,13 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return;
     }
 
+    private static BmSDK.Function __fn_GetAIPointOfInterestPosition;
     /// <summary>
     /// Function: GetAIPointOfInterestPosition
     /// </summary>
     public unsafe override System.Numerics.Vector3 GetAIPointOfInterestPosition()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.GetAIPointOfInterestPosition", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAIPointOfInterestPosition, "BmGame.RTunnelGrateBase.GetAIPointOfInterestPosition");
         byte* paramsPtr = stackalloc byte[12];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -579,46 +617,50 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_ValidateThugAccessibility;
     /// <summary>
     /// Function: ValidateThugAccessibility
     /// </summary>
     public unsafe virtual void ValidateThugAccessibility(bool bFullDebug)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.ValidateThugAccessibility", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ValidateThugAccessibility, "BmGame.RTunnelGrateBase.ValidateThugAccessibility");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bFullDebug, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay_Delayed;
     /// <summary>
     /// Function: PostBeginPlay_Delayed
     /// </summary>
     public unsafe virtual void PostBeginPlay_Delayed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.PostBeginPlay_Delayed", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay_Delayed, "BmGame.RTunnelGrateBase.PostBeginPlay_Delayed");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.PostBeginPlay", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RTunnelGrateBase.PostBeginPlay");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FindRoute;
     /// <summary>
     /// Function: FindRoute
     /// </summary>
     public unsafe virtual bool FindRoute(BmSDK.BmGame.RTunnelGrateBase EndGrate, out BmSDK.TArray<BmSDK.BmGame.RTunnelGrateBase> Route)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.FindRoute", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindRoute, "BmGame.RTunnelGrateBase.FindRoute");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EndGrate, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
@@ -633,12 +675,13 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_DebugAIPointOfInterestOutput;
     /// <summary>
     /// Function: DebugAIPointOfInterestOutput
     /// </summary>
     public unsafe virtual void DebugAIPointOfInterestOutput()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.DebugAIPointOfInterestOutput", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DebugAIPointOfInterestOutput, "BmGame.RTunnelGrateBase.DebugAIPointOfInterestOutput");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -651,12 +694,13 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return;
     }
 
+    private static BmSDK.Function __fn_GetAllGratesInMyGroup;
     /// <summary>
     /// Function: GetAllGratesInMyGroup
     /// </summary>
     public unsafe virtual void GetAllGratesInMyGroup(out BmSDK.TArray<BmSDK.BmGame.RTunnelGrateBase> outAllGratesInGroup)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.GetAllGratesInMyGroup", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAllGratesInMyGroup, "BmGame.RTunnelGrateBase.GetAllGratesInMyGroup");
         byte* paramsPtr = stackalloc byte[16];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -670,12 +714,13 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return;
     }
 
+    private static BmSDK.Function __fn_GetNeighbours;
     /// <summary>
     /// Function: GetNeighbours
     /// </summary>
     public unsafe virtual void GetNeighbours(out BmSDK.BmGame.RTunnelGrateBase NorthGrate, out BmSDK.BmGame.RTunnelGrateBase SouthGrate, out BmSDK.BmGame.RTunnelGrateBase EastGrate, out BmSDK.BmGame.RTunnelGrateBase WestGrate, out BmSDK.Rotator NorthDir)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.GetNeighbours", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNeighbours, "BmGame.RTunnelGrateBase.GetNeighbours");
         byte* paramsPtr = stackalloc byte[44];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -693,12 +738,13 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return;
     }
 
+    private static BmSDK.Function __fn_CheckSpaceToClimbOut;
     /// <summary>
     /// Function: CheckSpaceToClimbOut
     /// </summary>
     public unsafe virtual bool CheckSpaceToClimbOut(out BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator Loc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.CheckSpaceToClimbOut", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckSpaceToClimbOut, "BmGame.RTunnelGrateBase.CheckSpaceToClimbOut");
         byte* paramsPtr = stackalloc byte[136];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -712,103 +758,112 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 132);
     }
 
+    private static BmSDK.Function __fn_GetYawFromDirectionIndex;
     /// <summary>
     /// Function: GetYawFromDirectionIndex
     /// </summary>
     public unsafe virtual int GetYawFromDirectionIndex(int directionIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.GetYawFromDirectionIndex", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetYawFromDirectionIndex, "BmGame.RTunnelGrateBase.GetYawFromDirectionIndex");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(directionIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_UpdateHighlightMaterialAlpha;
     /// <summary>
     /// Function: UpdateHighlightMaterialAlpha
     /// </summary>
     public unsafe virtual void UpdateHighlightMaterialAlpha(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.UpdateHighlightMaterialAlpha", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateHighlightMaterialAlpha, "BmGame.RTunnelGrateBase.UpdateHighlightMaterialAlpha");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetupHighlightMeshes;
     /// <summary>
     /// Function: SetupHighlightMeshes
     /// </summary>
     public unsafe virtual void SetupHighlightMeshes()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.SetupHighlightMeshes", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupHighlightMeshes, "BmGame.RTunnelGrateBase.SetupHighlightMeshes");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetupHighlightMaterials;
     /// <summary>
     /// Function: SetupHighlightMaterials
     /// </summary>
     public unsafe virtual void SetupHighlightMaterials()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.SetupHighlightMaterials", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupHighlightMaterials, "BmGame.RTunnelGrateBase.SetupHighlightMaterials");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SwitchToUndamagedMesh;
     /// <summary>
     /// Function: SwitchToUndamagedMesh
     /// </summary>
     public unsafe virtual void SwitchToUndamagedMesh()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.SwitchToUndamagedMesh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SwitchToUndamagedMesh, "BmGame.RTunnelGrateBase.SwitchToUndamagedMesh");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SwitchToDamagedMesh;
     /// <summary>
     /// Function: SwitchToDamagedMesh
     /// </summary>
     public unsafe virtual void SwitchToDamagedMesh()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.SwitchToDamagedMesh", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SwitchToDamagedMesh, "BmGame.RTunnelGrateBase.SwitchToDamagedMesh");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetThugVisionParametersForXrayOrThermal;
     /// <summary>
     /// Function: SetThugVisionParametersForXrayOrThermal
     /// </summary>
     public unsafe virtual void SetThugVisionParametersForXrayOrThermal()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.SetThugVisionParametersForXrayOrThermal", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetThugVisionParametersForXrayOrThermal, "BmGame.RTunnelGrateBase.SetThugVisionParametersForXrayOrThermal");
         byte* paramsPtr = stackalloc byte[128];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnVisionModeChanged;
     /// <summary>
     /// Function: OnVisionModeChanged
     /// </summary>
     public unsafe virtual void OnVisionModeChanged(bool On)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.OnVisionModeChanged", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnVisionModeChanged, "BmGame.RTunnelGrateBase.OnVisionModeChanged");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(On, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetInThermalMode;
     /// <summary>
     /// Function: SetInThermalMode
     /// </summary>
     public unsafe virtual void SetInThermalMode(bool On, bool bForceOff)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.SetInThermalMode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetInThermalMode, "BmGame.RTunnelGrateBase.SetInThermalMode");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(On, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForceOff, paramsPtr + 4);
@@ -816,12 +871,13 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return;
     }
 
+    private static BmSDK.Function __fn_SetInvestigateHighlighted;
     /// <summary>
     /// Function: SetInvestigateHighlighted
     /// </summary>
     public unsafe override void SetInvestigateHighlighted(BmSDK.Engine.MaterialInstanceConstant highMat, bool On)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.SetInvestigateHighlighted", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetInvestigateHighlighted, "BmGame.RTunnelGrateBase.SetInvestigateHighlighted");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(highMat, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(On, paramsPtr + 8);
@@ -829,12 +885,13 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return;
     }
 
+    private static BmSDK.Function __fn_SetInXrayMode;
     /// <summary>
     /// Function: SetInXrayMode
     /// </summary>
     public unsafe virtual void SetInXrayMode(bool On, bool bForceOff)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.SetInXrayMode", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetInXrayMode, "BmGame.RTunnelGrateBase.SetInXrayMode");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(On, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForceOff, paramsPtr + 4);
@@ -842,24 +899,26 @@ public partial class RTunnelGrateBase : BmSDK.BmGame.RSpecialMoveEnvironmentObje
         return;
     }
 
+    private static BmSDK.Function __fn_SetHighlightedByThugVision;
     /// <summary>
     /// Function: SetHighlightedByThugVision
     /// </summary>
     public unsafe virtual void SetHighlightedByThugVision(bool bHighlighted)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.SetHighlightedByThugVision", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHighlightedByThugVision, "BmGame.RTunnelGrateBase.SetHighlightedByThugVision");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bHighlighted, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetPawnCausesGrateVis;
     /// <summary>
     /// Function: SetPawnCausesGrateVis
     /// </summary>
     public unsafe virtual void SetPawnCausesGrateVis(BmSDK.BmGame.RPawn inPawn, bool bCanSee)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RTunnelGrateBase.SetPawnCausesGrateVis", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetPawnCausesGrateVis, "BmGame.RTunnelGrateBase.SetPawnCausesGrateVis");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(inPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bCanSee, paramsPtr + 8);

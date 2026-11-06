@@ -78,12 +78,13 @@ public partial class RCatwomanForensicsDevice : BmSDK.BmGame.RForensicsDevice, B
         where TComponent : class, Framework.IScriptComponent<RCatwomanForensicsDevice>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_RestoreMaterialsForXray;
     /// <summary>
     /// Function: RestoreMaterialsForXray
     /// </summary>
     public unsafe override void RestoreMaterialsForXray(bool force_swap = default, bool DoNotSwapPlayerPawn = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCatwomanForensicsDevice.RestoreMaterialsForXray", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RestoreMaterialsForXray, "BmScript.RCatwomanForensicsDevice.RestoreMaterialsForXray");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(force_swap, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DoNotSwapPlayerPawn, paramsPtr + 4);
@@ -91,47 +92,51 @@ public partial class RCatwomanForensicsDevice : BmSDK.BmGame.RForensicsDevice, B
         return;
     }
 
+    private static BmSDK.Function __fn_DrawHUD;
     /// <summary>
     /// Function: DrawHUD
     /// </summary>
     public unsafe override void DrawHUD(BmSDK.Engine.Canvas Canvas)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCatwomanForensicsDevice.DrawHUD", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DrawHUD, "BmScript.RCatwomanForensicsDevice.DrawHUD");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Canvas, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SwapMaterialsForXray;
     /// <summary>
     /// Function: SwapMaterialsForXray
     /// </summary>
     public unsafe override void SwapMaterialsForXray(bool force_swap = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCatwomanForensicsDevice.SwapMaterialsForXray", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SwapMaterialsForXray, "BmScript.RCatwomanForensicsDevice.SwapMaterialsForXray");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(force_swap, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetForensicsRenderType;
     /// <summary>
     /// Function: GetForensicsRenderType
     /// </summary>
     public unsafe override bool GetForensicsRenderType()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCatwomanForensicsDevice.GetForensicsRenderType", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetForensicsRenderType, "BmScript.RCatwomanForensicsDevice.GetForensicsRenderType");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetForensicsRenderType;
     /// <summary>
     /// Function: SetForensicsRenderType
     /// </summary>
     public unsafe override void SetForensicsRenderType(bool On)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCatwomanForensicsDevice.SetForensicsRenderType", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetForensicsRenderType, "BmScript.RCatwomanForensicsDevice.SetForensicsRenderType");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(On, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);

@@ -78,34 +78,37 @@ public partial class RBMWeaponBottle : BmSDK.BmScript.RBMWeaponKnifeBase, BmSDK.
         where TComponent : class, Framework.IScriptComponent<RBMWeaponBottle>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PlaySmashFX;
     /// <summary>
     /// Function: PlaySmashFX
     /// </summary>
     public unsafe virtual void PlaySmashFX()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponBottle.PlaySmashFX", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlaySmashFX, "BmScript.RBMWeaponBottle.PlaySmashFX");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Smash;
     /// <summary>
     /// Function: Smash
     /// </summary>
     public unsafe virtual void Smash()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponBottle.Smash", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Smash, "BmScript.RBMWeaponBottle.Smash");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Unsmash;
     /// <summary>
     /// Function: Unsmash
     /// </summary>
     public unsafe virtual void Unsmash()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMWeaponBottle.Unsmash", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Unsmash, "BmScript.RBMWeaponBottle.Unsmash");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

@@ -73,12 +73,13 @@ public partial class AnimNodeBlendBase : BmSDK.Engine.AnimNode, BmSDK.IGameObjec
         where TComponent : class, Framework.IScriptComponent<AnimNodeBlendBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ReplayAnim;
     /// <summary>
     /// Function: ReplayAnim
     /// </summary>
     public unsafe override void ReplayAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodeBlendBase.ReplayAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReplayAnim, "Engine.AnimNodeBlendBase.ReplayAnim");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -91,12 +92,13 @@ public partial class AnimNodeBlendBase : BmSDK.Engine.AnimNode, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_StopAnim;
     /// <summary>
     /// Function: StopAnim
     /// </summary>
     public unsafe override void StopAnim()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodeBlendBase.StopAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopAnim, "Engine.AnimNodeBlendBase.StopAnim");
         byte* paramsPtr = stackalloc byte[0];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -109,12 +111,13 @@ public partial class AnimNodeBlendBase : BmSDK.Engine.AnimNode, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_PlayAnim;
     /// <summary>
     /// Function: PlayAnim
     /// </summary>
     public unsafe override void PlayAnim(bool bLoop = default, float Rate = default, float StartTime = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodeBlendBase.PlayAnim", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayAnim, "Engine.AnimNodeBlendBase.PlayAnim");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bLoop, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Rate, paramsPtr + 4);

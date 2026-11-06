@@ -78,23 +78,25 @@ public partial class RPhysicalEvidenceTrail : BmSDK.BmGame.RPhysicalEvidenceBase
         where TComponent : class, Framework.IScriptComponent<RPhysicalEvidenceTrail>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DoShowNow;
     /// <summary>
     /// Function: DoShowNow
     /// </summary>
     public unsafe virtual void DoShowNow()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPhysicalEvidenceTrail.DoShowNow", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoShowNow, "BmGame.RPhysicalEvidenceTrail.DoShowNow");
         byte* paramsPtr = stackalloc byte[0];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AutomaticallySetVisibility;
     /// <summary>
     /// Function: AutomaticallySetVisibility
     /// </summary>
     public unsafe override void AutomaticallySetVisibility()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPhysicalEvidenceTrail.AutomaticallySetVisibility", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AutomaticallySetVisibility, "BmGame.RPhysicalEvidenceTrail.AutomaticallySetVisibility");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

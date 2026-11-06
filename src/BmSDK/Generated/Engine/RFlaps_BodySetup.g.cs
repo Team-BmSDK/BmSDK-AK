@@ -78,12 +78,13 @@ public partial class RFlaps_BodySetup : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RFlaps_BodySetup>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_FindPhysAssetBody;
     /// <summary>
     /// Function: FindPhysAssetBody
     /// </summary>
     public unsafe virtual BmSDK.Engine.RB_BodySetup FindPhysAssetBody()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RFlaps_BodySetup.FindPhysAssetBody", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindPhysAssetBody, "Engine.RFlaps_BodySetup.FindPhysAssetBody");
         byte* paramsPtr = stackalloc byte[8];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,12 +97,13 @@ public partial class RFlaps_BodySetup : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.RB_BodySetup>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_FindPhysAssetBodyIndex;
     /// <summary>
     /// Function: FindPhysAssetBodyIndex
     /// </summary>
     public unsafe virtual int FindPhysAssetBodyIndex()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RFlaps_BodySetup.FindPhysAssetBodyIndex", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindPhysAssetBodyIndex, "Engine.RFlaps_BodySetup.FindPhysAssetBodyIndex");
         byte* paramsPtr = stackalloc byte[4];
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -114,12 +116,13 @@ public partial class RFlaps_BodySetup : BmSDK.GameObject, BmSDK.IGameObject
         return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_FindParticleIndex;
     /// <summary>
     /// Function: FindParticleIndex
     /// </summary>
     public unsafe virtual int FindParticleIndex(BmSDK.FName ParticleName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RFlaps_BodySetup.FindParticleIndex", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindParticleIndex, "Engine.RFlaps_BodySetup.FindParticleIndex");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ParticleName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
