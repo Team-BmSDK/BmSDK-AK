@@ -17,6 +17,9 @@ public static unsafe class MarshalUtil
 
     private static readonly Dictionary<IntPtr, GameObject> s_managedObjects = [];
 
+    /// <summary>Classes already reported as unknown, so each is logged once rather than per object.</summary>
+    private static readonly HashSet<string> s_unknownClassesLogged = [];
+
     /// <summary>
     /// Marshals unmanaged data to managed, then returns it.
     /// </summary>
@@ -290,14 +293,20 @@ public static unsafe class MarshalUtil
         {
             if (StaticInit.TryGetManagedTypeForClassPath(GetClassPath(superPtr), out var superType))
             {
-                Debug.LogWarning(
-                    $"Couldn't find managed type for class '{classPath}', falling back to {superType.FullName}"
-                );
+                if (s_unknownClassesLogged.Add(classPath))
+                {
+                    Debug.LogWarning(
+                        $"Couldn't find managed type for class '{classPath}', falling back to {superType.FullName}"
+                    );
+                }
                 return superType;
             }
         }
 
-        Debug.LogWarning($"Couldn't find managed type for class '{classPath}'");
+        if (s_unknownClassesLogged.Add(classPath))
+        {
+            Debug.LogWarning($"Couldn't find managed type for class '{classPath}'");
+        }
         return typeof(GameObject);
     }
 
