@@ -22,6 +22,49 @@ public partial class Function
 
     public bool IsStatic => FunctionFlags.HasFlag(EFunctionFlags.FUNC_Static);
 
+    /// <summary>Which of BmSDK's lifecycle hooks this function drives, if any.</summary>
+    internal enum Lifecycle : byte
+    {
+        None,
+        Init,
+        EnterMenu,
+        EnterGame,
+        Tick,
+    }
+
+    // Filled in once per UFunction by the ProcessInternal detour, so the hot path never builds a path
+    // string or looks redirects up by name. A wrapper dies with its object, so nothing here goes stale.
+    internal string? CachedPath;
+    internal Lifecycle LifecycleKind;
+    internal int RedirectGeneration = -1;
+    internal bool MayRedirect;
+
+    // Cached parameter layout for redirects (see FFrame.ParamsToManaged and RedirectCall.RunOriginal).
+    internal int[]? ParamOffsets;
+    internal int ParamsBytes = -1;
+    internal bool ReturnResolved;
+    internal int ReturnOffset;
+    internal int ReturnSize;
+
+    internal int[] GetParamOffsets() =>
+        ParamOffsets ??= EnumerateParams().Select(p => (int)p.Offset).ToArray();
+
+    internal int GetParamsBytes() =>
+        ParamsBytes >= 0 ? ParamsBytes : ParamsBytes = EnumerateParams().Sum(p => p.ElementSize);
+
+    internal void ResolveReturn()
+    {
+        if (ReturnResolved)
+        {
+            return;
+        }
+
+        var ret = GetReturnParam();
+        ReturnOffset = ret?.Offset ?? 0;
+        ReturnSize = ret?.ElementSize ?? 0;
+        ReturnResolved = true;
+    }
+
     /// <summary>
     /// Property: FunctionFlags
     /// </summary>

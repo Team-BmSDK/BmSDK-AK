@@ -28,6 +28,30 @@ internal static class RedirectManager
     private static readonly Stack<RedirectCall> s_redirectCalls = [];
 
     /// <summary>
+    /// Bumped whenever a redirect is registered or unregistered. A <see cref="Function"/> remembers
+    /// the generation at which it last checked for redirects, so the ProcessInternal detour only
+    /// looks a function up by name again after the set of redirects changed.
+    /// </summary>
+    public static int Generation { get; private set; }
+
+    public static void BumpGeneration() => Generation++;
+
+    /// <summary>
+    /// Whether any global or local redirect targets this function. Cached on the function until the
+    /// next registration change.
+    /// </summary>
+    public static bool MayRedirect(Function func, string funcPath)
+    {
+        if (func.RedirectGeneration != Generation)
+        {
+            func.MayRedirect = Global.HasRedirects(funcPath) || Local.HasRedirects(funcPath);
+            func.RedirectGeneration = Generation;
+        }
+
+        return func.MayRedirect;
+    }
+
+    /// <summary>
     /// Queues a function path to be configured for redirections after
     /// the UFunction object is created. This should be run during mod initialization.
     /// </summary>
@@ -111,7 +135,7 @@ internal static class RedirectManager
 
         // Get redirects applicable to current function
         var redirs = AcquireRedirects(selfObj, funcPath);
-        if (!redirs.Any())
+        if (redirs.Count == 0)
         {
             return false;
         }
@@ -136,14 +160,13 @@ internal static class RedirectManager
     /// <summary>
     /// Creates a collection of all redirects that apply to a specific object and method.
     /// </summary>
-    private static IEnumerable<IGenericRedirect> AcquireRedirects(
-        GameObject selfObj,
-        string funcPath
-    ) =>
-        Local
-            .GetRedirectors(selfObj, funcPath)
-            .Cast<IGenericRedirect>()
-            .Concat(Global.GetRedirectors(selfObj, funcPath));
+    private static List<IGenericRedirect> AcquireRedirects(GameObject selfObj, string funcPath)
+    {
+        var list = new List<IGenericRedirect>();
+        list.AddRange(Local.GetRedirectors(selfObj, funcPath));
+        list.AddRange(Global.GetRedirectors(selfObj, funcPath));
+        return list;
+    }
 
     /// <summary>
     /// Clears the backing redirector dictionaries, therefore, uninstalling all redirects.
@@ -153,5 +176,6 @@ internal static class RedirectManager
         Global.UnregisterAll();
         Local.UnregisterAll();
         s_redirectFuncs.Clear();
+        BumpGeneration();
     }
 }

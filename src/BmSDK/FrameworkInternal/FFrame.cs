@@ -29,22 +29,20 @@ internal unsafe record struct FFrame
         return MarshalUtil.ToManaged<Function>(&nodePtr);
     }
 
-    public readonly IEnumerable<object?> ParamsToManaged(Type[] managedTypes)
+    /// <summary>
+    /// Marshals this frame's parameters to managed values of the given types, in declaration order.
+    /// </summary>
+    public readonly object?[] ParamsToManaged(Type[] managedTypes)
     {
-        var nodePtr = Node;
         var localsPtr = Locals;
-        var funcObj = GetFunction();
+        var offsets = GetFunction().GetParamOffsets();
 
-        return funcObj
-            .EnumerateParams()
-            .Select(
-                (prop, i) =>
-                {
-                    var typeManaged = managedTypes[i];
-                    var valueManaged = MarshalUtil.ToManaged(localsPtr + prop.Offset, typeManaged);
+        var values = new object?[offsets.Length];
+        for (var i = 0; i < offsets.Length; i++)
+        {
+            values[i] = MarshalUtil.ToManaged(localsPtr + offsets[i], managedTypes[i]);
+        }
 
-                    return valueManaged;
-                }
-            );
+        return values;
     }
 }
