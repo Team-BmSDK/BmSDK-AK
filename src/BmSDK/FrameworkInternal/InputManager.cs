@@ -15,7 +15,8 @@ internal static class InputManager
                 // Let scripts know about the key press.
                 foreach (var script in ScriptManager.Scripts)
                 {
-                    Debug.RunWithSender(script.Name, () => script.OnKeyDown((Keys)i));
+                    var key = (Keys)i;
+                    ModGuard.Run(script, script.Name, "OnKeyDown", () => script.OnKeyDown(key));
                 }
             }
         }

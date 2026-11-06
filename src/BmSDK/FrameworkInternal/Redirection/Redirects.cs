@@ -18,6 +18,12 @@ internal interface IGenericRedirect
     /// Function called from within the UObject::ProcessInternal() context to execute the redirect.
     /// </summary>
     unsafe void Run(GameObject selfObj, Function funcObj, FFrame* stackPtr, IntPtr Result);
+
+    /// <summary>Who to blame in the log when the redirect throws.</summary>
+    string SenderName { get; }
+
+    /// <summary>The mod assembly the redirect belongs to; it is unloaded when the redirect throws.</summary>
+    Assembly ModAssembly { get; }
 }
 
 /// <summary>
@@ -52,6 +58,10 @@ internal sealed record GlobalRedirectorInfo(
 
     public unsafe void Run(GameObject selfObj, Function funcObj, FFrame* stackPtr, nint Result) =>
         RedirectManager.Global.ExecuteRedirector(this, selfObj, funcObj, stackPtr, Result);
+
+    public string SenderName => RedirectMethod.DeclaringType?.FullName ?? SourceAssembly.GetName().Name ?? "redirect";
+
+    public Assembly ModAssembly => SourceAssembly;
 }
 
 /// <summary>
@@ -74,6 +84,10 @@ internal sealed record LocalRedirectorInfo(
 
     public unsafe void Run(GameObject selfObj, Function funcObj, FFrame* stackPtr, nint Result) =>
         RedirectManager.Local.ExecuteRedirector(this, selfObj, funcObj, stackPtr, Result);
+
+    public string SenderName => Component.GetType().FullName ?? "component redirect";
+
+    public Assembly ModAssembly => Component.GetType().Assembly;
 }
 
 /// <summary>
@@ -109,11 +123,16 @@ internal sealed record RedirectCall(
 {
     private int _currIndex = 0;
 
+    /// <summary>Whether the original function has run for this call (by a redirect, or as the base).</summary>
+    public bool OriginalRan;
+
     public IGenericRedirect? NextRedirect() =>
         _currIndex < Redirs.Length ? Redirs[_currIndex++] : null;
 
     public unsafe void RunOriginal(FFrame* stackPtr, IntPtr result)
     {
+        OriginalRan = true;
+
         // Copy over args to new buffer for call to original function
         var paramsSize = TargetFunc.GetParamsBytes();
         var argsPtr = stackalloc byte[TargetFunc.PropertiesSize];
