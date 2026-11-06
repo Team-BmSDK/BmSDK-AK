@@ -173,7 +173,9 @@ public partial class NavigationPoint : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ChkPoint, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RequiredClass, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExcludeList, paramsPtr + 28);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.NavigationPoint>(paramsPtr + 44);
     }
 
@@ -189,7 +191,9 @@ public partial class NavigationPoint : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RequiredClass, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExcludeList, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinDist, paramsPtr + 32);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.NavigationPoint>(paramsPtr + 36);
     }
 

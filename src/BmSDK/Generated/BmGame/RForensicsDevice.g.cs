@@ -428,7 +428,9 @@ public partial class RForensicsDevice : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HighPriority, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ObjectiveName, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverrideSignalLossTime, paramsPtr + 40);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 

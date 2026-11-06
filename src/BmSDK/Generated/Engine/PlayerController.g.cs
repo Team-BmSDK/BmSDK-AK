@@ -231,7 +231,9 @@ public partial class PlayerController : BmSDK.Engine.Controller, BmSDK.IGameObje
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BugItAI, "Engine.PlayerController.BugItAI");
         byte* paramsPtr = stackalloc byte[72];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ScreenShotDescription, paramsPtr + 0);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -256,7 +258,9 @@ public partial class PlayerController : BmSDK.Engine.Controller, BmSDK.IGameObje
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BugIt, "Engine.PlayerController.BugIt");
         byte* paramsPtr = stackalloc byte[72];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ScreenShotDescription, paramsPtr + 0);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -2827,7 +2831,9 @@ public partial class PlayerController : BmSDK.Engine.Controller, BmSDK.IGameObje
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Message, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Title, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIgnoreFutureNetworkMessages, paramsPtr + 36);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -2866,7 +2872,9 @@ public partial class PlayerController : BmSDK.Engine.Controller, BmSDK.IGameObje
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ChangeTeam, "Engine.PlayerController.ChangeTeam");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TeamName, paramsPtr + 0);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -4973,7 +4981,9 @@ public partial class PlayerController : BmSDK.Engine.Controller, BmSDK.IGameObje
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(speaking_actor, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(intercept_title, paramsPtr + 8);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 

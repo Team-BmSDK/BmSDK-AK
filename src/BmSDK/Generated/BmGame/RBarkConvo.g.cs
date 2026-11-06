@@ -88,7 +88,9 @@ public partial class RBarkConvo : BmSDK.Engine.AkHash, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[136];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speaker, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Opt, paramsPtr + 8);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 124);
     }
 
@@ -102,7 +104,9 @@ public partial class RBarkConvo : BmSDK.Engine.AkHash, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[192];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PawnRefsToLock, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Opt, paramsPtr + 16);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 

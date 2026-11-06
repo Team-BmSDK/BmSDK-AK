@@ -390,7 +390,9 @@ public partial class RGFxMovieVideoPlayer : BmSDK.BmGame.RGFxMovie, BmSDK.IGameO
         BmSDK.Framework.MarshalUtil.ToUnmanaged(aAudioRotations, paramsPtr + 48);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bUseSubtitles, paramsPtr + 64);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAutoPause, paramsPtr + 68);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 72);
     }
 

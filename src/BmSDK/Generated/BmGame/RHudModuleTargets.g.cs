@@ -378,7 +378,9 @@ public partial class RHudModuleTargets : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OptionalFocusDetail, paramsPtr + 84);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MapRefName, paramsPtr + 100);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MapTypeName, paramsPtr + 116);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 132);
     }
 
@@ -402,7 +404,9 @@ public partial class RHudModuleTargets : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OptionalFocusDetail, paramsPtr + 76);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MapRefName, paramsPtr + 92);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MapTypeName, paramsPtr + 108);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 124);
     }
 
@@ -426,7 +430,9 @@ public partial class RHudModuleTargets : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OptionalFocusDetail, paramsPtr + 80);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MapRefName, paramsPtr + 96);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MapTypeName, paramsPtr + 112);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 128);
     }
 
@@ -448,7 +454,9 @@ public partial class RHudModuleTargets : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExtraInfo, paramsPtr + 52);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ForceMain, paramsPtr + 68);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CursorLockon, paramsPtr + 72);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 76);
     }
 
@@ -468,7 +476,9 @@ public partial class RHudModuleTargets : BmSDK.BmGame.RHudModule, BmSDK.IGameObj
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExtraInfo, paramsPtr + 44);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ForceMain, paramsPtr + 60);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CursorLockon, paramsPtr + 64);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 68);
     }
 

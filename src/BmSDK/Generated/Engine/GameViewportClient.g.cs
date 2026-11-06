@@ -235,7 +235,9 @@ public partial class GameViewportClient : BmSDK.Engine.ScriptViewportClient, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MessageType, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Message, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Title, paramsPtr + 20);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -251,7 +253,9 @@ public partial class GameViewportClient : BmSDK.Engine.ScriptViewportClient, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Message, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Title, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIgnoreFutureNetworkMessages, paramsPtr + 36);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 

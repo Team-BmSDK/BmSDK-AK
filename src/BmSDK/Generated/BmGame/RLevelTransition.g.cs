@@ -247,7 +247,9 @@ public partial class RLevelTransition : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DebugSaveGameDescription, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SaveHere, paramsPtr + 52);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bMemoryOnly, paramsPtr + 60);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 

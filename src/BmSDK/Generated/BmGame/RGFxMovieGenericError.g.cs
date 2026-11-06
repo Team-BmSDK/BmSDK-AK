@@ -214,7 +214,9 @@ public partial class RGFxMovieGenericError : BmSDK.BmGame.RGFxMovieUI, BmSDK.IGa
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PromptA, paramsPtr + 36);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PromptB, paramsPtr + 52);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DefaultSelected, paramsPtr + 68);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 

@@ -646,7 +646,9 @@ public partial class RGFxMovieModularHud : BmSDK.BmGame.RGFxMovieModularHudBase,
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DownloadAnim, paramsPtr + 48);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InitialiseAnim, paramsPtr + 64);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CompleteAnim, paramsPtr + 80);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 

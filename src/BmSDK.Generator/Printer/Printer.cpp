@@ -549,6 +549,20 @@ void Printer::PrintFunction(const FunctionInfo& func, bool isInInterface, ostrea
                 << ");" << endl;
         }
 
+        // ProcessEvent would free an optional string/array argument of a script function before
+        // the call runs (see OptionalParms.cs), so suspend the optional params around the call.
+        auto suspendsOptional = false;
+        for (auto& param : func.Params)
+        {
+            suspendsOptional |= !func.IsNative && param.IsOptionalParam && param.OwnsMemory;
+        }
+
+        if (suspendsOptional)
+        {
+            Printer::Indent(out)
+                << "var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);" << endl;
+        }
+
         if (func.IsNative)
         {
             Printer::Indent(out) << "var oldFlags = funcManaged.FunctionFlags;" << endl;
@@ -569,6 +583,12 @@ void Printer::PrintFunction(const FunctionInfo& func, bool isInInterface, ostrea
         {
             Printer::Indent(out) << "funcManaged.iNative = oldNative;" << endl;
             Printer::Indent(out) << "funcManaged.FunctionFlags = oldFlags;" << endl;
+        }
+
+        if (suspendsOptional)
+        {
+            Printer::Indent(out)
+                << "BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);" << endl;
         }
 
         // Marshal/assign out params

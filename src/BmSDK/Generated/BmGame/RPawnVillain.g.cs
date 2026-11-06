@@ -2879,7 +2879,9 @@ public partial class RPawnVillain : BmSDK.BmGame.RPawnSpeech, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExtraFlags, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeliveryType, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewBarkFinished, paramsPtr + 44);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 60);
     }
 
@@ -2895,7 +2897,9 @@ public partial class RPawnVillain : BmSDK.BmGame.RPawnSpeech, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BarkSubject, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExtraFlags, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeliveryType, paramsPtr + 32);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RBarkFlagBase>(paramsPtr + 36);
     }
 
@@ -2924,7 +2928,9 @@ public partial class RPawnVillain : BmSDK.BmGame.RPawnSpeech, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AEC, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BarkSubject, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExtraFlags, paramsPtr + 24);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 

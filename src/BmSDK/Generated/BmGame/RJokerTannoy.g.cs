@@ -190,7 +190,9 @@ public partial class RJokerTannoy : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(nInvestigateTargetFlag, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForceCanPlay, paramsPtr + 48);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewBarkFinished, paramsPtr + 52);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 68);
     }
 

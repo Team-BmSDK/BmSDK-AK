@@ -166,7 +166,9 @@ public partial class RPlayerStartInLevel : BmSDK.Engine.PlayerStart, BmSDK.IGame
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DebugSaveGameDescription, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bMemoryOnly, paramsPtr + 52);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAllowSaveDuringChase, paramsPtr + 56);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 

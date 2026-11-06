@@ -165,7 +165,9 @@ public partial class RAEC_BatarangReaction_Master : BmSDK.BmGame.RAlertEventCoor
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HasPrecalculatedTargets, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PrecalulatedTargets, paramsPtr + 44);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIsActuallyPlayer, paramsPtr + 60);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 

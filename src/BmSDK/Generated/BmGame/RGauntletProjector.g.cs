@@ -127,7 +127,9 @@ public partial class RGauntletProjector : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(caller, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VideoResource, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(fTransitionOutDurationOverride, paramsPtr + 24);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -237,7 +239,9 @@ public partial class RGauntletProjector : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bConnectionFailedOn, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSkipIntro, paramsPtr + 44);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PortraitName, paramsPtr + 48);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 

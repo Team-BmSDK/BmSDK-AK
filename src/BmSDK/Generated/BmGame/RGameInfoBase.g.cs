@@ -108,7 +108,9 @@ public partial class RGameInfoBase : BmSDK.Engine.GameInfo, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SlowMoParamMaxSet, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FactToSetDuringSlowMo, paramsPtr + 36);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SlowMoParamMinSet, paramsPtr + 52);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 56);
     }
 

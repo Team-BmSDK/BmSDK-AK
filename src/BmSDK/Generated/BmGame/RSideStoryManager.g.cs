@@ -788,7 +788,9 @@ public partial class RSideStoryManager : BmSDK.GameObject, BmSDK.IGameObject
         byte* paramsPtr = stackalloc byte[84];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ActiveSideStoryName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OptionalSideStoryMapMarker, paramsPtr + 16);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 

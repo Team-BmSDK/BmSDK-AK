@@ -115,7 +115,9 @@ public partial class RGFxMovieUI_OptionsControls : BmSDK.BmGame.RGFxMovieUI, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sScheme, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sPackage, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sConfig, paramsPtr + 48);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 

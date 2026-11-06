@@ -144,7 +144,9 @@ public partial class RCwGrappleGun : BmSDK.BmGame.RCwGrappleGunBase, BmSDK.IGame
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bZoomed, paramsPtr + 56);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverrideMaxDistance, paramsPtr + 60);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Desc, paramsPtr + 64);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         Cones = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.BmGame.RGrappleGun.FGrappleConeDefinition>>(paramsPtr + 0);
         return;
     }
@@ -164,7 +166,9 @@ public partial class RCwGrappleGun : BmSDK.BmGame.RCwGrappleGunBase, BmSDK.IGame
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bZoomed, paramsPtr + 56);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverrideMaxDistance, paramsPtr + 60);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Desc, paramsPtr + 64);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         Cones = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.BmGame.RGrappleGun.FGrappleConeDefinition>>(paramsPtr + 0);
         return;
     }

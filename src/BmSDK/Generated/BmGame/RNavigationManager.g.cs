@@ -303,7 +303,9 @@ public partial class RNavigationManager : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AttackRadius, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClaimName, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPylonList, paramsPtr + 24);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RAttackEdgeSearch>(paramsPtr + 40);
     }
 
@@ -382,7 +384,9 @@ public partial class RNavigationManager : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewSubDivideSizeTarget, paramsPtr + 44);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAutoAdjustToFloor, paramsPtr + 48);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAdjustHeightForHumanTargetSize, paramsPtr + 52);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RAttackPointSearch>(paramsPtr + 56);
     }
 

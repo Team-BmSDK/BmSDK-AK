@@ -434,7 +434,9 @@ public partial class RExperienceSystem : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Score, paramsPtr + 44);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bMultiXScore, paramsPtr + 48);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverrideString, paramsPtr + 52);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         SummaryString = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
         TotalScore = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 16);
         DelayTime = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 20);

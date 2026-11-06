@@ -1085,7 +1085,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MostWantedUpdate, "BmGame.RPlayerController.MostWantedUpdate");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(overrideMovieName, paramsPtr + 0);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -4307,7 +4309,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayMissionSound, "BmGame.RPlayerController.PlayMissionSound");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sSoundRef, paramsPtr + 0);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -4320,7 +4324,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMissionSound, "BmGame.RPlayerController.GetMissionSound");
         byte* paramsPtr = stackalloc byte[88];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sMissionName, paramsPtr + 0);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -4334,7 +4340,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[96];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sMissionName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sSpecialCase, paramsPtr + 16);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -5167,7 +5175,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sOverridePlayers, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sOverrideBatmobiles, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bExtremeMode, paramsPtr + 32);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -5387,7 +5397,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ScriptRef, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bManualOpen, paramsPtr + 16);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -5475,7 +5487,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNoDuplicates, paramsPtr + 88);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bPulseCompassIndicator, paramsPtr + 92);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MostWantedPipeSeparatedArray, paramsPtr + 96);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -6330,7 +6344,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MovieName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AdditionalMusic, paramsPtr + 16);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -6528,7 +6544,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DebugLevelSelect, "BmGame.RPlayerController.DebugLevelSelect");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Params, paramsPtr + 0);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -6715,7 +6733,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ExitThePlayer, "BmGame.RPlayerController.ExitThePlayer");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ToHere, paramsPtr + 0);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -6803,7 +6823,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(screen, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForcePause, paramsPtr + 16);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -7270,7 +7292,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PromptA, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PromptB, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DefaultSelected, paramsPtr + 56);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -8037,7 +8061,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowTokenRedemptionUI, "BmGame.RPlayerController.ShowTokenRedemptionUI");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OfferId, paramsPtr + 0);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
     }
 
@@ -12051,7 +12077,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Bug, "BmGame.RPlayerController.Bug");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BugText, paramsPtr + 0);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -15405,7 +15433,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NumCopies, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OnlyIfThisFlagSet, paramsPtr + 36);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ButNotIfThisFlagSet, paramsPtr + 52);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         TheArray = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 0);
         return;
     }
@@ -17906,7 +17936,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ActionGroup, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ActionType, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ChopOff, paramsPtr + 32);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -18420,7 +18452,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BaseStr, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Connector, paramsPtr + 56);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UsePrimary, paramsPtr + 72);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 76);
     }
 
@@ -19188,7 +19222,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSavingOnDeathScreen, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bMemoryOnly, paramsPtr + 44);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAllowSaveDuringChase, paramsPtr + 48);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -19202,7 +19238,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[68];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DebugSaveGameDescription, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bMemoryOnly, paramsPtr + 36);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -21421,7 +21459,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Mode, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Duration, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Params, paramsPtr + 8);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -22794,7 +22834,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(speaking_actor, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(intercept_title, paramsPtr + 8);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 

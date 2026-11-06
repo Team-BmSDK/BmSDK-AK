@@ -2047,7 +2047,9 @@ public partial class GameObject : BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Source, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Delimiter, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bCullEmpty, paramsPtr + 32);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 36);
     }
 
@@ -2085,7 +2087,9 @@ public partial class GameObject : BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StringArray, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(delim, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIgnoreBlanks, paramsPtr + 48);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         out_Result = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 16);
         return;
     }

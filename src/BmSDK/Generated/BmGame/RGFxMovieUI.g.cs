@@ -590,7 +590,9 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DisplayText, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDisabled, paramsPtr + 36);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocBase, paramsPtr + 40);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -607,7 +609,9 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Params, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDisabled, paramsPtr + 36);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocBase, paramsPtr + 40);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -625,7 +629,9 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bMakesSound, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDisabled, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocBase, paramsPtr + 32);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -642,7 +648,9 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAllowRollOver, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDisabled, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocBase, paramsPtr + 28);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -660,7 +668,9 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bShowNew, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDisabled, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocBase, paramsPtr + 32);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -678,7 +688,9 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bShowNew, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDisabled, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocBase, paramsPtr + 32);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -953,7 +965,9 @@ public partial class RGFxMovieUI : BmSDK.BmGame.RGFxMovie, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Game_Replay1stCatwoman, "BmGame.RGFxMovieUI.Game_Replay1stCatwoman");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CharacterName, paramsPtr + 0);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 

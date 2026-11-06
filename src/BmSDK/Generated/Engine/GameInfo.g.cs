@@ -810,7 +810,9 @@ public partial class GameInfo : BmSDK.Engine.Info, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InTeam, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(IncomingName, paramsPtr + 12);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.NavigationPoint>(paramsPtr + 28);
     }
 

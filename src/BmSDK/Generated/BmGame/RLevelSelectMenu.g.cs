@@ -166,7 +166,9 @@ public partial class RLevelSelectMenu : BmSDK.BmGame.RDynamicMenu, BmSDK.IGameOb
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SaveType, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Title, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ShortcutNumber, paramsPtr + 48);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         StartPoints = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.BmGame.RSaveGameManager.FRSaveGameSummaryInfo>>(paramsPtr + 16);
         return;
     }
@@ -210,7 +212,9 @@ public partial class RLevelSelectMenu : BmSDK.BmGame.RDynamicMenu, BmSDK.IGameOb
         BmSDK.Framework.MarshalUtil.ToUnmanaged(KeyboardShortcut, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AddLevels, paramsPtr + 36);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AddParams, paramsPtr + 52);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
@@ -238,7 +242,9 @@ public partial class RLevelSelectMenu : BmSDK.BmGame.RDynamicMenu, BmSDK.IGameOb
         BmSDK.Framework.MarshalUtil.ToUnmanaged(L, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExtraParams, paramsPtr + 108);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AddLevels, paramsPtr + 124);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
