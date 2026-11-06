@@ -38,6 +38,9 @@ internal static class ErrorOverlay
         // banner draws on top.
         self.PostRender(canvas);
 
+        // Scripts draw next, under the error banner.
+        Loader.DispatchDraw(canvas);
+
         string[] snapshot;
         lock (s_lock)
         {

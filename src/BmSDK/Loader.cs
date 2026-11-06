@@ -193,6 +193,15 @@ internal static class Loader
         _ProcessDeferredMessageDetourBase!.Invoke(self, ref message);
     }
 
+    /// <summary>Gives every script its OnDraw, from BmSDK's PostRender redirect.</summary>
+    internal static void DispatchDraw(Engine.Canvas canvas)
+    {
+        foreach (var script in ScriptManager.Scripts)
+        {
+            Debug.RunWithSender(script.Name, () => script.OnDraw(canvas));
+        }
+    }
+
     // Detour for UObject::AddObject()
     private static void AddObjectDetour(IntPtr self, int InIndex)
     {
