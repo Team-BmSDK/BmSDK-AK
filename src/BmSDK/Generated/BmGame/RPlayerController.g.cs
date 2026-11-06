@@ -88,7 +88,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BatmanIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_GetKeyBindForCharacter;
@@ -101,7 +101,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BatmanIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPersistentOptions.FStoredKeyMap>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RPersistentOptions.FStoredKeyMap>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_CanShowCurrentGadget;
@@ -113,7 +113,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanShowCurrentGadget, "BmGame.RPlayerController.CanShowCurrentGadget");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_DebugDrawScalarToReduceDestructibleParticlesAtHighSpeed;
@@ -162,7 +162,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CantRunOver, "BmGame.RPlayerController.CantRunOver");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_TurnOffGrapplePrompt;
@@ -282,7 +282,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanShowCrouchTutorial, "BmGame.RPlayerController.CanShowCrouchTutorial");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ClearSatNavForwardRoute;
@@ -346,7 +346,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetIdleOverlaysBlocked;
@@ -358,7 +358,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetIdleOverlaysBlocked, "BmGame.RPlayerController.GetIdleOverlaysBlocked");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RAnimUtil_PosePlayer.ERandomOverlayBlockType>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RAnimUtil_PosePlayer.ERandomOverlayBlockType>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CanBatmobilePickUp;
@@ -370,7 +370,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanBatmobilePickUp, "BmGame.RPlayerController.CanBatmobilePickUp");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_DeRegisterHushController;
@@ -444,7 +444,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HidePoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SwingToPos, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 20);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 20);
     }
 
     private static BmSDK.Function __fn_NoLedgeGrabTimer;
@@ -697,7 +697,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetGlideKickThrougWindowTarget;
@@ -718,7 +718,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 20);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RPawnVillain>(paramsPtr + 20);
     }
 
     private static BmSDK.Function __fn_IsBatmobileUnderRemoteControl;
@@ -737,7 +737,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_StopGadgetProhibitsAction;
@@ -758,7 +758,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_SecondaryFireVehicleWeapon;
@@ -794,7 +794,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckDetonateTarget, "BmGame.RPlayerController.CheckDetonateTarget");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_DetectWrongCornerTakedown;
@@ -806,7 +806,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DetectWrongCornerTakedown, "BmGame.RPlayerController.DetectWrongCornerTakedown");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsMW_DLCAvaialable;
@@ -818,7 +818,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsMW_DLCAvaialable, "BmGame.RPlayerController.IsMW_DLCAvaialable");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_MWWheelTypeForMission;
@@ -831,7 +831,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sMission, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_IsAR_DLCAvailable;
@@ -843,7 +843,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAR_DLCAvailable, "BmGame.RPlayerController.IsAR_DLCAvailable");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CloseMissionWheel;
@@ -986,7 +986,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsLoadingScreenVisible, "BmGame.RPlayerController.IsLoadingScreenVisible");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_FireSequenceGadget;
@@ -1098,7 +1098,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckThrowSmokeBomb, "BmGame.RPlayerController.CheckThrowSmokeBomb");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_TriggerCounter;
@@ -1111,7 +1111,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[5];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bCanFail, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnPlayerCombat.ETryCounterResult>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RPawnPlayerCombat.ETryCounterResult>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_CanUseAlternativeWalk;
@@ -1123,7 +1123,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanUseAlternativeWalk, "BmGame.RPlayerController.CanUseAlternativeWalk");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_TriggerVehicleTakedown;
@@ -1173,7 +1173,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsRunning, "BmGame.RPlayerController.IsRunning");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ReenableGadgetsForDamage;
@@ -1242,7 +1242,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RPawnVillain>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_MakeOmniSolid;
@@ -1296,7 +1296,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLaseredTime, "BmGame.RPlayerController.GetLaseredTime");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetZapTime;
@@ -1308,7 +1308,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetZapTime, "BmGame.RPlayerController.GetZapTime");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetStunTime;
@@ -1320,7 +1320,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStunTime, "BmGame.RPlayerController.GetStunTime");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_OnCameraUpdated;
@@ -1376,7 +1376,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_StartDoubleTeamGlideKick;
@@ -1414,7 +1414,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_GadgetNoiseEvent;
@@ -1489,7 +1489,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCharacterData, "BmGame.RPlayerController.GetCharacterData");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RAddContentPlayerCharacter>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RAddContentPlayerCharacter>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_EnterStartState;
@@ -1525,7 +1525,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSpecialDontUnpauseAfterErrorUI, "BmGame.RPlayerController.GetSpecialDontUnpauseAfterErrorUI");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_SetSpecialDontUnpauseAfterErrorUI;
@@ -1551,7 +1551,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TakedownTarget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_CanEvade;
@@ -1563,7 +1563,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanEvade, "BmGame.RPlayerController.CanEvade");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_isJoker;
@@ -1575,7 +1575,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_isJoker, "BmGame.RPlayerController.isJoker");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsHarleyQuinn;
@@ -1587,7 +1587,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsHarleyQuinn, "BmGame.RPlayerController.IsHarleyQuinn");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsRedHood;
@@ -1599,7 +1599,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsRedHood, "BmGame.RPlayerController.IsRedHood");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsBatGirl;
@@ -1611,7 +1611,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsBatGirl, "BmGame.RPlayerController.IsBatGirl");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsAzrael;
@@ -1623,7 +1623,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAzrael, "BmGame.RPlayerController.IsAzrael");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsNightwing;
@@ -1635,7 +1635,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsNightwing, "BmGame.RPlayerController.IsNightwing");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsRobin;
@@ -1647,7 +1647,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsRobin, "BmGame.RPlayerController.IsRobin");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsCatwoman;
@@ -1659,7 +1659,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsCatwoman, "BmGame.RPlayerController.IsCatwoman");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsBatman;
@@ -1671,7 +1671,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsBatman, "BmGame.RPlayerController.IsBatman");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsInBattleMode;
@@ -1683,7 +1683,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInBattleMode, "BmGame.RPlayerController.IsInBattleMode");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsPlayerLockedInBatmobile;
@@ -1695,7 +1695,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPlayerLockedInBatmobile, "BmGame.RPlayerController.IsPlayerLockedInBatmobile");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsBatmobileFakeRemoteDrive;
@@ -1707,7 +1707,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsBatmobileFakeRemoteDrive, "BmGame.RPlayerController.IsBatmobileFakeRemoteDrive");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsBatmobileRemoteDrive;
@@ -1719,7 +1719,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsBatmobileRemoteDrive, "BmGame.RPlayerController.IsBatmobileRemoteDrive");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsInBatmobile;
@@ -1731,7 +1731,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInBatmobile, "BmGame.RPlayerController.IsInBatmobile");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsBatmobile;
@@ -1743,7 +1743,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsBatmobile, "BmGame.RPlayerController.IsBatmobile");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetCharacterSkinName;
@@ -1755,7 +1755,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCharacterSkinName, "BmGame.RPlayerController.GetCharacterSkinName");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetCharacterName;
@@ -1767,7 +1767,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCharacterName, "BmGame.RPlayerController.GetCharacterName");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FName>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ScriptIsHidden;
@@ -1781,7 +1781,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Checker, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CombatCheck, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_ShowHealthAndArmour;
@@ -1836,7 +1836,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CoverMoveStartTimer;
@@ -1870,7 +1870,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 32);
     }
 
     private static BmSDK.Function __fn_CheckForCatwalkAboveTakedownTarget;
@@ -1890,7 +1890,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 132);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 132);
     }
 
     private static BmSDK.Function __fn_CheckForInvertedTakedownTarget;
@@ -1947,7 +1947,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(cas, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Spotter, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_CanDropFromCeiling;
@@ -1959,7 +1959,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanDropFromCeiling, "BmGame.RPlayerController.CanDropFromCeiling");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_StartGrateCrawlingCamera;
@@ -2068,7 +2068,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckPosition, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_CanZipAlongWire;
@@ -2082,7 +2082,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Direction, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Rope, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 20);
     }
 
     private static BmSDK.Function __fn_RoundCornerTimer;
@@ -2108,7 +2108,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Checker, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CornerRotation, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 20);
     }
 
     private static BmSDK.Function __fn_EnableCover;
@@ -2290,7 +2290,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Weapon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_IsPrimaryBatmobileFireButtonHeld;
@@ -2302,7 +2302,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPrimaryBatmobileFireButtonHeld, "BmGame.RPlayerController.IsPrimaryBatmobileFireButtonHeld");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_SuperEjectTimer;
@@ -2338,7 +2338,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AmIBeingAttackedByHeavyTank, "BmGame.RPlayerController.AmIBeingAttackedByHeavyTank");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetVehicleCombatComboReductionFactor;
@@ -2350,7 +2350,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVehicleCombatComboReductionFactor, "BmGame.RPlayerController.GetVehicleCombatComboReductionFactor");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_PopulateRadarWithAllVehicles;
@@ -2565,7 +2565,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CallBatmobile, "BmGame.RPlayerController.CallBatmobile");
         byte* paramsPtr = stackalloc byte[49];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RVehicleBatmobileBase.EBatmobilePickupMode>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RVehicleBatmobileBase.EBatmobilePickupMode>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetCallBatmobilePlayerLocation;
@@ -2577,7 +2577,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCallBatmobilePlayerLocation, "BmGame.RPlayerController.GetCallBatmobilePlayerLocation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ExecuteBatmobileRoute;
@@ -2627,8 +2627,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverrideStartLoc, paramsPtr + 44);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Roads, paramsPtr + 56);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        FinalBatmobileLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 20);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 64);
+        FinalBatmobileLocation = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 20);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 64);
     }
 
     private static BmSDK.Function __fn_CanBatmanReachFinalBatmobileLocation;
@@ -2649,7 +2649,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 24);
     }
 
     private static BmSDK.Function __fn_PlanBatmobileEmergencyRoute;
@@ -2666,8 +2666,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         System.Runtime.CompilerServices.Unsafe.SkipInit(out FinalBatmobileLocation);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FinalBatmobileLocation, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        FinalBatmobileLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 20);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 32);
+        FinalBatmobileLocation = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 20);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 32);
     }
 
     private static BmSDK.Function __fn_CallBatmobileToMeetGlide;
@@ -2681,7 +2681,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GlideLocation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlanningOnly, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RVehicleBatmobileBase.EBatmobilePickupMode>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RVehicleBatmobileBase.EBatmobilePickupMode>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_PlanBatmobileMeetUp;
@@ -2697,8 +2697,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PredictedBatmobileLocation, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AllowEmergencyRoute, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        PredictedBatmobileLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 28);
+        PredictedBatmobileLocation = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 28);
     }
 
     private static BmSDK.Function __fn_CallBatmobileToMeFallingOrGliding;
@@ -2735,7 +2735,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlanningOnly, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RVehicleBatmobileBase.EBatmobilePickupMode>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RVehicleBatmobileBase.EBatmobilePickupMode>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_GetGatmobileCallLocation;
@@ -2756,7 +2756,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 24);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 24);
     }
 
     private static BmSDK.Function __fn_ShowBatmobileIcon;
@@ -2869,7 +2869,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Batmobile, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForceSwitch, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_GetMedalColour;
@@ -2888,9 +2888,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         System.Runtime.CompilerServices.Unsafe.SkipInit(out B);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(B, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        R = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
-        G = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
-        B = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 12);
+        R = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 4);
+        G = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 8);
+        B = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 12);
         return;
     }
 
@@ -2960,7 +2960,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 24);
     }
 
     private static BmSDK.Function __fn_GetRailingTurnCapeState;
@@ -2972,7 +2972,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRailingTurnCapeState, "BmGame.RPlayerController.GetRailingTurnCapeState");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FName>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_UpdateSwingCamera;
@@ -3016,7 +3016,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_RailingModeModifyPlayerMovement;
@@ -3039,8 +3039,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        MoveDirection = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 20);
+        MoveDirection = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 20);
     }
 
     private static BmSDK.Function __fn_JumpOffRailing;
@@ -3098,7 +3098,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_TurnOffNearbyThugBlockingVolumes;
@@ -3177,7 +3177,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_FE_GetBenchmarkAverage;
@@ -3196,7 +3196,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_FE_GetBenchmarkMax;
@@ -3215,7 +3215,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_FE_GetBenchmarkMin;
@@ -3234,7 +3234,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_FE_IsBenchmarking;
@@ -3253,7 +3253,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_FE_SetBenchmarkingActive;
@@ -3305,7 +3305,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        NewIcons = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 0);
+        NewIcons = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 0);
         return;
     }
 
@@ -3366,7 +3366,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FE_GetLiveDifficulty, "BmGame.RPlayerController.FE_GetLiveDifficulty");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_FE_RestoreVibrationSettingsFromSave;
@@ -3560,7 +3560,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_DumpChallengeList;
@@ -3598,7 +3598,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_OpenHelpManual;
@@ -3635,7 +3635,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsVideoRecordEnabled, "BmGame.RPlayerController.IsVideoRecordEnabled");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_VideoRecordStop;
@@ -3809,7 +3809,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_GetRealData;
@@ -3823,7 +3823,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UserId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filename, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        Data = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<byte>>(paramsPtr + 32);
+        Data = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<byte>>(paramsPtr + 32);
         return;
     }
 
@@ -3998,7 +3998,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInCityMap, "BmGame.RPlayerController.IsInCityMap");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetPlayerRotation;
@@ -4011,7 +4011,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Axis, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_DisableMap3D;
@@ -4047,7 +4047,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCurrentStreamingOffset, "BmGame.RPlayerController.GetCurrentStreamingOffset");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetCurrentCityXOffset;
@@ -4059,7 +4059,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCurrentCityXOffset, "BmGame.RPlayerController.GetCurrentCityXOffset");
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_MapMode3D;
@@ -4083,7 +4083,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MapMode3D_InitialLocationGetBuildingMarkerPoint, "BmGame.RPlayerController.MapMode3D_InitialLocationGetBuildingMarkerPoint");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_EnableMapView;
@@ -4108,7 +4108,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsMapViewEnabled, "BmGame.RPlayerController.IsMapViewEnabled");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetObjectiveFor;
@@ -4121,7 +4121,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[92];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ItemName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_GetRiddlerTypeFor;
@@ -4134,7 +4134,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ItemName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_GetChallengeTitleFor;
@@ -4147,7 +4147,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[76];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ItemName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_GetIconAndTitleForCustomWaypoint;
@@ -4161,8 +4161,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         System.Runtime.CompilerServices.Unsafe.SkipInit(out Icon);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Icon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        Icon = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGFxMovieModularHud.ObjIcon>(paramsPtr + 0);
-        TitleStr = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 4);
+        Icon = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RGFxMovieModularHud.ObjIcon>(paramsPtr + 0);
+        TitleStr = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 4);
         return;
     }
 
@@ -4175,7 +4175,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFireCrewsTotal, "BmGame.RPlayerController.GetFireCrewsTotal");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetFireCrewsSaved;
@@ -4187,7 +4187,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFireCrewsSaved, "BmGame.RPlayerController.GetFireCrewsSaved");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetFireCrewsCurrentTier;
@@ -4199,7 +4199,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFireCrewsCurrentTier, "BmGame.RPlayerController.GetFireCrewsCurrentTier");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetFireCrewsState;
@@ -4212,7 +4212,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Id, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_SetFireCrewsCurrentTier;
@@ -4268,8 +4268,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         System.Runtime.CompilerServices.Unsafe.SkipInit(out distanceOut);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(distanceOut, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        distanceOut = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 28);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 32);
+        distanceOut = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 28);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 32);
     }
 
     private static BmSDK.Function __fn_GetDistanceMission;
@@ -4283,7 +4283,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MissionName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PlayerLocation, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 28);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 28);
     }
 
     private static BmSDK.Function __fn_GetPlayersWorldPositionMapWise;
@@ -4295,7 +4295,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPlayersWorldPositionMapWise, "BmGame.RPlayerController.GetPlayersWorldPositionMapWise");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_PlayMissionSound;
@@ -4373,7 +4373,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMissionSoundWithSpecialCasesThenPlayMissionSound, "BmGame.RPlayerController.GetMissionSoundWithSpecialCasesThenPlayMissionSound");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_TurnToObjectiveForMissionWheelDelayed;
@@ -4385,7 +4385,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TurnToObjectiveForMissionWheelDelayed, "BmGame.RPlayerController.TurnToObjectiveForMissionWheelDelayed");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_QueueObjectiveMessageMissionWheelDelayed;
@@ -4397,7 +4397,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_QueueObjectiveMessageMissionWheelDelayed, "BmGame.RPlayerController.QueueObjectiveMessageMissionWheelDelayed");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_PlayMissionSoundWithSpecialCasesOutOfWheel;
@@ -4482,7 +4482,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(A, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(B, paramsPtr + 96);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 192);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 192);
     }
 
     private static BmSDK.Function __fn_RemoveMostWantedIcon;
@@ -4538,7 +4538,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SideStoryIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ByName, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 20);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 20);
     }
 
     private static BmSDK.Function __fn_FindMostWantedIndex;
@@ -4551,7 +4551,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ByName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_FindMostWantedINIIndex;
@@ -4564,7 +4564,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ByName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_GetPipeSeparatedWaynetechUpgradeLevels;
@@ -4577,7 +4577,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ssSetupIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_GetWaynetechPointsByPercentComplete;
@@ -4591,7 +4591,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ssSetupIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Percentage, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_CalcMostWantedProgressStats;
@@ -4603,7 +4603,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalcMostWantedProgressStats, "BmGame.RPlayerController.CalcMostWantedProgressStats");
         byte* paramsPtr = stackalloc byte[76];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        StatValues = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<int>>(paramsPtr + 0);
+        StatValues = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<int>>(paramsPtr + 0);
         return;
     }
 
@@ -4618,7 +4618,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(A, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(B, paramsPtr + 96);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 192);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 192);
     }
 
     private static BmSDK.Function __fn_WriteMostWantedStats;
@@ -4692,7 +4692,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsGuideOpen;
@@ -4711,7 +4711,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsRiddlerGridComplete;
@@ -4723,7 +4723,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsRiddlerGridComplete, "BmGame.RPlayerController.IsRiddlerGridComplete");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_UI_OptionRumble;
@@ -4748,7 +4748,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetReplayId, "BmGame.RPlayerController.GetReplayId");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ClearMenuState;
@@ -4882,7 +4882,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGameStatus, "BmGame.RPlayerController.GetGameStatus");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameRI.EGameStatus>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RGameRI.EGameStatus>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_SetGameStatus;
@@ -4914,7 +4914,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_FSM_StopMovie;
@@ -4992,7 +4992,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_KillAndRestoreMemorySave;
@@ -5030,7 +5030,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsBlockStorageSaving;
@@ -5049,7 +5049,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_BlockStorageSaving;
@@ -5141,7 +5141,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AreMoreChallengesToPlay, "BmGame.RPlayerController.AreMoreChallengesToPlay");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsCampaign;
@@ -5153,7 +5153,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsCampaign, "BmGame.RPlayerController.IsCampaign");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_StartLoadingChallenge;
@@ -5181,7 +5181,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(nId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_DestroySession;
@@ -5205,7 +5205,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPrimaryLocalPlayer, "BmGame.RPlayerController.IsPrimaryLocalPlayer");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetStringForVehicleKill;
@@ -5218,7 +5218,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveType, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_GetStringForMove;
@@ -5231,7 +5231,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveType, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_ShowHudMoveDescInternal;
@@ -5407,7 +5407,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_BackscreenChangeShowFlags;
@@ -5570,7 +5570,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ReallyDoTheSave;
@@ -5632,7 +5632,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsWritingStats;
@@ -5651,7 +5651,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ResetWritingStatsCount;
@@ -5682,7 +5682,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsReturningToPressStart, "BmGame.RPlayerController.IsReturningToPressStart");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_SetReturningToPressStart;
@@ -5714,7 +5714,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsCurrentlyLoadingLevels;
@@ -5733,7 +5733,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_UnlockShowcaseVehicle;
@@ -5747,7 +5747,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(eVehicle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSilent, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_UnlockShowcaseCharacter;
@@ -5761,7 +5761,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(eCharacter, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSilent, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_UnlockConceptArt;
@@ -5775,7 +5775,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(eArt, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSilent, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_UnlockTape;
@@ -5790,7 +5790,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bVoicemail, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSilent, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_UnlockCityStory;
@@ -5804,7 +5804,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(nCityStory, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSilent, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_UnlockCharacterBio;
@@ -5818,7 +5818,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Character, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSilent, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_FE_GetActiveScreenName;
@@ -5830,7 +5830,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FE_GetActiveScreenName, "BmGame.RPlayerController.FE_GetActiveScreenName");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_FE_SetActiveScreenName;
@@ -5855,7 +5855,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsHUDVisible, "BmGame.RPlayerController.IsHUDVisible");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_OnExternalUIChanged;
@@ -5899,7 +5899,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ClearNewCharacterViewer;
@@ -5937,7 +5937,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsNewCharacterBio, "BmGame.RPlayerController.IsNewCharacterBio");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GarbageCollect;
@@ -5978,8 +5978,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        LeftStrings = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 16);
-        RightStrings = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 32);
+        LeftStrings = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 16);
+        RightStrings = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 32);
         return;
     }
 
@@ -6000,10 +6000,10 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        OutCredits = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 0);
-        Refs = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 32);
-        RefIndex = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<int>>(paramsPtr + 48);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 64);
+        OutCredits = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 0);
+        Refs = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 32);
+        RefIndex = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<int>>(paramsPtr + 48);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 64);
     }
 
     private static BmSDK.Function __fn_GetVisitedPMapsList;
@@ -6022,7 +6022,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        PMapNames = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 0);
+        PMapNames = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 0);
         return;
     }
 
@@ -6042,7 +6042,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        FlagNames = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 0);
+        FlagNames = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 0);
         return;
     }
 
@@ -6082,7 +6082,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsMoviePresent;
@@ -6102,7 +6102,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_IsLevelLoadSpecified;
@@ -6121,7 +6121,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsWBPlayUIPresent;
@@ -6140,7 +6140,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsPlayingFullScreenMovie;
@@ -6160,7 +6160,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_IsDebugFrontendAvailable;
@@ -6179,7 +6179,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsXbox;
@@ -6198,7 +6198,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsDemo;
@@ -6210,7 +6210,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsDemo, "BmGame.RPlayerController.IsDemo");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_RiddlerGridToString;
@@ -6223,7 +6223,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Bits, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_DrawProgressStatus;
@@ -6249,7 +6249,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[176];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bOutputDebug, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_CheckARMedalAchievements;
@@ -6276,7 +6276,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MatchVal, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNotMatching, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 24);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 24);
     }
 
     private static BmSDK.Function __fn_CountBytesMatching;
@@ -6291,7 +6291,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MatchVal, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNotMatching, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 24);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 24);
     }
 
     private static BmSDK.Function __fn_FE_SetCartoonMode;
@@ -6379,7 +6379,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(conv, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Line, paramsPtr + 32);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 48);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 48);
     }
 
     private static BmSDK.Function __fn_PauseExit;
@@ -6417,7 +6417,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMedal, "BmGame.RPlayerController.GetMedal");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetScore;
@@ -6429,7 +6429,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetScore, "BmGame.RPlayerController.GetScore");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsChallengeMode;
@@ -6441,7 +6441,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsChallengeMode, "BmGame.RPlayerController.IsChallengeMode");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_FE_IsFrontendSaveSet;
@@ -6460,7 +6460,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_FE_SetNeedsFrontendSave;
@@ -6577,7 +6577,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsStorageChangeHandledByMovie, "BmGame.RPlayerController.IsStorageChangeHandledByMovie");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_FE_AreNotifiesBlocked;
@@ -6596,7 +6596,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_FE_UnblockInitialNotifies;
@@ -6828,7 +6828,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsStandardCamera, "BmGame.RPlayerController.IsStandardCamera");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsPhotoModeZoomDisabled;
@@ -6840,7 +6840,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPhotoModeZoomDisabled, "BmGame.RPlayerController.IsPhotoModeZoomDisabled");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsPhotoModeMovementDisabled;
@@ -6852,7 +6852,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPhotoModeMovementDisabled, "BmGame.RPlayerController.IsPhotoModeMovementDisabled");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsPhotoModeDisabled;
@@ -6864,7 +6864,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPhotoModeDisabled, "BmGame.RPlayerController.IsPhotoModeDisabled");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsPhotoModeAccessible;
@@ -6876,7 +6876,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPhotoModeAccessible, "BmGame.RPlayerController.IsPhotoModeAccessible");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_SetPhotoQuickMode;
@@ -6915,7 +6915,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_SetRegularGamePauseFlag;
@@ -7022,7 +7022,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[88];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Riddle, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 84);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 84);
     }
 
     private static BmSDK.Function __fn_ShowRoomName;
@@ -7063,7 +7063,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForRoomName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_SpeakRiddleInRoom;
@@ -7087,7 +7087,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanIgnoreOtherSpeechToPlayRiddles, "BmGame.RPlayerController.CanIgnoreOtherSpeechToPlayRiddles");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_FindRiddleForRoom;
@@ -7100,8 +7100,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[212];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(roomName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        Riddle = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPlayerController.FRiddleData>(paramsPtr + 16);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 100);
+        Riddle = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RPlayerController.FRiddleData>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 100);
     }
 
     private static BmSDK.Function __fn_StopHUDMovie;
@@ -7226,9 +7226,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        outHours = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
-        outMins = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
-        outSecs = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 12);
+        outHours = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 4);
+        outMins = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 8);
+        outSecs = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 12);
         return;
     }
 
@@ -7302,7 +7302,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAllowBack, paramsPtr + 48);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(iMovie, paramsPtr + 52);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGFxMoviePopupRequester>(paramsPtr + 60);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RGFxMoviePopupRequester>(paramsPtr + 60);
     }
 
     private static BmSDK.Function __fn_SetBackscreenOpenParams;
@@ -7451,7 +7451,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PRI, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_GetLocalScoreInfo;
@@ -7473,10 +7473,10 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         System.Runtime.CompilerServices.Unsafe.SkipInit(out Rivals);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Rivals, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        Rating = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
-        Score = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 12);
-        Medals = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
-        Rivals = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 20);
+        Rating = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 8);
+        Score = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 12);
+        Medals = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 16);
+        Rivals = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 20);
         return;
     }
 
@@ -7491,7 +7491,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Id, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ProgressValue, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_ArePointsToSpend;
@@ -7503,7 +7503,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ArePointsToSpend, "BmGame.RPlayerController.ArePointsToSpend");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_xGetGlobalFlag;
@@ -7516,7 +7516,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FlagName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_xSetGlobalFlag;
@@ -7544,7 +7544,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(pipe_separated_flag_list, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(require_all_true_to_return_true, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 20);
     }
 
     private static BmSDK.Function __fn_GetGlobalFlag;
@@ -7564,7 +7564,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_SetGlobalFlag;
@@ -7597,7 +7597,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRoomName, "BmGame.RPlayerController.GetRoomName");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetMapName;
@@ -7609,7 +7609,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMapName, "BmGame.RPlayerController.GetMapName");
         byte* paramsPtr = stackalloc byte[56];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetTransitionMapName;
@@ -7621,7 +7621,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTransitionMapName, "BmGame.RPlayerController.GetTransitionMapName");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetPMapName;
@@ -7633,7 +7633,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPMapName, "BmGame.RPlayerController.GetPMapName");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsCityZ_L10LiftBottom;
@@ -7645,7 +7645,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsCityZ_L10LiftBottom, "BmGame.RPlayerController.IsCityZ_L10LiftBottom");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsTrackingVehicle;
@@ -7657,7 +7657,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsTrackingVehicle, "BmGame.RPlayerController.IsTrackingVehicle");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetFlagManager;
@@ -7669,7 +7669,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFlagManager, "BmGame.RPlayerController.GetFlagManager");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RFlagManager>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RFlagManager>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetRGFxGameViewportClient;
@@ -7681,7 +7681,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRGFxGameViewportClient, "BmGame.RPlayerController.GetRGFxGameViewportClient");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGFxGameViewportClient>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RGFxGameViewportClient>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Convert_EControlIconEnumToString;
@@ -7702,7 +7702,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_SetUIMouse;
@@ -7781,7 +7781,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameRI>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RGameRI>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetRGI;
@@ -7800,7 +7800,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameInfo>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RGameInfo>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsSimulating;
@@ -7812,7 +7812,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsSimulating, "BmGame.RPlayerController.IsSimulating");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsPC;
@@ -7824,7 +7824,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPC, "BmGame.RPlayerController.IsPC");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsOrbis;
@@ -7836,7 +7836,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsOrbis, "BmGame.RPlayerController.IsOrbis");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsDurango;
@@ -7848,7 +7848,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsDurango, "BmGame.RPlayerController.IsDurango");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_IsGamepadConnected;
@@ -7860,7 +7860,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Live_IsGamepadConnected, "BmGame.RPlayerController.Live_IsGamepadConnected");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_ShowGuideUI;
@@ -7916,7 +7916,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_SetInfocastMsg;
@@ -7972,7 +7972,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Live_IsDLCAvailable, "BmGame.RPlayerController.Live_IsDLCAvailable");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CheckContentExists;
@@ -7992,7 +7992,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_GetDownloadedContentCounts;
@@ -8010,10 +8010,10 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         System.Runtime.CompilerServices.Unsafe.SkipInit(out NumTotalDownloads);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NumTotalDownloads, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        NumNewDownloads = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
-        NumGotDownloads = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
-        NumTotalDownloads = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
+        NumNewDownloads = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
+        NumGotDownloads = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 4);
+        NumTotalDownloads = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_ShowDownloadUI;
@@ -8038,7 +8038,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OfferId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_ShowMarketplaceUI;
@@ -8074,7 +8074,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Live_HasDLCContentChanged, "BmGame.RPlayerController.Live_HasDLCContentChanged");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_ShowGamerCard;
@@ -8100,7 +8100,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FriendIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_Live_IsFriend;
@@ -8113,7 +8113,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FriendIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_Live_FetchMyRank;
@@ -8138,7 +8138,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LeaderboardId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_OnStatsReadMyRankComplete;
@@ -8176,7 +8176,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReadMostWantedLeaderboard, "BmGame.RPlayerController.ReadMostWantedLeaderboard");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_OnStatsReadComplete;
@@ -8215,7 +8215,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LeaderboardId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StatsFetchType, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_DropStatsFetch;
@@ -8253,7 +8253,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Live_DeleteSession, "BmGame.RPlayerController.Live_DeleteSession");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_OnGameCreated;
@@ -8282,7 +8282,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bPrivate, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bLan, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_Live_UnBindAllPlayers;
@@ -8319,7 +8319,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_Live_ReBindPlayer;
@@ -8345,7 +8345,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_Live_ShowAccountPickerUI;
@@ -8358,7 +8358,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ControllerId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_Live_GetBoundCount;
@@ -8370,7 +8370,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Live_GetBoundCount, "BmGame.RPlayerController.Live_GetBoundCount");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_IsPastInitialBinding;
@@ -8389,7 +8389,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_SetPastInitialBinding;
@@ -8466,7 +8466,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CheckActiveSaveDeviceFreeSpace;
@@ -8486,7 +8486,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_GetActiveSaveDeviceName;
@@ -8505,7 +8505,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetActiveSaveDevice;
@@ -8524,7 +8524,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_SetActiveSaveDevice;
@@ -8621,7 +8621,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_SlotWasSelected;
@@ -8640,7 +8640,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_SetSavingEnabledState;
@@ -8717,7 +8717,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_SetLastSaveSuccess;
@@ -8749,7 +8749,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetActiveSaveDeviceNameTrunc, "BmGame.RPlayerController.GetActiveSaveDeviceNameTrunc");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_CheckActiveSaveDeviceFreeSpace;
@@ -8761,7 +8761,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Live_CheckActiveSaveDeviceFreeSpace, "BmGame.RPlayerController.Live_CheckActiveSaveDeviceFreeSpace");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_IsMemoryCard;
@@ -8781,7 +8781,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_Live_IsSpecifiedDeviceValid;
@@ -8794,7 +8794,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeviceID, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_Live_IsDeviceValid;
@@ -8806,7 +8806,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Live_IsDeviceValid, "BmGame.RPlayerController.Live_IsDeviceValid");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_GetStorageSelected;
@@ -8818,7 +8818,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Live_GetStorageSelected, "BmGame.RPlayerController.Live_GetStorageSelected");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_IsStorageSelect;
@@ -8830,7 +8830,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Live_IsStorageSelect, "BmGame.RPlayerController.Live_IsStorageSelect");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ReOpenStorageSelectPrompt;
@@ -8870,7 +8870,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bRetryUI, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bCheckExists, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_Live_IsStorageSelectPending;
@@ -8889,7 +8889,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_SetStorageSelectPending;
@@ -8945,7 +8945,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckIfDLCDeviceMountStillValid, "BmGame.RPlayerController.CheckIfDLCDeviceMountStillValid");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_RemoveStorageDelegates;
@@ -9147,7 +9147,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCachedPlayerProfile, "BmGame.RPlayerController.GetCachedPlayerProfile");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineProfileSettings>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.OnlineProfileSettings>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetOnlineSetting;
@@ -9160,7 +9160,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Id, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FName>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_Live_GetDisplayName;
@@ -9172,7 +9172,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Live_GetDisplayName, "BmGame.RPlayerController.Live_GetDisplayName");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_GetNickName;
@@ -9184,7 +9184,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Live_GetNickName, "BmGame.RPlayerController.Live_GetNickName");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_OnLoginExternalUIChanged;
@@ -9234,7 +9234,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Live_BeginSignIn, "BmGame.RPlayerController.Live_BeginSignIn");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ClearLoginDelegates;
@@ -9258,7 +9258,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Live_IsSignedInOnline, "BmGame.RPlayerController.Live_IsSignedInOnline");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_IsSignedIn;
@@ -9270,7 +9270,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Live_IsSignedIn, "BmGame.RPlayerController.Live_IsSignedIn");
         byte* paramsPtr = stackalloc byte[13];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_IsSigningIn;
@@ -9282,7 +9282,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Live_IsSigningIn, "BmGame.RPlayerController.Live_IsSigningIn");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_CanShowPresenceInformation;
@@ -9294,7 +9294,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Live_CanShowPresenceInformation, "BmGame.RPlayerController.Live_CanShowPresenceInformation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_GetNPAvailState;
@@ -9306,7 +9306,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Live_GetNPAvailState, "BmGame.RPlayerController.Live_GetNPAvailState");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_CheckNpAvail;
@@ -9330,7 +9330,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Live_CanPlayOnline, "BmGame.RPlayerController.Live_CanPlayOnline");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_SetRequestOnline;
@@ -9369,7 +9369,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_CanViewProfiles;
@@ -9381,7 +9381,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Live_CanViewProfiles, "BmGame.RPlayerController.Live_CanViewProfiles");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_HandleNetworkStatusError;
@@ -9424,7 +9424,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_IsPLMRebind;
@@ -9443,7 +9443,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_SetPLMRebind;
@@ -9482,7 +9482,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameInfo.ELive_LiveError>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RGameInfo.ELive_LiveError>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_SetNetworkStatusError;
@@ -9521,7 +9521,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameInfo.ELive_LiveError>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RGameInfo.ELive_LiveError>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_SetLoginStatusError;
@@ -9560,7 +9560,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Live_SetNewDLCAvailable;
@@ -9745,7 +9745,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanPerformCornerTakedownFromCrouch, "BmGame.RPlayerController.CanPerformCornerTakedownFromCrouch");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_UpdateVentCamBelow;
@@ -9758,7 +9758,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[13];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestActor, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_StealthModeModifyPlayerMovement;
@@ -9780,8 +9780,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        MoveDirection = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 16);
+        MoveDirection = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_AmIInSoftCover;
@@ -9801,7 +9801,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_UseTunnelGrateCamera;
@@ -9814,7 +9814,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[148];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDoInputCheck, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_DoesntWantToCrouch;
@@ -9850,7 +9850,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCoverCornerType, "BmGame.RPlayerController.GetCoverCornerType");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RInventoryGadget.CoverCornerType>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RInventoryGadget.CoverCornerType>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_UpdateSilentPredLookAt;
@@ -9916,9 +9916,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        JumpDir = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
-        HitGlideVol = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RNoGlideVolume>(paramsPtr + 24);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPlayerController.JumpSpaceResult>(paramsPtr + 32);
+        JumpDir = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 12);
+        HitGlideVol = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RNoGlideVolume>(paramsPtr + 24);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RPlayerController.JumpSpaceResult>(paramsPtr + 32);
     }
 
     private static BmSDK.Function __fn_IsInHangAttackPosition;
@@ -9930,7 +9930,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInHangAttackPosition, "BmGame.RPlayerController.IsInHangAttackPosition");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_SetVantagePointCamera;
@@ -9992,7 +9992,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAllowGadgetCam, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FName>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_CanUseSlideToCover;
@@ -10004,7 +10004,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanUseSlideToCover, "BmGame.RPlayerController.CanUseSlideToCover");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CheckToDropOffLedgeForLowFloor;
@@ -10023,7 +10023,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_JustClimbedToLedge;
@@ -10055,7 +10055,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_HudPromptTimeout;
@@ -10079,7 +10079,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLedgeClimbMove, "BmGame.RPlayerController.GetLedgeClimbMove");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RSpecialMoveConfig>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RSpecialMoveConfig>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CheckDrawGrappleWaypoints;
@@ -10135,7 +10135,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_GrappleFromSmokeScreen;
@@ -10169,8 +10169,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Loc = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator>(paramsPtr + 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 136);
+        Loc = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 136);
     }
 
     private static BmSDK.Function __fn_NativeStartGrappleMovement;
@@ -10245,7 +10245,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGrappleBoostBonus, "BmGame.RPlayerController.GetGrappleBoostBonus");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetGrappleBoostUpgradeLevel;
@@ -10257,7 +10257,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGrappleBoostUpgradeLevel, "BmGame.RPlayerController.GetGrappleBoostUpgradeLevel");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IncGrappleBoostBonus;
@@ -10329,7 +10329,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartCatwomanSwingPoses, "BmGame.RPlayerController.StartCatwomanSwingPoses");
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CheckForNearbyEnemiesForLandRoll;
@@ -10341,7 +10341,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckForNearbyEnemiesForLandRoll, "BmGame.RPlayerController.CheckForNearbyEnemiesForLandRoll");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CheckToCapeGlideFromFall;
@@ -10354,7 +10354,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CanDoGlideKick, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_UpdateFallAnim;
@@ -10395,7 +10395,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_GetFallingAttackTarget;
@@ -10414,7 +10414,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RPawnVillain>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ResetFallingGravity;
@@ -10438,7 +10438,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsCriticalFallingHeight, "BmGame.RPlayerController.IsCriticalFallingHeight");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_DebugCamera2PadActivate;
@@ -10463,7 +10463,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SuppressVenomCamera, "BmGame.RPlayerController.SuppressVenomCamera");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_SuppressCombatCamera;
@@ -10475,7 +10475,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SuppressCombatCamera, "BmGame.RPlayerController.SuppressCombatCamera");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsInCombat;
@@ -10488,7 +10488,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForceCheck, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_CancelGlideAttackTimer;
@@ -10519,7 +10519,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CalculateCapeGlideAltitude;
@@ -10538,7 +10538,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_WillIHitCapeGlideTarget;
@@ -10557,7 +10557,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CapeGlideSlideOffWall;
@@ -10600,7 +10600,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 32);
     }
 
     private static BmSDK.Function __fn_ShouldIReallyLand;
@@ -10622,8 +10622,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        HitNormal = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
+        HitNormal = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 20);
     }
 
     private static BmSDK.Function __fn_FindCapeKickCameraRotation;
@@ -10642,7 +10642,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Rotator>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetAerialKickTarget;
@@ -10661,7 +10661,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.Actor>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CheckCapeGlide;
@@ -10680,7 +10680,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_BatmobileReachedDestTimer;
@@ -10941,7 +10941,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[152];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DesiredKickTarget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_InKickRange;
@@ -11042,7 +11042,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAllowGadgetCam, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FName>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_WallEvadeCamTimer;
@@ -11168,8 +11168,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        FeatureNormal = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
+        FeatureNormal = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 24);
     }
 
     private static BmSDK.Function __fn_PerchOnLedge;
@@ -11213,7 +11213,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_OverrideStealthAttackTargetWithCapeGlideTarget;
@@ -11249,7 +11249,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanGlideAttack, "BmGame.RPlayerController.CanGlideAttack");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_WantsToBeMirrored;
@@ -11262,7 +11262,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MirroredChoice, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_WantsToBeInMovementStance;
@@ -11291,7 +11291,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveDirection, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        MoveDirection = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
+        MoveDirection = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
         return;
     }
 
@@ -11316,8 +11316,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        CurrentTargets = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.BmGame.RPawnVillain>>(paramsPtr + 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 44);
+        CurrentTargets = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.BmGame.RPawnVillain>>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RPawnVillain>(paramsPtr + 44);
     }
 
     private static BmSDK.Function __fn_GetPostMatineeStanceMirrored;
@@ -11329,7 +11329,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPostMatineeStanceMirrored, "BmGame.RPlayerController.GetPostMatineeStanceMirrored");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetPostMatineeStance;
@@ -11341,7 +11341,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPostMatineeStance, "BmGame.RPlayerController.GetPostMatineeStance");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FName>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CanCallBatmobile;
@@ -11353,7 +11353,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanCallBatmobile, "BmGame.RPlayerController.CanCallBatmobile");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_TriggerSwitchPlayerEvent;
@@ -11378,7 +11378,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SwitchPlayerController, "BmGame.RPlayerController.SwitchPlayerController");
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_AllowSpecialMovePlayerSwitch;
@@ -11391,7 +11391,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Move, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_SwitchPlayerInput;
@@ -11411,7 +11411,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_ShouldIFallOffEdge;
@@ -11432,7 +11432,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_GotoStanceWithGadgetOverride;
@@ -11459,7 +11459,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnterCover, "BmGame.RPlayerController.EnterCover");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetGadgetPose;
@@ -11479,11 +11479,11 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         System.Runtime.CompilerServices.Unsafe.SkipInit(out OutCapeTransitionState);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OutCapeTransitionState, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        PoseName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
-        Mirrored = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RAnimUtil.EMirrorChoice>(paramsPtr + 8);
-        CapeState = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 12);
-        OutCapeTransitionState = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 20);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
+        PoseName = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FName>(paramsPtr + 0);
+        Mirrored = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RAnimUtil.EMirrorChoice>(paramsPtr + 8);
+        CapeState = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FName>(paramsPtr + 12);
+        OutCapeTransitionState = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FName>(paramsPtr + 20);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 28);
     }
 
     private static BmSDK.Function __fn_GetCurrentGadget;
@@ -11502,7 +11502,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RInventoryGadget>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RInventoryGadget>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetCurrentBatarang;
@@ -11514,7 +11514,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCurrentBatarang, "BmGame.RPlayerController.GetCurrentBatarang");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBatarang>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RBatarang>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ReenableLookInput;
@@ -11551,7 +11551,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsLookInputIgnored, "BmGame.RPlayerController.IsLookInputIgnored");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsMoveInputIgnored;
@@ -11563,7 +11563,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsMoveInputIgnored, "BmGame.RPlayerController.IsMoveInputIgnored");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_HangAttackTimer;
@@ -11600,7 +11600,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HelpAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_TakedownPerformedTowardsBluntTraumaAchievement;
@@ -11745,7 +11745,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanShowFailedGadget, "BmGame.RPlayerController.CanShowFailedGadget");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetWhatImDoing;
@@ -11757,7 +11757,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWhatImDoing, "BmGame.RPlayerController.GetWhatImDoing");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.Actor>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_PrematurelyEndSpottedSlowMo;
@@ -11818,7 +11818,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPlayerInSpottedSlowMo, "BmGame.RPlayerController.IsPlayerInSpottedSlowMo");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_DampAllThugRagdolls;
@@ -11875,7 +11875,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_KnightmareModeFearTakedownLostTimeout;
@@ -11935,7 +11935,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsOnCeiling, "BmGame.RPlayerController.IsOnCeiling");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsDangling;
@@ -11947,7 +11947,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsDangling, "BmGame.RPlayerController.IsDangling");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsInAir;
@@ -11959,7 +11959,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInAir, "BmGame.RPlayerController.IsInAir");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_WillEndUpInState;
@@ -11972,7 +11972,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StateName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_SpawnFinishedCombatMove;
@@ -11996,7 +11996,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckAndResetForCinematicCam, "BmGame.RPlayerController.CheckAndResetForCinematicCam");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ClearTriggerCinematicCam;
@@ -12039,7 +12039,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Bug;
@@ -12071,7 +12071,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_UsingPS3GadgetControls;
@@ -12083,7 +12083,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UsingPS3GadgetControls, "BmGame.RPlayerController.UsingPS3GadgetControls");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsAtStreetLevel;
@@ -12095,7 +12095,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAtStreetLevel, "BmGame.RPlayerController.IsAtStreetLevel");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsOnRooftops;
@@ -12107,7 +12107,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsOnRooftops, "BmGame.RPlayerController.IsOnRooftops");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_OverrideGrappleFireMove;
@@ -12119,7 +12119,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverrideGrappleFireMove, "BmGame.RPlayerController.OverrideGrappleFireMove");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RSpecialMoveConfig>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RSpecialMoveConfig>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_AllowOffScreenGrapplePoints;
@@ -12131,7 +12131,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowOffScreenGrapplePoints, "BmGame.RPlayerController.AllowOffScreenGrapplePoints");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CheckSpaceOnEithSide;
@@ -12154,8 +12154,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        LeftClear = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
-        RightClear = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
+        LeftClear = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
+        RightClear = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 4);
         return;
     }
 
@@ -12182,7 +12182,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UpgradeFlag, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_CapeGlideTargetOutOfGlideKickAngle;
@@ -12201,7 +12201,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_QuickGadgetTimer;
@@ -12275,7 +12275,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(QuickGadget, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverrideCombatMove, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_FireQuickGadgetType;
@@ -12302,7 +12302,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GadgetType, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_PrepareForPlayerSwitch;
@@ -12430,8 +12430,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        HitLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 44);
+        HitLocation = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 44);
     }
 
     private static BmSDK.Function __fn_TraceWaterVolume;
@@ -12454,8 +12454,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        HitLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 36);
+        HitLocation = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 36);
     }
 
     private static BmSDK.Function __fn_GetStealthPose;
@@ -12467,7 +12467,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStealthPose, "BmGame.RPlayerController.GetStealthPose");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FName>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetRailingLeftTurnAnimWithoutGadgetCheck;
@@ -12479,7 +12479,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRailingLeftTurnAnimWithoutGadgetCheck, "BmGame.RPlayerController.GetRailingLeftTurnAnimWithoutGadgetCheck");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FName>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetRailingRightTurnAnimWithoutGadgetCheck;
@@ -12491,7 +12491,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRailingRightTurnAnimWithoutGadgetCheck, "BmGame.RPlayerController.GetRailingRightTurnAnimWithoutGadgetCheck");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FName>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetRailingLeftTurnAnim;
@@ -12503,7 +12503,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRailingLeftTurnAnim, "BmGame.RPlayerController.GetRailingLeftTurnAnim");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FName>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetRailingRightTurnAnim;
@@ -12515,7 +12515,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRailingRightTurnAnim, "BmGame.RPlayerController.GetRailingRightTurnAnim");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FName>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsRailingOrWire;
@@ -12527,7 +12527,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsRailingOrWire, "BmGame.RPlayerController.IsRailingOrWire");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetRailingPosition;
@@ -12540,7 +12540,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckPos, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_GetPerchRotation;
@@ -12552,7 +12552,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPerchRotation, "BmGame.RPlayerController.GetPerchRotation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Rotator>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_NotifyEncroachedBy;
@@ -12629,7 +12629,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetOtherPlayer, "BmGame.RPlayerController.GetOtherPlayer");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPlayerController>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RPlayerController>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetMultiplayerIndex;
@@ -12641,7 +12641,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMultiplayerIndex, "BmGame.RPlayerController.GetMultiplayerIndex");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetPlayerViewPoint;
@@ -12657,8 +12657,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         System.Runtime.CompilerServices.Unsafe.SkipInit(out out_Rotation);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(out_Rotation, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        out_Location = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
-        out_Rotation = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 12);
+        out_Location = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
+        out_Rotation = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Rotator>(paramsPtr + 12);
         return;
     }
 
@@ -12671,7 +12671,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFOVAngle, "BmGame.RPlayerController.GetFOVAngle");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ClientSetViewTarget;
@@ -12744,7 +12744,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetJammedDetectiveHud;
@@ -12756,7 +12756,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetJammedDetectiveHud, "BmGame.RPlayerController.GetJammedDetectiveHud");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.GFxUI.SwfMovie>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.GFxUI.SwfMovie>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_FindDefaultJammedDetectiveHud;
@@ -12775,7 +12775,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.GFxUI.SwfMovie>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.GFxUI.SwfMovie>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_WillBossAllowCamera;
@@ -12788,7 +12788,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpecialMove, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_IsRailingMode;
@@ -12800,7 +12800,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsRailingMode, "BmGame.RPlayerController.IsRailingMode");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetRailingAlignedAimDir;
@@ -12821,8 +12821,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        AimDirection = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
+        AimDirection = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_CheckForDiveOffEdge;
@@ -12842,7 +12842,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_OverrideEvadeMove;
@@ -12855,7 +12855,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[181];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Direction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_UpdateAudioForSmokeScreens;
@@ -12957,7 +12957,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindRiddlerProgressEvent, "BmGame.RPlayerController.FindRiddlerProgressEvent");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_RiddlerProgressAdvancedRobot;
@@ -13135,7 +13135,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldCorrectForClientError, "BmGame.RPlayerController.ShouldCorrectForClientError");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_BMOldServerMove;
@@ -13166,7 +13166,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         System.Runtime.CompilerServices.Unsafe.SkipInit(out MoveVelocity);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MoveVelocity, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        MoveVelocity = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 4);
+        MoveVelocity = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 4);
         return;
     }
 
@@ -13330,7 +13330,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanShowHints, "BmGame.RPlayerController.CanShowHints");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CanShowAutomaticTutorialText;
@@ -13349,7 +13349,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CanShowTutorialText;
@@ -13368,7 +13368,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetGroundTakedownPromptPriority;
@@ -13382,8 +13382,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         System.Runtime.CompilerServices.Unsafe.SkipInit(out TempTutorial);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TempTutorial, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        TempTutorial = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPersistentData.ETutorialType>(paramsPtr + 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
+        TempTutorial = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RPersistentData.ETutorialType>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_PerformShowFloorPickupCheck;
@@ -13395,7 +13395,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PerformShowFloorPickupCheck, "BmGame.RPlayerController.PerformShowFloorPickupCheck");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CanShowFloorPickupPrompt;
@@ -13407,7 +13407,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanShowFloorPickupPrompt, "BmGame.RPlayerController.CanShowFloorPickupPrompt");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ShouldShowTutorial;
@@ -13420,7 +13420,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewTut, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_TutorialActionAchieved;
@@ -13509,7 +13509,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InvMan, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(joypad_index, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_CanStagger;
@@ -13521,7 +13521,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanStagger, "BmGame.RPlayerController.CanStagger");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_UpdateCityWaterVolumes;
@@ -13582,7 +13582,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPoint, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_GetCurrentHidePoint;
@@ -13594,7 +13594,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCurrentHidePoint, "BmGame.RPlayerController.GetCurrentHidePoint");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RHidePoint>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RHidePoint>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetPendingHidePoint;
@@ -13606,7 +13606,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPendingHidePoint, "BmGame.RPlayerController.GetPendingHidePoint");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RHidePoint>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RHidePoint>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CreateRope;
@@ -13681,7 +13681,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ItemType, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Index, paramsPtr + 32);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 48);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 48);
     }
 
     private static BmSDK.Function __fn_RiddlerRevealNearMeFromKismet;
@@ -13694,7 +13694,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[80];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Count, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_RiddlerRevealNearMe;
@@ -13766,7 +13766,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_DrawCornerPoints;
@@ -13815,7 +13815,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInvestigateVisionMode, "BmGame.RPlayerController.IsInvestigateVisionMode");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_TurnOnInteractDebugging;
@@ -13914,7 +13914,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanExitToCinematicMode, "BmGame.RPlayerController.CanExitToCinematicMode");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_TriggerBlockBreaker;
@@ -13962,7 +13962,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanPlayDamageOverlay, "BmGame.RPlayerController.CanPlayDamageOverlay");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_SetForensicsInvestigator;
@@ -14131,8 +14131,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        MoveDirection = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 16);
+        MoveDirection = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_SkipCutscene;
@@ -14157,7 +14157,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TrySkipMatineeDialogueLine, "BmGame.RPlayerController.TrySkipMatineeDialogueLine");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_SkipCutsceneTriggered;
@@ -14181,7 +14181,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsCutsceneImmediatelySkippable, "BmGame.RPlayerController.IsCutsceneImmediatelySkippable");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_SkipCutsceneFadedDown;
@@ -14292,9 +14292,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         System.Runtime.CompilerServices.Unsafe.SkipInit(out FearTakedownTypeIfDifferentFromSilentTakedown);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FearTakedownTypeIfDifferentFromSilentTakedown, paramsPtr + 1);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        Type = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameInfo.EStealthTakeDownStages>(paramsPtr + 0);
-        FearTakedownTypeIfDifferentFromSilentTakedown = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameInfo.EStealthTakeDownStages>(paramsPtr + 1);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 4);
+        Type = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RGameInfo.EStealthTakeDownStages>(paramsPtr + 0);
+        FearTakedownTypeIfDifferentFromSilentTakedown = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RGameInfo.EStealthTakeDownStages>(paramsPtr + 1);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_GetVehicleTakedownPrompt;
@@ -14306,7 +14306,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetVehicleTakedownPrompt, "BmGame.RPlayerController.GetVehicleTakedownPrompt");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_AddTakedownPrompt;
@@ -14319,7 +14319,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[76];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HelpPrompt, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_CheckInterrogateTutorial;
@@ -14364,7 +14364,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bCheckValidContext, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_IgnoreHitReaction;
@@ -14376,7 +14376,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IgnoreHitReaction, "BmGame.RPlayerController.IgnoreHitReaction");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_OverrideHitReaction;
@@ -14389,7 +14389,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[252];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DmgInfo, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 248);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 248);
     }
 
     private static BmSDK.Function __fn_YankMe;
@@ -14483,7 +14483,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetYawAnchorRotation, "BmGame.RPlayerController.GetYawAnchorRotation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Rotator>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CanAimGadget;
@@ -14496,7 +14496,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Gadget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_ReleasedContextSensitive;
@@ -14568,7 +14568,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldAutoAdjustCamera, "BmGame.RPlayerController.ShouldAutoAdjustCamera");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ImAboutToFallOffAnEdge;
@@ -14581,7 +14581,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[136];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 132);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 132);
     }
 
     private static BmSDK.Function __fn_GetPostLandPose;
@@ -14593,7 +14593,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPostLandPose, "BmGame.RPlayerController.GetPostLandPose");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FName>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CanAimGrapple;
@@ -14605,7 +14605,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanAimGrapple, "BmGame.RPlayerController.CanAimGrapple");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CanUseGrapple;
@@ -14617,7 +14617,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanUseGrapple, "BmGame.RPlayerController.CanUseGrapple");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_DropOffDamageEffect;
@@ -14799,7 +14799,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsUnderFire, "BmGame.RPlayerController.IsUnderFire");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GroundTakedownTutorialOff;
@@ -14942,7 +14942,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BatarangCanTargetOffscreen, "BmGame.RPlayerController.BatarangCanTargetOffscreen");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsInExternalCamera;
@@ -14962,7 +14962,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_DecrementCrawlSpaceCount;
@@ -15035,7 +15035,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Rescue, "BmGame.RPlayerController.Rescue");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_EnableHideMove;
@@ -15110,7 +15110,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTunnelGrateImUnder, "BmGame.RPlayerController.GetTunnelGrateImUnder");
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RTunnelGrateBase>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RTunnelGrateBase>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_AmIUnderATunnelGrate;
@@ -15123,7 +15123,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckForCamera, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_GadgetChanged;
@@ -15147,7 +15147,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanCycleGadgets, "BmGame.RPlayerController.CanCycleGadgets");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_DontQuickThrowBatarang;
@@ -15232,7 +15232,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Gadget, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_SelectGadget;
@@ -15406,7 +15406,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OnlyIfThisFlagSet, paramsPtr + 36);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ButNotIfThisFlagSet, paramsPtr + 52);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        TheArray = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 0);
+        TheArray = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.FString>>(paramsPtr + 0);
         return;
     }
 
@@ -15421,7 +15421,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OnlyIfThisFlagSet, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ButNotIfThisFlagSet, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 32);
     }
 
     private static BmSDK.Function __fn_AutoSelectRandomDeathMovie;
@@ -15435,7 +15435,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Killer, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageType, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_AutoSelectEmptyBatmobileDeath;
@@ -15447,7 +15447,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AutoSelectEmptyBatmobileDeath, "BmGame.RPlayerController.AutoSelectEmptyBatmobileDeath");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CheckForDeathMovieRepeat;
@@ -15530,7 +15530,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBatarangLaunchPos, "BmGame.RPlayerController.GetBatarangLaunchPos");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CanAutoFireBatarang;
@@ -15542,7 +15542,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanAutoFireBatarang, "BmGame.RPlayerController.CanAutoFireBatarang");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_UnForcePawnRotationToFollowCamera;
@@ -15613,8 +15613,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        OutLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 28);
-        OutRotation = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 40);
+        OutLocation = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 28);
+        OutRotation = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Rotator>(paramsPtr + 40);
         return;
     }
 
@@ -15643,8 +15643,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Loc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 80);
+        Loc = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 80);
     }
 
     private static BmSDK.Function __fn_GetTimeOfLastRagdollNotify;
@@ -15664,7 +15664,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_GetThugStartLocationForTakedown;
@@ -15692,8 +15692,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        vOutPosition = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
-        rOutRotation = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 12);
+        vOutPosition = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
+        rOutRotation = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Rotator>(paramsPtr + 12);
         return;
     }
 
@@ -15722,8 +15722,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        animLoc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
-        AnimRot = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 12);
+        animLoc = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
+        AnimRot = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Rotator>(paramsPtr + 12);
         return;
     }
 
@@ -15747,7 +15747,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.GameObject.FBox>(paramsPtr + 24);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.GameObject.FBox>(paramsPtr + 24);
     }
 
     private static BmSDK.Function __fn_FindFreeSpot;
@@ -15770,8 +15770,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        SpotLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
+        SpotLocation = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 28);
     }
 
     private static BmSDK.Function __fn_DoesTargetPassAllTheWierdSpecialisedTakedownChecks;
@@ -15791,7 +15791,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_CheckTargetBehindGrate;
@@ -15811,7 +15811,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_CheckTargetAboveCwFlipGrate;
@@ -15830,7 +15830,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CheckTargetAboveGrate;
@@ -15852,7 +15852,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_CheckAboveTargetBasicChecks;
@@ -15875,7 +15875,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 36);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 36);
     }
 
     private static BmSDK.Function __fn_CheckAboveTargetBelow;
@@ -15901,7 +15901,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 56);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 56);
     }
 
     private static BmSDK.Function __fn_CheckAboveTargetInFront;
@@ -15924,7 +15924,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 36);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 36);
     }
 
     private static BmSDK.Function __fn_CheckInterrogationTargetNative;
@@ -15950,8 +15950,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        AttackCheckPos = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 24);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 36);
+        AttackCheckPos = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 24);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 36);
     }
 
     private static BmSDK.Function __fn_CheckStealthAttackTargetNative;
@@ -15988,10 +15988,10 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        AttackCheckPos = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 28);
-        BarrierLocator = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator>(paramsPtr + 48);
-        FractureWall = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 188);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 208);
+        AttackCheckPos = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 28);
+        BarrierLocator = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator>(paramsPtr + 48);
+        FractureWall = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.Actor>(paramsPtr + 188);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 208);
     }
 
     private static BmSDK.Function __fn_FindDoubleStealthAttackTargetNative;
@@ -16027,11 +16027,11 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        AttackSearchPos = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
-        AttackCheckPos = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 24);
-        Villain1 = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 52);
-        Villain2 = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 60);
-        FractureWall = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 68);
+        AttackSearchPos = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
+        AttackCheckPos = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 24);
+        Villain1 = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RPawnVillain>(paramsPtr + 52);
+        Villain2 = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RPawnVillain>(paramsPtr + 60);
+        FractureWall = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.Actor>(paramsPtr + 68);
         return;
     }
 
@@ -16063,10 +16063,10 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        AttackSearchPos = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
-        AttackCheckPos = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 16);
-        FractureWall = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 48);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 60);
+        AttackSearchPos = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
+        AttackCheckPos = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 16);
+        FractureWall = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.Actor>(paramsPtr + 48);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RPawnVillain>(paramsPtr + 60);
     }
 
     private static BmSDK.Function __fn_GetFractureWallBase;
@@ -16090,8 +16090,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        PointA = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
-        PointB = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 20);
+        PointA = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 8);
+        PointB = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 20);
         return;
     }
 
@@ -16121,8 +16121,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         System.Runtime.CompilerServices.Unsafe.SkipInit(out Target2);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target2, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        Target1 = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 0);
-        Target2 = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 8);
+        Target1 = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RPawnVillain>(paramsPtr + 0);
+        Target2 = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RPawnVillain>(paramsPtr + 8);
         return;
     }
 
@@ -16135,7 +16135,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanShowFloorTakedownPrompt, "BmGame.RPlayerController.CanShowFloorTakedownPrompt");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetAllowFloorTakedown;
@@ -16147,7 +16147,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAllowFloorTakedown, "BmGame.RPlayerController.GetAllowFloorTakedown");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ActivateSilentPredatorEffect;
@@ -16186,7 +16186,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowDoubleStealthAttack, "BmGame.RPlayerController.AllowDoubleStealthAttack");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_AllowStealthAttack;
@@ -16198,7 +16198,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowStealthAttack, "BmGame.RPlayerController.AllowStealthAttack");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetAttackNeedsReachCheck;
@@ -16210,7 +16210,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAttackNeedsReachCheck, "BmGame.RPlayerController.GetAttackNeedsReachCheck");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetAttackTestLocation;
@@ -16222,7 +16222,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAttackTestLocation, "BmGame.RPlayerController.GetAttackTestLocation");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetAttackDoubleTakedownDistance;
@@ -16234,7 +16234,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAttackDoubleTakedownDistance, "BmGame.RPlayerController.GetAttackDoubleTakedownDistance");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetSilentTakedownAttackRadius;
@@ -16246,7 +16246,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSilentTakedownAttackRadius, "BmGame.RPlayerController.GetSilentTakedownAttackRadius");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetSecondTargetAttackRadius;
@@ -16258,7 +16258,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSecondTargetAttackRadius, "BmGame.RPlayerController.GetSecondTargetAttackRadius");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetAttackRadius;
@@ -16270,7 +16270,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAttackRadius, "BmGame.RPlayerController.GetAttackRadius");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetDoubleAttackLocation;
@@ -16282,7 +16282,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDoubleAttackLocation, "BmGame.RPlayerController.GetDoubleAttackLocation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetAttackLocation;
@@ -16294,7 +16294,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAttackLocation, "BmGame.RPlayerController.GetAttackLocation");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CancelGadget;
@@ -16487,7 +16487,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckWhetherLevelupAllowed, "BmGame.RPlayerController.CheckWhetherLevelupAllowed");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_LevelUpImminent;
@@ -16993,7 +16993,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        out_ViewRotation = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 4);
+        out_ViewRotation = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Rotator>(paramsPtr + 4);
         return;
     }
 
@@ -17016,7 +17016,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        MoveDirection = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 4);
+        MoveDirection = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 4);
         return;
     }
 
@@ -17043,7 +17043,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStealthAttackType, "BmGame.RPlayerController.GetStealthAttackType");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPlayerController.StealthAttackType>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RPlayerController.StealthAttackType>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_SetOcclusion;
@@ -17124,7 +17124,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bOverrideCurrentMove, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_DoubleTapGrabTimeout;
@@ -17174,9 +17174,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        X = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
-        Y = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
-        Z = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 24);
+        X = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
+        Y = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 12);
+        Z = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 24);
         return;
     }
 
@@ -17343,7 +17343,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TryToStartCombatTakeDown, "BmGame.RPlayerController.TryToStartCombatTakeDown");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ServerReplicateTakedownNextStage;
@@ -17393,7 +17393,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTakedownDamageType, "BmGame.RPlayerController.GetTakedownDamageType");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Class>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Class>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ClientDoStealthTakeDown;
@@ -17435,7 +17435,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TryTriggerInterrogation, "BmGame.RPlayerController.TryTriggerInterrogation");
         byte* paramsPtr = stackalloc byte[145];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsInterrogationLoaded;
@@ -17447,7 +17447,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInterrogationLoaded, "BmGame.RPlayerController.IsInterrogationLoaded");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsSafeToInterrogate;
@@ -17459,7 +17459,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsSafeToInterrogate, "BmGame.RPlayerController.IsSafeToInterrogate");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_AreAnyCombatPawnsBlockingInterrogation;
@@ -17473,8 +17473,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         System.Runtime.CompilerServices.Unsafe.SkipInit(out ClosestPawn);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClosestPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        ClosestPawn = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        ClosestPawn = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RPawnVillain>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_UpdateInterrogatablePredatorThug;
@@ -17518,9 +17518,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        ClosestDist = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 16);
-        ClosestPawn = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 20);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
+        ClosestDist = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 16);
+        ClosestPawn = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RPawnVillain>(paramsPtr + 20);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 32);
     }
 
     private static BmSDK.Function __fn_IsValidInterrogationContext;
@@ -17532,7 +17532,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsValidInterrogationContext, "BmGame.RPlayerController.IsValidInterrogationContext");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetCM;
@@ -17544,7 +17544,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCM, "BmGame.RPlayerController.GetCM");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMCombatManager>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RBMCombatManager>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_TriggerStealthTakeDown;
@@ -17558,7 +17558,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Victim, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Victim2, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_GetTakedownInfo;
@@ -17570,7 +17570,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTakedownInfo, "BmGame.RPlayerController.GetTakedownInfo");
         byte* paramsPtr = stackalloc byte[72];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnPlayer.FPlayerTakedownInfo>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RPawnPlayer.FPlayerTakedownInfo>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_TryPickPocket;
@@ -17583,7 +17583,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Victim, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_IsPickPocketTarget;
@@ -17596,7 +17596,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Victim, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_TryToStartStealthTakeDown;
@@ -17615,7 +17615,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDualTeamTakedown, paramsPtr + 56);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bComboFearTakedown, paramsPtr + 60);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 64);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 64);
     }
 
     private static BmSDK.Function __fn_BaseTryToStartStealthTakeDown;
@@ -17634,7 +17634,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDualTeamTakedown, paramsPtr + 56);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bComboFearTakedown, paramsPtr + 60);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 64);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 64);
     }
 
     private static BmSDK.Function __fn_ChooseTakedown;
@@ -17650,8 +17650,8 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         System.Runtime.CompilerServices.Unsafe.SkipInit(out FearTakedownTypeIfDifferentFromSilentTakedown);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FearTakedownTypeIfDifferentFromSilentTakedown, paramsPtr + 36);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        FearTakedownTypeIfDifferentFromSilentTakedown = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameInfo.EStealthTakeDownStages>(paramsPtr + 36);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameInfo.EStealthTakeDownStages>(paramsPtr + 37);
+        FearTakedownTypeIfDifferentFromSilentTakedown = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RGameInfo.EStealthTakeDownStages>(paramsPtr + 36);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RGameInfo.EStealthTakeDownStages>(paramsPtr + 37);
     }
 
     private static BmSDK.Function __fn_ChooseAboveTakedown;
@@ -17664,7 +17664,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Info, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameInfo.EStealthTakeDownStages>(paramsPtr + 28);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RGameInfo.EStealthTakeDownStages>(paramsPtr + 28);
     }
 
     private static BmSDK.Function __fn_SpawnTakedownAgainst;
@@ -17680,7 +17680,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSpawningNextStage, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bFearTakedown, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RStealthTakeDownStage>(paramsPtr + 20);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RStealthTakeDownStage>(paramsPtr + 20);
     }
 
     private static BmSDK.Function __fn_TryToStartBossTakeDown;
@@ -17694,7 +17694,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Victim, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(takedown, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_ForceSearch;
@@ -17730,7 +17730,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckForDelayedPause, "BmGame.RPlayerController.CheckForDelayedPause");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ActualPause;
@@ -17754,7 +17754,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanPause, "BmGame.RPlayerController.CanPause");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Pause;
@@ -17802,7 +17802,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldBeDodged, "BmGame.RPlayerController.ShouldBeDodged");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_TriggerFootstepReaction;
@@ -17951,7 +17951,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 36);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 36);
     }
 
     private static BmSDK.Function __fn_SetMetricsPopupEnabled;
@@ -17990,7 +17990,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_SetMetricsEnabled;
@@ -18029,7 +18029,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CheatBatmobileSkinRepossess;
@@ -18284,7 +18284,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGauntletProjector>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RGauntletProjector>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CreateLocalCharacterLight;
@@ -18303,7 +18303,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.LightComponent>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.LightComponent>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_PostBeginPlay;
@@ -18405,7 +18405,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(QuickfireKey, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BaseStr, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 24);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 24);
     }
 
     private static BmSDK.Function __fn_BuildPromptString;
@@ -18421,7 +18421,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Connector, paramsPtr + 56);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UsePrimary, paramsPtr + 72);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 76);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 76);
     }
 
     private static BmSDK.Function __fn_UpdateBatmanPrompts;
@@ -18892,7 +18892,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[64];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocSting, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_ResetRedHoodBindsToDefault;
@@ -19121,7 +19121,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AcceptButton, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<byte>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<byte>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_ResetForensicPP;
@@ -19215,7 +19215,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSaveGameName, "BmGame.RPlayerController.GetSaveGameName");
         byte* paramsPtr = stackalloc byte[60];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetSaveGameNameIndex;
@@ -19227,7 +19227,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSaveGameNameIndex, "BmGame.RPlayerController.GetSaveGameNameIndex");
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetDebugSaveDescWithChapter;
@@ -19240,7 +19240,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[76];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DSGD, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 36);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 36);
     }
 
     private static BmSDK.Function __fn_GetDebugSaveDesc;
@@ -19253,7 +19253,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[120];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DSGD, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 36);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 36);
     }
 
     private static BmSDK.Function __fn_BankXPForSave;
@@ -20057,7 +20057,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_SaveGame;
@@ -20079,7 +20079,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 24);
     }
 
     private static BmSDK.Function __fn_LoadGame;
@@ -20100,7 +20100,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 32);
     }
 
     private static BmSDK.Function __fn_DelayedSavePoll;
@@ -20138,7 +20138,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RSaveGameManager>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RSaveGameManager>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CombatTick;
@@ -20206,7 +20206,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WasGrappleUsedRecently, "BmGame.RPlayerController.WasGrappleUsedRecently");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_WasGadgetUsedRecently;
@@ -20218,7 +20218,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WasGadgetUsedRecently, "BmGame.RPlayerController.WasGadgetUsedRecently");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_EnemyDied;
@@ -20297,7 +20297,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanReplenishHealth, "BmGame.RPlayerController.CanReplenishHealth");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_HideHealthBar;
@@ -20345,7 +20345,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsMaxHealth, "BmGame.RPlayerController.IsMaxHealth");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ShowHealthBar;
@@ -20430,7 +20430,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMaxHealth, "BmGame.RPlayerController.GetMaxHealth");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ShowCharacterNameAndHoldOnscreen;
@@ -20542,7 +20542,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowedToUseIteractableItems, "BmGame.RPlayerController.AllowedToUseIteractableItems");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CanEnterCrimeScene;
@@ -20554,7 +20554,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanEnterCrimeScene, "BmGame.RPlayerController.CanEnterCrimeScene");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_TryFloorPickupThug;
@@ -20567,7 +20567,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bOverrideCurrentMove, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_CanDoCombat;
@@ -20581,7 +20581,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckForEvade, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDebugOutput, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_UpdateFlashPP;
@@ -20645,7 +20645,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsMatineePlaing, "BmGame.RPlayerController.IsMatineePlaing");
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_NotifyDirectorControl;
@@ -20694,9 +20694,9 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        IILocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
-        LongRage = BmSDK.Framework.MarshalUtil.ToManaged<byte>(paramsPtr + 12);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 16);
+        IILocation = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
+        LongRage = BmSDK.Framework.MarshalUtil.ToManagedParam<byte>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.Actor>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_CanReachItem;
@@ -20709,7 +20709,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[28];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckActor, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_CheckInteractableItem;
@@ -20733,12 +20733,12 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Priority, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bLongRange, paramsPtr + 36);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        LocationOffset = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
-        HeightRange = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 20);
-        Range2D = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 24);
-        FovRange = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 28);
-        Priority = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 32);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 40);
+        LocationOffset = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 8);
+        HeightRange = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 20);
+        Range2D = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 24);
+        FovRange = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 28);
+        Priority = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 32);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 40);
     }
 
     private static BmSDK.Function __fn_CheckForInteractableItem;
@@ -20776,7 +20776,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MarkerName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RObjectiveMarker>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RObjectiveMarker>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_GetIconNameFromObjectiveName;
@@ -20790,7 +20790,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ObjectiveName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ObjectiveType, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 32);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 32);
     }
 
     private static BmSDK.Function __fn_GetChallengeDisplayStringFromWaypointName;
@@ -20803,7 +20803,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[48];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WaypointName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_CheckMapItemMmtFlag;
@@ -20817,7 +20817,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(marker_name, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TheFlag, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 20);
     }
 
     private static BmSDK.Function __fn_GetOverworldHintRange;
@@ -20830,7 +20830,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(marker_name, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_GetMapItemIndex;
@@ -20843,7 +20843,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(marker_name, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_ShouldSuppressMapItemBatSignal;
@@ -20856,7 +20856,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(marker_name, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_ShouldPlaceMapItemExactly;
@@ -20869,7 +20869,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(marker_name, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_DrawPlayerWaypoint;
@@ -20905,7 +20905,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCurrentObjectiveMissionName, "BmGame.RPlayerController.GetCurrentObjectiveMissionName");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CurrentMissionChanged;
@@ -20968,7 +20968,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckMarkerLogic, "BmGame.RPlayerController.CheckMarkerLogic");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_SetWaypointProximityThreshold;
@@ -21137,7 +21137,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Target, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_CancelFearTakedown;
@@ -21168,7 +21168,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPerformingFearTakedown, "BmGame.RPlayerController.IsPerformingFearTakedown");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_HideFearTakedownRechargeTutorial;
@@ -21204,7 +21204,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMaximumNumberOfFearTakedowns, "BmGame.RPlayerController.GetMaximumNumberOfFearTakedowns");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ResetNumberOfRemainingFearTakedownsToNone;
@@ -21261,7 +21261,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_DoesPlayerHaveEnoughEnergyForAFearTakedown;
@@ -21280,7 +21280,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_SpendFearTakedown;
@@ -21319,7 +21319,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ResetRelevanceAndClearOutHighlightedFearTakedownTargets;
@@ -21471,7 +21471,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsBoundController, "BmGame.RPlayerController.IsBoundController");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_MonitorGamerTagForChanges;
@@ -21508,7 +21508,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UseAimAt, "BmGame.RPlayerController.UseAimAt");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_MakeBatmanLookAtInterestingItems;
@@ -21534,7 +21534,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bReset, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_MakeBatmanLookAtInteractableItems;
@@ -21562,7 +21562,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Starter, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpecialMoveStateName, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_GetProjectileHelpPrompt;
@@ -21600,7 +21600,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanShowGrappleBoostPrompt, "BmGame.RPlayerController.CanShowGrappleBoostPrompt");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_AutoSetBattleModeOpacity;
@@ -21673,7 +21673,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsLowUrgencyOpenWheelPromptAllowed, "BmGame.RPlayerController.IsLowUrgencyOpenWheelPromptAllowed");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_TickLowUrgencyOpenWheelLogic;
@@ -21845,7 +21845,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DrawHUDLines, "BmGame.RPlayerController.DrawHUDLines");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_AutoSelectBatarang;
@@ -21991,7 +21991,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsScanModeActive, "BmGame.RPlayerController.IsScanModeActive");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetInteractIcon;
@@ -22003,7 +22003,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetInteractIcon, "BmGame.RPlayerController.GetInteractIcon");
         byte* paramsPtr = stackalloc byte[2];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RHUDPrompt.EControlIcon>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RHUDPrompt.EControlIcon>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ClientConfirmInteractableItem;
@@ -22041,7 +22041,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerInteractableItem, "BmGame.RPlayerController.TriggerInteractableItem");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_InteractableItemAvailableToUse;
@@ -22053,7 +22053,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InteractableItemAvailableToUse, "BmGame.RPlayerController.InteractableItemAvailableToUse");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsCrouched;
@@ -22065,7 +22065,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsCrouched, "BmGame.RPlayerController.IsCrouched");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_AllowThisInteractableItem;
@@ -22078,7 +22078,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(A, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_IsPlayerInvisibleToHelicopters;
@@ -22091,7 +22091,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HelicopterSeesThroughSmoke, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_TriggerInterrogateStartedEvent;
@@ -22116,7 +22116,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInterrogating, "BmGame.RPlayerController.IsInterrogating");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_SetInterrogationInvisibleToHelicopters;
@@ -22155,7 +22155,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindAggroEvent, "BmGame.RPlayerController.FindAggroEvent");
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_SetCurrentAggressiveHelicopter;
@@ -22202,7 +22202,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_HelicopterFlightControlNative;
@@ -22285,7 +22285,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldChangeToScanMode, "BmGame.RPlayerController.ShouldChangeToScanMode");
         byte* paramsPtr = stackalloc byte[13];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_SelectForensicModeReleased;
@@ -22347,7 +22347,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestVis, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BestVis, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameInfo.FVisibilityResult>(paramsPtr + 40);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RGameInfo.FVisibilityResult>(paramsPtr + 40);
     }
 
     private static BmSDK.Function __fn_ResetVisStruct;
@@ -22360,7 +22360,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[40];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestVis, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGameInfo.FVisibilityResult>(paramsPtr + 20);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RGameInfo.FVisibilityResult>(paramsPtr + 20);
     }
 
     private static BmSDK.Function __fn_TakePhoto;
@@ -22384,7 +22384,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PushPhotoToHeavyTankScan, "BmGame.RPlayerController.PushPhotoToHeavyTankScan");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_PlayTakePhotoEffect;
@@ -22477,7 +22477,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIgnoreVisibility, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ScanDistMax, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 28);
     }
 
     private static BmSDK.Function __fn_AddScannedPickupToMap;
@@ -22523,7 +22523,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 20);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 20);
     }
 
     private static BmSDK.Function __fn_SendInformantPositions;
@@ -22549,7 +22549,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(new_scan, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_TickAlerts;
@@ -22600,7 +22600,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[84];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NPC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_DisableTripleTrail;
@@ -22833,7 +22833,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInterceptHudActive, "BmGame.RPlayerController.IsInterceptHudActive");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GreatlyDelayedAlertsHudShutdown;
@@ -23046,7 +23046,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPhotoMode, "BmGame.RPlayerController.IsPhotoMode");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CentreCamera;
@@ -23299,7 +23299,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerFlourishCamera, "BmGame.RPlayerController.TriggerFlourishCamera");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_TurnOffMenuPP;
@@ -23347,7 +23347,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNextPoseAfterRadioModeEnd, "BmGame.RPlayerController.GetNextPoseAfterRadioModeEnd");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FName>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_SetRadioMode;
@@ -23372,7 +23372,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(act, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_StartCameraConversation;
@@ -23487,7 +23487,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPlayerController.GroundMovementState>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RPlayerController.GroundMovementState>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_TakeBossAttack;
@@ -23511,7 +23511,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowOpenMap, "BmGame.RPlayerController.AllowOpenMap");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_AllowOpenMapCore;
@@ -23523,7 +23523,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllowOpenMapCore, "BmGame.RPlayerController.AllowOpenMapCore");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_StartBatmanCutscene;
@@ -23693,7 +23693,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CombatCheck, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIgnoreCinematicCheck, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_GameSpeedLockTimeout;
@@ -23729,7 +23729,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TryDualPlayMove, "BmGame.RPlayerController.TryDualPlayMove");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_BlendCameraBackToPlayer;
@@ -23767,7 +23767,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CantSwitchPlayer, "BmGame.RPlayerController.CantSwitchPlayer");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ForceDropOffRope;
@@ -23835,7 +23835,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bSlowMoSwitch, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bForSwitchPlayerAction, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 24);
     }
 
     private static BmSDK.Function __fn_RetryForceSwitch;
@@ -23918,7 +23918,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetViewportHeight;
@@ -23937,7 +23937,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetViewportWidth;
@@ -23956,7 +23956,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetMouseY;
@@ -23975,7 +23975,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetMouseX;
@@ -23994,7 +23994,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetViewportAspectRatio;
@@ -24013,7 +24013,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_DoesAggressiveHelicopterPreventAction;
@@ -24032,7 +24032,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsChildState_Cached;
@@ -24053,7 +24053,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_IsQaBatmobileDebugRenderEnabled;
@@ -24072,7 +24072,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_PickClosestPawn;
@@ -24092,7 +24092,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Pawn>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.Pawn>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_FadeOutHighlightTunnelNetwork;
@@ -24191,7 +24191,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnPlayer>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RPawnPlayer>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_NavMeshLineCheck;
@@ -24213,7 +24213,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 36);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 36);
     }
 
     private static BmSDK.Function __fn_NativeBreakPoint;
@@ -24251,7 +24251,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_DebugRenderExclusionZones;
@@ -24310,7 +24310,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 24);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 24);
     }
 
     private static BmSDK.Function __fn_ToggleDLECMode;
@@ -24386,7 +24386,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.StaticMesh>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.StaticMesh>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsAutoJezActive;
@@ -24405,7 +24405,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GAS;
@@ -24444,7 +24444,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_OwnerIsInEndStateCall;
@@ -24463,7 +24463,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetMissionWheel;
@@ -24482,7 +24482,7 @@ public partial class RPlayerController : BmSDK.BmGame.RPlayerControllerBase, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGFxMovieMissionWheel>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RGFxMovieMissionWheel>(paramsPtr + 0);
     }
 
     /// <summary>

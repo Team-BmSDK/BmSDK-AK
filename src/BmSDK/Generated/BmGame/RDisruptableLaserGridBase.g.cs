@@ -88,7 +88,7 @@ public partial class RDisruptableLaserGridBase : BmSDK.BmGame.RDisruptableObject
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(P, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_RemoveThrowTarget;
@@ -179,7 +179,7 @@ public partial class RDisruptableLaserGridBase : BmSDK.BmGame.RDisruptableObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDamageType, "BmGame.RDisruptableLaserGridBase.GetDamageType");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Class>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Class>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetBatsShockedPFX;
@@ -191,7 +191,7 @@ public partial class RDisruptableLaserGridBase : BmSDK.BmGame.RDisruptableObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBatsShockedPFX, "BmGame.RDisruptableLaserGridBase.GetBatsShockedPFX");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.ParticleSystem>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.ParticleSystem>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_HitPawn;

@@ -89,7 +89,7 @@ public partial class GameplayEventsWriterBase : BmSDK.Engine.GameplayEvents, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Link, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_RecordAIPathFail;
@@ -349,7 +349,7 @@ public partial class GameplayEventsWriterBase : BmSDK.Engine.GameplayEvents, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Position, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        Position = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 4);
+        Position = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 4);
         return;
     }
 
@@ -442,7 +442,7 @@ public partial class GameplayEventsWriterBase : BmSDK.Engine.GameplayEvents, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPlaylistId, "Engine.GameplayEventsWriterBase.GetPlaylistId");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetGameTypeId;
@@ -454,7 +454,7 @@ public partial class GameplayEventsWriterBase : BmSDK.Engine.GameplayEvents, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGameTypeId, "Engine.GameplayEventsWriterBase.GetGameTypeId");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Poll;
@@ -503,7 +503,7 @@ public partial class GameplayEventsWriterBase : BmSDK.Engine.GameplayEvents, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsSessionInProgress, "Engine.GameplayEventsWriterBase.IsSessionInProgress");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     /// <summary>

@@ -87,7 +87,7 @@ public partial class RSeqAct_BatmobileForensicsSideStory : BmSDK.Engine.Sequence
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmGame.RSeqAct_BatmobileForensicsSideStory.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_DebugLineTest;
@@ -111,7 +111,7 @@ public partial class RSeqAct_BatmobileForensicsSideStory : BmSDK.Engine.Sequence
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoPulse, "BmGame.RSeqAct_BatmobileForensicsSideStory.DoPulse");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsActorInCone;
@@ -124,7 +124,7 @@ public partial class RSeqAct_BatmobileForensicsSideStory : BmSDK.Engine.Sequence
         byte* paramsPtr = stackalloc byte[76];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(actor_index, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_SetUpPulseParams;
@@ -148,7 +148,7 @@ public partial class RSeqAct_BatmobileForensicsSideStory : BmSDK.Engine.Sequence
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TryToActivateTrail, "BmGame.RSeqAct_BatmobileForensicsSideStory.TryToActivateTrail");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ForensicsTick;
@@ -187,7 +187,7 @@ public partial class RSeqAct_BatmobileForensicsSideStory : BmSDK.Engine.Sequence
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(actor_index, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBatmobileForensicsBaseActor>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RBatmobileForensicsBaseActor>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_SortNodes;

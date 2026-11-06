@@ -87,7 +87,7 @@ public partial class AkDialogueConversation : BmSDK.Engine.AkDialogueSpeech, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDialogueLineCountScript, "Engine.AkDialogueConversation.GetDialogueLineCountScript");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetTotalPlayCount;
@@ -106,7 +106,7 @@ public partial class AkDialogueConversation : BmSDK.Engine.AkDialogueSpeech, BmS
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
 
     /// <summary>

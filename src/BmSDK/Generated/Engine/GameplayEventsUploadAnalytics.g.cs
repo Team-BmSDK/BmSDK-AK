@@ -89,7 +89,7 @@ public partial class GameplayEventsUploadAnalytics : BmSDK.Engine.GameplayEvents
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Link, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Player, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_RecordAIPathFail;
@@ -116,7 +116,7 @@ public partial class GameplayEventsUploadAnalytics : BmSDK.Engine.GameplayEvents
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetGenericParamListEntry, "Engine.GameplayEventsUploadAnalytics.GetGenericParamListEntry");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.GenericParamListStatEntry>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.GenericParamListStatEntry>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_LogProjectileIntEvent;
@@ -454,7 +454,7 @@ public partial class GameplayEventsUploadAnalytics : BmSDK.Engine.GameplayEvents
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Position = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 4);
+        Position = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 4);
         return;
     }
 

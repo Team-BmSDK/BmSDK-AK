@@ -87,7 +87,7 @@ public partial class RSeqAct_JokerRooftopController : BmSDK.BmGame.RSeqAct_Joker
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmScript.RSeqAct_JokerRooftopController.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_FindSpawnPoint;
@@ -100,7 +100,7 @@ public partial class RSeqAct_JokerRooftopController : BmSDK.BmGame.RSeqAct_Joker
         byte* paramsPtr = stackalloc byte[128];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bHightLightSpheres, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmScript.RJokerRooftopPoint>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmScript.RJokerRooftopPoint>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_SpawnRooftopJoker;
@@ -124,7 +124,7 @@ public partial class RSeqAct_JokerRooftopController : BmSDK.BmGame.RSeqAct_Joker
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSideStoryDialogue, "BmScript.RSeqAct_JokerRooftopController.GetSideStoryDialogue");
         byte* paramsPtr = stackalloc byte[144];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_IsMissionFinished;
@@ -138,7 +138,7 @@ public partial class RSeqAct_JokerRooftopController : BmSDK.BmGame.RSeqAct_Joker
         BmSDK.Framework.MarshalUtil.ToUnmanaged(pData, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(missionIndex, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_GetNumConvForSideStory;
@@ -151,7 +151,7 @@ public partial class RSeqAct_JokerRooftopController : BmSDK.BmGame.RSeqAct_Joker
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SideIdx, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_GetSideStoryNameForIndex;
@@ -164,7 +164,7 @@ public partial class RSeqAct_JokerRooftopController : BmSDK.BmGame.RSeqAct_Joker
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SideIdx, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_GetTimeSinceUpdate;
@@ -178,7 +178,7 @@ public partial class RSeqAct_JokerRooftopController : BmSDK.BmGame.RSeqAct_Joker
         BmSDK.Framework.MarshalUtil.ToUnmanaged(pData, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(missionIndex, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_IsMissionEligibleForUpdateMovie;
@@ -192,7 +192,7 @@ public partial class RSeqAct_JokerRooftopController : BmSDK.BmGame.RSeqAct_Joker
         BmSDK.Framework.MarshalUtil.ToUnmanaged(pData, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(missionIndex, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_GetNumValidSideStoryLines;
@@ -206,7 +206,7 @@ public partial class RSeqAct_JokerRooftopController : BmSDK.BmGame.RSeqAct_Joker
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Perc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StoryId, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_GetCh7Dialogue;
@@ -218,7 +218,7 @@ public partial class RSeqAct_JokerRooftopController : BmSDK.BmGame.RSeqAct_Joker
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCh7Dialogue, "BmScript.RSeqAct_JokerRooftopController.GetCh7Dialogue");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetChapterDialogue;
@@ -230,7 +230,7 @@ public partial class RSeqAct_JokerRooftopController : BmSDK.BmGame.RSeqAct_Joker
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetChapterDialogue, "BmScript.RSeqAct_JokerRooftopController.GetChapterDialogue");
         byte* paramsPtr = stackalloc byte[52];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetNumConvForChapter;
@@ -243,7 +243,7 @@ public partial class RSeqAct_JokerRooftopController : BmSDK.BmGame.RSeqAct_Joker
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ChIdx, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_GetAdjustedChapterNumber;
@@ -255,7 +255,7 @@ public partial class RSeqAct_JokerRooftopController : BmSDK.BmGame.RSeqAct_Joker
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAdjustedChapterNumber, "BmScript.RSeqAct_JokerRooftopController.GetAdjustedChapterNumber");
         byte* paramsPtr = stackalloc byte[12];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_NextDialogueIsChapter;
@@ -267,7 +267,7 @@ public partial class RSeqAct_JokerRooftopController : BmSDK.BmGame.RSeqAct_Joker
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NextDialogueIsChapter, "BmScript.RSeqAct_JokerRooftopController.NextDialogueIsChapter");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_PlayDialogue;
@@ -316,7 +316,7 @@ public partial class RSeqAct_JokerRooftopController : BmSDK.BmGame.RSeqAct_Joker
         byte* paramsPtr = stackalloc byte[16];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(JokerBehav, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RJokerRooftopPointBase>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RJokerRooftopPointBase>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_DrawTestingSpheres;
@@ -341,7 +341,7 @@ public partial class RSeqAct_JokerRooftopController : BmSDK.BmGame.RSeqAct_Joker
         byte* paramsPtr = stackalloc byte[44];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     /// <summary>

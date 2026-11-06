@@ -87,7 +87,7 @@ public partial class RControllableCrane : BmSDK.Engine.SkeletalMeshActor, BmSDK.
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsCraneMoving, "BmScript.RControllableCrane.IsCraneMoving");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_TurnCraneLeft;
@@ -254,7 +254,7 @@ public partial class RControllableCrane : BmSDK.Engine.SkeletalMeshActor, BmSDK.
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Index, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWorldPos, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 8);
     }
 
     private static BmSDK.Function __fn_Initialise;

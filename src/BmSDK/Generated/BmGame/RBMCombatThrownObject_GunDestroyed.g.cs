@@ -87,7 +87,7 @@ public partial class RBMCombatThrownObject_GunDestroyed : BmSDK.BmGame.RBMCombat
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSomewhatRandomDirectionVectorAwayFromThug, "BmGame.RBMCombatThrownObject_GunDestroyed.GetSomewhatRandomDirectionVectorAwayFromThug");
         byte* paramsPtr = stackalloc byte[24];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Tick;

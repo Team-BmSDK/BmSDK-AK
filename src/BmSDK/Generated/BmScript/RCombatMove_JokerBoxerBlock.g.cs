@@ -99,7 +99,7 @@ public partial class RCombatMove_JokerBoxerBlock : BmSDK.BmGame.RCombatMove, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsDualAttackable, "BmScript.RCombatMove_JokerBoxerBlock.IsDualAttackable");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_CanBeTargettedByPlayer;
@@ -114,7 +114,7 @@ public partial class RCombatMove_JokerBoxerBlock : BmSDK.BmGame.RCombatMove, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageType, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPlayer, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 24);
     }
 
     private static BmSDK.Function __fn_Initialise;

@@ -87,7 +87,7 @@ public partial class RSeqAct_PauseRestartRandomPopulation : BmSDK.Engine.Sequenc
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldPauseThugCars, "BmGame.RSeqAct_PauseRestartRandomPopulation.ShouldPauseThugCars");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ShouldPauseHumvees;
@@ -99,7 +99,7 @@ public partial class RSeqAct_PauseRestartRandomPopulation : BmSDK.Engine.Sequenc
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldPauseHumvees, "BmGame.RSeqAct_PauseRestartRandomPopulation.ShouldPauseHumvees");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ShouldPauseDrones;
@@ -111,7 +111,7 @@ public partial class RSeqAct_PauseRestartRandomPopulation : BmSDK.Engine.Sequenc
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldPauseDrones, "BmGame.RSeqAct_PauseRestartRandomPopulation.ShouldPauseDrones");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ShouldPauseRiots;
@@ -123,7 +123,7 @@ public partial class RSeqAct_PauseRestartRandomPopulation : BmSDK.Engine.Sequenc
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldPauseRiots, "BmGame.RSeqAct_PauseRestartRandomPopulation.ShouldPauseRiots");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Activated;

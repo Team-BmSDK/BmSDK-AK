@@ -106,7 +106,7 @@ public partial class Path_WithinDistanceEnvelope : BmSDK.Engine.PathConstraint, 
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InSoftStartPenalty, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bOnlyTossOutSpecsThatLeave, paramsPtr + 36);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 40);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 40);
     }
 
     /// <summary>

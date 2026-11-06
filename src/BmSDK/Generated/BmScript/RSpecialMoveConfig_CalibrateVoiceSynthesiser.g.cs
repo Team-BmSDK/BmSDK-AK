@@ -99,7 +99,7 @@ public partial class RSpecialMoveConfig_CalibrateVoiceSynthesiser : BmSDK.BmGame
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAudioLoaded, "BmScript.RSpecialMoveConfig_CalibrateVoiceSynthesiser.IsAudioLoaded");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_LoadAudio;

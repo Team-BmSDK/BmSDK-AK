@@ -87,7 +87,7 @@ public partial class RJokerHallucinationCombatController : BmSDK.GameObject, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCombatQuality, "BmGame.RJokerHallucinationCombatController.GetCombatQuality");
         byte* paramsPtr = stackalloc byte[36];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnJokerHallucination.CombatQualityType>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RPawnJokerHallucination.CombatQualityType>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_FindSpawnPoint;
@@ -100,7 +100,7 @@ public partial class RJokerHallucinationCombatController : BmSDK.GameObject, BmS
         byte* paramsPtr = stackalloc byte[100];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(QualityType, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.Actor>(paramsPtr + 4);
     }
 
     private static BmSDK.Function __fn_SpawnIncidentalJoker;
@@ -112,7 +112,7 @@ public partial class RJokerHallucinationCombatController : BmSDK.GameObject, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnIncidentalJoker, "BmGame.RJokerHallucinationCombatController.SpawnIncidentalJoker");
         byte* paramsPtr = stackalloc byte[32];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GenerateCombatPoints;
@@ -148,7 +148,7 @@ public partial class RJokerHallucinationCombatController : BmSDK.GameObject, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InCombat, "BmGame.RJokerHallucinationCombatController.InCombat");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Update;

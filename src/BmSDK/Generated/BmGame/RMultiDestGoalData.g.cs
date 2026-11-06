@@ -99,7 +99,7 @@ public partial class RMultiDestGoalData : BmSDK.GameObject, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AllNotFound, "BmGame.RMultiDestGoalData.AllNotFound");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetShortestPathFromIndex;
@@ -116,9 +116,9 @@ public partial class RMultiDestGoalData : BmSDK.GameObject, BmSDK.IGameObject
         System.Runtime.CompilerServices.Unsafe.SkipInit(out BestPath);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BestPath, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        bestDist = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 4);
-        BestPath = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
+        bestDist = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 4);
+        BestPath = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_GetShortestPath;
@@ -134,9 +134,9 @@ public partial class RMultiDestGoalData : BmSDK.GameObject, BmSDK.IGameObject
         System.Runtime.CompilerServices.Unsafe.SkipInit(out BestPath);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BestPath, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        bestDist = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
-        BestPath = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        bestDist = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
+        BestPath = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     /// <summary>

@@ -127,9 +127,9 @@ public partial class ApexDynamicGridActor : BmSDK.Engine.ApexFieldSamplerActor, 
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        DGfirstLine = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
-        DGnumLines = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
-        DGstr = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 8);
+        DGfirstLine = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
+        DGnumLines = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 4);
+        DGstr = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 8);
         return;
     }
 

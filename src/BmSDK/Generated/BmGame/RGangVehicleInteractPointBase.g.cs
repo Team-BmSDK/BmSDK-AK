@@ -100,6 +100,6 @@ public partial class RGangVehicleInteractPointBase : BmSDK.BmGame.RDummyTarget, 
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCarScenario, "BmGame.RGangVehicleInteractPointBase.GetCarScenario");
         byte* paramsPtr = stackalloc byte[8];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RVehicleScenario>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RVehicleScenario>(paramsPtr + 0);
     }
 }

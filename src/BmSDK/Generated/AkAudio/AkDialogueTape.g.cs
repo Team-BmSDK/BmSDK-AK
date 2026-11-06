@@ -116,7 +116,7 @@ public partial class AkDialogueTape : BmSDK.Engine.AkHash, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 124);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 124);
     }
 
     /// <summary>

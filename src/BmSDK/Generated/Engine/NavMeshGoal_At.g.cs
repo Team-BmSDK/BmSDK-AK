@@ -104,7 +104,7 @@ public partial class NavMeshGoal_At : BmSDK.Engine.NavMeshPathGoalEvaluator, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bReturnPartial, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bInWeightPartialByDist, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 32);
     }
 
     private static BmSDK.Function __fn_AtActor;
@@ -121,7 +121,7 @@ public partial class NavMeshGoal_At : BmSDK.Engine.NavMeshPathGoalEvaluator, BmS
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bReturnPartial, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bInWeightPartialByDist, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 28);
     }
 
     private static BmSDK.Function __fn_RecycleNative;

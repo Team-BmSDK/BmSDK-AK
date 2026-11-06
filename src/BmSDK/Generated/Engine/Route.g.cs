@@ -97,7 +97,7 @@ public partial class Route : BmSDK.Engine.Info, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_ResolveRouteIndex;
@@ -122,9 +122,9 @@ public partial class Route : BmSDK.Engine.Info, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        out_bComplete = BmSDK.Framework.MarshalUtil.ToManaged<byte>(paramsPtr + 5);
-        out_bReverse = BmSDK.Framework.MarshalUtil.ToManaged<byte>(paramsPtr + 6);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
+        out_bComplete = BmSDK.Framework.MarshalUtil.ToManagedParam<byte>(paramsPtr + 5);
+        out_bReverse = BmSDK.Framework.MarshalUtil.ToManagedParam<byte>(paramsPtr + 6);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 8);
     }
 
     /// <summary>

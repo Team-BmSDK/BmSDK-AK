@@ -94,8 +94,8 @@ public partial class RBarkCharacterDefInstance : BmSDK.GameObject, BmSDK.IGameOb
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        ThisName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBarkCharacterDefInstance.FBarkSetName>(paramsPtr + 0);
-        OutString = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 32);
+        ThisName = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RBarkCharacterDefInstance.FBarkSetName>(paramsPtr + 0);
+        OutString = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 32);
         return;
     }
 

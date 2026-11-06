@@ -102,7 +102,7 @@ public partial class RSpecialMoveInstance_RobinBatClawAttack : BmSDK.BmGame.RSpe
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FromRear, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AlwaysBlockIfShield, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_VillainBlocks;

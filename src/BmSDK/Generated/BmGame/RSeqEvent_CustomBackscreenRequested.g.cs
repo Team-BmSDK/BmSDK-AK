@@ -87,7 +87,7 @@ public partial class RSeqEvent_CustomBackscreenRequested : BmSDK.BmGame.RSeqEven
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAvailability, "BmGame.RSeqEvent_CustomBackscreenRequested.GetAvailability");
         byte* paramsPtr = stackalloc byte[1];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RSeqEvent_CustomBackscreenRequested.BackscreenAvailability>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RSeqEvent_CustomBackscreenRequested.BackscreenAvailability>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetObjClassVersion;
@@ -99,7 +99,7 @@ public partial class RSeqEvent_CustomBackscreenRequested : BmSDK.BmGame.RSeqEven
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmGame.RSeqEvent_CustomBackscreenRequested.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     /// <summary>

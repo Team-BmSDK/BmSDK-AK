@@ -87,7 +87,7 @@ public partial class RSeqAct_SideStory_Update : BmSDK.Engine.SequenceAction, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmScript.RSeqAct_SideStory_Update.GetObjClassVersion");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_ShowDiscoveryElementOnHudIfNew;
@@ -99,7 +99,7 @@ public partial class RSeqAct_SideStory_Update : BmSDK.Engine.SequenceAction, BmS
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowDiscoveryElementOnHudIfNew, "BmScript.RSeqAct_SideStory_Update.ShowDiscoveryElementOnHudIfNew");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Activated;

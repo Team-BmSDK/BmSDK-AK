@@ -579,7 +579,7 @@ void Printer::PrintFunction(const FunctionInfo& func, bool isInInterface, ostrea
             if (param.IsOutParam)
             {
                 Printer::Indent(out)
-                    << param.ManagedName << " = BmSDK.Framework.MarshalUtil.ToManaged<"
+                    << param.ManagedName << " = BmSDK.Framework.MarshalUtil.ToManagedParam<"
                     << param.TypeName << ">(paramsPtr + " << param.Offset << ");"
                     << endl;
             }
@@ -588,7 +588,7 @@ void Printer::PrintFunction(const FunctionInfo& func, bool isInInterface, ostrea
         if (func.HasReturnParam)
         {
             // Print return param declaration
-            Printer::Indent(out) << "return BmSDK.Framework.MarshalUtil.ToManaged<"
+            Printer::Indent(out) << "return BmSDK.Framework.MarshalUtil.ToManagedParam<"
                 << func.ReturnParam.TypeName << ">(paramsPtr + "
                 << func.ReturnParam.Offset << ");" << endl;
         }

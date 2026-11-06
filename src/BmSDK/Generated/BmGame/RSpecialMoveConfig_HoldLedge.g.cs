@@ -93,8 +93,8 @@ public partial class RSpecialMoveConfig_HoldLedge : BmSDK.BmGame.RSpecialMoveCon
         System.Runtime.CompilerServices.Unsafe.SkipInit(out EndYaw);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EndYaw, paramsPtr + 152);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        EndPosition = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 140);
-        EndYaw = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 152);
+        EndPosition = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 140);
+        EndYaw = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 152);
         return;
     }
 

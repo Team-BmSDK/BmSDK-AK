@@ -104,7 +104,7 @@ public partial class NavMeshPath_MinDistBetweenSpecsOfType : BmSDK.Engine.NavMes
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LastLocation, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InPenalty, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 32);
     }
 
     /// <summary>

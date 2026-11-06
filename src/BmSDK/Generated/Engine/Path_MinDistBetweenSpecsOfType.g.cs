@@ -103,7 +103,7 @@ public partial class Path_MinDistBetweenSpecsOfType : BmSDK.Engine.PathConstrain
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InSpecClass, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LastLocation, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 32);
     }
 
     /// <summary>

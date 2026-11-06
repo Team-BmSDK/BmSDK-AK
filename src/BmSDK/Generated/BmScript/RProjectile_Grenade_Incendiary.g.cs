@@ -100,7 +100,7 @@ public partial class RProjectile_Grenade_Incendiary : BmSDK.BmScript.RProjectile
         byte* paramsPtr = stackalloc byte[20];
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckLoc, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_DeployCharge_OpenSpace;
@@ -116,7 +116,7 @@ public partial class RProjectile_Grenade_Incendiary : BmSDK.BmScript.RProjectile
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Depth, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(toNeighbourOffsets, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmScript.RIncendiaryGrenadeCharge>(paramsPtr + 76);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmScript.RIncendiaryGrenadeCharge>(paramsPtr + 76);
     }
 
     private static BmSDK.Function __fn_DeployCharge_Grate;
@@ -130,7 +130,7 @@ public partial class RProjectile_Grenade_Incendiary : BmSDK.BmScript.RProjectile
         BmSDK.Framework.MarshalUtil.ToUnmanaged(currentGrate, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Depth, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmScript.RIncendiaryGrenadeCharge>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmScript.RIncendiaryGrenadeCharge>(paramsPtr + 12);
     }
 
     private static BmSDK.Function __fn_SpawnCharges;
@@ -187,7 +187,7 @@ public partial class RProjectile_Grenade_Incendiary : BmSDK.BmScript.RProjectile
         System.Runtime.CompilerServices.Unsafe.SkipInit(out toNeighbourOffsets);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(toNeighbourOffsets, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        toNeighbourOffsets = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
+        toNeighbourOffsets = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 12);
         return;
     }
 

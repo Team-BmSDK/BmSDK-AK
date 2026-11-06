@@ -104,7 +104,7 @@ public partial class RAEC_BatarangReaction_Confused : BmSDK.BmGame.RAlertEventCo
         System.Runtime.CompilerServices.Unsafe.SkipInit(out bShouldEscalate);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bShouldEscalate, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        bShouldEscalate = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
+        bShouldEscalate = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 16);
         return;
     }
 

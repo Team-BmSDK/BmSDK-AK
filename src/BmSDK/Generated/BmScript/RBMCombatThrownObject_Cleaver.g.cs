@@ -87,7 +87,7 @@ public partial class RBMCombatThrownObject_Cleaver : BmSDK.BmGame.RBMCombatThrow
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanHitPlayerInCounterMove, "BmScript.RBMCombatThrownObject_Cleaver.CanHitPlayerInCounterMove");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_GetCounterRange;
@@ -99,7 +99,7 @@ public partial class RBMCombatThrownObject_Cleaver : BmSDK.BmGame.RBMCombatThrow
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCounterRange, "BmScript.RBMCombatThrownObject_Cleaver.GetCounterRange");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_Tick;

@@ -96,7 +96,7 @@ public partial class OnlineMatchmakingStats : BmSDK.GameObject, BmSDK.IGameObjec
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Timer = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineMatchmakingStats.FMMStats_Timer>(paramsPtr + 0);
+        Timer = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.OnlineMatchmakingStats.FMMStats_Timer>(paramsPtr + 0);
         return;
     }
 
@@ -118,7 +118,7 @@ public partial class OnlineMatchmakingStats : BmSDK.GameObject, BmSDK.IGameObjec
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Timer = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineMatchmakingStats.FMMStats_Timer>(paramsPtr + 0);
+        Timer = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.OnlineMatchmakingStats.FMMStats_Timer>(paramsPtr + 0);
         return;
     }
 

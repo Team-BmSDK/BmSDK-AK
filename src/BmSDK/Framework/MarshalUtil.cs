@@ -72,6 +72,40 @@ public static unsafe class MarshalUtil
         ToManaged<TManaged>(data.ToPointer());
 
     /// <summary>
+    /// Marshals an out or return parameter from a function call's parameter buffer.
+    /// </summary>
+    /// <remarks>
+    /// The parameter buffer only lives for the duration of the call, so a <see cref="TArray{T}"/>
+    /// can't wrap it the way it wraps a property in object memory: its header is copied into
+    /// memory kept alive by the new wrapper instead. Its elements are not freed by the wrapper
+    /// (as before). Every other type marshals exactly like <see cref="ToManaged{TManaged}(void*)"/>.
+    /// </remarks>
+    public static TManaged ToManagedParam<TManaged>(void* data)
+    {
+        if (
+            typeof(TManaged).IsGenericType
+            && typeof(TManaged).GetGenericTypeDefinition() == typeof(TArray<>)
+        )
+        {
+            var instance = Guard.NotNull(
+                Activator.CreateInstance(
+                    typeof(TManaged),
+                    BindingFlags.Instance | BindingFlags.NonPublic,
+                    null,
+                    [(IntPtr)data, true],
+                    null
+                ),
+                $"Couldn't copy array parameter 0x{new IntPtr(data):X}"
+            );
+
+            return (TManaged)instance;
+        }
+
+        return ToManaged<TManaged>(data);
+    }
+
+
+    /// <summary>
     /// Boxing adapters over the generic marshallers, one instantiation per type, so marshalling by
     /// <see cref="Type"/> (redirect arguments and results) costs a dictionary lookup and a delegate call
     /// rather than reflection on every call.

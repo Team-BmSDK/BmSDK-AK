@@ -100,7 +100,7 @@ public partial class RGuardVolume : BmSDK.Engine.Volume, BmSDK.IGameObject
         var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldThugTraverseWhileRunning, "BmGame.RGuardVolume.ShouldThugTraverseWhileRunning");
         byte* paramsPtr = stackalloc byte[4];
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     private static BmSDK.Function __fn_HasFreeGuardPoint;
@@ -115,8 +115,8 @@ public partial class RGuardVolume : BmSDK.Engine.Volume, BmSDK.IGameObject
         System.Runtime.CompilerServices.Unsafe.SkipInit(out OutGuardPoint);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OutGuardPoint, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        OutGuardPoint = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RGuardPoint>(paramsPtr + 8);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
+        OutGuardPoint = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RGuardPoint>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
     }
 
     private static BmSDK.Function __fn_ShutdownAEC;
