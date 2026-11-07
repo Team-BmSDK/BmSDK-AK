@@ -19,6 +19,10 @@ public partial class GameObject
 
     public IntPtr Ptr { get; internal set; } = IntPtr.Zero;
 
+    // Where this wrapper sits in the FindObjects index (see FindObjectsCache).
+    internal List<GameObject>? CacheBucket;
+    internal int CacheIndex = -1;
+
     /// <summary>
     /// Returns true if this object is "alive", false if it has been destroyed or garbage collected on the UE3 side.
     /// If false, this object is unsafe to access or call any methods on.
