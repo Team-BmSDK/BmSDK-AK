@@ -46,6 +46,13 @@ public abstract class Script
     public virtual void OnKeyDown(Keys key) { }
 
     /// <summary>
+    /// Called once per rendered frame, after the game has drawn its own HUD, with the viewport's
+    /// canvas. Runs while the game is paused too. Draw here rather than redirecting
+    /// GameViewportClient.PostRender yourself.
+    /// </summary>
+    public virtual void OnDraw(Engine.Canvas canvas) { }
+
+    /// <summary>
     /// Called when the hot reloading system uninstalls
     /// the old version of the script class
     /// </summary>
