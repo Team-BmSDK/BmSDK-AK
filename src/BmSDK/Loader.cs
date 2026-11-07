@@ -92,10 +92,11 @@ internal static class Loader
     private static bool s_hasGameStarted = false;
     private static bool s_hasGameInited = false;
 
-    // Detour for UObject::ProcessInternal()
+    // Detour for UObject::ProcessInternal(). Runs on every UnrealScript call, so the guard is a
+    // plain try/catch: a captured lambda here was an allocation per call.
     private static unsafe void ProcessInternalDetour(IntPtr self, IntPtr Stack, IntPtr Result)
     {
-        RunGuarded(() =>
+        try
         {
             IntPtr selfPtr = self;
             FFrame* stackPtr = (FFrame*)Stack.ToPointer();
@@ -165,7 +166,11 @@ internal static class Loader
 
             // Call base impl. Redirected implementations are expected to reach this by calling "themselves" a second time.
             _ProcessInternalDetourBase!.Invoke(self, Stack, Result);
-        });
+        }
+        catch (Exception ex)
+        {
+            Abort(ex);
+        }
     }
 
     // Detour for FWindowsViewport::ProcessDeferredMessage()
@@ -199,7 +204,8 @@ internal static class Loader
         // Call base impl to instantiate UObject
         _AddObjectDelegateDetourBase!.Invoke(self, InIndex);
 
-        RunGuarded(() =>
+        // Runs for every object the game creates: no captured lambda here.
+        try
         {
             var obj = MarshalUtil.GetOrCreateWrapper(self);
 
@@ -208,7 +214,11 @@ internal static class Loader
             {
                 ScriptComponentManager.TryAutoAttachComponents(obj, objNotLoaded: true);
             }
-        });
+        }
+        catch (Exception ex)
+        {
+            Abort(ex);
+        }
     }
 
     // Detour for UObject::ConditionalPostLoad()
@@ -224,7 +234,7 @@ internal static class Loader
         }
 
         // Configure redirected functions
-        RunGuarded(() =>
+        try
         {
             var obj = MarshalUtil.GetOrCreateWrapper(self);
             if (obj is Function func)
@@ -237,14 +247,25 @@ internal static class Loader
             {
                 ScriptComponentManager.TryAutoAttachComponents(obj, objNotLoaded: true);
             }
-        });
+        }
+        catch (Exception ex)
+        {
+            Abort(ex);
+        }
     }
 
     // Detour for UObject::ConditionalDestroy()
     private static void ConditionalDestroyDetour(IntPtr self)
     {
         // Destroy this object's managed instance
-        RunGuarded(() => MarshalUtil.DestroyManagedWrapper(self));
+        try
+        {
+            MarshalUtil.DestroyManagedWrapper(self);
+        }
+        catch (Exception ex)
+        {
+            Abort(ex);
+        }
 
         // Call base impl
         _ConditionalDestroyDetourBase!.Invoke(self);
@@ -258,10 +279,15 @@ internal static class Loader
         }
         catch (Exception ex)
         {
-            // Just abort, because otherwise UE3 will crash anyway but print
-            // its more-or-less useless DBGHELP messages.
-            Debug.LogError(ex.ToString());
-            Environment.Exit(1);
+            Abort(ex);
         }
+    }
+
+    private static void Abort(Exception ex)
+    {
+        // Just abort, because otherwise UE3 will crash anyway but print
+        // its more-or-less useless DBGHELP messages.
+        Debug.LogError(ex.ToString());
+        Environment.Exit(1);
     }
 }

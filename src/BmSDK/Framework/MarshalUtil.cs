@@ -178,19 +178,44 @@ public static unsafe class MarshalUtil
         var classIndex = *(int*)classIndexPtr.ToPointer();
         if (classIndex < 1)
         {
-            return CreateManagedWrapper(objPtr, typeof(Class));
+            return CreateManagedWrapper(objPtr, s_classWrapperType ??= MakeWrapperType(typeof(Class)));
         }
 
-        // Get managed representation of the object's class
-        var classFlags = *(Class.EClassFlags*)classFlagsPtr.ToPointer();
-
-        // Get the managed type through the class object
-        var managedType = !classFlags.HasFlag(Class.EClassFlags.CLASS_Interface)
-            ? GetManagedTypeForClassPtr(classPtr)
-            : typeof(GameObject); // Wrap CDOs of interfaces as GameObject
+        // Get the managed type (and its constructor) through the class object, worked out once per
+        // class: every object the game creates comes through here, and building the class path
+        // string each time was a large share of the garbage behind the streaming stutter (#13).
+        if (!s_wrapperTypes.TryGetValue(classPtr, out var wrapperType))
+        {
+            var classFlags = *(Class.EClassFlags*)classFlagsPtr.ToPointer();
+            var managedType = !classFlags.HasFlag(Class.EClassFlags.CLASS_Interface)
+                ? GetManagedTypeForClassPtr(classPtr)
+                : typeof(GameObject); // Wrap CDOs of interfaces as GameObject
+            wrapperType = MakeWrapperType(managedType);
+            s_wrapperTypes[classPtr] = wrapperType;
+        }
 
         // Wrap this object in a managed instance
-        return CreateManagedWrapper(objPtr, managedType);
+        return CreateManagedWrapper(objPtr, wrapperType);
+    }
+
+    private sealed record WrapperType(Type ManagedType, Func<GameObject> Factory);
+
+    /// <summary>Wrapper type and constructor per UClass; an entry is dropped when its class is destroyed.</summary>
+    private static readonly Dictionary<IntPtr, WrapperType> s_wrapperTypes = [];
+    private static WrapperType? s_classWrapperType;
+
+    private static WrapperType MakeWrapperType(Type managedType)
+    {
+        var ctor = managedType.GetConstructor(
+            BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic,
+            Type.EmptyTypes
+        );
+        Guard.NotNull(ctor, $"Managed type {managedType.Name} has no parameterless constructor");
+
+        var factory = System.Linq.Expressions.Expression
+            .Lambda<Func<GameObject>>(System.Linq.Expressions.Expression.New(ctor))
+            .Compile();
+        return new WrapperType(managedType, factory);
     }
 
     /// <summary>
@@ -229,13 +254,10 @@ public static unsafe class MarshalUtil
     private static IntPtr GetSuperStruct(IntPtr structPtr) =>
         *(IntPtr*)(structPtr + GameDefine.MemberOffsets.Struct__SuperStruct).ToPointer();
 
-    private static GameObject CreateManagedWrapper(IntPtr objPtr, Type managedType)
+    private static GameObject CreateManagedWrapper(IntPtr objPtr, WrapperType wrapperType)
     {
         // Create a new managed object
-        var newObj = s_managedObjects[objPtr] = Guard.NotNull(
-            (GameObject?)Activator.CreateInstance(managedType, true),
-            $"Couldn't create an instance of managed type {managedType.Name}"
-        );
+        var newObj = s_managedObjects[objPtr] = wrapperType.Factory();
         newObj.Ptr = objPtr;
         FindObjectsCache.Register(newObj);
         return newObj;
@@ -290,9 +312,15 @@ public static unsafe class MarshalUtil
             FindObjectsCache.Unregister(obj);
 
             // Detach all script components
-            if (obj.ScriptComponents.Count > 0)
+            if (obj.HasScriptComponents)
             {
                 obj.DetachAllScriptComponents();
+            }
+
+            // A class is going away: its address may be reused by another class later.
+            if (obj is Class)
+            {
+                s_wrapperTypes.Remove(objPtr);
             }
 
             // Mark managed wrapper as invalid

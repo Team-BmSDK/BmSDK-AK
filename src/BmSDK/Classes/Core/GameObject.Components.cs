@@ -17,9 +17,14 @@ public partial class GameObject
     /// Collection of all ScriptComponent instances attached to this object.
     /// </summary>
     public IReadOnlyCollection<IScriptComponent> ScriptComponents =>
-        _scriptComponents.Values.SelectMany(x => x).ToList();
+        _scriptComponents == null ? [] : _scriptComponents.Values.SelectMany(x => x).ToList();
 
-    private readonly Dictionary<Type, List<IScriptComponent>> _scriptComponents = [];
+    /// <summary>Whether any script component is attached, without building the collection.</summary>
+    internal bool HasScriptComponents => _scriptComponents is { Count: > 0 };
+
+    // Created on the first attach: most of the game's objects never get a component, and an empty
+    // dictionary per wrapper was a long-lived allocation for every object the game created.
+    private Dictionary<Type, List<IScriptComponent>>? _scriptComponents;
 
     /// <summary>
     /// Attaches an existing script component instance to this object.
@@ -32,6 +37,7 @@ public partial class GameObject
 
         // Store new component
         var componentType = component.GetType();
+        _scriptComponents ??= [];
         if (!_scriptComponents.TryGetValue(componentType, out var list))
         {
             list = [];
@@ -96,7 +102,7 @@ public partial class GameObject
     /// <summary>
     /// Checks if the object has a script component of the given type.
     /// </summary>
-    internal bool HasScriptComponent(Type type) => _scriptComponents.ContainsKey(type);
+    internal bool HasScriptComponent(Type type) => _scriptComponents?.ContainsKey(type) == true;
 
     /// <summary>
     /// Gets the first attached script component of the given type.
@@ -105,7 +111,7 @@ public partial class GameObject
     /// or null if none are attached.</returns>
     internal IScriptComponent? GetScriptComponent(Type type)
     {
-        if (_scriptComponents.TryGetValue(type, out var list) && list.Count > 0)
+        if (_scriptComponents != null && _scriptComponents.TryGetValue(type, out var list) && list.Count > 0)
         {
             return list[0];
         }
@@ -118,7 +124,7 @@ public partial class GameObject
     /// </summary>
     internal IReadOnlyList<IScriptComponent> GetScriptComponents(Type type)
     {
-        if (_scriptComponents.TryGetValue(type, out var list))
+        if (_scriptComponents != null && _scriptComponents.TryGetValue(type, out var list))
         {
             return list;
         }
@@ -142,7 +148,7 @@ public partial class GameObject
 
         // Remove from storage
         var componentType = component.GetType();
-        if (_scriptComponents.TryGetValue(componentType, out var list))
+        if (_scriptComponents != null && _scriptComponents.TryGetValue(componentType, out var list))
         {
             list.Remove(component);
             if (list.Count == 0)
@@ -161,7 +167,7 @@ public partial class GameObject
     /// <exception cref="ArgumentException">Thrown if no component of the type is attached</exception>
     internal void DetachScriptComponents(Type type)
     {
-        if (!_scriptComponents.TryGetValue(type, out var list) || list.Count == 0)
+        if (_scriptComponents == null || !_scriptComponents.TryGetValue(type, out var list) || list.Count == 0)
         {
             throw new ArgumentException($"No instance of {type} is attached to this object");
         }
