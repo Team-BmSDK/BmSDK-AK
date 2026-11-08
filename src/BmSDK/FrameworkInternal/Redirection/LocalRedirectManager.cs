@@ -37,6 +37,12 @@ internal sealed class LocalRedirectManager(BindingFlags genericRedirSearchFlags)
     /// </summary>
     private readonly Dictionary<IScriptComponent, List<(IntPtr, string)>> _componentRedirsDict = [];
 
+    /// <summary>How many local redirects target each function path, so the hot path can skip functions with none.</summary>
+    private readonly Dictionary<string, int> _redirsPerPath = [];
+
+    /// <summary>Whether any local redirect, on any object, targets the given function path.</summary>
+    public bool HasRedirects(string funcPath) => _redirsPerPath.ContainsKey(funcPath);
+
     /// <summary>
     /// Finds and stores component redirector methods defined on the specified ScriptComponent type.
     /// That's done by searching for methods with the <see cref="ComponentRedirectAttribute"/>.
@@ -114,6 +120,9 @@ internal sealed class LocalRedirectManager(BindingFlags genericRedirSearchFlags)
         }
 
         keys.Add(key);
+
+        _redirsPerPath[cachedRedir.FuncPath] = _redirsPerPath.GetValueOrDefault(cachedRedir.FuncPath) + 1;
+        RedirectManager.BumpGeneration();
     }
 
     /// <summary>
@@ -167,7 +176,7 @@ internal sealed class LocalRedirectManager(BindingFlags genericRedirSearchFlags)
         var redirFunc = localRedirInfo.RedirectMethod;
 
         // Marshal args
-        var args = stackPtr->ParamsToManaged(localRedirInfo.ParamTypes).ToArray();
+        var args = stackPtr->ParamsToManaged(localRedirInfo.ParamTypes);
 
         // Execute detour
         var result = localRedirInfo.Invoker.Invoke(obj: localRedirInfo.Component, arguments: args);
@@ -192,18 +201,31 @@ internal sealed class LocalRedirectManager(BindingFlags genericRedirSearchFlags)
 
         foreach (var key in keys)
         {
-            var redirects = _localRedirsDict[key].Where(redir => redir.Component != component);
-            if (redirects.Any())
+            var all = _localRedirsDict[key];
+            var removed = all.Count(redir => redir.Component == component);
+            var redirects = all.Where(redir => redir.Component != component).ToList();
+            if (redirects.Count > 0)
             {
-                _localRedirsDict[key] = redirects.ToList();
+                _localRedirsDict[key] = redirects;
             }
             else
             {
                 _localRedirsDict.Remove(key);
             }
+
+            var left = _redirsPerPath.GetValueOrDefault(key.Item2) - removed;
+            if (left > 0)
+            {
+                _redirsPerPath[key.Item2] = left;
+            }
+            else
+            {
+                _redirsPerPath.Remove(key.Item2);
+            }
         }
 
         _componentRedirsDict.Remove(component);
+        RedirectManager.BumpGeneration();
     }
 
     /// <summary>
@@ -229,5 +251,7 @@ internal sealed class LocalRedirectManager(BindingFlags genericRedirSearchFlags)
         _cachedLocalRedirDefinitionDict.Clear();
         _localRedirsDict.Clear();
         _componentRedirsDict.Clear();
+        _redirsPerPath.Clear();
+        RedirectManager.BumpGeneration();
     }
 }

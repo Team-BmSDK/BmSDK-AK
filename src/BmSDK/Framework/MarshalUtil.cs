@@ -71,19 +71,34 @@ public static unsafe class MarshalUtil
     public static TManaged ToManaged<TManaged>(IntPtr data) =>
         ToManaged<TManaged>(data.ToPointer());
 
-    // Temp-ish hack. Let's see about refactoring this later.
+    /// <summary>
+    /// Boxing adapters over the generic marshallers, one instantiation per type, so marshalling by
+    /// <see cref="Type"/> (redirect arguments and results) costs a dictionary lookup and a delegate call
+    /// rather than reflection on every call.
+    /// </summary>
+    private static class Boxed<T>
+    {
+        public static object? To(IntPtr data) => ToManaged<T>(data);
+
+        public static void From(object? value, IntPtr data) => ToUnmanaged((T)value!, data);
+    }
+
+    private static readonly Dictionary<Type, Func<IntPtr, object?>> s_toManagedByType = [];
+    private static readonly Dictionary<Type, Action<object?, IntPtr>> s_toUnmanagedByType = [];
+
+    /// <summary>Marshals unmanaged data to a managed value of a type only known at run time.</summary>
     public static object? ToManaged(IntPtr data, Type managedType)
     {
-        var method = Guard.NotNull(
-            typeof(MarshalUtil).GetMethod(
-                nameof(ToManaged),
-                BindingFlags.Public | BindingFlags.Static,
-                [typeof(IntPtr)]
-            )
-        );
+        if (!s_toManagedByType.TryGetValue(managedType, out var marshal))
+        {
+            marshal = typeof(Boxed<>)
+                .MakeGenericType(managedType)
+                .GetMethod(nameof(Boxed<int>.To), BindingFlags.Public | BindingFlags.Static)!
+                .CreateDelegate<Func<IntPtr, object?>>();
+            s_toManagedByType[managedType] = marshal;
+        }
 
-        var genericMethod = Guard.NotNull(method.MakeGenericMethod(managedType));
-        return genericMethod.Invoke(null, [data]);
+        return marshal(data);
     }
 
     /// <summary>
@@ -138,18 +153,19 @@ public static unsafe class MarshalUtil
     public static void ToUnmanaged<TManaged>(TManaged value, IntPtr data) =>
         ToUnmanaged(value, data.ToPointer());
 
-    // Temp-ish hack. Let's see about refactoring this later.
+    /// <summary>Marshals a managed value of a type only known at run time into an existing buffer.</summary>
     public static void ToUnmanaged(object? value, IntPtr data, Type managedType)
     {
-        var method = Guard.NotNull(
-            typeof(MarshalUtil)
-                .GetMethods(BindingFlags.Public | BindingFlags.Static)
-                .Where(m => m.Name == nameof(ToUnmanaged) && m.IsGenericMethodDefinition)
-                .FirstOrDefault(m => m.GetParameters()[1].ParameterType == typeof(IntPtr))
-        );
+        if (!s_toUnmanagedByType.TryGetValue(managedType, out var marshal))
+        {
+            marshal = typeof(Boxed<>)
+                .MakeGenericType(managedType)
+                .GetMethod(nameof(Boxed<int>.From), BindingFlags.Public | BindingFlags.Static)!
+                .CreateDelegate<Action<object?, IntPtr>>();
+            s_toUnmanagedByType[managedType] = marshal;
+        }
 
-        var genericMethod = Guard.NotNull(method.MakeGenericMethod(managedType));
-        genericMethod.Invoke(null, [value, data]);
+        marshal(value, data);
     }
 
     /// <summary>

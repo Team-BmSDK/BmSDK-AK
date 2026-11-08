@@ -115,7 +115,7 @@ internal sealed record RedirectCall(
     public unsafe void RunOriginal(FFrame* stackPtr, IntPtr result)
     {
         // Copy over args to new buffer for call to original function
-        var paramsSize = TargetFunc.EnumerateParams().Sum(p => p.ElementSize);
+        var paramsSize = TargetFunc.GetParamsBytes();
         var argsPtr = stackalloc byte[TargetFunc.PropertiesSize];
         Buffer.MemoryCopy(
             stackPtr->Locals.ToPointer(),
@@ -133,14 +133,14 @@ internal sealed record RedirectCall(
         );
 
         // If there is a return value, pass it through
-        var returnField = TargetFunc.GetReturnParam();
-        if (returnField is not null)
+        TargetFunc.ResolveReturn();
+        if (TargetFunc.ReturnSize > 0)
         {
             Buffer.MemoryCopy(
-                argsPtr + returnField.Offset,
+                argsPtr + TargetFunc.ReturnOffset,
                 result.ToPointer(),
-                returnField.ElementSize,
-                returnField.ElementSize
+                TargetFunc.ReturnSize,
+                TargetFunc.ReturnSize
             );
         }
     }

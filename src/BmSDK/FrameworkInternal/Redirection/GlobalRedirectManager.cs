@@ -93,7 +93,11 @@ internal sealed class GlobalRedirectManager(BindingFlags genericRedirSearchFlags
 
         RedirectManager.QueueConfigureFunction(declaringFuncPath);
         redirects.Add(redirInfo);
+        RedirectManager.BumpGeneration();
     }
+
+    /// <summary>Whether any global redirect targets the given function path.</summary>
+    public bool HasRedirects(string funcPath) => _globalRedirsDict.ContainsKey(funcPath);
 
     /// <summary>
     /// Gets any redirections for the given function path if it applies to the given GameObject.
@@ -136,14 +140,21 @@ internal sealed class GlobalRedirectManager(BindingFlags genericRedirSearchFlags
         var redirMethod = redirInfo.RedirectMethod;
 
         // Marshal args, add self as first arg if needed.
-        var args = stackPtr->ParamsToManaged(redirInfo.GetParamTypes(funcObj));
-        if (!funcObj.IsStatic)
+        var values = stackPtr->ParamsToManaged(redirInfo.GetParamTypes(funcObj));
+        object?[] args;
+        if (funcObj.IsStatic)
         {
-            args = args.Prepend(selfObj);
+            args = values;
+        }
+        else
+        {
+            args = new object?[values.Length + 1];
+            args[0] = selfObj;
+            Array.Copy(values, 0, args, 1, values.Length);
         }
 
         // Execute detour
-        var result = redirInfo.Invoker.Invoke(obj: null, arguments: args.ToArray());
+        var result = redirInfo.Invoker.Invoke(obj: null, arguments: args);
 
         // Marshal result back (if non-void)
         if (result != null && redirMethod.ReturnType != typeof(void))
@@ -171,10 +182,16 @@ internal sealed class GlobalRedirectManager(BindingFlags genericRedirSearchFlags
         {
             _globalRedirsDict.Remove(key);
         }
+
+        RedirectManager.BumpGeneration();
     }
 
     /// <summary>
     /// Clears the backing redirector dictionary, therefore, uninstalling all global redirects.
     /// </summary>
-    public void UnregisterAll() => _globalRedirsDict.Clear();
+    public void UnregisterAll()
+    {
+        _globalRedirsDict.Clear();
+        RedirectManager.BumpGeneration();
+    }
 }
