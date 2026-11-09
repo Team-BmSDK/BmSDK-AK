@@ -118,7 +118,7 @@ internal static class RedirectManager
                 var redir = lastCall.NextRedirect();
                 if (redir is not null)
                 {
-                    redir.Run(selfObj, funcObj, stackPtr, Result);
+                    RunRedirect(lastCall, redir, selfObj, funcObj, stackPtr, Result);
                     return true;
                 }
                 // Call base implementation only once after redirects
@@ -129,6 +129,7 @@ internal static class RedirectManager
                 }
 
                 // Let base implementation run from RunOriginal call
+                lastCall.OriginalRan = true;
                 return false;
             }
         }
@@ -146,7 +147,7 @@ internal static class RedirectManager
 
         try
         {
-            newCall.NextRedirect()!.Run(selfObj, funcObj, stackPtr, Result);
+            RunRedirect(newCall, newCall.NextRedirect()!, selfObj, funcObj, stackPtr, Result);
         }
         finally
         {
@@ -155,6 +156,31 @@ internal static class RedirectManager
         }
 
         return true;
+    }
+
+    private static unsafe void RunRedirect(
+        RedirectCall call,
+        IGenericRedirect redir,
+        GameObject selfObj,
+        Function funcObj,
+        FFrame* stackPtr,
+        IntPtr Result
+    )
+    {
+        try
+        {
+            redir.Run(selfObj, funcObj, stackPtr, Result);
+        }
+        catch (Exception ex)
+        {
+            ModGuard.Report(redir.ModAssembly, redir.SenderName, ex, $"redirect of {funcObj.GetPathName()}");
+
+            // Keep the game's logic running: the original, unless the redirect already ran it.
+            if (!call.OriginalRan)
+            {
+                call.RunOriginal(stackPtr, Result);
+            }
+        }
     }
 
     /// <summary>

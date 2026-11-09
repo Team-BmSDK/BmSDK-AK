@@ -86,6 +86,7 @@ internal static class Loader
     {
         // Run the scheduled callbacks
         EngineSynchronizationContext.Instance.ExecutePending();
+        ScriptManager.ProcessPendingUnloads();
         return _EngineTickDetourBase!.Invoke(self);
     }
 
@@ -118,7 +119,7 @@ internal static class Loader
                     PreloadManager.Run();
 
                     ScriptManager.Scripts.ForEach(script =>
-                        Debug.RunWithSender(script.Name, script.Main)
+                        ModGuard.Run(script, script.Name, "Main", script.Main)
                     );
                     s_hasGameInited = true;
                     break;
@@ -126,7 +127,7 @@ internal static class Loader
                 // Notify scripts of game start
                 case Function.Lifecycle.EnterMenu when !s_hasGameStarted:
                     ScriptManager.Scripts.ForEach(script =>
-                        Debug.RunWithSender(script.Name, script.OnEnterMenu)
+                        ModGuard.Run(script, script.Name, "OnEnterMenu", script.OnEnterMenu)
                     );
                     s_hasGameStarted = true;
                     break;
@@ -134,7 +135,7 @@ internal static class Loader
                 // Notify scripts of game begin play
                 case Function.Lifecycle.EnterGame:
                     ScriptManager.Scripts.ForEach(script =>
-                        Debug.RunWithSender(script.Name, script.OnEnterGame)
+                        ModGuard.Run(script, script.Name, "OnEnterGame", script.OnEnterGame)
                     );
                     break;
 
@@ -145,7 +146,7 @@ internal static class Loader
 
                     // Call OnTick() for scripts
                     ScriptManager.Scripts.ForEach(script =>
-                        Debug.RunWithSender(script.Name, script.OnTick)
+                        ModGuard.Run(script, script.Name, "OnTick", script.OnTick)
                     );
 
                     // Call OnTick() for script components
@@ -153,7 +154,7 @@ internal static class Loader
                     {
                         foreach (var scriptComponent in GameObject.AllScriptComponents.ToArray())
                         {
-                            Debug.RunWithSender(scriptComponent.GetType().Name, scriptComponent.OnTick);
+                            ModGuard.Run(scriptComponent, scriptComponent.GetType().Name, "OnTick", scriptComponent.OnTick);
                         }
                     }
                     break;
@@ -223,7 +224,7 @@ internal static class Loader
     {
         foreach (var script in ScriptManager.Scripts)
         {
-            Debug.RunWithSender(script.Name, () => script.OnDraw(canvas));
+            ModGuard.Run(script, script.Name, "OnDraw", () => script.OnDraw(canvas));
         }
     }
 

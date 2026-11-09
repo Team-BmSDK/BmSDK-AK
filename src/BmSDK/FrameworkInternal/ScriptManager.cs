@@ -194,7 +194,7 @@ internal static class ScriptManager
                 {
                     RedirectManager.ConfigureAllRedirectedFunctions();
                     ScriptComponentManager.AutoAttachTypesToExistingObjs();
-                    scripts.ForEach(script => script.OnLoad());
+                    scripts.ForEach(script => ModGuard.Run(script, script.Name, "OnLoad", script.OnLoad));
                 }
             },
             state: null
@@ -211,7 +211,22 @@ internal static class ScriptManager
         var asm = loaded.Alc.Assemblies.FirstOrDefault();
 
         // Call OnUnload on this mod's scripts
-        loaded.Scripts.ForEach(script => script.OnUnload());
+        foreach (var script in loaded.Scripts)
+        {
+            Debug.PushSender(script.Name);
+            try
+            {
+                script.OnUnload();
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"OnUnload threw {e.GetType().Name}: {e.Message}");
+            }
+            finally
+            {
+                Debug.PopSender();
+            }
+        }
 
         if (asm != null)
         {
@@ -227,6 +242,54 @@ internal static class ScriptManager
         GC.Collect();
         GC.WaitForPendingFinalizers();
     }
+
+    private static readonly HashSet<string> s_pendingUnloads = [];
+
+    /// <summary>
+    /// Unloads the mod that <paramref name="asm"/> belongs to at the next engine tick, because its
+    /// code (<paramref name="why"/>) threw. Deferred, because the request comes from inside one of the
+    /// mod's own callbacks, while its scripts are being enumerated. Saving a script reloads the mod.
+    /// </summary>
+    public static void UnloadModOf(Assembly asm, string why)
+    {
+        var loaded = FindLoadedMod(asm);
+        if (loaded == null || !s_pendingUnloads.Add(loaded.Mod.DirectoryPath))
+        {
+            return;
+        }
+
+        Debug.LogError(
+            $"Unloading mod {loaded.Mod.Name}: {why} threw. Fix the error and save a script to reload it."
+        );
+    }
+
+    /// <summary>Whether the mod that <paramref name="asm"/> belongs to is about to be unloaded.</summary>
+    public static bool IsUnloadPending(Assembly asm) =>
+        s_pendingUnloads.Count > 0
+        && FindLoadedMod(asm) is { } loaded
+        && s_pendingUnloads.Contains(loaded.Mod.DirectoryPath);
+
+    /// <summary>Runs the unloads requested by <see cref="UnloadModOf"/>. Called from the engine tick.</summary>
+    public static void ProcessPendingUnloads()
+    {
+        if (s_pendingUnloads.Count == 0)
+        {
+            return;
+        }
+
+        foreach (var modDirPath in s_pendingUnloads.ToArray())
+        {
+            if (s_loadedMods.TryGetValue(modDirPath, out var loaded))
+            {
+                UnloadMod(loaded);
+            }
+        }
+
+        s_pendingUnloads.Clear();
+    }
+
+    private static LoadedMod? FindLoadedMod(Assembly asm) =>
+        s_loadedMods.Values.FirstOrDefault(m => m.Alc.Assemblies.Contains(asm));
 
     /// <summary>
     /// Reloads a single mod by its directory path.
