@@ -78,49 +78,57 @@ public partial class RSeqAct_AnyButtonSkips : BmSDK.Engine.SeqAct_Latent, BmSDK.
         where TComponent : class, Framework.IScriptComponent<RSeqAct_AnyButtonSkips>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_AnyButtonSkips.GetObjClassVersion", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmScript.RSeqAct_AnyButtonSkips.GetObjClassVersion");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CheckButtonsOld;
     /// <summary>
     /// Function: CheckButtonsOld
     /// </summary>
     public unsafe virtual bool CheckButtonsOld()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_AnyButtonSkips.CheckButtonsOld", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckButtonsOld, "BmScript.RSeqAct_AnyButtonSkips.CheckButtonsOld");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_CheckButtonsNew;
     /// <summary>
     /// Function: CheckButtonsNew
     /// </summary>
     public unsafe virtual bool CheckButtonsNew()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_AnyButtonSkips.CheckButtonsNew", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckButtonsNew, "BmScript.RSeqAct_AnyButtonSkips.CheckButtonsNew");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Update;
     /// <summary>
     /// Function: Update
     /// </summary>
     public unsafe override bool Update(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSeqAct_AnyButtonSkips.Update", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Update, "BmScript.RSeqAct_AnyButtonSkips.Update");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     /// <summary>

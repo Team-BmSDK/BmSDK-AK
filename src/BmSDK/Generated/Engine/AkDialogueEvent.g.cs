@@ -78,46 +78,54 @@ public partial class AkDialogueEvent : BmSDK.Engine.AkHash, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<AkDialogueEvent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsOncePerSession;
     /// <summary>
     /// Function: IsOncePerSession
     /// </summary>
     public unsafe virtual bool IsOncePerSession()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkDialogueEvent.IsOncePerSession", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsOncePerSession, "Engine.AkDialogueEvent.IsOncePerSession");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsOnceEver;
     /// <summary>
     /// Function: IsOnceEver
     /// </summary>
     public unsafe virtual bool IsOnceEver()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkDialogueEvent.IsOnceEver", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsOnceEver, "Engine.AkDialogueEvent.IsOnceEver");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsOnceOnly;
     /// <summary>
     /// Function: IsOnceOnly
     /// </summary>
     public unsafe virtual bool IsOnceOnly()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkDialogueEvent.IsOnceOnly", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsOnceOnly, "Engine.AkDialogueEvent.IsOnceOnly");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetCustomVoiceSubtitle;
     /// <summary>
     /// Function: GetCustomVoiceSubtitle
     /// </summary>
     public unsafe virtual BmSDK.FString GetCustomVoiceSubtitle(BmSDK.FString langExt = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkDialogueEvent.GetCustomVoiceSubtitle", true);
-        byte* paramsPtr = stackalloc byte[32];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCustomVoiceSubtitle, "Engine.AkDialogueEvent.GetCustomVoiceSubtitle");
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(langExt, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -127,16 +135,18 @@ public partial class AkDialogueEvent : BmSDK.Engine.AkHash, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_GetSubtitle;
     /// <summary>
     /// Function: GetSubtitle
     /// </summary>
     public unsafe virtual BmSDK.FString GetSubtitle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkDialogueEvent.GetSubtitle", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSubtitle, "Engine.AkDialogueEvent.GetSubtitle");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -145,27 +155,31 @@ public partial class AkDialogueEvent : BmSDK.Engine.AkHash, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetId;
     /// <summary>
     /// Function: GetId
     /// </summary>
     public unsafe virtual int GetId()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkDialogueEvent.GetId", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetId, "Engine.AkDialogueEvent.GetId");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetSoundDuration;
     /// <summary>
     /// Function: GetSoundDuration
     /// </summary>
     public unsafe virtual float GetSoundDuration()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkDialogueEvent.GetSoundDuration", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSoundDuration, "Engine.AkDialogueEvent.GetSoundDuration");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -174,16 +188,18 @@ public partial class AkDialogueEvent : BmSDK.Engine.AkHash, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetSoundEvent;
     /// <summary>
     /// Function: GetSoundEvent
     /// </summary>
     public unsafe virtual BmSDK.Engine.AkEvent GetSoundEvent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkDialogueEvent.GetSoundEvent", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSoundEvent, "Engine.AkDialogueEvent.GetSoundEvent");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -192,7 +208,7 @@ public partial class AkDialogueEvent : BmSDK.Engine.AkHash, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AkEvent>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.AkEvent>(paramsPtr + 0);
     }
 
     /// <summary>

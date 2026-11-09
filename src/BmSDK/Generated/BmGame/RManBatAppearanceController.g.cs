@@ -78,13 +78,15 @@ public partial class RManBatAppearanceController : BmSDK.GameObject, BmSDK.IGame
         where TComponent : class, Framework.IScriptComponent<RManBatAppearanceController>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SpawnManbatAppearance;
     /// <summary>
     /// Function: SpawnManbatAppearance
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RPawnManBatBase SpawnManbatAppearance()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RManBatAppearanceController.SpawnManbatAppearance", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnManbatAppearance, "BmGame.RManBatAppearanceController.SpawnManbatAppearance");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -93,16 +95,18 @@ public partial class RManBatAppearanceController : BmSDK.GameObject, BmSDK.IGame
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnManBatBase>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RPawnManBatBase>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsSpaceForManbatAnimation;
     /// <summary>
     /// Function: IsSpaceForManbatAnimation
     /// </summary>
     public unsafe virtual bool IsSpaceForManbatAnimation(BmSDK.FName AnimName, BmSDK.Engine.Actor TestActor, float CheckDistance, System.Numerics.Vector3 TestLoc = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RManBatAppearanceController.IsSpaceForManbatAnimation", true);
-        byte* paramsPtr = stackalloc byte[36];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsSpaceForManbatAnimation, "BmGame.RManBatAppearanceController.IsSpaceForManbatAnimation");
+        byte* paramsPtr = stackalloc byte[52];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestActor, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckDistance, paramsPtr + 16);
@@ -115,104 +119,120 @@ public partial class RManBatAppearanceController : BmSDK.GameObject, BmSDK.IGame
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_GetManbatAnimSet;
     /// <summary>
     /// Function: GetManbatAnimSet
     /// </summary>
     public unsafe virtual BmSDK.TArray<BmSDK.Engine.AnimSet> GetManbatAnimSet()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RManBatAppearanceController.GetManbatAnimSet", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetManbatAnimSet, "BmGame.RManBatAppearanceController.GetManbatAnimSet");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.Engine.AnimSet>>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.Engine.AnimSet>>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsManbatAnimationLoaded;
     /// <summary>
     /// Function: IsManbatAnimationLoaded
     /// </summary>
     public unsafe virtual bool IsManbatAnimationLoaded(BmSDK.FName AnimName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RManBatAppearanceController.IsManbatAnimationLoaded", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsManbatAnimationLoaded, "BmGame.RManBatAppearanceController.IsManbatAnimationLoaded");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_ManbatAppearanceAllowed;
     /// <summary>
     /// Function: ManbatAppearanceAllowed
     /// </summary>
     public unsafe virtual bool ManbatAppearanceAllowed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RManBatAppearanceController.ManbatAppearanceAllowed", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ManbatAppearanceAllowed, "BmGame.RManBatAppearanceController.ManbatAppearanceAllowed");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_DoManbatAppearance;
     /// <summary>
     /// Function: DoManbatAppearance
     /// </summary>
     public unsafe virtual void DoManbatAppearance(bool bAllowInterupt, bool bIgnoreCollisionCheck)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RManBatAppearanceController.DoManbatAppearance", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoManbatAppearance, "BmGame.RManBatAppearanceController.DoManbatAppearance");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAllowInterupt, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bIgnoreCollisionCheck, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetWorldInfo;
     /// <summary>
     /// Function: GetWorldInfo
     /// </summary>
     public unsafe virtual BmSDK.Engine.WorldInfo GetWorldInfo()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RManBatAppearanceController.GetWorldInfo", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetWorldInfo, "BmGame.RManBatAppearanceController.GetWorldInfo");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.WorldInfo>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.WorldInfo>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_HasAnimBeenUsedRecently;
     /// <summary>
     /// Function: HasAnimBeenUsedRecently
     /// </summary>
     public unsafe virtual bool HasAnimBeenUsedRecently(BmSDK.BmGame.RPawnJokerHallucination.TypesOfHallucination AppearanceType, BmSDK.FName AnimationName, int NumHistoryToCheck)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RManBatAppearanceController.HasAnimBeenUsedRecently", true);
-        byte* paramsPtr = stackalloc byte[52];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasAnimBeenUsedRecently, "BmGame.RManBatAppearanceController.HasAnimBeenUsedRecently");
+        byte* paramsPtr = stackalloc byte[68];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AppearanceType, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimationName, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NumHistoryToCheck, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_RegisterManbatAppearance;
     /// <summary>
     /// Function: RegisterManbatAppearance
     /// </summary>
     public unsafe virtual void RegisterManbatAppearance(BmSDK.BmGame.RPawnJokerHallucination.TypesOfHallucination AppearanceType, BmSDK.FName AnimationName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RManBatAppearanceController.RegisterManbatAppearance", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RegisterManbatAppearance, "BmGame.RManBatAppearanceController.RegisterManbatAppearance");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AppearanceType, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimationName, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShouldSpawnManBatThisTime;
     /// <summary>
     /// Function: ShouldSpawnManBatThisTime
     /// </summary>
     public unsafe virtual bool ShouldSpawnManBatThisTime(BmSDK.BmGame.RPawnJokerHallucination.TypesOfHallucination AppearanceType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RManBatAppearanceController.ShouldSpawnManBatThisTime", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldSpawnManBatThisTime, "BmGame.RManBatAppearanceController.ShouldSpawnManBatThisTime");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AppearanceType, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     /// <summary>

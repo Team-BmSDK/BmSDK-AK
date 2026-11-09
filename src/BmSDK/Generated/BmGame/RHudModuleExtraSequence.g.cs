@@ -78,25 +78,29 @@ public partial class RHudModuleExtraSequence : BmSDK.BmGame.RHudModule, BmSDK.IG
         where TComponent : class, Framework.IScriptComponent<RHudModuleExtraSequence>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetMiddleInfo;
     /// <summary>
     /// Function: SetMiddleInfo
     /// </summary>
     public unsafe virtual void SetMiddleInfo(BmSDK.FString line1)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleExtraSequence.SetMiddleInfo", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMiddleInfo, "BmGame.RHudModuleExtraSequence.SetMiddleInfo");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(line1, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetSideInfo;
     /// <summary>
     /// Function: SetSideInfo
     /// </summary>
     public unsafe virtual void SetSideInfo(int side_index, BmSDK.FString line1, BmSDK.FString line2, BmSDK.FString icon_string)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleExtraSequence.SetSideInfo", true);
-        byte* paramsPtr = stackalloc byte[52];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSideInfo, "BmGame.RHudModuleExtraSequence.SetSideInfo");
+        byte* paramsPtr = stackalloc byte[68];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(side_index, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(line1, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(line2, paramsPtr + 20);
@@ -105,47 +109,55 @@ public partial class RHudModuleExtraSequence : BmSDK.BmGame.RHudModule, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_DoOutro;
     /// <summary>
     /// Function: DoOutro
     /// </summary>
     public unsafe virtual void DoOutro()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleExtraSequence.DoOutro", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoOutro, "BmGame.RHudModuleExtraSequence.DoOutro");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetSpeedBar;
     /// <summary>
     /// Function: SetSpeedBar
     /// </summary>
     public unsafe virtual void SetSpeedBar(float Speed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleExtraSequence.SetSpeedBar", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetSpeedBar, "BmGame.RHudModuleExtraSequence.SetSpeedBar");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Speed, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HideReticle;
     /// <summary>
     /// Function: HideReticle
     /// </summary>
     public unsafe virtual void HideReticle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleExtraSequence.HideReticle", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HideReticle, "BmGame.RHudModuleExtraSequence.HideReticle");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetReticle;
     /// <summary>
     /// Function: SetReticle
     /// </summary>
     public unsafe virtual void SetReticle(float ret_x, float ret_y, BmSDK.FString ret_anim, float ret_lockon, float scan_progress)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleExtraSequence.SetReticle", true);
-        byte* paramsPtr = stackalloc byte[32];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetReticle, "BmGame.RHudModuleExtraSequence.SetReticle");
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ret_x, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ret_y, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ret_anim, paramsPtr + 8);
@@ -155,25 +167,29 @@ public partial class RHudModuleExtraSequence : BmSDK.BmGame.RHudModule, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_SetupTargetNames;
     /// <summary>
     /// Function: SetupTargetNames
     /// </summary>
     public unsafe virtual void SetupTargetNames(BmSDK.TArray<BmSDK.FString> names_and_states)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleExtraSequence.SetupTargetNames", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupTargetNames, "BmGame.RHudModuleExtraSequence.SetupTargetNames");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(names_and_states, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetWorkerFound;
     /// <summary>
     /// Function: SetWorkerFound
     /// </summary>
     public unsafe virtual void SetWorkerFound(BmSDK.FString worker_name, BmSDK.FString worker_info, BmSDK.FString worker_id)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleExtraSequence.SetWorkerFound", true);
-        byte* paramsPtr = stackalloc byte[48];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetWorkerFound, "BmGame.RHudModuleExtraSequence.SetWorkerFound");
+        byte* paramsPtr = stackalloc byte[64];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(worker_name, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(worker_info, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(worker_id, paramsPtr + 32);
@@ -181,40 +197,46 @@ public partial class RHudModuleExtraSequence : BmSDK.BmGame.RHudModule, BmSDK.IG
         return;
     }
 
+    private static BmSDK.Function __fn_SetIsInvestigateModeAuto;
     /// <summary>
     /// Function: SetIsInvestigateModeAuto
     /// </summary>
     public unsafe virtual void SetIsInvestigateModeAuto()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleExtraSequence.SetIsInvestigateModeAuto", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetIsInvestigateModeAuto, "BmGame.RHudModuleExtraSequence.SetIsInvestigateModeAuto");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Close;
     /// <summary>
     /// Function: Close
     /// </summary>
     public unsafe override void Close()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleExtraSequence.Close", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Close, "BmGame.RHudModuleExtraSequence.Close");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe override bool Init(BmSDK.BmGame.RPlayerController _RPC, BmSDK.FString _ExtensionName, BmSDK.FString _ExtensionPath)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudModuleExtraSequence.Init", true);
-        byte* paramsPtr = stackalloc byte[44];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmGame.RHudModuleExtraSequence.Init");
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_RPC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_ExtensionName, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(_ExtensionPath, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 40);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 40);
     }
 
     /// <summary>

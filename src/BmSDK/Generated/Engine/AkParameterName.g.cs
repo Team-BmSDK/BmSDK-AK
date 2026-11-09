@@ -78,13 +78,15 @@ public partial class AkParameterName : BmSDK.Engine.AkHash, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<AkParameterName>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_MapParameterValue;
     /// <summary>
     /// Function: MapParameterValue
     /// </summary>
     public unsafe virtual float MapParameterValue(float curValue, float rangeMin = default, float rangeMax = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkParameterName.MapParameterValue", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MapParameterValue, "Engine.AkParameterName.MapParameterValue");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(curValue, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(rangeMin, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(rangeMax, paramsPtr + 8);
@@ -96,16 +98,18 @@ public partial class AkParameterName : BmSDK.Engine.AkHash, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_ClampParameterValue;
     /// <summary>
     /// Function: ClampParameterValue
     /// </summary>
     public unsafe virtual float ClampParameterValue(float curValue)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkParameterName.ClampParameterValue", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClampParameterValue, "Engine.AkParameterName.ClampParameterValue");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(curValue, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -115,7 +119,7 @@ public partial class AkParameterName : BmSDK.Engine.AkHash, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 4);
     }
 
     /// <summary>

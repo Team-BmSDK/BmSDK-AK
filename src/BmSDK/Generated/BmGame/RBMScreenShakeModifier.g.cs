@@ -78,27 +78,37 @@ public partial class RBMScreenShakeModifier : BmSDK.GameObject, BmSDK.IGameObjec
         where TComponent : class, Framework.IScriptComponent<RBMScreenShakeModifier>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetArrayElement;
     /// <summary>
     /// Function: GetArrayElement
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RBMScreenShakeModifier.FBMScreenShakeStruct GetArrayElement(int I)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMScreenShakeModifier.GetArrayElement", true);
-        byte* paramsPtr = stackalloc byte[160];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetArrayElement, "BmGame.RBMScreenShakeModifier.GetArrayElement");
+        byte* paramsPtr = stackalloc byte[176];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(I, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMScreenShakeModifier.FBMScreenShakeStruct>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RBMScreenShakeModifier.FBMScreenShakeStruct>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_Update;
     /// <summary>
     /// Function: Update
     /// </summary>
     public unsafe virtual void Update(float DeltaTime, System.Numerics.Vector3 CameraLoc, out System.Numerics.Vector3 Loc, out BmSDK.Rotator Rot, out float FOV)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMScreenShakeModifier.Update", true);
-        byte* paramsPtr = stackalloc byte[44];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Update, "BmGame.RBMScreenShakeModifier.Update");
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CameraLoc, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Rot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Rot, paramsPtr + 28);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FOV);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FOV, paramsPtr + 40);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -107,88 +117,106 @@ public partial class RBMScreenShakeModifier : BmSDK.GameObject, BmSDK.IGameObjec
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Loc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 16);
-        Rot = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 28);
-        FOV = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 40);
+        Loc = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 16);
+        Rot = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Rotator>(paramsPtr + 28);
+        FOV = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 40);
         return;
     }
 
+    private static BmSDK.Function __fn_OverrideShakeStrength;
     /// <summary>
     /// Function: OverrideShakeStrength
     /// </summary>
     public unsafe virtual void OverrideShakeStrength(int ShakeId, float NewStrength)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMScreenShakeModifier.OverrideShakeStrength", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverrideShakeStrength, "BmGame.RBMScreenShakeModifier.OverrideShakeStrength");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ShakeId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewStrength, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RemoveScreenShake;
     /// <summary>
     /// Function: RemoveScreenShake
     /// </summary>
     public unsafe virtual void RemoveScreenShake(int ShakeId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMScreenShakeModifier.RemoveScreenShake", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveScreenShake, "BmGame.RBMScreenShakeModifier.RemoveScreenShake");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ShakeId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddScreenShakeWithDirection;
     /// <summary>
     /// Function: AddScreenShakeWithDirection
     /// </summary>
     public unsafe virtual int AddScreenShakeWithDirection(BmSDK.BmGame.RBMScreenShakeModifier.FBMScreenShakeStruct NewShake, System.Numerics.Vector3 DirectionScale = default, System.Numerics.Vector3 ShakeSourcePos = default, float DistanceScalar = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMScreenShakeModifier.AddScreenShakeWithDirection", true);
-        byte* paramsPtr = stackalloc byte[196];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddScreenShakeWithDirection, "BmGame.RBMScreenShakeModifier.AddScreenShakeWithDirection");
+        byte* paramsPtr = stackalloc byte[212];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewShake, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DirectionScale, paramsPtr + 156);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ShakeSourcePos, paramsPtr + 168);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DistanceScalar, paramsPtr + 180);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 184);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 184);
     }
 
+    private static BmSDK.Function __fn_AddScreenShake;
     /// <summary>
     /// Function: AddScreenShake
     /// </summary>
     public unsafe virtual int AddScreenShake(BmSDK.BmGame.RBMScreenShakeModifier.FBMScreenShakeStruct NewShake, float Scalar = default, System.Numerics.Vector3 ShakeSourcePos = default, float DistanceScalar = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMScreenShakeModifier.AddScreenShake", true);
-        byte* paramsPtr = stackalloc byte[188];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddScreenShake, "BmGame.RBMScreenShakeModifier.AddScreenShake");
+        byte* paramsPtr = stackalloc byte[204];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewShake, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Scalar, paramsPtr + 156);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ShakeSourcePos, paramsPtr + 160);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DistanceScalar, paramsPtr + 172);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 176);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 176);
     }
 
+    private static BmSDK.Function __fn_GetRandomValueForElement;
     /// <summary>
     /// Function: GetRandomValueForElement
     /// </summary>
     public unsafe virtual float GetRandomValueForElement(float Value, bool invertResult)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMScreenShakeModifier.GetRandomValueForElement", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRandomValueForElement, "BmGame.RBMScreenShakeModifier.GetRandomValueForElement");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Value, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(invertResult, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_UpdateFast;
     /// <summary>
     /// Function: UpdateFast
     /// </summary>
     public unsafe virtual void UpdateFast(float DeltaTime, out System.Numerics.Vector3 Loc, out BmSDK.Rotator Rot, out float FOV)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMScreenShakeModifier.UpdateFast", true);
-        byte* paramsPtr = stackalloc byte[32];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateFast, "BmGame.RBMScreenShakeModifier.UpdateFast");
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Rot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Rot, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FOV);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FOV, paramsPtr + 28);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -197,20 +225,30 @@ public partial class RBMScreenShakeModifier : BmSDK.GameObject, BmSDK.IGameObjec
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Loc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 4);
-        Rot = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 16);
-        FOV = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 28);
+        Loc = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 4);
+        Rot = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Rotator>(paramsPtr + 16);
+        FOV = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 28);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateShake;
     /// <summary>
     /// Function: UpdateShake
     /// </summary>
     public unsafe virtual bool UpdateShake(float DeltaTime, out BmSDK.BmGame.RBMScreenShakeModifier.FBMScreenShakeStruct Shake, out System.Numerics.Vector3 Loc, out BmSDK.Rotator Rot, out float FOV)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMScreenShakeModifier.UpdateShake", true);
-        byte* paramsPtr = stackalloc byte[192];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateShake, "BmGame.RBMScreenShakeModifier.UpdateShake");
+        byte* paramsPtr = stackalloc byte[208];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Shake);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Shake, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 160);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Rot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Rot, paramsPtr + 172);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FOV);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FOV, paramsPtr + 184);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -219,21 +257,29 @@ public partial class RBMScreenShakeModifier : BmSDK.GameObject, BmSDK.IGameObjec
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Shake = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMScreenShakeModifier.FBMScreenShakeStruct>(paramsPtr + 4);
-        Loc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 160);
-        Rot = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 172);
-        FOV = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 184);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 188);
+        Shake = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RBMScreenShakeModifier.FBMScreenShakeStruct>(paramsPtr + 4);
+        Loc = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 160);
+        Rot = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Rotator>(paramsPtr + 172);
+        FOV = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 184);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 188);
     }
 
+    private static BmSDK.Function __fn_ApplyShake;
     /// <summary>
     /// Function: ApplyShake
     /// </summary>
     public unsafe virtual void ApplyShake(float DeltaTime, out BmSDK.BmGame.RBMScreenShakeModifier.FBMScreenShakeStruct Shake, out System.Numerics.Vector3 Loc, out BmSDK.Rotator Rot, float ShakePct)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMScreenShakeModifier.ApplyShake", true);
-        byte* paramsPtr = stackalloc byte[188];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyShake, "BmGame.RBMScreenShakeModifier.ApplyShake");
+        byte* paramsPtr = stackalloc byte[204];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Shake);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Shake, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 160);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Rot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Rot, paramsPtr + 172);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ShakePct, paramsPtr + 184);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -243,19 +289,25 @@ public partial class RBMScreenShakeModifier : BmSDK.GameObject, BmSDK.IGameObjec
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Shake = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMScreenShakeModifier.FBMScreenShakeStruct>(paramsPtr + 4);
-        Loc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 160);
-        Rot = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 172);
+        Shake = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RBMScreenShakeModifier.FBMScreenShakeStruct>(paramsPtr + 4);
+        Loc = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 160);
+        Rot = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Rotator>(paramsPtr + 172);
         return;
     }
 
+    private static BmSDK.Function __fn_ApplyJitter;
     /// <summary>
     /// Function: ApplyJitter
     /// </summary>
     public unsafe virtual void ApplyJitter(out float Amplitude, out float Offset, float Frequency, float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMScreenShakeModifier.ApplyJitter", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyJitter, "BmGame.RBMScreenShakeModifier.ApplyJitter");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Amplitude);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Amplitude, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Offset);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Offset, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Frequency, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
@@ -266,18 +318,20 @@ public partial class RBMScreenShakeModifier : BmSDK.GameObject, BmSDK.IGameObjec
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Amplitude = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
-        Offset = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 4);
+        Amplitude = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
+        Offset = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 4);
         return;
     }
 
+    private static BmSDK.Function __fn_Reset;
     /// <summary>
     /// Function: Reset
     /// </summary>
     public unsafe virtual void Reset()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMScreenShakeModifier.Reset", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Reset, "BmGame.RBMScreenShakeModifier.Reset");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

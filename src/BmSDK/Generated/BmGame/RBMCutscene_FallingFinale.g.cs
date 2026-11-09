@@ -78,26 +78,30 @@ public partial class RBMCutscene_FallingFinale : BmSDK.BmGame.RBMCutscene_Silent
         where TComponent : class, Framework.IScriptComponent<RBMCutscene_FallingFinale>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ResetViewTarget;
     /// <summary>
     /// Function: ResetViewTarget
     /// </summary>
     public unsafe override void ResetViewTarget()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCutscene_FallingFinale.ResetViewTarget", true);
-        byte* paramsPtr = stackalloc byte[36];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResetViewTarget, "BmGame.RBMCutscene_FallingFinale.ResetViewTarget");
+        byte* paramsPtr = stackalloc byte[52];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CanUseCam;
     /// <summary>
     /// Function: CanUseCam
     /// </summary>
     public unsafe static bool CanUseCam(BmSDK.BmGame.RBMCutsceneBase CheckCutscene)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMCutscene_FallingFinale.CanUseCam", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanUseCam, "BmGame.RBMCutscene_FallingFinale.CanUseCam");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CheckCutscene, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 }

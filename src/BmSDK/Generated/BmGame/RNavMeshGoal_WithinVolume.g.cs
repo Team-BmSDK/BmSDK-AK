@@ -78,29 +78,33 @@ public partial class RNavMeshGoal_WithinVolume : BmSDK.Engine.NavMeshPathGoalEva
         where TComponent : class, Framework.IScriptComponent<RNavMeshGoal_WithinVolume>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Recycle;
     /// <summary>
     /// Function: Recycle
     /// </summary>
     public unsafe override void Recycle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RNavMeshGoal_WithinVolume.Recycle", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Recycle, "BmGame.RNavMeshGoal_WithinVolume.Recycle");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GoalWithinVolume;
     /// <summary>
     /// Function: GoalWithinVolume
     /// </summary>
     public unsafe static bool GoalWithinVolume(BmSDK.Engine.NavigationHandle NavHandle, BmSDK.Engine.Volume NewWithinVol, float InMinTraversalDist = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RNavMeshGoal_WithinVolume.GoalWithinVolume", true);
-        byte* paramsPtr = stackalloc byte[32];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GoalWithinVolume, "BmGame.RNavMeshGoal_WithinVolume.GoalWithinVolume");
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NavHandle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewWithinVol, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InMinTraversalDist, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 20);
     }
 
     /// <summary>

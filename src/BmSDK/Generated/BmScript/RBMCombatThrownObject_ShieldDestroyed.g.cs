@@ -78,13 +78,15 @@ public partial class RBMCombatThrownObject_ShieldDestroyed : BmSDK.BmGame.RBMCom
         where TComponent : class, Framework.IScriptComponent<RBMCombatThrownObject_ShieldDestroyed>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DoEvent;
     /// <summary>
     /// Function: DoEvent
     /// </summary>
     public unsafe override void DoEvent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatThrownObject_ShieldDestroyed.DoEvent", true);
-        byte* paramsPtr = stackalloc byte[24];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoEvent, "BmScript.RBMCombatThrownObject_ShieldDestroyed.DoEvent");
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

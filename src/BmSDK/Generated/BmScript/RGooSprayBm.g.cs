@@ -78,35 +78,41 @@ public partial class RGooSprayBm : BmSDK.BmGame.RGooSpray, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RGooSprayBm>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PlayedHostageInDangerLine;
     /// <summary>
     /// Function: PlayedHostageInDangerLine
     /// </summary>
     public unsafe virtual void PlayedHostageInDangerLine()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGooSprayBm.PlayedHostageInDangerLine", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayedHostageInDangerLine, "BmScript.RGooSprayBm.PlayedHostageInDangerLine");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayHostageInDangerLine;
     /// <summary>
     /// Function: PlayHostageInDangerLine
     /// </summary>
     public unsafe override void PlayHostageInDangerLine()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGooSprayBm.PlayHostageInDangerLine", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayHostageInDangerLine, "BmScript.RGooSprayBm.PlayHostageInDangerLine");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlayDetonateAudio;
     /// <summary>
     /// Function: PlayDetonateAudio
     /// </summary>
     public unsafe override void PlayDetonateAudio()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGooSprayBm.PlayDetonateAudio", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayDetonateAudio, "BmScript.RGooSprayBm.PlayDetonateAudio");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

@@ -29,6 +29,7 @@ struct PropertyInfo : MemberInfo
     bool IsOutParam = false;
     bool IsReturnParam = false;
     bool ShouldReturnByRef = false;
+    bool OwnsMemory = false;
 };
 
 struct StructInfo : MemberInfo
@@ -39,7 +40,16 @@ struct StructInfo : MemberInfo
 
     string ManagedName;
     int32_t PropertiesSize = 0;
+    int32_t MinAlignment = 1;
     vector<MemberInfo*> Members;
+
+    // The size of one element in a TArray or a C array of this struct: PropertiesSize rounded
+    // up to MinAlignment, the way the engine lays them out.
+    int32_t GetAlignedSize() const
+    {
+        auto align = MinAlignment > 0 ? MinAlignment : 1;
+        return (PropertiesSize + align - 1) / align * align;
+    }
 };
 
 struct EnumInfo : MemberInfo

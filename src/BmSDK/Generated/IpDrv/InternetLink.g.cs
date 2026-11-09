@@ -78,75 +78,43 @@ public partial class InternetLink : BmSDK.Engine.Info, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<InternetLink>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ResolveFailed;
     /// <summary>
     /// Function: ResolveFailed
     /// </summary>
     public unsafe virtual void ResolveFailed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.InternetLink.ResolveFailed", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ResolveFailed, "IpDrv.InternetLink.ResolveFailed");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Resolved;
     /// <summary>
     /// Function: Resolved
     /// </summary>
     public unsafe virtual void Resolved(BmSDK.IpDrv.InternetLink.FIpAddr Addr)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.InternetLink.Resolved", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Resolved, "IpDrv.InternetLink.Resolved");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Addr, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetLocalIP;
     /// <summary>
     /// Function: GetLocalIP
     /// </summary>
     public unsafe virtual void GetLocalIP(out BmSDK.IpDrv.InternetLink.FIpAddr Arg)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.InternetLink.GetLocalIP", true);
-        byte* paramsPtr = stackalloc byte[8];
-        var oldFlags = funcManaged.FunctionFlags;
-        var oldNative = funcManaged.iNative;
-        funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
-        funcManaged.FunctionFlags |= BmSDK.Function.EFunctionFlags.FUNC_Defined;
-        funcManaged.iNative = 0;
-        BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        funcManaged.iNative = oldNative;
-        funcManaged.FunctionFlags = oldFlags;
-        Arg = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.IpDrv.InternetLink.FIpAddr>(paramsPtr + 0);
-        return;
-    }
-
-    /// <summary>
-    /// Function: StringToIpAddr
-    /// </summary>
-    public unsafe virtual bool StringToIpAddr(BmSDK.FString Str, out BmSDK.IpDrv.InternetLink.FIpAddr Addr)
-    {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.InternetLink.StringToIpAddr", true);
-        byte* paramsPtr = stackalloc byte[28];
-        BmSDK.Framework.MarshalUtil.ToUnmanaged(Str, paramsPtr + 0);
-        var oldFlags = funcManaged.FunctionFlags;
-        var oldNative = funcManaged.iNative;
-        funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
-        funcManaged.FunctionFlags |= BmSDK.Function.EFunctionFlags.FUNC_Defined;
-        funcManaged.iNative = 0;
-        BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        funcManaged.iNative = oldNative;
-        funcManaged.FunctionFlags = oldFlags;
-        Addr = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.IpDrv.InternetLink.FIpAddr>(paramsPtr + 16);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
-    }
-
-    /// <summary>
-    /// Function: IpAddrToString
-    /// </summary>
-    public unsafe virtual BmSDK.FString IpAddrToString(BmSDK.IpDrv.InternetLink.FIpAddr Arg)
-    {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.InternetLink.IpAddrToString", true);
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLocalIP, "IpDrv.InternetLink.GetLocalIP");
         byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Arg);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Arg, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -156,16 +124,22 @@ public partial class InternetLink : BmSDK.Engine.Info, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 8);
+        Arg = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.IpDrv.InternetLink.FIpAddr>(paramsPtr + 0);
+        return;
     }
 
+    private static BmSDK.Function __fn_StringToIpAddr;
     /// <summary>
-    /// Function: GetLastError
+    /// Function: StringToIpAddr
     /// </summary>
-    public unsafe virtual int GetLastError()
+    public unsafe virtual bool StringToIpAddr(BmSDK.FString Str, out BmSDK.IpDrv.InternetLink.FIpAddr Addr)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.InternetLink.GetLastError", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StringToIpAddr, "IpDrv.InternetLink.StringToIpAddr");
+        byte* paramsPtr = stackalloc byte[44];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Str, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Addr);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Addr, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -174,16 +148,60 @@ public partial class InternetLink : BmSDK.Engine.Info, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        Addr = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.IpDrv.InternetLink.FIpAddr>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_IpAddrToString;
+    /// <summary>
+    /// Function: IpAddrToString
+    /// </summary>
+    public unsafe virtual BmSDK.FString IpAddrToString(BmSDK.IpDrv.InternetLink.FIpAddr Arg)
+    {
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IpAddrToString, "IpDrv.InternetLink.IpAddrToString");
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Arg, paramsPtr + 0);
+        var oldFlags = funcManaged.FunctionFlags;
+        var oldNative = funcManaged.iNative;
+        funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
+        funcManaged.FunctionFlags |= BmSDK.Function.EFunctionFlags.FUNC_Defined;
+        funcManaged.iNative = 0;
+        BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        funcManaged.iNative = oldNative;
+        funcManaged.FunctionFlags = oldFlags;
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 8);
+    }
+
+    private static BmSDK.Function __fn_GetLastError;
+    /// <summary>
+    /// Function: GetLastError
+    /// </summary>
+    public unsafe virtual int GetLastError()
+    {
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLastError, "IpDrv.InternetLink.GetLastError");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        var oldFlags = funcManaged.FunctionFlags;
+        var oldNative = funcManaged.iNative;
+        funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
+        funcManaged.FunctionFlags |= BmSDK.Function.EFunctionFlags.FUNC_Defined;
+        funcManaged.iNative = 0;
+        BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        funcManaged.iNative = oldNative;
+        funcManaged.FunctionFlags = oldFlags;
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
+    }
+
+    private static BmSDK.Function __fn_Resolve;
     /// <summary>
     /// Function: Resolve
     /// </summary>
     public unsafe virtual void Resolve(BmSDK.FString Domain)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.InternetLink.Resolve", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Resolve, "IpDrv.InternetLink.Resolve");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Domain, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -196,14 +214,18 @@ public partial class InternetLink : BmSDK.Engine.Info, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_ParseURL;
     /// <summary>
     /// Function: ParseURL
     /// </summary>
     public unsafe virtual bool ParseURL(BmSDK.FString URL, out BmSDK.FString Addr, out int PortNum, out BmSDK.FString LevelName, out BmSDK.FString EntryName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.InternetLink.ParseURL", true);
-        byte* paramsPtr = stackalloc byte[72];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ParseURL, "IpDrv.InternetLink.ParseURL");
+        byte* paramsPtr = stackalloc byte[88];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(URL, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PortNum);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PortNum, paramsPtr + 32);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -212,20 +234,22 @@ public partial class InternetLink : BmSDK.Engine.Info, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Addr = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 16);
-        PortNum = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 32);
-        LevelName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 36);
-        EntryName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 52);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 68);
+        Addr = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 16);
+        PortNum = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 32);
+        LevelName = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 36);
+        EntryName = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 52);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 68);
     }
 
+    private static BmSDK.Function __fn_IsDataPending;
     /// <summary>
     /// Function: IsDataPending
     /// </summary>
     public unsafe virtual bool IsDataPending()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "IpDrv.InternetLink.IsDataPending", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsDataPending, "IpDrv.InternetLink.IsDataPending");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -234,7 +258,7 @@ public partial class InternetLink : BmSDK.Engine.Info, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     /// <summary>

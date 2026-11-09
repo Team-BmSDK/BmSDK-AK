@@ -78,37 +78,43 @@ public partial class MAEC_Sub_AttractEnemiesWithSound : BmSDK.BmGame.RAlertEvent
         where TComponent : class, Framework.IScriptComponent<MAEC_Sub_AttractEnemiesWithSound>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_NotifyFailed;
     /// <summary>
     /// Function: NotifyFailed
     /// </summary>
     public unsafe override void NotifyFailed(BmSDK.BmGame.RBMAIAction FinishedAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_Sub_AttractEnemiesWithSound.NotifyFailed", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyFailed, "BmGame.MAEC_Sub_AttractEnemiesWithSound.NotifyFailed");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FinishedAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyFinished;
     /// <summary>
     /// Function: NotifyFinished
     /// </summary>
     public unsafe override void NotifyFinished(BmSDK.BmGame.RBMAIAction FinishedAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_Sub_AttractEnemiesWithSound.NotifyFinished", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyFinished, "BmGame.MAEC_Sub_AttractEnemiesWithSound.NotifyFinished");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FinishedAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AssignTarget;
     /// <summary>
     /// Function: AssignTarget
     /// </summary>
     public unsafe virtual void AssignTarget(System.Numerics.Vector3 MovePos, BmSDK.BmGame.MJackInBoxTrapBase NewTrap, int stageAt, bool WasInIdleBehaviour)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_Sub_AttractEnemiesWithSound.AssignTarget", true);
-        byte* paramsPtr = stackalloc byte[72];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AssignTarget, "BmGame.MAEC_Sub_AttractEnemiesWithSound.AssignTarget");
+        byte* paramsPtr = stackalloc byte[88];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MovePos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewTrap, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(stageAt, paramsPtr + 20);

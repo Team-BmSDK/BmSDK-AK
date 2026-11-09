@@ -78,25 +78,29 @@ public partial class RAEC_Search_Sub_GargSmash : BmSDK.BmGame.RAEC_Search_Sub_Va
         where TComponent : class, Framework.IScriptComponent<RAEC_Search_Sub_GargSmash>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_AddVantageResponseAction;
     /// <summary>
     /// Function: AddVantageResponseAction
     /// </summary>
     public unsafe override void AddVantageResponseAction(BmSDK.FString actionlabel)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Sub_GargSmash.AddVantageResponseAction", true);
-        byte* paramsPtr = stackalloc byte[24];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddVantageResponseAction, "BmGame.RAEC_Search_Sub_GargSmash.AddVantageResponseAction");
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(actionlabel, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyGunEmpty;
     /// <summary>
     /// Function: NotifyGunEmpty
     /// </summary>
     public unsafe override void NotifyGunEmpty()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_Search_Sub_GargSmash.NotifyGunEmpty", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyGunEmpty, "BmGame.RAEC_Search_Sub_GargSmash.NotifyGunEmpty");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

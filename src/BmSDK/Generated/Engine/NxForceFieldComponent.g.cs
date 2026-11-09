@@ -73,13 +73,15 @@ public partial class NxForceFieldComponent : BmSDK.Engine.PrimitiveComponent, Bm
         where TComponent : class, Framework.IScriptComponent<NxForceFieldComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DoInitRBPhys;
     /// <summary>
     /// Function: DoInitRBPhys
     /// </summary>
     public unsafe virtual void DoInitRBPhys()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NxForceFieldComponent.DoInitRBPhys", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoInitRBPhys, "Engine.NxForceFieldComponent.DoInitRBPhys");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

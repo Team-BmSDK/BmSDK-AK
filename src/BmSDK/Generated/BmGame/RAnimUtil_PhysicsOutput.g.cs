@@ -78,13 +78,15 @@ public partial class RAnimUtil_PhysicsOutput : BmSDK.GameObject, BmSDK.IGameObje
         where TComponent : class, Framework.IScriptComponent<RAnimUtil_PhysicsOutput>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DisableInheritVelocityForNFrames;
     /// <summary>
     /// Function: DisableInheritVelocityForNFrames
     /// </summary>
     public unsafe virtual void DisableInheritVelocityForNFrames(int N)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAnimUtil_PhysicsOutput.DisableInheritVelocityForNFrames", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DisableInheritVelocityForNFrames, "BmGame.RAnimUtil_PhysicsOutput.DisableInheritVelocityForNFrames");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(N, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

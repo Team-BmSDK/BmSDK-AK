@@ -78,29 +78,33 @@ public partial class RGFxMovieOmnitronBase : BmSDK.BmGame.RGFxMovie, BmSDK.IGame
         where TComponent : class, Framework.IScriptComponent<RGFxMovieOmnitronBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_XI_FindDistanceFromPointToLine;
     /// <summary>
     /// Function: XI_FindDistanceFromPointToLine
     /// </summary>
     public unsafe virtual float XI_FindDistanceFromPointToLine(float nodePointX, float nodePointY, float laserPointX, float laserPointY, float laser_angle)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.XI_FindDistanceFromPointToLine", true);
-        byte* paramsPtr = stackalloc byte[24];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_FindDistanceFromPointToLine, "BmGame.RGFxMovieOmnitronBase.XI_FindDistanceFromPointToLine");
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(nodePointX, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(nodePointY, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(laserPointX, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(laserPointY, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(laser_angle, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 20);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_XI_SetCurveData;
     /// <summary>
     /// Function: XI_SetCurveData
     /// </summary>
     public unsafe virtual void XI_SetCurveData(float CurveAngleRange, float CurveAngleMin, float CurveAngleMax, float CurveRadiusHorz, float CurveRadiusVert, float CurveCentreX, float CurveCentreY, float CurveFocusX, float CurveFocusY)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.XI_SetCurveData", true);
-        byte* paramsPtr = stackalloc byte[36];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_SetCurveData, "BmGame.RGFxMovieOmnitronBase.XI_SetCurveData");
+        byte* paramsPtr = stackalloc byte[52];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CurveAngleRange, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CurveAngleMin, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CurveAngleMax, paramsPtr + 8);
@@ -114,39 +118,45 @@ public partial class RGFxMovieOmnitronBase : BmSDK.BmGame.RGFxMovie, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_XI_TickIntersect;
     /// <summary>
     /// Function: XI_TickIntersect
     /// </summary>
     public unsafe virtual void XI_TickIntersect(BmSDK.TArray<int> aNodesLeft, BmSDK.TArray<int> aNodesRight)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.XI_TickIntersect", true);
-        byte* paramsPtr = stackalloc byte[32];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_TickIntersect, "BmGame.RGFxMovieOmnitronBase.XI_TickIntersect");
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(aNodesLeft, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(aNodesRight, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_StickStartsOrStopsMoving;
     /// <summary>
     /// Function: XI_StickStartsOrStopsMoving
     /// </summary>
     public unsafe virtual void XI_StickStartsOrStopsMoving(int stick_index, bool is_moving)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.XI_StickStartsOrStopsMoving", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_StickStartsOrStopsMoving, "BmGame.RGFxMovieOmnitronBase.XI_StickStartsOrStopsMoving");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(stick_index, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(is_moving, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UC_SetLaserPositionAndAngle;
     /// <summary>
     /// Function: UC_SetLaserPositionAndAngle
     /// </summary>
     public unsafe virtual void UC_SetLaserPositionAndAngle(int side_index, float fDollyX, float fDollyY, float fAngleToFocus)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.UC_SetLaserPositionAndAngle", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_SetLaserPositionAndAngle, "BmGame.RGFxMovieOmnitronBase.UC_SetLaserPositionAndAngle");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(side_index, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(fDollyX, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(fDollyY, paramsPtr + 8);
@@ -155,38 +165,44 @@ public partial class RGFxMovieOmnitronBase : BmSDK.BmGame.RGFxMovie, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_UC_SetBeamIntersectNodes;
     /// <summary>
     /// Function: UC_SetBeamIntersectNodes
     /// </summary>
     public unsafe virtual void UC_SetBeamIntersectNodes(int node1, int node2)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.UC_SetBeamIntersectNodes", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_SetBeamIntersectNodes, "BmGame.RGFxMovieOmnitronBase.UC_SetBeamIntersectNodes");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(node1, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(node2, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UC_DoGameOver;
     /// <summary>
     /// Function: UC_DoGameOver
     /// </summary>
     public unsafe virtual void UC_DoGameOver(bool did_player_win)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.UC_DoGameOver", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_DoGameOver, "BmGame.RGFxMovieOmnitronBase.UC_DoGameOver");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(did_player_win, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UC_SetNodeState;
     /// <summary>
     /// Function: UC_SetNodeState
     /// </summary>
     public unsafe virtual void UC_SetNodeState(int side_index, int node_index, int iState)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.UC_SetNodeState", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_SetNodeState, "BmGame.RGFxMovieOmnitronBase.UC_SetNodeState");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(side_index, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(node_index, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(iState, paramsPtr + 8);
@@ -194,25 +210,29 @@ public partial class RGFxMovieOmnitronBase : BmSDK.BmGame.RGFxMovie, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_UC_SetBombMeterProportion;
     /// <summary>
     /// Function: UC_SetBombMeterProportion
     /// </summary>
     public unsafe virtual void UC_SetBombMeterProportion(float Proportion)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.UC_SetBombMeterProportion", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_SetBombMeterProportion, "BmGame.RGFxMovieOmnitronBase.UC_SetBombMeterProportion");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Proportion, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UC_SetupMadHatterMinigame;
     /// <summary>
     /// Function: UC_SetupMadHatterMinigame
     /// </summary>
     public unsafe virtual void UC_SetupMadHatterMinigame(float fHitArea, float fProportion, float fLaserSpeed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.UC_SetupMadHatterMinigame", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_SetupMadHatterMinigame, "BmGame.RGFxMovieOmnitronBase.UC_SetupMadHatterMinigame");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(fHitArea, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(fProportion, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(fLaserSpeed, paramsPtr + 8);
@@ -220,125 +240,147 @@ public partial class RGFxMovieOmnitronBase : BmSDK.BmGame.RGFxMovie, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_UC_CheckSolution;
     /// <summary>
     /// Function: UC_CheckSolution
     /// </summary>
     public unsafe virtual void UC_CheckSolution()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.UC_CheckSolution", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_CheckSolution, "BmGame.RGFxMovieOmnitronBase.UC_CheckSolution");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_CalibrationComplete;
     /// <summary>
     /// Function: XI_CalibrationComplete
     /// </summary>
     public unsafe virtual void XI_CalibrationComplete()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.XI_CalibrationComplete", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_CalibrationComplete, "BmGame.RGFxMovieOmnitronBase.XI_CalibrationComplete");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_StopVoicePlayback;
     /// <summary>
     /// Function: XI_StopVoicePlayback
     /// </summary>
     public unsafe virtual void XI_StopVoicePlayback()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.XI_StopVoicePlayback", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_StopVoicePlayback, "BmGame.RGFxMovieOmnitronBase.XI_StopVoicePlayback");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_StartVoicePlayback;
     /// <summary>
     /// Function: XI_StartVoicePlayback
     /// </summary>
     public unsafe virtual void XI_StartVoicePlayback()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.XI_StartVoicePlayback", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_StartVoicePlayback, "BmGame.RGFxMovieOmnitronBase.XI_StartVoicePlayback");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_ClosingDialogueBoxAfterOutro;
     /// <summary>
     /// Function: XI_ClosingDialogueBoxAfterOutro
     /// </summary>
     public unsafe virtual void XI_ClosingDialogueBoxAfterOutro()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.XI_ClosingDialogueBoxAfterOutro", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_ClosingDialogueBoxAfterOutro, "BmGame.RGFxMovieOmnitronBase.XI_ClosingDialogueBoxAfterOutro");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_ClosingDialogueBoxAfterScan;
     /// <summary>
     /// Function: XI_ClosingDialogueBoxAfterScan
     /// </summary>
     public unsafe virtual void XI_ClosingDialogueBoxAfterScan()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.XI_ClosingDialogueBoxAfterScan", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_ClosingDialogueBoxAfterScan, "BmGame.RGFxMovieOmnitronBase.XI_ClosingDialogueBoxAfterScan");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_ClosingDialogueBoxAfterIntro;
     /// <summary>
     /// Function: XI_ClosingDialogueBoxAfterIntro
     /// </summary>
     public unsafe virtual void XI_ClosingDialogueBoxAfterIntro()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.XI_ClosingDialogueBoxAfterIntro", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_ClosingDialogueBoxAfterIntro, "BmGame.RGFxMovieOmnitronBase.XI_ClosingDialogueBoxAfterIntro");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_PlayVoiceNormal;
     /// <summary>
     /// Function: XI_PlayVoiceNormal
     /// </summary>
     public unsafe virtual void XI_PlayVoiceNormal()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.XI_PlayVoiceNormal", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_PlayVoiceNormal, "BmGame.RGFxMovieOmnitronBase.XI_PlayVoiceNormal");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_PushWaveParams;
     /// <summary>
     /// Function: XI_PushWaveParams
     /// </summary>
     public unsafe virtual void XI_PushWaveParams(float audioLength, float audioValue)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.XI_PushWaveParams", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_PushWaveParams, "BmGame.RGFxMovieOmnitronBase.XI_PushWaveParams");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(audioLength, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(audioValue, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_GameReady;
     /// <summary>
     /// Function: XI_GameReady
     /// </summary>
     public unsafe virtual void XI_GameReady()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.XI_GameReady", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_GameReady, "BmGame.RGFxMovieOmnitronBase.XI_GameReady");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InitVoiceSynth;
     /// <summary>
     /// Function: InitVoiceSynth
     /// </summary>
     public unsafe virtual void InitVoiceSynth(float solutionVal, float solutionLength, float barSize, float perfectMargin, float correctMargin, BmSDK.FString localisedName, BmSDK.FString PortraitName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.InitVoiceSynth", true);
-        byte* paramsPtr = stackalloc byte[52];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitVoiceSynth, "BmGame.RGFxMovieOmnitronBase.InitVoiceSynth");
+        byte* paramsPtr = stackalloc byte[68];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(solutionVal, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(solutionLength, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(barSize, paramsPtr + 8);
@@ -350,143 +392,167 @@ public partial class RGFxMovieOmnitronBase : BmSDK.BmGame.RGFxMovie, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_StartPlayhead;
     /// <summary>
     /// Function: StartPlayhead
     /// </summary>
     public unsafe virtual void StartPlayhead()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.StartPlayhead", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartPlayhead, "BmGame.RGFxMovieOmnitronBase.StartPlayhead");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PushControllerToFlash;
     /// <summary>
     /// Function: PushControllerToFlash
     /// </summary>
     public unsafe virtual void PushControllerToFlash(float left_x, float right_y)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.PushControllerToFlash", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PushControllerToFlash, "BmGame.RGFxMovieOmnitronBase.PushControllerToFlash");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(left_x, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(right_y, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerIntroSound;
     /// <summary>
     /// Function: TriggerIntroSound
     /// </summary>
     public unsafe virtual void TriggerIntroSound()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.TriggerIntroSound", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerIntroSound, "BmGame.RGFxMovieOmnitronBase.TriggerIntroSound");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_AnimationEvent;
     /// <summary>
     /// Function: XI_AnimationEvent
     /// </summary>
     public unsafe virtual void XI_AnimationEvent(BmSDK.FString sEvent)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.XI_AnimationEvent", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_AnimationEvent, "BmGame.RGFxMovieOmnitronBase.XI_AnimationEvent");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sEvent, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_SetRumble;
     /// <summary>
     /// Function: XI_SetRumble
     /// </summary>
     public unsafe virtual void XI_SetRumble(float fRumbleL, float fRumbleR)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.XI_SetRumble", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_SetRumble, "BmGame.RGFxMovieOmnitronBase.XI_SetRumble");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(fRumbleL, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(fRumbleR, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_PasswordFound;
     /// <summary>
     /// Function: XI_PasswordFound
     /// </summary>
     public unsafe virtual void XI_PasswordFound()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.XI_PasswordFound", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_PasswordFound, "BmGame.RGFxMovieOmnitronBase.XI_PasswordFound");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_XI_OutroComplete;
     /// <summary>
     /// Function: XI_OutroComplete
     /// </summary>
     public unsafe virtual void XI_OutroComplete()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.XI_OutroComplete", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_XI_OutroComplete, "BmGame.RGFxMovieOmnitronBase.XI_OutroComplete");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UC_PlaySweep;
     /// <summary>
     /// Function: UC_PlaySweep
     /// </summary>
     public unsafe virtual void UC_PlaySweep()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.UC_PlaySweep", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_PlaySweep, "BmGame.RGFxMovieOmnitronBase.UC_PlaySweep");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UC_SetStickAngles;
     /// <summary>
     /// Function: UC_SetStickAngles
     /// </summary>
     public unsafe virtual void UC_SetStickAngles(float fLeft, float fRight)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.UC_SetStickAngles", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_SetStickAngles, "BmGame.RGFxMovieOmnitronBase.UC_SetStickAngles");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(fLeft, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(fRight, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UC_SetDistance;
     /// <summary>
     /// Function: UC_SetDistance
     /// </summary>
     public unsafe virtual void UC_SetDistance(float fDistance)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.UC_SetDistance", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_SetDistance, "BmGame.RGFxMovieOmnitronBase.UC_SetDistance");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(fDistance, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UC_SetLockOnPercentage;
     /// <summary>
     /// Function: UC_SetLockOnPercentage
     /// </summary>
     public unsafe virtual void UC_SetLockOnPercentage(float fPercent)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.UC_SetLockOnPercentage", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_SetLockOnPercentage, "BmGame.RGFxMovieOmnitronBase.UC_SetLockOnPercentage");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(fPercent, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UC_LockOn;
     /// <summary>
     /// Function: UC_LockOn
     /// </summary>
     public unsafe virtual void UC_LockOn(BmSDK.FString sState, BmSDK.FString sPrimaryText, BmSDK.FString sSecondaryText, BmSDK.FString sIcon, int nDifficulty)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.UC_LockOn", true);
-        byte* paramsPtr = stackalloc byte[68];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_LockOn, "BmGame.RGFxMovieOmnitronBase.UC_LockOn");
+        byte* paramsPtr = stackalloc byte[84];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sState, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sPrimaryText, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sSecondaryText, paramsPtr + 32);
@@ -496,13 +562,15 @@ public partial class RGFxMovieOmnitronBase : BmSDK.BmGame.RGFxMovie, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_UC_BeginHacking;
     /// <summary>
     /// Function: UC_BeginHacking
     /// </summary>
     public unsafe virtual void UC_BeginHacking(BmSDK.FString sPasswords, int nDifficulty, int nSeed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.UC_BeginHacking", true);
-        byte* paramsPtr = stackalloc byte[24];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_BeginHacking, "BmGame.RGFxMovieOmnitronBase.UC_BeginHacking");
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sPasswords, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(nDifficulty, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(nSeed, paramsPtr + 20);
@@ -510,36 +578,42 @@ public partial class RGFxMovieOmnitronBase : BmSDK.BmGame.RGFxMovie, BmSDK.IGame
         return;
     }
 
+    private static BmSDK.Function __fn_BeginHacking;
     /// <summary>
     /// Function: BeginHacking
     /// </summary>
     public unsafe virtual void BeginHacking(BmSDK.BmGame.RRemoteControlHighSecurityInterface the_target)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.BeginHacking", true);
-        byte* paramsPtr = stackalloc byte[64];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BeginHacking, "BmGame.RGFxMovieOmnitronBase.BeginHacking");
+        byte* paramsPtr = stackalloc byte[80];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(the_target, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnClose;
     /// <summary>
     /// Function: OnClose
     /// </summary>
     public unsafe override void OnClose()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.OnClose", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnClose, "BmGame.RGFxMovieOmnitronBase.OnClose");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe override void Init(BmSDK.Engine.LocalPlayer LocPlay = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGFxMovieOmnitronBase.Init", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "BmGame.RGFxMovieOmnitronBase.Init");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocPlay, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

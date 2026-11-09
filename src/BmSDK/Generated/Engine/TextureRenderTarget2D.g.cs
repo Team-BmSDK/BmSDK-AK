@@ -78,13 +78,15 @@ public partial class TextureRenderTarget2D : BmSDK.Engine.TextureRenderTarget, B
         where TComponent : class, Framework.IScriptComponent<TextureRenderTarget2D>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Clear;
     /// <summary>
     /// Function: Clear
     /// </summary>
     public unsafe virtual void Clear()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.TextureRenderTarget2D.Clear", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Clear, "Engine.TextureRenderTarget2D.Clear");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -96,13 +98,15 @@ public partial class TextureRenderTarget2D : BmSDK.Engine.TextureRenderTarget, B
         return;
     }
 
+    private static BmSDK.Function __fn_Create;
     /// <summary>
     /// Function: Create
     /// </summary>
     public unsafe static BmSDK.Engine.TextureRenderTarget2D Create(int InSizeX, int InSizeY, BmSDK.Engine.Texture.EPixelFormat InFormat = default, BmSDK.GameObject.FLinearColor InClearColor = default, bool bOnlyRenderOnce = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.TextureRenderTarget2D.Create", true);
-        byte* paramsPtr = stackalloc byte[40];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Create, "Engine.TextureRenderTarget2D.Create");
+        byte* paramsPtr = stackalloc byte[56];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InSizeX, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InSizeY, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InFormat, paramsPtr + 8);
@@ -116,7 +120,7 @@ public partial class TextureRenderTarget2D : BmSDK.Engine.TextureRenderTarget, B
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.TextureRenderTarget2D>(paramsPtr + 32);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.TextureRenderTarget2D>(paramsPtr + 32);
     }
 
     /// <summary>

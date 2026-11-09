@@ -78,24 +78,28 @@ public partial class RSeqAct_RestoreBeams : BmSDK.Engine.SequenceAction, BmSDK.I
         where TComponent : class, Framework.IScriptComponent<RSeqAct_RestoreBeams>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_RestoreBeams.Activated", true);
-        byte* paramsPtr = stackalloc byte[20];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmGame.RSeqAct_RestoreBeams.Activated");
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RestoreBeam;
     /// <summary>
     /// Function: RestoreBeam
     /// </summary>
     public unsafe virtual void RestoreBeam(BmSDK.Engine.RStaticClimbableActor Breakable, int CollectionIndex, int RailingIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_RestoreBeams.RestoreBeam", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RestoreBeam, "BmGame.RSeqAct_RestoreBeams.RestoreBeam");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Breakable, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CollectionIndex, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RailingIndex, paramsPtr + 12);

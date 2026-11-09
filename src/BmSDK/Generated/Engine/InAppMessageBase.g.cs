@@ -78,13 +78,15 @@ public partial class InAppMessageBase : BmSDK.Engine.PlatformInterfaceBase, BmSD
         where TComponent : class, Framework.IScriptComponent<InAppMessageBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ShowInAppEmailUI;
     /// <summary>
     /// Function: ShowInAppEmailUI
     /// </summary>
     public unsafe virtual bool ShowInAppEmailUI(BmSDK.FString InitialSubject = default, BmSDK.FString InitialMessage = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.InAppMessageBase.ShowInAppEmailUI", true);
-        byte* paramsPtr = stackalloc byte[36];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowInAppEmailUI, "Engine.InAppMessageBase.ShowInAppEmailUI");
+        byte* paramsPtr = stackalloc byte[52];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InitialSubject, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InitialMessage, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
@@ -95,16 +97,18 @@ public partial class InAppMessageBase : BmSDK.Engine.PlatformInterfaceBase, BmSD
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_ShowInAppSMSUI;
     /// <summary>
     /// Function: ShowInAppSMSUI
     /// </summary>
     public unsafe virtual bool ShowInAppSMSUI(BmSDK.FString InitialMessage = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.InAppMessageBase.ShowInAppSMSUI", true);
-        byte* paramsPtr = stackalloc byte[20];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowInAppSMSUI, "Engine.InAppMessageBase.ShowInAppSMSUI");
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InitialMessage, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -114,16 +118,18 @@ public partial class InAppMessageBase : BmSDK.Engine.PlatformInterfaceBase, BmSD
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe virtual void Init()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.InAppMessageBase.Init", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "Engine.InAppMessageBase.Init");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

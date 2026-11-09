@@ -78,35 +78,41 @@ public partial class RPlayerRI : BmSDK.Engine.PlayerReplicationInfo, BmSDK.IGame
         where TComponent : class, Framework.IScriptComponent<RPlayerRI>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ShowChallengeStats;
     /// <summary>
     /// Function: ShowChallengeStats
     /// </summary>
     public unsafe virtual void ShowChallengeStats()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerRI.ShowChallengeStats", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowChallengeStats, "BmGame.RPlayerRI.ShowChallengeStats");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PublishCombatChallengeStats;
     /// <summary>
     /// Function: PublishCombatChallengeStats
     /// </summary>
     public unsafe virtual void PublishCombatChallengeStats()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerRI.PublishCombatChallengeStats", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PublishCombatChallengeStats, "BmGame.RPlayerRI.PublishCombatChallengeStats");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ClearChallengeStats;
     /// <summary>
     /// Function: ClearChallengeStats
     /// </summary>
     public unsafe virtual void ClearChallengeStats()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPlayerRI.ClearChallengeStats", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearChallengeStats, "BmGame.RPlayerRI.ClearChallengeStats");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

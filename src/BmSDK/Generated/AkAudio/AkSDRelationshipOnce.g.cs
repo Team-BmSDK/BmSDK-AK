@@ -78,13 +78,15 @@ public partial class AkSDRelationshipOnce : BmSDK.AkAudio.AkSDRelationship, BmSD
         where TComponent : class, Framework.IScriptComponent<AkSDRelationshipOnce>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Evaluate;
     /// <summary>
     /// Function: Evaluate
     /// </summary>
     public unsafe override float Evaluate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "AkAudio.AkSDRelationshipOnce.Evaluate", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Evaluate, "AkAudio.AkSDRelationshipOnce.Evaluate");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -93,7 +95,7 @@ public partial class AkSDRelationshipOnce : BmSDK.AkAudio.AkSDRelationship, BmSD
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
 
     /// <summary>

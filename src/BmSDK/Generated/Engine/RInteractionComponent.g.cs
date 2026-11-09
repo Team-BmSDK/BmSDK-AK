@@ -78,13 +78,15 @@ public partial class RInteractionComponent : BmSDK.Engine.ActorComponent, BmSDK.
         where TComponent : class, Framework.IScriptComponent<RInteractionComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_RemoveRelevantInteraction;
     /// <summary>
     /// Function: RemoveRelevantInteraction
     /// </summary>
     public unsafe virtual void RemoveRelevantInteraction(BmSDK.FName InteractionToRemove)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RInteractionComponent.RemoveRelevantInteraction", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveRelevantInteraction, "Engine.RInteractionComponent.RemoveRelevantInteraction");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InteractionToRemove, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -97,13 +99,15 @@ public partial class RInteractionComponent : BmSDK.Engine.ActorComponent, BmSDK.
         return;
     }
 
+    private static BmSDK.Function __fn_AddRelevantInteraction;
     /// <summary>
     /// Function: AddRelevantInteraction
     /// </summary>
     public unsafe virtual void AddRelevantInteraction(BmSDK.FName NewInteraction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RInteractionComponent.AddRelevantInteraction", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddRelevantInteraction, "Engine.RInteractionComponent.AddRelevantInteraction");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewInteraction, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

@@ -78,15 +78,17 @@ public partial class RLootDestination_Canister : BmSDK.BmGame.RLootDestinationBa
         where TComponent : class, Framework.IScriptComponent<RLootDestination_Canister>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnDropOff;
     /// <summary>
     /// Function: OnDropOff
     /// </summary>
     public unsafe override bool OnDropOff(BmSDK.BmGame.RPawnVillain pawnDroppingOff)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RLootDestination_Canister.OnDropOff", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnDropOff, "BmScript.RLootDestination_Canister.OnDropOff");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(pawnDroppingOff, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 }

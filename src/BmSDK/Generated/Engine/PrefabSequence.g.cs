@@ -78,13 +78,15 @@ public partial class PrefabSequence : BmSDK.Engine.Sequence, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<PrefabSequence>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetOwnerPrefab;
     /// <summary>
     /// Function: GetOwnerPrefab
     /// </summary>
     public unsafe virtual BmSDK.Engine.PrefabInstance GetOwnerPrefab()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrefabSequence.GetOwnerPrefab", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetOwnerPrefab, "Engine.PrefabSequence.GetOwnerPrefab");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -93,16 +95,18 @@ public partial class PrefabSequence : BmSDK.Engine.Sequence, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.PrefabInstance>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.PrefabInstance>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetOwnerPrefab;
     /// <summary>
     /// Function: SetOwnerPrefab
     /// </summary>
     public unsafe virtual void SetOwnerPrefab(BmSDK.Engine.PrefabInstance InOwner)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrefabSequence.SetOwnerPrefab", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetOwnerPrefab, "Engine.PrefabSequence.SetOwnerPrefab");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InOwner, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

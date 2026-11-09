@@ -78,216 +78,252 @@ public partial class MAEC_AttractEnemiesWithSound : BmSDK.BmGame.RAlertEventCoor
         where TComponent : class, Framework.IScriptComponent<MAEC_AttractEnemiesWithSound>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnBeginShutdown;
     /// <summary>
     /// Function: OnBeginShutdown
     /// </summary>
     public unsafe override void OnBeginShutdown()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_AttractEnemiesWithSound.OnBeginShutdown", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnBeginShutdown, "BmGame.MAEC_AttractEnemiesWithSound.OnBeginShutdown");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_AttractEnemiesWithSound.PreStreamOut", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmGame.MAEC_AttractEnemiesWithSound.PreStreamOut");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishTopLevelAEC;
     /// <summary>
     /// Function: FinishTopLevelAEC
     /// </summary>
     public unsafe override void FinishTopLevelAEC(BmSDK.BmGame.RBMAIController AttractedCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_AttractEnemiesWithSound.FinishTopLevelAEC", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishTopLevelAEC, "BmGame.MAEC_AttractEnemiesWithSound.FinishTopLevelAEC");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AttractedCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CleanupVillain;
     /// <summary>
     /// Function: CleanupVillain
     /// </summary>
     public unsafe virtual void CleanupVillain(BmSDK.BmGame.RBMAIController AttractedCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_AttractEnemiesWithSound.CleanupVillain", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CleanupVillain, "BmGame.MAEC_AttractEnemiesWithSound.CleanupVillain");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AttractedCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CleanupPaths;
     /// <summary>
     /// Function: CleanupPaths
     /// </summary>
     public unsafe virtual void CleanupPaths()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_AttractEnemiesWithSound.CleanupPaths", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CleanupPaths, "BmGame.MAEC_AttractEnemiesWithSound.CleanupPaths");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnRemoveSoloChild;
     /// <summary>
     /// Function: OnRemoveSoloChild
     /// </summary>
     public unsafe override void OnRemoveSoloChild(BmSDK.BmGame.RAlertEventCoordinatorSolo RemAEC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_AttractEnemiesWithSound.OnRemoveSoloChild", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnRemoveSoloChild, "BmGame.MAEC_AttractEnemiesWithSound.OnRemoveSoloChild");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RemAEC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ThugFailedToBeAttracted;
     /// <summary>
     /// Function: ThugFailedToBeAttracted
     /// </summary>
     public unsafe virtual void ThugFailedToBeAttracted(BmSDK.BmGame.RBMAIController AttractedCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_AttractEnemiesWithSound.ThugFailedToBeAttracted", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ThugFailedToBeAttracted, "BmGame.MAEC_AttractEnemiesWithSound.ThugFailedToBeAttracted");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AttractedCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ThugSuccessfullyAttracted;
     /// <summary>
     /// Function: ThugSuccessfullyAttracted
     /// </summary>
     public unsafe virtual void ThugSuccessfullyAttracted(BmSDK.BmGame.RBMAIController AttractedCon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_AttractEnemiesWithSound.ThugSuccessfullyAttracted", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ThugSuccessfullyAttracted, "BmGame.MAEC_AttractEnemiesWithSound.ThugSuccessfullyAttracted");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AttractedCon, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ReleaseNavPoints;
     /// <summary>
     /// Function: ReleaseNavPoints
     /// </summary>
     public unsafe virtual void ReleaseNavPoints(BmSDK.BmGame.MAEC_AttractEnemiesWithSound.FPathfindingController pfVillain)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_AttractEnemiesWithSound.ReleaseNavPoints", true);
-        byte* paramsPtr = stackalloc byte[40];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReleaseNavPoints, "BmGame.MAEC_AttractEnemiesWithSound.ReleaseNavPoints");
+        byte* paramsPtr = stackalloc byte[56];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(pfVillain, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FindBestPath;
     /// <summary>
     /// Function: FindBestPath
     /// </summary>
     public unsafe virtual int FindBestPath(BmSDK.BmGame.MAEC_AttractEnemiesWithSound.FPathfindingController pfVillain)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_AttractEnemiesWithSound.FindBestPath", true);
-        byte* paramsPtr = stackalloc byte[56];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindBestPath, "BmGame.MAEC_AttractEnemiesWithSound.FindBestPath");
+        byte* paramsPtr = stackalloc byte[72];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(pfVillain, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 36);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 36);
     }
 
+    private static BmSDK.Function __fn_IsDonePathFinding;
     /// <summary>
     /// Function: IsDonePathFinding
     /// </summary>
     public unsafe virtual bool IsDonePathFinding(BmSDK.BmGame.MAEC_AttractEnemiesWithSound.FPathfindingController pfVillain)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_AttractEnemiesWithSound.IsDonePathFinding", true);
-        byte* paramsPtr = stackalloc byte[44];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsDonePathFinding, "BmGame.MAEC_AttractEnemiesWithSound.IsDonePathFinding");
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(pfVillain, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 36);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 36);
     }
 
+    private static BmSDK.Function __fn_ThugHasBeenAttractedBySound;
     /// <summary>
     /// Function: ThugHasBeenAttractedBySound
     /// </summary>
     public unsafe virtual void ThugHasBeenAttractedBySound(BmSDK.BmGame.RBMAIController AttractedThug)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_AttractEnemiesWithSound.ThugHasBeenAttractedBySound", true);
-        byte* paramsPtr = stackalloc byte[36];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ThugHasBeenAttractedBySound, "BmGame.MAEC_AttractEnemiesWithSound.ThugHasBeenAttractedBySound");
+        byte* paramsPtr = stackalloc byte[52];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AttractedThug, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartPathFinding;
     /// <summary>
     /// Function: StartPathFinding
     /// </summary>
     public unsafe virtual void StartPathFinding(int Index)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_AttractEnemiesWithSound.StartPathFinding", true);
-        byte* paramsPtr = stackalloc byte[32];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartPathFinding, "BmGame.MAEC_AttractEnemiesWithSound.StartPathFinding");
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Index, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GatherPointsFromCenter;
     /// <summary>
     /// Function: GatherPointsFromCenter
     /// </summary>
     public unsafe virtual void GatherPointsFromCenter()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_AttractEnemiesWithSound.GatherPointsFromCenter", true);
-        byte* paramsPtr = stackalloc byte[64];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GatherPointsFromCenter, "BmGame.MAEC_AttractEnemiesWithSound.GatherPointsFromCenter");
+        byte* paramsPtr = stackalloc byte[80];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SortControllersByPawnVillainDistanceToSelf;
     /// <summary>
     /// Function: SortControllersByPawnVillainDistanceToSelf
     /// </summary>
     public unsafe virtual int SortControllersByPawnVillainDistanceToSelf(BmSDK.BmGame.MAEC_AttractEnemiesWithSound.FPathfindingController A, BmSDK.BmGame.MAEC_AttractEnemiesWithSound.FPathfindingController B)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_AttractEnemiesWithSound.SortControllersByPawnVillainDistanceToSelf", true);
-        byte* paramsPtr = stackalloc byte[76];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SortControllersByPawnVillainDistanceToSelf, "BmGame.MAEC_AttractEnemiesWithSound.SortControllersByPawnVillainDistanceToSelf");
+        byte* paramsPtr = stackalloc byte[92];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(A, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(B, paramsPtr + 36);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 72);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 72);
     }
 
+    private static BmSDK.Function __fn_SortControllersByDistanceToSelf;
     /// <summary>
     /// Function: SortControllersByDistanceToSelf
     /// </summary>
     public unsafe virtual int SortControllersByDistanceToSelf(BmSDK.BmGame.MAEC_AttractEnemiesWithSound.FPathfindingController A, BmSDK.BmGame.MAEC_AttractEnemiesWithSound.FPathfindingController B)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_AttractEnemiesWithSound.SortControllersByDistanceToSelf", true);
-        byte* paramsPtr = stackalloc byte[76];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SortControllersByDistanceToSelf, "BmGame.MAEC_AttractEnemiesWithSound.SortControllersByDistanceToSelf");
+        byte* paramsPtr = stackalloc byte[92];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(A, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(B, paramsPtr + 36);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 72);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 72);
     }
 
+    private static BmSDK.Function __fn_Setup;
     /// <summary>
     /// Function: Setup
     /// </summary>
     public unsafe virtual void Setup(BmSDK.BmGame.MJackInBoxTrapBase NewTrap, BmSDK.BmGame.MAEC_AttractEnemiesWithSound.AttractAlertLevel NewAlertLevel)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_AttractEnemiesWithSound.Setup", true);
-        byte* paramsPtr = stackalloc byte[24];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Setup, "BmGame.MAEC_AttractEnemiesWithSound.Setup");
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewTrap, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAlertLevel, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AttractThugs;
     /// <summary>
     /// Function: AttractThugs
     /// </summary>
     public unsafe virtual void AttractThugs()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MAEC_AttractEnemiesWithSound.AttractThugs", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AttractThugs, "BmGame.MAEC_AttractEnemiesWithSound.AttractThugs");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

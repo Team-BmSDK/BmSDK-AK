@@ -78,24 +78,28 @@ public partial class RBMAIAction_NervousSearchMove_Raw : BmSDK.BmGame.RBMAIActio
         where TComponent : class, Framework.IScriptComponent<RBMAIAction_NervousSearchMove_Raw>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_BuildHandle;
     /// <summary>
     /// Function: BuildHandle
     /// </summary>
     public unsafe override BmSDK.BmGame.RNavigationHandle BuildHandle()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_NervousSearchMove_Raw.BuildHandle", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BuildHandle, "BmGame.RBMAIAction_NervousSearchMove_Raw.BuildHandle");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RNavigationHandle>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RNavigationHandle>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetupGoal;
     /// <summary>
     /// Function: SetupGoal
     /// </summary>
     public unsafe virtual void SetupGoal(System.Numerics.Vector3 NewGoalPosFirst, bool bNewUseAdditionalPoint, System.Numerics.Vector3 NewGoalPosSecond)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_NervousSearchMove_Raw.SetupGoal", true);
-        byte* paramsPtr = stackalloc byte[28];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupGoal, "BmGame.RBMAIAction_NervousSearchMove_Raw.SetupGoal");
+        byte* paramsPtr = stackalloc byte[44];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewGoalPosFirst, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewUseAdditionalPoint, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewGoalPosSecond, paramsPtr + 16);

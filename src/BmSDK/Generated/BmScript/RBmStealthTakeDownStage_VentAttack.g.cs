@@ -78,15 +78,19 @@ public partial class RBmStealthTakeDownStage_VentAttack : BmSDK.BmGame.RStealthT
         where TComponent : class, Framework.IScriptComponent<RBmStealthTakeDownStage_VentAttack>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OverrideChosenAnim;
     /// <summary>
     /// Function: OverrideChosenAnim
     /// </summary>
     public unsafe override void OverrideChosenAnim(out int Anim)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBmStealthTakeDownStage_VentAttack.OverrideChosenAnim", true);
-        byte* paramsPtr = stackalloc byte[72];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverrideChosenAnim, "BmScript.RBmStealthTakeDownStage_VentAttack.OverrideChosenAnim");
+        byte* paramsPtr = stackalloc byte[88];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Anim);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Anim, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        Anim = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        Anim = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
         return;
     }
 }

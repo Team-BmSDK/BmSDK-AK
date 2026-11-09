@@ -78,17 +78,19 @@ public partial class NavMeshGoalFilter_NotNearOtherAI : BmSDK.Engine.NavMeshGoal
         where TComponent : class, Framework.IScriptComponent<NavMeshGoalFilter_NotNearOtherAI>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_NotNearOtherAI;
     /// <summary>
     /// Function: NotNearOtherAI
     /// </summary>
     public unsafe static bool NotNearOtherAI(BmSDK.Engine.NavMeshGoal_GenericFilterContainer FilterContainer, float InDistanceToCheck)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavMeshGoalFilter_NotNearOtherAI.NotNearOtherAI", true);
-        byte* paramsPtr = stackalloc byte[24];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotNearOtherAI, "Engine.NavMeshGoalFilter_NotNearOtherAI.NotNearOtherAI");
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FilterContainer, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InDistanceToCheck, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 12);
     }
 
     /// <summary>

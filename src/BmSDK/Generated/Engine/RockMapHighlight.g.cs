@@ -78,13 +78,15 @@ public partial class RockMapHighlight : BmSDK.Engine.Actor, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RockMapHighlight>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnToggle;
     /// <summary>
     /// Function: OnToggle
     /// </summary>
     public unsafe virtual void OnToggle(BmSDK.Engine.SeqAct_Toggle Action)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RockMapHighlight.OnToggle", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggle, "Engine.RockMapHighlight.OnToggle");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Action, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
@@ -183,7 +185,7 @@ public partial class RockMapHighlight : BmSDK.Engine.Actor, BmSDK.IGameObject
     /// <summary>
     /// Struct: FFMapHighlightInfo
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 237)]
+    [StructLayout(LayoutKind.Explicit, Size = 240)]
     public partial record struct FFMapHighlightInfo
     {
         /// <summary>

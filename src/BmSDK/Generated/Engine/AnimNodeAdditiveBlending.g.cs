@@ -78,13 +78,15 @@ public partial class AnimNodeAdditiveBlending : BmSDK.Engine.AnimNodeBlend, BmSD
         where TComponent : class, Framework.IScriptComponent<AnimNodeAdditiveBlending>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetBlendTarget;
     /// <summary>
     /// Function: SetBlendTarget
     /// </summary>
     public unsafe override void SetBlendTarget(float BlendTarget, float BlendTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodeAdditiveBlending.SetBlendTarget", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBlendTarget, "Engine.AnimNodeAdditiveBlending.SetBlendTarget");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BlendTarget, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BlendTime, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;

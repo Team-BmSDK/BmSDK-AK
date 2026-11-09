@@ -73,61 +73,73 @@ public partial class RGangFleePressPointBase : BmSDK.BmGame.RDummyTarget, BmSDK.
         where TComponent : class, Framework.IScriptComponent<RGangFleePressPointBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_HasAtleastOneFreePressSlot;
     /// <summary>
     /// Function: HasAtleastOneFreePressSlot
     /// </summary>
     public unsafe virtual bool HasAtleastOneFreePressSlot(BmSDK.BmGame.RBMPawnAI TestPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGangFleePressPointBase.HasAtleastOneFreePressSlot", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HasAtleastOneFreePressSlot, "BmGame.RGangFleePressPointBase.HasAtleastOneFreePressSlot");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_FreePressSlot;
     /// <summary>
     /// Function: FreePressSlot
     /// </summary>
     public unsafe virtual void FreePressSlot(BmSDK.BmGame.RPawnVillain TestPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGangFleePressPointBase.FreePressSlot", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FreePressSlot, "BmGame.RGangFleePressPointBase.FreePressSlot");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetPressSlot;
     /// <summary>
     /// Function: GetPressSlot
     /// </summary>
     public unsafe virtual bool GetPressSlot(BmSDK.BmGame.RPawnVillain TestPawn, out System.Numerics.Vector3 PressPoint)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGangFleePressPointBase.GetPressSlot", true);
-        byte* paramsPtr = stackalloc byte[68];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPressSlot, "BmGame.RGangFleePressPointBase.GetPressSlot");
+        byte* paramsPtr = stackalloc byte[84];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PressPoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PressPoint, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        PressPoint = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 20);
+        PressPoint = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_GetBehaviourClass;
     /// <summary>
     /// Function: GetBehaviourClass
     /// </summary>
     public unsafe virtual BmSDK.Class GetBehaviourClass()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGangFleePressPointBase.GetBehaviourClass", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBehaviourClass, "BmGame.RGangFleePressPointBase.GetBehaviourClass");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Class>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Class>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_IsValidForPawn;
     /// <summary>
     /// Function: IsValidForPawn
     /// </summary>
     public unsafe virtual bool IsValidForPawn(BmSDK.BmGame.RBMPawnAI TestPawn, BmSDK.Engine.Actor ThreatActor)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGangFleePressPointBase.IsValidForPawn", true);
-        byte* paramsPtr = stackalloc byte[20];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsValidForPawn, "BmGame.RGangFleePressPointBase.IsValidForPawn");
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPawn, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThreatActor, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
@@ -138,7 +150,7 @@ public partial class RGangFleePressPointBase : BmSDK.BmGame.RDummyTarget, BmSDK.
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
     }
 
     /// <summary>

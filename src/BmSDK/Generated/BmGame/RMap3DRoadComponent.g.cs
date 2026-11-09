@@ -78,13 +78,15 @@ public partial class RMap3DRoadComponent : BmSDK.Engine.PrimitiveComponent, BmSD
         where TComponent : class, Framework.IScriptComponent<RMap3DRoadComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UpdateRouteMesh;
     /// <summary>
     /// Function: UpdateRouteMesh
     /// </summary>
     public unsafe virtual void UpdateRouteMesh(int LinkStart, BmSDK.TArray<int> SatNavRoute)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RMap3DRoadComponent.UpdateRouteMesh", true);
-        byte* paramsPtr = stackalloc byte[20];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateRouteMesh, "BmGame.RMap3DRoadComponent.UpdateRouteMesh");
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkStart, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SatNavRoute, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;

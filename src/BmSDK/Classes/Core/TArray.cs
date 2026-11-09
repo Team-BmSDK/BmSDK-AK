@@ -65,6 +65,28 @@ public unsafe class TArray<TManaged> : IArray, IList<TManaged>, IDisposable
         _ownsMemory = false;
     }
 
+    /// <summary>
+    /// Keeps the copied header of <see cref="TArray(IntPtr, bool)"/> alive (and pinned) for as long as
+    /// this wrapper is.
+    /// </summary>
+    private readonly NativeData[]? _headerCopy;
+
+    /// <summary>
+    /// Wraps a native TArray whose header lives in temporary memory (e.g. a function call's parameter
+    /// buffer, which is gone once the call returns). The header is copied into pinned managed memory
+    /// that is freed with this wrapper. The elements are left alone: they are never freed here,
+    /// because whether the game still owns them depends on the function.
+    /// </summary>
+    internal TArray(IntPtr source, bool copyHeader)
+    {
+        Guard.Require(copyHeader, "Use TArray(IntPtr) to wrap an array in place");
+
+        _headerCopy = GC.AllocateArray<NativeData>(1, pinned: true);
+        _headerCopy[0] = *(NativeData*)source.ToPointer();
+        Ptr = (IntPtr)System.Runtime.CompilerServices.Unsafe.AsPointer(ref _headerCopy[0]);
+        _ownsMemory = false;
+    }
+
     public TManaged this[int idx]
     {
         get =>

@@ -78,49 +78,57 @@ public partial class SeqCond_SwitchClass : BmSDK.Engine.SeqCond_SwitchBase, BmSD
         where TComponent : class, Framework.IScriptComponent<SeqCond_SwitchClass>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_RemoveValueEntry;
     /// <summary>
     /// Function: RemoveValueEntry
     /// </summary>
     public unsafe override void RemoveValueEntry(int RemoveIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SeqCond_SwitchClass.RemoveValueEntry", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveValueEntry, "Engine.SeqCond_SwitchClass.RemoveValueEntry");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RemoveIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InsertValueEntry;
     /// <summary>
     /// Function: InsertValueEntry
     /// </summary>
     public unsafe override void InsertValueEntry(int InsertIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SeqCond_SwitchClass.InsertValueEntry", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InsertValueEntry, "Engine.SeqCond_SwitchClass.InsertValueEntry");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InsertIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_IsFallThruEnabled;
     /// <summary>
     /// Function: IsFallThruEnabled
     /// </summary>
     public unsafe override bool IsFallThruEnabled(int ValueIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SeqCond_SwitchClass.IsFallThruEnabled", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsFallThruEnabled, "Engine.SeqCond_SwitchClass.IsFallThruEnabled");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ValueIndex, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_VerifyDefaultCaseValue;
     /// <summary>
     /// Function: VerifyDefaultCaseValue
     /// </summary>
     public unsafe override void VerifyDefaultCaseValue()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SeqCond_SwitchClass.VerifyDefaultCaseValue", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_VerifyDefaultCaseValue, "Engine.SeqCond_SwitchClass.VerifyDefaultCaseValue");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
@@ -137,7 +145,7 @@ public partial class SeqCond_SwitchClass : BmSDK.Engine.SeqCond_SwitchBase, BmSD
     /// <summary>
     /// Struct: FSwitchClassInfo
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 9)]
+    [StructLayout(LayoutKind.Explicit, Size = 12)]
     public partial record struct FSwitchClassInfo
     {
         /// <summary>

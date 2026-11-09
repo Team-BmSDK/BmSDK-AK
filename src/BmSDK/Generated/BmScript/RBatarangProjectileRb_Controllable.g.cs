@@ -78,24 +78,28 @@ public partial class RBatarangProjectileRb_Controllable : BmSDK.BmGame.RBatarang
         where TComponent : class, Framework.IScriptComponent<RBatarangProjectileRb_Controllable>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_StopSpinSound;
     /// <summary>
     /// Function: StopSpinSound
     /// </summary>
     public unsafe override void StopSpinSound()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBatarangProjectileRb_Controllable.StopSpinSound", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopSpinSound, "BmScript.RBatarangProjectileRb_Controllable.StopSpinSound");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_StartSpinSound;
     /// <summary>
     /// Function: StartSpinSound
     /// </summary>
     public unsafe override void StartSpinSound()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBatarangProjectileRb_Controllable.StartSpinSound", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartSpinSound, "BmScript.RBatarangProjectileRb_Controllable.StartSpinSound");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

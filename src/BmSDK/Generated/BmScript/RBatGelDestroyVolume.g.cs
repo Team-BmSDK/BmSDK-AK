@@ -78,13 +78,15 @@ public partial class RBatGelDestroyVolume : BmSDK.Engine.Volume, BmSDK.IGameObje
         where TComponent : class, Framework.IScriptComponent<RBatGelDestroyVolume>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnToggle;
     /// <summary>
     /// Function: OnToggle
     /// </summary>
     public unsafe override void OnToggle(BmSDK.Engine.SeqAct_Toggle inAction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBatGelDestroyVolume.OnToggle", true);
-        byte* paramsPtr = stackalloc byte[84];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnToggle, "BmScript.RBatGelDestroyVolume.OnToggle");
+        byte* paramsPtr = stackalloc byte[100];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(inAction, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

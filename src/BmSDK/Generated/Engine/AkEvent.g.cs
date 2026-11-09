@@ -78,13 +78,15 @@ public partial class AkEvent : BmSDK.Engine.AkAsset, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<AkEvent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsAudibleAt;
     /// <summary>
     /// Function: IsAudibleAt
     /// </summary>
     public unsafe virtual bool IsAudibleAt(float distanceUU, bool resultIfUnknown)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkEvent.IsAudibleAt", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAudibleAt, "Engine.AkEvent.IsAudibleAt");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(distanceUU, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(resultIfUnknown, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
@@ -95,7 +97,7 @@ public partial class AkEvent : BmSDK.Engine.AkAsset, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
     /// <summary>

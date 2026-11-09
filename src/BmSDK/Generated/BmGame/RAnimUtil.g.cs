@@ -73,17 +73,19 @@ public partial class RAnimUtil : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RAnimUtil>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetMeetingPoints;
     /// <summary>
     /// Function: GetMeetingPoints
     /// </summary>
     public unsafe static BmSDK.BmGame.RAnimUtil.FMeetingPoints GetMeetingPoints(float Begin, float End)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAnimUtil.GetMeetingPoints", true);
-        byte* paramsPtr = stackalloc byte[104];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMeetingPoints, "BmGame.RAnimUtil.GetMeetingPoints");
+        byte* paramsPtr = stackalloc byte[120];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Begin, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(End, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RAnimUtil.FMeetingPoints>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RAnimUtil.FMeetingPoints>(paramsPtr + 8);
     }
 
     /// <summary>
@@ -132,7 +134,7 @@ public partial class RAnimUtil : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FRelativeTarget
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 41)]
+    [StructLayout(LayoutKind.Explicit, Size = 44)]
     public partial record struct FRelativeTarget
     {
         /// <summary>
@@ -669,7 +671,7 @@ public partial class RAnimUtil : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FRotationTranslation
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 28)]
+    [StructLayout(LayoutKind.Explicit, Size = 32)]
     public partial record struct FRotationTranslation
     {
         /// <summary>

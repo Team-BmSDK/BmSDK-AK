@@ -73,39 +73,51 @@ public partial class MPawnVillainBlackMaskBase : BmSDK.BmGame.RPawnVillainThug, 
         where TComponent : class, Framework.IScriptComponent<MPawnVillainBlackMaskBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsInLOSHack;
     /// <summary>
     /// Function: IsInLOSHack
     /// </summary>
     public unsafe virtual bool IsInLOSHack(System.Numerics.Vector3 EndLocation, out System.Numerics.Vector3 HitLocation, out System.Numerics.Vector3 MuzzleLoc, out BmSDK.Rotator MuzzleRot)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnVillainBlackMaskBase.IsInLOSHack", true);
-        byte* paramsPtr = stackalloc byte[52];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInLOSHack, "BmGame.MPawnVillainBlackMaskBase.IsInLOSHack");
+        byte* paramsPtr = stackalloc byte[68];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EndLocation, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitLocation, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MuzzleLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MuzzleLoc, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out MuzzleRot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(MuzzleRot, paramsPtr + 36);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        HitLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
-        MuzzleLoc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 24);
-        MuzzleRot = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 36);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 48);
+        HitLocation = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 12);
+        MuzzleLoc = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 24);
+        MuzzleRot = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Rotator>(paramsPtr + 36);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 48);
     }
 
+    private static BmSDK.Function __fn_IsDoingRangeAttack;
     /// <summary>
     /// Function: IsDoingRangeAttack
     /// </summary>
     public unsafe virtual bool IsDoingRangeAttack()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnVillainBlackMaskBase.IsDoingRangeAttack", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsDoingRangeAttack, "BmGame.MPawnVillainBlackMaskBase.IsDoingRangeAttack");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_BlackMaskHideGun;
     /// <summary>
     /// Function: BlackMaskHideGun
     /// </summary>
     public unsafe virtual void BlackMaskHideGun()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MPawnVillainBlackMaskBase.BlackMaskHideGun", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BlackMaskHideGun, "BmGame.MPawnVillainBlackMaskBase.BlackMaskHideGun");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

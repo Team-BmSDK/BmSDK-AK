@@ -78,13 +78,15 @@ public partial class RPawnVillainGunPredMiniGunDualPlay : BmSDK.BmScript.RPawnVi
         where TComponent : class, Framework.IScriptComponent<RPawnVillainGunPredMiniGunDualPlay>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DropWeapon;
     /// <summary>
     /// Function: DropWeapon
     /// </summary>
     public unsafe override void DropWeapon()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnVillainGunPredMiniGunDualPlay.DropWeapon", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DropWeapon, "BmScript.RPawnVillainGunPredMiniGunDualPlay.DropWeapon");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

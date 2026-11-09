@@ -78,13 +78,15 @@ public partial class ROnlineStatsWriteMostWanted : BmSDK.Engine.OnlineStatsWrite
         where TComponent : class, Framework.IScriptComponent<ROnlineStatsWriteMostWanted>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CopyAndWriteAllStats;
     /// <summary>
     /// Function: CopyAndWriteAllStats
     /// </summary>
     public unsafe virtual void CopyAndWriteAllStats(BmSDK.BmGame.RPlayerController PC, BmSDK.Engine.OnlineSubsystem.FUniqueNetId UniqId, BmSDK.Engine.PlayerReplicationInfo PRI, BmSDK.Engine.OnlineStatsInterface StatsInterface)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROnlineStatsWriteMostWanted.CopyAndWriteAllStats", true);
-        byte* paramsPtr = stackalloc byte[40];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CopyAndWriteAllStats, "BmGame.ROnlineStatsWriteMostWanted.CopyAndWriteAllStats");
+        byte* paramsPtr = stackalloc byte[56];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UniqId, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PRI, paramsPtr + 16);
@@ -93,16 +95,18 @@ public partial class ROnlineStatsWriteMostWanted : BmSDK.Engine.OnlineStatsWrite
         return;
     }
 
+    private static BmSDK.Function __fn_CopyAllStats;
     /// <summary>
     /// Function: CopyAllStats
     /// </summary>
     public unsafe virtual bool CopyAllStats(BmSDK.BmGame.RPlayerController PC, BmSDK.Engine.PlayerReplicationInfo PRI)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.ROnlineStatsWriteMostWanted.CopyAllStats", true);
-        byte* paramsPtr = stackalloc byte[52];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CopyAllStats, "BmGame.ROnlineStatsWriteMostWanted.CopyAllStats");
+        byte* paramsPtr = stackalloc byte[68];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PRI, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
     }
 }

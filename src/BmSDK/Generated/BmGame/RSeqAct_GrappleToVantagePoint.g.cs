@@ -78,13 +78,15 @@ public partial class RSeqAct_GrappleToVantagePoint : BmSDK.Engine.SequenceAction
         where TComponent : class, Framework.IScriptComponent<RSeqAct_GrappleToVantagePoint>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Grapple;
     /// <summary>
     /// Function: Grapple
     /// </summary>
     public unsafe virtual void Grapple()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_GrappleToVantagePoint.Grapple", true);
-        byte* paramsPtr = stackalloc byte[32];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Grapple, "BmGame.RSeqAct_GrappleToVantagePoint.Grapple");
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

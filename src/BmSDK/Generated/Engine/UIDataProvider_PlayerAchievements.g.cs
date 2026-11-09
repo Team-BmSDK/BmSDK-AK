@@ -78,120 +78,140 @@ public partial class UIDataProvider_PlayerAchievements : BmSDK.Engine.UIDataProv
         where TComponent : class, Framework.IScriptComponent<UIDataProvider_PlayerAchievements>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UpdateAchievements;
     /// <summary>
     /// Function: UpdateAchievements
     /// </summary>
     public unsafe virtual void UpdateAchievements()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataProvider_PlayerAchievements.UpdateAchievements", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateAchievements, "Engine.UIDataProvider_PlayerAchievements.UpdateAchievements");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnLoginChange;
     /// <summary>
     /// Function: OnLoginChange
     /// </summary>
     public unsafe virtual void OnLoginChange(byte LocalUserNum)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataProvider_PlayerAchievements.OnLoginChange", true);
-        byte* paramsPtr = stackalloc byte[1];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnLoginChange, "Engine.UIDataProvider_PlayerAchievements.OnLoginChange");
+        byte* paramsPtr = stackalloc byte[17];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalUserNum, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnUnregister;
     /// <summary>
     /// Function: OnUnregister
     /// </summary>
     public unsafe override void OnUnregister()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataProvider_PlayerAchievements.OnUnregister", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnUnregister, "Engine.UIDataProvider_PlayerAchievements.OnUnregister");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnRegister;
     /// <summary>
     /// Function: OnRegister
     /// </summary>
     public unsafe override void OnRegister(BmSDK.Engine.LocalPlayer InPlayer)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataProvider_PlayerAchievements.OnRegister", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnRegister, "Engine.UIDataProvider_PlayerAchievements.OnRegister");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InPlayer, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnPlayerAchievementUnlocked;
     /// <summary>
     /// Function: OnPlayerAchievementUnlocked
     /// </summary>
     public unsafe virtual void OnPlayerAchievementUnlocked(bool bWasSuccessful)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataProvider_PlayerAchievements.OnPlayerAchievementUnlocked", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnPlayerAchievementUnlocked, "Engine.UIDataProvider_PlayerAchievements.OnPlayerAchievementUnlocked");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnPlayerAchievementsChanged;
     /// <summary>
     /// Function: OnPlayerAchievementsChanged
     /// </summary>
     public unsafe virtual void OnPlayerAchievementsChanged(int TitleId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataProvider_PlayerAchievements.OnPlayerAchievementsChanged", true);
-        byte* paramsPtr = stackalloc byte[13];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnPlayerAchievementsChanged, "Engine.UIDataProvider_PlayerAchievements.OnPlayerAchievementsChanged");
+        byte* paramsPtr = stackalloc byte[29];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TitleId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetAchievementDetails;
     /// <summary>
     /// Function: GetAchievementDetails
     /// </summary>
     public unsafe virtual void GetAchievementDetails(int AchievementId, out BmSDK.Engine.OnlineSubsystem.FAchievementDetails OutAchievementDetails)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataProvider_PlayerAchievements.GetAchievementDetails", true);
-        byte* paramsPtr = stackalloc byte[80];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAchievementDetails, "Engine.UIDataProvider_PlayerAchievements.GetAchievementDetails");
+        byte* paramsPtr = stackalloc byte[96];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AchievementId, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        OutAchievementDetails = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.OnlineSubsystem.FAchievementDetails>(paramsPtr + 4);
+        OutAchievementDetails = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.OnlineSubsystem.FAchievementDetails>(paramsPtr + 4);
         return;
     }
 
+    private static BmSDK.Function __fn_GetAchievementIconPathName;
     /// <summary>
     /// Function: GetAchievementIconPathName
     /// </summary>
     public unsafe virtual BmSDK.FString GetAchievementIconPathName(int AchievementId, bool bReturnLockedIcon = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataProvider_PlayerAchievements.GetAchievementIconPathName", true);
-        byte* paramsPtr = stackalloc byte[24];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAchievementIconPathName, "Engine.UIDataProvider_PlayerAchievements.GetAchievementIconPathName");
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AchievementId, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bReturnLockedIcon, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_PopulateAchievementIcons;
     /// <summary>
     /// Function: PopulateAchievementIcons
     /// </summary>
     public unsafe virtual void PopulateAchievementIcons()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataProvider_PlayerAchievements.PopulateAchievementIcons", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PopulateAchievementIcons, "Engine.UIDataProvider_PlayerAchievements.PopulateAchievementIcons");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetMaxTotalGamerScore;
     /// <summary>
     /// Function: GetMaxTotalGamerScore
     /// </summary>
     public unsafe virtual int GetMaxTotalGamerScore()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataProvider_PlayerAchievements.GetMaxTotalGamerScore", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMaxTotalGamerScore, "Engine.UIDataProvider_PlayerAchievements.GetMaxTotalGamerScore");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -200,16 +220,18 @@ public partial class UIDataProvider_PlayerAchievements : BmSDK.Engine.UIDataProv
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetTotalGamerScore;
     /// <summary>
     /// Function: GetTotalGamerScore
     /// </summary>
     public unsafe virtual int GetTotalGamerScore()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.UIDataProvider_PlayerAchievements.GetTotalGamerScore", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTotalGamerScore, "Engine.UIDataProvider_PlayerAchievements.GetTotalGamerScore");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -218,7 +240,7 @@ public partial class UIDataProvider_PlayerAchievements : BmSDK.Engine.UIDataProv
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
     /// <summary>

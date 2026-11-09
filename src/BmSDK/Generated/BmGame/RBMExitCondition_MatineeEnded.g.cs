@@ -78,24 +78,28 @@ public partial class RBMExitCondition_MatineeEnded : BmSDK.BmGame.RBMExitConditi
         where TComponent : class, Framework.IScriptComponent<RBMExitCondition_MatineeEnded>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_MatineeBlendOutStarted;
     /// <summary>
     /// Function: MatineeBlendOutStarted
     /// </summary>
     public unsafe virtual void MatineeBlendOutStarted()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMExitCondition_MatineeEnded.MatineeBlendOutStarted", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MatineeBlendOutStarted, "BmGame.RBMExitCondition_MatineeEnded.MatineeBlendOutStarted");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_MatineeControlFinished;
     /// <summary>
     /// Function: MatineeControlFinished
     /// </summary>
     public unsafe virtual void MatineeControlFinished()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMExitCondition_MatineeEnded.MatineeControlFinished", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MatineeControlFinished, "BmGame.RBMExitCondition_MatineeEnded.MatineeControlFinished");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

@@ -78,13 +78,15 @@ public partial class RSeqAct_TriggerSpecialMoveInDirection : BmSDK.BmGame.RSeqAc
         where TComponent : class, Framework.IScriptComponent<RSeqAct_TriggerSpecialMoveInDirection>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_TriggerSpecialMoveInDirection.Activated", true);
-        byte* paramsPtr = stackalloc byte[156];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "BmGame.RSeqAct_TriggerSpecialMoveInDirection.Activated");
+        byte* paramsPtr = stackalloc byte[172];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

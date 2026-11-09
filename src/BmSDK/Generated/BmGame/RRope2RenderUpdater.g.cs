@@ -73,13 +73,15 @@ public partial class RRope2RenderUpdater : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RRope2RenderUpdater>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetMaterialOverride;
     /// <summary>
     /// Function: SetMaterialOverride
     /// </summary>
     public unsafe virtual void SetMaterialOverride(BmSDK.Engine.MaterialInstanceConstant OverrideMat)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRope2RenderUpdater.SetMaterialOverride", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetMaterialOverride, "BmGame.RRope2RenderUpdater.SetMaterialOverride");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverrideMat, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

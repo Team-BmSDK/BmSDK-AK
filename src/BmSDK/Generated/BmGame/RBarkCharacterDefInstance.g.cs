@@ -78,13 +78,15 @@ public partial class RBarkCharacterDefInstance : BmSDK.GameObject, BmSDK.IGameOb
         where TComponent : class, Framework.IScriptComponent<RBarkCharacterDefInstance>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetFilenameFromBarkSetName;
     /// <summary>
     /// Function: GetFilenameFromBarkSetName
     /// </summary>
     public unsafe virtual void GetFilenameFromBarkSetName(out BmSDK.BmGame.RBarkCharacterDefInstance.FBarkSetName ThisName, out BmSDK.FString OutString)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBarkCharacterDefInstance.GetFilenameFromBarkSetName", true);
-        byte* paramsPtr = stackalloc byte[48];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFilenameFromBarkSetName, "BmGame.RBarkCharacterDefInstance.GetFilenameFromBarkSetName");
+        byte* paramsPtr = stackalloc byte[64];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -93,18 +95,20 @@ public partial class RBarkCharacterDefInstance : BmSDK.GameObject, BmSDK.IGameOb
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        ThisName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBarkCharacterDefInstance.FBarkSetName>(paramsPtr + 0);
-        OutString = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 32);
+        ThisName = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RBarkCharacterDefInstance.FBarkSetName>(paramsPtr + 0);
+        OutString = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 32);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateDynamicSetList;
     /// <summary>
     /// Function: UpdateDynamicSetList
     /// </summary>
     public unsafe virtual void UpdateDynamicSetList(BmSDK.TArray<BmSDK.FString> SuffixList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBarkCharacterDefInstance.UpdateDynamicSetList", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateDynamicSetList, "BmGame.RBarkCharacterDefInstance.UpdateDynamicSetList");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SuffixList, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

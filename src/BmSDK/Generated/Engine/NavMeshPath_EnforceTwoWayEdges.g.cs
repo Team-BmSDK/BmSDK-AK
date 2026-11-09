@@ -78,15 +78,17 @@ public partial class NavMeshPath_EnforceTwoWayEdges : BmSDK.Engine.NavMeshPathCo
         where TComponent : class, Framework.IScriptComponent<NavMeshPath_EnforceTwoWayEdges>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_EnforceTwoWayEdges;
     /// <summary>
     /// Function: EnforceTwoWayEdges
     /// </summary>
     public unsafe static bool EnforceTwoWayEdges(BmSDK.Engine.NavigationHandle NavHandle)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavMeshPath_EnforceTwoWayEdges.EnforceTwoWayEdges", true);
-        byte* paramsPtr = stackalloc byte[20];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnforceTwoWayEdges, "Engine.NavMeshPath_EnforceTwoWayEdges.EnforceTwoWayEdges");
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NavHandle, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 }

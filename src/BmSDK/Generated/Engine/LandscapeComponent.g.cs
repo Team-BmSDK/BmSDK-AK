@@ -81,7 +81,7 @@ public partial class LandscapeComponent : BmSDK.Engine.PrimitiveComponent, BmSDK
     /// <summary>
     /// Struct: FWeightmapLayerAllocationInfo
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 10)]
+    [StructLayout(LayoutKind.Explicit, Size = 12)]
     public partial record struct FWeightmapLayerAllocationInfo
     {
         /// <summary>

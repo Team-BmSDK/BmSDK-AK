@@ -78,19 +78,21 @@ public partial class NavMeshGoalFilter_OutSideOfDotProductWedge : BmSDK.Engine.N
         where TComponent : class, Framework.IScriptComponent<NavMeshGoalFilter_OutSideOfDotProductWedge>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OutsideOfDotProductWedge;
     /// <summary>
     /// Function: OutsideOfDotProductWedge
     /// </summary>
     public unsafe static bool OutsideOfDotProductWedge(BmSDK.Engine.NavMeshGoal_GenericFilterContainer FilterContainer, System.Numerics.Vector3 InLocation, BmSDK.Rotator InRotation, float InEpsilon)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.NavMeshGoalFilter_OutSideOfDotProductWedge.OutsideOfDotProductWedge", true);
-        byte* paramsPtr = stackalloc byte[48];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OutsideOfDotProductWedge, "Engine.NavMeshGoalFilter_OutSideOfDotProductWedge.OutsideOfDotProductWedge");
+        byte* paramsPtr = stackalloc byte[64];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FilterContainer, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InLocation, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InRotation, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InEpsilon, paramsPtr + 32);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 36);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 36);
     }
 
     /// <summary>

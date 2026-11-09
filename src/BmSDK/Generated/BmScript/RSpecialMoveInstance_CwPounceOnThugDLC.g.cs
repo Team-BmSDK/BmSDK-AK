@@ -78,13 +78,15 @@ public partial class RSpecialMoveInstance_CwPounceOnThugDLC : BmSDK.BmScript.RSp
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveInstance_CwPounceOnThugDLC>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_FinishSpecialMove;
     /// <summary>
     /// Function: FinishSpecialMove
     /// </summary>
     public unsafe override void FinishSpecialMove()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RSpecialMoveInstance_CwPounceOnThugDLC.FinishSpecialMove", true);
-        byte* paramsPtr = stackalloc byte[320];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishSpecialMove, "BmScript.RSpecialMoveInstance_CwPounceOnThugDLC.FinishSpecialMove");
+        byte* paramsPtr = stackalloc byte[336];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

@@ -78,13 +78,15 @@ public partial class RBMCombatThrownObject_Baton : BmSDK.BmGame.RBMCombatThrownO
         where TComponent : class, Framework.IScriptComponent<RBMCombatThrownObject_Baton>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SpawnAttachment;
     /// <summary>
     /// Function: SpawnAttachment
     /// </summary>
     public unsafe override void SpawnAttachment()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RBMCombatThrownObject_Baton.SpawnAttachment", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnAttachment, "BmScript.RBMCombatThrownObject_Baton.SpawnAttachment");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

@@ -73,25 +73,29 @@ public partial class RPawnPlayerJokerBase : BmSDK.BmGame.RPawnPlayer, BmSDK.IGam
         where TComponent : class, Framework.IScriptComponent<RPawnPlayerJokerBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PlayShotReaction;
     /// <summary>
     /// Function: PlayShotReaction
     /// </summary>
     public unsafe virtual void PlayShotReaction(System.Numerics.Vector3 HitDir)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerJokerBase.PlayShotReaction", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayShotReaction, "BmGame.RPawnPlayerJokerBase.PlayShotReaction");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitDir, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_BeginBatmanSurprise;
     /// <summary>
     /// Function: BeginBatmanSurprise
     /// </summary>
     public unsafe virtual void BeginBatmanSurprise(BmSDK.Engine.Volume Vol)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RPawnPlayerJokerBase.BeginBatmanSurprise", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BeginBatmanSurprise, "BmGame.RPawnPlayerJokerBase.BeginBatmanSurprise");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Vol, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

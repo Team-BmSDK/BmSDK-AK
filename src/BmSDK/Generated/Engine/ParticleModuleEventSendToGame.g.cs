@@ -73,18 +73,28 @@ public partial class ParticleModuleEventSendToGame : BmSDK.GameObject, BmSDK.IGa
         where TComponent : class, Framework.IScriptComponent<ParticleModuleEventSendToGame>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DoEvent;
     /// <summary>
     /// Function: DoEvent
     /// </summary>
     public unsafe virtual void DoEvent(out System.Numerics.Vector3 InCollideDirection, out System.Numerics.Vector3 InHitLocation, out System.Numerics.Vector3 InHitNormal, out BmSDK.FName InBoneName)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ParticleModuleEventSendToGame.DoEvent", true);
-        byte* paramsPtr = stackalloc byte[44];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoEvent, "Engine.ParticleModuleEventSendToGame.DoEvent");
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out InCollideDirection);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(InCollideDirection, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out InHitLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(InHitLocation, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out InHitNormal);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(InHitNormal, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out InBoneName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(InBoneName, paramsPtr + 36);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        InCollideDirection = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
-        InHitLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
-        InHitNormal = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 24);
-        InBoneName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 36);
+        InCollideDirection = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
+        InHitLocation = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 12);
+        InHitNormal = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 24);
+        InBoneName = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FName>(paramsPtr + 36);
         return;
     }
 }

@@ -78,13 +78,15 @@ public partial class ApexDynamicGridActor : BmSDK.Engine.ApexFieldSamplerActor, 
         where TComponent : class, Framework.IScriptComponent<ApexDynamicGridActor>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PostRenderFor;
     /// <summary>
     /// Function: PostRenderFor
     /// </summary>
     public unsafe override void PostRenderFor(BmSDK.Engine.PlayerController PC, BmSDK.Engine.Canvas Canvas, System.Numerics.Vector3 CameraPosition, System.Numerics.Vector3 CameraDir)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ApexDynamicGridActor.PostRenderFor", true);
-        byte* paramsPtr = stackalloc byte[72];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostRenderFor, "Engine.ApexDynamicGridActor.PostRenderFor");
+        byte* paramsPtr = stackalloc byte[88];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Canvas, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CameraPosition, paramsPtr + 16);
@@ -93,25 +95,33 @@ public partial class ApexDynamicGridActor : BmSDK.Engine.ApexFieldSamplerActor, 
         return;
     }
 
+    private static BmSDK.Function __fn_Tick;
     /// <summary>
     /// Function: Tick
     /// </summary>
     public unsafe override void Tick(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ApexDynamicGridActor.Tick", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Tick, "Engine.ApexDynamicGridActor.Tick");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FetchStats;
     /// <summary>
     /// Function: FetchStats
     /// </summary>
     public unsafe virtual void FetchStats(out int DGfirstLine, out int DGnumLines, out BmSDK.FString DGstr)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ApexDynamicGridActor.FetchStats", true);
-        byte* paramsPtr = stackalloc byte[24];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FetchStats, "Engine.ApexDynamicGridActor.FetchStats");
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DGfirstLine);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DGfirstLine, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DGnumLines);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DGnumLines, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -120,9 +130,9 @@ public partial class ApexDynamicGridActor : BmSDK.Engine.ApexFieldSamplerActor, 
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        DGfirstLine = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
-        DGnumLines = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
-        DGstr = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 8);
+        DGfirstLine = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
+        DGnumLines = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 4);
+        DGstr = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 8);
         return;
     }
 

@@ -78,45 +78,51 @@ public partial class RNavMeshPath_AvoidPathObjects : BmSDK.Engine.NavMeshPathCon
         where TComponent : class, Framework.IScriptComponent<RNavMeshPath_AvoidPathObjects>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_AvoidPathObjects;
     /// <summary>
     /// Function: AvoidPathObjects
     /// </summary>
     public unsafe static bool AvoidPathObjects(BmSDK.BmGame.RNavigationHandle NewNavHandle, BmSDK.Engine.Actor AvoidObject1, BmSDK.Engine.Actor AvoidObject2 = default, BmSDK.Engine.Actor AvoidObject3 = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RNavMeshPath_AvoidPathObjects.AvoidPathObjects", true);
-        byte* paramsPtr = stackalloc byte[44];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AvoidPathObjects, "BmGame.RNavMeshPath_AvoidPathObjects.AvoidPathObjects");
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewNavHandle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AvoidObject1, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AvoidObject2, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AvoidObject3, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 32);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_AvoidPathObjectArray;
     /// <summary>
     /// Function: AvoidPathObjectArray
     /// </summary>
     public unsafe static bool AvoidPathObjectArray(BmSDK.BmGame.RNavigationHandle NewNavHandle, BmSDK.TArray<BmSDK.Engine.Actor> AvoidObjectList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RNavMeshPath_AvoidPathObjects.AvoidPathObjectArray", true);
-        byte* paramsPtr = stackalloc byte[36];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AvoidPathObjectArray, "BmGame.RNavMeshPath_AvoidPathObjects.AvoidPathObjectArray");
+        byte* paramsPtr = stackalloc byte[52];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewNavHandle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AvoidObjectList, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_AvoidPathObject;
     /// <summary>
     /// Function: AvoidPathObject
     /// </summary>
     public unsafe static bool AvoidPathObject(BmSDK.BmGame.RNavigationHandle NewNavHandle, BmSDK.Engine.Actor AvoidObject1)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RNavMeshPath_AvoidPathObjects.AvoidPathObject", true);
-        byte* paramsPtr = stackalloc byte[28];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AvoidPathObject, "BmGame.RNavMeshPath_AvoidPathObjects.AvoidPathObject");
+        byte* paramsPtr = stackalloc byte[44];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewNavHandle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AvoidObject1, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 16);
     }
 
     /// <summary>

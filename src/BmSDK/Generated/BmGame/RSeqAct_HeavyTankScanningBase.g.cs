@@ -73,35 +73,41 @@ public partial class RSeqAct_HeavyTankScanningBase : BmSDK.Engine.SeqAct_Latent,
         where TComponent : class, Framework.IScriptComponent<RSeqAct_HeavyTankScanningBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetObjClassVersion;
     /// <summary>
     /// Function: GetObjClassVersion
     /// </summary>
     public unsafe static int GetObjClassVersion()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_HeavyTankScanningBase.GetObjClassVersion", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetObjClassVersion, "BmGame.RSeqAct_HeavyTankScanningBase.GetObjClassVersion");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_PushScanToFlash;
     /// <summary>
     /// Function: PushScanToFlash
     /// </summary>
     public unsafe virtual void PushScanToFlash()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_HeavyTankScanningBase.PushScanToFlash", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PushScanToFlash, "BmGame.RSeqAct_HeavyTankScanningBase.PushScanToFlash");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TankScanFailed;
     /// <summary>
     /// Function: TankScanFailed
     /// </summary>
     public unsafe virtual void TankScanFailed(bool not_on_screen, bool too_far_away, bool not_well_framed, bool tank_attacking = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_HeavyTankScanningBase.TankScanFailed", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TankScanFailed, "BmGame.RSeqAct_HeavyTankScanningBase.TankScanFailed");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(not_on_screen, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(too_far_away, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(not_well_framed, paramsPtr + 8);

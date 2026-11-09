@@ -78,13 +78,15 @@ public partial class RForensicsInvestigator : BmSDK.GameObject, BmSDK.IGameObjec
         where TComponent : class, Framework.IScriptComponent<RForensicsInvestigator>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_DrawHUD;
     /// <summary>
     /// Function: DrawHUD
     /// </summary>
     public unsafe virtual void DrawHUD(BmSDK.Engine.Canvas HudCanvas, BmSDK.BmGame.RPlayerController RPC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsInvestigator.DrawHUD", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DrawHUD, "BmGame.RForensicsInvestigator.DrawHUD");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HudCanvas, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RPC, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
@@ -98,13 +100,15 @@ public partial class RForensicsInvestigator : BmSDK.GameObject, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_CalculateActorsToUpdate;
     /// <summary>
     /// Function: CalculateActorsToUpdate
     /// </summary>
     public unsafe virtual void CalculateActorsToUpdate(BmSDK.Engine.Canvas HudCanvas, BmSDK.BmGame.RPlayerController RPC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsInvestigator.CalculateActorsToUpdate", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculateActorsToUpdate, "BmGame.RForensicsInvestigator.CalculateActorsToUpdate");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HudCanvas, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RPC, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
@@ -118,13 +122,15 @@ public partial class RForensicsInvestigator : BmSDK.GameObject, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_SyncAsyncTask;
     /// <summary>
     /// Function: SyncAsyncTask
     /// </summary>
     public unsafe virtual void SyncAsyncTask()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsInvestigator.SyncAsyncTask", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SyncAsyncTask, "BmGame.RForensicsInvestigator.SyncAsyncTask");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -136,13 +142,15 @@ public partial class RForensicsInvestigator : BmSDK.GameObject, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_PreRender;
     /// <summary>
     /// Function: PreRender
     /// </summary>
     public unsafe virtual void PreRender(BmSDK.Engine.Canvas HudCanvas, BmSDK.BmGame.RPlayerController RPC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsInvestigator.PreRender", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreRender, "BmGame.RForensicsInvestigator.PreRender");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HudCanvas, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RPC, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
@@ -156,13 +164,15 @@ public partial class RForensicsInvestigator : BmSDK.GameObject, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_StartAsyncTask;
     /// <summary>
     /// Function: StartAsyncTask
     /// </summary>
     public unsafe virtual void StartAsyncTask()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsInvestigator.StartAsyncTask", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StartAsyncTask, "BmGame.RForensicsInvestigator.StartAsyncTask");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -174,13 +184,15 @@ public partial class RForensicsInvestigator : BmSDK.GameObject, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_IsHUDActive;
     /// <summary>
     /// Function: IsHUDActive
     /// </summary>
     public unsafe virtual bool IsHUDActive(BmSDK.BmGame.RPlayerController RPC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsInvestigator.IsHUDActive", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsHUDActive, "BmGame.RForensicsInvestigator.IsHUDActive");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RPC, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -190,52 +202,60 @@ public partial class RForensicsInvestigator : BmSDK.GameObject, BmSDK.IGameObjec
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CastVillain;
     /// <summary>
     /// Function: CastVillain
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RPawnVillain CastVillain(BmSDK.Engine.Actor A)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsInvestigator.CastVillain", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CastVillain, "BmGame.RForensicsInvestigator.CastVillain");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(A, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RPawnVillain>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RPawnVillain>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CastDeadBody;
     /// <summary>
     /// Function: CastDeadBody
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RDeadBody CastDeadBody(BmSDK.Engine.Actor A)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsInvestigator.CastDeadBody", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CastDeadBody, "BmGame.RForensicsInvestigator.CastDeadBody");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(A, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RDeadBody>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RDeadBody>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_CastPawn;
     /// <summary>
     /// Function: CastPawn
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RBMPawnAI CastPawn(BmSDK.Engine.Actor A)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsInvestigator.CastPawn", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CastPawn, "BmGame.RForensicsInvestigator.CastPawn");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(A, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RBMPawnAI>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RBMPawnAI>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_UpdateNPCCounts;
     /// <summary>
     /// Function: UpdateNPCCounts
     /// </summary>
     public unsafe virtual void UpdateNPCCounts(BmSDK.BmGame.RPlayerController RPC, int ArmedNPCs, int UnarmedNPCs)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsInvestigator.UpdateNPCCounts", true);
-        byte* paramsPtr = stackalloc byte[28];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateNPCCounts, "BmGame.RForensicsInvestigator.UpdateNPCCounts");
+        byte* paramsPtr = stackalloc byte[44];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RPC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ArmedNPCs, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UnarmedNPCs, paramsPtr + 12);
@@ -243,25 +263,29 @@ public partial class RForensicsInvestigator : BmSDK.GameObject, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_TriggerInvestigateEvent;
     /// <summary>
     /// Function: TriggerInvestigateEvent
     /// </summary>
     public unsafe virtual void TriggerInvestigateEvent(BmSDK.BmGame.RPlayerController RPC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsInvestigator.TriggerInvestigateEvent", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TriggerInvestigateEvent, "BmGame.RForensicsInvestigator.TriggerInvestigateEvent");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RPC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetNPCInfoCursor;
     /// <summary>
     /// Function: SetNPCInfoCursor
     /// </summary>
     public unsafe virtual void SetNPCInfoCursor(BmSDK.BmGame.RPlayerController RPC, int HeartBeatType, int WeaponType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsInvestigator.SetNPCInfoCursor", true);
-        byte* paramsPtr = stackalloc byte[56];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetNPCInfoCursor, "BmGame.RForensicsInvestigator.SetNPCInfoCursor");
+        byte* paramsPtr = stackalloc byte[72];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RPC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HeartBeatType, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WeaponType, paramsPtr + 12);
@@ -269,73 +293,85 @@ public partial class RForensicsInvestigator : BmSDK.GameObject, BmSDK.IGameObjec
         return;
     }
 
+    private static BmSDK.Function __fn_SetCurrentDetectiveInfoActor;
     /// <summary>
     /// Function: SetCurrentDetectiveInfoActor
     /// </summary>
     public unsafe virtual void SetCurrentDetectiveInfoActor(BmSDK.BmGame.RPlayerController RPC, BmSDK.Engine.Actor the_actor)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsInvestigator.SetCurrentDetectiveInfoActor", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCurrentDetectiveInfoActor, "BmGame.RForensicsInvestigator.SetCurrentDetectiveInfoActor");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RPC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(the_actor, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetBlankInfoCursor;
     /// <summary>
     /// Function: SetBlankInfoCursor
     /// </summary>
     public unsafe virtual void SetBlankInfoCursor(BmSDK.BmGame.RPlayerController RPC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsInvestigator.SetBlankInfoCursor", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBlankInfoCursor, "BmGame.RForensicsInvestigator.SetBlankInfoCursor");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RPC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CheckSetBlankInfoCursor;
     /// <summary>
     /// Function: CheckSetBlankInfoCursor
     /// </summary>
     public unsafe virtual bool CheckSetBlankInfoCursor(BmSDK.BmGame.RPlayerController RPC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsInvestigator.CheckSetBlankInfoCursor", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckSetBlankInfoCursor, "BmGame.RForensicsInvestigator.CheckSetBlankInfoCursor");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RPC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_ClearStored;
     /// <summary>
     /// Function: ClearStored
     /// </summary>
     public unsafe virtual void ClearStored()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsInvestigator.ClearStored", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearStored, "BmGame.RForensicsInvestigator.ClearStored");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SortInfoEntryList;
     /// <summary>
     /// Function: SortInfoEntryList
     /// </summary>
     public unsafe virtual void SortInfoEntryList(BmSDK.BmGame.RPlayerController RPC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsInvestigator.SortInfoEntryList", true);
-        byte* paramsPtr = stackalloc byte[64];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SortInfoEntryList, "BmGame.RForensicsInvestigator.SortInfoEntryList");
+        byte* paramsPtr = stackalloc byte[80];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RPC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetInfoCursor;
     /// <summary>
     /// Function: SetInfoCursor
     /// </summary>
     public unsafe virtual void SetInfoCursor(BmSDK.BmGame.RPlayerController RPC, out BmSDK.FString Title, out BmSDK.FString Message, bool bWarning, float ViewDepth)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsInvestigator.SetInfoCursor", true);
-        byte* paramsPtr = stackalloc byte[48];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetInfoCursor, "BmGame.RForensicsInvestigator.SetInfoCursor");
+        byte* paramsPtr = stackalloc byte[64];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RPC, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWarning, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ViewDepth, paramsPtr + 44);
@@ -347,18 +383,20 @@ public partial class RForensicsInvestigator : BmSDK.GameObject, BmSDK.IGameObjec
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Title = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 8);
-        Message = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FString>(paramsPtr + 24);
+        Title = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 8);
+        Message = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FString>(paramsPtr + 24);
         return;
     }
 
+    private static BmSDK.Function __fn_CanSeeItemTest;
     /// <summary>
     /// Function: CanSeeItemTest
     /// </summary>
     public unsafe virtual bool CanSeeItemTest(BmSDK.Engine.Actor Bats, BmSDK.Engine.Actor Item, System.Numerics.Vector3 ViewPoint, System.Numerics.Vector3 InvestigateLocation, bool bAllowBats = default, bool bComplex = default, bool bForceDefer = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RForensicsInvestigator.CanSeeItemTest", true);
-        byte* paramsPtr = stackalloc byte[56];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanSeeItemTest, "BmGame.RForensicsInvestigator.CanSeeItemTest");
+        byte* paramsPtr = stackalloc byte[72];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Bats, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Item, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ViewPoint, paramsPtr + 16);
@@ -374,7 +412,7 @@ public partial class RForensicsInvestigator : BmSDK.GameObject, BmSDK.IGameObjec
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 52);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 52);
     }
 
     /// <summary>

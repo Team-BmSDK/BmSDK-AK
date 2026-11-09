@@ -78,38 +78,48 @@ public partial class RDynamicBlockingVolume : BmSDK.BmGame.RBlockingVolume, BmSD
         where TComponent : class, Framework.IScriptComponent<RDynamicBlockingVolume>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDynamicBlockingVolume.PostBeginPlay", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RDynamicBlockingVolume.PostBeginPlay");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ApplyCheckpointRecord;
     /// <summary>
     /// Function: ApplyCheckpointRecord
     /// </summary>
     public unsafe virtual void ApplyCheckpointRecord(out BmSDK.BmGame.RDynamicBlockingVolume.FCheckpointRecord Record)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDynamicBlockingVolume.ApplyCheckpointRecord", true);
-        byte* paramsPtr = stackalloc byte[28];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ApplyCheckpointRecord, "BmGame.RDynamicBlockingVolume.ApplyCheckpointRecord");
+        byte* paramsPtr = stackalloc byte[44];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Record);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Record, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        Record = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RDynamicBlockingVolume.FCheckpointRecord>(paramsPtr + 0);
+        Record = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RDynamicBlockingVolume.FCheckpointRecord>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CreateCheckpointRecord;
     /// <summary>
     /// Function: CreateCheckpointRecord
     /// </summary>
     public unsafe virtual void CreateCheckpointRecord(out BmSDK.BmGame.RDynamicBlockingVolume.FCheckpointRecord Record)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDynamicBlockingVolume.CreateCheckpointRecord", true);
-        byte* paramsPtr = stackalloc byte[28];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateCheckpointRecord, "BmGame.RDynamicBlockingVolume.CreateCheckpointRecord");
+        byte* paramsPtr = stackalloc byte[44];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Record);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Record, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        Record = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RDynamicBlockingVolume.FCheckpointRecord>(paramsPtr + 0);
+        Record = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RDynamicBlockingVolume.FCheckpointRecord>(paramsPtr + 0);
         return;
     }
 

@@ -73,25 +73,29 @@ public partial class RSeqAct_BankMoneyControllerBase : BmSDK.Engine.SeqAct_Laten
         where TComponent : class, Framework.IScriptComponent<RSeqAct_BankMoneyControllerBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_NotifyCashPlacedInBag;
     /// <summary>
     /// Function: NotifyCashPlacedInBag
     /// </summary>
     public unsafe virtual void NotifyCashPlacedInBag(int Amount)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_BankMoneyControllerBase.NotifyCashPlacedInBag", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyCashPlacedInBag, "BmGame.RSeqAct_BankMoneyControllerBase.NotifyCashPlacedInBag");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Amount, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_NotifyCashRemovedFromBank;
     /// <summary>
     /// Function: NotifyCashRemovedFromBank
     /// </summary>
     public unsafe virtual void NotifyCashRemovedFromBank(int Amount)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSeqAct_BankMoneyControllerBase.NotifyCashRemovedFromBank", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NotifyCashRemovedFromBank, "BmGame.RSeqAct_BankMoneyControllerBase.NotifyCashRemovedFromBank");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Amount, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

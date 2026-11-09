@@ -78,37 +78,43 @@ public partial class OnlineCustomContentRequestManifestCrcHydra : BmSDK.Engine.O
         where TComponent : class, Framework.IScriptComponent<OnlineCustomContentRequestManifestCrcHydra>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CrcDownloadComplete;
     /// <summary>
     /// Function: CrcDownloadComplete
     /// </summary>
     public unsafe virtual void CrcDownloadComplete(bool bWasSuccessful, BmSDK.FString sCustomId)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.OnlineCustomContentRequestManifestCrcHydra.CrcDownloadComplete", true);
-        byte* paramsPtr = stackalloc byte[20];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CrcDownloadComplete, "Engine.OnlineCustomContentRequestManifestCrcHydra.CrcDownloadComplete");
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bWasSuccessful, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(sCustomId, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CrcDownloadStarted;
     /// <summary>
     /// Function: CrcDownloadStarted
     /// </summary>
     public unsafe virtual void CrcDownloadStarted()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.OnlineCustomContentRequestManifestCrcHydra.CrcDownloadStarted", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CrcDownloadStarted, "Engine.OnlineCustomContentRequestManifestCrcHydra.CrcDownloadStarted");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnCrcDownloadComplete;
     /// <summary>
     /// Function: OnCrcDownloadComplete
     /// </summary>
     public unsafe virtual void OnCrcDownloadComplete()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.OnlineCustomContentRequestManifestCrcHydra.OnCrcDownloadComplete", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnCrcDownloadComplete, "Engine.OnlineCustomContentRequestManifestCrcHydra.OnCrcDownloadComplete");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -120,13 +126,15 @@ public partial class OnlineCustomContentRequestManifestCrcHydra : BmSDK.Engine.O
         return;
     }
 
+    private static BmSDK.Function __fn_CancelCustomContentRequest;
     /// <summary>
     /// Function: CancelCustomContentRequest
     /// </summary>
     public unsafe override void CancelCustomContentRequest()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.OnlineCustomContentRequestManifestCrcHydra.CancelCustomContentRequest", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CancelCustomContentRequest, "Engine.OnlineCustomContentRequestManifestCrcHydra.CancelCustomContentRequest");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

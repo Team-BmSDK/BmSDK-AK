@@ -78,15 +78,21 @@ public partial class RSpecialMoveInstance_BatmobileInterrogationBase : BmSDK.BmG
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveInstance_BatmobileInterrogationBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetRootPointFromBatmanAnimation;
     /// <summary>
     /// Function: GetRootPointFromBatmanAnimation
     /// </summary>
     public unsafe virtual void GetRootPointFromBatmanAnimation(BmSDK.Engine.AnimSequence BatmanAnimation, float TimeInAnim, out System.Numerics.Vector3 RootLoc, out BmSDK.Rotator RootRot, int bUseRefPoint = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_BatmobileInterrogationBase.GetRootPointFromBatmanAnimation", true);
-        byte* paramsPtr = stackalloc byte[40];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRootPointFromBatmanAnimation, "BmGame.RSpecialMoveInstance_BatmobileInterrogationBase.GetRootPointFromBatmanAnimation");
+        byte* paramsPtr = stackalloc byte[56];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BatmanAnimation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TimeInAnim, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RootLoc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RootLoc, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RootRot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RootRot, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bUseRefPoint, paramsPtr + 36);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -96,8 +102,8 @@ public partial class RSpecialMoveInstance_BatmobileInterrogationBase : BmSDK.BmG
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        RootLoc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
-        RootRot = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 24);
+        RootLoc = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 12);
+        RootRot = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Rotator>(paramsPtr + 24);
         return;
     }
 }

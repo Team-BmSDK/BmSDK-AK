@@ -73,13 +73,21 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         where TComponent : class, Framework.IScriptComponent<PrimitiveComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_ClosestPointOnComponentToComponent;
     /// <summary>
     /// Function: ClosestPointOnComponentToComponent
     /// </summary>
     public unsafe virtual BmSDK.Engine.PrimitiveComponent.GJKResult ClosestPointOnComponentToComponent(out BmSDK.Engine.PrimitiveComponent OtherComponent, out System.Numerics.Vector3 PointOnComponentA, out System.Numerics.Vector3 PointOnComponentB)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.ClosestPointOnComponentToComponent", true);
-        byte* paramsPtr = stackalloc byte[33];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClosestPointOnComponentToComponent, "Engine.PrimitiveComponent.ClosestPointOnComponentToComponent");
+        byte* paramsPtr = stackalloc byte[49];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OtherComponent);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OtherComponent, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PointOnComponentA);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PointOnComponentA, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out PointOnComponentB);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(PointOnComponentB, paramsPtr + 20);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -88,19 +96,29 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        OtherComponent = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.PrimitiveComponent>(paramsPtr + 0);
-        PointOnComponentA = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
-        PointOnComponentB = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 20);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.PrimitiveComponent.GJKResult>(paramsPtr + 32);
+        OtherComponent = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.PrimitiveComponent>(paramsPtr + 0);
+        PointOnComponentA = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 8);
+        PointOnComponentB = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 20);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.PrimitiveComponent.GJKResult>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_ClosestPointOnComponentToPoint;
     /// <summary>
     /// Function: ClosestPointOnComponentToPoint
     /// </summary>
     public unsafe virtual BmSDK.Engine.PrimitiveComponent.GJKResult ClosestPointOnComponentToPoint(out System.Numerics.Vector3 POI, out System.Numerics.Vector3 Extent, out System.Numerics.Vector3 OutPointA, out System.Numerics.Vector3 OutPointB)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.ClosestPointOnComponentToPoint", true);
-        byte* paramsPtr = stackalloc byte[49];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClosestPointOnComponentToPoint, "Engine.PrimitiveComponent.ClosestPointOnComponentToPoint");
+        byte* paramsPtr = stackalloc byte[65];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out POI);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(POI, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Extent);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Extent, paramsPtr + 12);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutPointA);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutPointA, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutPointB);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutPointB, paramsPtr + 36);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -109,20 +127,22 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        POI = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
-        Extent = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
-        OutPointA = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 24);
-        OutPointB = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 36);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.PrimitiveComponent.GJKResult>(paramsPtr + 48);
+        POI = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
+        Extent = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 12);
+        OutPointA = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 24);
+        OutPointB = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 36);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.PrimitiveComponent.GJKResult>(paramsPtr + 48);
     }
 
+    private static BmSDK.Function __fn_GetPhysicalMaterial;
     /// <summary>
     /// Function: GetPhysicalMaterial
     /// </summary>
     public unsafe virtual BmSDK.Engine.PhysicalMaterial GetPhysicalMaterial(int BodyIndex = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.GetPhysicalMaterial", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPhysicalMaterial, "Engine.PrimitiveComponent.GetPhysicalMaterial");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BodyIndex, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -132,16 +152,18 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.PhysicalMaterial>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.PhysicalMaterial>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_GetHasFallenOutOfWorld;
     /// <summary>
     /// Function: GetHasFallenOutOfWorld
     /// </summary>
     public unsafe virtual bool GetHasFallenOutOfWorld()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.GetHasFallenOutOfWorld", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetHasFallenOutOfWorld, "Engine.PrimitiveComponent.GetHasFallenOutOfWorld");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -150,16 +172,18 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetRotation;
     /// <summary>
     /// Function: GetRotation
     /// </summary>
     public unsafe virtual BmSDK.Rotator GetRotation()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.GetRotation", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRotation, "Engine.PrimitiveComponent.GetRotation");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -168,16 +192,18 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Rotator>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetPosition;
     /// <summary>
     /// Function: GetPosition
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetPosition()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.GetPosition", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetPosition, "Engine.PrimitiveComponent.GetPosition");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -186,16 +212,18 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetAbsolute;
     /// <summary>
     /// Function: SetAbsolute
     /// </summary>
     public unsafe virtual void SetAbsolute(bool NewAbsoluteTranslation = default, bool NewAbsoluteRotation = default, bool NewAbsoluteScale = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetAbsolute", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetAbsolute, "Engine.PrimitiveComponent.SetAbsolute");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAbsoluteTranslation, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAbsoluteRotation, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAbsoluteScale, paramsPtr + 8);
@@ -210,13 +238,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetScale3D;
     /// <summary>
     /// Function: SetScale3D
     /// </summary>
     public unsafe virtual void SetScale3D(System.Numerics.Vector3 NewScale3D)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetScale3D", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetScale3D, "Engine.PrimitiveComponent.SetScale3D");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewScale3D, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -229,13 +259,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetScale;
     /// <summary>
     /// Function: SetScale
     /// </summary>
     public unsafe virtual void SetScale(float NewScale)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetScale", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetScale, "Engine.PrimitiveComponent.SetScale");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewScale, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -248,13 +280,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetRotation;
     /// <summary>
     /// Function: SetRotation
     /// </summary>
     public unsafe virtual void SetRotation(BmSDK.Rotator NewRotation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetRotation", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRotation, "Engine.PrimitiveComponent.SetRotation");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewRotation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -267,13 +301,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetTranslation;
     /// <summary>
     /// Function: SetTranslation
     /// </summary>
     public unsafe virtual void SetTranslation(System.Numerics.Vector3 NewTranslation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetTranslation", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetTranslation, "Engine.PrimitiveComponent.SetTranslation");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewTranslation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -286,13 +322,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetActorCollision;
     /// <summary>
     /// Function: SetActorCollision
     /// </summary>
     public unsafe virtual void SetActorCollision(bool NewCollideActors, bool NewBlockActors)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetActorCollision", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetActorCollision, "Engine.PrimitiveComponent.SetActorCollision");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCollideActors, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewBlockActors, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
@@ -306,13 +344,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetTraceBlocking;
     /// <summary>
     /// Function: SetTraceBlocking
     /// </summary>
     public unsafe virtual void SetTraceBlocking(bool NewBlockZeroExtent, bool NewBlockNonZeroExtent)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetTraceBlocking", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetTraceBlocking, "Engine.PrimitiveComponent.SetTraceBlocking");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewBlockZeroExtent, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewBlockNonZeroExtent, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
@@ -326,13 +366,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetDepthPriorityGroup;
     /// <summary>
     /// Function: SetDepthPriorityGroup
     /// </summary>
     public unsafe virtual void SetDepthPriorityGroup(BmSDK.Engine.Scene.ESceneDepthPriorityGroup NewDepthPriorityGroup)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetDepthPriorityGroup", true);
-        byte* paramsPtr = stackalloc byte[1];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDepthPriorityGroup, "Engine.PrimitiveComponent.SetDepthPriorityGroup");
+        byte* paramsPtr = stackalloc byte[17];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewDepthPriorityGroup, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -345,13 +387,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetLightingChannels;
     /// <summary>
     /// Function: SetLightingChannels
     /// </summary>
     public unsafe virtual void SetLightingChannels(BmSDK.Engine.LightComponent.FLightingChannelContainer NewLightingChannels)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetLightingChannels", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetLightingChannels, "Engine.PrimitiveComponent.SetLightingChannels");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewLightingChannels, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -364,13 +408,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetCullDistance;
     /// <summary>
     /// Function: SetCullDistance
     /// </summary>
     public unsafe virtual void SetCullDistance(float NewCullDistance)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetCullDistance", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCullDistance, "Engine.PrimitiveComponent.SetCullDistance");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCullDistance, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -383,13 +429,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetIgnoreOwnerHidden;
     /// <summary>
     /// Function: SetIgnoreOwnerHidden
     /// </summary>
     public unsafe virtual void SetIgnoreOwnerHidden(bool bNewIgnoreOwnerHidden)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetIgnoreOwnerHidden", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetIgnoreOwnerHidden, "Engine.PrimitiveComponent.SetIgnoreOwnerHidden");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewIgnoreOwnerHidden, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -402,13 +450,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetHighlightXrayViewDepthPriorityGroupInDLCExtraView;
     /// <summary>
     /// Function: SetHighlightXrayViewDepthPriorityGroupInDLCExtraView
     /// </summary>
     public unsafe virtual void SetHighlightXrayViewDepthPriorityGroupInDLCExtraView(bool bNewHighlightXrayViewDepthPriorityGroupInDLCExtraView)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetHighlightXrayViewDepthPriorityGroupInDLCExtraView", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHighlightXrayViewDepthPriorityGroupInDLCExtraView, "Engine.PrimitiveComponent.SetHighlightXrayViewDepthPriorityGroupInDLCExtraView");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewHighlightXrayViewDepthPriorityGroupInDLCExtraView, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -421,13 +471,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetHighlightViewDepthPriorityGroupInDLCExtraView;
     /// <summary>
     /// Function: SetHighlightViewDepthPriorityGroupInDLCExtraView
     /// </summary>
     public unsafe virtual void SetHighlightViewDepthPriorityGroupInDLCExtraView(bool bNewHighlightViewDepthPriorityGroupInDLCExtraView)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetHighlightViewDepthPriorityGroupInDLCExtraView", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHighlightViewDepthPriorityGroupInDLCExtraView, "Engine.PrimitiveComponent.SetHighlightViewDepthPriorityGroupInDLCExtraView");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewHighlightViewDepthPriorityGroupInDLCExtraView, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -440,13 +492,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetDrawAsGauntletProjectionMesh;
     /// <summary>
     /// Function: SetDrawAsGauntletProjectionMesh
     /// </summary>
     public unsafe virtual void SetDrawAsGauntletProjectionMesh(bool bNewDrawAsGauntletProjectionMesh)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetDrawAsGauntletProjectionMesh", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDrawAsGauntletProjectionMesh, "Engine.PrimitiveComponent.SetDrawAsGauntletProjectionMesh");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewDrawAsGauntletProjectionMesh, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -459,13 +513,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetHighlightBatmobileViewDepthPriorityGroupInBatmobileView;
     /// <summary>
     /// Function: SetHighlightBatmobileViewDepthPriorityGroupInBatmobileView
     /// </summary>
     public unsafe virtual void SetHighlightBatmobileViewDepthPriorityGroupInBatmobileView(bool bNewHighlightBatmobileViewDepthPriorityGroupInBatmobileView)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetHighlightBatmobileViewDepthPriorityGroupInBatmobileView", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHighlightBatmobileViewDepthPriorityGroupInBatmobileView, "Engine.PrimitiveComponent.SetHighlightBatmobileViewDepthPriorityGroupInBatmobileView");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewHighlightBatmobileViewDepthPriorityGroupInBatmobileView, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -478,13 +534,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetHighlightDepthPriorityGroupInBatmobileView;
     /// <summary>
     /// Function: SetHighlightDepthPriorityGroupInBatmobileView
     /// </summary>
     public unsafe virtual void SetHighlightDepthPriorityGroupInBatmobileView(bool bNewHighlightDepthPriorityGroupInBatmobileView)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetHighlightDepthPriorityGroupInBatmobileView", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHighlightDepthPriorityGroupInBatmobileView, "Engine.PrimitiveComponent.SetHighlightDepthPriorityGroupInBatmobileView");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewHighlightDepthPriorityGroupInBatmobileView, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -497,13 +555,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetHighlightThermalDepthPriorityGroupInThermal;
     /// <summary>
     /// Function: SetHighlightThermalDepthPriorityGroupInThermal
     /// </summary>
     public unsafe virtual void SetHighlightThermalDepthPriorityGroupInThermal(bool bNewHighlightThermalDepthPriorityGroupInThermal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetHighlightThermalDepthPriorityGroupInThermal", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHighlightThermalDepthPriorityGroupInThermal, "Engine.PrimitiveComponent.SetHighlightThermalDepthPriorityGroupInThermal");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewHighlightThermalDepthPriorityGroupInThermal, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -516,13 +576,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetHighlightDepthPriorityGroupInThermal;
     /// <summary>
     /// Function: SetHighlightDepthPriorityGroupInThermal
     /// </summary>
     public unsafe virtual void SetHighlightDepthPriorityGroupInThermal(bool bNewHighlightDepthPriorityGroupInThermal)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetHighlightDepthPriorityGroupInThermal", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHighlightDepthPriorityGroupInThermal, "Engine.PrimitiveComponent.SetHighlightDepthPriorityGroupInThermal");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewHighlightDepthPriorityGroupInThermal, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -535,13 +597,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetHighlightXrayDepthPriorityGroupInScan;
     /// <summary>
     /// Function: SetHighlightXrayDepthPriorityGroupInScan
     /// </summary>
     public unsafe virtual void SetHighlightXrayDepthPriorityGroupInScan(bool bNewHighlightXrayDepthPriorityGroupInScan)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetHighlightXrayDepthPriorityGroupInScan", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHighlightXrayDepthPriorityGroupInScan, "Engine.PrimitiveComponent.SetHighlightXrayDepthPriorityGroupInScan");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewHighlightXrayDepthPriorityGroupInScan, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -554,13 +618,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetHighlightDepthPriorityGroupInScan;
     /// <summary>
     /// Function: SetHighlightDepthPriorityGroupInScan
     /// </summary>
     public unsafe virtual void SetHighlightDepthPriorityGroupInScan(bool bNewHighlightDepthPriorityGroupInScan)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetHighlightDepthPriorityGroupInScan", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHighlightDepthPriorityGroupInScan, "Engine.PrimitiveComponent.SetHighlightDepthPriorityGroupInScan");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewHighlightDepthPriorityGroupInScan, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -573,13 +639,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetHighlightXrayDepthPriorityGroupInXray;
     /// <summary>
     /// Function: SetHighlightXrayDepthPriorityGroupInXray
     /// </summary>
     public unsafe virtual void SetHighlightXrayDepthPriorityGroupInXray(bool bNewHighlightXrayDepthPriorityGroupInXray, bool bAllowCallingConditionalUpdateComponents = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetHighlightXrayDepthPriorityGroupInXray", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHighlightXrayDepthPriorityGroupInXray, "Engine.PrimitiveComponent.SetHighlightXrayDepthPriorityGroupInXray");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewHighlightXrayDepthPriorityGroupInXray, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAllowCallingConditionalUpdateComponents, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
@@ -593,13 +661,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetHighlightDepthPriorityGroupInXray;
     /// <summary>
     /// Function: SetHighlightDepthPriorityGroupInXray
     /// </summary>
     public unsafe virtual void SetHighlightDepthPriorityGroupInXray(bool bNewHighlightDepthPriorityGroupInXray)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetHighlightDepthPriorityGroupInXray", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHighlightDepthPriorityGroupInXray, "Engine.PrimitiveComponent.SetHighlightDepthPriorityGroupInXray");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewHighlightDepthPriorityGroupInXray, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -612,13 +682,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetDontDrawThisFrame;
     /// <summary>
     /// Function: SetDontDrawThisFrame
     /// </summary>
     public unsafe virtual void SetDontDrawThisFrame(bool bNewDontDrawThisFrame)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetDontDrawThisFrame", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDontDrawThisFrame, "Engine.PrimitiveComponent.SetDontDrawThisFrame");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewDontDrawThisFrame, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -631,13 +703,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetReflectionNoSee;
     /// <summary>
     /// Function: SetReflectionNoSee
     /// </summary>
     public unsafe virtual void SetReflectionNoSee(bool NewReflectionNoSee)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetReflectionNoSee", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetReflectionNoSee, "Engine.PrimitiveComponent.SetReflectionNoSee");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewReflectionNoSee, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -650,13 +724,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetOnlyBatmobileViewSee;
     /// <summary>
     /// Function: SetOnlyBatmobileViewSee
     /// </summary>
     public unsafe virtual void SetOnlyBatmobileViewSee(bool bNewOnlyBatmobileViewSee)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetOnlyBatmobileViewSee", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetOnlyBatmobileViewSee, "Engine.PrimitiveComponent.SetOnlyBatmobileViewSee");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewOnlyBatmobileViewSee, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -669,13 +745,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetBatmobileViewNoSee;
     /// <summary>
     /// Function: SetBatmobileViewNoSee
     /// </summary>
     public unsafe virtual void SetBatmobileViewNoSee(bool bNewBatmobileViewNoSee)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetBatmobileViewNoSee", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBatmobileViewNoSee, "Engine.PrimitiveComponent.SetBatmobileViewNoSee");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewBatmobileViewNoSee, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -688,13 +766,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetOnlyThermalSee;
     /// <summary>
     /// Function: SetOnlyThermalSee
     /// </summary>
     public unsafe virtual void SetOnlyThermalSee(bool bNewOnlyThermalSee)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetOnlyThermalSee", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetOnlyThermalSee, "Engine.PrimitiveComponent.SetOnlyThermalSee");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewOnlyThermalSee, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -707,13 +787,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetThermalNoSee;
     /// <summary>
     /// Function: SetThermalNoSee
     /// </summary>
     public unsafe virtual void SetThermalNoSee(bool bNewThermalNoSee)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetThermalNoSee", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetThermalNoSee, "Engine.PrimitiveComponent.SetThermalNoSee");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewThermalNoSee, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -726,13 +808,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetOnlyScanModeSee;
     /// <summary>
     /// Function: SetOnlyScanModeSee
     /// </summary>
     public unsafe virtual void SetOnlyScanModeSee(bool bNewOnlyScanModeSee)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetOnlyScanModeSee", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetOnlyScanModeSee, "Engine.PrimitiveComponent.SetOnlyScanModeSee");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewOnlyScanModeSee, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -745,13 +829,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetScanModeNoSee;
     /// <summary>
     /// Function: SetScanModeNoSee
     /// </summary>
     public unsafe virtual void SetScanModeNoSee(bool bNewScanModeNoSee)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetScanModeNoSee", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetScanModeNoSee, "Engine.PrimitiveComponent.SetScanModeNoSee");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewScanModeNoSee, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -764,13 +850,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetOnlyXraySee;
     /// <summary>
     /// Function: SetOnlyXraySee
     /// </summary>
     public unsafe virtual void SetOnlyXraySee(bool bNewOnlyXraySee)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetOnlyXraySee", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetOnlyXraySee, "Engine.PrimitiveComponent.SetOnlyXraySee");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewOnlyXraySee, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -783,13 +871,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetXrayNoSee;
     /// <summary>
     /// Function: SetXrayNoSee
     /// </summary>
     public unsafe virtual void SetXrayNoSee(bool bNewXrayNoSee, bool bAllowCallingConditionalUpdateComponents = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetXrayNoSee", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetXrayNoSee, "Engine.PrimitiveComponent.SetXrayNoSee");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewXrayNoSee, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAllowCallingConditionalUpdateComponents, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
@@ -803,13 +893,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetOnlyOwnerSee;
     /// <summary>
     /// Function: SetOnlyOwnerSee
     /// </summary>
     public unsafe virtual void SetOnlyOwnerSee(bool bNewOnlyOwnerSee)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetOnlyOwnerSee", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetOnlyOwnerSee, "Engine.PrimitiveComponent.SetOnlyOwnerSee");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewOnlyOwnerSee, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -822,13 +914,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetOwnerNoSee;
     /// <summary>
     /// Function: SetOwnerNoSee
     /// </summary>
     public unsafe virtual void SetOwnerNoSee(bool bNewOwnerNoSee)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetOwnerNoSee", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetOwnerNoSee, "Engine.PrimitiveComponent.SetOwnerNoSee");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewOwnerNoSee, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -841,13 +935,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetHiddenEditor;
     /// <summary>
     /// Function: SetHiddenEditor
     /// </summary>
     public unsafe virtual void SetHiddenEditor(bool NewHidden)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetHiddenEditor", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHiddenEditor, "Engine.PrimitiveComponent.SetHiddenEditor");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewHidden, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -860,13 +956,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetHidden;
     /// <summary>
     /// Function: SetHidden
     /// </summary>
     public unsafe virtual void SetHidden(bool NewHidden)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetHidden", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetHidden, "Engine.PrimitiveComponent.SetHidden");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewHidden, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -879,13 +977,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_ShouldComponentAddToScene;
     /// <summary>
     /// Function: ShouldComponentAddToScene
     /// </summary>
     public unsafe virtual bool ShouldComponentAddToScene()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.ShouldComponentAddToScene", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShouldComponentAddToScene, "Engine.PrimitiveComponent.ShouldComponentAddToScene");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -894,16 +994,18 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetRBDominanceGroup;
     /// <summary>
     /// Function: SetRBDominanceGroup
     /// </summary>
     public unsafe virtual void SetRBDominanceGroup(byte InDomGroup)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetRBDominanceGroup", true);
-        byte* paramsPtr = stackalloc byte[1];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRBDominanceGroup, "Engine.PrimitiveComponent.SetRBDominanceGroup");
+        byte* paramsPtr = stackalloc byte[17];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InDomGroup, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -916,13 +1018,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_GetRootBodyInstance;
     /// <summary>
     /// Function: GetRootBodyInstance
     /// </summary>
     public unsafe virtual BmSDK.Engine.RB_BodyInstance GetRootBodyInstance()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.GetRootBodyInstance", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRootBodyInstance, "Engine.PrimitiveComponent.GetRootBodyInstance");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -931,16 +1035,18 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.RB_BodyInstance>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.RB_BodyInstance>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetPhysMaterialOverride;
     /// <summary>
     /// Function: SetPhysMaterialOverride
     /// </summary>
     public unsafe virtual void SetPhysMaterialOverride(BmSDK.Engine.PhysicalMaterial NewPhysMaterial)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetPhysMaterialOverride", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetPhysMaterialOverride, "Engine.PrimitiveComponent.SetPhysMaterialOverride");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPhysMaterial, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -953,13 +1059,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_InitRBPhys;
     /// <summary>
     /// Function: InitRBPhys
     /// </summary>
     public unsafe virtual void InitRBPhys()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.InitRBPhys", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InitRBPhys, "Engine.PrimitiveComponent.InitRBPhys");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -971,13 +1079,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetContactModification;
     /// <summary>
     /// Function: SetContactModification
     /// </summary>
     public unsafe virtual void SetContactModification(bool isEnableContactModificationCallback)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetContactModification", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetContactModification, "Engine.PrimitiveComponent.SetContactModification");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(isEnableContactModificationCallback, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -990,13 +1100,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetNotifyRigidBodyCollision;
     /// <summary>
     /// Function: SetNotifyRigidBodyCollision
     /// </summary>
     public unsafe virtual void SetNotifyRigidBodyCollision(bool bNewNotifyRigidBodyCollision)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetNotifyRigidBodyCollision", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetNotifyRigidBodyCollision, "Engine.PrimitiveComponent.SetNotifyRigidBodyCollision");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewNotifyRigidBodyCollision, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1009,13 +1121,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetRBChannelAndRBCollisionChannels;
     /// <summary>
     /// Function: SetRBChannelAndRBCollisionChannels
     /// </summary>
     public unsafe virtual void SetRBChannelAndRBCollisionChannels(BmSDK.Engine.PrimitiveComponent.ERBCollisionChannel Channel, BmSDK.Engine.PrimitiveComponent.FRBCollisionChannelContainer Channels)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetRBChannelAndRBCollisionChannels", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRBChannelAndRBCollisionChannels, "Engine.PrimitiveComponent.SetRBChannelAndRBCollisionChannels");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Channel, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Channels, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1029,13 +1143,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetRBChannel;
     /// <summary>
     /// Function: SetRBChannel
     /// </summary>
     public unsafe virtual void SetRBChannel(BmSDK.Engine.PrimitiveComponent.ERBCollisionChannel Channel)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetRBChannel", true);
-        byte* paramsPtr = stackalloc byte[1];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRBChannel, "Engine.PrimitiveComponent.SetRBChannel");
+        byte* paramsPtr = stackalloc byte[17];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Channel, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1048,13 +1164,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetRBCollisionChannels;
     /// <summary>
     /// Function: SetRBCollisionChannels
     /// </summary>
     public unsafe virtual void SetRBCollisionChannels(BmSDK.Engine.PrimitiveComponent.FRBCollisionChannelContainer Channels)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetRBCollisionChannels", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRBCollisionChannels, "Engine.PrimitiveComponent.SetRBCollisionChannels");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Channels, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1067,13 +1185,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetRBCollidesWithChannel;
     /// <summary>
     /// Function: SetRBCollidesWithChannel
     /// </summary>
     public unsafe virtual void SetRBCollidesWithChannel(BmSDK.Engine.PrimitiveComponent.ERBCollisionChannel Channel, bool bNewCollides)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetRBCollidesWithChannel", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRBCollidesWithChannel, "Engine.PrimitiveComponent.SetRBCollidesWithChannel");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Channel, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewCollides, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1087,13 +1207,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetBlockRigidBody;
     /// <summary>
     /// Function: SetBlockRigidBody
     /// </summary>
     public unsafe virtual void SetBlockRigidBody(bool bNewBlockRigidBody)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetBlockRigidBody", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBlockRigidBody, "Engine.PrimitiveComponent.SetBlockRigidBody");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewBlockRigidBody, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1106,13 +1228,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_RigidBodyIsAwake;
     /// <summary>
     /// Function: RigidBodyIsAwake
     /// </summary>
     public unsafe virtual bool RigidBodyIsAwake(BmSDK.FName BoneName = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.RigidBodyIsAwake", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RigidBodyIsAwake, "Engine.PrimitiveComponent.RigidBodyIsAwake");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1122,16 +1246,18 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_RigidBodyIsFullyDynamic;
     /// <summary>
     /// Function: RigidBodyIsFullyDynamic
     /// </summary>
     public unsafe virtual bool RigidBodyIsFullyDynamic(BmSDK.FName BoneName = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.RigidBodyIsFullyDynamic", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RigidBodyIsFullyDynamic, "Engine.PrimitiveComponent.RigidBodyIsFullyDynamic");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1141,16 +1267,18 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_PutRigidBodyToSleep;
     /// <summary>
     /// Function: PutRigidBodyToSleep
     /// </summary>
     public unsafe virtual void PutRigidBodyToSleep(BmSDK.FName BoneName = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.PutRigidBodyToSleep", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PutRigidBodyToSleep, "Engine.PrimitiveComponent.PutRigidBodyToSleep");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1163,13 +1291,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_WakeRigidBody;
     /// <summary>
     /// Function: WakeRigidBody
     /// </summary>
     public unsafe virtual void WakeRigidBody(BmSDK.FName BoneName = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.WakeRigidBody", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_WakeRigidBody, "Engine.PrimitiveComponent.WakeRigidBody");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1182,13 +1312,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetRBRotation;
     /// <summary>
     /// Function: SetRBRotation
     /// </summary>
     public unsafe virtual void SetRBRotation(BmSDK.Rotator NewRot, BmSDK.FName BoneName = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetRBRotation", true);
-        byte* paramsPtr = stackalloc byte[20];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRBRotation, "Engine.PrimitiveComponent.SetRBRotation");
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewRot, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1202,13 +1334,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetRBPosition;
     /// <summary>
     /// Function: SetRBPosition
     /// </summary>
     public unsafe virtual void SetRBPosition(System.Numerics.Vector3 NewPos, BmSDK.FName BoneName = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetRBPosition", true);
-        byte* paramsPtr = stackalloc byte[20];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRBPosition, "Engine.PrimitiveComponent.SetRBPosition");
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewPos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1222,13 +1356,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_RetardRBLinearVelocity;
     /// <summary>
     /// Function: RetardRBLinearVelocity
     /// </summary>
     public unsafe virtual void RetardRBLinearVelocity(System.Numerics.Vector3 RetardDir, float VelScale)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.RetardRBLinearVelocity", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RetardRBLinearVelocity, "Engine.PrimitiveComponent.RetardRBLinearVelocity");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RetardDir, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VelScale, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1242,13 +1378,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetRBAngularVelocity;
     /// <summary>
     /// Function: SetRBAngularVelocity
     /// </summary>
     public unsafe virtual void SetRBAngularVelocity(System.Numerics.Vector3 NewAngVel, bool bAddToCurrent = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetRBAngularVelocity", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRBAngularVelocity, "Engine.PrimitiveComponent.SetRBAngularVelocity");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAngVel, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAddToCurrent, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1262,13 +1400,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_GetRBMass;
     /// <summary>
     /// Function: GetRBMass
     /// </summary>
     public unsafe virtual float GetRBMass()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.GetRBMass", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRBMass, "Engine.PrimitiveComponent.GetRBMass");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1277,16 +1417,18 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetRBAngularVelocity;
     /// <summary>
     /// Function: GetRBAngularVelocity
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetRBAngularVelocity()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.GetRBAngularVelocity", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRBAngularVelocity, "Engine.PrimitiveComponent.GetRBAngularVelocity");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1295,16 +1437,18 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetRBLinearVelocity;
     /// <summary>
     /// Function: GetRBLinearVelocity
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetRBLinearVelocity()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.GetRBLinearVelocity", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRBLinearVelocity, "Engine.PrimitiveComponent.GetRBLinearVelocity");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1313,16 +1457,18 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetRBLinearVelocity;
     /// <summary>
     /// Function: SetRBLinearVelocity
     /// </summary>
     public unsafe virtual void SetRBLinearVelocity(System.Numerics.Vector3 NewVel, bool bAddToCurrent = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetRBLinearVelocity", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRBLinearVelocity, "Engine.PrimitiveComponent.SetRBLinearVelocity");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewVel, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAddToCurrent, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1336,13 +1482,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_AddTorqueImpulse;
     /// <summary>
     /// Function: AddTorqueImpulse
     /// </summary>
     public unsafe virtual void AddTorqueImpulse(System.Numerics.Vector3 Torgue, BmSDK.FName BoneName = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.AddTorqueImpulse", true);
-        byte* paramsPtr = stackalloc byte[20];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddTorqueImpulse, "Engine.PrimitiveComponent.AddTorqueImpulse");
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Torgue, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1356,13 +1504,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_AddTorqueForce;
     /// <summary>
     /// Function: AddTorqueForce
     /// </summary>
     public unsafe virtual void AddTorqueForce(System.Numerics.Vector3 Torgue, BmSDK.FName BoneName = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.AddTorqueForce", true);
-        byte* paramsPtr = stackalloc byte[20];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddTorqueForce, "Engine.PrimitiveComponent.AddTorqueForce");
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Torgue, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1376,13 +1526,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_AddTorque;
     /// <summary>
     /// Function: AddTorque
     /// </summary>
     public unsafe virtual void AddTorque(System.Numerics.Vector3 Torque, BmSDK.FName BoneName = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.AddTorque", true);
-        byte* paramsPtr = stackalloc byte[20];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddTorque, "Engine.PrimitiveComponent.AddTorque");
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Torque, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 12);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1396,13 +1548,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_AddRadialForce;
     /// <summary>
     /// Function: AddRadialForce
     /// </summary>
     public unsafe virtual void AddRadialForce(System.Numerics.Vector3 Origin, float Radius, float Strength, BmSDK.Engine.PrimitiveComponent.ERadialImpulseFalloff Falloff)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.AddRadialForce", true);
-        byte* paramsPtr = stackalloc byte[21];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddRadialForce, "Engine.PrimitiveComponent.AddRadialForce");
+        byte* paramsPtr = stackalloc byte[37];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Origin, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Radius, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Strength, paramsPtr + 16);
@@ -1418,13 +1572,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_AddForce;
     /// <summary>
     /// Function: AddForce
     /// </summary>
     public unsafe virtual void AddForce(System.Numerics.Vector3 Force, System.Numerics.Vector3 Position = default, BmSDK.FName BoneName = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.AddForce", true);
-        byte* paramsPtr = stackalloc byte[32];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddForce, "Engine.PrimitiveComponent.AddForce");
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Force, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Position, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 24);
@@ -1439,13 +1595,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_AddRadialImpulse;
     /// <summary>
     /// Function: AddRadialImpulse
     /// </summary>
     public unsafe virtual void AddRadialImpulse(System.Numerics.Vector3 Origin, float Radius, float Strength, BmSDK.Engine.PrimitiveComponent.ERadialImpulseFalloff Falloff, BmSDK.Engine.PrimitiveComponent.ERadialImpulseType RadialImpulseType = default, bool bAccurateRadiusTest = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.AddRadialImpulse", true);
-        byte* paramsPtr = stackalloc byte[28];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddRadialImpulse, "Engine.PrimitiveComponent.AddRadialImpulse");
+        byte* paramsPtr = stackalloc byte[44];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Origin, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Radius, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Strength, paramsPtr + 16);
@@ -1463,13 +1621,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_AddImpulse;
     /// <summary>
     /// Function: AddImpulse
     /// </summary>
     public unsafe virtual void AddImpulse(System.Numerics.Vector3 Impulse, System.Numerics.Vector3 Position = default, BmSDK.FName BoneName = default, bool bVelChange = default, bool bAffectAllBodies = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.AddImpulse", true);
-        byte* paramsPtr = stackalloc byte[40];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddImpulse, "Engine.PrimitiveComponent.AddImpulse");
+        byte* paramsPtr = stackalloc byte[56];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Impulse, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Position, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoneName, paramsPtr + 24);
@@ -1486,13 +1646,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetDisableAllRigidBody;
     /// <summary>
     /// Function: SetDisableAllRigidBody
     /// </summary>
     public unsafe virtual void SetDisableAllRigidBody(bool bNewDisableAllRigidBody)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetDisableAllRigidBody", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetDisableAllRigidBody, "Engine.PrimitiveComponent.SetDisableAllRigidBody");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewDisableAllRigidBody, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1505,13 +1667,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetCollisionFilter;
     /// <summary>
     /// Function: SetCollisionFilter
     /// </summary>
     public unsafe virtual void SetCollisionFilter(BmSDK.Component.ECollisionFilter Filter, bool OverrideFilter)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.SetCollisionFilter", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCollisionFilter, "Engine.PrimitiveComponent.SetCollisionFilter");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Filter, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OverrideFilter, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1525,13 +1689,15 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_GetCollisionFilter;
     /// <summary>
     /// Function: GetCollisionFilter
     /// </summary>
     public unsafe virtual BmSDK.Component.ECollisionFilter GetCollisionFilter()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.PrimitiveComponent.GetCollisionFilter", true);
-        byte* paramsPtr = stackalloc byte[1];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCollisionFilter, "Engine.PrimitiveComponent.GetCollisionFilter");
+        byte* paramsPtr = stackalloc byte[17];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -1540,7 +1706,7 @@ public partial class PrimitiveComponent : BmSDK.Engine.ActorComponent, BmSDK.IGa
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Component.ECollisionFilter>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Component.ECollisionFilter>(paramsPtr + 0);
     }
 
     /// <summary>

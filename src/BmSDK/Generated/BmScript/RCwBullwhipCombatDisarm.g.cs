@@ -78,14 +78,16 @@ public partial class RCwBullwhipCombatDisarm : BmSDK.BmScript.RCwBullwhip, BmSDK
         where TComponent : class, Framework.IScriptComponent<RCwBullwhipCombatDisarm>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_FireGadgetCombat;
     /// <summary>
     /// Function: FireGadgetCombat
     /// </summary>
     public unsafe override bool FireGadgetCombat()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RCwBullwhipCombatDisarm.FireGadgetCombat", true);
-        byte* paramsPtr = stackalloc byte[29];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireGadgetCombat, "BmScript.RCwBullwhipCombatDisarm.FireGadgetCombat");
+        byte* paramsPtr = stackalloc byte[45];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 }

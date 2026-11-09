@@ -277,7 +277,7 @@ public partial class RCapeStateBoneConfig : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FCapeSkinningBoneData
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 13)]
+    [StructLayout(LayoutKind.Explicit, Size = 16)]
     public partial record struct FCapeSkinningBoneData
     {
         /// <summary>

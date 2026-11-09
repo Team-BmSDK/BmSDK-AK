@@ -78,35 +78,41 @@ public partial class RPawnPlayerFPS_Cop : BmSDK.BmGame.RPawnPlayerFPS, BmSDK.IGa
         where TComponent : class, Framework.IScriptComponent<RPawnPlayerFPS_Cop>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerFPS_Cop.PostBeginPlay", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmScript.RPawnPlayerFPS_Cop.PostBeginPlay");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CauseMuzzleFlash;
     /// <summary>
     /// Function: CauseMuzzleFlash
     /// </summary>
     public unsafe virtual void CauseMuzzleFlash()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerFPS_Cop.CauseMuzzleFlash", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CauseMuzzleFlash, "BmScript.RPawnPlayerFPS_Cop.CauseMuzzleFlash");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_DoShotFX;
     /// <summary>
     /// Function: DoShotFX
     /// </summary>
     public unsafe virtual void DoShotFX(System.Numerics.Vector3 HitTarget, BmSDK.Engine.Actor HitActor, System.Numerics.Vector3 OriginalShotOrig, System.Numerics.Vector3 OriginalShotDir)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerFPS_Cop.DoShotFX", true);
-        byte* paramsPtr = stackalloc byte[176];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoShotFX, "BmScript.RPawnPlayerFPS_Cop.DoShotFX");
+        byte* paramsPtr = stackalloc byte[192];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitTarget, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitActor, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OriginalShotOrig, paramsPtr + 20);
@@ -115,45 +121,51 @@ public partial class RPawnPlayerFPS_Cop : BmSDK.BmGame.RPawnPlayerFPS, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_CalcImpact;
     /// <summary>
     /// Function: CalcImpact
     /// </summary>
     public unsafe virtual BmSDK.Engine.Actor.FImpactInfo CalcImpact(System.Numerics.Vector3 StartTrace, System.Numerics.Vector3 EndTrace, BmSDK.Engine.Actor HitTarget)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerFPS_Cop.CalcImpact", true);
-        byte* paramsPtr = stackalloc byte[304];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalcImpact, "BmScript.RPawnPlayerFPS_Cop.CalcImpact");
+        byte* paramsPtr = stackalloc byte[320];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartTrace, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EndTrace, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitTarget, paramsPtr + 24);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor.FImpactInfo>(paramsPtr + 32);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.Actor.FImpactInfo>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_DoHitDecal;
     /// <summary>
     /// Function: DoHitDecal
     /// </summary>
     public unsafe virtual bool DoHitDecal(BmSDK.Engine.Actor.FImpactInfo HitImpactInfo, System.Numerics.Vector3 HitTarget, BmSDK.Engine.Actor HitActor, System.Numerics.Vector3 GunMuzzle)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerFPS_Cop.DoHitDecal", true);
-        byte* paramsPtr = stackalloc byte[188];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DoHitDecal, "BmScript.RPawnPlayerFPS_Cop.DoHitDecal");
+        byte* paramsPtr = stackalloc byte[204];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitImpactInfo, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitTarget, paramsPtr + 96);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitActor, paramsPtr + 108);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GunMuzzle, paramsPtr + 116);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 128);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 128);
     }
 
+    private static BmSDK.Function __fn_FireGunNow;
     /// <summary>
     /// Function: FireGunNow
     /// </summary>
     public unsafe override bool FireGunNow(bool bGunAnimOnly = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RPawnPlayerFPS_Cop.FireGunNow", true);
-        byte* paramsPtr = stackalloc byte[388];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FireGunNow, "BmScript.RPawnPlayerFPS_Cop.FireGunNow");
+        byte* paramsPtr = stackalloc byte[404];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bGunAnimOnly, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 4);
     }
 
     /// <summary>

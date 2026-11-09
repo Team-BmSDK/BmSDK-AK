@@ -78,25 +78,29 @@ public partial class RHudObjectivesContainer : BmSDK.GameObject, BmSDK.IGameObje
         where TComponent : class, Framework.IScriptComponent<RHudObjectivesContainer>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_FlushPendingObjectiveMessage;
     /// <summary>
     /// Function: FlushPendingObjectiveMessage
     /// </summary>
     public unsafe virtual void FlushPendingObjectiveMessage(BmSDK.FString Title)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudObjectivesContainer.FlushPendingObjectiveMessage", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FlushPendingObjectiveMessage, "BmGame.RHudObjectivesContainer.FlushPendingObjectiveMessage");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Title, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_QueueObjectiveMessageCustomIcon;
     /// <summary>
     /// Function: QueueObjectiveMessageCustomIcon
     /// </summary>
     public unsafe virtual void QueueObjectiveMessageCustomIcon(float Time, BmSDK.FString Title, BmSDK.FString Desc, BmSDK.FString OrgDesc, BmSDK.FString CustomIconName, bool bForceShowMap, BmSDK.FString BackPrompt, bool bNoDuplicates, bool bPulseCompassIndicator, BmSDK.FString MostWantedPipeSeparatedArray = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudObjectivesContainer.QueueObjectiveMessageCustomIcon", true);
-        byte* paramsPtr = stackalloc byte[208];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_QueueObjectiveMessageCustomIcon, "BmGame.RHudObjectivesContainer.QueueObjectiveMessageCustomIcon");
+        byte* paramsPtr = stackalloc byte[224];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Time, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Title, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Desc, paramsPtr + 20);
@@ -107,17 +111,21 @@ public partial class RHudObjectivesContainer : BmSDK.GameObject, BmSDK.IGameObje
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNoDuplicates, paramsPtr + 88);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bPulseCompassIndicator, paramsPtr + 92);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MostWantedPipeSeparatedArray, paramsPtr + 96);
+        var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
+        BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);
         return;
     }
 
+    private static BmSDK.Function __fn_QueueObjectiveMessage;
     /// <summary>
     /// Function: QueueObjectiveMessage
     /// </summary>
     public unsafe virtual void QueueObjectiveMessage(float Time, BmSDK.FString Title, BmSDK.FString Desc, BmSDK.FString OrgDesc, int ArrowType, bool bForceShowMap, BmSDK.FString BackPrompt, bool bNoDuplicates, bool bPulseCompassIndicator)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHudObjectivesContainer.QueueObjectiveMessage", true);
-        byte* paramsPtr = stackalloc byte[180];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_QueueObjectiveMessage, "BmGame.RHudObjectivesContainer.QueueObjectiveMessage");
+        byte* paramsPtr = stackalloc byte[196];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Time, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Title, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Desc, paramsPtr + 20);

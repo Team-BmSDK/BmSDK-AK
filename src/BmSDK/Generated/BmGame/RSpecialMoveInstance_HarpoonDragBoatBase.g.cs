@@ -73,13 +73,15 @@ public partial class RSpecialMoveInstance_HarpoonDragBoatBase : BmSDK.BmGame.RSp
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveInstance_HarpoonDragBoatBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UpdateConstraint;
     /// <summary>
     /// Function: UpdateConstraint
     /// </summary>
     public unsafe virtual void UpdateConstraint(System.Numerics.Vector3 WorldPositionConstraint, System.Numerics.Vector3 LocalPositionConstraint, BmSDK.Engine.Actor FloatingBoat)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_HarpoonDragBoatBase.UpdateConstraint", true);
-        byte* paramsPtr = stackalloc byte[32];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateConstraint, "BmGame.RSpecialMoveInstance_HarpoonDragBoatBase.UpdateConstraint");
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WorldPositionConstraint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalPositionConstraint, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FloatingBoat, paramsPtr + 24);
@@ -94,13 +96,15 @@ public partial class RSpecialMoveInstance_HarpoonDragBoatBase : BmSDK.BmGame.RSp
         return;
     }
 
+    private static BmSDK.Function __fn_SetupConstraint;
     /// <summary>
     /// Function: SetupConstraint
     /// </summary>
     public unsafe virtual void SetupConstraint(System.Numerics.Vector3 WorldPositionConstraint, System.Numerics.Vector3 LocalPositionConstraint, BmSDK.Engine.Actor FloatingBoat)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveInstance_HarpoonDragBoatBase.SetupConstraint", true);
-        byte* paramsPtr = stackalloc byte[32];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetupConstraint, "BmGame.RSpecialMoveInstance_HarpoonDragBoatBase.SetupConstraint");
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(WorldPositionConstraint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LocalPositionConstraint, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FloatingBoat, paramsPtr + 24);

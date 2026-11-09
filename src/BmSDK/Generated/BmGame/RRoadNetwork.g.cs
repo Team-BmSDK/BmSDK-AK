@@ -78,46 +78,56 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RRoadNetwork>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Destroyed;
     /// <summary>
     /// Function: Destroyed
     /// </summary>
     public unsafe override void Destroyed()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.Destroyed", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Destroyed, "BmGame.RRoadNetwork.Destroyed");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreStreamOut;
     /// <summary>
     /// Function: PreStreamOut
     /// </summary>
     public unsafe override void PreStreamOut()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.PreStreamOut", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreStreamOut, "BmGame.RRoadNetwork.PreStreamOut");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PreBeginPlay;
     /// <summary>
     /// Function: PreBeginPlay
     /// </summary>
     public unsafe override void PreBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.PreBeginPlay", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreBeginPlay, "BmGame.RRoadNetwork.PreBeginPlay");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PlanTightAreaRoute;
     /// <summary>
     /// Function: PlanTightAreaRoute
     /// </summary>
     public unsafe virtual bool PlanTightAreaRoute(out BmSDK.TArray<int> Route, out BmSDK.BmGame.RRoadNetwork.FRoadNetworkTightArea TightArea, System.Numerics.Vector3 StartLoc, System.Numerics.Vector3 EndLoc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.PlanTightAreaRoute", true);
-        byte* paramsPtr = stackalloc byte[68];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlanTightAreaRoute, "BmGame.RRoadNetwork.PlanTightAreaRoute");
+        byte* paramsPtr = stackalloc byte[84];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TightArea);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TightArea, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartLoc, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EndLoc, paramsPtr + 52);
         var oldFlags = funcManaged.FunctionFlags;
@@ -128,18 +138,22 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Route = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<int>>(paramsPtr + 0);
-        TightArea = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadNetwork.FRoadNetworkTightArea>(paramsPtr + 16);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 64);
+        Route = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<int>>(paramsPtr + 0);
+        TightArea = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadNetwork.FRoadNetworkTightArea>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 64);
     }
 
+    private static BmSDK.Function __fn_GenerateTightArea;
     /// <summary>
     /// Function: GenerateTightArea
     /// </summary>
     public unsafe virtual void GenerateTightArea(out BmSDK.BmGame.RRoadNetwork.FRoadNetworkTightArea TightArea, System.Numerics.Vector3 centre, byte RoadObstacleAvoidBits, float AvoidExtent, float AreaRadius, out BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction Restriction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GenerateTightArea", true);
-        byte* paramsPtr = stackalloc byte[216];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GenerateTightArea, "BmGame.RRoadNetwork.GenerateTightArea");
+        byte* paramsPtr = stackalloc byte[232];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TightArea);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TightArea, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(centre, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RoadObstacleAvoidBits, paramsPtr + 36);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AvoidExtent, paramsPtr + 40);
@@ -152,18 +166,26 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        TightArea = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadNetwork.FRoadNetworkTightArea>(paramsPtr + 0);
-        Restriction = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 48);
+        TightArea = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadNetwork.FRoadNetworkTightArea>(paramsPtr + 0);
+        Restriction = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 48);
         return;
     }
 
+    private static BmSDK.Function __fn_GetTightAreaVertexForLocation;
     /// <summary>
     /// Function: GetTightAreaVertexForLocation
     /// </summary>
     public unsafe virtual bool GetTightAreaVertexForLocation(out BmSDK.BmGame.RRoadNetwork.FRoadNetworkTightArea TightArea, out int X, out int Y, System.Numerics.Vector3 Loc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GetTightAreaVertexForLocation", true);
-        byte* paramsPtr = stackalloc byte[48];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTightAreaVertexForLocation, "BmGame.RRoadNetwork.GetTightAreaVertexForLocation");
+        byte* paramsPtr = stackalloc byte[64];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TightArea);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TightArea, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out X);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(X, paramsPtr + 24);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Y);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Y, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 32);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -173,19 +195,23 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        TightArea = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadNetwork.FRoadNetworkTightArea>(paramsPtr + 0);
-        X = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 24);
-        Y = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 28);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 44);
+        TightArea = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadNetwork.FRoadNetworkTightArea>(paramsPtr + 0);
+        X = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 24);
+        Y = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 28);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 44);
     }
 
+    private static BmSDK.Function __fn_GetTightAreaLocationFromNodeIndex;
     /// <summary>
     /// Function: GetTightAreaLocationFromNodeIndex
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetTightAreaLocationFromNodeIndex(out BmSDK.BmGame.RRoadNetwork.FRoadNetworkTightArea TightArea, int NodeIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GetTightAreaLocationFromNodeIndex", true);
-        byte* paramsPtr = stackalloc byte[40];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTightAreaLocationFromNodeIndex, "BmGame.RRoadNetwork.GetTightAreaLocationFromNodeIndex");
+        byte* paramsPtr = stackalloc byte[56];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TightArea);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TightArea, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NodeIndex, paramsPtr + 24);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -195,17 +221,21 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        TightArea = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadNetwork.FRoadNetworkTightArea>(paramsPtr + 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 28);
+        TightArea = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadNetwork.FRoadNetworkTightArea>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 28);
     }
 
+    private static BmSDK.Function __fn_GetTightAreaLocation;
     /// <summary>
     /// Function: GetTightAreaLocation
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetTightAreaLocation(out BmSDK.BmGame.RRoadNetwork.FRoadNetworkTightArea TightArea, int X, int Y)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GetTightAreaLocation", true);
-        byte* paramsPtr = stackalloc byte[44];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTightAreaLocation, "BmGame.RRoadNetwork.GetTightAreaLocation");
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TightArea);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TightArea, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(X, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Y, paramsPtr + 28);
         var oldFlags = funcManaged.FunctionFlags;
@@ -216,17 +246,19 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        TightArea = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadNetwork.FRoadNetworkTightArea>(paramsPtr + 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 32);
+        TightArea = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadNetwork.FRoadNetworkTightArea>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_GetLinkLoc;
     /// <summary>
     /// Function: GetLinkLoc
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetLinkLoc(int LinkIndex, float LinkTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GetLinkLoc", true);
-        byte* paramsPtr = stackalloc byte[20];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLinkLoc, "BmGame.RRoadNetwork.GetLinkLoc");
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkTime, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
@@ -237,16 +269,18 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_IsDeadEnd;
     /// <summary>
     /// Function: IsDeadEnd
     /// </summary>
     public unsafe virtual bool IsDeadEnd(int InitialLinkEndPoint, int InitialLink, System.Numerics.Vector3 AvoidLocation, float AvoidLocationRadius, BmSDK.TArray<int> ExcludeLinks, bool CanJumpDown, bool CanJumpUp, out int ReasonCode, out BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction Restriction, int MaxDepth, int Depth, bool bOutputToLog)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.IsDeadEnd", true);
-        byte* paramsPtr = stackalloc byte[236];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsDeadEnd, "BmGame.RRoadNetwork.IsDeadEnd");
+        byte* paramsPtr = stackalloc byte[252];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InitialLinkEndPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InitialLink, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AvoidLocation, paramsPtr + 8);
@@ -254,6 +288,8 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExcludeLinks, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CanJumpDown, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CanJumpUp, paramsPtr + 44);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ReasonCode);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ReasonCode, paramsPtr + 48);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxDepth, paramsPtr + 220);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Depth, paramsPtr + 224);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bOutputToLog, paramsPtr + 228);
@@ -265,18 +301,24 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        ReasonCode = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 48);
-        Restriction = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 52);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 232);
+        ReasonCode = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 48);
+        Restriction = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 52);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 232);
     }
 
+    private static BmSDK.Function __fn_GetLinkLaneInfoAtEndPoint;
     /// <summary>
     /// Function: GetLinkLaneInfoAtEndPoint
     /// </summary>
     public unsafe virtual void GetLinkLaneInfoAtEndPoint(out BmSDK.BmGame.RRoadLink.FLaneInfo LeftInfo, out BmSDK.BmGame.RRoadLink.FLaneInfo RightInfo, int LinkIndex, int LinkEndPoint)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GetLinkLaneInfoAtEndPoint", true);
-        byte* paramsPtr = stackalloc byte[48];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLinkLaneInfoAtEndPoint, "BmGame.RRoadNetwork.GetLinkLaneInfoAtEndPoint");
+        byte* paramsPtr = stackalloc byte[64];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LeftInfo);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LeftInfo, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RightInfo);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RightInfo, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkIndex, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkEndPoint, paramsPtr + 44);
         var oldFlags = funcManaged.FunctionFlags;
@@ -287,21 +329,29 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        LeftInfo = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadLink.FLaneInfo>(paramsPtr + 0);
-        RightInfo = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadLink.FLaneInfo>(paramsPtr + 20);
+        LeftInfo = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadLink.FLaneInfo>(paramsPtr + 0);
+        RightInfo = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadLink.FLaneInfo>(paramsPtr + 20);
         return;
     }
 
+    private static BmSDK.Function __fn_GetLinkLaneInfoAtClosestPoint;
     /// <summary>
     /// Function: GetLinkLaneInfoAtClosestPoint
     /// </summary>
     public unsafe virtual void GetLinkLaneInfoAtClosestPoint(out BmSDK.BmGame.RRoadLink.FLaneInfo LeftInfo, out BmSDK.BmGame.RRoadLink.FLaneInfo RightInfo, System.Numerics.Vector3 RefPoint, int LinkIndex, int LinkEndPoint, out float TimeOnLink)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GetLinkLaneInfoAtClosestPoint", true);
-        byte* paramsPtr = stackalloc byte[64];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLinkLaneInfoAtClosestPoint, "BmGame.RRoadNetwork.GetLinkLaneInfoAtClosestPoint");
+        byte* paramsPtr = stackalloc byte[80];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LeftInfo);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LeftInfo, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out RightInfo);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(RightInfo, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RefPoint, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkIndex, paramsPtr + 52);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkEndPoint, paramsPtr + 56);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TimeOnLink);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TimeOnLink, paramsPtr + 60);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -310,19 +360,21 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        LeftInfo = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadLink.FLaneInfo>(paramsPtr + 0);
-        RightInfo = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadLink.FLaneInfo>(paramsPtr + 20);
-        TimeOnLink = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 60);
+        LeftInfo = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadLink.FLaneInfo>(paramsPtr + 0);
+        RightInfo = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadLink.FLaneInfo>(paramsPtr + 20);
+        TimeOnLink = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 60);
         return;
     }
 
+    private static BmSDK.Function __fn_GetLinkHeadRoom;
     /// <summary>
     /// Function: GetLinkHeadRoom
     /// </summary>
     public unsafe virtual float GetLinkHeadRoom(int LinkIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GetLinkHeadRoom", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLinkHeadRoom, "BmGame.RRoadNetwork.GetLinkHeadRoom");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkIndex, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -332,16 +384,18 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_LinkHasMinHeadroom;
     /// <summary>
     /// Function: LinkHasMinHeadroom
     /// </summary>
     public unsafe virtual bool LinkHasMinHeadroom(int LinkIndex, int LaneIndex, float MinHeadroom)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.LinkHasMinHeadroom", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LinkHasMinHeadroom, "BmGame.RRoadNetwork.LinkHasMinHeadroom");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LaneIndex, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinHeadroom, paramsPtr + 8);
@@ -353,42 +407,48 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_GetLinkPointEndIndex;
     /// <summary>
     /// Function: GetLinkPointEndIndex
     /// </summary>
     public unsafe virtual int GetLinkPointEndIndex(int LinkIndex, int PointIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GetLinkPointEndIndex", true);
-        byte* paramsPtr = stackalloc byte[64];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLinkPointEndIndex, "BmGame.RRoadNetwork.GetLinkPointEndIndex");
+        byte* paramsPtr = stackalloc byte[80];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PointIndex, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetLinkOtherPoint;
     /// <summary>
     /// Function: GetLinkOtherPoint
     /// </summary>
     public unsafe virtual int GetLinkOtherPoint(int LinkIndex, int PointIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GetLinkOtherPoint", true);
-        byte* paramsPtr = stackalloc byte[64];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLinkOtherPoint, "BmGame.RRoadNetwork.GetLinkOtherPoint");
+        byte* paramsPtr = stackalloc byte[80];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PointIndex, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_IsPointAtJunction;
     /// <summary>
     /// Function: IsPointAtJunction
     /// </summary>
     public unsafe virtual bool IsPointAtJunction(int PointIndex, bool ExcludeOpenAreas)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.IsPointAtJunction", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPointAtJunction, "BmGame.RRoadNetwork.IsPointAtJunction");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PointIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExcludeOpenAreas, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
@@ -399,16 +459,18 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_IsPointInExcludedPointList;
     /// <summary>
     /// Function: IsPointInExcludedPointList
     /// </summary>
     public unsafe static bool IsPointInExcludedPointList(int PointIndex, out BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction Restriction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.IsPointInExcludedPointList", true);
-        byte* paramsPtr = stackalloc byte[176];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPointInExcludedPointList, "BmGame.RRoadNetwork.IsPointInExcludedPointList");
+        byte* paramsPtr = stackalloc byte[192];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PointIndex, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -418,18 +480,22 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Restriction = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 4);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 172);
+        Restriction = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 172);
     }
 
+    private static BmSDK.Function __fn_IsPointInAnyVolume;
     /// <summary>
     /// Function: IsPointInAnyVolume
     /// </summary>
     public unsafe static bool IsPointInAnyVolume(System.Numerics.Vector3 Point, out BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction Restriction, out BmSDK.Engine.Volume HitVolume)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.IsPointInAnyVolume", true);
-        byte* paramsPtr = stackalloc byte[192];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsPointInAnyVolume, "BmGame.RRoadNetwork.IsPointInAnyVolume");
+        byte* paramsPtr = stackalloc byte[208];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Point, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out HitVolume);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(HitVolume, paramsPtr + 180);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -438,18 +504,20 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(StaticClass().DefaultObject.Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Restriction = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 12);
-        HitVolume = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Volume>(paramsPtr + 180);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 188);
+        Restriction = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 12);
+        HitVolume = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.Volume>(paramsPtr + 180);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 188);
     }
 
+    private static BmSDK.Function __fn_TraceObstacles;
     /// <summary>
     /// Function: TraceObstacles
     /// </summary>
     public unsafe virtual bool TraceObstacles(BmSDK.BmGame.RVehicle Vehicle, System.Numerics.Vector3 Start, System.Numerics.Vector3 End, System.Numerics.Vector3 Extent)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.TraceObstacles", true);
-        byte* paramsPtr = stackalloc byte[48];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TraceObstacles, "BmGame.RRoadNetwork.TraceObstacles");
+        byte* paramsPtr = stackalloc byte[64];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Vehicle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Start, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(End, paramsPtr + 20);
@@ -462,16 +530,18 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 44);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 44);
     }
 
+    private static BmSDK.Function __fn_UpdateObstacleBounds;
     /// <summary>
     /// Function: UpdateObstacleBounds
     /// </summary>
     public unsafe virtual void UpdateObstacleBounds(int ObstacleIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.UpdateObstacleBounds", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateObstacleBounds, "BmGame.RRoadNetwork.UpdateObstacleBounds");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ObstacleIndex, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -484,13 +554,15 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_RemoveObstacle;
     /// <summary>
     /// Function: RemoveObstacle
     /// </summary>
     public unsafe virtual void RemoveObstacle(int ObstacleIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.RemoveObstacle", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveObstacle, "BmGame.RRoadNetwork.RemoveObstacle");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ObstacleIndex, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -503,13 +575,15 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_AddObstacle;
     /// <summary>
     /// Function: AddObstacle
     /// </summary>
     public unsafe virtual int AddObstacle(BmSDK.Engine.Actor Obstacle, int FilterBits)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.AddObstacle", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddObstacle, "BmGame.RRoadNetwork.AddObstacle");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Obstacle, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FilterBits, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
@@ -520,16 +594,18 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_GetTimeOnLink;
     /// <summary>
     /// Function: GetTimeOnLink
     /// </summary>
     public unsafe virtual float GetTimeOnLink(int LinkIndex, System.Numerics.Vector3 TestLocation, bool ClampTime = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GetTimeOnLink", true);
-        byte* paramsPtr = stackalloc byte[24];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetTimeOnLink, "BmGame.RRoadNetwork.GetTimeOnLink");
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestLocation, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClampTime, paramsPtr + 16);
@@ -541,19 +617,23 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 20);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 20);
     }
 
+    private static BmSDK.Function __fn_ChooseClosestLinkFromPointToPosition;
     /// <summary>
     /// Function: ChooseClosestLinkFromPointToPosition
     /// </summary>
     public unsafe virtual int ChooseClosestLinkFromPointToPosition(int StartPoint, int ExcludeLink, bool NoDeadEnds, out int LinkEndPoint, System.Numerics.Vector3 Position, out BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction Restrictions)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.ChooseClosestLinkFromPointToPosition", true);
-        byte* paramsPtr = stackalloc byte[200];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ChooseClosestLinkFromPointToPosition, "BmGame.RRoadNetwork.ChooseClosestLinkFromPointToPosition");
+        byte* paramsPtr = stackalloc byte[216];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExcludeLink, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NoDeadEnds, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LinkEndPoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkEndPoint, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Position, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -563,21 +643,25 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        LinkEndPoint = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 12);
-        Restrictions = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 28);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 196);
+        LinkEndPoint = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 12);
+        Restrictions = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 28);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 196);
     }
 
+    private static BmSDK.Function __fn_ChooseRandomLinkFromPoint_ExcludeArray_AvoidArray;
     /// <summary>
     /// Function: ChooseRandomLinkFromPoint_ExcludeArray_AvoidArray
     /// </summary>
     public unsafe virtual int ChooseRandomLinkFromPoint_ExcludeArray_AvoidArray(int StartPoint, BmSDK.TArray<int> ExcludeLinkList, bool NoDeadEnds, out int LinkEndPoint, bool CanJumpDown, bool CanJumpUp, bool TendToGoStraight, out BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction Restriction, System.Numerics.Vector3 MoveInDirection, BmSDK.TArray<System.Numerics.Vector3> AvoidLocations, BmSDK.TArray<float> AvoidLocationsConeCos, System.Numerics.Vector3 DeadEndLocation, bool bAllowUTurns, BmSDK.Engine.Actor TestActor, bool bForceDrawDebug, bool bAllowDeadEndAsFallback, int DeadEndRecursionDepth)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.ChooseRandomLinkFromPoint_ExcludeArray_AvoidArray", true);
-        byte* paramsPtr = stackalloc byte[292];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ChooseRandomLinkFromPoint_ExcludeArray_AvoidArray, "BmGame.RRoadNetwork.ChooseRandomLinkFromPoint_ExcludeArray_AvoidArray");
+        byte* paramsPtr = stackalloc byte[308];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExcludeLinkList, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NoDeadEnds, paramsPtr + 20);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LinkEndPoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkEndPoint, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CanJumpDown, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CanJumpUp, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TendToGoStraight, paramsPtr + 36);
@@ -598,21 +682,25 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        LinkEndPoint = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 24);
-        Restriction = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 40);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 288);
+        LinkEndPoint = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 24);
+        Restriction = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 40);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 288);
     }
 
+    private static BmSDK.Function __fn_ChooseRandomLinkFromPoint_ExcludeArray;
     /// <summary>
     /// Function: ChooseRandomLinkFromPoint_ExcludeArray
     /// </summary>
     public unsafe virtual int ChooseRandomLinkFromPoint_ExcludeArray(int StartPoint, BmSDK.TArray<int> ExcludeLinkList, bool NoDeadEnds, out int LinkEndPoint, bool CanJumpDown, bool CanJumpUp, bool TendToGoStraight, out BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction Restriction, System.Numerics.Vector3 MoveInDirection, System.Numerics.Vector3 AvoidLocation, System.Numerics.Vector3 DeadEndLocation, bool bAllowUTurns, BmSDK.Engine.Actor TestActor, bool bForceDrawDebug, bool bAllowDeadEndAsFallback)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.ChooseRandomLinkFromPoint_ExcludeArray", true);
-        byte* paramsPtr = stackalloc byte[268];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ChooseRandomLinkFromPoint_ExcludeArray, "BmGame.RRoadNetwork.ChooseRandomLinkFromPoint_ExcludeArray");
+        byte* paramsPtr = stackalloc byte[284];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExcludeLinkList, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NoDeadEnds, paramsPtr + 20);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LinkEndPoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkEndPoint, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CanJumpDown, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CanJumpUp, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TendToGoStraight, paramsPtr + 36);
@@ -631,21 +719,25 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        LinkEndPoint = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 24);
-        Restriction = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 40);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 264);
+        LinkEndPoint = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 24);
+        Restriction = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 40);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 264);
     }
 
+    private static BmSDK.Function __fn_ChooseRandomLinkFromPoint;
     /// <summary>
     /// Function: ChooseRandomLinkFromPoint
     /// </summary>
     public unsafe virtual int ChooseRandomLinkFromPoint(int StartPoint, int ExcludeLink, bool NoDeadEnds, out int LinkEndPoint, bool CanJumpDown, bool CanJumpUp, bool TendToGoStraight, out BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction Restriction, System.Numerics.Vector3 MoveInDirection, System.Numerics.Vector3 AvoidLocation, System.Numerics.Vector3 DeadEndLocation, bool bAllowUTurns, BmSDK.Engine.Actor TestActor, bool bForceDrawDebug, bool bAllowDeadEndAsFallback)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.ChooseRandomLinkFromPoint", true);
-        byte* paramsPtr = stackalloc byte[256];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ChooseRandomLinkFromPoint, "BmGame.RRoadNetwork.ChooseRandomLinkFromPoint");
+        byte* paramsPtr = stackalloc byte[272];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartPoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExcludeLink, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NoDeadEnds, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LinkEndPoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkEndPoint, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CanJumpDown, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CanJumpUp, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TendToGoStraight, paramsPtr + 24);
@@ -664,21 +756,27 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        LinkEndPoint = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 12);
-        Restriction = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 28);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 252);
+        LinkEndPoint = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 12);
+        Restriction = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 28);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 252);
     }
 
+    private static BmSDK.Function __fn_RefineRacingLine;
     /// <summary>
     /// Function: RefineRacingLine
     /// </summary>
     public unsafe virtual bool RefineRacingLine(out BmSDK.TArray<BmSDK.BmGame.RRoadNetwork.FRacingLineSeg> RacingLine, out BmSDK.TArray<BmSDK.BmGame.RRoadNetwork.FRoadNetworkSpan> Spans, BmSDK.BmGame.RVehicle Vehicle, System.Numerics.Vector3 StartLoc, System.Numerics.Vector3 DriveToTarget, out BmSDK.Engine.Actor FirstObstacleAvoided, out int FirstObstacleTypeBits, float LineMinLimit, float LineMaxLimit, bool UsePavementToAvoidObstacles, int NumSpansToLookBehind)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.RefineRacingLine", true);
-        byte* paramsPtr = stackalloc byte[96];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RefineRacingLine, "BmGame.RRoadNetwork.RefineRacingLine");
+        byte* paramsPtr = stackalloc byte[112];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Vehicle, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartLoc, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DriveToTarget, paramsPtr + 52);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FirstObstacleAvoided);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FirstObstacleAvoided, paramsPtr + 64);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out FirstObstacleTypeBits);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(FirstObstacleTypeBits, paramsPtr + 72);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LineMinLimit, paramsPtr + 76);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LineMaxLimit, paramsPtr + 80);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(UsePavementToAvoidObstacles, paramsPtr + 84);
@@ -691,20 +789,22 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        RacingLine = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.BmGame.RRoadNetwork.FRacingLineSeg>>(paramsPtr + 0);
-        Spans = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.BmGame.RRoadNetwork.FRoadNetworkSpan>>(paramsPtr + 16);
-        FirstObstacleAvoided = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Actor>(paramsPtr + 64);
-        FirstObstacleTypeBits = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 72);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 92);
+        RacingLine = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.BmGame.RRoadNetwork.FRacingLineSeg>>(paramsPtr + 0);
+        Spans = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.BmGame.RRoadNetwork.FRoadNetworkSpan>>(paramsPtr + 16);
+        FirstObstacleAvoided = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.Actor>(paramsPtr + 64);
+        FirstObstacleTypeBits = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 72);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 92);
     }
 
+    private static BmSDK.Function __fn_GetRacingLine;
     /// <summary>
     /// Function: GetRacingLine
     /// </summary>
     public unsafe virtual void GetRacingLine(out BmSDK.TArray<BmSDK.BmGame.RRoadNetwork.FRacingLineSeg> RacingLine, out BmSDK.TArray<BmSDK.BmGame.RRoadNetwork.FRoadNetworkSpan> Spans, BmSDK.BmGame.RVehicle Vehicle, float LineMinLimit = default, float LineMaxLimit = default, bool FastInitialApproximation = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GetRacingLine", true);
-        byte* paramsPtr = stackalloc byte[52];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRacingLine, "BmGame.RRoadNetwork.GetRacingLine");
+        byte* paramsPtr = stackalloc byte[68];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Vehicle, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LineMinLimit, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LineMaxLimit, paramsPtr + 44);
@@ -717,23 +817,31 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        RacingLine = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.BmGame.RRoadNetwork.FRacingLineSeg>>(paramsPtr + 0);
-        Spans = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.BmGame.RRoadNetwork.FRoadNetworkSpan>>(paramsPtr + 16);
+        RacingLine = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.BmGame.RRoadNetwork.FRacingLineSeg>>(paramsPtr + 0);
+        Spans = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.BmGame.RRoadNetwork.FRoadNetworkSpan>>(paramsPtr + 16);
         return;
     }
 
+    private static BmSDK.Function __fn_GetClosestPointOnRacingLineToPoint;
     /// <summary>
     /// Function: GetClosestPointOnRacingLineToPoint
     /// </summary>
     public unsafe virtual bool GetClosestPointOnRacingLineToPoint(System.Numerics.Vector3 VehicleLoc, int FirstSpan, out BmSDK.TArray<BmSDK.BmGame.RRoadNetwork.FRacingLineSeg> RacingLine, out BmSDK.TArray<BmSDK.BmGame.RRoadNetwork.FRoadNetworkSpan> Spans, System.Numerics.Vector3 RefPoint, float MaxRadius, float MaxRouteDist, out System.Numerics.Vector3 OutPoint, out float OutRadius, out float OutRouteDist)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GetClosestPointOnRacingLineToPoint", true);
-        byte* paramsPtr = stackalloc byte[92];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetClosestPointOnRacingLineToPoint, "BmGame.RRoadNetwork.GetClosestPointOnRacingLineToPoint");
+        byte* paramsPtr = stackalloc byte[108];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VehicleLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FirstSpan, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RefPoint, paramsPtr + 48);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxRadius, paramsPtr + 60);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxRouteDist, paramsPtr + 64);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutPoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutPoint, paramsPtr + 68);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutRadius);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutRadius, paramsPtr + 80);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutRouteDist);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutRouteDist, paramsPtr + 84);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -742,24 +850,30 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        RacingLine = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.BmGame.RRoadNetwork.FRacingLineSeg>>(paramsPtr + 16);
-        Spans = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.BmGame.RRoadNetwork.FRoadNetworkSpan>>(paramsPtr + 32);
-        OutPoint = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 68);
-        OutRadius = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 80);
-        OutRouteDist = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 84);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 88);
+        RacingLine = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.BmGame.RRoadNetwork.FRacingLineSeg>>(paramsPtr + 16);
+        Spans = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.BmGame.RRoadNetwork.FRoadNetworkSpan>>(paramsPtr + 32);
+        OutPoint = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 68);
+        OutRadius = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 80);
+        OutRouteDist = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 84);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 88);
     }
 
+    private static BmSDK.Function __fn_GetClosestPointOnRouteSpansToPoint;
     /// <summary>
     /// Function: GetClosestPointOnRouteSpansToPoint
     /// </summary>
     public unsafe virtual void GetClosestPointOnRouteSpansToPoint(out BmSDK.TArray<BmSDK.BmGame.RRoadNetwork.FRoadNetworkSpan> RouteSpans, int FirstSpan, System.Numerics.Vector3 StartLocation, System.Numerics.Vector3 TargetLocation, out System.Numerics.Vector3 OutPoint, out int SpanIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GetClosestPointOnRouteSpansToPoint", true);
-        byte* paramsPtr = stackalloc byte[60];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetClosestPointOnRouteSpansToPoint, "BmGame.RRoadNetwork.GetClosestPointOnRouteSpansToPoint");
+        byte* paramsPtr = stackalloc byte[76];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(FirstSpan, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartLocation, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetLocation, paramsPtr + 32);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutPoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutPoint, paramsPtr + 44);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out SpanIndex);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(SpanIndex, paramsPtr + 56);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -768,22 +882,28 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        RouteSpans = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.BmGame.RRoadNetwork.FRoadNetworkSpan>>(paramsPtr + 0);
-        OutPoint = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 44);
-        SpanIndex = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 56);
+        RouteSpans = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.BmGame.RRoadNetwork.FRoadNetworkSpan>>(paramsPtr + 0);
+        OutPoint = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 44);
+        SpanIndex = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 56);
         return;
     }
 
+    private static BmSDK.Function __fn_GetClosestRouteLinkToPoint;
     /// <summary>
     /// Function: GetClosestRouteLinkToPoint
     /// </summary>
     public unsafe virtual int GetClosestRouteLinkToPoint(out BmSDK.TArray<int> Route, int RouteStart, System.Numerics.Vector3 TargetLocation, int MaxIndexInRoute, out int OutLinkStartPoint, out int OutLinkIndexInRoute, System.Numerics.Vector3 TargetDirection)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GetClosestRouteLinkToPoint", true);
-        byte* paramsPtr = stackalloc byte[60];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetClosestRouteLinkToPoint, "BmGame.RRoadNetwork.GetClosestRouteLinkToPoint");
+        byte* paramsPtr = stackalloc byte[76];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RouteStart, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetLocation, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxIndexInRoute, paramsPtr + 32);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutLinkStartPoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutLinkStartPoint, paramsPtr + 36);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutLinkIndexInRoute);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutLinkIndexInRoute, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetDirection, paramsPtr + 44);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -793,19 +913,21 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Route = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<int>>(paramsPtr + 0);
-        OutLinkStartPoint = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 36);
-        OutLinkIndexInRoute = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 40);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 56);
+        Route = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<int>>(paramsPtr + 0);
+        OutLinkStartPoint = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 36);
+        OutLinkIndexInRoute = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 40);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 56);
     }
 
+    private static BmSDK.Function __fn_GetRouteSpans;
     /// <summary>
     /// Function: GetRouteSpans
     /// </summary>
     public unsafe virtual int GetRouteSpans(out BmSDK.TArray<BmSDK.BmGame.RRoadNetwork.FRoadNetworkSpan> Spans, out BmSDK.TArray<int> Route, int StartPoint, System.Numerics.Vector3 EndPoint, float VehicleHalfWidth, bool ObeyTheLaw, BmSDK.BmGame.RRoadNetwork.EUsePavementMode UsePavement, bool ObeyLaneObstacles = default, int MaxSpans = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GetRouteSpans", true);
-        byte* paramsPtr = stackalloc byte[72];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetRouteSpans, "BmGame.RRoadNetwork.GetRouteSpans");
+        byte* paramsPtr = stackalloc byte[88];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartPoint, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EndPoint, paramsPtr + 36);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(VehicleHalfWidth, paramsPtr + 48);
@@ -821,18 +943,24 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Spans = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.BmGame.RRoadNetwork.FRoadNetworkSpan>>(paramsPtr + 0);
-        Route = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<int>>(paramsPtr + 16);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 68);
+        Spans = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.BmGame.RRoadNetwork.FRoadNetworkSpan>>(paramsPtr + 0);
+        Route = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<int>>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 68);
     }
 
+    private static BmSDK.Function __fn_GetNearestStreamedInLinkPoint;
     /// <summary>
     /// Function: GetNearestStreamedInLinkPoint
     /// </summary>
     public unsafe virtual bool GetNearestStreamedInLinkPoint(out System.Numerics.Vector3 Loc, out BmSDK.Rotator Rot, System.Numerics.Vector3 RefPt, float MaxRangeXY, float MaxRangeZ, float MinDistFromStreamingEdge, float ClearDistFromStreamingEdge)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GetNearestStreamedInLinkPoint", true);
-        byte* paramsPtr = stackalloc byte[56];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNearestStreamedInLinkPoint, "BmGame.RRoadNetwork.GetNearestStreamedInLinkPoint");
+        byte* paramsPtr = stackalloc byte[72];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Loc);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Rot);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Rot, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RefPt, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxRangeXY, paramsPtr + 36);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxRangeZ, paramsPtr + 40);
@@ -846,18 +974,22 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Loc = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
-        Rot = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 12);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 52);
+        Loc = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
+        Rot = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Rotator>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 52);
     }
 
+    private static BmSDK.Function __fn_TrimRouteStartToFurthestStreamedInPoint;
     /// <summary>
     /// Function: TrimRouteStartToFurthestStreamedInPoint
     /// </summary>
     public unsafe virtual bool TrimRouteStartToFurthestStreamedInPoint(out BmSDK.TArray<int> Route, out int StartPoint, BmSDK.BmGame.RVehicleBatmobileBase Batmobile, float MinDistFromStreamingEdge, float ClearDistFromStreamingEdge)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.TrimRouteStartToFurthestStreamedInPoint", true);
-        byte* paramsPtr = stackalloc byte[40];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TrimRouteStartToFurthestStreamedInPoint, "BmGame.RRoadNetwork.TrimRouteStartToFurthestStreamedInPoint");
+        byte* paramsPtr = stackalloc byte[56];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out StartPoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(StartPoint, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Batmobile, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinDistFromStreamingEdge, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ClearDistFromStreamingEdge, paramsPtr + 32);
@@ -869,18 +1001,22 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Route = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<int>>(paramsPtr + 0);
-        StartPoint = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 36);
+        Route = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<int>>(paramsPtr + 0);
+        StartPoint = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 36);
     }
 
+    private static BmSDK.Function __fn_TrimRouteStartToNearestHiddenPoint;
     /// <summary>
     /// Function: TrimRouteStartToNearestHiddenPoint
     /// </summary>
     public unsafe virtual bool TrimRouteStartToNearestHiddenPoint(out BmSDK.TArray<int> Route, out int StartPoint, System.Numerics.Vector3 CameraLoc, System.Numerics.Vector3 CameraDir, float MinTrimRangeXY)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.TrimRouteStartToNearestHiddenPoint", true);
-        byte* paramsPtr = stackalloc byte[52];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TrimRouteStartToNearestHiddenPoint, "BmGame.RRoadNetwork.TrimRouteStartToNearestHiddenPoint");
+        byte* paramsPtr = stackalloc byte[68];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out StartPoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(StartPoint, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CameraLoc, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CameraDir, paramsPtr + 32);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinTrimRangeXY, paramsPtr + 44);
@@ -892,22 +1028,30 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Route = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<int>>(paramsPtr + 0);
-        StartPoint = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 48);
+        Route = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<int>>(paramsPtr + 0);
+        StartPoint = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 48);
     }
 
+    private static BmSDK.Function __fn_GetLookAheadOnRoute;
     /// <summary>
     /// Function: GetLookAheadOnRoute
     /// </summary>
     public unsafe virtual bool GetLookAheadOnRoute(System.Numerics.Vector3 Origin, BmSDK.TArray<int> Route, int RouteStartPt, float LookAheadDist, out System.Numerics.Vector3 Position, out System.Numerics.Vector3 Direction, out int LinkIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GetLookAheadOnRoute", true);
-        byte* paramsPtr = stackalloc byte[68];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLookAheadOnRoute, "BmGame.RRoadNetwork.GetLookAheadOnRoute");
+        byte* paramsPtr = stackalloc byte[84];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Origin, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Route, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(RouteStartPt, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LookAheadDist, paramsPtr + 32);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Position);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Position, paramsPtr + 36);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Direction);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Direction, paramsPtr + 48);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LinkIndex);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkIndex, paramsPtr + 60);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -916,19 +1060,21 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Position = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 36);
-        Direction = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 48);
-        LinkIndex = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 60);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 64);
+        Position = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 36);
+        Direction = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 48);
+        LinkIndex = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 60);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 64);
     }
 
+    private static BmSDK.Function __fn_GetStraightLineRoute;
     /// <summary>
     /// Function: GetStraightLineRoute
     /// </summary>
     public unsafe virtual bool GetStraightLineRoute(out BmSDK.TArray<int> Route, int StartVertex, System.Numerics.Vector3 Direction, float CosMaxAngle, float MaxDistance)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GetStraightLineRoute", true);
-        byte* paramsPtr = stackalloc byte[44];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetStraightLineRoute, "BmGame.RRoadNetwork.GetStraightLineRoute");
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartVertex, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Direction, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CosMaxAngle, paramsPtr + 32);
@@ -941,17 +1087,19 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Route = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<int>>(paramsPtr + 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 40);
+        Route = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<int>>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 40);
     }
 
+    private static BmSDK.Function __fn_PlanRouteBetweenVertices;
     /// <summary>
     /// Function: PlanRouteBetweenVertices
     /// </summary>
     public unsafe virtual bool PlanRouteBetweenVertices(out BmSDK.TArray<int> Route, int StartVertex, int EndVertex, bool ObeyTheLaw, bool CanJumpDown, bool CanJumpUp, int ExcludeLink, out BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction Restriction, int PreferFirstLink, bool OutputPartialRoute, out float TotalCost)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.PlanRouteBetweenVertices", true);
-        byte* paramsPtr = stackalloc byte[224];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlanRouteBetweenVertices, "BmGame.RRoadNetwork.PlanRouteBetweenVertices");
+        byte* paramsPtr = stackalloc byte[240];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartVertex, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EndVertex, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ObeyTheLaw, paramsPtr + 24);
@@ -960,6 +1108,8 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ExcludeLink, paramsPtr + 36);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PreferFirstLink, paramsPtr + 208);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OutputPartialRoute, paramsPtr + 212);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TotalCost);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TotalCost, paramsPtr + 216);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -968,19 +1118,23 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Route = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<int>>(paramsPtr + 0);
-        Restriction = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 40);
-        TotalCost = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 216);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 220);
+        Route = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<int>>(paramsPtr + 0);
+        Restriction = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 40);
+        TotalCost = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 216);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 220);
     }
 
+    private static BmSDK.Function __fn_PlanRoute;
     /// <summary>
     /// Function: PlanRoute
     /// </summary>
     public unsafe virtual bool PlanRoute(out BmSDK.TArray<int> Route, out int StartPoint, int StartLink, float StartT, int EndLink, float EndT, bool ObeyTheLaw, bool CanJumpDown, bool CanJumpUp, out BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction Restriction, bool OutputPartialRoute, out float TotalCost)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.PlanRoute", true);
-        byte* paramsPtr = stackalloc byte[228];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlanRoute, "BmGame.RRoadNetwork.PlanRoute");
+        byte* paramsPtr = stackalloc byte[244];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out StartPoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(StartPoint, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartLink, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartT, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EndLink, paramsPtr + 28);
@@ -989,6 +1143,8 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CanJumpDown, paramsPtr + 40);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CanJumpUp, paramsPtr + 44);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OutputPartialRoute, paramsPtr + 216);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TotalCost);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TotalCost, paramsPtr + 220);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -997,20 +1153,22 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Route = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<int>>(paramsPtr + 0);
-        StartPoint = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
-        Restriction = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 48);
-        TotalCost = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 220);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 224);
+        Route = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<int>>(paramsPtr + 0);
+        StartPoint = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 16);
+        Restriction = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 48);
+        TotalCost = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 220);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 224);
     }
 
+    private static BmSDK.Function __fn_GetLinkEndPointInDirection;
     /// <summary>
     /// Function: GetLinkEndPointInDirection
     /// </summary>
     public unsafe virtual int GetLinkEndPointInDirection(int LinkIndex, System.Numerics.Vector3 ReferenceDir, out BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction Restriction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GetLinkEndPointInDirection", true);
-        byte* paramsPtr = stackalloc byte[188];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLinkEndPointInDirection, "BmGame.RRoadNetwork.GetLinkEndPointInDirection");
+        byte* paramsPtr = stackalloc byte[204];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReferenceDir, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1021,17 +1179,19 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Restriction = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 16);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 184);
+        Restriction = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 184);
     }
 
+    private static BmSDK.Function __fn_GetAllVerticesInRange;
     /// <summary>
     /// Function: GetAllVerticesInRange
     /// </summary>
     public unsafe virtual int GetAllVerticesInRange(out BmSDK.TArray<int> VertList, System.Numerics.Vector3 ReferencePoint, float MaxXYOffset, float MinZOffset, float MaxZOffset, out BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction Restriction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GetAllVerticesInRange", true);
-        byte* paramsPtr = stackalloc byte[212];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAllVerticesInRange, "BmGame.RRoadNetwork.GetAllVerticesInRange");
+        byte* paramsPtr = stackalloc byte[228];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReferencePoint, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxXYOffset, paramsPtr + 28);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinZOffset, paramsPtr + 32);
@@ -1044,18 +1204,20 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        VertList = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<int>>(paramsPtr + 0);
-        Restriction = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 40);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 208);
+        VertList = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<int>>(paramsPtr + 0);
+        Restriction = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 40);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 208);
     }
 
+    private static BmSDK.Function __fn_GetNearestVertex;
     /// <summary>
     /// Function: GetNearestVertex
     /// </summary>
     public unsafe virtual int GetNearestVertex(System.Numerics.Vector3 ReferencePoint, float MaxXYOffset, float MinZOffset, float MaxZOffset, out BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction Restriction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GetNearestVertex", true);
-        byte* paramsPtr = stackalloc byte[196];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNearestVertex, "BmGame.RRoadNetwork.GetNearestVertex");
+        byte* paramsPtr = stackalloc byte[212];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReferencePoint, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxXYOffset, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinZOffset, paramsPtr + 16);
@@ -1068,17 +1230,21 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Restriction = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 24);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 192);
+        Restriction = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 24);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 192);
     }
 
+    private static BmSDK.Function __fn_GetNearestPointDirectionalBias;
     /// <summary>
     /// Function: GetNearestPointDirectionalBias
     /// </summary>
     public unsafe virtual int GetNearestPointDirectionalBias(out float LinkTime, System.Numerics.Vector3 ReferencePoint, System.Numerics.Vector3 BiasDir, float BiasAmount, float MaxXYOffset, float MinZOffset, float MaxZOffset, out BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction Restriction, int LinkBias, int LinkBias2, float LinkBiasAmount, bool AllowDisabledLinks, float DefaultZBias)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GetNearestPointDirectionalBias", true);
-        byte* paramsPtr = stackalloc byte[236];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNearestPointDirectionalBias, "BmGame.RRoadNetwork.GetNearestPointDirectionalBias");
+        byte* paramsPtr = stackalloc byte[252];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LinkTime);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReferencePoint, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BiasDir, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BiasAmount, paramsPtr + 28);
@@ -1098,18 +1264,20 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        LinkTime = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
-        Restriction = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 44);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 232);
+        LinkTime = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
+        Restriction = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 44);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 232);
     }
 
+    private static BmSDK.Function __fn_GetLinksFromLocation;
     /// <summary>
     /// Function: GetLinksFromLocation
     /// </summary>
     public unsafe virtual bool GetLinksFromLocation(out BmSDK.TArray<int> out_Links, System.Numerics.Vector3 TestLocation, out BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction Restriction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GetLinksFromLocation", true);
-        byte* paramsPtr = stackalloc byte[200];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetLinksFromLocation, "BmGame.RRoadNetwork.GetLinksFromLocation");
+        byte* paramsPtr = stackalloc byte[216];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestLocation, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -1119,18 +1287,22 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        out_Links = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<int>>(paramsPtr + 0);
-        Restriction = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 28);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 196);
+        out_Links = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<int>>(paramsPtr + 0);
+        Restriction = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 28);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 196);
     }
 
+    private static BmSDK.Function __fn_GetNearestPoint2D;
     /// <summary>
     /// Function: GetNearestPoint2D
     /// </summary>
     public unsafe virtual int GetNearestPoint2D(out float LinkTime, System.Numerics.Vector3 ReferencePoint, float MaxXYOffset, float MinZOffset, float MaxZOffset, out BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction Restriction)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GetNearestPoint2D", true);
-        byte* paramsPtr = stackalloc byte[200];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNearestPoint2D, "BmGame.RRoadNetwork.GetNearestPoint2D");
+        byte* paramsPtr = stackalloc byte[216];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LinkTime);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReferencePoint, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxXYOffset, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinZOffset, paramsPtr + 20);
@@ -1143,18 +1315,22 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        LinkTime = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
-        Restriction = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 28);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 196);
+        LinkTime = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
+        Restriction = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 28);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 196);
     }
 
+    private static BmSDK.Function __fn_GetNearestPoint;
     /// <summary>
     /// Function: GetNearestPoint
     /// </summary>
     public unsafe virtual int GetNearestPoint(out float LinkTime, System.Numerics.Vector3 ReferencePoint, float MaxXYOffset, float MinZOffset, float MaxZOffset, out BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction Restriction, bool AllowDisabledLinks, float DefaultZBias)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.GetNearestPoint", true);
-        byte* paramsPtr = stackalloc byte[208];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetNearestPoint, "BmGame.RRoadNetwork.GetNearestPoint");
+        byte* paramsPtr = stackalloc byte[224];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out LinkTime);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(LinkTime, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReferencePoint, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MaxXYOffset, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(MinZOffset, paramsPtr + 20);
@@ -1169,18 +1345,20 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        LinkTime = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
-        Restriction = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 28);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 204);
+        LinkTime = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
+        Restriction = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RRoadNetwork.FRoadRouteRestriction>(paramsPtr + 28);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 204);
     }
 
+    private static BmSDK.Function __fn_SetPointLocation;
     /// <summary>
     /// Function: SetPointLocation
     /// </summary>
     public unsafe virtual void SetPointLocation(int PointIndex, System.Numerics.Vector3 Loc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRoadNetwork.SetPointLocation", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetPointLocation, "BmGame.RRoadNetwork.SetPointLocation");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PointIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Loc, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
@@ -1298,7 +1476,7 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
     /// <summary>
     /// Struct: FRacingLineSeg
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 14)]
+    [StructLayout(LayoutKind.Explicit, Size = 16)]
     public partial record struct FRacingLineSeg
     {
         /// <summary>
@@ -1901,7 +2079,7 @@ public partial class RRoadNetwork : BmSDK.Engine.Actor, BmSDK.IGameObject
     /// <summary>
     /// Struct: FRoadRouteRestriction
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 165)]
+    [StructLayout(LayoutKind.Explicit, Size = 168)]
     public partial record struct FRoadRouteRestriction
     {
         /// <summary>

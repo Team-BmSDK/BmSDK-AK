@@ -78,82 +78,96 @@ public partial class RCwCaltropsTrapBase : BmSDK.BmGame.RThugTrap, BmSDK.IGameOb
         where TComponent : class, Framework.IScriptComponent<RCwCaltropsTrapBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_RemoveCollisionCylinders;
     /// <summary>
     /// Function: RemoveCollisionCylinders
     /// </summary>
     public unsafe virtual void RemoveCollisionCylinders()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCwCaltropsTrapBase.RemoveCollisionCylinders", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RemoveCollisionCylinders, "BmGame.RCwCaltropsTrapBase.RemoveCollisionCylinders");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ThugStartsSwiping;
     /// <summary>
     /// Function: ThugStartsSwiping
     /// </summary>
     public unsafe virtual void ThugStartsSwiping(BmSDK.BmGame.RPawnVillain Villain)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCwCaltropsTrapBase.ThugStartsSwiping", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ThugStartsSwiping, "BmGame.RCwCaltropsTrapBase.ThugStartsSwiping");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Villain, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_AddCollisionCylinder;
     /// <summary>
     /// Function: AddCollisionCylinder
     /// </summary>
     public unsafe virtual void AddCollisionCylinder(System.Numerics.Vector3 CylinderPos, float CylinderRadius)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCwCaltropsTrapBase.AddCollisionCylinder", true);
-        byte* paramsPtr = stackalloc byte[24];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddCollisionCylinder, "BmGame.RCwCaltropsTrapBase.AddCollisionCylinder");
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CylinderPos, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(CylinderRadius, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ClearCylinderUpdateTimer;
     /// <summary>
     /// Function: ClearCylinderUpdateTimer
     /// </summary>
     public unsafe virtual void ClearCylinderUpdateTimer()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCwCaltropsTrapBase.ClearCylinderUpdateTimer", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearCylinderUpdateTimer, "BmGame.RCwCaltropsTrapBase.ClearCylinderUpdateTimer");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FinishedCylinderUpdates;
     /// <summary>
     /// Function: FinishedCylinderUpdates
     /// </summary>
     public unsafe virtual void FinishedCylinderUpdates()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCwCaltropsTrapBase.FinishedCylinderUpdates", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FinishedCylinderUpdates, "BmGame.RCwCaltropsTrapBase.FinishedCylinderUpdates");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCwCaltropsTrapBase.PostBeginPlay", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RCwCaltropsTrapBase.PostBeginPlay");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_InformEnemiesOfCaltrops;
     /// <summary>
     /// Function: InformEnemiesOfCaltrops
     /// </summary>
     public unsafe virtual void InformEnemiesOfCaltrops(bool bCheckCylinders = default, bool bDebugDraw = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCwCaltropsTrapBase.InformEnemiesOfCaltrops", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InformEnemiesOfCaltrops, "BmGame.RCwCaltropsTrapBase.InformEnemiesOfCaltrops");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bCheckCylinders, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDebugDraw, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
@@ -167,13 +181,15 @@ public partial class RCwCaltropsTrapBase : BmSDK.BmGame.RThugTrap, BmSDK.IGameOb
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateCollisionCylinderComponents;
     /// <summary>
     /// Function: UpdateCollisionCylinderComponents
     /// </summary>
     public unsafe virtual void UpdateCollisionCylinderComponents()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCwCaltropsTrapBase.UpdateCollisionCylinderComponents", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateCollisionCylinderComponents, "BmGame.RCwCaltropsTrapBase.UpdateCollisionCylinderComponents");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

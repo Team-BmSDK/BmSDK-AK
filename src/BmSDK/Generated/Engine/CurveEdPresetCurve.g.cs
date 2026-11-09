@@ -99,7 +99,7 @@ public partial class CurveEdPresetCurve : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FPresetGeneratedPoint
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 21)]
+    [StructLayout(LayoutKind.Explicit, Size = 24)]
     public partial record struct FPresetGeneratedPoint
     {
         /// <summary>

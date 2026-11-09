@@ -78,14 +78,20 @@ public partial class RApexStaticDestructibleComponent : BmSDK.Engine.ApexStaticD
         where TComponent : class, Framework.IScriptComponent<RApexStaticDestructibleComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetSocketWorldLocationAndRotation;
     /// <summary>
     /// Function: GetSocketWorldLocationAndRotation
     /// </summary>
     public unsafe virtual bool GetSocketWorldLocationAndRotation(BmSDK.FName InSocketName, out System.Numerics.Vector3 OutLocation, out BmSDK.Rotator OutRotation, int Space)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RApexStaticDestructibleComponent.GetSocketWorldLocationAndRotation", true);
-        byte* paramsPtr = stackalloc byte[40];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSocketWorldLocationAndRotation, "BmGame.RApexStaticDestructibleComponent.GetSocketWorldLocationAndRotation");
+        byte* paramsPtr = stackalloc byte[56];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(InSocketName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutLocation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutLocation, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutRotation);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutRotation, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Space, paramsPtr + 32);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -95,18 +101,22 @@ public partial class RApexStaticDestructibleComponent : BmSDK.Engine.ApexStaticD
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        OutLocation = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
-        OutRotation = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Rotator>(paramsPtr + 20);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 36);
+        OutLocation = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 8);
+        OutRotation = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Rotator>(paramsPtr + 20);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 36);
     }
 
+    private static BmSDK.Function __fn_CalculateStaticCollisionBoundingBox;
     /// <summary>
     /// Function: CalculateStaticCollisionBoundingBox
     /// </summary>
     public unsafe virtual void CalculateStaticCollisionBoundingBox(out BmSDK.GameObject.FMatrix OutBoundsTransform, out System.Numerics.Vector3 OutBoundsHalfExtents)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RApexStaticDestructibleComponent.CalculateStaticCollisionBoundingBox", true);
-        byte* paramsPtr = stackalloc byte[76];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CalculateStaticCollisionBoundingBox, "BmGame.RApexStaticDestructibleComponent.CalculateStaticCollisionBoundingBox");
+        byte* paramsPtr = stackalloc byte[92];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutBoundsHalfExtents);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutBoundsHalfExtents, paramsPtr + 64);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -115,18 +125,20 @@ public partial class RApexStaticDestructibleComponent : BmSDK.Engine.ApexStaticD
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        OutBoundsTransform = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.GameObject.FMatrix>(paramsPtr + 0);
-        OutBoundsHalfExtents = BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 64);
+        OutBoundsTransform = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.GameObject.FMatrix>(paramsPtr + 0);
+        OutBoundsHalfExtents = BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 64);
         return;
     }
 
+    private static BmSDK.Function __fn_LoadDamageStateFromSaveGame;
     /// <summary>
     /// Function: LoadDamageStateFromSaveGame
     /// </summary>
     public unsafe virtual void LoadDamageStateFromSaveGame()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RApexStaticDestructibleComponent.LoadDamageStateFromSaveGame", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_LoadDamageStateFromSaveGame, "BmGame.RApexStaticDestructibleComponent.LoadDamageStateFromSaveGame");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

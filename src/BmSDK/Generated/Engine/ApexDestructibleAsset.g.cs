@@ -728,7 +728,7 @@ public partial class ApexDestructibleAsset : BmSDK.Engine.ApexAsset, BmSDK.IGame
     /// <summary>
     /// Struct: FNxDestructibleDepthParameters
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 5)]
+    [StructLayout(LayoutKind.Explicit, Size = 8)]
     public partial record struct FNxDestructibleDepthParameters
     {
         /// <summary>

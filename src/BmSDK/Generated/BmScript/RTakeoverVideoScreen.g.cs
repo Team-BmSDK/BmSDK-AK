@@ -78,47 +78,55 @@ public partial class RTakeoverVideoScreen : BmSDK.BmGame.RTakeoverVideoScreenBas
         where TComponent : class, Framework.IScriptComponent<RTakeoverVideoScreen>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetOverrideMaterial;
     /// <summary>
     /// Function: SetOverrideMaterial
     /// </summary>
     public unsafe virtual void SetOverrideMaterial()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RTakeoverVideoScreen.SetOverrideMaterial", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetOverrideMaterial, "BmScript.RTakeoverVideoScreen.SetOverrideMaterial");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetStaticTransitionParameter;
     /// <summary>
     /// Function: SetStaticTransitionParameter
     /// </summary>
     public unsafe override void SetStaticTransitionParameter(float val)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RTakeoverVideoScreen.SetStaticTransitionParameter", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetStaticTransitionParameter, "BmScript.RTakeoverVideoScreen.SetStaticTransitionParameter");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(val, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_RevertToStandardTexture;
     /// <summary>
     /// Function: RevertToStandardTexture
     /// </summary>
     public unsafe override void RevertToStandardTexture()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RTakeoverVideoScreen.RevertToStandardTexture", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RevertToStandardTexture, "BmScript.RTakeoverVideoScreen.RevertToStandardTexture");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetTakeoverTexture;
     /// <summary>
     /// Function: SetTakeoverTexture
     /// </summary>
     public unsafe override void SetTakeoverTexture(BmSDK.Engine.TextureRenderTarget2D takeoverTexture)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RTakeoverVideoScreen.SetTakeoverTexture", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetTakeoverTexture, "BmScript.RTakeoverVideoScreen.SetTakeoverTexture");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(takeoverTexture, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

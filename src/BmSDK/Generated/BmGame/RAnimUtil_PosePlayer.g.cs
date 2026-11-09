@@ -82,13 +82,15 @@ public partial class RAnimUtil_PosePlayer : BmSDK.GameObject, BmSDK.IGameObject
         set { BmSDK.Framework.MarshalUtil.ToUnmanaged(value, Ptr + 84); }
     }
 
+    private static BmSDK.Function __fn_DummyOnPlayedQueuedTransition;
     /// <summary>
     /// Function: DummyOnPlayedQueuedTransition
     /// </summary>
     public unsafe virtual void DummyOnPlayedQueuedTransition(BmSDK.BmGame.RAnimUtil_PosePlayer.FTransitionId Id, float TimeLeftOver)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAnimUtil_PosePlayer.DummyOnPlayedQueuedTransition", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_DummyOnPlayedQueuedTransition, "BmGame.RAnimUtil_PosePlayer.DummyOnPlayedQueuedTransition");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Id, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TimeLeftOver, paramsPtr + 4);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
@@ -98,7 +100,7 @@ public partial class RAnimUtil_PosePlayer : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FPosePlayer
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 414)]
+    [StructLayout(LayoutKind.Explicit, Size = 416)]
     public partial record struct FPosePlayer
     {
         /// <summary>
@@ -1746,7 +1748,7 @@ public partial class RAnimUtil_PosePlayer : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FMoveToRequest
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 53)]
+    [StructLayout(LayoutKind.Explicit, Size = 56)]
     public partial record struct FMoveToRequest
     {
         /// <summary>
@@ -2775,7 +2777,7 @@ public partial class RAnimUtil_PosePlayer : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FAutomaticTransitionInstance
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 49)]
+    [StructLayout(LayoutKind.Explicit, Size = 52)]
     public partial record struct FAutomaticTransitionInstance
     {
         /// <summary>

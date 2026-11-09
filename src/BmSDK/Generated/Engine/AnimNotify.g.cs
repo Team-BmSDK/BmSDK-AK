@@ -73,18 +73,22 @@ public partial class AnimNotify : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<AnimNotify>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_FindNextNotifyOfClass;
     /// <summary>
     /// Function: FindNextNotifyOfClass
     /// </summary>
     public unsafe virtual bool FindNextNotifyOfClass(BmSDK.Engine.AnimNodeSequence AnimSeqInstigator, BmSDK.Class NotifyClass, out BmSDK.Engine.AnimSequence.FAnimNotifyEvent OutEvent)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNotify.FindNextNotifyOfClass", true);
-        byte* paramsPtr = stackalloc byte[48];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindNextNotifyOfClass, "Engine.AnimNotify.FindNextNotifyOfClass");
+        byte* paramsPtr = stackalloc byte[64];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimSeqInstigator, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NotifyClass, paramsPtr + 8);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out OutEvent);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(OutEvent, paramsPtr + 16);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        OutEvent = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.AnimSequence.FAnimNotifyEvent>(paramsPtr + 16);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 28);
+        OutEvent = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.AnimSequence.FAnimNotifyEvent>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 28);
     }
 
     /// <summary>

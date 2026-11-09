@@ -78,58 +78,68 @@ public partial class MGFxMovieUI_WBIDMainBase : BmSDK.BmGame.RGFxMovieUI, BmSDK.
         where TComponent : class, Framework.IScriptComponent<MGFxMovieUI_WBIDMainBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetWBIDPrompts;
     /// <summary>
     /// Function: SetWBIDPrompts
     /// </summary>
     public unsafe virtual void SetWBIDPrompts(BmSDK.BmGame.MWBIDOverlayManager.E_WBID_Screen_Type screen)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MGFxMovieUI_WBIDMainBase.SetWBIDPrompts", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetWBIDPrompts, "BmGame.MGFxMovieUI_WBIDMainBase.SetWBIDPrompts");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(screen, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_SetRewardsScreenError;
     /// <summary>
     /// Function: SetRewardsScreenError
     /// </summary>
     public unsafe virtual void SetRewardsScreenError()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MGFxMovieUI_WBIDMainBase.SetRewardsScreenError", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetRewardsScreenError, "BmGame.MGFxMovieUI_WBIDMainBase.SetRewardsScreenError");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_UpdateWBIDWidgets;
     /// <summary>
     /// Function: UpdateWBIDWidgets
     /// </summary>
     public unsafe virtual void UpdateWBIDWidgets()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MGFxMovieUI_WBIDMainBase.UpdateWBIDWidgets", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UpdateWBIDWidgets, "BmGame.MGFxMovieUI_WBIDMainBase.UpdateWBIDWidgets");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Terminate;
     /// <summary>
     /// Function: Terminate
     /// </summary>
     public unsafe virtual void Terminate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MGFxMovieUI_WBIDMainBase.Terminate", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Terminate, "BmGame.MGFxMovieUI_WBIDMainBase.Terminate");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_ShowNextOverlay;
     /// <summary>
     /// Function: ShowNextOverlay
     /// </summary>
     public unsafe virtual void ShowNextOverlay(BmSDK.BmGame.MWBIDOverlayManager.E_WBID_Screen_Type nextOverlay)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.MGFxMovieUI_WBIDMainBase.ShowNextOverlay", true);
-        byte* paramsPtr = stackalloc byte[1];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ShowNextOverlay, "BmGame.MGFxMovieUI_WBIDMainBase.ShowNextOverlay");
+        byte* paramsPtr = stackalloc byte[17];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(nextOverlay, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

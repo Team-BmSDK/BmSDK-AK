@@ -78,13 +78,15 @@ public partial class AnimNodeSequenceBlendByAim : BmSDK.Engine.AnimNodeSequenceB
         where TComponent : class, Framework.IScriptComponent<AnimNodeSequenceBlendByAim>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CheckAnimsUpToDate;
     /// <summary>
     /// Function: CheckAnimsUpToDate
     /// </summary>
     public unsafe virtual void CheckAnimsUpToDate()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodeSequenceBlendByAim.CheckAnimsUpToDate", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CheckAnimsUpToDate, "Engine.AnimNodeSequenceBlendByAim.CheckAnimsUpToDate");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;

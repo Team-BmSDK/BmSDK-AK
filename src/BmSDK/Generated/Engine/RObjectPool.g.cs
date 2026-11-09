@@ -78,61 +78,71 @@ public partial class RObjectPool : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RObjectPool>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetMaxDamageInstances;
     /// <summary>
     /// Function: GetMaxDamageInstances
     /// </summary>
     public unsafe virtual int GetMaxDamageInstances()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RObjectPool.GetMaxDamageInstances", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetMaxDamageInstances, "Engine.RObjectPool.GetMaxDamageInstances");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetDamageInstanceIndex;
     /// <summary>
     /// Function: GetDamageInstanceIndex
     /// </summary>
     public unsafe virtual int GetDamageInstanceIndex(BmSDK.Engine.Actor ImpactActor, System.Numerics.Vector3 ImpactLocation, float Radius)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RObjectPool.GetDamageInstanceIndex", true);
-        byte* paramsPtr = stackalloc byte[88];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDamageInstanceIndex, "Engine.RObjectPool.GetDamageInstanceIndex");
+        byte* paramsPtr = stackalloc byte[104];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ImpactActor, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ImpactLocation, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Radius, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 24);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_Initialise;
     /// <summary>
     /// Function: Initialise
     /// </summary>
     public unsafe virtual void Initialise(BmSDK.Engine.GameReplicationInfo Game)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RObjectPool.Initialise", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Initialise, "Engine.RObjectPool.Initialise");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Game, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_CreateDecal;
     /// <summary>
     /// Function: CreateDecal
     /// </summary>
     public unsafe virtual BmSDK.Engine.RockDecalComponent CreateDecal()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RObjectPool.CreateDecal", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CreateDecal, "Engine.RObjectPool.CreateDecal");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.RockDecalComponent>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.RockDecalComponent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_AddDecal;
     /// <summary>
     /// Function: AddDecal
     /// </summary>
     public unsafe virtual BmSDK.Engine.RockDecalComponent AddDecal(BmSDK.Engine.MaterialInterface DecalMaterial, System.Numerics.Vector3 DecalLocation, System.Numerics.Vector3 DecalNormal, float DecalRoll, float DecalWidth, float DecalHeight, BmSDK.Engine.Actor HitActor, BmSDK.Engine.PrimitiveComponent HitComponent, BmSDK.FName HitBone = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RObjectPool.AddDecal", true);
-        byte* paramsPtr = stackalloc byte[100];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_AddDecal, "Engine.RObjectPool.AddDecal");
+        byte* paramsPtr = stackalloc byte[116];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DecalMaterial, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DecalLocation, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DecalNormal, paramsPtr + 20);
@@ -143,16 +153,18 @@ public partial class RObjectPool : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitComponent, paramsPtr + 52);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitBone, paramsPtr + 60);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.RockDecalComponent>(paramsPtr + 68);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.RockDecalComponent>(paramsPtr + 68);
     }
 
+    private static BmSDK.Function __fn_GetSpawnedDecalDepth;
     /// <summary>
     /// Function: GetSpawnedDecalDepth
     /// </summary>
     public unsafe virtual float GetSpawnedDecalDepth()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RObjectPool.GetSpawnedDecalDepth", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetSpawnedDecalDepth, "Engine.RObjectPool.GetSpawnedDecalDepth");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -161,16 +173,18 @@ public partial class RObjectPool : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_GetUnscaledDecalMatrix;
     /// <summary>
     /// Function: GetUnscaledDecalMatrix
     /// </summary>
     public unsafe virtual BmSDK.GameObject.FMatrix GetUnscaledDecalMatrix(System.Numerics.Vector3 Location, BmSDK.Rotator Rotation, float Roll)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RObjectPool.GetUnscaledDecalMatrix", true);
-        byte* paramsPtr = stackalloc byte[96];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetUnscaledDecalMatrix, "Engine.RObjectPool.GetUnscaledDecalMatrix");
+        byte* paramsPtr = stackalloc byte[112];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Location, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Rotation, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Roll, paramsPtr + 24);
@@ -182,16 +196,18 @@ public partial class RObjectPool : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.GameObject.FMatrix>(paramsPtr + 32);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.GameObject.FMatrix>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_GetDecalMatrix;
     /// <summary>
     /// Function: GetDecalMatrix
     /// </summary>
     public unsafe virtual BmSDK.GameObject.FMatrix GetDecalMatrix(System.Numerics.Vector3 Location, BmSDK.Rotator Rotation, float Roll, float Width, float Height, float Depth)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RObjectPool.GetDecalMatrix", true);
-        byte* paramsPtr = stackalloc byte[112];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDecalMatrix, "Engine.RObjectPool.GetDecalMatrix");
+        byte* paramsPtr = stackalloc byte[128];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Location, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Rotation, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Roll, paramsPtr + 24);
@@ -206,16 +222,18 @@ public partial class RObjectPool : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.GameObject.FMatrix>(paramsPtr + 48);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.GameObject.FMatrix>(paramsPtr + 48);
     }
 
+    private static BmSDK.Function __fn_GetDecalClipValuesFromScale;
     /// <summary>
     /// Function: GetDecalClipValuesFromScale
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetDecalClipValuesFromScale(float Width, float Height, float Depth)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RObjectPool.GetDecalClipValuesFromScale", true);
-        byte* paramsPtr = stackalloc byte[24];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetDecalClipValuesFromScale, "Engine.RObjectPool.GetDecalClipValuesFromScale");
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Width, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Height, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Depth, paramsPtr + 8);
@@ -227,59 +245,67 @@ public partial class RObjectPool : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 12);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_GetFreeDecal;
     /// <summary>
     /// Function: GetFreeDecal
     /// </summary>
     public unsafe virtual BmSDK.Engine.RockDecalComponent GetFreeDecal()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RObjectPool.GetFreeDecal", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetFreeDecal, "Engine.RObjectPool.GetFreeDecal");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.RockDecalComponent>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.RockDecalComponent>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_EnlargeNearbyDecal;
     /// <summary>
     /// Function: EnlargeNearbyDecal
     /// </summary>
     public unsafe virtual BmSDK.Engine.RockDecalComponent EnlargeNearbyDecal(BmSDK.Engine.MaterialInterface DecalMaterial, System.Numerics.Vector3 DecalLocation, float DecalWidth, float DecalHeight, BmSDK.Engine.Actor HitActor)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RObjectPool.EnlargeNearbyDecal", true);
-        byte* paramsPtr = stackalloc byte[60];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EnlargeNearbyDecal, "Engine.RObjectPool.EnlargeNearbyDecal");
+        byte* paramsPtr = stackalloc byte[76];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DecalMaterial, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DecalLocation, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DecalWidth, paramsPtr + 20);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DecalHeight, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HitActor, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.RockDecalComponent>(paramsPtr + 36);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.RockDecalComponent>(paramsPtr + 36);
     }
 
+    private static BmSDK.Function __fn_SpawnEmitterOnSocket;
     /// <summary>
     /// Function: SpawnEmitterOnSocket
     /// </summary>
     public unsafe virtual BmSDK.Engine.Emitter SpawnEmitterOnSocket(BmSDK.Engine.ParticleSystem Tamplate, BmSDK.Engine.SkeletalMeshComponent Skeleton, BmSDK.FName SocketName, bool bAttachToMesh = default, float DrawScale = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RObjectPool.SpawnEmitterOnSocket", true);
-        byte* paramsPtr = stackalloc byte[72];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnEmitterOnSocket, "Engine.RObjectPool.SpawnEmitterOnSocket");
+        byte* paramsPtr = stackalloc byte[88];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Tamplate, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Skeleton, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SocketName, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bAttachToMesh, paramsPtr + 24);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DrawScale, paramsPtr + 28);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Emitter>(paramsPtr + 32);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.Emitter>(paramsPtr + 32);
     }
 
+    private static BmSDK.Function __fn_SpawnEmitterOnMesh;
     /// <summary>
     /// Function: SpawnEmitterOnMesh
     /// </summary>
     public unsafe virtual BmSDK.Engine.Emitter SpawnEmitterOnMesh(BmSDK.Engine.ParticleSystem Template, System.Numerics.Vector3 SpawnLocation, BmSDK.Rotator SpawnRotation, BmSDK.Engine.SkeletalMeshComponent Skeleton = default, BmSDK.FName Bone = default, bool HardAttach = default, float DrawScale = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RObjectPool.SpawnEmitterOnMesh", true);
-        byte* paramsPtr = stackalloc byte[72];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnEmitterOnMesh, "Engine.RObjectPool.SpawnEmitterOnMesh");
+        byte* paramsPtr = stackalloc byte[88];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Template, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnLocation, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnRotation, paramsPtr + 20);
@@ -288,16 +314,18 @@ public partial class RObjectPool : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HardAttach, paramsPtr + 48);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DrawScale, paramsPtr + 52);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Emitter>(paramsPtr + 56);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.Emitter>(paramsPtr + 56);
     }
 
+    private static BmSDK.Function __fn_SpawnEmitterOnPawn;
     /// <summary>
     /// Function: SpawnEmitterOnPawn
     /// </summary>
     public unsafe virtual BmSDK.Engine.Emitter SpawnEmitterOnPawn(BmSDK.Engine.ParticleSystem Template, System.Numerics.Vector3 SpawnLocation, BmSDK.Rotator SpawnRotation, BmSDK.Engine.Pawn P = default, BmSDK.FName Bone = default, bool HardAttach = default, float DrawScale = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RObjectPool.SpawnEmitterOnPawn", true);
-        byte* paramsPtr = stackalloc byte[72];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnEmitterOnPawn, "Engine.RObjectPool.SpawnEmitterOnPawn");
+        byte* paramsPtr = stackalloc byte[88];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Template, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnLocation, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnRotation, paramsPtr + 20);
@@ -306,16 +334,18 @@ public partial class RObjectPool : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(HardAttach, paramsPtr + 48);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DrawScale, paramsPtr + 52);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Emitter>(paramsPtr + 56);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.Emitter>(paramsPtr + 56);
     }
 
+    private static BmSDK.Function __fn_SpawnEmitter;
     /// <summary>
     /// Function: SpawnEmitter
     /// </summary>
     public unsafe virtual BmSDK.Engine.Emitter SpawnEmitter(BmSDK.Engine.ParticleSystem Template, System.Numerics.Vector3 SpawnLocation, BmSDK.Rotator SpawnRotation, int TranslucencySortPriority = default, float DrawScale = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RObjectPool.SpawnEmitter", true);
-        byte* paramsPtr = stackalloc byte[48];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SpawnEmitter, "Engine.RObjectPool.SpawnEmitter");
+        byte* paramsPtr = stackalloc byte[64];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Template, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnLocation, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SpawnRotation, paramsPtr + 20);
@@ -329,16 +359,18 @@ public partial class RObjectPool : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.Emitter>(paramsPtr + 40);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.Emitter>(paramsPtr + 40);
     }
 
+    private static BmSDK.Function __fn_StopEmittersWithTemplate;
     /// <summary>
     /// Function: StopEmittersWithTemplate
     /// </summary>
     public unsafe virtual void StopEmittersWithTemplate(BmSDK.Engine.ParticleSystem Template)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RObjectPool.StopEmittersWithTemplate", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopEmittersWithTemplate, "Engine.RObjectPool.StopEmittersWithTemplate");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Template, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

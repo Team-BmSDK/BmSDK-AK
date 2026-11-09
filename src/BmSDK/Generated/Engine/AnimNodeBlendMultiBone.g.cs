@@ -78,13 +78,15 @@ public partial class AnimNodeBlendMultiBone : BmSDK.Engine.AnimNodeBlendBase, Bm
         where TComponent : class, Framework.IScriptComponent<AnimNodeBlendMultiBone>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetTargetStartBone;
     /// <summary>
     /// Function: SetTargetStartBone
     /// </summary>
     public unsafe virtual void SetTargetStartBone(int TargetIdx, BmSDK.FName StartBoneName, float PerBoneIncrease = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AnimNodeBlendMultiBone.SetTargetStartBone", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetTargetStartBone, "Engine.AnimNodeBlendMultiBone.SetTargetStartBone");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetIdx, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(StartBoneName, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PerBoneIncrease, paramsPtr + 12);

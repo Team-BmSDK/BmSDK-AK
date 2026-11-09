@@ -78,13 +78,15 @@ public partial class FacebookWindows : BmSDK.Engine.FacebookIntegration, BmSDK.I
         where TComponent : class, Framework.IScriptComponent<FacebookWindows>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnFacebookFriendsRequestComplete;
     /// <summary>
     /// Function: OnFacebookFriendsRequestComplete
     /// </summary>
     public unsafe void OnFacebookFriendsRequestComplete(BmSDK.Engine.HttpRequestInterface OriginalRequest, BmSDK.Engine.HttpResponseInterface Response, bool bDidSucceed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.FacebookWindows.OnFacebookFriendsRequestComplete", true);
-        byte* paramsPtr = stackalloc byte[136];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnFacebookFriendsRequestComplete, "WinDrv.FacebookWindows.OnFacebookFriendsRequestComplete");
+        byte* paramsPtr = stackalloc byte[152];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OriginalRequest, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Response, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDidSucceed, paramsPtr + 16);
@@ -92,24 +94,28 @@ public partial class FacebookWindows : BmSDK.Engine.FacebookIntegration, BmSDK.I
         return;
     }
 
+    private static BmSDK.Function __fn_RequestFacebookFriends;
     /// <summary>
     /// Function: RequestFacebookFriends
     /// </summary>
     public unsafe void RequestFacebookFriends()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.FacebookWindows.RequestFacebookFriends", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RequestFacebookFriends, "WinDrv.FacebookWindows.RequestFacebookFriends");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnFacebookMeRequestComplete;
     /// <summary>
     /// Function: OnFacebookMeRequestComplete
     /// </summary>
     public unsafe void OnFacebookMeRequestComplete(BmSDK.Engine.HttpRequestInterface OriginalRequest, BmSDK.Engine.HttpResponseInterface Response, bool bDidSucceed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.FacebookWindows.OnFacebookMeRequestComplete", true);
-        byte* paramsPtr = stackalloc byte[92];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnFacebookMeRequestComplete, "WinDrv.FacebookWindows.OnFacebookMeRequestComplete");
+        byte* paramsPtr = stackalloc byte[108];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OriginalRequest, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Response, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDidSucceed, paramsPtr + 16);
@@ -117,24 +123,28 @@ public partial class FacebookWindows : BmSDK.Engine.FacebookIntegration, BmSDK.I
         return;
     }
 
+    private static BmSDK.Function __fn_RequestFacebookMeInfo;
     /// <summary>
     /// Function: RequestFacebookMeInfo
     /// </summary>
     public unsafe void RequestFacebookMeInfo()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.FacebookWindows.RequestFacebookMeInfo", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_RequestFacebookMeInfo, "WinDrv.FacebookWindows.RequestFacebookMeInfo");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_FacebookRequestCallback;
     /// <summary>
     /// Function: FacebookRequestCallback
     /// </summary>
     public unsafe virtual void FacebookRequestCallback(BmSDK.Engine.HttpRequestInterface OriginalRequest, BmSDK.Engine.HttpResponseInterface Response, bool bDidSucceed)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.FacebookWindows.FacebookRequestCallback", true);
-        byte* paramsPtr = stackalloc byte[36];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FacebookRequestCallback, "WinDrv.FacebookWindows.FacebookRequestCallback");
+        byte* paramsPtr = stackalloc byte[52];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(OriginalRequest, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Response, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDidSucceed, paramsPtr + 16);
@@ -142,13 +152,15 @@ public partial class FacebookWindows : BmSDK.Engine.FacebookIntegration, BmSDK.I
         return;
     }
 
+    private static BmSDK.Function __fn_ProcessFacebookRequest;
     /// <summary>
     /// Function: ProcessFacebookRequest
     /// </summary>
     public unsafe virtual void ProcessFacebookRequest(BmSDK.FString Payload, int ResponseCode)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.FacebookWindows.ProcessFacebookRequest", true);
-        byte* paramsPtr = stackalloc byte[20];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ProcessFacebookRequest, "WinDrv.FacebookWindows.ProcessFacebookRequest");
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Payload, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ResponseCode, paramsPtr + 16);
         var oldFlags = funcManaged.FunctionFlags;
@@ -162,25 +174,29 @@ public partial class FacebookWindows : BmSDK.Engine.FacebookIntegration, BmSDK.I
         return;
     }
 
+    private static BmSDK.Function __fn_FacebookRequest;
     /// <summary>
     /// Function: FacebookRequest
     /// </summary>
     public unsafe override void FacebookRequest(BmSDK.FString GraphRequest)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.FacebookWindows.FacebookRequest", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FacebookRequest, "WinDrv.FacebookWindows.FacebookRequest");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(GraphRequest, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_Disconnect;
     /// <summary>
     /// Function: Disconnect
     /// </summary>
     public unsafe override void Disconnect()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.FacebookWindows.Disconnect", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Disconnect, "WinDrv.FacebookWindows.Disconnect");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -192,13 +208,15 @@ public partial class FacebookWindows : BmSDK.Engine.FacebookIntegration, BmSDK.I
         return;
     }
 
+    private static BmSDK.Function __fn_IsAuthorized;
     /// <summary>
     /// Function: IsAuthorized
     /// </summary>
     public unsafe override bool IsAuthorized()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.FacebookWindows.IsAuthorized", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsAuthorized, "WinDrv.FacebookWindows.IsAuthorized");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -207,16 +225,18 @@ public partial class FacebookWindows : BmSDK.Engine.FacebookIntegration, BmSDK.I
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Authorize;
     /// <summary>
     /// Function: Authorize
     /// </summary>
     public unsafe override bool Authorize()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.FacebookWindows.Authorize", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Authorize, "WinDrv.FacebookWindows.Authorize");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -225,16 +245,18 @@ public partial class FacebookWindows : BmSDK.Engine.FacebookIntegration, BmSDK.I
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_Init;
     /// <summary>
     /// Function: Init
     /// </summary>
     public unsafe override bool Init()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "WinDrv.FacebookWindows.Init", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Init, "WinDrv.FacebookWindows.Init");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -243,7 +265,7 @@ public partial class FacebookWindows : BmSDK.Engine.FacebookIntegration, BmSDK.I
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 
     /// <summary>

@@ -76,7 +76,7 @@ public partial class RAnimUtil_AnimAccumulator : BmSDK.GameObject, BmSDK.IGameOb
     /// <summary>
     /// Struct: FAnimAccumulator
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 88)]
+    [StructLayout(LayoutKind.Explicit, Size = 96)]
     public partial record struct FAnimAccumulator
     {
         /// <summary>

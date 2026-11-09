@@ -78,13 +78,15 @@ public partial class ProcBuilding : BmSDK.Engine.Volume, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<ProcBuilding>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_FindEdgeForTopLevelScope;
     /// <summary>
     /// Function: FindEdgeForTopLevelScope
     /// </summary>
     public unsafe virtual int FindEdgeForTopLevelScope(int TopLevelScopeIndex, BmSDK.Engine.ProcBuilding.EScopeEdge Edge)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ProcBuilding.FindEdgeForTopLevelScope", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindEdgeForTopLevelScope, "Engine.ProcBuilding.FindEdgeForTopLevelScope");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TopLevelScopeIndex, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Edge, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
@@ -95,16 +97,18 @@ public partial class ProcBuilding : BmSDK.Engine.Volume, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_BreakFractureComponent;
     /// <summary>
     /// Function: BreakFractureComponent
     /// </summary>
     public unsafe virtual void BreakFractureComponent(BmSDK.Engine.FracturedStaticMeshComponent Comp, System.Numerics.Vector3 BoxMin, System.Numerics.Vector3 BoxMax)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ProcBuilding.BreakFractureComponent", true);
-        byte* paramsPtr = stackalloc byte[32];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BreakFractureComponent, "Engine.ProcBuilding.BreakFractureComponent");
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Comp, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoxMin, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BoxMax, paramsPtr + 20);
@@ -119,13 +123,15 @@ public partial class ProcBuilding : BmSDK.Engine.Volume, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_GetAllGroupedProcBuildings;
     /// <summary>
     /// Function: GetAllGroupedProcBuildings
     /// </summary>
     public unsafe virtual void GetAllGroupedProcBuildings(out BmSDK.TArray<BmSDK.Engine.ProcBuilding> OutSet)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ProcBuilding.GetAllGroupedProcBuildings", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAllGroupedProcBuildings, "Engine.ProcBuilding.GetAllGroupedProcBuildings");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -134,17 +140,19 @@ public partial class ProcBuilding : BmSDK.Engine.Volume, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        OutSet = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.Engine.ProcBuilding>>(paramsPtr + 0);
+        OutSet = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.Engine.ProcBuilding>>(paramsPtr + 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetBaseMostBuilding;
     /// <summary>
     /// Function: GetBaseMostBuilding
     /// </summary>
     public unsafe virtual BmSDK.Engine.ProcBuilding GetBaseMostBuilding()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ProcBuilding.GetBaseMostBuilding", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBaseMostBuilding, "Engine.ProcBuilding.GetBaseMostBuilding");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -153,16 +161,18 @@ public partial class ProcBuilding : BmSDK.Engine.Volume, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.ProcBuilding>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.ProcBuilding>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_FindComponentsForTopLevelScope;
     /// <summary>
     /// Function: FindComponentsForTopLevelScope
     /// </summary>
     public unsafe virtual BmSDK.TArray<BmSDK.Engine.StaticMeshComponent> FindComponentsForTopLevelScope(int TopLevelScopeIndex)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ProcBuilding.FindComponentsForTopLevelScope", true);
-        byte* paramsPtr = stackalloc byte[20];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindComponentsForTopLevelScope, "Engine.ProcBuilding.FindComponentsForTopLevelScope");
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TopLevelScopeIndex, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -172,16 +182,18 @@ public partial class ProcBuilding : BmSDK.Engine.Volume, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.Engine.StaticMeshComponent>>(paramsPtr + 4);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.Engine.StaticMeshComponent>>(paramsPtr + 4);
     }
 
+    private static BmSDK.Function __fn_ClearBuildingMeshes;
     /// <summary>
     /// Function: ClearBuildingMeshes
     /// </summary>
     public unsafe virtual void ClearBuildingMeshes()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.ProcBuilding.ClearBuildingMeshes", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ClearBuildingMeshes, "Engine.ProcBuilding.ClearBuildingMeshes");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -880,7 +892,7 @@ public partial class ProcBuilding : BmSDK.Engine.Volume, BmSDK.IGameObject
     /// <summary>
     /// Struct: FPBScope2D
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 72)]
+    [StructLayout(LayoutKind.Explicit, Size = 80)]
     public partial record struct FPBScope2D
     {
         /// <summary>

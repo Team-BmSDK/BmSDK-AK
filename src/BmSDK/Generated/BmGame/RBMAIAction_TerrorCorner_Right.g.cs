@@ -78,14 +78,16 @@ public partial class RBMAIAction_TerrorCorner_Right : BmSDK.BmGame.RBMAIAction_T
         where TComponent : class, Framework.IScriptComponent<RBMAIAction_TerrorCorner_Right>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetOutTransition;
     /// <summary>
     /// Function: GetOutTransition
     /// </summary>
     public unsafe override BmSDK.FName GetOutTransition()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_TerrorCorner_Right.GetOutTransition", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetOutTransition, "BmGame.RBMAIAction_TerrorCorner_Right.GetOutTransition");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FName>(paramsPtr + 0);
     }
 }

@@ -78,15 +78,17 @@ public partial class RB_ForceComponentCylindrical : BmSDK.Engine.RB_ForceCompone
         where TComponent : class, Framework.IScriptComponent<RB_ForceComponentCylindrical>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Clone;
     /// <summary>
     /// Function: Clone
     /// </summary>
     public unsafe override BmSDK.Engine.RB_ForceComponent Clone()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.RB_ForceComponentCylindrical.Clone", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Clone, "Engine.RB_ForceComponentCylindrical.Clone");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.RB_ForceComponent>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.Engine.RB_ForceComponent>(paramsPtr + 0);
     }
 
     /// <summary>

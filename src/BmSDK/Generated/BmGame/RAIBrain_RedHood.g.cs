@@ -78,16 +78,22 @@ public partial class RAIBrain_RedHood : BmSDK.BmGame.RAIBrain_Pred, BmSDK.IGameO
         where TComponent : class, Framework.IScriptComponent<RAIBrain_RedHood>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_EvaluateState;
     /// <summary>
     /// Function: EvaluateState
     /// </summary>
     public unsafe override void EvaluateState(out BmSDK.FName NewName, out BmSDK.BmGame.RAlertEventCoordinatorBase NewAEC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAIBrain_RedHood.EvaluateState", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_EvaluateState, "BmGame.RAIBrain_RedHood.EvaluateState");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NewName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NewName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out NewAEC);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(NewAEC, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        NewName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
-        NewAEC = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RAlertEventCoordinatorBase>(paramsPtr + 8);
+        NewName = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FName>(paramsPtr + 0);
+        NewAEC = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RAlertEventCoordinatorBase>(paramsPtr + 8);
         return;
     }
 }

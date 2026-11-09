@@ -280,8 +280,9 @@ void Printer::PrintStruct(const StructInfo& _struct, ostream& out)
     Printer::Indent(out) << "/// Struct: " << _struct.ManagedName << endl;
     Printer::Indent(out) << "/// </summary>" << endl;
 
-    // Print struct declaration
-    Printer::Indent(out) << "[StructLayout(LayoutKind.Explicit, Size = " << _struct.PropertiesSize
+    // Print struct declaration. The size is the array stride (PropertiesSize rounded up to the
+    // struct's alignment), so TArray<T> and inline arrays of this struct index correctly.
+    Printer::Indent(out) << "[StructLayout(LayoutKind.Explicit, Size = " << _struct.GetAlignedSize()
         << ")]" << endl;
     Printer::Indent(out) << "public partial record struct " << _struct.ManagedName << endl;
 
@@ -445,6 +446,13 @@ void Printer::PrintProperty(const PropertyInfo& prop, ostream& out)
 
 void Printer::PrintFunction(const FunctionInfo& func, bool isInInterface, ostream& out)
     {
+    // Print the field caching this function's UFunction lookup
+    if (!isInInterface)
+    {
+        Printer::Indent(out) << "private static BmSDK.Function __fn_" << func.ManagedName << ";"
+            << endl;
+    }
+
     // Print func comment
     Printer::Indent(out) << "/// <summary>" << endl;
     Printer::Indent(out) << "/// Function: " << func.Name << endl;
@@ -511,26 +519,53 @@ void Printer::PrintFunction(const FunctionInfo& func, bool isInInterface, ostrea
         string ptrText = func.IsStatic ? "StaticClass().DefaultObject.Ptr" : "Ptr";
 
         Printer::Indent(out) << "var funcManaged = "
-            "BmSDK.GameObject.StaticFindObjectChecked<BmSDK."
-            "Function>(BmSDK.Function.StaticClass(), null, \""
-            << func.PathName << "\", true);" << endl;
+            "BmSDK.Framework.FunctionCache.Get(ref __fn_" << func.ManagedName << ", \""
+            << func.PathName << "\");" << endl;
 
-        Printer::Indent(out) << "byte* paramsPtr = stackalloc byte[" << func.PropertiesSize << "];"
-            << endl;
+        // The engine 16-aligns its own parameter frames, and natives rely on it (an FQuat or
+        // FMatrix return is stored with movdqa). A constant-size stackalloc is only 8-aligned,
+        // so over-allocate and round the pointer up.
+        Printer::Indent(out) << "byte* paramsPtr = stackalloc byte[" << (func.PropertiesSize + 16)
+            << "];" << endl;
+        Printer::Indent(out) << "paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);" << endl;
         for (auto i = 0u; i < func.Params.size(); i++)
         {
             auto& param = func.Params[i];
 
-            // Don't marshal in 'out' params
+            // UnrealScript 'out' params are in/out: pass in the caller's current value. Reading a
+            // C# 'out' param is legal once SkipInit marks it assigned (it never writes to it).
+            // Values that own memory (strings, arrays, structs holding one) stay zeroed: the callee
+            // may free that memory when it reassigns the param, and a C# caller doesn't expect an
+            // 'out' argument to be read, so it may still be using it.
             if (param.IsOutParam)
             {
-                continue;
+                if (param.OwnsMemory)
+                {
+                    continue;
+                }
+
+                Printer::Indent(out) << "System.Runtime.CompilerServices.Unsafe.SkipInit(out "
+                    << param.ManagedName << ");" << endl;
             }
 
             // Print
             Printer::Indent(out) << "BmSDK.Framework.MarshalUtil.ToUnmanaged("
                 << param.ManagedName << ", paramsPtr + " << param.Offset
                 << ");" << endl;
+        }
+
+        // ProcessEvent would free an optional string/array argument of a script function before
+        // the call runs (see OptionalParms.cs), so suspend the optional params around the call.
+        auto suspendsOptional = false;
+        for (auto& param : func.Params)
+        {
+            suspendsOptional |= !func.IsNative && param.IsOptionalParam && param.OwnsMemory;
+        }
+
+        if (suspendsOptional)
+        {
+            Printer::Indent(out)
+                << "var __optional = BmSDK.Framework.OptionalParms.Suspend(funcManaged);" << endl;
         }
 
         if (func.IsNative)
@@ -555,6 +590,12 @@ void Printer::PrintFunction(const FunctionInfo& func, bool isInInterface, ostrea
             Printer::Indent(out) << "funcManaged.FunctionFlags = oldFlags;" << endl;
         }
 
+        if (suspendsOptional)
+        {
+            Printer::Indent(out)
+                << "BmSDK.Framework.OptionalParms.Resume(funcManaged, __optional);" << endl;
+        }
+
         // Marshal/assign out params
         for (auto i = 0u; i < func.Params.size(); i++)
         {
@@ -563,7 +604,7 @@ void Printer::PrintFunction(const FunctionInfo& func, bool isInInterface, ostrea
             if (param.IsOutParam)
             {
                 Printer::Indent(out)
-                    << param.ManagedName << " = BmSDK.Framework.MarshalUtil.ToManaged<"
+                    << param.ManagedName << " = BmSDK.Framework.MarshalUtil.ToManagedParam<"
                     << param.TypeName << ">(paramsPtr + " << param.Offset << ");"
                     << endl;
             }
@@ -572,7 +613,7 @@ void Printer::PrintFunction(const FunctionInfo& func, bool isInInterface, ostrea
         if (func.HasReturnParam)
         {
             // Print return param declaration
-            Printer::Indent(out) << "return BmSDK.Framework.MarshalUtil.ToManaged<"
+            Printer::Indent(out) << "return BmSDK.Framework.MarshalUtil.ToManagedParam<"
                 << func.ReturnParam.TypeName << ">(paramsPtr + "
                 << func.ReturnParam.Offset << ");" << endl;
         }

@@ -78,14 +78,16 @@ public partial class RBMAIAction_ThermalCheck_Cocky : BmSDK.BmGame.RBMAIAction_T
         where TComponent : class, Framework.IScriptComponent<RBMAIAction_ThermalCheck_Cocky>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetInTransName;
     /// <summary>
     /// Function: GetInTransName
     /// </summary>
     public unsafe override BmSDK.FName GetInTransName()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_ThermalCheck_Cocky.GetInTransName", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetInTransName, "BmGame.RBMAIAction_ThermalCheck_Cocky.GetInTransName");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FName>(paramsPtr + 0);
     }
 }

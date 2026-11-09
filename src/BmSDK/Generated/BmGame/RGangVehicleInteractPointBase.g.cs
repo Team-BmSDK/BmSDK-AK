@@ -78,26 +78,30 @@ public partial class RGangVehicleInteractPointBase : BmSDK.BmGame.RDummyTarget, 
         where TComponent : class, Framework.IScriptComponent<RGangVehicleInteractPointBase>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetInUse;
     /// <summary>
     /// Function: SetInUse
     /// </summary>
     public unsafe virtual void SetInUse(BmSDK.BmGame.RVehicleNPC NewCar)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGangVehicleInteractPointBase.SetInUse", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetInUse, "BmGame.RGangVehicleInteractPointBase.SetInUse");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewCar, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetCarScenario;
     /// <summary>
     /// Function: GetCarScenario
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RVehicleScenario GetCarScenario()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RGangVehicleInteractPointBase.GetCarScenario", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetCarScenario, "BmGame.RGangVehicleInteractPointBase.GetCarScenario");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RVehicleScenario>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RVehicleScenario>(paramsPtr + 0);
     }
 }

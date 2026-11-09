@@ -87,6 +87,36 @@ string GetFieldPathNameManaged(UField* field)
     return managedName;
 }
 
+// True when a value of this property owns heap memory: a string, array or map, or a struct holding one.
+// Structs that extend another struct count as owning, because their inherited members aren't printed.
+static bool PropertyOwnsMemory(UProperty* prop)
+{
+    auto className = prop->Class->GetName();
+    if (className == "StrProperty" || className == "ArrayProperty" || className == "MapProperty")
+    {
+        return true;
+    }
+
+    if (prop->IsA(UStructProperty::StaticClass()))
+    {
+        auto _struct = (UStruct*)((UStructProperty*)prop)->Struct;
+        if (_struct->SuperStruct)
+        {
+            return true;
+        }
+
+        for (auto field = _struct->Children; field; field = field->Next)
+        {
+            if (field->IsA(UProperty::StaticClass()) && PropertyOwnsMemory((UProperty*)field))
+            {
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+
 PropertyInfo::PropertyInfo(UProperty* prop, bool isInStruct)
 {
     Name = prop->GetName();
@@ -104,6 +134,7 @@ PropertyInfo::PropertyInfo(UProperty* prop, bool isInStruct)
     IsOutParam = Flags & (uint64_t)EPropertyFlags::CPF_OutParm;
     IsReturnParam = Flags & (uint64_t)EPropertyFlags::CPF_ReturnParm;
     ShouldReturnByRef = prop->ShouldReturnByRef() && !IsInStruct;
+    OwnsMemory = PropertyOwnsMemory(prop);
 
     if (IsBool)
     {
@@ -115,15 +146,27 @@ StructInfo::StructInfo(UStruct* _struct)
 {
     ManagedName = GetFieldNameManaged(_struct);
     PropertiesSize = _struct->PropertiesSize;
+    MinAlignment = _struct->MinAlignment;
 }
 
 StructInfo::StructInfo(UScriptStruct* _struct) : StructInfo((UStruct*)_struct)
 {
-    for (auto field = _struct->Children; field; field = field->Next)
+    // A struct that extends another struct holds its parent's members at the same offsets, so
+    // print the whole chain, outermost parent first. C# record structs can't inherit.
+    vector<UStruct*> chain;
+    for (auto s = (UStruct*)_struct; s; s = s->SuperStruct)
     {
-        if (field->IsA(UProperty::StaticClass()))
+        chain.insert(chain.begin(), s);
+    }
+
+    for (auto s : chain)
+    {
+        for (auto field = s->Children; field; field = field->Next)
         {
-            Members.push_back(new PropertyInfo((UProperty*)field, true));
+            if (field->IsA(UProperty::StaticClass()))
+            {
+                Members.push_back(new PropertyInfo((UProperty*)field, true));
+            }
         }
     }
 }

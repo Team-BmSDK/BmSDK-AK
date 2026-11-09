@@ -17,6 +17,9 @@ public static unsafe class MarshalUtil
 
     private static readonly Dictionary<IntPtr, GameObject> s_managedObjects = [];
 
+    /// <summary>Classes already reported as unknown, so each is logged once rather than per object.</summary>
+    private static readonly HashSet<string> s_unknownClassesLogged = [];
+
     /// <summary>
     /// Marshals unmanaged data to managed, then returns it.
     /// </summary>
@@ -70,6 +73,40 @@ public static unsafe class MarshalUtil
 
     public static TManaged ToManaged<TManaged>(IntPtr data) =>
         ToManaged<TManaged>(data.ToPointer());
+
+    /// <summary>
+    /// Marshals an out or return parameter from a function call's parameter buffer.
+    /// </summary>
+    /// <remarks>
+    /// The parameter buffer only lives for the duration of the call, so a <see cref="TArray{T}"/>
+    /// can't wrap it the way it wraps a property in object memory: its header is copied into
+    /// memory kept alive by the new wrapper instead. Its elements are not freed by the wrapper
+    /// (as before). Every other type marshals exactly like <see cref="ToManaged{TManaged}(void*)"/>.
+    /// </remarks>
+    public static TManaged ToManagedParam<TManaged>(void* data)
+    {
+        if (
+            typeof(TManaged).IsGenericType
+            && typeof(TManaged).GetGenericTypeDefinition() == typeof(TArray<>)
+        )
+        {
+            var instance = Guard.NotNull(
+                Activator.CreateInstance(
+                    typeof(TManaged),
+                    BindingFlags.Instance | BindingFlags.NonPublic,
+                    null,
+                    [(IntPtr)data, true],
+                    null
+                ),
+                $"Couldn't copy array parameter 0x{new IntPtr(data):X}"
+            );
+
+            return (TManaged)instance;
+        }
+
+        return ToManaged<TManaged>(data);
+    }
+
 
     /// <summary>
     /// Boxing adapters over the generic marshallers, one instantiation per type, so marshalling by
@@ -256,14 +293,20 @@ public static unsafe class MarshalUtil
         {
             if (StaticInit.TryGetManagedTypeForClassPath(GetClassPath(superPtr), out var superType))
             {
-                Debug.LogWarning(
-                    $"Couldn't find managed type for class '{classPath}', falling back to {superType.FullName}"
-                );
+                if (s_unknownClassesLogged.Add(classPath))
+                {
+                    Debug.LogWarning(
+                        $"Couldn't find managed type for class '{classPath}', falling back to {superType.FullName}"
+                    );
+                }
                 return superType;
             }
         }
 
-        Debug.LogWarning($"Couldn't find managed type for class '{classPath}'");
+        if (s_unknownClassesLogged.Add(classPath))
+        {
+            Debug.LogWarning($"Couldn't find managed type for class '{classPath}'");
+        }
         return typeof(GameObject);
     }
 

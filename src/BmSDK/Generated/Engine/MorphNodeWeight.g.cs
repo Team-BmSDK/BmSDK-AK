@@ -78,13 +78,15 @@ public partial class MorphNodeWeight : BmSDK.Engine.MorphNodeWeightBase, BmSDK.I
         where TComponent : class, Framework.IScriptComponent<MorphNodeWeight>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetNodeWeight;
     /// <summary>
     /// Function: SetNodeWeight
     /// </summary>
     public unsafe virtual void SetNodeWeight(float NewWeight)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.MorphNodeWeight.SetNodeWeight", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetNodeWeight, "Engine.MorphNodeWeight.SetNodeWeight");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewWeight, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

@@ -78,13 +78,15 @@ public partial class RSpecialMoveController : BmSDK.GameObject, BmSDK.IGameObjec
         where TComponent : class, Framework.IScriptComponent<RSpecialMoveController>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_FindBestSpecialMove;
     /// <summary>
     /// Function: FindBestSpecialMove
     /// </summary>
     public unsafe virtual BmSDK.BmGame.RSpecialMoveConfig FindBestSpecialMove(BmSDK.BmGame.REnvironmentCheckTicker.FEnvironmentSpecialMoveLocator Feature, BmSDK.Engine.Pawn Instigator, float DeltaTime, BmSDK.Rotator CheckDirection, System.Numerics.Vector3 StickDir = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RSpecialMoveController.FindBestSpecialMove", true);
-        byte* paramsPtr = stackalloc byte[176];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_FindBestSpecialMove, "BmGame.RSpecialMoveController.FindBestSpecialMove");
+        byte* paramsPtr = stackalloc byte[192];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Feature, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Instigator, paramsPtr + 132);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 140);
@@ -98,7 +100,7 @@ public partial class RSpecialMoveController : BmSDK.GameObject, BmSDK.IGameObjec
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RSpecialMoveConfig>(paramsPtr + 168);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RSpecialMoveConfig>(paramsPtr + 168);
     }
 
     /// <summary>

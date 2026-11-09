@@ -78,98 +78,118 @@ public partial class RAEC_LockedIn : BmSDK.BmGame.RAlertEventCoordinatorBase, Bm
         where TComponent : class, Framework.IScriptComponent<RAEC_LockedIn>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsInUse;
     /// <summary>
     /// Function: IsInUse
     /// </summary>
     public unsafe virtual bool IsInUse(BmSDK.BmGame.RLockedInReactionPoint TestPoint)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_LockedIn.IsInUse", true);
-        byte* paramsPtr = stackalloc byte[20];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsInUse, "BmGame.RAEC_LockedIn.IsInUse");
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TestPoint, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 
+    private static BmSDK.Function __fn_GetBestThugAndReactPoint;
     /// <summary>
     /// Function: GetBestThugAndReactPoint
     /// </summary>
     public unsafe virtual void GetBestThugAndReactPoint(BmSDK.TArray<BmSDK.BmGame.RAEC_LockedIn.FThugPointDist> ThugPointDistList, out int ThugIndex, out BmSDK.BmGame.RLockedInReactionPoint UsablePoint)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_LockedIn.GetBestThugAndReactPoint", true);
-        byte* paramsPtr = stackalloc byte[40];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetBestThugAndReactPoint, "BmGame.RAEC_LockedIn.GetBestThugAndReactPoint");
+        byte* paramsPtr = stackalloc byte[56];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ThugPointDistList, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out ThugIndex);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(ThugIndex, paramsPtr + 16);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out UsablePoint);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(UsablePoint, paramsPtr + 20);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        ThugIndex = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 16);
-        UsablePoint = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.BmGame.RLockedInReactionPoint>(paramsPtr + 20);
+        ThugIndex = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 16);
+        UsablePoint = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.BmGame.RLockedInReactionPoint>(paramsPtr + 20);
         return;
     }
 
+    private static BmSDK.Function __fn_BuildThugPointDistList;
     /// <summary>
     /// Function: BuildThugPointDistList
     /// </summary>
     public unsafe virtual BmSDK.TArray<BmSDK.BmGame.RAEC_LockedIn.FThugPointDist> BuildThugPointDistList(BmSDK.TArray<BmSDK.BmGame.RBMAIController> ConList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_LockedIn.BuildThugPointDistList", true);
-        byte* paramsPtr = stackalloc byte[60];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_BuildThugPointDistList, "BmGame.RAEC_LockedIn.BuildThugPointDistList");
+        byte* paramsPtr = stackalloc byte[76];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ConList, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.BmGame.RAEC_LockedIn.FThugPointDist>>(paramsPtr + 16);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.BmGame.RAEC_LockedIn.FThugPointDist>>(paramsPtr + 16);
     }
 
+    private static BmSDK.Function __fn_ReleaseAllThugs;
     /// <summary>
     /// Function: ReleaseAllThugs
     /// </summary>
     public unsafe virtual void ReleaseAllThugs()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_LockedIn.ReleaseAllThugs", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_ReleaseAllThugs, "BmGame.RAEC_LockedIn.ReleaseAllThugs");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_TryReactBarkFor;
     /// <summary>
     /// Function: TryReactBarkFor
     /// </summary>
     public unsafe virtual void TryReactBarkFor(BmSDK.BmGame.RPawnVillain ReactBarkPawn)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_LockedIn.TryReactBarkFor", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_TryReactBarkFor, "BmGame.RAEC_LockedIn.TryReactBarkFor");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(ReactBarkPawn, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_HandleLockedInThugs;
     /// <summary>
     /// Function: HandleLockedInThugs
     /// </summary>
     public unsafe virtual void HandleLockedInThugs(BmSDK.TArray<BmSDK.BmGame.RBMAIController> LockinConList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_LockedIn.HandleLockedInThugs", true);
-        byte* paramsPtr = stackalloc byte[60];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_HandleLockedInThugs, "BmGame.RAEC_LockedIn.HandleLockedInThugs");
+        byte* paramsPtr = stackalloc byte[76];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LockinConList, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PrepReactPoint;
     /// <summary>
     /// Function: PrepReactPoint
     /// </summary>
     public unsafe virtual void PrepReactPoint(BmSDK.BmGame.RLockedInReactionPoint NewLockinReactpoint)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_LockedIn.PrepReactPoint", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PrepReactPoint, "BmGame.RAEC_LockedIn.PrepReactPoint");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewLockinReactpoint, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_PostBeginPlay;
     /// <summary>
     /// Function: PostBeginPlay
     /// </summary>
     public unsafe override void PostBeginPlay()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAEC_LockedIn.PostBeginPlay", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostBeginPlay, "BmGame.RAEC_LockedIn.PostBeginPlay");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }

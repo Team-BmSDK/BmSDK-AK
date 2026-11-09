@@ -171,7 +171,7 @@ public partial class InterpTrackHeadTracking : BmSDK.Engine.InterpTrack, BmSDK.I
     /// <summary>
     /// Struct: FHeadTrackingKey
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 5)]
+    [StructLayout(LayoutKind.Explicit, Size = 8)]
     public partial record struct FHeadTrackingKey
     {
         /// <summary>

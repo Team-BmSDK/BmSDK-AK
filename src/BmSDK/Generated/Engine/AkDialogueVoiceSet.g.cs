@@ -78,15 +78,17 @@ public partial class AkDialogueVoiceSet : BmSDK.Engine.AkDialogueVoice, BmSDK.IG
         where TComponent : class, Framework.IScriptComponent<AkDialogueVoiceSet>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetAllVoiceNamesFromSet;
     /// <summary>
     /// Function: GetAllVoiceNamesFromSet
     /// </summary>
     public unsafe virtual void GetAllVoiceNamesFromSet(out BmSDK.TArray<BmSDK.FName> OutList)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.AkDialogueVoiceSet.GetAllVoiceNamesFromSet", true);
-        byte* paramsPtr = stackalloc byte[20];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAllVoiceNamesFromSet, "Engine.AkDialogueVoiceSet.GetAllVoiceNamesFromSet");
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        OutList = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.FName>>(paramsPtr + 0);
+        OutList = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.TArray<BmSDK.FName>>(paramsPtr + 0);
         return;
     }
 

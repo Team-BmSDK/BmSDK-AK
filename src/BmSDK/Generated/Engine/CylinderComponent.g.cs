@@ -78,24 +78,28 @@ public partial class CylinderComponent : BmSDK.Engine.PrimitiveComponent, BmSDK.
         where TComponent : class, Framework.IScriptComponent<CylinderComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetExtent;
     /// <summary>
     /// Function: GetExtent
     /// </summary>
     public unsafe virtual System.Numerics.Vector3 GetExtent()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.CylinderComponent.GetExtent", true);
-        byte* paramsPtr = stackalloc byte[24];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetExtent, "Engine.CylinderComponent.GetExtent");
+        byte* paramsPtr = stackalloc byte[40];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 0);
     }
 
+    private static BmSDK.Function __fn_SetCylinderSize;
     /// <summary>
     /// Function: SetCylinderSize
     /// </summary>
     public unsafe virtual void SetCylinderSize(float NewRadius, float NewHeight)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.CylinderComponent.SetCylinderSize", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetCylinderSize, "Engine.CylinderComponent.SetCylinderSize");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewRadius, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewHeight, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;

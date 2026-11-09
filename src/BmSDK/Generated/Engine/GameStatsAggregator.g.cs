@@ -78,14 +78,20 @@ public partial class GameStatsAggregator : BmSDK.Engine.GameplayEventsHandler, B
         where TComponent : class, Framework.IScriptComponent<GameStatsAggregator>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetAggregateMappingIDs;
     /// <summary>
     /// Function: GetAggregateMappingIDs
     /// </summary>
     public unsafe virtual bool GetAggregateMappingIDs(int EventID, out int AggregateID, out int TargetAggregateID)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.GameStatsAggregator.GetAggregateMappingIDs", true);
-        byte* paramsPtr = stackalloc byte[16];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAggregateMappingIDs, "Engine.GameStatsAggregator.GetAggregateMappingIDs");
+        byte* paramsPtr = stackalloc byte[32];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EventID, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AggregateID);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AggregateID, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out TargetAggregateID);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(TargetAggregateID, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -94,18 +100,20 @@ public partial class GameStatsAggregator : BmSDK.Engine.GameplayEventsHandler, B
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        AggregateID = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 4);
-        TargetAggregateID = BmSDK.Framework.MarshalUtil.ToManaged<int>(paramsPtr + 8);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 12);
+        AggregateID = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 4);
+        TargetAggregateID = BmSDK.Framework.MarshalUtil.ToManagedParam<int>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 12);
     }
 
+    private static BmSDK.Function __fn_Reset;
     /// <summary>
     /// Function: Reset
     /// </summary>
     public unsafe virtual void Reset()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.GameStatsAggregator.Reset", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Reset, "Engine.GameStatsAggregator.Reset");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -117,13 +125,15 @@ public partial class GameStatsAggregator : BmSDK.Engine.GameplayEventsHandler, B
         return;
     }
 
+    private static BmSDK.Function __fn_PostProcessStream;
     /// <summary>
     /// Function: PostProcessStream
     /// </summary>
     public unsafe override void PostProcessStream()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.GameStatsAggregator.PostProcessStream", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PostProcessStream, "Engine.GameStatsAggregator.PostProcessStream");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -135,13 +145,15 @@ public partial class GameStatsAggregator : BmSDK.Engine.GameplayEventsHandler, B
         return;
     }
 
+    private static BmSDK.Function __fn_PreProcessStream;
     /// <summary>
     /// Function: PreProcessStream
     /// </summary>
     public unsafe override void PreProcessStream()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.GameStatsAggregator.PreProcessStream", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PreProcessStream, "Engine.GameStatsAggregator.PreProcessStream");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -315,6 +327,23 @@ public partial class GameStatsAggregator : BmSDK.Engine.GameplayEventsHandler, B
     [StructLayout(LayoutKind.Explicit, Size = 88)]
     public partial record struct FPawnEvents
     {
+        /// <summary>
+        /// StructProperty: TotalEvents
+        /// </summary>
+        public unsafe BmSDK.Engine.GameStatsAggregator.FGameEvents TotalEvents
+        {
+            get { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.GameStatsAggregator.FGameEvents>(Ptr + 0); }; }
+            set { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; BmSDK.Framework.MarshalUtil.ToUnmanaged(value, Ptr + 0); }; }
+        }
+
+        /// <summary>
+        /// ArrayProperty: EventsByClass
+        /// </summary>
+        public unsafe BmSDK.TArray<BmSDK.Engine.GameStatsAggregator.FGameEvents> EventsByClass
+        {
+            get { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.Engine.GameStatsAggregator.FGameEvents>>(Ptr + 72); }; }
+            set { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; BmSDK.Framework.MarshalUtil.ToUnmanaged(value, Ptr + 72); }; }
+        }
     }
 
     /// <summary>
@@ -323,6 +352,23 @@ public partial class GameStatsAggregator : BmSDK.Engine.GameplayEventsHandler, B
     [StructLayout(LayoutKind.Explicit, Size = 88)]
     public partial record struct FDamageEvents
     {
+        /// <summary>
+        /// StructProperty: TotalEvents
+        /// </summary>
+        public unsafe BmSDK.Engine.GameStatsAggregator.FGameEvents TotalEvents
+        {
+            get { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.GameStatsAggregator.FGameEvents>(Ptr + 0); }; }
+            set { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; BmSDK.Framework.MarshalUtil.ToUnmanaged(value, Ptr + 0); }; }
+        }
+
+        /// <summary>
+        /// ArrayProperty: EventsByClass
+        /// </summary>
+        public unsafe BmSDK.TArray<BmSDK.Engine.GameStatsAggregator.FGameEvents> EventsByClass
+        {
+            get { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.Engine.GameStatsAggregator.FGameEvents>>(Ptr + 72); }; }
+            set { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; BmSDK.Framework.MarshalUtil.ToUnmanaged(value, Ptr + 72); }; }
+        }
     }
 
     /// <summary>
@@ -331,6 +377,23 @@ public partial class GameStatsAggregator : BmSDK.Engine.GameplayEventsHandler, B
     [StructLayout(LayoutKind.Explicit, Size = 88)]
     public partial record struct FProjectileEvents
     {
+        /// <summary>
+        /// StructProperty: TotalEvents
+        /// </summary>
+        public unsafe BmSDK.Engine.GameStatsAggregator.FGameEvents TotalEvents
+        {
+            get { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.GameStatsAggregator.FGameEvents>(Ptr + 0); }; }
+            set { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; BmSDK.Framework.MarshalUtil.ToUnmanaged(value, Ptr + 0); }; }
+        }
+
+        /// <summary>
+        /// ArrayProperty: EventsByClass
+        /// </summary>
+        public unsafe BmSDK.TArray<BmSDK.Engine.GameStatsAggregator.FGameEvents> EventsByClass
+        {
+            get { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.Engine.GameStatsAggregator.FGameEvents>>(Ptr + 72); }; }
+            set { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; BmSDK.Framework.MarshalUtil.ToUnmanaged(value, Ptr + 72); }; }
+        }
     }
 
     /// <summary>
@@ -339,6 +402,23 @@ public partial class GameStatsAggregator : BmSDK.Engine.GameplayEventsHandler, B
     [StructLayout(LayoutKind.Explicit, Size = 88)]
     public partial record struct FWeaponEvents
     {
+        /// <summary>
+        /// StructProperty: TotalEvents
+        /// </summary>
+        public unsafe BmSDK.Engine.GameStatsAggregator.FGameEvents TotalEvents
+        {
+            get { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.Engine.GameStatsAggregator.FGameEvents>(Ptr + 0); }; }
+            set { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; BmSDK.Framework.MarshalUtil.ToUnmanaged(value, Ptr + 0); }; }
+        }
+
+        /// <summary>
+        /// ArrayProperty: EventsByClass
+        /// </summary>
+        public unsafe BmSDK.TArray<BmSDK.Engine.GameStatsAggregator.FGameEvents> EventsByClass
+        {
+            get { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.TArray<BmSDK.Engine.GameStatsAggregator.FGameEvents>>(Ptr + 72); }; }
+            set { fixed (void* thisPtr = &this) { IntPtr Ptr = (IntPtr)thisPtr; BmSDK.Framework.MarshalUtil.ToUnmanaged(value, Ptr + 72); }; }
+        }
     }
 
     /// <summary>

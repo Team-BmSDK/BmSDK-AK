@@ -78,27 +78,35 @@ public partial class RCombatMove_LieutenantSmokeReaction : BmSDK.BmGame.RCombatM
         where TComponent : class, Framework.IScriptComponent<RCombatMove_LieutenantSmokeReaction>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CombatAnimHitStart;
     /// <summary>
     /// Function: CombatAnimHitStart
     /// </summary>
     public unsafe virtual void CombatAnimHitStart()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_LieutenantSmokeReaction.CombatAnimHitStart", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CombatAnimHitStart, "BmGame.RCombatMove_LieutenantSmokeReaction.CombatAnimHitStart");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetAnimInfo;
     /// <summary>
     /// Function: GetAnimInfo
     /// </summary>
     public unsafe override void GetAnimInfo(out BmSDK.FName AnimName, out float DurationScale)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCombatMove_LieutenantSmokeReaction.GetAnimInfo", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetAnimInfo, "BmGame.RCombatMove_LieutenantSmokeReaction.GetAnimInfo");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out AnimName);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DurationScale);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DurationScale, paramsPtr + 8);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        AnimName = BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
-        DurationScale = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
+        AnimName = BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FName>(paramsPtr + 0);
+        DurationScale = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 8);
         return;
     }
 }

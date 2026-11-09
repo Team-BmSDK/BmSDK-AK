@@ -78,13 +78,15 @@ public partial class RRopeBaseSpawnable : BmSDK.BmGame.RRopeBase, BmSDK.IGameObj
         where TComponent : class, Framework.IScriptComponent<RRopeBaseSpawnable>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_MulticastSetupHangingFearRope;
     /// <summary>
     /// Function: MulticastSetupHangingFearRope
     /// </summary>
     public unsafe virtual void MulticastSetupHangingFearRope(BmSDK.BmGame.RRopeBaseSpawnable.FHangingFearRopeSetupParams SetupParams)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RRopeBaseSpawnable.MulticastSetupHangingFearRope", true);
-        byte* paramsPtr = stackalloc byte[152];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_MulticastSetupHangingFearRope, "BmGame.RRopeBaseSpawnable.MulticastSetupHangingFearRope");
+        byte* paramsPtr = stackalloc byte[168];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(SetupParams, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;

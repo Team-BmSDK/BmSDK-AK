@@ -78,24 +78,30 @@ public partial class SeqAct_GetMatInstScalarParam : BmSDK.Engine.SequenceAction,
         where TComponent : class, Framework.IScriptComponent<SeqAct_GetMatInstScalarParam>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_Activated;
     /// <summary>
     /// Function: Activated
     /// </summary>
     public unsafe override void Activated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SeqAct_GetMatInstScalarParam.Activated", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_Activated, "Engine.SeqAct_GetMatInstScalarParam.Activated");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_GetScalar;
     /// <summary>
     /// Function: GetScalar
     /// </summary>
     public unsafe virtual void GetScalar(out float Scalar)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SeqAct_GetMatInstScalarParam.GetScalar", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetScalar, "Engine.SeqAct_GetMatInstScalarParam.GetScalar");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Scalar);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Scalar, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -104,7 +110,7 @@ public partial class SeqAct_GetMatInstScalarParam : BmSDK.Engine.SequenceAction,
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        Scalar = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
+        Scalar = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
         return;
     }
 

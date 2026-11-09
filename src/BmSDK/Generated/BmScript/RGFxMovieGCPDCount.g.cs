@@ -78,13 +78,15 @@ public partial class RGFxMovieGCPDCount : BmSDK.BmScript.RGFxMovieKismetNoInput,
         where TComponent : class, Framework.IScriptComponent<RGFxMovieGCPDCount>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UC_SetInfo;
     /// <summary>
     /// Function: UC_SetInfo
     /// </summary>
     public unsafe virtual void UC_SetInfo(BmSDK.FString Cell, BmSDK.FString Sec, BmSDK.FString Perc)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieGCPDCount.UC_SetInfo", true);
-        byte* paramsPtr = stackalloc byte[48];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UC_SetInfo, "BmScript.RGFxMovieGCPDCount.UC_SetInfo");
+        byte* paramsPtr = stackalloc byte[64];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Cell, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Sec, paramsPtr + 16);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Perc, paramsPtr + 32);
@@ -92,13 +94,15 @@ public partial class RGFxMovieGCPDCount : BmSDK.BmScript.RGFxMovieKismetNoInput,
         return;
     }
 
+    private static BmSDK.Function __fn_SetInfo;
     /// <summary>
     /// Function: SetInfo
     /// </summary>
     public unsafe virtual void SetInfo(float PopCell, float PopCellMax, float PopSec, float PopSecMax)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieGCPDCount.SetInfo", true);
-        byte* paramsPtr = stackalloc byte[76];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetInfo, "BmScript.RGFxMovieGCPDCount.SetInfo");
+        byte* paramsPtr = stackalloc byte[92];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PopCell, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PopCellMax, paramsPtr + 4);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PopSec, paramsPtr + 8);
@@ -107,15 +111,17 @@ public partial class RGFxMovieGCPDCount : BmSDK.BmScript.RGFxMovieKismetNoInput,
         return;
     }
 
+    private static BmSDK.Function __fn_CustomInit;
     /// <summary>
     /// Function: CustomInit
     /// </summary>
     public unsafe virtual bool CustomInit(BmSDK.BmGame.RPlayerController PC)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmScript.RGFxMovieGCPDCount.CustomInit", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CustomInit, "BmScript.RGFxMovieGCPDCount.CustomInit");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PC, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 8);
     }
 }

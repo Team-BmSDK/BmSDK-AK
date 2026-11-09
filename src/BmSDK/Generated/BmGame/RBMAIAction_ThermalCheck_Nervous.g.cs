@@ -78,14 +78,16 @@ public partial class RBMAIAction_ThermalCheck_Nervous : BmSDK.BmGame.RBMAIAction
         where TComponent : class, Framework.IScriptComponent<RBMAIAction_ThermalCheck_Nervous>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetInTransName;
     /// <summary>
     /// Function: GetInTransName
     /// </summary>
     public unsafe override BmSDK.FName GetInTransName()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMAIAction_ThermalCheck_Nervous.GetInTransName", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetInTransName, "BmGame.RBMAIAction_ThermalCheck_Nervous.GetInTransName");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<BmSDK.FName>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<BmSDK.FName>(paramsPtr + 0);
     }
 }

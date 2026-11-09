@@ -78,13 +78,15 @@ public partial class RCameraOverlayPlayer : BmSDK.GameObject, BmSDK.IGameObject
         where TComponent : class, Framework.IScriptComponent<RCameraOverlayPlayer>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_StopAnim;
     /// <summary>
     /// Function: StopAnim
     /// </summary>
     public unsafe virtual void StopAnim(BmSDK.FName LayerName, float BlendOutTime = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCameraOverlayPlayer.StopAnim", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_StopAnim, "BmGame.RCameraOverlayPlayer.StopAnim");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LayerName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(BlendOutTime, paramsPtr + 8);
         var oldFlags = funcManaged.FunctionFlags;
@@ -98,13 +100,15 @@ public partial class RCameraOverlayPlayer : BmSDK.GameObject, BmSDK.IGameObject
         return;
     }
 
+    private static BmSDK.Function __fn_NativePlayAnim;
     /// <summary>
     /// Function: NativePlayAnim
     /// </summary>
     public unsafe virtual bool NativePlayAnim(BmSDK.FName AnimName, bool bNewMirrored, bool bNewLooping, BmSDK.Engine.AnimSet NewCustomAnimSet, BmSDK.FName LayerName, float Weight, float LinkSpeed, float ZeroFrame, bool IgnoreX, float Rate, System.Numerics.Vector3 ExtraTrans, float TranslationProportionFactor, System.Numerics.Vector3 AnimTranslationMultiplier)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCameraOverlayPlayer.NativePlayAnim", true);
-        byte* paramsPtr = stackalloc byte[84];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_NativePlayAnim, "BmGame.RCameraOverlayPlayer.NativePlayAnim");
+        byte* paramsPtr = stackalloc byte[100];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewMirrored, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewLooping, paramsPtr + 12);
@@ -126,16 +130,18 @@ public partial class RCameraOverlayPlayer : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 80);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 80);
     }
 
+    private static BmSDK.Function __fn_PlayAnim;
     /// <summary>
     /// Function: PlayAnim
     /// </summary>
     public unsafe virtual bool PlayAnim(BmSDK.FName AnimName, BmSDK.FName LayerName, bool bNewMirrored = default, bool bNewLooping = default, BmSDK.Engine.AnimSet NewCustomAnimSet = default, float Weight = default, float LinkSpeed = default, float ZeroFrame = default, bool IgnoreX = default, float Rate = default, System.Numerics.Vector3 ExtraTrans = default, float TranslationProportionFactor = default, System.Numerics.Vector3 AnimTranslationMultiplier = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RCameraOverlayPlayer.PlayAnim", true);
-        byte* paramsPtr = stackalloc byte[84];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_PlayAnim, "BmGame.RCameraOverlayPlayer.PlayAnim");
+        byte* paramsPtr = stackalloc byte[100];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimName, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(LayerName, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bNewMirrored, paramsPtr + 16);
@@ -150,7 +156,7 @@ public partial class RCameraOverlayPlayer : BmSDK.GameObject, BmSDK.IGameObject
         BmSDK.Framework.MarshalUtil.ToUnmanaged(TranslationProportionFactor, paramsPtr + 64);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(AnimTranslationMultiplier, paramsPtr + 68);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 80);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 80);
     }
 
     /// <summary>
@@ -183,7 +189,7 @@ public partial class RCameraOverlayPlayer : BmSDK.GameObject, BmSDK.IGameObject
     /// <summary>
     /// Struct: FCameraOverlayLayer
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 168)]
+    [StructLayout(LayoutKind.Explicit, Size = 176)]
     public partial record struct FCameraOverlayLayer
     {
         /// <summary>

@@ -78,14 +78,16 @@ public partial class RXPSequence_Teeth : BmSDK.BmGame.RXPSequence, BmSDK.IGameOb
         where TComponent : class, Framework.IScriptComponent<RXPSequence_Teeth>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_GetIsTeeth;
     /// <summary>
     /// Function: GetIsTeeth
     /// </summary>
     public unsafe override bool GetIsTeeth()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RXPSequence_Teeth.GetIsTeeth", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetIsTeeth, "BmGame.RXPSequence_Teeth.GetIsTeeth");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 }

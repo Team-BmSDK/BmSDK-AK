@@ -78,18 +78,26 @@ public partial class RDestructibleProp_SignPost : BmSDK.BmGame.RDestructibleProp
         where TComponent : class, Framework.IScriptComponent<RDestructibleProp_SignPost>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OverrideDamageParams;
     /// <summary>
     /// Function: OverrideDamageParams
     /// </summary>
     public unsafe override void OverrideDamageParams(out float BaseDamage, out float DamageRadius, out float Momentum, BmSDK.Class DamageType)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RDestructibleProp_SignPost.OverrideDamageParams", true);
-        byte* paramsPtr = stackalloc byte[20];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OverrideDamageParams, "BmGame.RDestructibleProp_SignPost.OverrideDamageParams");
+        byte* paramsPtr = stackalloc byte[36];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out BaseDamage);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(BaseDamage, paramsPtr + 0);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out DamageRadius);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageRadius, paramsPtr + 4);
+        System.Runtime.CompilerServices.Unsafe.SkipInit(out Momentum);
+        BmSDK.Framework.MarshalUtil.ToUnmanaged(Momentum, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DamageType, paramsPtr + 12);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        BaseDamage = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 0);
-        DamageRadius = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 4);
-        Momentum = BmSDK.Framework.MarshalUtil.ToManaged<float>(paramsPtr + 8);
+        BaseDamage = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 0);
+        DamageRadius = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 4);
+        Momentum = BmSDK.Framework.MarshalUtil.ToManagedParam<float>(paramsPtr + 8);
         return;
     }
 }

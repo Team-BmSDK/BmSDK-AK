@@ -78,13 +78,15 @@ public partial class RHidePointRope_RopeComponent : BmSDK.BmGame.RRope2Component
         where TComponent : class, Framework.IScriptComponent<RHidePointRope_RopeComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_IsRopeLengthAutoCalculated;
     /// <summary>
     /// Function: IsRopeLengthAutoCalculated
     /// </summary>
     public unsafe override bool IsRopeLengthAutoCalculated()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RHidePointRope_RopeComponent.IsRopeLengthAutoCalculated", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_IsRopeLengthAutoCalculated, "BmGame.RHidePointRope_RopeComponent.IsRopeLengthAutoCalculated");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -93,6 +95,6 @@ public partial class RHidePointRope_RopeComponent : BmSDK.BmGame.RRope2Component
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 0);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 0);
     }
 }

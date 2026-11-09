@@ -78,13 +78,15 @@ public partial class RBMPathNode_WallClimb : BmSDK.BmGame.RBMPathNode_VariablePo
         where TComponent : class, Framework.IScriptComponent<RBMPathNode_WallClimb>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_UseWallClimb;
     /// <summary>
     /// Function: UseWallClimb
     /// </summary>
     public unsafe virtual void UseWallClimb(BmSDK.BmGame.RBMPawnAI User, int EdgeType, System.Numerics.Vector3 JumpDirection, System.Numerics.Vector3 JumpLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMPathNode_WallClimb.UseWallClimb", true);
-        byte* paramsPtr = stackalloc byte[44];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_UseWallClimb, "BmGame.RBMPathNode_WallClimb.UseWallClimb");
+        byte* paramsPtr = stackalloc byte[60];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(User, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(EdgeType, paramsPtr + 8);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(JumpDirection, paramsPtr + 12);
@@ -93,16 +95,18 @@ public partial class RBMPathNode_WallClimb : BmSDK.BmGame.RBMPathNode_VariablePo
         return;
     }
 
+    private static BmSDK.Function __fn_GetReferencePoint;
     /// <summary>
     /// Function: GetReferencePoint
     /// </summary>
     public unsafe override System.Numerics.Vector3 GetReferencePoint(BmSDK.BmGame.RBMPawnAI Jumper)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RBMPathNode_WallClimb.GetReferencePoint", true);
-        byte* paramsPtr = stackalloc byte[32];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_GetReferencePoint, "BmGame.RBMPathNode_WallClimb.GetReferencePoint");
+        byte* paramsPtr = stackalloc byte[48];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(Jumper, paramsPtr + 0);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
-        return BmSDK.Framework.MarshalUtil.ToManaged<System.Numerics.Vector3>(paramsPtr + 8);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<System.Numerics.Vector3>(paramsPtr + 8);
     }
 
     /// <summary>

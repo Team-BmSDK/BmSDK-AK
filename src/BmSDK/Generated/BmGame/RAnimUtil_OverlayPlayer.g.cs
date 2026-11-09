@@ -221,7 +221,7 @@ public partial class RAnimUtil_OverlayPlayer : BmSDK.GameObject, BmSDK.IGameObje
     /// <summary>
     /// Struct: FOverlayPlayer
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 25)]
+    [StructLayout(LayoutKind.Explicit, Size = 28)]
     public partial record struct FOverlayPlayer
     {
         /// <summary>

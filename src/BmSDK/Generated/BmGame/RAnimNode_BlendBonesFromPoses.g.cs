@@ -78,13 +78,15 @@ public partial class RAnimNode_BlendBonesFromPoses : BmSDK.Engine.AnimNodeBlendB
         where TComponent : class, Framework.IScriptComponent<RAnimNode_BlendBonesFromPoses>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_SetTargetBlendWeight;
     /// <summary>
     /// Function: SetTargetBlendWeight
     /// </summary>
     public unsafe virtual void SetTargetBlendWeight(float NewTargetWeight, float NewTargetBlendDuration)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAnimNode_BlendBonesFromPoses.SetTargetBlendWeight", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetTargetBlendWeight, "BmGame.RAnimNode_BlendBonesFromPoses.SetTargetBlendWeight");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewTargetWeight, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewTargetBlendDuration, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
@@ -98,13 +100,15 @@ public partial class RAnimNode_BlendBonesFromPoses : BmSDK.Engine.AnimNodeBlendB
         return;
     }
 
+    private static BmSDK.Function __fn_SetBlendPosesFromSkeletalMeshComp;
     /// <summary>
     /// Function: SetBlendPosesFromSkeletalMeshComp
     /// </summary>
     public unsafe virtual void SetBlendPosesFromSkeletalMeshComp()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "BmGame.RAnimNode_BlendBonesFromPoses.SetBlendPosesFromSkeletalMeshComp", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetBlendPosesFromSkeletalMeshComp, "BmGame.RAnimNode_BlendBonesFromPoses.SetBlendPosesFromSkeletalMeshComp");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
         funcManaged.FunctionFlags &= ~BmSDK.Function.EFunctionFlags.FUNC_Native;
@@ -164,7 +168,7 @@ public partial class RAnimNode_BlendBonesFromPoses : BmSDK.Engine.AnimNodeBlendB
     /// <summary>
     /// Struct: FBlendBoneData
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 72)]
+    [StructLayout(LayoutKind.Explicit, Size = 80)]
     public partial record struct FBlendBoneData
     {
         /// <summary>

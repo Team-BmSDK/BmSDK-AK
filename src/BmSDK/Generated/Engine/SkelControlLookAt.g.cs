@@ -78,13 +78,15 @@ public partial class SkelControlLookAt : BmSDK.Engine.SkelControlBase, BmSDK.IGa
         where TComponent : class, Framework.IScriptComponent<SkelControlLookAt>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_CanLookAtPoint;
     /// <summary>
     /// Function: CanLookAtPoint
     /// </summary>
     public unsafe virtual bool CanLookAtPoint(System.Numerics.Vector3 PointLoc, bool bDrawDebugInfo = default, bool bDebugUsePersistentLines = default, bool bDebugFlushLinesFirst = default)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkelControlLookAt.CanLookAtPoint", true);
-        byte* paramsPtr = stackalloc byte[28];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_CanLookAtPoint, "Engine.SkelControlLookAt.CanLookAtPoint");
+        byte* paramsPtr = stackalloc byte[44];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(PointLoc, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDrawDebugInfo, paramsPtr + 12);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(bDebugUsePersistentLines, paramsPtr + 16);
@@ -97,16 +99,18 @@ public partial class SkelControlLookAt : BmSDK.Engine.SkelControlBase, BmSDK.IGa
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         funcManaged.iNative = oldNative;
         funcManaged.FunctionFlags = oldFlags;
-        return BmSDK.Framework.MarshalUtil.ToManaged<bool>(paramsPtr + 24);
+        return BmSDK.Framework.MarshalUtil.ToManagedParam<bool>(paramsPtr + 24);
     }
 
+    private static BmSDK.Function __fn_SetLookAtAlpha;
     /// <summary>
     /// Function: SetLookAtAlpha
     /// </summary>
     public unsafe virtual void SetLookAtAlpha(float DesiredAlpha, float DesiredBlendTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkelControlLookAt.SetLookAtAlpha", true);
-        byte* paramsPtr = stackalloc byte[8];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetLookAtAlpha, "Engine.SkelControlLookAt.SetLookAtAlpha");
+        byte* paramsPtr = stackalloc byte[24];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DesiredAlpha, paramsPtr + 0);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DesiredBlendTime, paramsPtr + 4);
         var oldFlags = funcManaged.FunctionFlags;
@@ -120,13 +124,15 @@ public partial class SkelControlLookAt : BmSDK.Engine.SkelControlBase, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_InterpolateTargetLocation;
     /// <summary>
     /// Function: InterpolateTargetLocation
     /// </summary>
     public unsafe virtual void InterpolateTargetLocation(float DeltaTime)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkelControlLookAt.InterpolateTargetLocation", true);
-        byte* paramsPtr = stackalloc byte[4];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_InterpolateTargetLocation, "Engine.SkelControlLookAt.InterpolateTargetLocation");
+        byte* paramsPtr = stackalloc byte[20];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(DeltaTime, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;
@@ -139,13 +145,15 @@ public partial class SkelControlLookAt : BmSDK.Engine.SkelControlBase, BmSDK.IGa
         return;
     }
 
+    private static BmSDK.Function __fn_SetTargetLocation;
     /// <summary>
     /// Function: SetTargetLocation
     /// </summary>
     public unsafe virtual void SetTargetLocation(System.Numerics.Vector3 NewTargetLocation)
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.SkelControlLookAt.SetTargetLocation", true);
-        byte* paramsPtr = stackalloc byte[12];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_SetTargetLocation, "Engine.SkelControlLookAt.SetTargetLocation");
+        byte* paramsPtr = stackalloc byte[28];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.MarshalUtil.ToUnmanaged(NewTargetLocation, paramsPtr + 0);
         var oldFlags = funcManaged.FunctionFlags;
         var oldNative = funcManaged.iNative;

@@ -117,7 +117,7 @@ public partial class InterpTrackVisibility : BmSDK.Engine.InterpTrack, BmSDK.IGa
     /// <summary>
     /// Struct: FVisibilityTrackKey
     /// </summary>
-    [StructLayout(LayoutKind.Explicit, Size = 6)]
+    [StructLayout(LayoutKind.Explicit, Size = 8)]
     public partial record struct FVisibilityTrackKey
     {
         /// <summary>

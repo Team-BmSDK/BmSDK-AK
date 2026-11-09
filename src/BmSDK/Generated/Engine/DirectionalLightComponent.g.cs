@@ -78,24 +78,28 @@ public partial class DirectionalLightComponent : BmSDK.Engine.LightComponent, Bm
         where TComponent : class, Framework.IScriptComponent<DirectionalLightComponent>
         => ((GameObject)this).DetachScriptComponents(typeof(TComponent));
 
+    private static BmSDK.Function __fn_OnUpdatePropertyBrightness;
     /// <summary>
     /// Function: OnUpdatePropertyBrightness
     /// </summary>
     public unsafe override void OnUpdatePropertyBrightness()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DirectionalLightComponent.OnUpdatePropertyBrightness", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnUpdatePropertyBrightness, "Engine.DirectionalLightComponent.OnUpdatePropertyBrightness");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
 
+    private static BmSDK.Function __fn_OnUpdatePropertyLightColor;
     /// <summary>
     /// Function: OnUpdatePropertyLightColor
     /// </summary>
     public unsafe override void OnUpdatePropertyLightColor()
     {
-        var funcManaged = BmSDK.GameObject.StaticFindObjectChecked<BmSDK.Function>(BmSDK.Function.StaticClass(), null, "Engine.DirectionalLightComponent.OnUpdatePropertyLightColor", true);
-        byte* paramsPtr = stackalloc byte[0];
+        var funcManaged = BmSDK.Framework.FunctionCache.Get(ref __fn_OnUpdatePropertyLightColor, "Engine.DirectionalLightComponent.OnUpdatePropertyLightColor");
+        byte* paramsPtr = stackalloc byte[16];
+        paramsPtr = (byte*)(((nint)paramsPtr + 15) & ~(nint)15);
         BmSDK.Framework.GameFunctions.ProcessEvent(Ptr, funcManaged.Ptr, (nint)paramsPtr, 0);
         return;
     }
