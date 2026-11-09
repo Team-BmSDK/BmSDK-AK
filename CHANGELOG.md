@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.22.0](https://github.com/Team-BmSDK/BmSDK-AK/compare/v0.21.0...v0.22.0) (2026-11-09)
+
+
+### Features
+
+* Give scripts an OnDraw(Canvas) callback ([#18](https://github.com/Team-BmSDK/BmSDK-AK/issues/18)) ([041caae](https://github.com/Team-BmSDK/BmSDK-AK/commit/041caaec36311b47b10b50a12b71a3c99a5555b7))
+
+
+### Bug Fixes
+
+* Keep the game running when a mod throws ([#16](https://github.com/Team-BmSDK/BmSDK-AK/issues/16)) ([55670fc](https://github.com/Team-BmSDK/BmSDK-AK/commit/55670fcea2a60bdf0249dabc59c1333d7b8e6234))
+
+
+### Performance Improvements
+
+* Stop allocating per object and per call, which caused the streaming stutter ([#21](https://github.com/Team-BmSDK/BmSDK-AK/issues/21)) ([3bf080d](https://github.com/Team-BmSDK/BmSDK-AK/commit/3bf080da2d30e47a797e156d0342f0fd5ca27e4b)), closes [#13](https://github.com/Team-BmSDK/BmSDK-AK/issues/13)
+* Take string work out of the ProcessInternal detour and redirect calls ([#17](https://github.com/Team-BmSDK/BmSDK-AK/issues/17)) ([ee9f55b](https://github.com/Team-BmSDK/BmSDK-AK/commit/ee9f55b89381ceec3104e2fadc33ba67882c2c9e))
+
 ## [0.21.0](https://github.com/Team-BmSDK/BmSDK-AK/compare/v0.19.0...v0.21.0) (2026-09-12)
 
 
