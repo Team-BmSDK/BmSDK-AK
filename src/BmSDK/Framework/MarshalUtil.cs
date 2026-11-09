@@ -179,30 +179,78 @@ public static unsafe class MarshalUtil
     /// <returns>Managed wrapper of unmanaged pointer</returns>
     internal static GameObject GetOrCreateWrapper(IntPtr objPtr)
     {
-        // Get cached object wrapepr
+        // Get cached object wrapper
         if (s_managedObjects.TryGetValue(objPtr, out var existingObj))
         {
             return existingObj;
         }
 
-        // Calculate memory address of the object's class
-        var classPtr = *(IntPtr*)(objPtr + GameDefine.MemberOffsets.Object__Class).ToPointer();
-        var classIndexPtr = classPtr + GameDefine.MemberOffsets.Object__ObjectInternalInteger;
-        var classFlagsPtr = classPtr + GameDefine.MemberOffsets.Class__ClassFlags;
-
-        // Not clear yet why this happens, but maybe we don't need to worry about it.
-        var classIndex = *(int*)classIndexPtr.ToPointer();
-        if (classIndex < 1)
+        // Objects from static registration whose class has registered since get their real wrapper now.
+        if (s_pendingEarly.Count > 0)
         {
-            return CreateManagedWrapper(objPtr, s_classWrapperType ??= MakeWrapperType(typeof(Class)));
+            WrapPendingEarly();
+            if (s_managedObjects.TryGetValue(objPtr, out existingObj))
+            {
+                return existingObj;
+            }
         }
 
-        // Get the managed type (and its constructor) through the class object, worked out once per
-        // class: every object the game creates comes through here, and building the class path
-        // string each time was a large share of the garbage behind the streaming stutter (#13).
+        var classPtr = *(IntPtr*)(objPtr + GameDefine.MemberOffsets.Object__Class).ToPointer();
+
+        // An object created during static registration, before its own class was registered: the
+        // class's Index is still INDEX_NONE and its Name and Outer aren't set yet, so it can't be
+        // identified. In AK that is 73 objects: the 44 intrinsic classes registered before Core.Class
+        // itself, the Core package (before Core.Package) and Core.System's default properties (before
+        // the property classes). Such an object is remembered and wrapped, with the right type, by the
+        // first call after its class has registered. (Caching a Class-typed wrapper here, as before,
+        // left the Core package wrapped as a Class for the whole session, so every Core.* path printed
+        // as "Core:Object:X" and no redirect on a Core function ever matched.)
+        if (ClassIndex(classPtr) < 0)
+        {
+            s_pendingEarly.Add(objPtr);
+            var early = (GameObject)Activator.CreateInstance(typeof(GameObject), true)!;
+            early.Ptr = objPtr;
+            return early;
+        }
+
+        return CreateManagedWrapper(objPtr, WrapperTypeFor(classPtr));
+    }
+
+    /// <summary>Objects created before their class was registered, waiting for their real wrapper.</summary>
+    private static readonly List<IntPtr> s_pendingEarly = [];
+
+    private static int ClassIndex(IntPtr classPtr) =>
+        *(int*)(classPtr + GameDefine.MemberOffsets.Object__ObjectInternalInteger).ToPointer();
+
+    private static void WrapPendingEarly()
+    {
+        for (var i = s_pendingEarly.Count - 1; i >= 0; i--)
+        {
+            var objPtr = s_pendingEarly[i];
+            var classPtr = *(IntPtr*)(objPtr + GameDefine.MemberOffsets.Object__Class).ToPointer();
+            if (ClassIndex(classPtr) < 0)
+            {
+                continue;
+            }
+
+            s_pendingEarly.RemoveAt(i);
+            if (!s_managedObjects.ContainsKey(objPtr))
+            {
+                CreateManagedWrapper(objPtr, WrapperTypeFor(classPtr));
+            }
+        }
+    }
+
+    /// <summary>
+    /// The managed type (and its constructor) for a class, worked out once per class: every object the
+    /// game creates comes through here, and building the class path string each time was a large share
+    /// of the garbage behind the streaming stutter (#13).
+    /// </summary>
+    private static WrapperType WrapperTypeFor(IntPtr classPtr)
+    {
         if (!s_wrapperTypes.TryGetValue(classPtr, out var wrapperType))
         {
-            var classFlags = *(Class.EClassFlags*)classFlagsPtr.ToPointer();
+            var classFlags = *(Class.EClassFlags*)(classPtr + GameDefine.MemberOffsets.Class__ClassFlags).ToPointer();
             var managedType = !classFlags.HasFlag(Class.EClassFlags.CLASS_Interface)
                 ? GetManagedTypeForClassPtr(classPtr)
                 : typeof(GameObject); // Wrap CDOs of interfaces as GameObject
@@ -210,15 +258,13 @@ public static unsafe class MarshalUtil
             s_wrapperTypes[classPtr] = wrapperType;
         }
 
-        // Wrap this object in a managed instance
-        return CreateManagedWrapper(objPtr, wrapperType);
+        return wrapperType;
     }
 
     private sealed record WrapperType(Type ManagedType, Func<GameObject> Factory);
 
     /// <summary>Wrapper type and constructor per UClass; an entry is dropped when its class is destroyed.</summary>
     private static readonly Dictionary<IntPtr, WrapperType> s_wrapperTypes = [];
-    private static WrapperType? s_classWrapperType;
 
     private static WrapperType MakeWrapperType(Type managedType)
     {
@@ -323,6 +369,11 @@ public static unsafe class MarshalUtil
 
     internal static void DestroyManagedWrapper(IntPtr objPtr)
     {
+        if (s_pendingEarly.Count > 0)
+        {
+            s_pendingEarly.Remove(objPtr);
+        }
+
         if (s_managedObjects.TryGetValue(objPtr, out var obj))
         {
             FindObjectsCache.Unregister(obj);
