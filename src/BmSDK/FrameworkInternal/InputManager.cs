@@ -2,8 +2,28 @@ namespace BmSDK.Framework;
 
 internal static class InputManager
 {
-    private static readonly bool[] s_keyStates = new bool[255];
-    private static readonly bool[] s_keyStatesPrev = new bool[255];
+    private static readonly bool[] s_keyStates = new bool[256];
+    private static readonly bool[] s_keyStatesPrev = new bool[256];
+
+    /// <summary>Keys the engine must not see (see <see cref="Keyboard"/>).</summary>
+    private static readonly bool[] s_swallowed = new bool[256];
+
+    /// <summary>Keys whose last press was dropped, so their release is dropped too.</summary>
+    private static readonly bool[] s_pressSwallowed = new bool[256];
+
+    public static bool IsDown(Keys key) => IsValidKey(key) && s_keyStates[(byte)key];
+
+    public static bool IsSwallowed(Keys key) => IsValidKey(key) && s_swallowed[(byte)key];
+
+    public static void SetSwallowed(Keys key, bool swallow)
+    {
+        if (IsValidKey(key))
+        {
+            s_swallowed[(byte)key] = swallow;
+        }
+    }
+
+    public static void UnswallowAll() => Array.Clear(s_swallowed);
 
     public static void Tick()
     {
@@ -25,20 +45,37 @@ internal static class InputManager
         s_keyStates.CopyTo(s_keyStatesPrev, 0);
     }
 
-    internal static void OnKeyDown(Keys key)
+    /// <summary>Records a press. Returns true if the engine must not see it.</summary>
+    internal static bool OnKeyDown(Keys key)
     {
-        if (IsValidKey(key))
+        if (!IsValidKey(key))
         {
-            s_keyStates[(byte)key] = true;
+            return false;
         }
+
+        var k = (byte)key;
+        s_keyStates[k] = true;
+
+        // Once the engine has seen a press (swallowing switched off while the key repeats), it must
+        // also see the release, or the key would stay down in the game.
+        s_pressSwallowed[k] = s_swallowed[k];
+        return s_swallowed[k];
     }
 
-    internal static void OnKeyUp(Keys key)
+    /// <summary>Records a release. Returns true if the engine must not see it.</summary>
+    internal static bool OnKeyUp(Keys key)
     {
-        if (IsValidKey(key))
+        if (!IsValidKey(key))
         {
-            s_keyStates[(byte)key] = false;
+            return false;
         }
+
+        var k = (byte)key;
+        s_keyStates[k] = false;
+
+        var swallow = s_pressSwallowed[k];
+        s_pressSwallowed[k] = false;
+        return swallow;
     }
 
     private static bool IsValidKey(Keys key)

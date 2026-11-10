@@ -194,25 +194,34 @@ internal static class Loader
         return path;
     }
 
-    // Detour for FWindowsViewport::ProcessDeferredMessage()
+    // Detour for FWindowsViewport::ProcessDeferredMessage(). Key and mouse-button messages are
+    // recorded for scripts, and dropped before the engine sees them when a mod swallowed the key.
     private static void ProcessDeferredMessageDetour(IntPtr self, ref FDeferredMessage message)
     {
-        var key = (Keys)(uint)message.WParam;
-
-        switch (message.Message)
+        var swallow = message.Message switch
         {
-            // WM_KEYDOWN
-            case 0x100:
-            // WM_SYSKEYDOWN
-            case 0x104:
-                InputManager.OnKeyDown(key);
-                break;
-            // WM_KEYUP
-            case 0x101:
-            // WM_SYSKEYUP
-            case 0x105:
-                InputManager.OnKeyUp(key);
-                break;
+            // WM_KEYDOWN, WM_SYSKEYDOWN
+            0x100 or 0x104 => InputManager.OnKeyDown((Keys)(uint)message.WParam),
+            // WM_KEYUP, WM_SYSKEYUP
+            0x101 or 0x105 => InputManager.OnKeyUp((Keys)(uint)message.WParam),
+            // WM_LBUTTONDOWN, WM_LBUTTONDBLCLK / WM_LBUTTONUP
+            0x201 or 0x203 => InputManager.OnKeyDown(Keys.LButton),
+            0x202 => InputManager.OnKeyUp(Keys.LButton),
+            // WM_RBUTTONDOWN, WM_RBUTTONDBLCLK / WM_RBUTTONUP
+            0x204 or 0x206 => InputManager.OnKeyDown(Keys.RButton),
+            0x205 => InputManager.OnKeyUp(Keys.RButton),
+            // WM_MBUTTONDOWN, WM_MBUTTONDBLCLK / WM_MBUTTONUP
+            0x207 or 0x209 => InputManager.OnKeyDown(Keys.MButton),
+            0x208 => InputManager.OnKeyUp(Keys.MButton),
+            // WM_XBUTTONDOWN, WM_XBUTTONDBLCLK / WM_XBUTTONUP (button in the high word of wParam)
+            0x20B or 0x20D => InputManager.OnKeyDown(XButton(message.WParam)),
+            0x20C => InputManager.OnKeyUp(XButton(message.WParam)),
+            _ => false,
+        };
+
+        if (swallow)
+        {
+            return;
         }
 
         // Call base impl
@@ -227,6 +236,9 @@ internal static class Loader
             ModGuard.Run(script, script.Name, "OnDraw", () => script.OnDraw(canvas));
         }
     }
+
+    private static Keys XButton(nuint wParam) =>
+        ((wParam >> 16) & 0xFFFF) == 2 ? Keys.XButton2 : Keys.XButton1;
 
     // Detour for UObject::AddObject()
     private static void AddObjectDetour(IntPtr self, int InIndex)

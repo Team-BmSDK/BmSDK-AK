@@ -41,7 +41,8 @@ public abstract class Script
     public virtual void OnTick() { }
 
     /// <summary>
-    /// Called every time a key is pressed.
+    /// Called every time a key or mouse button is pressed, whether or not the key is swallowed
+    /// (see <see cref="Keyboard"/>).
     /// </summary>
     public virtual void OnKeyDown(Keys key) { }
 
